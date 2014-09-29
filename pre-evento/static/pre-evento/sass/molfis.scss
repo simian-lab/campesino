@@ -1,0 +1,89 @@
+/* MEDIA QUERIES*/
+@mixin respond-to($breakpoint) {
+    @media only screen and (max-width: $breakpoint + px) { @content; }
+}
+section#home {
+	.container {
+		.articulos ul li {
+			figure {
+				@include respond-to (600) {
+					width: 25%;
+				}
+			}
+			aside {
+
+				@include respond-to (600){
+					width: 73%;
+				}
+				@include respond-to (320){
+					width: 70%;
+				}
+			}
+		}
+		.row-fluid {
+			@include respond-to (320){
+				padding: 0;
+			}
+		}
+
+		.publicidades {display: inline-block;}
+	}
+}
+
+.checkbox {margin: 0;}
+
+.dropdown-menu > li > a {margin: 10px 0;}
+
+#slider-marcas-content {
+	img {margin: auto; display: block;}
+}
+
+footer {
+	margin-bottom: 170px;
+	@include respond-to (1024){
+		margin-bottom: 30px;
+	}
+
+	.sponsor .social {
+		bottom: -19px;
+
+		@media screen and (max-width: 768px) {
+			bottom: -19px;
+		}
+	}
+	&.main {
+		.social {
+			/*bottom: -19px;*/
+		}
+	}
+	.invita {padding: 15px 0;}
+}
+
+.form-bottom {
+	position:fixed; 
+	bottom:0;
+	/*display: none;*/	
+	.banner-visa {
+		display: none;
+		padding: 0;
+		@include respond-to (1024){
+			display: block;
+		}
+	}
+	@include respond-to (1024){
+		display: block;
+		position:fixed; 
+	}
+	.panel {
+		background: none;
+
+		a:hover{text-decoration: none}
+
+		.panel-heading {padding: 0 10px;}
+		.panel-title {padding: 10px;}
+		.panel-body {background: #F4F4F4}
+	}
+
+	.panel-group {margin-bottom: 0}
+
+}

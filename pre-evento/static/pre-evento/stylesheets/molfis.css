@@ -1,0 +1,123 @@
+/* MEDIA QUERIES*/
+@media only screen and (max-width: 600px) {
+  /* line 8, ../sass/molfis.scss */
+  section#home .container .articulos ul li figure {
+    width: 25%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* line 13, ../sass/molfis.scss */
+  section#home .container .articulos ul li aside {
+    width: 73%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* line 13, ../sass/molfis.scss */
+  section#home .container .articulos ul li aside {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* line 23, ../sass/molfis.scss */
+  section#home .container .row-fluid {
+    padding: 0;
+  }
+}
+/* line 29, ../sass/molfis.scss */
+section#home .container .publicidades {
+  display: inline-block;
+}
+
+/* line 33, ../sass/molfis.scss */
+.checkbox {
+  margin: 0;
+}
+
+/* line 35, ../sass/molfis.scss */
+.dropdown-menu > li > a {
+  margin: 10px 0;
+}
+
+/* line 38, ../sass/molfis.scss */
+#slider-marcas-content img {
+  margin: auto;
+  display: block;
+}
+
+/* line 41, ../sass/molfis.scss */
+footer {
+  margin-bottom: 170px;
+}
+@media only screen and (max-width: 1024px) {
+  /* line 41, ../sass/molfis.scss */
+  footer {
+    margin-bottom: 30px;
+  }
+}
+/* line 47, ../sass/molfis.scss */
+footer .sponsor .social {
+  bottom: -19px;
+}
+@media screen and (max-width: 768px) {
+  /* line 47, ../sass/molfis.scss */
+  footer .sponsor .social {
+    bottom: -19px;
+  }
+}
+/* line 55, ../sass/molfis.scss */
+footer.main .social {
+  /*bottom: -19px;*/
+}
+/* line 59, ../sass/molfis.scss */
+footer .invita {
+  padding: 15px 0;
+}
+
+/* line 62, ../sass/molfis.scss */
+.form-bottom {
+  position: fixed;
+  bottom: 0;
+  /*display: none;*/
+}
+/* line 66, ../sass/molfis.scss */
+.form-bottom .banner-visa {
+  display: none;
+  padding: 0;
+}
+@media only screen and (max-width: 1024px) {
+  /* line 66, ../sass/molfis.scss */
+  .form-bottom .banner-visa {
+    display: block;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  /* line 62, ../sass/molfis.scss */
+  .form-bottom {
+    display: block;
+    position: fixed;
+  }
+}
+/* line 77, ../sass/molfis.scss */
+.form-bottom .panel {
+  background: none;
+}
+/* line 80, ../sass/molfis.scss */
+.form-bottom .panel a:hover {
+  text-decoration: none;
+}
+/* line 82, ../sass/molfis.scss */
+.form-bottom .panel .panel-heading {
+  padding: 0 10px;
+}
+/* line 83, ../sass/molfis.scss */
+.form-bottom .panel .panel-title {
+  padding: 10px;
+}
+/* line 84, ../sass/molfis.scss */
+.form-bottom .panel .panel-body {
+  background: #F4F4F4;
+}
+/* line 87, ../sass/molfis.scss */
+.form-bottom .panel-group {
+  margin-bottom: 0;
+}

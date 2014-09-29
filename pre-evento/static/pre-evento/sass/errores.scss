@@ -1,0 +1,97 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "fonts.scss";
+
+$font-global: 'Conv_MyriadPro-Regular';
+$font-bold: 'Conv_MyriadPro-Bold';
+$font-cond: 'Conv_MyriadPro-Cond';
+$font-it: 'Conv_MyriadPro-CondIt';
+
+
+body {
+	background: url(../img/bg.png) repeat;	
+}			
+.conbg {	
+	background: none;
+	background-color: #c4caca;
+	.section {
+		background: url(../img/fondo_503.jpg) center no-repeat;
+		.container {
+			background: none;
+			background-color: transparent;
+			box-shadow: none;
+			h1 {
+				margin-bottom: 310px;
+			}
+		}
+	}
+}
+a.boton {					
+	background: url(../img/bg-btn-leermas.jpg) top left no-repeat;
+	color: white;		
+	display: block;				
+	font-size: 0.938em;	
+	height: 35px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding-top: 10px;
+	text-align: center;					
+	text-transform: uppercase;								
+	width: 150px;			
+	b {
+		font-family: $font-bold;
+	}
+	&:hover {
+		text-decoration: none;
+	}
+}	
+.header {
+	background-color: #f4f4f4;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 10px 0;
+	img {
+		display: block;
+		margin: 0 auto;
+		vertical-align: top;
+	}
+}
+.section {	
+	font-family: $font-global;
+	text-align: center;	
+	.container {
+		background-color: white;
+		box-shadow: 0px 3px 3px #888888;		
+		h1 {
+			color: #00b6c9;
+			margin: 10px;
+			margin-bottom: 50px;
+			text-transform: uppercase;
+			b {
+				font-family: $font-bold;
+			}
+		}
+		h2 {
+			color: #00b6c9;
+			font-family: $font-bold;
+			font-size: 1.875em;			
+			text-transform: uppercase;
+		}
+		span {
+			&.numb {
+				color: #00b6c9;
+				font-family: $font-bold;
+				font-size: 7.938em;
+				line-height: 78px;
+			}
+		}
+		p {
+			color: #1f1f1f;
+			font-size: 1.313em;
+			margin: 30px 0;
+		}
+	}
+}

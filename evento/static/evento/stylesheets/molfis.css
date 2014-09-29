@@ -1,0 +1,67 @@
+/* MEDIA QUERIES*/
+/* line 9, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu {
+  background: #505050;
+  opacity: 0.95;
+  border-radius: 0;
+  z-index: 10;
+}
+@media only screen and (max-width: 768px) {
+  /* line 9, ../sass/molfis.scss */
+  #menu #menuTop .dropdown-menu {
+    position: relative;
+  }  
+}
+@media only screen and (max-width: 768px) {
+  #menu #menuTop li {
+    border-right: 0;
+  }
+  #menu #menuTop li:first-child {    
+    border-top: 1px solid white;
+  }
+}
+/* line 18, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu li {
+  width: 100%;
+  border-right: 20px;
+}
+/* line 22, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu li a {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  background: none;
+}
+/* line 27, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu li a:hover {
+  background: none;
+  color: #00b6c9;
+}
+
+.publi .container {
+  overflow: hidden;
+}
+.row {
+  margin: 0;
+}
+
+.publi .row .btn.prev {
+  left: 14px;
+}
+.menu .container .row .col-lg-12{
+  padding: 0;
+}
+.margen {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+section.wrapp .container .row .no-destacados ul li figure .overlay .marca {
+  bottom: 72px;
+}
+
+
+.ias_trigger > a{
+  background: url("../img/bg-button-orange.jpg") no-repeat scroll left top #EA432C !important;
+  font-size: 17px !important;
+  color: #FFFFFF !important;
+}

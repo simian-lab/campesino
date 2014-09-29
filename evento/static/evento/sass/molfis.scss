@@ -1,0 +1,36 @@
+/* MEDIA QUERIES*/
+@mixin respond-to($breakpoint) {
+    @media only screen and (max-width: $breakpoint + px) { @content; }
+}
+
+#menu {
+
+	#menuTop {
+		.dropdown-menu {
+			background: #505050;
+			opacity: 0.95;
+			border-radius: 0;
+			z-index: 10;
+
+		    @include respond-to (768){
+		        position: relative;
+		    }
+
+			li {
+				width: 100%;
+				border-right: 20px;
+
+				a {
+					padding: 5px;
+					border-bottom: 1px solid #ccc;
+					background: none;
+
+					&:hover {
+						background: none;
+						color: #00b6c9;
+					}
+				}
+			}
+		}	
+	}
+}

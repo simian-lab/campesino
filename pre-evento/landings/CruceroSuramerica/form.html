@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NAVIERA PRINCESS CRUISES</title>
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+  <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251010" onSubmit="return (!(UPTvalidateform(document.UPTml251010)));">
+    <input type="hidden" name="submitaction" value="3">
+    <input type="hidden" name="mlid" value="251010">
+    <input type="hidden" name="siteid" value="2010001358">
+    <input type="hidden" name="tagtype" value="q2">
+    <input type="hidden" name="demographics" value="-1,58933,65602,59096,65603,66141,66090,66489,66092">
+    <input type="hidden" name="redirection" value="http://www.cyberlunes.com.co/landings/CruceroSuramerica/gracias.html">
+    <input type="hidden" name="uredirection" value="">
+    <input type="hidden" name="welcome" value="">
+    <input type="hidden" name="double_optin" value="">
+    <input type="hidden" name="append" value="">
+    <input type="hidden" name="update" value="on">
+    <input type="hidden" name="activity" value="submit">
+    <tr>
+      <td colspan="2"><font face="Arial" size="2" color="#000000">COMPLETE EL SIGUIENTE FORMULARIO PARA OBTENER MÁS INFORMACIÓN PARA SU PRÓXIMO VIAJE.<br>
+        <font size=1>(*campos requeridos)<br>
+        </font><b></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000"> <b>Email*</b></td>
+      <td><font face="Arial" size="2" color="#000000">
+        <input type='text' name='email' value='' size='10'></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000"><b>Nombre*</b></td>
+      <td><font face="Arial" size="2" color="#000000">
+        <input type="text" name="val_58933" size="10" value=""></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000"><b>Apellidos*</b></td>
+      <td><font face="Arial" size="2" color="#000000">
+        <input type="text" name="val_65602" size="10" value=""></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000">Ciudades*</td>
+      <td><font face="Arial" size="2" color="#000000">
+        <input type="text" name="val_59096" size="10" value=""></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000">Teléfono*</td>
+      <td><font face="Arial" size="2" color="#000000">
+        <input type="text" name="val_65603" size="10" value=""></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000">Promoción*</td>
+      <td><font face="Arial" size="2" color="#000000">
+        <select name="val_66141" size="1">
+          <option value="">Seleccione una opción</option>
+          <option value="* Enter Value" >NAVIERA PRINCESS CRUISES</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td><font face="Arial" size="2" color="#000000">Comentario</td>
+      <td><font face="Arial" size="2" color="#000000">
+        <textarea class="comments"  type="text" name="val_66090" size="10" value=""></textarea></td>
+    </tr>
+    <tr>
+      
+      <td><font face="Arial" size="2" color="#000000">
+        <input type="checkbox" name="val_66489"></td>
+        <td><font class="cb_text" face="Arial" size="2" color="#000000"><b>Estoy de acuerdo con los terminos y condiciones de Suramerica</b></td>
+    </tr>
+    <tr>
+
+      <td><font face="Arial" size="2" color="#000000">
+        <input type="checkbox" name="val_66092"></td>
+        <td><font face="Arial" class="cb_text" size="2" color="#000000">Estoy de acuerdo con los terminos y condiciones de Casa Editorial El Tiempo.</td>
+    </tr>
+    <input type="hidden" id="showpopup" value="on" name="showpopup">
+    <tr>
+      <td colspan="2"><font face="Arial" size="2" color="#000000">
+         <input class="subm" type="submit" value="QUIERO PLANEAR MI PRÓXIMO VIAJE"></td>
+    </tr>
+    <script language="Javascript">function emailCheck (emailStr) {
+var emailPat=/^(.+)@(.+)$/;
+var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]";
+var validChars="\[^\\s" + specialChars + "\]";
+var quotedUser="(\"[^\"]*\")";
+var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+var atom=validChars + '+';
+var word="(" + atom + "|" + quotedUser + ")";
+var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+var matchArray=emailStr.match(emailPat);
+if (matchArray==null) {
+    alert("Email address seems incorrect (check @ and .'s)");
+    return false;
+}
+var user=matchArray[1];
+var domain=matchArray[2];
+if (user.match(userPat)==null) {
+    alert("The username doesn't seem to be valid.");
+    return false;
+}
+var IPArray=domain.match(ipDomainPat);
+if (IPArray!=null) {
+      for (var i=1;i<=4;i++) {
+        if (IPArray[i]>255) {
+            alert("Destination IP address is invalid!");
+        return false;
+        }
+    }
+    return true;
+}
+var domainArray=domain.match(domainPat);
+if (domainArray==null) {
+    alert("The domain name doesn't seem to be valid.");
+    return false;
+}
+var atomPat=new RegExp(atom,"g");
+var domArr=domain.match(atomPat);
+var len=domArr.length;
+if ((domArr[domArr.length-1] != "info") &&
+    (domArr[domArr.length-1] != "name") &&
+    (domArr[domArr.length-1] != "arpa") &&
+    (domArr[domArr.length-1] != "coop") &&
+    (domArr[domArr.length-1] != "aero")) {
+        if (domArr[domArr.length-1].length<2 ||
+            domArr[domArr.length-1].length>3) {
+                alert("The address must end in a three-letter domain, or two letter country.");
+                return false;
+        }
+}
+if (len<2) {
+   var errStr="This address is missing a hostname!";
+   alert(errStr);
+   return false;
+}
+return true;
+}
+function UPTvalidateform(thisform)
+{
+	if (thisform.val_58933.value==""){   
+alert("Please enter a value for Nombre");
+return(true);}if (thisform.val_65602.value==""){   
+alert("Please enter a value for Apellidos");
+return(true);}
+	if (!(thisform.elements['val_66489'].checked))
+	{
+	    alert("Please select a value for Estoy de acuerdo con los terminos y condiciones de Suramerica");
+        return(true);
+    }
+
+	if (emailCheck(thisform.email.value)) 
+	{	
+
+        if ((document.getElementById('unsubscribe') 
+            && document.getElementById('unsubscribe').checked) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")) {
+	   	alert('Thank you, now you are unsubscribed!'); 
+	}
+	else if(( (document.getElementById('unsubscribe')
+            && !document.getElementById('unsubscribe').checked) || (!document.getElementById('unsubscribe')) ) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")){
+        	alert('Thank you for signing up!');
+        }
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+</script>
+  </form>
+</table>
+</body>
+</html>

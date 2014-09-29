@@ -1,0 +1,33 @@
+.tabla_gral{
+	width:95%;
+}
+.tabla_gral th{
+	font-weight:bold;
+	background-color:#e1e1e1;
+}
+.tabla_gral td{
+	border-bottom:2px solid #e1e1e1;
+	padding-left:10px;
+}
+
+
+.alt_btn2 {
+background: #D0D1D4 url(../images/btn_submit_2.png) repeat-x;
+border: 1px solid#30B0C8;
+-webkit-box-shadow: 0 1px 0 #fff;
+-moz-box-shadow: 0 1px 0 #fff;
+box-shadow: 0 1px 0 #fff;
+font-weight: bold;
+height: 22px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+padding: 0 10px;
+color: #003E49;
+text-shadow: 0 1px 0 #6CDCF9;
+cursor: pointer;
+}
+
+.alt_btn2:hover {
+color: #001217;
+}

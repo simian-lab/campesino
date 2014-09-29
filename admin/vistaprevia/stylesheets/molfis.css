@@ -1,0 +1,29 @@
+/* MEDIA QUERIES*/
+/* line 9, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu {
+  background: #505050;
+  opacity: 0.95;
+  border-radius: 0;
+}
+@media only screen and (max-width: 768px) {
+  /* line 9, ../sass/molfis.scss */
+  #menu #menuTop .dropdown-menu {
+    position: relative;
+  }
+}
+/* line 18, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu li {
+  width: 100%;
+  border-right: 20px;
+}
+/* line 22, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu li a {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  background: none;
+}
+/* line 27, ../sass/molfis.scss */
+#menu #menuTop .dropdown-menu li a:hover {
+  background: none;
+  color: #00b6c9;
+}

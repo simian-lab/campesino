@@ -1,0 +1,432 @@
+@media screen and (min-width: 997px) {
+	div#sas_8932 {
+		background: rgb(250, 250, 250);
+		text-align: center;
+		border: solid 1px rgb(241, 241, 241);
+	}
+	div#sas_8932 div {
+		margin: 0 auto!important;
+	}
+	footer {
+		padding-bottom: 0px!important;
+	}
+	footer .row-fluid.foot {
+		margin-bottom: 0!important;
+		padding-bottom: 140px!important;
+	}
+	div#main-slider .box-form {
+		width: 100%!important;
+		position: fixed!important;
+		left: 0!important;
+		bottom: 0!important;
+		background: #fffcbd!important;
+		z-index: 9999!important;
+		margin: 0!important;
+		padding: 17px!important;
+		height: 120px!important;
+		box-shadow: 0 0 5px!important;
+	}
+	div#main-slider .box-form form {
+		max-width: 980px!important;
+		display: block!important;
+		margin: 0 auto!important;
+		padding: 30px 60px;
+	}
+	div#main-slider .box-form form span.title {
+		display: block!important;
+		width: 100%!important;
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/bgTitle.png) no-repeat left top;
+		font-size: 0px;
+		zoom: 1;
+		;
+		display: block;
+		width: 100%;
+		height: 51px;
+		position: absolute;
+		top: -20px;
+	}
+	div#main-slider .box-form form span {
+		float: left!important;
+		padding: 0 10px 0px 0px!important;
+	}
+	div#main-slider .box-form form input[type="text"] {
+		width: 24%!important;
+		float: left!important;
+		margin: 0 17px 0 0!important;
+		color: #494949;
+	}
+	div#main-slider .box-form form input[type="submit"] {
+		width: 24%!important;
+		float: right!important;
+		margin: 0!important;
+		height: 27px!important;
+		color: #000;
+		box-shadow: #d1cf9b 2px 2px 3px;
+		background-color: #fd7213;
+	}
+	div#main-slider .box-form form .terminos {
+		display: block!important;
+		width: 32%!important;
+		position: absolute!important;
+		bottom: 10px!important;
+	}
+	div#main-slider .box-form form .terminos span {
+		width: 60%!important;
+	}
+	div#main-slider .box-form form .terminos .check {
+		float: left!important;
+	}
+	.btn-normal {
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/registra-tu-correo.png) no-repeat left top!important;
+		display: block;
+		width: 100%!important;
+		text-indent: -9999em!important;
+		font-size: 0!important;
+		zoom: 1!important;
+		margin-top: 9px!important;
+		height: 45px!important;
+	}
+	div.publi_paises {
+		display: block;
+		width: auto!important;
+		padding: 10px 0 4px!important;
+	}
+	div.publi_paises a img {
+		display: none;
+	}
+	div.publi_paises a {
+		display: block;
+		width: 336px;
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/mincit_fontur-3.png) no-repeat center top;
+		height: 36px;
+	}
+	header .menu .row .col-md-4 .publi_paises a {
+		width: 336px!important;
+		margin: 5px 0 0 0!important;
+	}
+	#interna-pais .marcas .publi_paises {
+		margin-top: 5px!important;
+		float: right;
+	}
+	/*------------ARTICLE DETAIL FORM STYLES--------------*/
+	div.articleDetailForm {
+		width: 100%!important;
+		position: fixed!important;
+		left: 0!important;
+		bottom: 0!important;
+		background: #fffcbd!important;
+		z-index: 9999!important;
+		margin: 0!important;
+		padding: 17px!important;
+		height: 120px!important;
+		box-shadow: 0 0 5px!important;
+	}
+	div.articleDetailForm form {
+		max-width: 980px!important;
+		display: block!important;
+		margin: 0 auto!important;
+		padding: 30px 60px;
+		background: none;
+		box-shadow: none;
+		float: none!important;
+		border: none;
+	}
+	div.articleDetailForm form div.titulo {
+		display: block!important;
+		width: 100%!important;
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/bgTitle.png) no-repeat left top;
+		font-size: 0px;
+		zoom: 1;
+		;
+		height: 51px;
+		position: absolute;
+		top: -40px!important;
+		margin: 0!important;
+	}
+	div.articleDetailForm form span {
+		float: left!important;
+		padding: 0 10px 0px 0px!important;
+		width: 200px;
+	}
+	div.articleDetailForm form input[type="text"] {
+		width: 24%!important;
+		float: left!important;
+		margin: 0 17px 0 0!important;
+		color: #494949;
+	}
+	div.articleDetailForm form button {
+		width: 191px!important;
+		float: right!important;
+		margin: 0!important;
+		height: 27px!important;
+		color: #000!important;
+		box-shadow: #d1cf9b 2px 2px 3px;
+		background-color: #fd7213!important;
+	}
+	div.articleDetailForm form .terminos {
+		display: block!important;
+		width: 32%!important;
+		position: absolute!important;
+		bottom: 10px!important;
+	}
+	div.articleDetailForm form .terminos span {
+		width: 60%!important;
+	}
+	div.articleDetailForm form .terminos .check {
+		float: left!important;
+	}
+	div.articleDetailForm form div {
+		width: auto;
+		display: block;
+		float: left;
+	}
+	div.articleDetailForm form div span.descripcion {
+		margin: 0!important;
+		display: block;
+		width: auto;
+		color: #000;
+	}
+	div.articleDetailForm form div input[type="text"] {
+		width: 100%!important;
+	}
+	div.articleDetailForm form div.checkbox {
+		display: block;
+		position: absolute;
+		left: 60px;
+		top: 60px;
+	}
+	div.articleDetailForm form div.al-ctr {
+		float: right;
+	}
+	header div.col-md-8.col-sm-6.col-xs-6 figure {
+		width: 92%!important;
+		height: auto;
+		margin-top: 10px!important;
+	}
+	header div.col-md-8.col-sm-6.col-xs-6 figure a img {
+		display: none!important;
+	}
+	header div.col-md-8.col-sm-6.col-xs-6 figure a {
+		background: url("https://viveviajar.s3.amazonaws.com/media/pre-evento/style-updates/bg-images/logo.png") no-repeat left top;
+		display: block;
+		width: 100%;
+		height: 62px;
+	}
+}
+/* IE8 uses \0 */
+@media all\0 {
+	div#sas_8932 {
+		background: rgb(250, 250, 250);
+		text-align: center;
+		border: solid 1px rgb(241, 241, 241);
+	}
+	div#sas_8932 div {
+		margin: 0 auto;
+	}
+	footer {
+		padding-bottom: 0px!important;
+	}
+	footer .row-fluid.foot {
+		margin-bottom: 0!important;
+		padding-bottom: 140px!important;
+	}
+	div#main-slider .box-form {
+		width: 100%!important;
+		position: fixed!important;
+		left: 0!important;
+		bottom: 0!important;
+		background: #fffcbd!important;
+		z-index: 9999!important;
+		margin: 0!important;
+		padding: 17px!important;
+		height: 120px!important;
+		box-shadow: 0 0 5px!important;
+	}
+	div#main-slider .box-form form {
+		max-width: 980px!important;
+		display: block!important;
+		margin: 0 auto!important;
+		padding: 30px 60px;
+	}
+	div#main-slider .box-form form span.title {
+		display: block!important;
+		width: 100%!important;
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/bgTitle.png) no-repeat left top;
+		font-size: 0px;
+		zoom: 1;
+		;
+		display: block;
+		width: 100%;
+		height: 51px;
+		position: absolute;
+		top: -20px;
+	}
+	div#main-slider .box-form form span {
+		float: left!important;
+		padding: 0 10px 0px 0px!important;
+	}
+	div#main-slider .box-form form input[type="text"] {
+		width: 24%!important;
+		float: left!important;
+		margin: 0 17px 0 0!important;
+		color: #494949;
+	}
+	div#main-slider .box-form form input[type="submit"] {
+		width: 24%!important;
+		float: right!important;
+		margin: 0!important;
+		height: 27px!important;
+		color: #000;
+		box-shadow: #d1cf9b 2px 2px 3px;
+		background-color: #fd7213;
+	}
+	div#main-slider .box-form form .terminos {
+		display: block!important;
+		width: 32%!important;
+		position: absolute!important;
+		bottom: 10px!important;
+	}
+	div#main-slider .box-form form .terminos span {
+		width: 60%!important;
+	}
+	div#main-slider .box-form form .terminos .check {
+		float: left!important;
+	}
+	.btn-normal {
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/registra-tu-correo.png) no-repeat left top!important;
+		display: block;
+		width: 100%!important;
+		text-indent: -9999em!important;
+		font-size: 0!important;
+		zoom: 1!important;
+		margin-top: 9px!important;
+		height: 45px!important;
+	}
+	div.publi_paises {
+		display: block;
+		width: auto!important;
+		padding: 10px 0 4px!important;
+	}
+	div.publi_paises a img {
+		display: none;
+	}
+	div.publi_paises a {
+		display: block;
+		width: 336px;
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/mincit_fontur-3.png) no-repeat center top;
+		height: 36px;
+	}
+	header .menu .row .col-md-4 .publi_paises a {
+		width: 336px!important;
+		margin: 5px 0 0 0!important;
+	}
+	#interna-pais .marcas .publi_paises {
+		margin-top: 5px!important;
+		float: right;
+	}
+	/*------------ARTICLE DETAIL FORM STYLES--------------*/
+	div.articleDetailForm {
+		width: 100%!important;
+		position: fixed!important;
+		left: 0!important;
+		bottom: 0!important;
+		background: #fffcbd!important;
+		z-index: 9999!important;
+		margin: 0!important;
+		padding: 17px!important;
+		height: 120px!important;
+		box-shadow: 0 0 5px!important;
+	}
+	div.articleDetailForm form {
+		max-width: 980px!important;
+		display: block!important;
+		margin: 0 auto!important;
+		padding: 30px 60px;
+		background: none;
+		box-shadow: none;
+		float: none!important;
+		border: none;
+	}
+	div.articleDetailForm form div.titulo {
+		display: block!important;
+		width: 100%!important;
+		background: url(https://viveviajar.s3-sa-east-1.amazonaws.com/media/pre-evento/style-updates/bg-images/bgTitle.png) no-repeat left top;
+		font-size: 0px;
+		zoom: 1;
+		;
+		height: 51px;
+		position: absolute;
+		top: -40px!important;
+		margin: 0!important;
+	}
+	div.articleDetailForm form span {
+		float: left!important;
+		padding: 0 10px 0px 0px!important;
+		width: 200px;
+	}
+	div.articleDetailForm form input[type="text"] {
+		width: 24%!important;
+		float: left!important;
+		margin: 0 17px 0 0!important;
+		color: #494949;
+	}
+	div.articleDetailForm form button {
+		width: 191px!important;
+		float: right!important;
+		margin: 0!important;
+		height: 27px!important;
+		color: #000!important;
+		box-shadow: #d1cf9b 2px 2px 3px;
+		background-color: #fd7213!important;
+	}
+	div.articleDetailForm form .terminos {
+		display: block!important;
+		width: 32%!important;
+		position: absolute!important;
+		bottom: 10px!important;
+	}
+	div.articleDetailForm form .terminos span {
+		width: 60%!important;
+	}
+	div.articleDetailForm form .terminos .check {
+		float: left!important;
+	}
+	div.articleDetailForm form div {
+		width: auto;
+		display: block;
+		float: left;
+	}
+	div.articleDetailForm form div span.descripcion {
+		margin: 0!important;
+		display: block;
+		width: auto;
+		color: #000;
+	}
+	div.articleDetailForm form div input[type="text"] {
+		width: 100%!important;
+	}
+	div.articleDetailForm form div.checkbox {
+		display: block;
+		position: absolute;
+		left: 60px;
+		top: 60px;
+	}
+	div.articleDetailForm form div.al-ctr {
+		float: right;
+	}
+	header div.col-md-8.col-sm-6.col-xs-6 figure {
+		width: 92%!important;
+		height: auto;
+		margin-top: 10px!important;
+	}
+	header div.col-md-8.col-sm-6.col-xs-6 figure a img {
+		display: none!important;
+	}
+	header div.col-md-8.col-sm-6.col-xs-6 figure a {
+		background: url("https://viveviajar.s3.amazonaws.com/media/pre-evento/style-updates/bg-images/logo.png") no-repeat left top;
+		display: block;
+		width: 100%;
+		height: 62px;
+	}
+
+}
