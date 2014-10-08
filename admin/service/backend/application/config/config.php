@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'https://admin.cyberlunes.com.co/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
