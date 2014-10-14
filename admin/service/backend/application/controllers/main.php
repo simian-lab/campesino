@@ -315,42 +315,6 @@ class Main extends MX_Controller {
 		}
 
 		function formulario_sorteo(){
-			
-		//	die($this->uri->segment(5));
-			if($this->uri->segment(5) == 'descargarFactura'){
-				$this->load->helper('download');
-				$url_base = explode('.',base_url());
-				$a = 4;
-
-				$path = '';
-				$archivo = '';
-
-			//	$url_base[0] = 'http://a3.static';
-			//	$url_static = implode('.',$url_base); 				
-
-				do{
-
-					switch ($_SERVER['SERVER_NAME'])
-					{
-						case 'admin.eltiempo-co-cyberlunes.dev.brandigital.com':
-							$url_static='http://a'.$a.'.static.eltiempo-co-cyberlunes.dev.brandigital.com/';
-						break;	
-						case 'admin.eltiempo-co-cyberlunes.stage.brandigital.com':	 
-							$url_static='http://a'.$a.'.static.eltiempo-co-cyberlunes.stage.brandigital.com/';
-						break;					
-						default:
-							$url_static='http://a'.$a.'.static.eltiempo-co-cyberlunes.live.brandigital.com/';
-						break;
-					}
-
-					$path = $url_static.'multimedia/formulario-sorteo/';
-					$archivo = file_get_contents($path.$this->uri->segment(6));
-					$a++;
-
-				}while($archivo == FALSE && $a <= 6);
-
-				force_download($this->uri->segment(6),$archivo);
-			}
 
 			$auth = $this->load->module('formulario_sorteo');
 		 	// Imprimo el valor obtenido

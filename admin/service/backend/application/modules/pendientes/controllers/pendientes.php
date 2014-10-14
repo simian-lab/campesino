@@ -17,77 +17,67 @@ class Pendientes extends Main {
 	{
 
 
-  $this->load->model('promociones/promociones_model');
+    $this->load->model('promociones/promociones_model');
 
-  //$arrMarcaPais = $this->promociones_model->get_marcapais();
-  $arrCategorias = $this->promociones_model->get_categorias();
-  $arrSubCategorias = $this->promociones_model->get_subcategorias();
-  $arrUsersAliados = $this->promociones_model->get_user_aliados();
-  // $arrTipoPromocion=array('0'=>'Premium','1'=>'General');
-   // $arrTipoPromocion= $this->promociones_model->get_paquetes();
-
-		$crud = new grocery_CRUD();
-		$crud->set_theme('flexigrid');
+    $arrCategorias = $this->promociones_model->get_categorias();
+    $arrSubCategorias = $this->promociones_model->get_subcategorias();
+    $arrUsersAliados = $this->promociones_model->get_user_aliados();
+  	$crud = new grocery_CRUD();
+  	$crud->set_theme('flexigrid');
 
 
 
-		$crud->set_table('PRO_PROMOCIONES');
-		$crud->where('AUTORIZADO',0);
+  	$crud->set_table('PRO_PROMOCIONES');
+  	$crud->where('AUTORIZADO',0);
     $crud->or_where('AUTORIZADO',null);
-		//$crud->or_where('AUTORIZADO',2);
-		$crud->set_subject('Promocines pendientes');
+  	//$crud->or_where('AUTORIZADO',2);
+  	$crud->set_subject('Promocines pendientes');
 
     $crud->display_as('PRO_NOMBRE','Titulo promoción')
-  ->display_as('PRO_DESCRIPCION','Descripción')
-                  ->display_as('PRO_ETIQUETA','Etiqueta')
-                  ->display_as('PRO_LOGO_PREMIUM','Imagen premium')
-                  ->display_as('PRO_LOGO_GENERAL','Imagen general')
-                  ->display_as('PRO_PRECIO_INICIAL','Precio inicial')
-                  ->display_as('PRO_PRECIO_FINAL','Precio final')
-                  ->display_as('PRO_DESCUENTO','Descuento')
-                  ->display_as('PRO_SRC_ID','Tipo de promoción')
-                  ->display_as('VISIBILITY','Visibilidad')
-                  ->display_as('PRO_URL','url')
-                  ->display_as('CAT_ID','Categoría')
-                  ->display_as('SUB_ID','Subcategoría')
-                  ->display_as('AUTORIZADO','Estado')
-                  ->display_as('PRO_MOTIVO_RECHAZO','Motivo rechazo')
-                  //->display_as('PRO_LOGO_VISA', 'Logo Visa')
-                  ->display_as('Paquete')
-                  ->display_as('PRO_TIPO_MONEDA', 'Moneda')
-                  ->display_as('PRO_FECHA', 'Fecha')
-                  ->display_as('PRO_AUTOR', 'Autor')
-                  ->display_as('PRO_USER_AUTORIZADOR', 'Aprobador')
-                  ->display_as('PRO_USER_CREADOR', 'Usuario')
-                  ->display_as('VISTA_PREVIA', 'Vista previa')
-                  ->display_as('ID_USER_CREADOR', 'ID Usuario');
+         ->display_as('PRO_DESCRIPCION','Descripción')
+         ->display_as('PRO_ETIQUETA','Etiqueta')
+         ->display_as('PRO_LOGO_PREMIUM','Imagen premium')
+         ->display_as('PRO_LOGO_GENERAL','Imagen general')
+         ->display_as('PRO_PRECIO_INICIAL','Precio inicial')
+         ->display_as('PRO_PRECIO_FINAL','Precio final')
+         ->display_as('PRO_DESCUENTO','Descuento')
+         ->display_as('PRO_SRC_ID','Tipo de promoción')
+         ->display_as('VISIBILITY','Visibilidad')
+         ->display_as('PRO_URL','url')
+         ->display_as('CAT_ID','Categoría')
+         ->display_as('SUB_ID','Subcategoría')
+         ->display_as('AUTORIZADO','Estado')
+         ->display_as('PRO_MOTIVO_RECHAZO','Motivo rechazo')
+         ->display_as('Paquete')
+         ->display_as('PRO_TIPO_MONEDA', 'Moneda')
+         ->display_as('PRO_FECHA', 'Fecha')
+         ->display_as('PRO_AUTOR', 'Autor')
+         ->display_as('PRO_USER_AUTORIZADOR', 'Aprobador')
+         ->display_as('PRO_USER_CREADOR', 'Usuario')
+         ->display_as('VISTA_PREVIA', 'Vista previa')
+         ->display_as('ID_USER_CREADOR', 'ID Usuario');
 
-   $state = $crud->getState();
+    $state = $crud->getState();
 
-   $crud->unset_delete();
-	 $crud->unset_add(); //Elimina el boton agregar
-   $crud->unset_edit(); //Elimina el boton agregar
+    $crud->unset_delete();
+    $crud->unset_add(); //Elimina el boton agregar
+    $crud->unset_edit(); //Elimina el boton agregar
 
-   $this->load->model('pendientes_model');
-   $result = $this->pendientes_model->get_grupo($this->session->userdata('sadmin_user_id'));
+    $this->load->model('pendientes_model');
+    $result = $this->pendientes_model->get_grupo($this->session->userdata('sadmin_user_id'));
 
-   $crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
+    $crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
     $crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
 
-   //$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
-   //$crud->set_field_upload('PRO_LOGO_GENERAL','multimedia/promociones/');
+    	//***************************	Relacion de tablas ***************************	
 
-
-  	//***************************	Relacion de tablas ***************************	
-
-    // $crud->fields('PRO_NOMBRE','PRO_LOGO','PRO_DESCRIPCION','PRO_SRC_ID','Tags','CAT_ID','SUB_ID','MAP_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_AUTORIZADOR','PRO_USER_ULTIMO','AUTORIZADO','PRO_URL','PRO_FECHA');
+      
     $crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_AUTOR','AUTORIZADO','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL', 'VISTA_PREVIA');
-    
-    // $crud->columns('PRO_NOMBRE','PRO_LOGO','VISIBILITY','CAT_ID','SUB_ID','MAP_ID');
+
     $crud->columns('PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_NOMBRE','PRO_AUTOR','VISIBILITY','AUTORIZADO','PRO_SRC_ID', 'Paquete');
 
 
-    $crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');//ESTA SECCION NO TIENE ESTA OPCION - CHEQUEAR
+    $crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
     $crud->set_field_upload('PRO_LOGO_GENERAL','multimedia/promociones/');
     $crud->callback_column('PRO_SRC_ID',array($this, 'tipo_promocion'));
     $crud->callback_column('Paquete', array($this, 'columna_paquete'));
@@ -97,17 +87,15 @@ class Pendientes extends Main {
     $crud->add_action('Rechazar','../../images/rechazar.png','','rechazar-promocion',array($this,'rechazar_promociones'));
     $crud->callback_field('CAT_ID',array($this,'get_categoria'));
     $crud->callback_field('SUB_ID',array($this,'get_subcategoria'));
-    //$crud->callback_field('PRO_USER_AUTORIZADOR',array($this,'get_aprobador'));
     $crud->callback_field('AUTORIZADO',array($this,'estado_promocion_field'));
     $crud->callback_field('PRO_USER_CREADOR',array($this,'get_usuarios_aliados'));
     $crud->callback_field('ID_USER_CREADOR',array($this,'get_id_user_creador'));
     $crud->callback_field('VISTA_PREVIA',array($this,'link_vista_previa'));
-    //$crud->callback_field('PRO_MOTIVO_RECHAZO',array($this,'motivo_rechazo_field'));
 
-    $crud->field_type('PRO_USER_ULTIMO','hidden',$this->session->userdata('sadmin_user_id')); //,
-    $crud->field_type('PRO_USER_AUTORIZADOR','hidden',$this->session->userdata('sadmin_user_id')); //,$this->session->userdata('sadmin_user_id')
-    //$crud->field_type('CAT_ID','dropdown',array('0'=>'Pendiente de aprobacion','1'=>'Aprobado','2'=>'Rechazado') );
-    //$crud->field_type('PRO_USER_CREADOR','dropdown',$arrUsersAliados);
+
+    $crud->field_type('PRO_USER_ULTIMO','hidden',$this->session->userdata('sadmin_user_id')); 
+    $crud->field_type('PRO_USER_AUTORIZADOR','hidden',$this->session->userdata('sadmin_user_id')); 
+  
     $crud->order_by('PRO_FECHA','DESC');
        
     
@@ -121,26 +109,7 @@ class Pendientes extends Main {
 
 
 /******************************************************************************/
-/*function motivo_rechazo_field($value, $post_array){
-  $this->load->model('pendientes_model');
-  $result = $this->pendientes_model->get_motivo_rechazo($post_array);
-  //print_r($result);
-  $resultado = '';
-  foreach($result as $motivo){
-    $resultado .=  '- '.$motivo.' <br />';
-  }
 
-  return $resultado;
-}
-function get_aprobador($value){
-  $this->load->model('pendientes_model');
-  $result = $this->pendientes_model->get_user($value);
-  if(!empty($result)){
-    return $result['username'];
-  }
-  return '';
-  
-}*/
 function show_imagen_premium($value){
   if($value != '')
     return '<img src="../../../../multimedia/promociones/'.$value.'" width="60" id="field-PRO_LOGO_PREMIUM"/>';
@@ -234,7 +203,7 @@ function tipo_moneda($value){
 }
 
 function columna_paquete($value, $row){
-     $this->load->model('pendientes_model');
+  $this->load->model('pendientes_model');
   //print_R($row);
   $paquete = $this->pendientes_model->get_paquete($row->PRO_USER_CREADOR);
 

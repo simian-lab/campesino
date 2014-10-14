@@ -174,7 +174,7 @@ function cambiarValorCodSms(){
           var sub_id_selected = $('#field-SUB_ID').val();
           $.ajax({
             type: 'POST',
-            url: '<?php echo base_url('index.php/main/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
+            url: '<?php echo base_url('index.php/tags_subcategorias/tags_subcategorias/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
             success: function(data){
               obj = JSON.parse(data);
               if(obj){
@@ -200,7 +200,7 @@ function cambiarValorCodSms(){
         $('#field-CAT_ID').on('change', function() {
             $.ajax({
               type: 'POST',
-              url: '<?php echo base_url('index.php/main/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
+              url: '<?php echo base_url('index.php/tags_subcategorias/tags_subcategorias/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
               success: function(data){
                 obj = JSON.parse(data);
                 if(obj){
@@ -228,41 +228,7 @@ function cambiarValorCodSms(){
     $('#crudForm').submit(function(){
       return false;
     });
-  // $(".form-div").append("<div class='form-field-box odd'><div id='label' class='form-display-as-box'>Vista previa</div> <div id='vista-previa' class='form-input-box'><a href='javascript:;' id='open'>Vista previa</a></div> </div> ");
-  //$("#PRO_URL_field_box").append("<div class='form-field-box odd'><div id='label' class='form-display-as-box'>Vista previa</div> <div id='vista-previa' class='form-input-box' style='margin-top:5px'><a target='_blank'  id='pruebavistaprevia'>Vista previa</a></div> </div> ");
-  // $("#PRO_URL_field_box").append("<a href='javascript:;' id='open'>Vista previa</a>");
-
-    /*$('#pruebavistaprevia').click(function(){
-      var nombre_promocion = $('#field-PRO_NOMBRE').text();
-      var descripcion_promocion = $('#field-PRO_DESCRIPCION').text();
-      var precio_inicial_promocion = $('#field-PRO_PRECIO_INICIAL').text();
-      var precio_final_promocion = $('#field-PRO_PRECIO_FINAL').text();
-      var descuento_promocion = $('#field-PRO_DESCUENTO').text();
-      var url_promocion = $('#field-PRO_URL').text();
-      var nombre_imagen_promocion_premium = $('#field-PRO_LOGO_PREMIUM').text();
-      var nombre_imagen_promocion_general = $('#field-PRO_LOGO_GENERAL').text();
-      if(nombre_imagen_promocion_general != '' && nombre_imagen_promocion_premium != ''){
-        var seccion = 'premium';
-      }
-      else if(nombre_imagen_promocion_premium != ''){
-        var seccion = 'premium_home';
-      }
-      else if(nombre_imagen_promocion_general != ''){
-        var seccion = 'general';
-      }
-      //alert(nombre_imagen_promocion_general)
-      //window.open('<?php echo base_url('index.php/main/vista_previa_promociones') ?>/'+nombre_promocion+'/'+descripcion_promocion+'/'+precio_inicial_promocion+'/'+precio_final_promocion+'/'+descuento_promocion+'/'+url_promocion);
-      var newWin = window.open();
-      $.ajax({
-        type: 'POST',
-        url: '<?php echo base_url('index.php/main/vista_previa_promociones') ?>',
-        data: {nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion},
-        success: function(data){
-          newWin.document.write(data);
-        }
-      });
-
-    });*/
+ 
 
   });
 

@@ -30,13 +30,12 @@ class Tags_subcategorias extends Main {
 		$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
         $crud->display_as('SUB_ID','SID')
-            ->display_as('SUB_NOMBRE','Nombre')
-	        ->display_as('VISIBILITY','Visibilidad');
+             ->display_as('SUB_NOMBRE','Nombre')
+	         ->display_as('VISIBILITY','Visibilidad');
 
 	    $crud->unset_read();
 
 	    //***************************	Relacion de tablas ***************************	
-		//$crud->set_relation_n_n('Categorías', 'SXC_SUBCATEGORIAXCATEGORIA', 'CAT_CATEGORIA', 'CAT_ID', 'CAT_ID', 'CAT_NOMBRE' );
 	     $crud->set_relation_n_n('Categorias', 'SXC_SUBCATEGORIAXCATEGORIA', 'CAT_CATEGORIA', 'SUB_ID', 'CAT_ID', 'CAT_NOMBRE','VISIBILITY' );
 		//***************************	Relacion de tablas ***************************	
 
@@ -47,7 +46,7 @@ class Tags_subcategorias extends Main {
         $crud->field_type('SUB_NOMBRE','String');
         $crud->field_type('VISIBILITY','true_false');
         $crud->field_type('SUB_SLUG', 'hidden');
-        //$crud->field_type('Categorías', 'dropdown', $categorias);
+   
 
         $crud->unique_fields('SUB_NOMBRE');
 
@@ -71,6 +70,12 @@ class Tags_subcategorias extends Main {
   	    $post_array['SUB_SLUG'] = url_title(convert_accented_characters($this->input->post('SUB_NOMBRE')), 'dash', TRUE);
    		return $post_array;
     }
+
+    function get_subcategorias_promociones($cat_id){
+		$this->load->model('tag_subcategoria_model');
+		$result = $this->tag_subcategoria_model->get_subcategorias_promociones($cat_id);
+		return $result;
+	}
     
 
 

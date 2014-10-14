@@ -73,8 +73,8 @@ class formulario_sorteo extends Main {
 
 function field_callback_image($value,$primary_key){
 
-	return '<a href="'.site_url('main/formulario_sorteo/read/'.$primary_key.'/descargarFactura/'.$value).'" id="descargaFactura" />Descargar factura</a>';
-
+	//return '<a href="'.site_url('main/formulario_sorteo/read/'.$primary_key.'/descargarFactura/'.$value).'" id="descargaFactura" />Descargar factura</a>';
+	return '<a href="'.site_url('formulario_sorteo/descarga_factura/descargarFactura/'.$value).'" id="descargaFactura" />Descargar factura</a>';
 
 }
 
