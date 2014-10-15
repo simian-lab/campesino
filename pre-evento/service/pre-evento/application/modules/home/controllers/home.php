@@ -9,29 +9,32 @@ class Home extends CI_Controller {
           parent:: __construct();
        	  $this->load->model('home_model');
        	  $this->load->library("pagination");
+          //$this->pagination->CI = & $this;
        	  $this->load->helper('url');
        	  $this->load->helper('text');
           $this->load->library('session');
           $this->load->helper('cookie');
+          $this->load->helper('get_app_data');
           $this->load->helper('fechas-articulos');
           $this->load->library('user_agent');
      }
     
     public function index($paramOrigen='') { 
 
-       $origen=$this->session->userdata('origen');
-       if($origen=='registro_success'){
+       if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
                 redirect('/gracias');
                 exit();
        }
 
         $data = null;
         $data = get_url_base();
+
+        $data['jsonParam']=get_app_data();
         
-        $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
+        $meta_title = 'DiadeModa';
+        $meta_descripcion = 'Este #DíaDeModa es para renovar tu closet. Vía DíaDeModa.com';
         $meta_keys = "Descuentos, ofertas, rebajas, outlet, promociones, precios bajos, barato, deals, artículos baratos, productos a menor precio, Colombia, Bogotá, Medellín, Cali, Barranquilla, cyberlunes, ciberlunes, cybermonday, cibermonday";
-        $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
+        $meta_imagen = $data['base_url_static']."img/logo_share.jpg";
         $meta_url = base_url();
 
         $data['meta_title'] = $meta_title;
@@ -51,20 +54,24 @@ class Home extends CI_Controller {
         $data['total_articulos'] = $this->home_model->get_count_articulos();
 
 
-        $data['s_pageName']='cyberlunes: pre-evento: home'; // Slider de la home de articulos
-        $data['s_channel']= 'cyberlunes: pre-evento: home  ';
+        $data['s_pageName']='DíadeModa: pre-evento: home'; // Slider de la home de articulos
+        $data['s_channel']= 'DíadeModa: pre-evento: home  ';
         $data['s_prop1']= '';
         $data['s_prop2']= '';
-        $data['sitio_seccion'] = '58465/438587'; 
+
+        $data['siteId'] = 63362;
+        $data['pageId'] = 492324; 
+        
 
         if($this->agent->is_mobile()){
           $data['is_mobile'] = 1;
         }
         else{
           $data['is_mobile'] = 0;
+          $data['banderole'] = 1;
         }
 
-        if($this->session->userdata('formularios') == 'hidden'){
+        if(isset($_COOKIE['formularios']) && $_COOKIE['formularios'] == 'hidden'){
           $data['hide_form'] = 1;
         }
 
@@ -83,9 +90,9 @@ class Home extends CI_Controller {
 
 
     public function detalle($art_slug=''){
-       $origen=$this->session->userdata('origen');
+       
 
-       if($origen=='registro_success'){
+       if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
                 redirect('/gracias');
                 exit();
        }
@@ -98,6 +105,8 @@ class Home extends CI_Controller {
 
       $data = null;
       $data = get_url_base();
+
+      $data['jsonParam']=get_app_data();
 
       $data['title'] = 'Cyberlunes';
 
@@ -121,14 +130,12 @@ class Home extends CI_Controller {
       $data['meta_url'] = $meta_url;
       $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
       
-      $data['s_pageName']='cyberlunes: pre-evento: detalle: '.$art_slug; 
-      $data['s_channel']= 'cyberlunes: pre-evento: detalle';
-      $data['s_prop1']= 'cyberlunes: pre-evento: detalle: '.$art_slug;
+      $data['s_pageName']='DíadeModa: pre-evento: detalle: '.$art_slug; 
+      $data['s_channel']= 'DíadeModa: pre-evento: detalle';
+      $data['s_prop1']= 'DíadeModa: pre-evento: detalle: '.$art_slug;
       $data['s_prop2']= '';
       
-      if(empty($data['articulo'])){
-        show_404('error_404');
-      }
+      
       $image_size = getimagesize($data['base_url_img_articulos'].$data['articulo'][0]->ART_IMAGEN);
       if($image_size[0] > $image_size[1]){
         $data['sitio_seccion'] = '58465/438588'; 
@@ -144,9 +151,14 @@ class Home extends CI_Controller {
         $data['is_mobile'] = 0;
       }
 
-      if($this->session->userdata('formularios') == 'hidden'){
+      if(isset($_COOKIE['formularios']) && $_COOKIE['formularios'] == 'hidden'){
         $data['hide_form'] = 1;
       }
+
+      $data['breadcrumb'] = $this->home_model->get_titulo_slug($this->uri->segment(2));
+
+      $data['siteId'] = 63362;
+      $data['pageId'] = 492326; 
 
       //$data['id_form_mobile'] = 'id-form-detalle-mobile';
       //$data['class_form_mobile'] = 'box-form';
@@ -172,7 +184,7 @@ class Home extends CI_Controller {
       }*/
 
       $this->load->view('template/terminos_condiciones');
-      if(!$this->agent->is_mobile() && !$this->session->userdata('formularios')){
+      if(!$this->agent->is_mobile() && !isset($_COOKIE['formularios'])){
         $this->load->view('template/form_popup');
       }
       $this->load->view('template/footer_share', $data);
@@ -185,62 +197,44 @@ class Home extends CI_Controller {
       $data = null;
       $data = get_url_base();
 
-  		$config = array();
-  		$config['base_url'] = base_url();
-  		$arrayCantArt = $this->home_model->get_count_articulos();
-  		$config['total_rows'] = $arrayCantArt[0]->TOTAL;
-  		$config['per_page'] =  6;
-  		$config['num_links'] = 5;
-  		$config['uri_segment'] = 1;
+      $config = array();
+      $config['base_url'] = base_url();
+      $arrayCantArt = $this->home_model->get_count_articulos();
+      $config['total_rows'] = $arrayCantArt[0]->TOTAL;
+      $config['per_page'] =  6;
+      $config['num_links'] = 5;
+      $config['uri_segment'] = 1;
       $config['use_page_numbers'] = TRUE;
       $config['enable_query_strings'] = TRUE;
 
-  		$config['next_link'] = '<img src="'.$data['base_url_static'].'img/arrow-right.png" alt="">';
-  		$config['next_tag_open'] = '<div class="pag-arrow-right" style="vertical-align:middle">';
-  		$config['next_tag_close'] = '</div>';
-  		$config['prev_link'] = '<img src="'.$data['base_url_static'].'img/arrow-left.png" alt="">';
-  		$config['prev_tag_open'] = '<div class="pag-arrow-left" style="vertical-align:middle">';
-  		$config['prev_tag_close'] = '</div>';
-  		$config['cur_tag_open'] = '<li><a href="#" class="activa">';
-  		$config['cur_tag_close'] = '</a></li>';
-  		$config['num_tag_open'] = '<li>';
-  		$config['num_tag_close'] = '</li>';
-  		$config['first_link'] = FALSE;
-  		$config['last_link'] = FALSE;
+      $config['next_link'] = '<img src="'.$data['base_url_static'].'img/arrow-right.png" alt="">';
+      $config['next_tag_open'] = '<div class="pag-arrow-right" style="vertical-align:middle">';
+      $config['next_tag_close'] = '</div>';
+      $config['prev_link'] = '<img src="'.$data['base_url_static'].'img/arrow-left.png" alt="">';
+      $config['prev_tag_open'] = '<div class="pag-arrow-left" style="vertical-align:middle">';
+      $config['prev_tag_close'] = '</div>';
+      $config['cur_tag_open'] = '<li><a href="#" class="activa">';
+      $config['cur_tag_close'] = '</a></li>';
+      $config['num_tag_open'] = '<li>';
+      $config['num_tag_close'] = '</li>';
+      $config['first_link'] = FALSE;
+      $config['last_link'] = FALSE;
 
-  		$this->pagination->initialize($config); 
+      $this->pagination->initialize($config); 
 
-	}
-
-
-  public function setCookie(){
-
-    $cookie = array(
-        'name'   => 'suscripcion',
-        'value' => 'suscripcion',
-        'expire' => '86500'
-    );
-
-    $this->input->set_cookie($cookie);
-    $salida['code'] = '0'; 
-    $json= json_encode($salida);
-
-
-        $this->output
-         ->set_content_type('application/json')
-         ->set_output($json);
-
-        return;
   }
+
 
   public function setOrigen(){
 
-    $newdata = array(
-                    'origen' => 'registro_success',
-                    'formularios' => 'hidden'
+    /*$newdata = array(
+                    'origen' => 'registro_success'
                     );
 
-    $this->session->set_userdata($newdata);
+    $this->session->set_userdata($newdata);*/
+
+    setcookie('formularios', 'hidden', time()+60*60*24*30, '/', null, null, true);
+    setcookie('origen', 'registro_success', time()+60*60*24*30, '/', null, null, true);
 
     $salida['code'] = '0'; 
     $json= json_encode($salida);
@@ -255,12 +249,12 @@ class Home extends CI_Controller {
 
   public function getOrigen(){
     $data = '';
-    if($this->session->userdata('formularios') == 'hidden'){
+    if(isset($_COOKIE['formularios']) && $_COOKIE['formularios'] == 'hidden'){
       $data['hide_form'] = 1;
     }
-	if($this->agent->is_mobile()){
-          $data['is_mobile'] = 1;
-        }
+	  if($this->agent->is_mobile()){
+      $data['is_mobile'] = 1;
+    }
     $json= json_encode($data);
     $this->output
          ->set_content_type('application/json')
@@ -268,13 +262,14 @@ class Home extends CI_Controller {
   }
 
   public function gracias(){
-      $array_items = array('origen' => '');
-      $this->session->unset_userdata($array_items);
+      setcookie('origen', FALSE, -1, '/', null, null, true);
       $this->index('gracias');
   }
 
   public function prueba(){
-    $this->load->view('prueba');
+    $data = null;
+    $data = get_url_base();
+    $this->load->view('prueba', $data);
   }
 
   public function prueba2(){

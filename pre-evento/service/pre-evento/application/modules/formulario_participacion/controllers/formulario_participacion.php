@@ -10,6 +10,7 @@ class formulario_participacion extends CI_Controller {
        	  $this->load->model('formulario_participacion_model');
        	  $this->load->helper('url');
           $this->load->helper('form');
+          $this->load->helper('get_app_data');
           $this->load->library('form_validation');
           $this->load->library('email');
           $this->load->library('user_agent');
@@ -17,9 +18,9 @@ class formulario_participacion extends CI_Controller {
     
     public function index($success = '') { 
 
-       $origen=$this->session->userdata('origen');
 
-       if($origen=='registro_success'){
+
+       if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
                 redirect('/gracias');
                 exit();
        }
@@ -28,7 +29,9 @@ class formulario_participacion extends CI_Controller {
         $data = null;
         $data = get_url_base();
 
-        $meta_title = 'Cyberlunes';
+        $data['jsonParam']=get_app_data();
+
+        $meta_title = 'DiadeModa';
         $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
         $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
@@ -51,7 +54,7 @@ class formulario_participacion extends CI_Controller {
             $data['is_mobile'] = 0;
           }
 
-        if($this->session->userdata('formularios') == 'hidden'){
+        if(isset($_COOKIE['formularios']) && $_COOKIE['formularios'] == 'hidden'){
           $data['hide_form'] = 1;
         }
 
@@ -59,11 +62,13 @@ class formulario_participacion extends CI_Controller {
 
         $data['slider_patrocinadores'] = $this->formulario_participacion_model->get_patrocinadores();
 
-        $data['s_pageName']='cyberlunes: pre-evento: formulario: participacion'; 
-        $data['s_channel']= 'cyberlunes: pre-evento: formulario ';
-        $data['s_prop1']= 'cyberlunes: pre-evento: formulario: participacion';
+        $data['s_pageName']='DíadeModa: pre-evento: formulario: participacion'; 
+        $data['s_channel']= 'DíadeModa: pre-evento: formulario ';
+        $data['s_prop1']= 'DíadeModa: pre-evento: formulario: participacion';
         $data['s_prop2']= '';
-        $data['sitio_seccion'] = '58465/438590'; 
+        
+        $data['siteId'] = 63362;
+        $data['pageId'] = 492326;  
 
         //$data['id_form_mobile'] = 'form-collapse';
         $data['class_form_mobile'] = 'mobile';
@@ -123,8 +128,9 @@ class formulario_participacion extends CI_Controller {
         }
         else
         {
+            $this->config->load('email');
             $config['protocol'] = 'smtp';
-            $config['smtp_host'] = 'localhost';
+            $config['smtp_host'] = $this->config->item('smtp_host');
             
 
             $this->email->initialize($config);
@@ -138,10 +144,9 @@ class formulario_participacion extends CI_Controller {
                         URL de la tienda: '.$this->input->post('url').'
                         Comentarios: '.$this->input->post('comentarios');
 
-            $this->email->from('no-reply@cyberlunes.com.co');
-            $this->email->to('pathen@eltiempo.com, nelfer@eltiempo.com');
-            $this->email->bcc('mcisneros@brandigital.com,icano@brandigital.com,ggiorda@brandigital.com'); 
-            $this->email->subject('Formulario de particiación de Cyberlunes');
+            $this->email->from($this->config->item('website_sender'));
+            $this->email->to($this->config->item('email_to'));
+            $this->email->subject('Formulario de particiación de DiadeModa');
             $this->email->message($mensaje); 
             $this->email->send();
 
