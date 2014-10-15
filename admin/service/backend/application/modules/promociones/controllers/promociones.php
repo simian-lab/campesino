@@ -144,6 +144,7 @@ class Promociones extends Main {
 		$crud->set_rules('PRO_PRECIO_INICIAL','Precio inicial','integer|less_than[100000000]');
 		$crud->set_rules('PRO_PRECIO_FINAL','Precio final','integer|less_than[100000000]');
 		$crud->set_rules('PRO_DESCUENTO','Descuento','integer|max_length[3]|less_than[101]');
+		$crud->set_rules('PRO_NOMBRE','Nombre promoción','required|is_unique[PRO_PROMOCIONES.PRO_NOMBRE]');
 		$crud->callback_column('PRO_SRC_ID',array($this,'tipo_promocion'));
 		
 
