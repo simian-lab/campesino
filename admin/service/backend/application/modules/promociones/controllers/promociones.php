@@ -92,7 +92,8 @@ class Promociones extends Main {
              ->display_as('PRO_USER_CREADOR', 'Usuario')
              ->display_as('VISTA_PREVIA', 'Vista previa')
              ->display_as('PRO_FECHA', 'Fecha')
-             ->display_as('ID_USER_CREADOR', 'ID Usuario');
+             ->display_as('ID_USER_CREADOR', 'ID Usuario')
+             ->display_as('PRO_HASH', 'Hash');
 
 
 
@@ -104,10 +105,10 @@ class Promociones extends Main {
 
 		
         if($result['group_id']==3){
-        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_URL','PRO_AUTOR','ID_USER_CREADOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA');
+        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_URL','PRO_AUTOR','ID_USER_CREADOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH');
         }
         else{
-        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA');
+        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH');
         }
         $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID');
         $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'Paquete', 'PRO_SRC_ID');
@@ -170,6 +171,7 @@ class Promociones extends Main {
 		$crud->field_type('MAR_ID','dropdown', $arrMarcas);
 		$crud->field_type('PRO_TIPO_MONEDA', 'true_false');
 		$crud->field_type('VISTA_PREVIA','String');
+		$crud->field_type('PRO_HASH','invisible');
 
 		 
 		if( $state=='edit'){
@@ -204,6 +206,13 @@ class Promociones extends Main {
 	}
 
 /********************************************************************/
+
+function generar_hash(){
+	$uniqid = 'p' .rand(1,10000 ) . uniqid('',true);
+    $hash = sha1($uniqid);
+    return $hash;
+}
+
 function change_name_image($files_to_upload,$field_info){
 	if($files_to_upload[$field_info->encrypted_field_name]['name'] != filter_var($files_to_upload[$field_info->encrypted_field_name]['name'], FILTER_SANITIZE_SPECIAL_CHARS)){
 		return 'Nombre de imagen incorrecto';
@@ -360,6 +369,7 @@ $msg_error=$datos[0]["RESPUESTA"];
     $post_array['PRO_USER_ULTIMO']=$this->session->userdata('sadmin_user_id');
     $post_array['PRO_USER_AUTORIZADOR']=$this->session->userdata('sadmin_user_id');
     $post_array['PRO_AUTOR']=$this->session->userdata('username');
+    $post_array['PRO_HASH'] = $this->generar_hash();
 
 	return $post_array;
 

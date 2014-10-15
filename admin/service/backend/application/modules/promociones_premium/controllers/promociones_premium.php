@@ -80,7 +80,8 @@ class Promociones_premium extends Main {
              ->display_as('MAR_ID','Marca')
              ->display_as('PRO_LOGO_VISA','Visa')
              ->display_as('PRO_TIPO_MONEDA', 'Moneda')
-             ->display_as('VISTA_PREVIA', 'Vista previa');
+             ->display_as('VISTA_PREVIA', 'Vista previa')
+             ->display_as('PRO_HASH', 'Hash');
 
 
 
@@ -93,7 +94,7 @@ class Promociones_premium extends Main {
 
  
  		
-		$crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA', 'VISTA_PREVIA');
+		$crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA', 'VISTA_PREVIA','PRO_HASH');
         $crud->required_fields('PRO_NOMBRE','PRO_DESTINO','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','PRO_URL','CAT_ID','MAR_ID');
         $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO');
 
@@ -157,6 +158,7 @@ class Promociones_premium extends Main {
 		$crud->field_type('PRO_USER_ULTIMO','invisible');
 		$crud->field_type('PRO_USER_AUTORIZADOR','invisible');
 		$crud->field_type('PRO_AUTOR','invisible');
+		$crud->field_type('PRO_HASH','invisible');
 
 		$crud->set_language('spanish');
 		
@@ -169,6 +171,12 @@ class Promociones_premium extends Main {
 	}
 
 /********************************************************************/
+function generar_hash(){
+	$uniqid = 'p' .rand(1,10000 ) . uniqid('',true);
+    $hash = sha1($uniqid);
+    return $hash;
+}
+
 function change_name_image($files_to_upload,$field_info){
 	if($files_to_upload[$field_info->encrypted_field_name]['name'] != filter_var($files_to_upload[$field_info->encrypted_field_name]['name'], FILTER_SANITIZE_SPECIAL_CHARS)){
 		return 'Nombre de imagen incorrecto';
@@ -244,6 +252,7 @@ $msg_error=$datos[0]["RESPUESTA"];
     $post_array['PRO_AUTOR']=$this->session->userdata('username');
     $post_array['PRO_SRC_ID']=3;
     $post_array['PRO_LOGO_VISA']=1;
+    $post_array['PRO_HASH'] = $this->generar_hash();
 
 	return $post_array;
 
