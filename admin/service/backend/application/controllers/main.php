@@ -353,6 +353,11 @@ class Main extends MX_Controller {
 			echo $retorno = modules::run('modules/promociones_rechazadas/index');	
 	    }
 
+	    function lista_blanca_dominios(){
+	    	$auth = $this->load->module('lista_blanca_dominios');
+			echo $retorno = modules::run('modules/lista_blanca_dominios/index');	
+	    }
+
 	    function prueba_mail(){
 	    	$this->load->library('email');
 			$config['protocol'] = 'smtp';
