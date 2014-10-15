@@ -20,20 +20,49 @@
 
 
 switch ($_SERVER['SERVER_NAME'])
-{
-	case 'pre-evento.eltiempo-co-cyberlunes.dev.brandigital.com':
-		header('Access-Control-Allow-Origin:http://pre-evento.eltiempo-co-cyberlunes.dev.brandigital.com,http://ads.eltiempo.com');
-		define('ENVIRONMENT', 'development');	
+{	
+	case 'pre-evento.cyberlunes.local.brandigital.com':	 
+		$dominios_permitidos = array(
+				'http://pre-evento.cyberlunes.local.brandigital.com',
+				'https://pre-evento.cyberlunes.local.brandigital.com',
+				'http://static.cyberlunes.local.brandigital.com',
+				'https://static.cyberlunes.local.brandigital.com',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'local');
 	break;
-	case 'pre-evento.eltiempo-co-cyberlunes.stage.brandigital.com':	    	
-		header('Access-Control-Allow-Origin:http://pre-evento.eltiempo-co-cyberlunes.stage.brandigital.com,http://ads.eltiempo.com');
+	case 'pre-evento.cyberlunes.dev.brandigital.com':	 
+		$dominios_permitidos = array(
+				'http://pre-evento.cyberlunes.dev.brandigital.com',
+				'https://pre-evento.cyberlunes.dev.brandigital.com',
+				'http://static.cyberlunes.dev.brandigital.com',
+				'https://static.cyberlunes.dev.brandigital.com',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'development');
+	break;
+	case 'pre-evento-stage.cyberlunes.com':	 
+		$dominios_permitidos = array(
+				'http://pre-evento-stage.cyberlunes.com',
+				'https://pre-evento-stage.cyberlunes.com',
+				'http://static-stage.cyberlunes.com',
+				'https://static-stage.cyberlunes.com',
+				'http://fonts.gstatic.com/'
+			);
         define('ENVIRONMENT', 'testing');
 	break;
-	default:
-		header('Access-Control-Allow-Origin:http://pre-evento.eltiempo-co-cyberlunes.live.brandigital.com,http://www.cyberlunes.com.co,http://ads.eltiempo.com');
-		define('ENVIRONMENT', 'production');	
+	case 'www.cyberlunes.com.co':	 
+		$dominios_permitidos = array(
+				'http://www.cyberlunes.com.co',
+				'https://www.cyberlunes.com.co',
+				'http://static.cyberlunes.com.co',
+				'https://static.cyberlunes.com.co',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'production');
 	break;
 }
+header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
 
 
 /*
@@ -50,26 +79,17 @@ if (defined('ENVIRONMENT'))
 {
 	switch (ENVIRONMENT)
 	{
+		case 'local':
 		case 'development':
-	
-			//error_reporting(0);
 			error_reporting(E_ALL);
 			ini_set('display_errors', TRUE);
 			ini_set('display_startup_errors', TRUE);
 		break;
 		case 'testing':
 			error_reporting(0);
-			/*error_reporting(E_ALL);
-			ini_set('display_errors', TRUE);
-			ini_set('display_startup_errors', TRUE);*/
 		break;
 		case 'production':
-		//	error_reporting(0);
-
-
-			error_reporting(E_ALL);
-			ini_set('display_errors', TRUE);
-			ini_set('display_startup_errors', TRUE);
+			error_reporting(0);
 		break;
 		default:
 			exit('The application environment is not set correctly.');
