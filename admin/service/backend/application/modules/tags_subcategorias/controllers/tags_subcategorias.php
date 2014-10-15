@@ -70,12 +70,6 @@ class Tags_subcategorias extends Main {
   	    $post_array['SUB_SLUG'] = url_title(convert_accented_characters($this->input->post('SUB_NOMBRE')), 'dash', TRUE);
    		return $post_array;
     }
-
-    function get_subcategorias_promociones($cat_id){
-		$this->load->model('tag_subcategoria_model');
-		$result = $this->tag_subcategoria_model->get_subcategorias_promociones($cat_id);
-		return $result;
-	}
     
 
 

@@ -79,7 +79,7 @@ function cambiarValorCodSms(){
 
         $.ajax({
           type: 'POST',
-          url: '<?php echo base_url('index.php/main/vista_previa_promociones') ?>',
+          url: '<?php echo base_url('index.php/vista_previa/vista_previa/vista_previa_promociones') ?>',
           data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion, tipo_moneda: tipo_moneda_promocion},
           success: function(data){
             newWin.document.write(data);
@@ -173,7 +173,7 @@ function cambiarValorCodSms(){
           var sub_id_selected = $('#field-SUB_ID').val();
           $.ajax({
             type: 'POST',
-            url: '<?php echo base_url('index.php/tags_subcategorias/tags_subcategorias/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
+            url: '<?php echo base_url('index.php/tags_subcategorias/get_subcategorias_promociones/index') ?>/'+$('#field-CAT_ID').val(),
             success: function(data){
               obj = JSON.parse(data);
               if(obj){
@@ -202,7 +202,7 @@ function cambiarValorCodSms(){
         $('#field-CAT_ID').on('change', function() {
             $.ajax({
               type: 'POST',
-              url: '<?php echo base_url('index.php/tags_subcategorias/tags_subcategorias/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
+              url: '<?php echo base_url('index.php/tags_subcategorias/get_subcategorias_promociones/index') ?>/'+$('#field-CAT_ID').val(),
               success: function(data){
                 obj = JSON.parse(data);
                 if(obj){
