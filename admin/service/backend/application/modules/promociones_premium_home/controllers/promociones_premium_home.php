@@ -108,7 +108,12 @@ class Promociones_premium_home extends Main {
 		$crud->set_rules('PRO_PRECIO_INICIAL','Precio inicial','integer|less_than[100000000]');
 		$crud->set_rules('PRO_PRECIO_FINAL','Precio final','integer|less_than[100000000]');
 		$crud->set_rules('PRO_DESCUENTO','Descuento','integer|max_length[3]|less_than[101]');
-		$crud->set_rules('PRO_NOMBRE','Nombre promoción','max_length[35]|required|is_unique[PRO_PROMOCIONES.PRO_NOMBRE]');
+		
+		if($state == 'insert_validation')
+			$crud->set_rules('PRO_NOMBRE','Nombre promoción','max_length[35]|required|is_unique[PRO_PROMOCIONES.PRO_NOMBRE]');
+		else
+			$crud->set_rules('PRO_NOMBRE','Nombre promoción','max_length[35]|required');
+
 		$crud->set_rules('PRO_DESCRIPCION','Descripción','max_length[68]|required');
 
         $crud->unset_texteditor('PRO_DESCRIPCION','full_text');
