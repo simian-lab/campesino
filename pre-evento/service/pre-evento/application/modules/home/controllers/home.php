@@ -59,8 +59,7 @@ class Home extends CI_Controller {
         $data['s_prop1']= '';
         $data['s_prop2']= '';
 
-        $data['siteId'] = 63362;
-        $data['pageId'] = 492324; 
+        $data['sitio_seccion'] = '58465/438587'; 
         
 
         if($this->agent->is_mobile()){
@@ -156,9 +155,6 @@ class Home extends CI_Controller {
       }
 
       $data['breadcrumb'] = $this->home_model->get_titulo_slug($this->uri->segment(2));
-
-      $data['siteId'] = 63362;
-      $data['pageId'] = 492326; 
 
       //$data['id_form_mobile'] = 'id-form-detalle-mobile';
       //$data['class_form_mobile'] = 'box-form';
