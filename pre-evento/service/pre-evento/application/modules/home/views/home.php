@@ -18,8 +18,8 @@
         </noscript>
     </div>
     <div class="share">
-        <a href="#" onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
-        <a href="#"  onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
+        <a href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
+        <a href="#"  onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
     </div>
     <div class="container">
         <!-- Máximo 7 imagenes, con 8 se rompen los controles, por favor verificar eso en el administrsdor -->
@@ -45,7 +45,7 @@
                 <div class="item"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img src="<?php echo $base_url_img_pautas;?><?php echo $img ?>" alt=""></a></div>
                 <?php endforeach; ?>
             </div>       
-            <!--<div class="countDown">
+            <div class="countDown">
                 <span class="title">FALTAN</span>
                 <div id="defaultCountdown"></div>
                 <script>
@@ -57,7 +57,7 @@
                     <li>Horas</li>
                     <li>Minutos</li>
                 </ul>
-            </div>   -->
+            </div> 
             <?php if(count($slider_pautas) > 1): ?>          
             <div class="customNavigation bg">
                 <div class="navigation">
@@ -74,7 +74,7 @@
                     </hgroup>
                 </header>                        
                 <section>
-                    <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251011" onSubmit='s.linkTrackVars="events,eVar38"; s.linkTrackEvents="event5"; s.eVar38="header";s.events="event5";s.tl(true,"o","Formulario Registro"); return (!(UPTvalidateform(document.UPTml251011)));'>
+                    <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251011" onSubmit='return (!(UPTvalidateform(document.UPTml251011)));'>
                         <input type="hidden" name="submitaction" value="3">
                         <input type="hidden" name="mlid" value="251010">
                         <input type="hidden" name="siteid" value="2010001358">

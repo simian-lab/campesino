@@ -1,4 +1,4 @@
-        <footer class="main" <?php //(isset($hide_form)?print('style="margin-bottom:0px"'):print('')) ?> style="margin-bottom:0px">
+        <footer class="main" id="footer_main">
             <div class="container">
                 <div class="row sponsor">                            
                     <div class="col-md-12 center">
@@ -68,8 +68,8 @@
                         </div>
                     </div>
                     <div class="social">
-                        <a class="fb" href="#" onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
-                        <a class="tw" href="#" onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
+                        <a class="fb" href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
+                        <a class="tw" href="#" onClick='shareTwitter();'><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
                     </div>
                 </div>                                   
             </div>                
@@ -109,7 +109,7 @@
                                 <p>Registra tus datos, cuéntanos las categorías en las que quieres recibir descuentos ¡y listo!</p>
                             </div>
                             <div class="col-lg-9">
-                                <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251010" onSubmit='s.linkTrackVars="events,eVar38"; s.linkTrackEvents="event5"; s.eVar38="footer";s.events="event5";s.tl(true,"o","Formulario Registro"); return (!(UPTvalidateform(document.UPTml251010)));'>
+                                <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251010" onSubmit='return (!(UPTvalidateform(document.UPTml251010)));'>
                                     <input type="hidden" name="submitaction" value="3">
                                     <input type="hidden" name="mlid" value="251010">
                                     <input type="hidden" name="siteid" value="2010001358">
@@ -215,6 +215,7 @@
         <script src="<?php echo $base_url_static?>js/bootstrap/bootstrap-multiselect.js"></script>          
         <script src="<?php echo $base_url_static?>js/main.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.alphanum.js"></script>
+        <script src="<?php echo $base_url_static;?>js/share.js"></script>
 
         <script language="JavaScript" type="text/javascript"><!--   
         //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  
@@ -226,14 +227,5 @@
         var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
         <!--  End SiteCatalyst  code  --> 
 
-        <!-- Google Tag Manager -->
-        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
-        <!-- End Google Tag Manager -->
     </body>
 </html>

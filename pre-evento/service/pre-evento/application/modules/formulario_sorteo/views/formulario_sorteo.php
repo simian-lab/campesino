@@ -1,7 +1,7 @@
 <section id="formulario">
     <div class="share">
-        <a href="https://www.facebook.com/Cyberlunes" target="_blank" onClick='s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
-        <a href="https://twitter.com/Cyberlunesco" target="_blank"  onClick='s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
+        <a href="https://www.facebook.com/Cyberlunes" target="_blank"><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
+        <a href="https://twitter.com/Cyberlunesco" target="_blank"><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
     </div>
     <div class="container">
         <div class="row">

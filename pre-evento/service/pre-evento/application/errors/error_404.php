@@ -25,23 +25,22 @@ switch (ENVIRONMENT)
 <?php 
 //print_R($_SERVER['SERVER_NAME']);
     switch ($_SERVER['SERVER_NAME']){
-
-        case 'pre-evento.eltiempo-co-cyberlunes.dev.brandigital.com':
-            $base_url = 'http://pre-evento.eltiempo-co-cyberlunes.dev.brandigital.com/';
-            $base_url_static = 'http://pre-evento.eltiempo-co-cyberlunes.dev.brandigital.com/static/pre-evento/'; 
-            break;
-        case 'pre-evento.eltiempo-co-cyberlunes.stage.brandigital.com':
-            $base_url = 'http://pre-evento.eltiempo-co-cyberlunes.stage.brandigital.com/';
-            $base_url_static = 'http://pre-evento.eltiempo-co-cyberlunes.stage.brandigital.com/static/pre-evento/'; 
-            break;
-        case 'pre-evento.eltiempo-co-cyberlunes.live.brandigital.com':
-            $base_url = 'http://pre-evento.eltiempo-co-cyberlunes.live.brandigital.com/';
-            $base_url_static = 'http://pre-evento.eltiempo-co-cyberlunes.live.brandigital.com/static/pre-evento/'; 
-            break;
-        case 'www.cyberlunes.com.co':
+        case 'pre-evento.cyberlunes.local.brandigital.com':  
+            $base_url = 'http://pre-evento.cyberlunes.local.brandigital.com/';
+            $base_url_static = 'http://pre-evento.cyberlunes.local.brandigital.com/static/pre-evento/'; 
+        break;
+        case 'pre-evento.cyberlunes.dev.brandigital.com':    
+            $base_url = 'http://pre-evento.cyberlunes.dev.brandigital.com/';
+            $base_url_static = 'http://pre-evento.cyberlunes.dev.brandigital.com/static/pre-evento/'; 
+        break;
+        case 'preevento-stage.cyberlunes.com':  
+            $base_url = 'http://preevento-stage.cyberlunes.com/';
+            $base_url_static = 'http://preevento-stage.cyberlunes.com/static/pre-evento/'; 
+        break;
+        case 'www.cyberlunes.com.co':    
             $base_url = 'http://www.cyberlunes.com.co/';
-            $base_url_static = 'http://pre-evento.eltiempo-co-cyberlunes.live.brandigital.com/static/pre-evento/'; 
-            break;
+            $base_url_static = 'http://www.cyberlunes.com.co/static/pre-evento/'; 
+        break;
     }
     
 ?>

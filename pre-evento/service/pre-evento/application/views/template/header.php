@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Cyberlunes</title>
+        
         <?php echo $metatag; ?>
-        <meta property="og:title" content="<?php echo $meta_title; ?>">
-        <meta property="og:description" content="<?php echo $meta_descripcion; ?>">
-        <meta property="og:image" content="<?php echo $image_src; ?>">
-        <meta property="og:url" content="<?php echo $meta_url; ?>">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">     
 
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/normalize.min.css">
@@ -37,6 +35,12 @@
             img=new Image();
             img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
             }
+
+            var appdiademoda = {
+                jssdkload:false,
+                idioma: 'es',              
+                data: eval(<?php echo $jsonParam; ?>)
+            };
         </script>
     </head>
     <body>
