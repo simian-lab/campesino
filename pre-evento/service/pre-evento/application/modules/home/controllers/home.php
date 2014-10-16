@@ -59,7 +59,8 @@ class Home extends CI_Controller {
         $data['s_prop1']= '';
         $data['s_prop2']= '';
 
-        $data['sitio_seccion'] = '58465/438587'; 
+        $data['siteId'] = 58465;
+        $data['pageId'] = 438587;
         
 
         if($this->agent->is_mobile()){
@@ -134,13 +135,14 @@ class Home extends CI_Controller {
       $data['s_prop1']= 'DíadeModa: pre-evento: detalle: '.$art_slug;
       $data['s_prop2']= '';
       
+      $data['siteId'] = 58465;
       
       $image_size = getimagesize($data['base_url_img_articulos'].$data['articulo'][0]->ART_IMAGEN);
       if($image_size[0] > $image_size[1]){
-        $data['sitio_seccion'] = '58465/438588'; 
+        $data['pageId'] = 438588; 
       }
       else{
-        $data['sitio_seccion'] = '58465/438589'; 
+        $data['pageId'] = 438589; 
       }
 
       if($this->agent->is_mobile()){
@@ -156,28 +158,11 @@ class Home extends CI_Controller {
 
       $data['breadcrumb'] = $this->home_model->get_titulo_slug($this->uri->segment(2));
 
-      //$data['id_form_mobile'] = 'id-form-detalle-mobile';
-      //$data['class_form_mobile'] = 'box-form';
-      //$data['id_form_mobile'] = 'form-collapse';
-      //$data['class_form_mobile'] = 'box-form mobile vistaFormulario';
-
       $this->load->view('template/header', $data);
       if($this->agent->is_mobile()){
         $this->load->view('template/form_mobile', $data);
       }
       $this->load->view('detalle', $data);
-    
-
-/*
-      $origen=$this->session->userdata('origen');
-      if($origen=='registro_success'){
-              $array_items = array('origen' => '');
-              $this->session->unset_userdata($array_items);
-              $data['registro_success'] = TRUE;
-              $this->load->view('template/gracias');
-      }else{
-              $data['registro_success'] = FALSE ;
-      }*/
 
       $this->load->view('template/terminos_condiciones');
       if(!$this->agent->is_mobile() && !isset($_COOKIE['formularios'])){

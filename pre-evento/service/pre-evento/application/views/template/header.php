@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/screen.css">
         <!-- clase fix-->
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/molfis.css">
+        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/fix.css">
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
         
         <script src="<?php echo $base_url_static?>js/s_code.js"></script> 
@@ -25,15 +26,19 @@
         <script src="<?php echo $base_url_static;?>js/jquery.plugin.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.countdown.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.alphanum.js"></script>
+
         <script type="text/javascript" src="http://cdn1.smartadserver.com/diff/js/smartadserver.js"></script>
+        <script src='http://ads.eltiempo.com/config.js?nwid=484' type="text/javascript"></script>
         <script type="text/javascript">
+            sas.setup({ domain: 'http://ads.eltiempo.com'});
             sas_tmstp=Math.round(Math.random()*10000000000);sas_masterflag=1;
             function sasmobile(sas_pageid,sas_formatid,sas_target) {
-             if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
-             document.write('<scr'+'ipt src="http://ads.eltiempo.com/call2/pubmj/'+sas_pageid+'/'+sas_formatid+'/'+sas_master+'/'+sas_tmstp+'/'+escape(sas_target)+'?"></scr'+'ipt>');
-            }function sascc(sas_imageid,sas_pageid) {
-            img=new Image();
-            img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
+                if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
+                document.write('<scr'+'ipt src="http://ads.eltiempo.com/call2/pubmj/'+sas_pageid+'/'+sas_formatid+'/'+sas_master+'/'+sas_tmstp+'/'+escape(sas_target)+'?"></scr'+'ipt>');
+            }
+            function sascc(sas_imageid,sas_pageid) {
+                img=new Image();
+                img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
             }
 
             var appdiademoda = {
@@ -70,44 +75,6 @@
                     </div>     
                     <?php endif; ?>               
                     <div class="col-md-6 marcas">
-                        <?php /*if(!$this->agent->is_mobile()): ?>
-                        <figure>
-                            <script type="text/javascript">
-                                sas_pageid='<?php echo $sitio_seccion ?>';
-                                sas_formatid=25677;  
-                                sas_target='';   
-                                SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                            </script>
-                            <noscript>
-                                <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25677/M/[timestamp]/?" target="_blank">
-                                <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25677/M/[timestamp]/?" border="0" alt="" /></a>
-                            </noscript>
-                        </figure>
-                        <figure>
-                            <script type="text/javascript">
-                                sas_pageid='<?php echo $sitio_seccion ?>';
-                                sas_formatid=25678;  
-                                sas_target='';   
-                                SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                            </script>
-                            <noscript>
-                                <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25678/M/[timestamp]/?" target="_blank">
-                                <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25678/M/[timestamp]/?" border="0" alt="" /></a>
-                            </noscript>
-                        </figure>
-                        <figure>
-                            <script type="text/javascript">
-                                sas_pageid='<?php echo $sitio_seccion ?>';
-                                sas_formatid=25679;  
-                                sas_target='';   
-                                SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                            </script>
-                            <noscript>
-                                <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25679/M/[timestamp]/?" target="_blank">
-                                <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25679/M/[timestamp]/?" border="0" alt="" /></a>
-                            </noscript>
-                        </figure>
-                        <?php endif;*/ ?>
                         <figure class="col-md-3">
                             <a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>
                         </figure>

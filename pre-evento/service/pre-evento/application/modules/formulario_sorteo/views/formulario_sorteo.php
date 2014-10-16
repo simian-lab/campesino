@@ -154,66 +154,56 @@
                     <a href="#" class="next-marcas"  id="next-marcas-aside"><img src="<?php echo $base_url_static?>img/controls-marcas-right.png" alt=""></a>  
                 </div>
                 <figure class="publi">
-                    <!--<div class="titulo-publi">
+                    <div class="titulo-publi">
                         <span>publicidad</span>
-                    </div>-->
+                    </div>
                     <script type="text/javascript">
-                        is_mobile='<?php echo $is_mobile; ?>';
-                        sas_pageid='<?php echo $sitio_seccion ?>'; // Página : Cyberlunes_Pre-Evento/home
-                        if(is_mobile == 1){
-                          sas_formatid=9702;  
-                        }
-                        else{
-                          sas_formatid=9611;  // Formato : Primer Boton 300x100 300x100  
-                        }
-                        sas_target='';   // Segmentación
-                        SmartAdServerAjax(sas_pageid,sas_formatid,sas_target); 
+                     sas.call("std", {
+                      siteId:  '<?php echo $siteId ?>', // 
+                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
+                      formatId:  9611, // Formato : Robapagina 300x250
+                      target:  ''   // Segmentación
+                     });
                     </script>
                     <noscript>
-                        <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/9611/S/[timestamp]/?" target="_blank">
-                        <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/9611/S/[timestamp]/?" border="0" alt="" /></a>
+                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                     </noscript>
                 </figure>
                 <figure class="publi"> 
-                    <!--<div class="titulo-publi">
+                    <div class="titulo-publi">
                         <span>publicidad</span>
-                    </div>-->
+                    </div>
                     <script type="text/javascript">
-                        sas_pageid='<?php echo $sitio_seccion ?>'; // Página : Cyberlunes_Pre-Evento/home
-                        if(is_mobile == 1){
-                          sas_formatid=9703;  
-                        }
-                        else{
-                          sas_formatid=9608;  // Formato : Primer Boton 300x100 300x100  
-                        }
-                        sas_target='';   // Segmentación
-                        SmartAdServer(sas_pageid,sas_formatid,sas_target);
+                     sas.call("std", {
+                      siteId:  '<?php echo $siteId ?>', // 
+                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
+                      formatId:  9608, // Formato : Robapagina 300x250
+                      target:  ''   // Segmentación
+                     });
                     </script>
                     <noscript>
-                        <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/9608/S/[timestamp]/?" target="_blank">
-                        <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/9608/S/[timestamp]/?" border="0" alt="" /></a>
+                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                     </noscript>
                 </figure>
                 <figure class="publi">
-                    <!--<div class="titulo-publi">
+                    <div class="titulo-publi">
                         <span>publicidad</span>
-                    </div>-->
+                    </div>
                     <script type="text/javascript">
-                        sas_pageid='<?php echo $sitio_seccion ?>'; // Página : Cyberlunes_Pre-Evento/home
-                        if(is_mobile == 1){
-                          sas_formatid=9704;  
-                        }
-                        else{
-                          sas_formatid=11772;  // Formato : Primer Boton 300x100 300x100  
-                        }
-                        sas_target='';   // Segmentación
-                        SmartAdServer(sas_pageid,sas_formatid,sas_target);
+                     sas.call("std", {
+                      siteId:  '<?php echo $siteId ?>', // 
+                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
+                      formatId:  11772, // Formato : Robapagina 300x250
+                      target:  ''   // Segmentación
+                     });
                     </script>
                     <noscript>
-                        <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/11772/S/[timestamp]/?" target="_blank">
-                        <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/11772/S/[timestamp]/?" border="0" alt="" /></a>  
-                    </noscript>   
-                </figure>                              
+                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+                    </noscript> 
+                </figure>                            
             </div>
         </div>
     </div>            

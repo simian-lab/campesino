@@ -78,7 +78,8 @@ class formulario_sorteo extends CI_Controller {
         $data['s_prop1']= 'DíadeModa: pre-evento: formulario: sorteo';
         $data['s_prop2']= '';
 
-        $data['sitio_seccion'] = '58465/438587'; 
+        $data['siteId'] = 58465;
+        $data['pageId'] = 438591;
 
         //$data['id_form_mobile'] = 'form-collapse';
         $data['class_form_mobile'] = 'mobile';
