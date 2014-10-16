@@ -358,6 +358,11 @@ class Main extends MX_Controller {
 			echo $retorno = modules::run('modules/lista_blanca_dominios/index');	
 	    }
 
+	    function formulario_registro(){
+	    	$auth = $this->load->module('formulario_registro');
+			echo $retorno = modules::run('modules/formulario_registro/index');	
+	    }
+
 	    function prueba_mail(){
 	    	$this->load->library('email');
 			$config['protocol'] = 'smtp';
