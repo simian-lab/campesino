@@ -56,6 +56,22 @@ function emailCheck (emailStr) {
        alert(errStr);
        return false;
     }
+
+    var checkEmail = $.ajax({
+                        type: 'POST',
+                        data: {email: emailStr},
+                        async: false,
+                        global: false,
+                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/checkEmailExist'); ?>',
+                        success: function response(data){}
+                    }).responseText;
+
+    var json_data = JSON.parse(checkEmail);
+    if(json_data.status.code == 101){
+        $('#alerta-form-usuario-registrado').modal();
+        return false;
+    }
+    
     return true;
     }
     function UPTvalidateform(thisform)
