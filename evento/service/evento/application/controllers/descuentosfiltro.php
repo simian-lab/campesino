@@ -6,6 +6,7 @@ class Descuentosfiltro extends MX_Controller
    {
        parent::__construct();
        $this->load->library('user_agent');
+       $this->load->helper('get_app_data');
        //$this->load->library('memcached_library');
        //$this->output->enable_profiler(TRUE);
    }
@@ -47,6 +48,8 @@ class Descuentosfiltro extends MX_Controller
 
         $data = null;
         $data = get_url_base();
+
+        $data['jsonParam']=get_app_data();
 
         $data['descuentosfiltro']=json_encode($dataFiltrado);
 

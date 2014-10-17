@@ -24,29 +24,25 @@ switch (ENVIRONMENT)
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
 //print_R($_SERVER['SERVER_NAME']);
-    switch ($_SERVER['SERVER_NAME']){
-
-        case 'evento.eltiempo-co-cyberlunes.dev.brandigital.com':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.dev.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.dev.brandigital.com/static/evento/'; 
-            break;
-        case 'evento.eltiempo-co-cyberlunes.stage.brandigital.com':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.stage.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.stage.brandigital.com/static/evento/'; 
-            break;
-        case 'evento.eltiempo-co-cyberlunes.live.brandigital.com':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/static/evento/'; 
-            break;
-        case 'www.cyberlunes.com.co':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/static/evento/'; 
-            break;
-        case 'staging.cyberlunes.com.co':
-            $base_url = 'http://staging.cyberlunes.com.co/';
-            $base_url_static = 'http://staging.cyberlunes.com.co/static/evento/'; 
-            break;
-    }
+switch ($_SERVER['SERVER_NAME'])
+{   
+    case 'evento.cyberlunes.local.brandigital.com':  
+        $base_url = 'http://evento.cyberlunes.local.brandigital.com/';
+        $base_url_static = 'http://evento.cyberlunes.local.brandigital.com/static/evento/'; 
+    break;
+    case 'evento.cyberlunes.dev.brandigital.com':    
+        $base_url = 'http://evento.cyberlunes.dev.brandigital.com/';
+        $base_url_static = 'http://evento.cyberlunes.dev.brandigital.com/static/evento/'; 
+    break;
+    case 'evento-stage.cyberlunes.com':  
+        $base_url = 'http://evento-stage.cyberlunes.com/';
+        $base_url_static = 'http://evento-stage.cyberlunes.com/static/evento/'; 
+    break;
+    case 'www.cyberlunes.com.co':    
+        $base_url = 'http://www.cyberlunes.com.co/';
+        $base_url_static = 'http://www.cyberlunes.com.co/static/evento/'; 
+    break;
+}
     
 ?>
 <html lang="en">

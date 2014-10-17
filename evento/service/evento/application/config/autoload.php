@@ -80,7 +80,7 @@ $autoload['helper'] = array('url','get_url_base','display_errors','formulario','
 |
 */
 
-$autoload['config'] = array('dominios');
+$autoload['config'] = array('dominios','email','facebook');
 
 
 /*

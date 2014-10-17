@@ -1,22 +1,38 @@
-function shareFacebook(){
-    var pageTitle = document.title; //HTML page title
-    var pageUrl = location.href; //Location of the page
+function shareFacebook(art_detalle){
 
-    
-    sharetext='Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: www.cyberlunes.com.co';
-    //var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
-    var shareName= 'facebook';
+    var title = $('meta[http-equiv="og:title"]').attr("content");
+    var description = $('meta[http-equiv="og:description"]').attr("content");
+    var image = $('meta[http-equiv="og:image"]').attr("content");
+    var url = $('meta[http-equiv="og:url"]').attr("content");
 
-    //console.log(shareName);
-    switch (shareName) //switch to different links based on different social name
-    {
-        case 'facebook':
-                //ga('send', 'event', 'restaurante/share', 'click', 'facebook');
-            var openLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
-            break;  
-        
+    var obj = {
+        method: 'feed',
+        link: url,
+        picture: image,
+        name: title, 
+        caption: '',
+        description: description
+    };
+
+    function callback(response) {
+        onClickShare('facebook', title);
     }
+    FB.ui(obj, callback);
+    return false;
+}
+
+function shareTwitter(art_detalle){
+
+    var url = location.href;
+
+    if(art_detalle == 'detalle')
+        var text_share = $('meta[http-equiv="og:title"]').attr("content");
+    else
+        var text_share = 'Este #DíaDeModa es para renovar tu closet vía @TuDiaDeModa';
+
     
+    var openLink = 'http://twitter.com/share?url=' + encodeURIComponent( url ) + '&text=' + encodeURIComponent( text_share );
+    onClickShare('twitter', text_share);
     //Parameters for the Popup window
     winWidth    = 650;  
     winHeight   = 450;
@@ -28,34 +44,23 @@ function shareFacebook(){
     window.open(openLink,'',winOptions);
     return false;
 
-}
-
-function shareTwitter(){
-    var pageTitle = document.title; //HTML page title
-    var pageUrl = location.href; //Location of the page
-
-    sharetext='Están increíbles las ofertas de @CyberLunesCo. Los descuentos son hasta media noche. Conócelos en';
-    var shareName= 'twitter';
-
-    //console.log(shareName);
-    switch (shareName) //switch to different links based on different social name
-    {
-        case 'twitter':
-            var openLink = 'http://twitter.com/home?status=' + encodeURIComponent( sharetext+ ' ' + pageUrl);
-            //ga('send', 'event', 'restaurante/share', 'click', 'twitter');
-            break;              
-        
-    }
-    
-    //Parameters for the Popup window
-    winWidth    = 650;  
-    winHeight   = 450;
-    winLeft     = ($(window).width()  - winWidth)  / 2,
-    winTop      = ($(window).height() - winHeight) / 2, 
-    winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-    
-    //open Popup window and redirect user to share website.
-    window.open(openLink,'',winOptions);
-    return false;
 
 }
+
+$(document).ready(function(){
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : appdiademoda.data.app.fb_appid,
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+});

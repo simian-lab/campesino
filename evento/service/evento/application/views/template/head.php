@@ -6,10 +6,6 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta property="og:title" content="<?php echo $meta_title; ?>">
-        <meta property="og:description" content="<?php echo $meta_descripcion; ?>">
-        <meta property="og:image" content="<?php echo $image_src; ?>">
-        <meta property="og:url" content="<?php echo $meta_url; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <title><?php echo $meta_title; ?></title>
@@ -38,6 +34,25 @@
                var base_url_static ="<?php echo $base_url_static;?>";
                var base_descuentosfiltro =<?php echo $descuentosfiltro;?>;
         </script>
-        <script src="<?php echo $base_url_static;?>js/share.js"></script>
+
+        <script type="text/javascript" src="<?php echo $base_url_static;?>js/omniture.js"></script>
+        <script type="text/javascript" src="http://cdn1.smartadserver.com/diff/js/smartadserver.js"></script>
+        <!--[if lt IE 9]>
+            <script src="<?php echo $base_url_static;?>js/vendor/respond.min.js"></script>
+            <script src="<?php echo $base_url_static;?>js/vendor/html5shiv.js"></script>
+        <![endif]-->
+        
+        <script type="text/javascript" src="http://ads.eltiempo.com/config.js?nwid=484"></script>
+        <script src='http://ads.eltiempo.com/config.js?nwid=484' type="text/javascript"></script>
+        <script type="text/javascript">
+            sas.setup({ domain: 'http://ads.eltiempo.com'});
+
+            var appdiademoda = {
+                jssdkload:false,
+                idioma: 'es',              
+                data: eval(<?php echo $jsonParam; ?>)
+            };
+        </script>
+        
     </head>
     <body>
