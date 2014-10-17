@@ -29,7 +29,7 @@ class formulario_sorteo extends CI_Controller {
 
         $data['jsonParam']=get_app_data();
 
-        $meta_title = 'DiadeModa';
+        $meta_title = 'Cyberlunes';
         $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
         $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";

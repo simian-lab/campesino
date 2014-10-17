@@ -1,9 +1,9 @@
 function shareFacebook(art_detalle){
 
-    var title = $('meta[property="og:title"]').attr("content");
-    var description = $('meta[property="og:description"]').attr("content");
-    var image = $('meta[property="og:image"]').attr("content");
-    var url = $('meta[property="og:url"]').attr("content");
+    var title = $('meta[http-equiv="og:title"]').attr("content");
+    var description = $('meta[http-equiv="og:description"]').attr("content");
+    var image = $('meta[http-equiv="og:image"]').attr("content");
+    var url = $('meta[http-equiv="og:url"]').attr("content");
 
     var obj = {
         method: 'feed',
@@ -15,7 +15,7 @@ function shareFacebook(art_detalle){
     };
 
     function callback(response) {
-        onClickShare('facebook', title);
+        //onClickShare('facebook', title);
     }
     FB.ui(obj, callback);
     return false;
@@ -26,13 +26,13 @@ function shareTwitter(art_detalle){
     var url = location.href;
 
     if(art_detalle == 'detalle')
-        var text_share = $('meta[property="og:title"]').attr("content");
+        var text_share = $('meta[http-equiv="og:title"]').attr("content");
     else
         var text_share = 'Este #DíaDeModa es para renovar tu closet vía @TuDiaDeModa';
 
     
     var openLink = 'http://twitter.com/share?url=' + encodeURIComponent( url ) + '&text=' + encodeURIComponent( text_share );
-    onClickShare('twitter', text_share);
+    //onClickShare('twitter', text_share);
     //Parameters for the Popup window
     winWidth    = 650;  
     winHeight   = 450;

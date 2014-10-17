@@ -31,8 +31,8 @@ class Home extends CI_Controller {
 
         $data['jsonParam']=get_app_data();
         
-        $meta_title = 'DiadeModa';
-        $meta_descripcion = 'Este #DíaDeModa es para renovar tu closet. Vía DíaDeModa.com';
+        $meta_title = 'Cyberlunes';
+        $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
         $meta_keys = "Descuentos, ofertas, rebajas, outlet, promociones, precios bajos, barato, deals, artículos baratos, productos a menor precio, Colombia, Bogotá, Medellín, Cali, Barranquilla, cyberlunes, ciberlunes, cybermonday, cibermonday";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
