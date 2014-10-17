@@ -227,23 +227,6 @@ function change_name_image($files_to_upload,$field_info){
 }
 
 function delete_motivo_rechazo($id_promo){
-	$result = $this->promociones_model->getPromocionById($id_promo);
-	switch ($result['PRO_SRC_ID']) {
-    	case '1':
-            $tipo = 'General';
-	    break;
-	    case '2':
-	        $tipo = 'Premium Home';
-	    break;
-	    case '3':
-	        $tipo = 'Premium';
-	    break;  
-	    default:
-	       $tipo = 'Sin Ubicación';
-	    break;
-    }
-    $message_log = "Oferta eliminada --> Título: ".$result['PRO_NOMBRE'].' - Tipo: '.$tipo.' - Creador: '.$this->session->userdata('username').' - Fecha: '.date('Y-m-d h:m:s').PHP_EOL;
-    log_promociones($message_log);
 	return $this->promociones_model->delete_motivo_rechazo($id_promo);
 }
 
@@ -421,23 +404,6 @@ function fnc_after_update($post_array){ //print_r($post_array);die();
     $datos= $this->promociones_model->send_mail_user_edit($datos_envio);
     $this->promociones_model->send_mail_aliado_edit($datos_envio);
 
-    switch ($post_array['PRO_SRC_ID']) {
-    	case '1':
-            $tipo = 'General';
-	    break;
-	    case '2':
-	        $tipo = 'Premium Home';
-	    break;
-	    case '3':
-	        $tipo = 'Premium';
-	    break;  
-	    default:
-	       $tipo = 'Sin Ubicación';
-	    break;
-    }
-    $message_log = "Oferta editada --> Título: ".$post_array['PRO_NOMBRE'].' - Tipo: '.$tipo.' - Creador: '.$this->session->userdata('username').' - Fecha: '.date('Y-m-d h:m:s').PHP_EOL;
-    log_promociones($message_log);
-
 }
 
 function fnc_after_insert($post_array){
@@ -453,23 +419,6 @@ function fnc_after_insert($post_array){
       $datos= $this->promociones_model->send_mail_user($datos_envio);
       $this->promociones_model->send_mail_aliado($datos_envio);
        // return true;
-
-    switch ($post_array['PRO_SRC_ID']) {
-    	case '1':
-            $tipo = 'General';
-	    break;
-	    case '2':
-	        $tipo = 'Premium Home';
-	    break;
-	    case '3':
-	        $tipo = 'Premium';
-	    break;  
-	    default:
-	       $tipo = 'Sin Ubicación';
-	    break;
-    }
-    $message_log = "Oferta creada --> Título: ".$post_array['PRO_NOMBRE'].' - Tipo: '.$tipo.' - Creador: '.$this->session->userdata('username').' - Fecha: '.date('Y-m-d h:m:s').PHP_EOL;
-    log_promociones($message_log);
 	return $post_array;
 
 }
