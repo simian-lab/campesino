@@ -54,8 +54,8 @@ class Home extends CI_Controller {
         $data['total_articulos'] = $this->home_model->get_count_articulos();
 
 
-        $data['s_pageName']='DíadeModa: pre-evento: home'; // Slider de la home de articulos
-        $data['s_channel']= 'DíadeModa: pre-evento: home  ';
+        $data['s_pageName']='Cyberlunes: pre-evento: home'; // Slider de la home de articulos
+        $data['s_channel']= 'Cyberlunes: pre-evento: home  ';
         $data['s_prop1']= '';
         $data['s_prop2']= '';
 
@@ -130,9 +130,9 @@ class Home extends CI_Controller {
       $data['meta_url'] = $meta_url;
       $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
       
-      $data['s_pageName']='DíadeModa: pre-evento: detalle: '.$art_slug; 
-      $data['s_channel']= 'DíadeModa: pre-evento: detalle';
-      $data['s_prop1']= 'DíadeModa: pre-evento: detalle: '.$art_slug;
+      $data['s_pageName']='Cyberlunes: pre-evento: detalle: '.$art_slug; 
+      $data['s_channel']= 'Cyberlunes: pre-evento: detalle';
+      $data['s_prop1']= 'Cyberlunes: pre-evento: detalle: '.$art_slug;
       $data['s_prop2']= '';
       
       $data['siteId'] = 58465;

@@ -62,9 +62,9 @@ class formulario_participacion extends CI_Controller {
 
         $data['slider_patrocinadores'] = $this->formulario_participacion_model->get_patrocinadores();
 
-        $data['s_pageName']='DíadeModa: pre-evento: formulario: participacion'; 
-        $data['s_channel']= 'DíadeModa: pre-evento: formulario ';
-        $data['s_prop1']= 'DíadeModa: pre-evento: formulario: participacion';
+        $data['s_pageName']='Cyberlunes: pre-evento: formulario: participacion'; 
+        $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
+        $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: participacion';
         $data['s_prop2']= '';
         
         $data['siteId'] = 58465;

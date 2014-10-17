@@ -73,9 +73,9 @@ class formulario_sorteo extends CI_Controller {
 
         $data['tiendas'] = $this->formulario_sorteo_model->get_tiendas();
 
-        $data['s_pageName']='DíadeModa: pre-evento: formulario: sorteo'; 
-        $data['s_channel']= 'DíadeModa: pre-evento: formulario ';
-        $data['s_prop1']= 'DíadeModa: pre-evento: formulario: sorteo';
+        $data['s_pageName']='Cyberlunes: pre-evento: formulario: sorteo'; 
+        $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
+        $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: sorteo';
         $data['s_prop2']= '';
 
         $data['siteId'] = 58465;
