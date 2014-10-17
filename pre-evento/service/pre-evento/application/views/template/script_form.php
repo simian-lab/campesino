@@ -66,6 +66,7 @@ function emailCheck (emailStr) {
         }
         var checkbox = false;
         var checkbox_len = 1;
+        var intereses = [];
 
         if(thisform.elements["val_66010[]"].length != undefined )
         {
@@ -75,7 +76,7 @@ function emailCheck (emailStr) {
                 if (thisform.elements['val_66010[]'][i].selected)
                 {
                     checkbox = true;
-                    break;
+                    intereses.push(thisform.elements['val_66010[]'][i].value);
                 }
             }
         }
@@ -119,7 +120,7 @@ function emailCheck (emailStr) {
                     type: 'POST',                    
                     async :false,
                     dataType: 'html',
-                    //data: {nombre: thisform.val_67865.value, email: thisform.email.value, intereses: intereses.join(', ')},
+                    data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
                     url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
                     success: function(xmldata) {
                         /*switch(thisform.name){
