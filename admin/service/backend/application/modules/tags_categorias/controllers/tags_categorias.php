@@ -27,17 +27,16 @@ class Tags_categorias extends Main {
 		$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
         $crud->display_as('CAT_ID','TID')
-            ->display_as('CAT_NOMBRE','Nombre')
-	        ->display_as('CAT_DESC','Descripcion')
-	        ->display_as('VISIBILITY','Visibilidad')
-	        ->display_as('Subcategorias', 'Subcategorías');
+             ->display_as('CAT_NOMBRE','Nombre')
+	         ->display_as('CAT_DESC','Descripcion')
+	         ->display_as('VISIBILITY','Visibilidad')
+	         ->display_as('Subcategorias', 'Subcategorías');
 
 	    
 
 	    $crud->unset_read();
 
 	    //***************************	Relacion de tablas ***************************	
-		//$crud->set_relation_n_n('Categorías', 'SXC_SUBCATEGORIAXCATEGORIA', 'CAT_CATEGORIA', 'CAT_ID', 'CAT_ID', 'CAT_NOMBRE' );
 	     $crud->set_relation_n_n('Subcategorias', 'SXC_SUBCATEGORIAXCATEGORIA', 'SUB_SUBCATEGORIA', 'CAT_ID', 'SUB_ID', 'SUB_NOMBRE', 'VISIBILITY');
 		//***************************	Relacion de tablas ***************************	
 

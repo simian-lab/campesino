@@ -34,5 +34,23 @@ class Tag_subcategoria_model extends CI_Model
 
     }
 
+    function get_subcategorias_promociones($cat_id){
+      $this->db->select('SUB_SUBCATEGORIA.SUB_ID, SUB_NOMBRE');
+      $this->db->from('SUB_SUBCATEGORIA');
+      $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
+      $this->db->where('SXC_SUBCATEGORIAXCATEGORIA.CAT_ID',$cat_id);
+
+      $query = $this->db->get();
+      if ($query->num_rows() > 0)  {
+        foreach ($query->result() as $row){
+          $salida[$row->SUB_ID]=$row->SUB_NOMBRE;
+        }
+      }
+      else{
+        $salida = ' ';
+      }
+      echo json_encode($salida);
+    }
+
 
 }

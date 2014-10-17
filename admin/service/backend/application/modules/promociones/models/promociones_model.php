@@ -365,6 +365,16 @@ class Promociones_model extends CI_Model
 
     }
 
+    function getPromocionById($id_promo){
+        $this->db->select();
+        $this->db->from('PRO_PROMOCIONES');
+        $this->db->where('PRO_ID', $id_promo);
+
+        $query = $this->db->get();
+
+        return $query->row_array();
+    }
+
 
 
 }
