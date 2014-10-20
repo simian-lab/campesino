@@ -139,21 +139,8 @@ function emailCheck (emailStr) {
                     data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
                     url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
                     success: function(xmldata) {
-                        /*switch(thisform.name){
-                            case 'UPTml272461_home':
-                                onClickRegistro("Ventana", "Home", intereses.join(', '));
-                                break;
-                            case 'UPTml272461_footer1':
-                            case 'UPTml272461_footer2':
-                                onClickRegistro("Barra inferior", "Footer", intereses.join(', ')); 
-                                break;
-                            case 'UPTml272461_mobile':
-                                onClickRegistro("Mobile", "Home", intereses.join(', '));
-                                break;
-                            case 'UPTml272461_popup':
-                                onClickRegistro("Pop up", "Detalle artículo", intereses.join(', ')); 
-                                break;
-                        }*/
+                        
+                        onClickRegistro(thisform.email.value);
 
                         $.ajax({
                             type: 'POST',

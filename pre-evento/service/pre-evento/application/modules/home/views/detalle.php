@@ -15,7 +15,7 @@
     </div>-->
     <div class="share">
        <a href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
-       <a href="#"  onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
+       <a href="#"  onClick='shareTwitter("detalle");'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
     </div>
     <div class="container">
         <div class="row">
