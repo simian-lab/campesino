@@ -45,7 +45,7 @@
                 <span class="title">FALTAN</span>
                 <div id="defaultCountdown"></div>
                 <script>
-                    var date = new Date(Date.UTC(2014,04,19,5,0,0)); 
+                    var date = new Date(Date.UTC(2014,12,01,5,0,0)); 
                     $('#defaultCountdown').countdown({until: date, format: 'dHM', labels:['', '', '', '', '', '', ''], labels1:['', '', '', '', '', '', ''], padZeroes:true}); 
                 </script> 
                 <ul class="tiempo">
