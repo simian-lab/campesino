@@ -67,7 +67,7 @@ function onSubmitFormulario(nombre){
 	s.tl(true,"o","Formulario"); 
 }
 
-function onChangeFilter(tipo, valor){
+function onChangeFilter(valor){
 	s.linkTrackVars = "events,eVar25";
 	s.linkTrackEvents = "event11";
 	s.events = "event11";

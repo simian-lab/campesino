@@ -60,23 +60,24 @@
                         --><span>invita:</span>
                     </div>
                     <div class="logos">                                
-                        <a href="http://ccce.org.co/" target="_blank"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a><!--
-                        --><a href="http://www.eltiempo.com/" target="_blank"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
+                        <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Footer')"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a><!--
+                        --><a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
                     </div>
                 </div>
             </div>
             <div class="social">
-                <a href="#" class="fb" onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
-                <a href="#" class="tw" onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
+                <a href="#" class="fb" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
+                <a href="#" class="tw" onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
             </div>
         </div>                                   
     </div>                
     <div class="row terminos">
         <div class="col-md-12 center">                    
             <div>
-                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  cyberlunes@eltiempo.com</span>
-                <span><b>Cyberlunes</b> es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
-                <span>© 2014 - <b>Cyberlunes</b> Todos los derechos reservados .</span>
+                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a></span>
+                <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
+                <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+                <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
             </div>
         </div>
     </div>            

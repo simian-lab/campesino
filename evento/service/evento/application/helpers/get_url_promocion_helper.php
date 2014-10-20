@@ -28,25 +28,13 @@ if ( ! function_exists('get_url_promocion'))
 
         $atts = array('target'      => '_blank',
                       'class'      => 'link red',
-                      'onClick'    => "s.linkTrackVars='events,eVar38,eVar39,products';
-                                      s.linkTrackEvents='event36';
-                                      s.events='event36';
-                                      s.eVar38='".$posicion."';
-                                      s.eVar39='".$creador."';
-                                      s.products=';".$id."';
-                                      s.tl(this,'o','Clic en Promoción');"
+                      'onClick'    => "onClickOferta('".$id."', '".$posicion."')"
                       );
 
         if($promo_general == 1){
           $atts = array('target'      => '_blank',
                       'class'      => 'link orange',
-                      'onClick'    => "s.linkTrackVars='events,eVar38,eVar39,products';
-                                      s.linkTrackEvents='event36';
-                                      s.events='event36';
-                                      s.eVar38='".$posicion."';
-                                      s.eVar39='".$creador."';
-                                      s.products=';".$id."';
-                                      s.tl(this,'o','Clic en Promoción');"
+                      'onClick'    => "onClickOferta('".$id."', '".$posicion."')"
                       );
         }
       $search = array('"',"'");

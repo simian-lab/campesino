@@ -56,7 +56,8 @@
                     <div class="col-lg-3">
                         <div class="sponsor right">
                             <span>Evento de:</span>
-                            <a href="http://ccce.org.co/" target="_blank"><img src="<?php echo $base_url_static;?>img/camara-de-comercio.png" alt=""></a>
+                            <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Menu')"><img src="<?php echo $base_url_static;?>img/camara-de-comercio.png" alt=""></a>
+                            <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', 'Pauta', 'impressions', 'CEEE']);">
                         </div>                        
                     </div>             
                 </div>
