@@ -31,7 +31,7 @@ class formulario_participacion extends CI_Controller {
 
         $data['jsonParam']=get_app_data();
 
-        $meta_title = 'DiadeModa';
+        $meta_title = 'Cyberlunes';
         $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
         $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
@@ -62,9 +62,9 @@ class formulario_participacion extends CI_Controller {
 
         $data['slider_patrocinadores'] = $this->formulario_participacion_model->get_patrocinadores();
 
-        $data['s_pageName']='DíadeModa: pre-evento: formulario: participacion'; 
-        $data['s_channel']= 'DíadeModa: pre-evento: formulario ';
-        $data['s_prop1']= 'DíadeModa: pre-evento: formulario: participacion';
+        $data['s_pageName']='Cyberlunes: pre-evento: formulario: participacion'; 
+        $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
+        $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: participacion';
         $data['s_prop2']= '';
         
         $data['siteId'] = 58465;

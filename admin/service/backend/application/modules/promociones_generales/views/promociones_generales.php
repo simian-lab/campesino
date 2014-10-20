@@ -66,7 +66,7 @@ function cambiarValorCodSms(){
       var newWin = window.open();
       $.ajax({
         type: 'POST',
-        url: '<?php echo base_url('index.php/main/vista_previa_promociones') ?>',
+        url: '<?php echo base_url('index.php/vista_previa/vista_previa/vista_previa_promociones') ?>',
         data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_general: nombre_imagen_promocion_general, seccion: 'general', tipo_moneda: tipo_moneda_promocion},
         success: function(data){
           newWin.document.write(data);
@@ -78,7 +78,7 @@ function cambiarValorCodSms(){
     function showMotivoRechazo(id_promo){
       $.ajax({
         type: 'POST',
-        url: '<?php echo base_url('index.php/main/get_motivo_rechazo') ?>',
+        url: '<?php echo base_url('index.php/promociones_procesos/get_motivo_rechazo') ?>',
         data: {id_promo: id_promo},
         success: function(data){
           $('#dialog-motivo-rechazo').append('<p class="contenido-motivo-rechazo">'+data+'</p>');
@@ -98,7 +98,7 @@ function cambiarValorCodSms(){
           var sub_id_selected = $('#field-SUB_ID').val();
           $.ajax({
             type: 'POST',
-            url: '<?php echo base_url('index.php/main/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
+            url: '<?php echo base_url('index.php/tags_subcategorias/get_subcategorias_promociones/index') ?>/'+$('#field-CAT_ID').val(),
             success: function(data){
               obj = JSON.parse(data);
               if(obj){
@@ -130,7 +130,7 @@ function cambiarValorCodSms(){
         $('#field-CAT_ID').on('change', function() {
             $.ajax({
               type: 'POST',
-              url: '<?php echo base_url('index.php/main/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
+              url: '<?php echo base_url('index.php/tags_subcategorias/get_subcategorias_promociones/index') ?>/'+$('#field-CAT_ID').val(),
               success: function(data){
                 obj = JSON.parse(data);
                 if(obj){
@@ -157,30 +157,7 @@ $(document).ready(function(){
   $('#crudForm').submit(function(){
     return false;
   });
-// $(".form-div").append("<div class='form-field-box odd'><div id='label' class='form-display-as-box'>Vista previa</div> <div id='vista-previa' class='form-input-box'><a href='javascript:;' id='open'>Vista previa</a></div> </div> ");
-//$("#PRO_DESCUENTO_field_box").append("<div class='form-field-box odd'><div id='label' class='form-display-as-box'>Vista previa</div> <div id='vista-previa' class='form-input-box' style='margin-top:5px'><a target='_blank'  id='pruebavistaprevia'>Vista previa</a></div> </div> ");
-// $("#PRO_URL_field_box").append("<a href='javascript:;' id='open'>Vista previa</a>");
 
-  /*$('#pruebavistaprevia').click(function(){
-    var nombre_promocion = $('#field-PRO_NOMBRE').val();
-    var descripcion_promocion = $('#field-PRO_DESCRIPCION').val();
-    var precio_inicial_promocion = $('#field-PRO_PRECIO_INICIAL').val();
-    var precio_final_promocion = $('#field-PRO_PRECIO_FINAL').val();
-    var descuento_promocion = $('#field-PRO_DESCUENTO').val();
-    var url_promocion = $('#field-PRO_URL').val();
-    var nombre_imagen_promocion_general = $('.hidden-upload-input').val();
-    //window.open('<?php echo base_url('index.php/main/vista_previa_promociones') ?>/'+nombre_promocion+'/'+descripcion_promocion+'/'+precio_inicial_promocion+'/'+precio_final_promocion+'/'+descuento_promocion+'/'+url_promocion);
-    var newWin = window.open();
-    $.ajax({
-      type: 'POST',
-      url: '<?php echo base_url('index.php/main/vista_previa_promociones') ?>',
-      data: {nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_general: nombre_imagen_promocion_general, seccion: 'general'},
-      success: function(data){
-        newWin.document.write(data);
-      }
-    });
-
-  });*/
 
 });
 

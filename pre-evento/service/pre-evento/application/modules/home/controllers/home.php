@@ -31,8 +31,8 @@ class Home extends CI_Controller {
 
         $data['jsonParam']=get_app_data();
         
-        $meta_title = 'DiadeModa';
-        $meta_descripcion = 'Este #DíaDeModa es para renovar tu closet. Vía DíaDeModa.com';
+        $meta_title = 'Cyberlunes';
+        $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
         $meta_keys = "Descuentos, ofertas, rebajas, outlet, promociones, precios bajos, barato, deals, artículos baratos, productos a menor precio, Colombia, Bogotá, Medellín, Cali, Barranquilla, cyberlunes, ciberlunes, cybermonday, cibermonday";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
@@ -54,8 +54,8 @@ class Home extends CI_Controller {
         $data['total_articulos'] = $this->home_model->get_count_articulos();
 
 
-        $data['s_pageName']='DíadeModa: pre-evento: home'; // Slider de la home de articulos
-        $data['s_channel']= 'DíadeModa: pre-evento: home  ';
+        $data['s_pageName']='Cyberlunes: pre-evento: home'; // Slider de la home de articulos
+        $data['s_channel']= 'Cyberlunes: pre-evento: home  ';
         $data['s_prop1']= '';
         $data['s_prop2']= '';
 
@@ -130,9 +130,9 @@ class Home extends CI_Controller {
       $data['meta_url'] = $meta_url;
       $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
       
-      $data['s_pageName']='DíadeModa: pre-evento: detalle: '.$art_slug; 
-      $data['s_channel']= 'DíadeModa: pre-evento: detalle';
-      $data['s_prop1']= 'DíadeModa: pre-evento: detalle: '.$art_slug;
+      $data['s_pageName']='Cyberlunes: pre-evento: detalle: '.$art_slug; 
+      $data['s_channel']= 'Cyberlunes: pre-evento: detalle';
+      $data['s_prop1']= 'Cyberlunes: pre-evento: detalle: '.$art_slug;
       $data['s_prop2']= '';
       
       $data['siteId'] = 58465;

@@ -1,9 +1,9 @@
 function onClickPublicidad(nombre, posicion){
-	s.linkTrackVars = "events,eVar18,eVar19";
-	s.linkTrackEvents = "event16";
-	s.events = "event16";
-	s.eVar19 = nombre;
-	s.eVar18 = posicion;
+	s.linkTrackVars = "events,eVar27,eVar30";
+	s.linkTrackEvents = "event20";
+	s.events = "event20";
+	s.eVar27 = nombre;
+	s.eVar30 = posicion;
 	s.tl(true,"o","Click publicidad"); 
 }
 
@@ -16,13 +16,11 @@ function onClickCarrousel(nombre, posicion){
 	s.tl(true,"o","Click carrousel"); 
 }
 
-function onClickRegistro(nombre, posicion, intereses){
-	s.linkTrackVars = "events,eVar16,eVar34,eVar25";
+function onClickRegistro(email){
+	s.linkTrackVars = "events,eVar12";
 	s.linkTrackEvents = "event5";
 	s.events = "event5";
-	s.eVar16 = nombre;
-	s.eVar34 = posicion;
-	s.eVar25 = intereses;
+	s.eVar12 = email;
 	s.tl(true,"o","Registro"); 
 }
 

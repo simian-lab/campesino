@@ -25,23 +25,49 @@
 //	define('ENVIRONMENT', 'development');
 
 switch ($_SERVER['SERVER_NAME'])
-{
-	case 'admin.eltiempo-co-cyberlunes.dev.brandigital.com':
-	//	header('Access-Control-Allow-Origin:http://admin.eltiempo-co-cyberlunes.dev.brandigital.com');
-		define('ENVIRONMENT', 'development');	
-	break;	
-	case 'admin.eltiempo-co-cyberlunes.stage.brandigital.com':	 
-			header('Access-Control-Allow-Origin:http://admin.eltiempo-co-cyberlunes.stage.brandigital.com,http://a3.static.eltiempo-co-cyberlunes.stage.brandigital.com');   	
-                define('ENVIRONMENT', 'testing');
+{	
+	case 'admin.cyberlunes.local.brandigital.com':	 
+		$dominios_permitidos = array(
+				'http://admin.cyberlunes.local.brandigital.com',
+				'https://admin.cyberlunes.local.brandigital.com',
+				'http://static.cyberlunes.local.brandigital.com',
+				'https://static.cyberlunes.local.brandigital.com',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'local');
 	break;
-	// case 'eltiempo-co-teconviene.stage.ec2br.brandigital.com':	    	
- //                define('ENVIRONMENT', 'testing');
-	// break;
-	default:
-		header('Access-Control-Allow-Origin:https://admin.eltiempo-co-cyberlunes.live.brandigital.com,http://admin.eltiempo-co-cyberlunes.live.brandigital.com,https://admin.cyberlunes.com.co,http://a3.static.eltiempo-co-cyberlunes.live.brandigital.com'); 
-		define('ENVIRONMENT', 'production');	
+	case 'admin.cyberlunes.dev.brandigital.com':	 
+		$dominios_permitidos = array(
+				'http://admin.cyberlunes.dev.brandigital.com',
+				'https://admin.cyberlunes.dev.brandigital.com',
+				'http://static.cyberlunes.dev.brandigital.com',
+				'https://static.cyberlunes.dev.brandigital.com',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'development');
+	break;
+	case 'admin-stage.cyberlunes.com':	 
+		$dominios_permitidos = array(
+				'http://admin-stage.cyberlunes.com',
+				'https://admin-stage.cyberlunes.com',
+				'http://static-stage.cyberlunes.com',
+				'https://static-stage.cyberlunes.com',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'testing');
+	break;
+	case 'admin.cyberlunes.com.co':	 
+		$dominios_permitidos = array(
+				'http://admin.cyberlunes.com.co',
+				'https://admin.cyberlunes.com.co',
+				'http://static.cyberlunes.com.co',
+				'https://static.cyberlunes.com.co',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'production');
 	break;
 }
+header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
 
 
 /*
@@ -58,14 +84,14 @@ if (defined('ENVIRONMENT'))
 {
 	switch (ENVIRONMENT)
 	{
+		case 'local':
 		case 'development':
-			error_reporting(E_ALL);
-		break;
-		case 'testing':
-		//	error_reporting(0);
 			error_reporting(E_ALL);
 			ini_set('display_errors', TRUE);
 			ini_set('display_startup_errors', TRUE);
+		break;
+		case 'testing':
+			error_reporting(0);
 		break;
 		case 'production':
 			error_reporting(0);

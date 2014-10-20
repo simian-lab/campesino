@@ -4,13 +4,13 @@
                     <div class="col-md-12 center">
                         <div class="marcas-mobile">
                             <figure class="col-xs-4">
-                                <a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>
+                                <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Footer')"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="Gobierno de Colombia" /></a>
                             </figure>
                             <figure class="col-xs-4">
-                                <a href="http://wsp.presidencia.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca2.png" alt="Prosperidad para todos" /></a>
+                                <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')"><img src="<?php echo $base_url_static;?>img/marca2.png" alt="MinTIC" /></a>
                             </figure>
                             <figure class="col-xs-4">
-                                <a href="http://www.vivedigital.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>
+                                <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Footer')"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>
                             </figure>
                         </div>
                         <div class="invita">
@@ -19,8 +19,8 @@
                                 --><span>invita:</span>
                             </div>
                             <div class="logos">                                
-                                <a href="http://ccce.org.co/" target="_blank"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a>
-                                <a href="http://www.eltiempo.com/" target="_blank"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
+                                <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Footer')"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a>
+                                <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
                             </div>
                         </div>
                     </div>

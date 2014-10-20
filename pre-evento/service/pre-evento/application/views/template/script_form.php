@@ -56,6 +56,22 @@ function emailCheck (emailStr) {
        alert(errStr);
        return false;
     }
+
+    var checkEmail = $.ajax({
+                        type: 'POST',
+                        data: {email: emailStr},
+                        async: false,
+                        global: false,
+                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/checkEmailExist'); ?>',
+                        success: function response(data){}
+                    }).responseText;
+
+    var json_data = JSON.parse(checkEmail);
+    if(json_data.status.code == 101){
+        $('#alerta-form-usuario-registrado').modal();
+        return false;
+    }
+    
     return true;
     }
     function UPTvalidateform(thisform)
@@ -66,6 +82,7 @@ function emailCheck (emailStr) {
         }
         var checkbox = false;
         var checkbox_len = 1;
+        var intereses = [];
 
         if(thisform.elements["val_66010[]"].length != undefined )
         {
@@ -75,7 +92,7 @@ function emailCheck (emailStr) {
                 if (thisform.elements['val_66010[]'][i].selected)
                 {
                     checkbox = true;
-                    break;
+                    intereses.push(thisform.elements['val_66010[]'][i].value);
                 }
             }
         }
@@ -119,24 +136,11 @@ function emailCheck (emailStr) {
                     type: 'POST',                    
                     async :false,
                     dataType: 'html',
-                    //data: {nombre: thisform.val_67865.value, email: thisform.email.value, intereses: intereses.join(', ')},
+                    data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
                     url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
                     success: function(xmldata) {
-                        /*switch(thisform.name){
-                            case 'UPTml272461_home':
-                                onClickRegistro("Ventana", "Home", intereses.join(', '));
-                                break;
-                            case 'UPTml272461_footer1':
-                            case 'UPTml272461_footer2':
-                                onClickRegistro("Barra inferior", "Footer", intereses.join(', ')); 
-                                break;
-                            case 'UPTml272461_mobile':
-                                onClickRegistro("Mobile", "Home", intereses.join(', '));
-                                break;
-                            case 'UPTml272461_popup':
-                                onClickRegistro("Pop up", "Detalle artículo", intereses.join(', ')); 
-                                break;
-                        }*/
+                        
+                        onClickRegistro(thisform.email.value);
 
                         $.ajax({
                             type: 'POST',
