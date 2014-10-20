@@ -17,7 +17,7 @@ class Vista_previa extends MX_Controller {
 
 	function vista_previa_promociones(){
 
-		$data['id_user'] = $this->input->post('id');
+		$data['id_user'] = filter_var($this->input->post('id'),FILTER_VALIDATE_INT);
 		$data['nombre_promocion'] = filter_var($this->input->post('nombre'),FILTER_SANITIZE_SPECIAL_CHARS);
 		$data['descripcion_promocion'] = filter_var($this->input->post('descripcion'),FILTER_SANITIZE_SPECIAL_CHARS);
 		$data['precio_inicial_promocion'] = filter_var($this->input->post('precio_inicial'),FILTER_SANITIZE_SPECIAL_CHARS);
