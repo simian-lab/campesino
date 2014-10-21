@@ -93,7 +93,7 @@
             <div class="modal-body">
                 <p>
                     www.cyberlunes.com.co es una página web (“la página web” o “la Página Web”) de 
-                    propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”). Cyberlunes se llevará a cabo el próximo 19 de Mayo, desde las 12:00 a.m. hasta las 11:59 p.m. y comercios importantes del país ofrecerán descuentos y promociones en compras por Internet.
+                    propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”).
                 </p>
                 <p>
                    Las siguientes disposiciones describen los términos y condiciones de uso aplicables al acceso y uso de los servicios ofrecidos por la página web, que deberán ser observados detenidamente por los usuarios y aliados, y que se entenderán aceptados por el solo hecho de navegar por la página web.
