@@ -15,40 +15,16 @@
 switch ($_SERVER['SERVER_NAME'])
 {
 	case 'pre-evento.cyberlunes.local.brandigital.com':	 
-		$dominiosPermitidos = array(
-				'http://pre-evento.cyberlunes.local.brandigital.com',
-				'https://pre-evento.cyberlunes.local.brandigital.com',
-				'http://static.cyberlunes.local.brandigital.com',
-				'https://static.cyberlunes.local.brandigital.com',
-				'http://fonts.gstatic.com/'
-			);
+		$dominiosPermitidos = array('static.cyberlunes.local.brandigital.com');
 	break;
 	case 'pre-evento.cyberlunes.dev.brandigital.com':	 
-		$dominiosPermitidos = array(
-				'http://pre-evento.cyberlunes.dev.brandigital.com',
-				'https://pre-evento.cyberlunes.dev.brandigital.com',
-				'http://static.cyberlunes.dev.brandigital.com',
-				'https://static.cyberlunes.dev.brandigital.com',
-				'http://fonts.gstatic.com/'
-			);
+		$dominiosPermitidos = array('static.cyberlunes.dev.brandigital.com');
 	break;
 	case 'preevento-stage.cyberlunes.com':	 
-		$dominiosPermitidos = array(
-				'http://preevento-stage.cyberlunes.com',
-				'https://preevento-stage.cyberlunes.com',
-				'http://static-stage.cyberlunes.com',
-				'https://static-stage.cyberlunes.com',
-				'http://fonts.gstatic.com/'
-			);
+		$dominiosPermitidos = array('static-stage.cyberlunes.com');
 	break;
 	case 'www.cyberlunes.com.co':	 
-		$dominiosPermitidos = array(
-				'http://www.cyberlunes.com.co',
-				'https://www.cyberlunes.com.co',
-				'http://static.cyberlunes.com.co',
-				'https://static.cyberlunes.com.co',
-				'http://fonts.gstatic.com/'
-			);
+		$dominiosPermitidos = array('static.cyberlunes.com.co');
 	break;
 }
 
@@ -240,7 +216,7 @@ $PHPTHUMB_CONFIG['mysql_database'] = '';
 // * Security configuration
 $PHPTHUMB_CONFIG['high_security_enabled']    = false;  // if enabled, requires 'high_security_password' set to be set and requires the use of phpThumbURL() function (at the bottom of phpThumb.config.php) to generate hashed URLs
 $PHPTHUMB_CONFIG['high_security_password']   = '';     // required if 'high_security_enabled' is true, and must be at complex (uppercase, lowercase, numbers, punctuation, etc -- punctuation is strongest, lowercase is weakest; see PasswordStrength() in phpThumb.php). You can use a password generator like http://silisoftware.com/tools/password-random.php to generate a strong password
-$PHPTHUMB_CONFIG['disable_debug']            = false;   // prevent phpThumb from displaying any information about your system. If true, phpThumbDebug and error messages will be disabled
+$PHPTHUMB_CONFIG['disable_debug']            = true;   // prevent phpThumb from displaying any information about your system. If true, phpThumbDebug and error messages will be disabled
 $PHPTHUMB_CONFIG['allow_src_above_docroot']  = false;  // if true, allow src to be anywhere in filesystem; if false (default) only allow src within document_root
 $PHPTHUMB_CONFIG['allow_src_above_phpthumb'] = true;   // if true (default), allow src to be anywhere in filesystem; if false only allow src within sub-directory of phpThumb installation
 

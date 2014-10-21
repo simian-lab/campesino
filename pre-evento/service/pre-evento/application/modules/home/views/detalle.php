@@ -23,8 +23,7 @@
                 <ol class="breadcrumb">
                     <?php $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : ''; ?>
                     <li><a href="<?php echo base_url().$page; ?>">Home</a></li>
-                    <li>Detalle</li>
-                    <li class="active"><?php echo $this->uri->segment(2); ?></li>
+                    <li class="active"><a href="<?php echo current_url() ?>"><?php echo $breadcrumb['ART_TITULO'] ?></a></li>
                 </ol>
             </div>
         </div>                            
@@ -115,7 +114,7 @@
                         <?php foreach($articulos_recomendados as $articulo_recomendado): ?>
                         <li class="col-lg-12 col-md-4 col-sm-4">
                             <figure class="col-lg-6 col-md-6 col-sm-6">
-                                <a href="<?php echo base_url().'detalle/'.$articulo_recomendado->ART_SLUG ?>"><img border="0" src="<?php echo $base_url_tod?>?src=<?php echo get_url_encode_tod($base_url_img_articulos.$articulo_recomendado->ART_IMAGEN); ?>&amp;w=130&amp;h=145&amp;zc=1&amp;" alt=""></a>
+                                <a href="<?php echo base_url().'detalle/'.$articulo_recomendado->ART_SLUG ?>"><img border="0" src="<?php echo $base_url_tod?>?src=<?php echo ($base_url_img_articulos.$articulo_recomendado->ART_IMAGEN); ?>&amp;w=130&amp;h=145&amp;zc=1&amp;" alt=""></a>
                                 <img src="<?php echo $base_url_static?>img/border-btn-leermas.png" class="border-impacto">
                             </figure>
                             <aside class="col-lg-6 col-md-6 col-sm-6">

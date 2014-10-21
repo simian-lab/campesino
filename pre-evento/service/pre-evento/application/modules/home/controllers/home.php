@@ -17,6 +17,7 @@ class Home extends CI_Controller {
           $this->load->helper('get_app_data');
           $this->load->helper('fechas-articulos');
           $this->load->library('user_agent');
+          $this->load->helper('get_url_encode_tod');
      }
     
     public function index($paramOrigen='') { 

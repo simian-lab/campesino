@@ -30,7 +30,7 @@ if ( ! function_exists('get_url_base'))
            $data['base_path_admin_img_facturas']    =  $base_path.'admin/multimedia/formulario-sorteo/';
            $data['base_path_admin_img_promociones']    =  $base_path.'admin/multimedia/promociones/';
 
-           $data['base_url_tod']  = $url .'tod/thumb/';
+           $data['base_url_tod']  = $url .'tod/thumb/phpThumb.php';
            return $data;
         
   }
