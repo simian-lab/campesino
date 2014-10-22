@@ -44,6 +44,9 @@
             </div>
             <div class="col-lg-4 col-md-12 aside">
                 <figure class="publi">
+                    <div class="titulo-publi">
+                        <span>publicidad</span>
+                    </div>
                     <script type="text/javascript">
                      sas.call("std", {
                       siteId:  '<?php echo $siteId ?>', // 

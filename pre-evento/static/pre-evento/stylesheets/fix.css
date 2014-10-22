@@ -1,3 +1,29 @@
 footer div.terminos span a{
 	color: #ffffff;
 }
+
+section#home .container .publicidades figure .titulo-publi, section#detalle .container .aside figure.publi .titulo-publi, section#formulario .container .aside figure.publi .titulo-publi {
+	min-width: 302px;
+}
+
+#sas_9611, #sas_9608, #sas_11772, #sas_9344{
+	min-width: 302px;
+	max-height: 102px;
+	border: 1px solid #00b3c7;
+}
+
+@media screen and (min-width: 768px){
+
+	#sas_9611, #sas_9608, #sas_11772, #sas_9344, section#detalle .container .aside figure.publi .titulo-publi, section#formulario .container .aside figure.publi .titulo-publi{
+		max-width: 302px;
+	}
+
+}
+
+@media screen and (max-width: 767px){
+
+	#sas_9611, #sas_9608, #sas_11772, #sas_9344, section#detalle .container .aside figure.publi .titulo-publi, section#formulario .container .aside figure.publi .titulo-publi{
+		max-width: 302px;
+	}
+
+}
