@@ -19,9 +19,9 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/molfis.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/3dhover.css">
 
-        <?php if($this->agent->is_mobile()): ?>
+        <?php //if($this->agent->is_mobile()): ?>
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/fix.css">
-        <?php endif; ?>
+        <?php //endif; ?>
         
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
         

@@ -1,3 +1,22 @@
-article .info h2 {
-	width: 70%;
+@media screen and (max-width: 767px){
+	article .info h2 {
+		width: 70%;
+	}
+}
+
+
+#slide-publi .owl-wrapper .owl-item .item .publi-content .titulo-publicidad {
+	min-width: 302px;
+}
+
+#sas_9608, #sas_9611, #sas_11772 {
+	max-width: 302px;
+	max-height: 102px;
+	border: 1px solid #00b3c7;
+	margin: 0 auto;
+}
+
+section.wrapp div.banner {
+	left: 0;
+	right: 0;
 }

@@ -185,12 +185,8 @@
                           <?php echo $promocionesgenerales_html ?> 
                     </div>
                 </div> 
-            </div>            
-        </section> 
 
-        <section style="position: fixed; bottom: 0px; width: 100%; z-index: 99;">
-            <div class="container">
-                <div class="row">                    
+                <div class="row banner">                    
                     <div class="col-lg-12">
                         <!--<a href="#" target="_blank">
                             <img src="<?php echo $base_url_static;?>img/banner-visa.jpg" alt="">
@@ -209,5 +205,6 @@
                         </noscript>
                     </div>                
                 </div>
-            </div>
-        </section>
+
+            </div>            
+        </section> 
