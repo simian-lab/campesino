@@ -8,8 +8,7 @@
             <div class="col-md-12">
                 <ol class="breadcrumb">
                     <li><a href="<?php echo $base_url; ?>">Home</a></li>
-                    <li>Formulario</li>
-                    <li class="active">Sorteo</li>
+                    <li class="active"><a href="<?php echo current_url(); ?>">Formulario Sorteo</a></li>
                 </ol>
             </div>
         </div>   
