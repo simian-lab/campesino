@@ -74,7 +74,7 @@
                     </div>
                     <?php if(!$this->agent->is_mobile()): ?>
                     <div class="col-md-3 col-sm-6 col-xs-6 title">
-                        <!--<span>19 de Mayo <br>--><span><b>Los mejores</b> descuentos</span>
+                        <!--<span>19 de Mayo <br>--><span>Próximo 1 de diciembre</span>
                     </div>     
                     <?php endif; ?>               
                     <div class="col-md-6 marcas">
