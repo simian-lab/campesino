@@ -54,7 +54,7 @@ class Descuentosfiltro extends MX_Controller
         $data['descuentosfiltro']=json_encode($dataFiltrado);
 
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Si les gustan las ofertas como a mí, entren ya a www.cyberlunes.com.co. Estas ofertas solo duran hasta media noche.';
+        $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
         $meta_keys = "Compare,Mejores Ofertas Turísticas,viveviajar";
         $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
         $meta_url = base_url();
