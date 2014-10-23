@@ -20,3 +20,7 @@ section.wrapp div.banner {
 	left: 0;
 	right: 0;
 }
+
+.banner a img {
+	width: inherit;
+}
