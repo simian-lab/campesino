@@ -8,8 +8,10 @@ section#detalle .container .publicidades figure.publi .titulo-publi span, sectio
 	text-transform: uppercase;
 }
 
-section#detalle .container .aside {
-	padding-left: 0;
+@media screen and (min-width: 1024px) {
+	section#detalle .container .aside {
+		padding-left: 0;
+	}
 }
 
 section#home .container .publicidades figure .titulo-publi, section#detalle .container .publicidades figure.publi .titulo-publi, section#formulario .container .publicidades figure.publi .titulo-publi {
