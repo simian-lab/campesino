@@ -8,8 +8,12 @@ section#detalle .container .publicidades figure.publi .titulo-publi span, sectio
 	text-transform: uppercase;
 }
 
+section#formulario .container .publicidades div.row {
+	padding: 0;
+}
+
 @media screen and (min-width: 1024px) {
-	section#detalle .container .aside {
+	section#detalle .container .aside, section#formulario .container .aside {
 		padding-left: 0;
 	}
 }
@@ -21,7 +25,7 @@ section#home .container .publicidades figure .titulo-publi, section#detalle .con
 	border-right: 1px solid #00b3c7;
 }
 
-section#detalle .container .publicidades figure {
+section#detalle .container .publicidades figure, section#formulario .container .publicidades figure {
 	display: inline-block; 
 }
 
@@ -51,11 +55,11 @@ section#detalle .container .publicidades figure {
 		max-width: 302px;
 	}
 
-	section#home .container .publicidades figure, section#detalle .container .publicidades figure {
+	section#home .container .publicidades figure, section#detalle .container .publicidades figure, section#formulario .container .publicidades figure {
 		max-width: 300px !important;
 	}
 
-	section#detalle .container .publicidades {
+	section#detalle .container .publicidades, section#formulario .container .publicidades {
 		text-align: center;
 	}
 

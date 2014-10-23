@@ -162,57 +162,63 @@
                     </div>
                     <a href="#" class="next-marcas"  id="next-marcas-aside"><img src="<?php echo $base_url_static?>img/controls-marcas-right.png" alt=""></a>  
                 </div>
-                <figure class="publi">
-                    <div class="titulo-publi">
-                        <span>publicidad</span>
-                    </div>
-                    <script type="text/javascript">
-                     sas.call("std", {
-                      siteId:  '<?php echo $siteId ?>', // 
-                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
-                      formatId:  9611, // Formato : Robapagina 300x250
-                      target:  ''   // Segmentación
-                     });
-                    </script>
-                    <noscript>
-                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
-                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                    </noscript>
-                </figure>
-                <figure class="publi"> 
-                    <div class="titulo-publi">
-                        <span>publicidad</span>
-                    </div>
-                    <script type="text/javascript">
-                     sas.call("std", {
-                      siteId:  '<?php echo $siteId ?>', // 
-                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
-                      formatId:  9608, // Formato : Robapagina 300x250
-                      target:  ''   // Segmentación
-                     });
-                    </script>
-                    <noscript>
-                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
-                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                    </noscript>
-                </figure>
-                <figure class="publi">
-                    <div class="titulo-publi">
-                        <span>publicidad</span>
-                    </div>
-                    <script type="text/javascript">
-                     sas.call("std", {
-                      siteId:  '<?php echo $siteId ?>', // 
-                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
-                      formatId:  11772, // Formato : Robapagina 300x250
-                      target:  ''   // Segmentación
-                     });
-                    </script>
-                    <noscript>
-                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
-                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                    </noscript> 
-                </figure>                        
+                <div class="col-lg-4 col-md-12 publicidades" style="padding:0">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-12 col-xs-12">
+                            <figure class="publi">
+                                <div class="titulo-publi">
+                                    <span>publicidad</span>
+                                </div>
+                                <script type="text/javascript">
+                                 sas.call("std", {
+                                  siteId:  '<?php echo $siteId ?>', // 
+                                  pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
+                                  formatId:  9611, // Formato : Robapagina 300x250
+                                  target:  ''   // Segmentación
+                                 });
+                                </script>
+                                <noscript>
+                                 <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+                                </noscript>
+                            </figure>
+                            <figure class="publi"> 
+                                <div class="titulo-publi">
+                                    <span>publicidad</span>
+                                </div>
+                                <script type="text/javascript">
+                                 sas.call("std", {
+                                  siteId:  '<?php echo $siteId ?>', // 
+                                  pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
+                                  formatId:  9608, // Formato : Robapagina 300x250
+                                  target:  ''   // Segmentación
+                                 });
+                                </script>
+                                <noscript>
+                                 <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+                                </noscript>
+                            </figure>
+                            <figure class="publi">
+                                <div class="titulo-publi">
+                                    <span>publicidad</span>
+                                </div>
+                                <script type="text/javascript">
+                                 sas.call("std", {
+                                  siteId:  '<?php echo $siteId ?>', // 
+                                  pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes_Pre-Evento/convencional
+                                  formatId:  11772, // Formato : Robapagina 300x250
+                                  target:  ''   // Segmentación
+                                 });
+                                </script>
+                                <noscript>
+                                 <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=convencional&fmtid=9344&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+                                </noscript> 
+                            </figure>   
+                        </div>  
+                    </div>   
+                </div>                
             </div>
         </div>
     </div>            

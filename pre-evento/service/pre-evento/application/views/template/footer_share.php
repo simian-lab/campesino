@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="row sponsor">                            
                     <div class="col-md-12 center">
-                        <div class="marcas-mobile">
+                        <div class="marcas-mobile clearfix">
                             <figure class="col-xs-4">
                                 <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
                             </figure>
