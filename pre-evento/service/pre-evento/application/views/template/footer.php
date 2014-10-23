@@ -2,7 +2,7 @@
             <div class="container">
                 <div class="row sponsor">                            
                     <div class="col-md-12 center">
-                        <div class="marcas-mobile">
+                        <div class="marcas-mobile clearfix">
                             <figure class="col-xs-4">
                                 <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Footer')"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="Gobierno de Colombia" /></a>
                             </figure>
