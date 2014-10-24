@@ -12,7 +12,7 @@
                     <figure>
                         <a href="#" target="_blank"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>
                     </figure>-->
-                    <?php if($this->agent->is_mobile()): ?>
+                    <?php /*if($this->agent->is_mobile()): ?>
                     <figure>
                             <!--<a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>-->
                         <script type="text/javascript">
@@ -52,7 +52,7 @@
                             <img src="http://ads.eltiempo.com/call/pubi/41700/282275/25679/S/[timestamp]/?" border="0" alt="" /></a>
                         </noscript>
                     </figure>
-                    <?php endif; ?>
+                    <?php endif;*/ ?>
                 </div>
                 <div class="invita">
                     <div class="texto">

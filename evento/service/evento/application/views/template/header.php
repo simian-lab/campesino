@@ -14,7 +14,7 @@
                         <span>¡Hasta media noche!</span>
                     </div>                    
                     <div class="col-md-5 col-md-offset-1 marcas">
-                        <?php if(!$this->agent->is_mobile()): ?>
+                        <?php /*if(!$this->agent->is_mobile()): ?>
                         <figure>
                             <!--<a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>-->
                             <script type="text/javascript">
@@ -54,7 +54,7 @@
                                 <img src="http://ads.eltiempo.com/call/pubi/41700/282275/25679/S/[timestamp]/?" border="0" alt="" /></a>
                             </noscript>
                         </figure>
-                        <?php endif; ?>
+                        <?php endif; */?>
                     </div>
                 </div>                             
             </div>            
@@ -66,8 +66,8 @@
         <!-- FIN MENU --> 
 
         <div class="share">
-            <a onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");' href="#" class=""><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
-            <a onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'  href="#" class=""><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
+            <a onClick='shareFacebook(); onClickShare("facebook", "sitio")' href="#" class=""><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
+            <a onClick='shareTwitter(); onClickShare("twitter", "sitio")'  href="#" class=""><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
         </div>
 
         

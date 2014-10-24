@@ -1,15 +1,18 @@
 $(document).ready(function() {
        $( "#selectTienda" ).change(function() {
+            onChangeFilter(this.value)
             url="/descuentos/"+ base_descuentosfiltro.categoria +'/'+ this.value;
             window.location.href = url;
         });
 
         $( "#selectMarca" ).change(function() {
+            onChangeFilter(this.value)
             url="/descuentos/"+ base_descuentosfiltro.categoria +'/tiendas/'+this.value;
             window.location.href = url;
         });
 
         $( "#selectSubCategoria" ).change(function() {
+            onChangeFilter(this.value)
             url="/descuentos/"+ base_descuentosfiltro.categoria +'/tiendas/marcas/'+this.value;
             window.location.href = url;
         });

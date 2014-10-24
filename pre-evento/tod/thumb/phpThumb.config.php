@@ -20,8 +20,8 @@ switch ($_SERVER['SERVER_NAME'])
 	case 'pre-evento.cyberlunes.dev.brandigital.com':	 
 		$dominiosPermitidos = array('static.cyberlunes.dev.brandigital.com');
 	break;
-	case 'preevento-stage.cyberlunes.com':	 
-		$dominiosPermitidos = array('static-stage.cyberlunes.com');
+	case 'preevento-stage.cyberlunes.com.co':	 
+		$dominiosPermitidos = array('static-stage.cyberlunes.com.co');
 	break;
 	case 'www.cyberlunes.com.co':	 
 		$dominiosPermitidos = array('static.cyberlunes.com.co');
