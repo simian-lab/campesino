@@ -11,7 +11,7 @@
                         </a>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6 title">
-                        <span>LOS <b>MEJORES</b> DESCUENTOS</span>
+                        <span>¡Hasta media noche!</span>
                     </div>                    
                     <div class="col-md-5 col-md-offset-1 marcas">
                         <?php if(!$this->agent->is_mobile()): ?>

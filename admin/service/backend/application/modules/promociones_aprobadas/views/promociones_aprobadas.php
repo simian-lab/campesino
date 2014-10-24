@@ -106,7 +106,7 @@ function cambiarValorCodSms(){
       var newWin = window.open();
       $.ajax({
         type: 'POST',
-        url: '<?php echo base_url('index.php/main/vista_previa_promociones') ?>',
+        url: '<?php echo base_url('index.php/vista_previa/vista_previa/vista_previa_promociones') ?>',
         data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion, tipo_moneda: tipo_moneda_promocion},
         success: function(data){//alert(data)
           newWin.document.write(data);
@@ -122,7 +122,7 @@ function cambiarValorCodSms(){
         if(rechazar_promocion == true){
           $.ajax({
             type: 'POST',
-            url: '<?php echo base_url('index.php/main/rechazar_promocion') ?>',
+            url: '<?php echo base_url('index.php/promociones_procesos/rechazar_promocion') ?>',
             data: {id_promocion: id_promocion, motivo: motivo_rechazo, user_autorizador: '<?php echo $this->session->userdata('sadmin_user_id') ?>'},
             success: function(data){
                location.reload(); 
@@ -140,7 +140,7 @@ function cambiarValorCodSms(){
       if(aceptar_promocion == true){
         $.ajax({
           type: 'POST',
-          url: '<?php echo base_url('index.php/main/aceptar_promocion') ?>',
+          url: '<?php echo base_url('index.php/promociones_procesos/aceptar_promocion') ?>',
           data: {id_promocion: id_promocion, user_autorizador: '<?php echo $this->session->userdata('sadmin_user_id') ?>'},
           success: function(data){
              location.reload(); 
@@ -152,7 +152,7 @@ function cambiarValorCodSms(){
     function showMotivoRechazo(id_promo){
       $.ajax({
         type: 'POST',
-        url: '<?php echo base_url('index.php/main/get_motivo_rechazo') ?>',
+        url: '<?php echo base_url('index.php/promociones_procesos/get_motivo_rechazo') ?>',
         data: {id_promo: id_promo},
         success: function(data){//alert(data)
           $('#dialog-motivo-rechazo').append('<p class="contenido-motivo-rechazo">'+data+'</p>');
@@ -162,62 +162,7 @@ function cambiarValorCodSms(){
       $('.contenido-motivo-rechazo').remove();
     }
 
-    (function($) {
-      $(document).ready(function() {
-        var field2 = $('select[name="SUB_ID"]');
-            //field2.children().remove().end();
-            //field2.append('<option value="" ></option>')
-            //field2.trigger("liszt:updated"); 
-
-        if($('#field-CAT_ID').val() != '' && $('#field-SUB_ID').val() != ''){
-          var sub_id_selected = $('#field-SUB_ID').val();
-          $.ajax({
-            type: 'POST',
-            url: '<?php echo base_url('index.php/main/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
-            success: function(data){
-              obj = JSON.parse(data);
-              if(obj){
-                field2.removeAttr('disabled');
-                field2.children().remove().end();
-                for (var key in obj) {
-                  if (obj.hasOwnProperty(key)) {
-                    if(key == sub_id_selected){
-                      selected = 'selected';
-                    }
-                    else{
-                      selected = '';
-                    }
-                    field2.append('<option '+selected+' value="'+key+'">'+obj[key]+'</option>');
-                  }
-                }
-                field2.trigger("liszt:updated");
-              } 
-            }
-          });
-        }
-
-        $('#field-CAT_ID').on('change', function() {
-            $.ajax({
-              type: 'POST',
-              url: '<?php echo base_url('index.php/main/get_subcategorias_promociones') ?>/'+$('#field-CAT_ID').val(),
-              success: function(data){
-                obj = JSON.parse(data);
-                if(obj){
-                  field2.removeAttr('disabled');
-                  field2.children().remove().end();
-                  for (var key in obj) {
-                    if (obj.hasOwnProperty(key)) {
-                      field2.append('<option value="'+key+'">'+obj[key]+'</option>');
-                    }
-                  }
-                  field2.trigger("liszt:updated");
-                } 
-              }
-            });
-        });
-        
-      });
-    })(jQuery);
+   
   </script>
 
   <script>
@@ -227,41 +172,6 @@ function cambiarValorCodSms(){
     $('#crudForm').submit(function(){
       return false;
     });
-  // $(".form-div").append("<div class='form-field-box odd'><div id='label' class='form-display-as-box'>Vista previa</div> <div id='vista-previa' class='form-input-box'><a href='javascript:;' id='open'>Vista previa</a></div> </div> ");
- // $("#PRO_URL_field_box").append("<div class='form-field-box odd'><div id='label' class='form-display-as-box'>Vista previa</div> <div id='vista-previa' class='form-input-box' style='margin-top:5px'><a target='_blank'  id='pruebavistaprevia'>Vista previa</a></div> </div> ");
-  // $("#PRO_URL_field_box").append("<a href='javascript:;' id='open'>Vista previa</a>");
-
-    /*$('#pruebavistaprevia').click(function(){
-      var nombre_promocion = $('#field-PRO_NOMBRE').text();
-      var descripcion_promocion = $('#field-PRO_DESCRIPCION').text();
-      var precio_inicial_promocion = $('#field-PRO_PRECIO_INICIAL').text();
-      var precio_final_promocion = $('#field-PRO_PRECIO_FINAL').text();
-      var descuento_promocion = $('#field-PRO_DESCUENTO').text();
-      var url_promocion = $('#field-PRO_URL').text();
-      var nombre_imagen_promocion_premium = $('#field-PRO_LOGO_PREMIUM').text();
-      var nombre_imagen_promocion_general = $('#field-PRO_LOGO_GENERAL').text();
-      if(nombre_imagen_promocion_general != '' && nombre_imagen_promocion_premium != ''){
-        var seccion = 'premium';
-      }
-      else if(nombre_imagen_promocion_premium != ''){
-        var seccion = 'premium_home';
-      }
-      else if(nombre_imagen_promocion_general != ''){
-        var seccion = 'general';
-      }
-      //alert(nombre_imagen_promocion_general)
-      //window.open('<?php echo base_url('index.php/main/vista_previa_promociones') ?>/'+nombre_promocion+'/'+descripcion_promocion+'/'+precio_inicial_promocion+'/'+precio_final_promocion+'/'+descuento_promocion+'/'+url_promocion);
-      var newWin = window.open();
-      $.ajax({
-        type: 'POST',
-        url: '<?php echo base_url('index.php/main/vista_previa_promociones') ?>',
-        data: {nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion},
-        success: function(data){
-          newWin.document.write(data);
-        }
-      });
-
-    });*/
 
   });
 

@@ -1,0 +1,66 @@
+footer div.terminos span a{
+	color: #ffffff;
+}
+
+section#detalle .container .publicidades figure.publi .titulo-publi span, section#formulario .container .publicidades figure.publi .titulo-publi span {
+	color: #ccc;
+	font-size: 0.7em;
+	text-transform: uppercase;
+}
+
+section#formulario .container .publicidades div.row {
+	padding: 0;
+}
+
+@media screen and (min-width: 1024px) {
+	section#detalle .container .aside, section#formulario .container .aside {
+		padding-left: 0;
+	}
+}
+
+section#home .container .publicidades figure .titulo-publi, section#detalle .container .publicidades figure.publi .titulo-publi, section#formulario .container .publicidades figure.publi .titulo-publi {
+	min-width: 302px;
+	border-top: 1px solid #00b3c7;
+	border-left: 1px solid #00b3c7;
+	border-right: 1px solid #00b3c7;
+}
+
+section#detalle .container .publicidades figure, section#formulario .container .publicidades figure {
+	display: inline-block; 
+}
+
+#sas_9344 { 
+	min-width: 302px;
+	max-height: 252px;
+	border: 1px solid #00b3c7;
+}
+
+#sas_9611, #sas_9608, #sas_11772{
+	min-width: 302px;
+	max-height: 102px;
+	border: 1px solid #00b3c7;
+}
+
+@media screen and (min-width: 768px){
+
+	#sas_9611, #sas_9608, #sas_11772, #sas_9344, section#detalle .container .publicidades figure.publi .titulo-publi, section#formulario .container .publicidades figure.publi .titulo-publi{
+		max-width: 302px;
+	}
+
+}
+
+@media screen and (max-width: 767px){
+
+	#sas_9611, #sas_9608, #sas_11772, #sas_9344, section#detalle .container .publicidades figure.publi .titulo-publi, section#formulario .container .publicidades figure.publi .titulo-publi{
+		max-width: 302px;
+	}
+
+	section#home .container .publicidades figure, section#detalle .container .publicidades figure, section#formulario .container .publicidades figure {
+		max-width: 300px !important;
+	}
+
+	section#detalle .container .publicidades, section#formulario .container .publicidades {
+		text-align: center;
+	}
+
+}

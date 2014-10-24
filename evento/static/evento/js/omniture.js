@@ -1,0 +1,102 @@
+function onClickPublicidad(nombre, posicion){
+	s.linkTrackVars = "events,eVar27,eVar30";
+	s.linkTrackEvents = "event20";
+	s.events = "event20";
+	s.eVar27 = nombre;
+	s.eVar30 = posicion;
+	s.tl(true,"o","Click publicidad"); 
+}
+
+function onClickCarrousel(nombre, posicion){
+	s.linkTrackVars = "events,eVar18,eVar19";
+	s.linkTrackEvents = "event12";
+	s.events = "event12";
+	s.eVar19 = nombre;
+	s.eVar18 = posicion;
+	s.tl(true,"o","Click carrousel"); 
+}
+
+function onClickRegistro(nombre, posicion){
+	s.linkTrackVars = "events,eVar16,eVar34";
+	s.linkTrackEvents = "event5";
+	s.events = "event5";
+	s.eVar16 = nombre;
+	s.eVar34 = posicion;
+	s.tl(true,"o","Registro"); 
+}
+
+function onClickCerrarLightbox(nombre){
+	s.linkTrackVars = "events,eVar16";
+	s.linkTrackEvents = "event17";
+	s.events = "event17";
+	s.eVar16 = nombre;
+	s.tl(true,"o","Cerrar lightbox"); 
+}
+
+function onClickSocialMedia(canal){
+	s.linkTrackVars = "events,eVar13";
+	s.linkTrackEvents = "event22";
+	s.events = "event22";
+	s.eVar13 = canal;
+	s.tl(true,"o","Click Redes Sociales"); 
+}
+
+function onClickArticulo(nombre, posicion){
+	s.linkTrackVars = "events,eVar17,eVar18";
+	s.linkTrackEvents = "event15";
+	s.events = "event15";
+	s.eVar17 = nombre;
+	s.eVar18 = posicion;
+	s.tl(true,"o","Click Articulo"); 
+}
+
+function onClickShare(canal, nombre){
+	s.linkTrackVars = "events,eVar13,eVar17";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar13 = canal;
+	s.eVar17 = nombre;
+	s.tl(true,"o","Compartir"); 
+}
+
+function onSubmitFormulario(nombre){
+	s.linkTrackVars = "events,eVar16";
+	s.linkTrackEvents = "event21";
+	s.events = "event21";
+	s.eVar16 = nombre;
+	s.tl(true,"o","Formulario"); 
+}
+
+function onChangeFilter(valor){
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event11";
+	s.events = "event11";
+	s.eVar25 = valor;
+	s.tl(true,"o","Filtro"); 
+}
+
+function onClickOferta(id, posicion){
+	s.linkTrackVars = "events,eVar38,eVar39,products";
+	s.linkTrackEvents = "event36";
+	s.events = "event36";
+	s.eVar38 = posicion;
+	s.eVar39 = id;
+	s.products = ";"+id;
+	s.tl(true,"o","Click en Oferta"); 
+}
+
+function printOferta(array_id){
+	s.linkTrackVars = "events,products";
+	s.linkTrackEvents = "event41";
+	s.events = "event41";
+	s.products = '';
+	for(var i = 0; i < array_id.length; i++){
+		if(array_id[i] != undefined){
+			s.products += ";"+array_id[i];
+			if(i < array_id.length - 1){
+				s.products += ",";
+			}
+		}
+	}
+	s.tl(true,"o","Impresión Oferta"); 
+}

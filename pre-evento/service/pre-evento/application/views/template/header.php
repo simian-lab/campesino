@@ -4,11 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Cyberlunes</title>
+        
         <?php echo $metatag; ?>
-        <meta property="og:title" content="<?php echo $meta_title; ?>">
-        <meta property="og:description" content="<?php echo $meta_descripcion; ?>">
-        <meta property="og:image" content="<?php echo $image_src; ?>">
-        <meta property="og:url" content="<?php echo $meta_url; ?>">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">     
 
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/normalize.min.css">
@@ -19,6 +17,8 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/screen.css">
         <!-- clase fix-->
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/molfis.css">
+        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/fix.css">
+        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/logos.css">
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
         
         <script src="<?php echo $base_url_static?>js/s_code.js"></script> 
@@ -27,17 +27,30 @@
         <script src="<?php echo $base_url_static;?>js/jquery.plugin.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.countdown.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.alphanum.js"></script>
+
         <script type="text/javascript" src="http://cdn1.smartadserver.com/diff/js/smartadserver.js"></script>
+        <script src='http://ads.eltiempo.com/config.js?nwid=484' type="text/javascript"></script>
         <script type="text/javascript">
+            sas.setup({ domain: 'http://ads.eltiempo.com'});
             sas_tmstp=Math.round(Math.random()*10000000000);sas_masterflag=1;
             function sasmobile(sas_pageid,sas_formatid,sas_target) {
-             if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
-             document.write('<scr'+'ipt src="http://ads.eltiempo.com/call2/pubmj/'+sas_pageid+'/'+sas_formatid+'/'+sas_master+'/'+sas_tmstp+'/'+escape(sas_target)+'?"></scr'+'ipt>');
-            }function sascc(sas_imageid,sas_pageid) {
-            img=new Image();
-            img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
+                if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
+                document.write('<scr'+'ipt src="http://ads.eltiempo.com/call2/pubmj/'+sas_pageid+'/'+sas_formatid+'/'+sas_master+'/'+sas_tmstp+'/'+escape(sas_target)+'?"></scr'+'ipt>');
             }
+            function sascc(sas_imageid,sas_pageid) {
+                img=new Image();
+                img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
+            }
+
+            var appdiademoda = {
+                jssdkload:false,
+                idioma: 'es',              
+                data: eval(<?php echo $jsonParam; ?>)
+            };
         </script>
+
+        <?php $this->load->view('piwik'); ?>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -62,56 +75,21 @@
                     </div>
                     <?php if(!$this->agent->is_mobile()): ?>
                     <div class="col-md-3 col-sm-6 col-xs-6 title">
-                        <!--<span>19 de Mayo <br>--><span><b>Los mejores</b> descuentos</span>
+                        <!--<span>19 de Mayo <br>--><span>Próximo 1 de diciembre</span>
                     </div>     
                     <?php endif; ?>               
                     <div class="col-md-6 marcas">
-                        <?php /*if(!$this->agent->is_mobile()): ?>
                         <figure>
-                            <script type="text/javascript">
-                                sas_pageid='<?php echo $sitio_seccion ?>';
-                                sas_formatid=25677;  
-                                sas_target='';   
-                                SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                            </script>
-                            <noscript>
-                                <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25677/M/[timestamp]/?" target="_blank">
-                                <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25677/M/[timestamp]/?" border="0" alt="" /></a>
-                            </noscript>
+                            <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
+                            <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', 'Pauta', 'impressions', 'MinTIC']);">
                         </figure>
                         <figure>
-                            <script type="text/javascript">
-                                sas_pageid='<?php echo $sitio_seccion ?>';
-                                sas_formatid=25678;  
-                                sas_target='';   
-                                SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                            </script>
-                            <noscript>
-                                <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25678/M/[timestamp]/?" target="_blank">
-                                <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25678/M/[timestamp]/?" border="0" alt="" /></a>
-                            </noscript>
+                            <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Header')"><img src="<?php echo $base_url_static;?>img/digital_mobile.png" alt="Vive digital" /></a>
+                            <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', 'Pauta', 'impressions', 'Vive digital']);">
                         </figure>
                         <figure>
-                            <script type="text/javascript">
-                                sas_pageid='<?php echo $sitio_seccion ?>';
-                                sas_formatid=25679;  
-                                sas_target='';   
-                                SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                            </script>
-                            <noscript>
-                                <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25679/M/[timestamp]/?" target="_blank">
-                                <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25679/M/[timestamp]/?" border="0" alt="" /></a>
-                            </noscript>
-                        </figure>
-                        <?php endif;*/ ?>
-                        <figure class="col-md-3">
-                            <a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>
-                        </figure>
-                        <figure class="col-md-3">
-                            <a href="http://wsp.presidencia.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca2.png" alt="Prosperidad para todos" /></a>
-                        </figure>
-                        <figure class="col-md-3">
-                            <a href="http://www.vivedigital.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>
+                            <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Header')"><img src="<?php echo $base_url_static;?>img/colombia_mobile.png" alt="Gobierno de Colombia" /></a>
+                            <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', 'Pauta', 'impressions', 'Gobierno de Colombia']);">
                         </figure>
                     </div>
                 </div>                             

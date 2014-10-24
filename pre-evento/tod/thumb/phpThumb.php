@@ -491,7 +491,7 @@ if (isset($_GET['phpThumbDebug']) && ($_GET['phpThumbDebug'] == '5')) {
 	$phpThumb->phpThumbDebug();
 }
 ////////////////////////////////////////////////////////////////
-
+//print_r($phpThumb);die();
 // check to see if file already exists in cache, and output it with no processing if it does
 $phpThumb->SetCacheFilename();
 if (@is_readable($phpThumb->cache_filename)) {

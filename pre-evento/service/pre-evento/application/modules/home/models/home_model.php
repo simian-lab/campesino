@@ -69,6 +69,18 @@ class Home_model extends CI_Model {
 
     }
 
+    public function get_titulo_slug($slug){
+
+        $this->db->select();
+        $this->db->from('ART_ARTICULOS');
+        $this->db->where('ART_SLUG', $slug);
+
+        $query = $this->db->get();
+
+        return $query->row_array();
+
+    }
+
 
 
 }

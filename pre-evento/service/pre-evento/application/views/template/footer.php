@@ -1,60 +1,17 @@
-        <footer class="main" <?php //(isset($hide_form)?print('style="margin-bottom:0px"'):print('')) ?> style="margin-bottom:0px">
+        <footer class="main" id="footer_main">
             <div class="container">
                 <div class="row sponsor">                            
                     <div class="col-md-12 center">
-                        <div class="marcas-mobile">
+                        <div class="marcas-mobile clearfix">
                             <figure class="col-xs-4">
-                                <a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>
-                            </figure>
-                            <figure class="col-xs-4">
-                                <a href="http://wsp.presidencia.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca2.png" alt="Prosperidad para todos" /></a>
+                                <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
                             </figure>
                             <figure class="col-xs-4">
-                                <a href="http://www.vivedigital.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>
+                                <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Footer')"><img src="<?php echo $base_url_static;?>img/digital.png" alt="Vive digital" /></a>
                             </figure>
-                            <?php /*if($this->agent->is_mobile()): ?>
-                            <figure>
-                                <script type="text/javascript">
-                                    sas_pageid='<?php echo $sitio_seccion ?>';
-                                    sas_formatid=25677;  
-                                    sas_target='';   
-                                    SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                                </script>
-                                <noscript>
-                                    <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25677/M/[timestamp]/?" target="_blank">
-                                    <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25677/M/[timestamp]/?" border="0" alt="" /></a>
-                                </noscript>
+                            <figure class="col-xs-4">
+                                <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Footer')"><img src="<?php echo $base_url_static;?>img/colombia.png" alt="Gobierno de Colombia" /></a>
                             </figure>
-                            <figure>
-                                <script type="text/javascript">
-                                    sas_pageid='<?php echo $sitio_seccion ?>';
-                                    sas_formatid=25678;  
-                                    sas_target='';   
-                                    SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                                </script>
-                                <noscript>
-                                    <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25678/M/[timestamp]/?" target="_blank">
-                                    <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25678/M/[timestamp]/?" border="0" alt="" /></a>
-                                </noscript>
-                            </figure>
-                            <figure>
-                                <script type="text/javascript">
-                                    sas_pageid='<?php echo $sitio_seccion ?>';
-                                    sas_formatid=25679;  
-                                    sas_target='';   
-                                    SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                                </script>
-                                <noscript>
-                                    <a href="http://ads.eltiempo.com/call/pubjumpi/<?php echo $sitio_seccion ?>/25679/M/[timestamp]/?" target="_blank">
-                                    <img src="http://ads.eltiempo.com/call/pubi/<?php echo $sitio_seccion ?>/25679/M/[timestamp]/?" border="0" alt="" /></a>
-                                </noscript>
-                            </figure>
-                            <script type="text/javascript">
-                                $(document).ready(function(){
-                                    $('.marcas-mobile').find('figure').css({width: '30%'});
-                                });
-                            </script>
-                            <?php endif;*/ ?>
                         </div>
                         <div class="invita">
                             <div class="texto">
@@ -62,14 +19,14 @@
                                 --><span>invita:</span>
                             </div>
                             <div class="logos">                                
-                                <a href="http://ccce.org.co/" target="_blank"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a>
-                                <a href="http://www.eltiempo.com/" target="_blank"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
+                                <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Footer')"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a>
+                                <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
                             </div>
                         </div>
                     </div>
                     <div class="social">
-                        <a target="_blank" class="fb" href="https://www.facebook.com/Cyberlunes" onClick='s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
-                        <a target="_blank" class="tw" href="https://twitter.com/Cyberlunesco" onClick='s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
+                        <a target="_blank" class="fb" href="https://www.facebook.com/Cyberlunes"><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
+                        <a target="_blank" class="tw" href="https://twitter.com/Cyberlunesco" ><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
                     </div>
                 </div>                                   
             </div>                
@@ -77,9 +34,10 @@
                 <div class="row ">
                     <div class="col-md-12 center">                    
                         <div>
-                            <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  cyberlunes@eltiempo.com</span>
+                            <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a></span>
                             <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
                             <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+                            <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
                         </div>
                     </div>
                 </div>
@@ -94,14 +52,16 @@
                         <img src="<?php echo $base_url_static;?>img/banner-visa.jpg" alt="">
                     </a>-->
                     <script type="text/javascript">
-                        sas_pageid='<?php echo $sitio_seccion ?>'; // Página : Cyberlunes_Pre-Evento/home
-                        sas_formatid=20592;  // Formato : Movil Barra Fija 0x0
-                        sas_target='';   // Segmentación
-                        SmartAdServer(sas_pageid,sas_formatid,sas_target);
+                     sas.call("std", {
+                      siteId:  '<?php echo $siteId ?>', // 
+                      pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes/home
+                      formatId:  8941, // Formato : Barra Fija 960x30
+                      target:  ''   // Segmentación
+                     });
                     </script>
                     <noscript>
-                        <a href="http://ads.eltiempo.com/call2/pubjumpmi/<?php echo $sitio_seccion ?>/15271/M/[timestamp]/?" target="_blank">
-                        <img src="http://ads.eltiempo.com/call2/pubmi/<?php echo $sitio_seccion ?>/15271/M/[timestamp]/?" border="0" alt="" /></a>
+                     <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                     </noscript>
                 </div>
             </div>
@@ -128,7 +88,7 @@
                                 <p>Registra tus datos, cuéntanos las categorías en las que quieres recibir descuentos ¡y listo!</p>
                             </div>
                             <div class="col-lg-9">
-                                <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251010" onSubmit='s.linkTrackVars="events,eVar38"; s.linkTrackEvents="event5"; s.eVar38="footer";s.events="event5";s.tl(true,"o","Formulario Registro"); return (!(UPTvalidateform(document.UPTml251010)));'>
+                                <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251010" onSubmit='return (!(UPTvalidateform(document.UPTml251010)));'>
                                     <input type="hidden" name="submitaction" value="3">
                                     <input type="hidden" name="mlid" value="251010">
                                     <input type="hidden" name="siteid" value="2010001358">
@@ -220,6 +180,7 @@
         /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/ 
         var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
         <!--  End SiteCatalyst  code  --> 
+
 
         <!-- Google Tag Manager -->
         <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"

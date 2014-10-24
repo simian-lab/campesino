@@ -60,23 +60,24 @@
                         --><span>invita:</span>
                     </div>
                     <div class="logos">                                
-                        <a href="http://ccce.org.co/" target="_blank"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a><!--
-                        --><a href="http://www.eltiempo.com/" target="_blank"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
+                        <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Footer')"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a><!--
+                        --><a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
                     </div>
                 </div>
             </div>
             <div class="social">
-                <a href="#" class="fb" onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
-                <a href="#" class="tw" onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
+                <a href="#" class="fb" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
+                <a href="#" class="tw" onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
             </div>
         </div>                                   
     </div>                
     <div class="row terminos">
         <div class="col-md-12 center">                    
             <div>
-                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  cyberlunes@eltiempo.com</span>
-                <span><b>Cyberlunes</b> es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
-                <span>© 2014 - <b>Cyberlunes</b> Todos los derechos reservados .</span>
+                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a></span>
+                <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
+                <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+                <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
             </div>
         </div>
     </div>            
@@ -92,7 +93,7 @@
             <div class="modal-body">
                 <p>
                     www.cyberlunes.com.co es una página web (“la página web” o “la Página Web”) de 
-                    propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”). Cyberlunes se llevará a cabo el próximo 19 de Mayo, desde las 12:00 a.m. hasta las 11:59 p.m. y comercios importantes del país ofrecerán descuentos y promociones en compras por Internet.
+                    propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”).
                 </p>
                 <p>
                    Las siguientes disposiciones describen los términos y condiciones de uso aplicables al acceso y uso de los servicios ofrecidos por la página web, que deberán ser observados detenidamente por los usuarios y aliados, y que se entenderán aceptados por el solo hecho de navegar por la página web.
@@ -216,13 +217,3 @@ s.channel ="<?php echo $s_channel; ?>";
 /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/ 
 var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
 <!--  End SiteCatalyst  code  --> 
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
-<!-- End Google Tag Manager -->

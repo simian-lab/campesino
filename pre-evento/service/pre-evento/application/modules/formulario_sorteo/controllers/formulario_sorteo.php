@@ -10,6 +10,7 @@ class formulario_sorteo extends CI_Controller {
        	  $this->load->model('formulario_sorteo_model');
        	  $this->load->helper('url');
           $this->load->helper('form');
+          $this->load->helper('get_app_data');
           $this->load->library('form_validation');
           $this->load->library('user_agent');
           
@@ -17,15 +18,16 @@ class formulario_sorteo extends CI_Controller {
     
     public function index($success = '') { 
 
-       $origen=$this->session->userdata('origen');
 
-       if($origen=='registro_success'){
+       if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
                 redirect('/gracias');
                 exit();
        }
 
         $data = null;
         $data = get_url_base();
+
+        $data['jsonParam']=get_app_data();
 
         $meta_title = 'Cyberlunes';
         $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
@@ -61,7 +63,7 @@ class formulario_sorteo extends CI_Controller {
             $data['is_mobile'] = 0;
           }
         
-        if($this->session->userdata('formularios') == 'hidden'){
+        if(isset($_COOKIE['formularios']) && $_COOKIE['formularios'] == 'hidden'){
           $data['hide_form'] = 1;
         }
         
@@ -71,12 +73,13 @@ class formulario_sorteo extends CI_Controller {
 
         $data['tiendas'] = $this->formulario_sorteo_model->get_tiendas();
 
-        $data['s_pageName']='cyberlunes: pre-evento: formulario: sorteo'; 
-        $data['s_channel']= 'cyberlunes: pre-evento: formulario ';
-        $data['s_prop1']= 'cyberlunes: pre-evento: formulario: sorteo';
+        $data['s_pageName']='Cyberlunes: pre-evento: formulario: sorteo'; 
+        $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
+        $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: sorteo';
         $data['s_prop2']= '';
 
-        $data['sitio_seccion'] = '58465/438591'; 
+        $data['siteId'] = 58465;
+        $data['pageId'] = 438591;
 
         //$data['id_form_mobile'] = 'form-collapse';
         $data['class_form_mobile'] = 'mobile';
@@ -89,7 +92,7 @@ class formulario_sorteo extends CI_Controller {
         $this->load->view('template/footer', $data);
         
 
-            $this->load->view('template/terminos_condiciones');
+        $this->load->view('template/terminos_condiciones');
         $this->load->view('template/script_form');
 
     }
