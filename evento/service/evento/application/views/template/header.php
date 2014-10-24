@@ -66,8 +66,8 @@
         <!-- FIN MENU --> 
 
         <div class="share">
-            <a onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");' href="#" class=""><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
-            <a onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'  href="#" class=""><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
+            <a onClick='shareFacebook(); onClickShare("facebook", "sitio")' href="#" class=""><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
+            <a onClick='shareTwitter(); onClickShare("twitter", "sitio")'  href="#" class=""><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
         </div>
 
         
