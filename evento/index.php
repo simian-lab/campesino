@@ -40,12 +40,12 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'development');
 	break;
-	case 'evento-stage.cyberlunes.com':	 
+	case 'evento-stage.cyberlunes.com.co':	 
 		$dominios_permitidos = array(
-				'http://evento-stage.cyberlunes.com',
-				'https://evento-stage.cyberlunes.com',
-				'http://static-stage.cyberlunes.com',
-				'https://static-stage.cyberlunes.com',
+				'http://evento-stage.cyberlunes.com.co',
+				'https://evento-stage.cyberlunes.com.co',
+				'http://static-stage.cyberlunes.com.co',
+				'https://static-stage.cyberlunes.com.co',
 				'http://fonts.gstatic.com/'
 			);
         define('ENVIRONMENT', 'testing');
