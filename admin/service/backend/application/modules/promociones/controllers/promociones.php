@@ -10,7 +10,6 @@ class Promociones extends Main {
 		
 		$this->load->library('grocery_crud');	
 		$this->load->helper('url');
-		$this->load->helper('log_promociones');
 	}
 
 	// Metodo para carga de promociones
