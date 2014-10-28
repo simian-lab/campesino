@@ -32,3 +32,7 @@ header .container .head .marcas{
 footer div.container div.sponsor div.marcas-mobile figure img{
 	width: 100%;
 }
+
+section.wrapp .container .row .no-destacados ul li article .info h2 {
+	word-wrap: break-word;
+}
