@@ -6,7 +6,7 @@
  */
 
 $config = array(
-    'FB_APPID' => '1565823933647009',
+    'FB_APPID' => '1482407048708105',
     'FB_SECRET' => '',
     'FB_SCOPE' => '',
     'FB_BASEURL' => '',
