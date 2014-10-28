@@ -66,8 +66,8 @@
         <!-- FIN MENU --> 
 
         <div class="share">
-            <a onClick='shareFacebook(); onClickShare("facebook", "sitio")' href="#" class=""><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
-            <a onClick='shareTwitter(); onClickShare("twitter", "sitio")'  href="#" class=""><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
+            <a onClick='shareFacebook();' href="#" class=""><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
+            <a onClick='shareTwitter();'  href="#" class=""><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
         </div>
 
         
