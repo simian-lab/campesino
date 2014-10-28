@@ -51,11 +51,10 @@ function onClickArticulo(nombre, posicion){
 }
 
 function onClickShare(canal, nombre){
-	s.linkTrackVars = "events,eVar13,eVar17";
+	s.linkTrackVars = "events,eVar13";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
 	s.eVar13 = canal;
-	s.eVar17 = nombre;
 	s.tl(true,"o","Compartir"); 
 }
 
@@ -75,12 +74,12 @@ function onChangeFilter(valor){
 	s.tl(true,"o","Filtro"); 
 }
 
-function onClickOferta(id, posicion){
+function onClickOferta(id, posicion, tienda){
 	s.linkTrackVars = "events,eVar38,eVar39,products";
 	s.linkTrackEvents = "event36";
 	s.events = "event36";
 	s.eVar38 = posicion;
-	s.eVar39 = id;
+	s.eVar39 = tienda;
 	s.products = ";"+id;
 	s.tl(true,"o","Click en Oferta"); 
 }

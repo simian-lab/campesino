@@ -50,11 +50,10 @@ function onClickArticulo(nombre, posicion){
 }
 
 function onClickShare(canal, nombre){
-	s.linkTrackVars = "events,eVar13,eVar17";
+	s.linkTrackVars = "events,eVar13";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
 	s.eVar13 = canal;
-	s.eVar17 = nombre;
 	s.tl(true,"o","Compartir"); 
 }
 

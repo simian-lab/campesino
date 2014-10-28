@@ -1,0 +1,38 @@
+header .container .head .marcas figure img{
+	width: inherit;
+	max-width: 100%;
+}
+
+header .container .head .marcas figure:first-child + figure + figure img {
+	width: inherit;
+}
+
+header .container .head .marcas figure:first-child + figure + figure{
+	width: 25%;
+}
+
+header .container .head .marcas figure:first-child, header .container .head .marcas figure:first-child + figure{
+	padding-top: 0;
+}
+
+header .container .head{
+	padding-bottom: 0;
+}
+
+header .container .head .logo{
+	padding-top: 8.5px;
+	padding-bottom: 8.5px;
+}
+
+header .container .head .title span{
+	margin-top: 15%;
+}
+
+footer .sponsor .marcas-mobile{
+	padding-bottom: 15px;
+	padding-top: 10px;
+}
+
+.marcas-mobile figure:first-child, .marcas-mobile figure:first-child + figure{
+	padding-top: 0;
+}
