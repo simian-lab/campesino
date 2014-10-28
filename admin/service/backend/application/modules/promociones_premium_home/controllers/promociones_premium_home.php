@@ -107,7 +107,7 @@ class Promociones_premium_home extends Main {
 
 		$crud->set_rules('PRO_PRECIO_INICIAL','Precio inicial','integer|less_than[100000000]');
 		$crud->set_rules('PRO_PRECIO_FINAL','Precio final','integer|less_than[100000000]');
-		$crud->set_rules('PRO_DESCUENTO','Descuento','integer|max_length[3]|less_than[101]');
+		$crud->set_rules('PRO_DESCUENTO','Descuento','is_natural|max_length[3]|less_than[101]');
 		
 		$crud->unique_fields('PRO_NOMBRE');
 		$crud->set_rules('PRO_NOMBRE','Nombre promoción','max_length[35]|required');
