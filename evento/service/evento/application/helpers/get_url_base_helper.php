@@ -25,7 +25,7 @@ if ( ! function_exists('get_url_base'))
            $data['base_url_img_aliados']     = $url_static .'multimedia/aliados/'; // son los patrocinadores
            $data['base_url_img_pautas']      = $url_static .'multimedia/pautas/';
            //$data['base_url_img_promociones'] = $url_static .'multimedia/promociones/';
-           $data['base_url_img_promociones'] = $url .'multimedia/promociones/';
+           $data['base_url_img_promociones'] = $url_static .'multimedia/promociones/';
  
 
 
