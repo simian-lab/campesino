@@ -4,7 +4,7 @@
               <!-- Piwik -->
               <script type="text/javascript">
                 var _paq = _paq || [];
-                _paq.push(['trackPageView']);
+                //_paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 (function() {
                   var u="//ceet.piwikpro.com/";
@@ -24,7 +24,7 @@
               <!-- Piwik -->
               <script type="text/javascript">
                 var _paq = _paq || [];
-                _paq.push(['trackPageView']);
+                //_paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 (function() {
                   var u="//ceet.piwikpro.com/";
@@ -45,7 +45,7 @@
               <!-- Piwik -->
               <script type="text/javascript">
                 var _paq = _paq || [];
-                _paq.push(['trackPageView']);
+                //_paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
                 (function() {
                   var u="//ceet.piwikpro.com/";
@@ -65,7 +65,7 @@
           <!-- Piwik -->
           <script type="text/javascript">
             var _paq = _paq || [];
-            _paq.push(['trackPageView']);
+            //_paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
             (function() {
               var u="//ceet.piwikpro.com/";
