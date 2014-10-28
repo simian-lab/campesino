@@ -9,7 +9,7 @@ $memcached['servers'] = array(
 
 	'default' => array(
 
-			'host'			=> '192.168.4.50',
+			'host'			=> 'memcached-cyberlunes.ma1isw.cfg.use1.cache.amazonaws.com:11211',
 			'port'			=> '11211',
 			'weight'		=> '1',
 			'persistent'	=> FALSE
