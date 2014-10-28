@@ -24,3 +24,11 @@ section.wrapp div.banner {
 .banner a img {
 	width: inherit;
 }
+
+header .container .head .marcas{
+	margin-top: 0;
+}
+
+footer div.container div.sponsor div.marcas-mobile figure img{
+	width: 100%;
+}
