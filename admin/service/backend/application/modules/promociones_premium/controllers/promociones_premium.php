@@ -92,7 +92,22 @@ class Promociones_premium extends Main {
        
        $crud->order_by('PRO_FECHA','DESC');
 
- 
+ 		if($state == 'insert_validation' || $state == 'update_validation'){
+			$url = $this->input->post('PRO_URL');
+			
+			if (! filter_var($url, FILTER_VALIDATE_URL)){
+			
+				echo '<textarea>'.json_encode(
+												array(
+															'success'	=>	false,
+															'error_message'	=>"<p>URL inválida</p>",
+															"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+													)
+											).'</textarea>';
+				die();
+				
+			}
+		}
  		
 		$crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA', 'VISTA_PREVIA','PRO_HASH');
         $crud->required_fields('PRO_NOMBRE','PRO_DESTINO','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','PRO_URL','CAT_ID','MAR_ID');
