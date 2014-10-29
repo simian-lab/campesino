@@ -6,6 +6,8 @@ class Redireccionamiento extends CI_Controller
    {
        parent::__construct();
        $this->load->helper('string');
+       $this->load->helper('get_url_base');
+       $this->load->library('memcached_library');
    }
 
    public function externo(){
