@@ -145,6 +145,23 @@ class Promociones extends Main {
 		$crud->set_rules('PRO_PRECIO_INICIAL','Precio inicial','integer|less_than[100000000]');
 		$crud->set_rules('PRO_PRECIO_FINAL','Precio final','integer|less_than[100000000]');
 		$crud->set_rules('PRO_DESCUENTO','Descuento','is_natural|max_length[3]|less_than[101]');
+		
+		if($state == 'insert_validation' || $state == 'update_validation'){
+			$url = $this->input->post('PRO_URL');
+			
+			if (! filter_var($url, FILTER_VALIDATE_URL)){
+			
+				echo '<textarea>'.json_encode(
+												array(
+															'success'	=>	false,
+															'error_message'	=>"<p>URL inválida</p>",
+															"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+													)
+											).'</textarea>';
+				die();
+				
+			}
+		}
 
 		$crud->unique_fields('PRO_NOMBRE');
 
@@ -208,6 +225,9 @@ class Promociones extends Main {
 	}
 
 /********************************************************************/
+function check_url(){
+	return false;
+}
 
 function generar_hash(){
 	$uniqid = 'p' .rand(1,10000 ) . uniqid('',true);
