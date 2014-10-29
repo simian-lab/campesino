@@ -18,6 +18,20 @@ $(document).ready(function() {
 
                     printOferta(id_destacados);
                     id_destacados = [];
+
+                    var duplicados = new Array();
+                    $(".destacados,.no-destacados ul li").each(function(k,v){
+                        var idPromo = ($(v).data("id"));
+                        var impresiones = new Array();
+                        $(".destacados,.no-destacados ul li").each(function(k1,v1){
+                         if(idPromo == ($(v1).data("id")) ){impresiones.push(idPromo);}
+                        })
+                        if(impresiones.length > 1){duplicados.push(idPromo)}
+                    })
+                    
+                    if(duplicados.length > 1){
+                        alert("Duplicados: " + duplicados);
+                    }
                 }
             });
             //alert(ias)
@@ -37,6 +51,20 @@ $(document).ready(function() {
 
                     printOferta(id_nodestacados);
                     id_nodestacados = [];
+
+                    var duplicados = new Array();
+                    $(".destacados,.no-destacados ul li").each(function(k,v){
+                        var idPromo = ($(v).data("id"));
+                        var impresiones = new Array();
+                        $(".destacados,.no-destacados ul li").each(function(k1,v1){
+                         if(idPromo == ($(v1).data("id")) ){impresiones.push(idPromo);}
+                        })
+                        if(impresiones.length > 1){duplicados.push(idPromo)}
+                    })
+                    
+                    if(duplicados.length > 1){
+                        alert("Duplicados: " + duplicados);
+                    }
                 }
             });
 });
