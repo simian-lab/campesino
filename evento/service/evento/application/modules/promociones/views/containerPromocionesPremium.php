@@ -30,7 +30,7 @@
 
                 ?>
                     <li class="<?php echo $li_class; ?> post col-lg-6 col-md-6 col-sm-6 col-sx-12" data-id="<?php echo $promocion['PRO_ID'] ?>">
-                        <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?>', 'impressions', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?> (<?php echo (isset($categoria_promocion)) ? $categoria_promocion : 'Home' ?> - Premium)']);">
+                        <!--<img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?>', 'impressions', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?> (<?php echo (isset($categoria_promocion)) ? $categoria_promocion : 'Home' ?> - Premium)']);">-->
                         <figure>
                             <div style="display:none;" class="idPromo"><?php echo $promocion['PRO_ID'] ?>;</div>
                             <div class="overlay">
