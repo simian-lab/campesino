@@ -190,15 +190,21 @@ class promocion_model extends CI_Model {
 
     }
 
+    function getByHash($hash) {
+        $this->db->select('PRO_ID,PRO_NOMBRE,PRO_HASH,PRO_URL');
+        $this->db->from('PRO_PROMOCIONES');
+        $this->db->where('PRO_HASH', $hash);            
+        $this->db->limit(1);
+       
+        $query = $this->db->get();
 
-    /*
+        if ($query->num_rows() > 0)                
+            return $query->row_array();
 
-SELECT SUB.SUB_NOMBRE,SUB.SUB_SLUG
-FROM SUB_SUBCATEGORIA SUB JOIN SXC_SUBCATEGORIAXCATEGORIA SXC
-ON  SUB.SUB_ID=SXC.SUB_ID
-JOIN CAT_CATEGORIA CAT ON CAT.CAT_ID=SXC.CAT_ID
-WHERE CAT.CAT_SLUG='moviles'
+        return NULL;
+        
+    }
 
-    */
+
 
 }
