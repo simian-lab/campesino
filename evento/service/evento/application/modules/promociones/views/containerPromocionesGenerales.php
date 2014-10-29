@@ -22,6 +22,7 @@
                             ?>
                                   <li class="<?php echo $li_class; ?> post-no-destacados col-lg-4 col-md-4 col-sm-6" data-id="<?php echo $promocion['PRO_ID'] ?>">
                                                 <div style="display:none;" class="idPromo"><?php echo $promocion['PRO_ID'] ?>;</div>
+                                                <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?>', 'impressions', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?> (<?php echo (isset($categoria_promocion)) ? $categoria_promocion : 'Home' ?> - General)']);">
                                                 <figure>
                                                     <div class="overlay">
                                                         <p><?php echo $promocion['PRO_DESCRIPCION']; ?></p>
@@ -45,7 +46,7 @@
                                                     
                                                     <!--<a onClick="s.linkTrackVars='events,eVar38,eVar39,products';s.linkTrackEvents='event36';s.events='event36';s.eVar38='<?php echo $posicion?>';s.eVar39='<?php echo $promocion['PRO_USER_CREADOR']?>';s.products=';<?php echo $promocion['PRO_ID']?>';s.tl(true,'o','Clic en Promoción');" style="display: block;" target="_blank" href="<?php echo get_url_encrypt($promocion['PRO_URL']) ?>"><img src="<?php echo $base_url_tod; ?>?w=298&amp;h=298&amp;bg=ffffff&amp;zc=1&amp;q=100&amp;src=<?php echo get_url_encode_tod($base_url_img_promociones . $promocion['PRO_LOGO_GENERAL']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags($promocion['PRO_NOMBRE']); ?>"></a>-->
                                                     <a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['TIE_NOMBRE']; ?>')" style="display: block;" target="_blank" href="<?php echo get_url_encrypt($promocion['PRO_URL']) ?>"><img src="<?php echo ($base_url_img_promociones . $promocion['PRO_LOGO_GENERAL']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags($promocion['PRO_NOMBRE']); ?>"></a>
-                                                    <img  width=0 height=0 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" onload="_paq.push(['trackEvent', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?>', 'impressions', '<?php echo addslashes(htmlentities($promocion['PRO_NOMBRE'])); ?> (<?php echo (isset($categoria_promocion)) ? $categoria_promocion : 'Home' ?> - General)']);">
+                                                    
                                                 </figure>
                                                 <article>
                                                     <div class="info">
