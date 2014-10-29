@@ -72,3 +72,8 @@ section#detalle .container .publicidades figure, section#formulario .container .
 section#home .container .publicidades figure {
 	max-width: 300px !important;
 }
+
+#sas_8941 {
+	bottom: 0;
+	position: fixed;
+}
