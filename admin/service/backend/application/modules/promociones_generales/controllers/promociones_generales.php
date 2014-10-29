@@ -98,6 +98,22 @@ class Promociones_generales extends Main {
 		$crud->callback_before_upload(array($this,'change_name_image'));
 		$crud->callback_after_upload(array($this,'check_imagen'));
 
+		if($state == 'insert_validation' || $state == 'update_validation'){
+			$url = $this->input->post('PRO_URL');
+			
+			if (! filter_var($url, FILTER_VALIDATE_URL)){
+			
+				echo '<textarea>'.json_encode(
+												array(
+															'success'	=>	false,
+															'error_message'	=>"<p>URL inválida</p>",
+															"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+													)
+											).'</textarea>';
+				die();
+				
+			}
+		}
 
 		$crud->callback_after_insert(array($this,'fnc_after_insert')); // despues de insertar
 		$crud->callback_after_update(array($this,'fnc_after_update'));
