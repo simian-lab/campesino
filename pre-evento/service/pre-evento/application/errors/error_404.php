@@ -90,6 +90,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
 <!-- End Google Tag Manager -->
 
+<!-- Facebook Conversion Code for Píxel El Tiempo 2 - Leads -->
+<script type="text/javascript">
+var fb_param = {};
+fb_param.pixel_id = '6015078203399';
+fb_param.value = '0.01';
+fb_param.currency = 'EUR';
+(function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+})();
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6015078203399&amp;value=0.01&amp;currency=EUR" /></noscript>
+
   <script language="JavaScript" type="text/javascript"><!--   
   //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  
 s.pageType = "errorPage";    
