@@ -27,7 +27,7 @@
                                                     <div class="overlay">
                                                         <p><?php echo $promocion['PRO_DESCRIPCION']; ?></p>
                                                           <?php                                    
-                                                               echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['PRO_USER_CREADOR'], $promocion['PRO_ID']));
+                                                               echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['TIE_NOMBRE'], $promocion['PRO_ID']));
                                                             ?>
                                                             <!--<a data-keyboard="false" data-backdrop="static" data-toggle="modal" data-target="#redirect_oferta" href="#" class="link orange" onClick="s.linkTrackVars='events,eVar38,eVar39,products';s.linkTrackEvents='event36';s.events='event36';s.eVar38='<?php echo $posicion?>';s.eVar39='<?php echo $promocion['PRO_USER_CREADOR']?>';s.products=';<?php echo $promocion['PRO_ID']?>';s.tl(true,'o','Clic en Promoción');tagManager(window,document,'script','dataLayer','GTM-NGBVTZ');facebookPixel();redirectPromocion('<?php echo $promocion['PRO_URL']; ?>');">ir a oferta</a>-->
                                                          <?php if($promocion['TIE_LOGO_VISA'] == 1): ?>
