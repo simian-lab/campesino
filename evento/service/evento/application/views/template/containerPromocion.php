@@ -134,10 +134,11 @@
         </div>
         <?php endif; ?>
         <?php if(isset($publicidad_categoria) && !isset($publicidad_home) ): ?>
-        <div class="container">
-            <div class="row margen">                    
-                <div class="col-lg-12 publicidad_categoria">
-                    <img src="<?php echo $base_url_static;?>img/publi_left.jpg" />
+        <div class="container pauta">
+            <div class="row">                    
+                <div class="col-lg-12">
+                    <img src="<?php echo $base_url_static;?>img/publi_left.jpg" class="img-publi" alt="Publicidad" /><!--
+                    --><h3 class="title-superbanner">Publicidad</h3><script type="text/javascript">
                     <script type="text/javascript">
                      sas.call("std", {
                       siteId:  41700, // 

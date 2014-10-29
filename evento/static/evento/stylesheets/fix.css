@@ -36,3 +36,48 @@ footer div.container div.sponsor div.marcas-mobile figure img{
 section.wrapp .container .row .no-destacados ul li article .info h2 {
 	word-wrap: break-word;
 }
+
+.share {
+	left: 0;
+	position: fixed;
+}
+
+.container.pauta div.row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.container.pauta div.row .img-publi {
+	display: inline-block;
+}
+
+@media screen and (max-width: 1024px) {
+  .img-publi {
+    display: none !important;
+  }
+}
+
+.container.pauta h3 {
+  display: none;
+}
+
+@media screen and (max-width: 767px){
+	div.pauta h3{
+		max-width: 300px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+  .container.pauta h3 {
+    display: block;
+    background-color: #ffffff;
+    border-top: 1px solid #d8d5d5;
+    border-right: 1px solid #d8d5d5;
+    border-left: 1px solid #d8d5d5;
+    padding-left: 5px;
+    color: #ccc;
+    font-size: 0.75em;
+    text-transform: uppercase;
+  }
+}

@@ -7,33 +7,28 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/normalize.min.css">
-        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/bootstrap/bootstrap.css">
-        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/screen.css">
+        <link rel="stylesheet" href="<?php echo $url['base_url_static'];?>stylesheets/vendor/normalize.min.css">
+        <link rel="stylesheet" href="<?php echo $url['base_url_static'];?>stylesheets/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="<?php echo $url['base_url_static'];?>stylesheets/screen.css">
 
         <!-- clase fix-->
-        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/molfis.css">
+        <link rel="stylesheet" href="<?php echo $url['base_url_static'];?>stylesheets/molfis.css">
 
-        <link rel="canonical" href="<?php echo $base_url ?>redireccionamiento/externo/" />
+        <link rel="canonical" href="<?php echo $url['base_url_static'] ?>redireccionamiento/externo/" />
 
-        <script src="<?php echo $base_url_static;?>js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="<?php echo $url['base_url_static'];?>js/vendor/modernizr-2.6.2.min.js"></script>
          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="<?php echo $base_url_static;?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>        
-        <script src="<?php echo $base_url_static;?>js/vendor/respond.min.js"></script>
-        <script src="<?php echo $base_url_static;?>js/vendor/html5shiv.js"></script> 
+        <script>window.jQuery || document.write('<script src="<?php echo $url['base_url_static'];?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>        
+        <script src="<?php echo $url['base_url_static'];?>js/vendor/respond.min.js"></script>
+        <script src="<?php echo $url['base_url_static'];?>js/vendor/html5shiv.js"></script> 
          <script>
 
 
 
             $(document).ready(function() {
-                /*var myVariable = "<?php echo $url_redirect;?>";
-                if(/^([a-z]([a-z]|\d|\+|-|\.)*):(\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?((\[(|(v[\da-f]{1,}\.(([a-z]|\d|-|\.|_|~)|[!\$&'\(\)\*\+,;=]|:)+))\])|((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=])*)(:\d*)?)(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*|(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)|((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)){0})(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(myVariable)) {
-                  
-                } else {
-                  window.location.href = '<?php echo base_url() ?>';
-                }*/
-
-               setTimeout(function() { window.location = '<?php echo $url_redirect;?>' }, 1500);
+               var url = '<?php echo $url_redirect;?>';
+               var url_decoded = url.replace(/&amp;/g, '&');
+               setTimeout(function() { window.location = url_decoded }, 1500);
 
               var count = 1.5;
               countdown = setInterval(function(){
@@ -52,7 +47,7 @@
         <?php 
 
             if(!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$url_redirect)){
-                redirect($base_url);
+                redirect($base_url_static);
             }
 
         ?>
@@ -67,7 +62,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <figure class="logo">
-                            <img src="<?php echo $base_url_static;?>img/redireccion.png" alt="">
+                            <img src="<?php echo $url['base_url_static'];?>img/redireccion.png" alt="">
                         </figure>
                     </div>
                 </div>
@@ -79,7 +74,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <span class="small">Los <b>mejores</b> descuentos </span>
-                        <img src="<?php echo $base_url_static;?>img/redireccion_.png" alt="">
+                        <img src="<?php echo $url['base_url_static'];?>img/redireccion_.png" alt="">
                         <span class="medium"><b>redireccionamiento</b></span>
                         <span class="large">externo</span>
                         <p>Usted está saliendo de Cyberlunes.com, se le llevará a la página<br>

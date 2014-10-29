@@ -37,19 +37,9 @@ if ( ! function_exists('get_url_promocion'))
                       'onClick'    => "onClickOferta('".$id."', '".$posicion."')"
                       );
         }
-      $search = array('"',"'");
-       $url=str_replace($search, '',$url);
-
-       $url=prep_url($url);        
 
 
-        $base64string =base64_encode($url);
-        $base64string = strtr($base64string, '+/=', '-_,');
-        $urlencode=rawurlencode($base64string);
-
-    //    $url=site_url('redireccionamiento/externo/' .$urlencode);
-
-            $url=site_url('redireccionamiento/externo/?url=' .$urlencode);
+        $url=site_url('redireccionamiento/externo/?url=' .$url);
 
 
         $strAnchor=anchor($url, $text, $atts);

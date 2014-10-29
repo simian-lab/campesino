@@ -68,3 +68,7 @@ section#detalle .container .publicidades figure, section#formulario .container .
 #afbd_2848590m {
 	top: 50px !important;
 }
+
+section#home .container .publicidades figure {
+	max-width: 300px !important;
+}
