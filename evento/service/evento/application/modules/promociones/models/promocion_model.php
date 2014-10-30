@@ -174,11 +174,11 @@ class promocion_model extends CI_Model {
 
     public function get_subcategorias($slug){
 
-        $this->db->select('SUB_SUBCATEGORIA.SUB_NOMBRE,SUB_SUBCATEGORIA.SUB_SLUG');
+        $this->db->select('*');
         $this->db->from('SUB_SUBCATEGORIA');
         $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
         $this->db->join('CAT_CATEGORIA', 'CAT_CATEGORIA.CAT_ID = SXC_SUBCATEGORIAXCATEGORIA.CAT_ID');
-        $this->db->where('CAT_CATEGORIA.CAT_SLUG', $slug); 
+        $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1'); 
         $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc"); 
 
            $query = $this->db->get();
