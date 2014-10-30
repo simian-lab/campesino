@@ -4,8 +4,6 @@
         <script src="<?php echo $base_url_static;?>js/vendor/html5shiv.js"></script>
         <script src="<?php echo $base_url_static;?>js/main.js"></script>
         <script src="<?php echo $base_url_static;?>js/selectfiltro.js"></script>
-        <script src="<?php echo $base_url_static;?>js/omniture.js"></script>
-        <script src="<?php echo $base_url_static;?>js/share.js"></script>
 
         <script type="text/javascript">
         	$(document).ready(function(){
@@ -17,32 +15,38 @@
                     id_destacados.push($(this).attr('data-id'));
                 });
 
-                printOferta(id_destacados);
 
                 $.each($('#contentPromocionesnodestacados').find('li'), function(){
                     id_nodestacados.push($(this).attr('data-id'));
                 });
 
-                printOferta(id_nodestacados);
 
                 var filtro = '<?php echo $this->uri->segment(2) ?>';
-                if(filtro != ''){
-                    onChangeFilter(filtro);
+                var duplicados = new Array();
+                $(".destacados,.no-destacados ul li").each(function(k,v){
+                    var idPromo = ($(v).data("id"));
+                    var impresiones = new Array();
+                    $(".destacados,.no-destacados ul li").each(function(k1,v1){
+                     if(idPromo == ($(v1).data("id")) ){impresiones.push(idPromo);}
+                    })
+                    if(impresiones.length > 1){duplicados.push(idPromo)}
+                })
+                
+                if(duplicados.length > 1){
+                    alert("Duplicados: " + duplicados);
                 }
 
+                setInterval(function () {
+                    var iScroll = $(window).scrollTop();
+                    iScroll = iScroll + 2000;
+                    $('html, body').animate({
+                        scrollTop: iScroll
+                    }, 10);
+                }, 20);
         		
         	});
         </script>
 
-        <!-- Google Tag Manager -->
-        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
-        <!-- End Google Tag Manager -->
         
     </body>
 </html>

@@ -147,7 +147,7 @@ class Promocion extends MX_Controller {
 
 //       $data['promociones'] = array_chunk($data['promociones'],$cant);
   
-       $data['pagination'] = site_url('descuentosfiltro/page/'.$tipo.'/'.$filtro.'/'.$categoria.'/'.$tienda.'/'.$marca.'/'.$subcategoria.'/'.$seed.'/'.$nextpage);
+       $data['pagination'] = site_url('prueba_promos/page/'.$tipo.'/'.$filtro.'/'.$categoria.'/'.$tienda.'/'.$marca.'/'.$subcategoria.'/'.$seed.'/'.$nextpage);
 
 
       if($filtro == 'categoria' && $categoria != 'todos'){
