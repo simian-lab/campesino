@@ -19,6 +19,7 @@ $(document).ready(function() {
                     printOferta(id_destacados);
                     id_destacados = [];
 
+                    var duplicados = new Array();
                     $(".destacados ul li").each(function(k,v){
                         var idPromo = ($(v).data("id"));
                         var impresiones = new Array();
@@ -52,6 +53,7 @@ $(document).ready(function() {
                     printOferta(id_nodestacados);
                     id_nodestacados = [];
 
+                    var duplicados = new Array();
                     $(".no-destacados ul li").each(function(k,v){
                         var idPromo = ($(v).data("id"));
                         var impresiones = new Array();

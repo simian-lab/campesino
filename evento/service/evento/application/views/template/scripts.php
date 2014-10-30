@@ -30,6 +30,7 @@
                     onChangeFilter(filtro);
                 }
 
+                var duplicados = new Array();
                 $(".destacados,.no-destacados ul li").each(function(k,v){
                     var idPromo = ($(v).data("id"));
                     var impresiones = new Array();
