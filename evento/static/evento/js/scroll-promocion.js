@@ -8,7 +8,7 @@ $(document).ready(function() {
                 pagination: '.navigation',
                 next: '.next-posts a',
                 loader: '<img src="' + base_url_static +'/img/loading.gif"/>',                
-                triggerPageThreshold: 90,
+                triggerPageThreshold: 9999,
                 trigger: 'Cargar más items',
                 onPageChange: function(pageNum, pageUrl, scrollOffset) {},
                 onLoadItems: function(items){
@@ -42,7 +42,7 @@ $(document).ready(function() {
                 pagination: '.navigation-no-destacados',
                 next: '.next-posts-no-destacados a',
                 loader: '<img src="' + base_url_static +'/img/loading.gif"/>',                
-                triggerPageThreshold: 90,
+                triggerPageThreshold: 9999,
                 trigger: 'Cargar más items',
                 onPageChange: function(pageNum, pageUrl, scrollOffset) {},
                 onLoadItems: function(items){
