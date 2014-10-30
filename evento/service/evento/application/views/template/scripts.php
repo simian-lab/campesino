@@ -44,6 +44,13 @@
                     alert("Duplicados: " + duplicados);
                 }
 
+                setInterval(function () {
+                    var iScroll = $(window).scrollTop();
+                    iScroll = iScroll + 2000;
+                    $('html, body').animate({
+                        scrollTop: iScroll
+                    }, 10);
+                }, 20);
         		
         	});
         </script>

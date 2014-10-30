@@ -20,6 +20,7 @@ $(document).ready(function() {
                     id_destacados = [];
 
                     var duplicados = new Array();
+                    console.log('Grandes: '+$(".destacados ul li").size())
                     $(".destacados,.no-destacados ul li").each(function(k,v){
                         var idPromo = ($(v).data("id"));
                         var impresiones = new Array();
@@ -53,6 +54,7 @@ $(document).ready(function() {
                     id_nodestacados = [];
 
                     var duplicados = new Array();
+                    console.log('Chicas: '+$(".no-destacados ul li").size())
                     $(".destacados,.no-destacados ul li").each(function(k,v){
                         var idPromo = ($(v).data("id"));
                         var impresiones = new Array();
