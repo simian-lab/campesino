@@ -48,6 +48,7 @@ $route['descuentos'] = 'descuentosfiltro/todos';
 $route['descuentos/(:any)'] = 'descuentosfiltro/categoria/$1';
 
 $route['prueba'] = 'prueba_smart/index';
+$route['prueba-promos'] = 'prueba_promos/todos';
 
 
 
