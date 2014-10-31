@@ -16,6 +16,7 @@ if ( ! function_exists('get_url_base'))
 //base_site_eltiempo_static
            $data['base_url']         = $url;
            $data['base_url_service'] = $url .'service/';
+           $data['url_static']         = $url_static;
          //  $data['base_url_static']  = $url .'static/pre-evento/';
          // $data['base_url_img_articulos']  = $url .'multimedia/articulos';
 
