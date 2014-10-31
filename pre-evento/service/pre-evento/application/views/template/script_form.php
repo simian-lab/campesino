@@ -270,3 +270,26 @@ function emailCheck (emailStr) {
     
     
 </script>
+
+<div class="modal fade" id="uso_marca" style="z-index:2000">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Términos y condiciones para el uso de la marca Cyberlunes&reg;</h4>
+            </div>
+            <div class="modal-body">
+                <p>Por favor descargue y lea estos instructivos para el uso adecuado de la marca y logos de Cyberlunes®. Recuerde que Cyberlunes® es una marca registrada, de uso exclusivo de la Cámara Colombiana de Comercio Electrónico CCCE.</p>
+                <br><br>
+                <ul>
+                    <li>
+                        - <a href="<?php echo $url_static;?>multimedia/TERMINOS-Y-CONDICIONES-CYBERLUNES.PDF" target="_blank">Términos y condiciones de uso de la marca (Descargar PDF)</a>
+                    </li>
+                    <li>
+                        - <a href="<?php echo $url_static;?>multimedia/MARCAS-CYBERLUNES-SITE.PDF" target="_blank">Alcance de la marca (Descargar PDF)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
