@@ -75,16 +75,11 @@ section.wrapp .container .row .no-destacados ul li article .info h2 {
 
 	#sas_12803 {
 		float: none;
-		+ div{
-			+ div{
-				text-align: center;
-			}
-		}
 	}
 
-	/*#11612525Div{
+	#sas_12803 > div{
 		text-align: center;
-	}*/
+	}
 
 }
 
