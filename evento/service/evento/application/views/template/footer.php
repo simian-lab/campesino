@@ -33,7 +33,7 @@
     <div class="row terminos">
         <div class="col-md-12 center">                    
             <div>
-                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a></span>
+                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a>  -  <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Cyberlunes&reg;</a></span>
                 <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
                 <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
                 <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
@@ -130,38 +130,24 @@
     </div>
 </div>
 
-<div class="modal fade" id="redirect_oferta" style="z-index:2000">
+<div class="modal fade" id="uso_marca" style="z-index:2000">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-                <h4 class="modal-title">DIRECCIONAMIENTO EXTERNO</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Términos y condiciones para el uso de la marca Cyberlunes&reg;</h4>
             </div>
-            <div class="modal-body" id="redireccion">
-                <header>
-                    <div class="container" style="width:100%">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <figure class="logo">
-                                    <img src="<?php echo $base_url_static;?>img/redireccion.png" alt="">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-                <section>
-                    <div class="container" style="width:100%">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <span class="small">Los <b>mejores</b> descuentos </span>
-                                <img src="<?php echo $base_url_static;?>img/redireccion_.png" alt="">
-                                <span class="medium"><b>redireccionamiento</b></span>
-                                <span class="large">externo</span>
-                                <div id="contenido_redirect"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="modal-body">
+                <p>Por favor descargue y lea estos instructivos para el uso adecuado de la marca y logos de Cyberlunes®. Recuerde que Cyberlunes® es una marca registrada, de uso exclusivo de la Cámara Colombiana de Comercio Electrónico CCCE.</p>
+            	<br><br>
+            	<ul>
+            		<li>
+            			- <a href="<?php echo $url_static;?>multimedia/TERMINOS-Y-CONDICIONES-CYBERLUNES.PDF" target="_blank">Términos y condiciones de uso de la marca (Descargar PDF)</a>
+            		</li>
+            		<li>
+            			- <a href="<?php echo $url_static;?>multimedia/MARCAS-CYBERLUNES-SITE.PDF" target="_blank">Alcance de la marca (Descargar PDF)</a>
+            		</li>
+            	</ul>
             </div>
         </div>
     </div>
