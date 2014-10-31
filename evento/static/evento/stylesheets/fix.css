@@ -49,11 +49,17 @@ section.wrapp .container .row .no-destacados ul li article .info h2 {
 
 .container.pauta div.row .img-publi {
 	display: inline-block;
+	float: left;
+}
+
+#sas_12803 {
+	float: left;
 }
 
 @media screen and (max-width: 1024px) {
   .img-publi {
     display: none !important;
+    float: none;
   }
 }
 

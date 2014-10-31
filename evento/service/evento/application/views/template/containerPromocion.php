@@ -138,7 +138,7 @@
             <div class="row">                    
                 <div class="col-lg-12">
                     <img src="<?php echo $base_url_static;?>img/publi_left.jpg" class="img-publi" alt="Publicidad" /><!--
-                    --><h3 class="title-superbanner">Publicidad</h3><script type="text/javascript">
+                    --><h3 class="title-superbanner">Publicidad</h3>
                     <script type="text/javascript">
                      sas.call("std", {
                       siteId:  41700, // 
