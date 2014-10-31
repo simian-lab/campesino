@@ -72,6 +72,15 @@ section.wrapp .container .row .no-destacados ul li article .info h2 {
 		max-width: 300px;
 		margin: 0 auto;
 	}
+
+	#sas_12803 {
+		float: none;
+	}
+
+	#11612525Div{
+		text-align: center;
+	}
+
 }
 
 @media screen and (max-width: 1024px) {
