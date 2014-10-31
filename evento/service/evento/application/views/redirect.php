@@ -13,6 +13,7 @@
 
         <!-- clase fix-->
         <link rel="stylesheet" href="<?php echo $url['base_url_static'];?>stylesheets/molfis.css">
+        <link rel="stylesheet" href="<?php echo $url['base_url_static'];?>stylesheets/fix.css">
 
         <link rel="canonical" href="<?php echo $url['base_url_static'] ?>redireccionamiento/externo/" />
 

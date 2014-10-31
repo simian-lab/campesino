@@ -81,3 +81,7 @@ section.wrapp .container .row .no-destacados ul li article .info h2 {
     text-transform: uppercase;
   }
 }
+
+#redireccion section div.container div.row div.col-lg-12 p a {
+	word-wrap: break-word;
+}
