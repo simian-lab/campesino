@@ -10,6 +10,7 @@ class Promociones_premium_home extends Main {
 		
 		$this->load->library('grocery_crud');	
 		$this->load->helper('url');
+		$this->load->model('promociones_premium_home_model');
 	}
 
 	// Metodo para carga de promociones
@@ -77,7 +78,8 @@ class Promociones_premium_home extends Main {
 	         ->display_as('PRO_LOGO_VISA','Visa')
 	         ->display_as('PRO_TIPO_MONEDA', 'Tipo moneda')
 	         ->display_as('VISTA_PREVIA', 'Vista previa')
-	         ->display_as('PRO_HASH', 'Hash');
+	         ->display_as('PRO_HASH', 'Hash')
+	         ->display_as('PRO_ACTIVA', 'Activa');
 
 
 
@@ -88,7 +90,7 @@ class Promociones_premium_home extends Main {
        
        $crud->order_by('PRO_FECHA','DESC');
 
-		$crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA','PRO_LOGO_GENERAL', 'VISTA_PREVIA','PRO_HASH');
+		$crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA','PRO_LOGO_GENERAL', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         $crud->required_fields('PRO_NOMBRE','PRO_DESTINO','PRO_LOGO_PREMIUM','PRO_DESCRIPCION','PRO_URL','CAT_ID','MAR_ID');
         $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO');
 
@@ -171,6 +173,7 @@ class Promociones_premium_home extends Main {
 		$crud->field_type('PRO_AUTOR','invisible');
 		$crud->field_type('PRO_TIPO_MONEDA', 'true_false');
 		$crud->field_type('PRO_HASH','invisible');
+		$crud->field_type('PRO_ACTIVA','invisible');
 
 		$crud->set_language('spanish');
 		
@@ -197,7 +200,16 @@ function change_name_image($files_to_upload,$field_info){
 }
 
 function delete_motivo_rechazo($id_promo){
-	return $this->promociones_premium_home_model->delete_motivo_rechazo($id_promo);
+	$this->load->model('promociones_premium_home_model');
+	$this->promociones_premium_home_model->delete_motivo_rechazo($id_promo);
+	$this->load->helper('url');
+
+	$result = $this->promociones_premium_home_model->getPromocionById($id_promo);
+	$datos_envio['titulo'] = $result['PRO_NOMBRE'];
+	$datos_envio['autor'] = $result['PRO_AUTOR'];
+	$datos_envio['aliado'] = $result['PRO_USER_CREADOR'];
+	$datos= $this->promociones_premium_home_model->send_mail_delete_user($datos_envio);
+	$this->promociones_premium_home_model->send_mail_delete_aliado($datos_envio);
 }
 
 function link_vista_previa(){
@@ -288,6 +300,23 @@ function before_update($post_array, $primary_key){
 	$post_array['PRO_SRC_ID']=2;
 	$post_array['PRO_LOGO_VISA']=1;
 
+	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
+    $datos_envio['autor'] = $this->session->userdata('username');
+    $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
+
+	$visibilidad = $this->promociones_premium_home_model->verificar_visibilidad($primary_key);
+
+    if($post_array['VISIBILITY'] == 0 && $visibilidad['VISIBILITY'] == 1){
+    	$post_array['PRO_ACTIVA'] = 2;
+    }
+    elseif($post_array['VISIBILITY'] == 1 && $visibilidad['VISIBILITY'] == 0){
+    	$post_array['PRO_ACTIVA'] = 1;
+    }
+    else{
+    	$post_array['PRO_ACTIVA'] = '';
+    	$this->promociones_premium_home_model->send_mail_aliado_edit($datos_envio);	
+    }
+
 	return $post_array;
 }
 
@@ -297,8 +326,8 @@ function fnc_after_update($post_array){ //print_r($post_array);die();
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
-    $datos= $this->promociones_premium_home_model->send_mail_user_edit($datos_envio);
-    $this->promociones_premium_home_model->send_mail_aliado_edit($datos_envio);
+    $this->promociones_premium_home_model->send_mail_user_edit($datos_envio);
+
 }
 
 function fnc_after_insert($post_array){

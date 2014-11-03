@@ -93,7 +93,8 @@ class Promociones extends Main {
              ->display_as('VISTA_PREVIA', 'Vista previa')
              ->display_as('PRO_FECHA', 'Fecha')
              ->display_as('ID_USER_CREADOR', 'ID Usuario')
-             ->display_as('PRO_HASH', 'Hash');
+             ->display_as('PRO_HASH', 'Hash')
+             ->display_as('PRO_ACTIVA', 'Hash');
 
 
 
@@ -105,10 +106,10 @@ class Promociones extends Main {
 
 		
         if($result['group_id']==3){
-        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_URL','PRO_AUTOR','ID_USER_CREADOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH');
+        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_URL','PRO_AUTOR','ID_USER_CREADOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         else{
-        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH');
+        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID');
         $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'Paquete', 'PRO_SRC_ID');
@@ -191,6 +192,7 @@ class Promociones extends Main {
 		$crud->field_type('PRO_TIPO_MONEDA', 'true_false');
 		$crud->field_type('VISTA_PREVIA','String');
 		$crud->field_type('PRO_HASH','invisible');
+		$crud->field_type('PRO_ACTIVA','invisible');
 
 		 
 		if( $state=='edit'){
@@ -243,7 +245,16 @@ function change_name_image($files_to_upload,$field_info){
 }
 
 function delete_motivo_rechazo($id_promo){
-	return $this->promociones_model->delete_motivo_rechazo($id_promo);
+	$this->load->model('promociones_model');
+	$this->promociones_model->delete_motivo_rechazo($id_promo);
+	$this->load->helper('url');
+
+	$result = $this->promociones_model->getPromocionById($id_promo);
+	$datos_envio['titulo'] = $result['PRO_NOMBRE'];
+	$datos_envio['autor'] = $result['PRO_AUTOR'];
+	$datos_envio['aliado'] = $result['PRO_USER_CREADOR'];
+	$datos= $this->promociones_model->send_mail_delete_user($datos_envio);
+	$this->promociones_model->send_mail_delete_aliado($datos_envio);
 }
 
 function get_id_user_creador($value, $id_promo){
@@ -408,6 +419,23 @@ function before_update($post_array, $primary_key){
 	$post_array['PRO_URL']=prep_url($post_array['PRO_URL']);
 	$post_array['AUTORIZADO']='0';
 
+	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
+    $datos_envio['autor'] = $this->session->userdata('username');
+    $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
+
+	$visibilidad = $this->promociones_model->verificar_visibilidad($primary_key);
+
+    if($post_array['VISIBILITY'] == 0 && $visibilidad['VISIBILITY'] == 1){
+    	$post_array['PRO_ACTIVA'] = 2;
+    }
+    elseif($post_array['VISIBILITY'] == 1 && $visibilidad['VISIBILITY'] == 0){
+    	$post_array['PRO_ACTIVA'] = 1;
+    }
+    else{
+    	$post_array['PRO_ACTIVA'] = '';
+    	$this->promociones_model->send_mail_aliado_edit($datos_envio);	
+    }
+
 	return $post_array;
 }
 
@@ -417,8 +445,8 @@ function fnc_after_update($post_array){ //print_r($post_array);die();
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $post_array['PRO_USER_CREADOR'];
-    $datos= $this->promociones_model->send_mail_user_edit($datos_envio);
-    $this->promociones_model->send_mail_aliado_edit($datos_envio);
+    $this->promociones_model->send_mail_user_edit($datos_envio);
+    
 
 }
 
