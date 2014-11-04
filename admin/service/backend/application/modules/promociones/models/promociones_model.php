@@ -94,13 +94,14 @@ class Promociones_model extends CI_Model
         $query = $this->db->get();
         $result = $query->row_array();
 
-        $config['smtp_host'] = 'localhost';
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = $this->config->item('smtp');
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
 
         $this->email->initialize($config);
 
-        $this->email->from('no-reply@cyberlunes.com.co', 'Promociones');
+        $this->email->from($this->config->item('mail_send'), 'Promociones');
         $this->email->to($result['email']); 
 
         $this->email->subject('Nueva promoción creada');
@@ -119,13 +120,14 @@ class Promociones_model extends CI_Model
         $query = $this->db->get();
         $result = $query->row_array();
 
-        $config['smtp_host'] = 'localhost';
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = $this->config->item('smtp');
         $config['charset'] = 'utf-8';
         $config['wordwrap'] = TRUE;
 
         $this->email->initialize($config);
 
-        $this->email->from('no-reply@cyberlunes.com.co', 'Promociones');
+        $this->email->from($this->config->item('mail_send'), 'Promociones');
         $this->email->to($result['email']); 
 
         $this->email->subject('Promoción editada');
@@ -150,14 +152,14 @@ class Promociones_model extends CI_Model
 			$listado_mails = implode(',',$arrMails);
 			
 
-			$config['protocol'] = 'sendmail';
-			$config['smtp_host'] = 'localhost';
-			$config['charset'] = 'utf-8';
-			$config['wordwrap'] = TRUE;
+			$config['protocol'] = 'smtp';
+            $config['smtp_host'] = $this->config->item('smtp');
+            $config['charset'] = 'utf-8';
+            $config['wordwrap'] = TRUE;
 
 			$this->email->initialize($config);
 
-			$this->email->from('no-reply@cyberlunes.com.co', 'Promociones');
+			$this->email->from($this->config->item('mail_send'), 'Promociones');
 			$this->email->to($listado_mails); 
 			// $this->email->to('mgranada@brandigital.com'); 
 			
@@ -185,14 +187,14 @@ class Promociones_model extends CI_Model
             $listado_mails = implode(',',$arrMails);
             
 
-            //$config['protocol'] = 'sendmail';
-            $config['smtp_host'] = 'localhost';
+            $config['protocol'] = 'smtp';
+            $config['smtp_host'] = $this->config->item('smtp');
             $config['charset'] = 'utf-8';
             $config['wordwrap'] = TRUE;
 
             $this->email->initialize($config);
 
-            $this->email->from('no-reply@cyberlunes.com.co', 'Promociones');
+            $this->email->from($this->config->item('mail_send'), 'Promociones');
             $this->email->to($listado_mails); 
             // $this->email->to('mgranada@brandigital.com'); 
             
@@ -201,6 +203,67 @@ class Promociones_model extends CI_Model
             $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
 
             $this->email->send();
+            return true;
+            // echo $this->email->print_debugger();
+    }
+
+    function send_mail_delete_aliado($datos_envio){
+        $this->load->library('email');
+
+        $this->db->select('email');
+        $this->db->from('admin_users');
+        $this->db->where('admin_users.id', $datos_envio['aliado']);
+
+        $query = $this->db->get();
+        $result = $query->row_array();
+
+        $config['smtp_host'] = $this->config->item('smtp');
+        $config['charset'] = 'utf-8';
+        $config['wordwrap'] = TRUE;
+
+        $this->email->initialize($config);
+
+        $this->email->from($this->config->item('mail_send'), 'Promociones');
+        $this->email->to($result['email']); 
+
+        $this->email->subject('Promoción eliminada');
+        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+
+        $this->email->send();
+    }
+
+    function send_mail_delete_user($datos_envio){
+           $this->load->library('email');
+
+            $this->db->select('email');
+            $this->db->from('admin_users');
+            $this->db->join('admin_users_groups', 'admin_users_groups.user_id =admin_users.id AND admin_users_groups.group_id =3'); //AND admin_users_groups.group_id = 5
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arrMails[] = $valor['email'];
+            }
+            $listado_mails = implode(',',$arrMails);
+            
+
+            $config['protocol'] = 'smtp';
+            $config['smtp_host'] = $this->config->item('smtp');
+            $config['charset'] = 'utf-8';
+            $config['wordwrap'] = TRUE;
+
+            $this->email->initialize($config);
+
+            $this->email->from($this->config->item('mail_send'), 'Promociones');
+            $this->email->to($listado_mails); 
+            // $this->email->to('mgranada@brandigital.com'); 
+            
+
+            $this->email->subject('Promoción eliminada');
+            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+
+            $this->email->send();
+            //echo $this->email->print_debugger();die();
             return true;
             // echo $this->email->print_debugger();
     }
@@ -375,6 +438,15 @@ class Promociones_model extends CI_Model
         return $query->row_array();
     }
 
+    function verificar_visibilidad($id_promo){
 
+        $this->db->select('VISIBILITY');
+        $this->db->from('PRO_PROMOCIONES');
+        $this->db->where('PRO_ID', $id_promo);
+        $query = $this->db->get();
+
+        return $query->row_array();
+
+    }
 
 }
