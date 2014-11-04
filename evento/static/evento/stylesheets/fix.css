@@ -33,10 +33,6 @@ footer div.container div.sponsor div.marcas-mobile figure img{
 	width: 100%;
 }
 
-section.wrapp .container .row .no-destacados ul li article .info h2 {
-	/*word-wrap: break-word;*/
-}
-
 .share {
 	left: 0;
 	position: fixed;
@@ -79,6 +75,10 @@ section.wrapp .container .row .no-destacados ul li article .info h2 {
 
 	#sas_12803 > div{
 		text-align: center;
+	}
+
+	section.wrapp .container .row .no-destacados ul li article .info h2 {
+		word-wrap: break-word;
 	}
 
 }
