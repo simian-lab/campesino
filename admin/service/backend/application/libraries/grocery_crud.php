@@ -1326,11 +1326,14 @@ class grocery_CRUD_Model_Driver extends grocery_CRUD_Field_Types
 
 				$upload_info = $this->upload_fields[$state_info->field_name];
 
+				$CI = & get_instance();
+			    $dominios_permitidos = $CI->config->item('dominios_permitidos');
+
 				header('Pragma: no-cache');
 				header('Cache-Control: private, no-cache');
 				header('Content-Disposition: inline; filename="files.json"');
 				header('X-Content-Type-Options: nosniff');
-				header('Access-Control-Allow-Origin: *');
+				header('Access-Control-Allow-Origin: '.implode(',',$dominios_permitidos));
 				header('Access-Control-Allow-Methods: OPTIONS, HEAD, GET, POST, PUT, DELETE');
 				header('Access-Control-Allow-Headers: X-File-Name, X-File-Type, X-File-Size');
 

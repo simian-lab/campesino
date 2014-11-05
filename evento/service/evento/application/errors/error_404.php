@@ -24,29 +24,25 @@ switch (ENVIRONMENT)
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
 //print_R($_SERVER['SERVER_NAME']);
-    switch ($_SERVER['SERVER_NAME']){
-
-        case 'evento.eltiempo-co-cyberlunes.dev.brandigital.com':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.dev.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.dev.brandigital.com/static/evento/'; 
-            break;
-        case 'evento.eltiempo-co-cyberlunes.stage.brandigital.com':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.stage.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.stage.brandigital.com/static/evento/'; 
-            break;
-        case 'evento.eltiempo-co-cyberlunes.live.brandigital.com':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/static/evento/'; 
-            break;
-        case 'www.cyberlunes.com.co':
-            $base_url = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/';
-            $base_url_static = 'http://evento.eltiempo-co-cyberlunes.live.brandigital.com/static/evento/'; 
-            break;
-        case 'staging.cyberlunes.com.co':
-            $base_url = 'http://staging.cyberlunes.com.co/';
-            $base_url_static = 'http://staging.cyberlunes.com.co/static/evento/'; 
-            break;
-    }
+switch ($_SERVER['SERVER_NAME'])
+{   
+    case 'evento.cyberlunes.local.brandigital.com':  
+        $base_url = 'http://evento.cyberlunes.local.brandigital.com/';
+        $base_url_static = 'http://evento.cyberlunes.local.brandigital.com/static/evento/'; 
+    break;
+    case 'evento.cyberlunes.dev.brandigital.com':    
+        $base_url = 'http://evento.cyberlunes.dev.brandigital.com/';
+        $base_url_static = 'http://evento.cyberlunes.dev.brandigital.com/static/evento/'; 
+    break;
+    case 'evento-stage.cyberlunes.com.co':  
+        $base_url = 'http://evento-stage.cyberlunes.com.co/';
+        $base_url_static = 'http://evento-stage.cyberlunes.com.co/static/evento/'; 
+    break;
+    case 'www.cyberlunes.com.co':    
+        $base_url = 'http://www.cyberlunes.com.co/';
+        $base_url_static = 'http://www.cyberlunes.com.co/static/evento/'; 
+    break;
+}
     
 ?>
 <html lang="en">
@@ -83,6 +79,32 @@ switch (ENVIRONMENT)
 
 
 <script src="<?php echo $base_url_static ?>js/s_code.js"></script>  
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Facebook Conversion Code for Pixel El Tiempo -->
+<script type="text/javascript">
+var fb_param = {};
+fb_param.pixel_id = '6014934086599';
+fb_param.value = '0.01';
+fb_param.currency = 'EUR';
+(function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+})();
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6014934086599&amp;value=0.01&amp;currency=EUR" /></noscript>
 
   <script language="JavaScript" type="text/javascript"><!--   
   //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  

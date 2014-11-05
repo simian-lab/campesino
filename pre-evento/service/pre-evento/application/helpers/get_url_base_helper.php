@@ -16,6 +16,7 @@ if ( ! function_exists('get_url_base'))
 //base_site_eltiempo_static
            $data['base_url']         = $url;
            $data['base_url_service'] = $url .'service/';
+           $data['url_static']         = $url_static;
          //  $data['base_url_static']  = $url .'static/pre-evento/';
          // $data['base_url_img_articulos']  = $url .'multimedia/articulos';
 
@@ -30,7 +31,7 @@ if ( ! function_exists('get_url_base'))
            $data['base_path_admin_img_facturas']    =  $base_path.'admin/multimedia/formulario-sorteo/';
            $data['base_path_admin_img_promociones']    =  $base_path.'admin/multimedia/promociones/';
 
-           $data['base_url_tod']  = $url .'tod/thumb/';
+           $data['base_url_tod']  = $url .'tod/thumb/phpThumb.php';
            return $data;
         
   }

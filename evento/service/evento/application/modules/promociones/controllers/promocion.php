@@ -79,7 +79,7 @@ class Promocion extends MX_Controller {
         switch ($filtro) {
            case 'home':
                    
-                    $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset);print_r($data['promociones']);
+                    $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset);
                                            
            break;  
            case 'categoria':                   
@@ -150,6 +150,9 @@ class Promocion extends MX_Controller {
        $data['pagination'] = site_url('descuentosfiltro/page/'.$tipo.'/'.$filtro.'/'.$categoria.'/'.$tienda.'/'.$marca.'/'.$subcategoria.'/'.$seed.'/'.$nextpage);
 
 
+      if($filtro == 'categoria' && $categoria != 'todos'){
+        $data['categoria_promocion'] = modules::run('breadcrumb/breadcrumb/get_categoria_name');
+      }
       
        return  $this->load->view($templateContainer,$data,true);    
 

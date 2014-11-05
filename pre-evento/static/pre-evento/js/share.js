@@ -1,126 +1,67 @@
-$(document).ready(function() {
-	var pageTitle = document.title; //HTML page title
-	var pageUrl = location.href; //Location of the page
+function shareFacebook(art_detalle){
 
-	
-	sharetext='Pre-evento Cyberlunes';
+    var title = $('meta[http-equiv="og:title"]').attr("content");
+    var description = $('meta[http-equiv="og:description"]').attr("content");
+    var image = $('meta[http-equiv="og:image"]').attr("content");
+    var url = $('meta[http-equiv="og:url"]').attr("content");
 
-	function pruebaFacebook(){
+    var obj = {
+        method: 'feed',
+        link: url,
+        picture: image,
+        name: title, 
+        caption: '',
+        description: description
+    };
 
-		//var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
-	    var shareName= 'facebook';
+    function callback(response) {
+        onClickShare('facebook', title);
+    }
+    FB.ui(obj, callback);
+    return false;
+}
 
-		console.log(shareName);
-		switch (shareName) //switch to different links based on different social name
-		{
-			case 'facebook':
-			 		//ga('send', 'event', 'restaurante/share', 'click', 'facebook');
-				var openLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
-				break;	
-			
-		}
-		
-		//Parameters for the Popup window
-		winWidth 	= 650;	
-		winHeight	= 450;
-		winLeft   	= ($(window).width()  - winWidth)  / 2,
-		winTop    	= ($(window).height() - winHeight) / 2,	
-		winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-		
-		//open Popup window and redirect user to share website.
-		window.open(openLink,'Pre-evento Cyberlunes',winOptions);
-		return false;
+function shareTwitter(art_detalle){
 
-	}
-	//user clicks on a share button
-	/*$('.fb').click(function(event) {
-			//var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
-		    var shareName= 'facebook';
+    var url = location.href;
 
-			console.log(shareName);
-			switch (shareName) //switch to different links based on different social name
-			{
-				case 'facebook':
-				 		//ga('send', 'event', 'restaurante/share', 'click', 'facebook');
-					var openLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
-					break;	
-				
-			}
-		
-		//Parameters for the Popup window
-		winWidth 	= 650;	
-		winHeight	= 450;
-		winLeft   	= ($(window).width()  - winWidth)  / 2,
-		winTop    	= ($(window).height() - winHeight) / 2,	
-		winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-		
-		//open Popup window and redirect user to share website.
-		window.open(openLink,'Pre-evento Cyberlunes',winOptions);
-		return false;
-	});*/
-
-	
-	$('.tw').click(function(event) {
-			//var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
-		    var shareName= 'twitter';
-
-			console.log(shareName);
-			switch (shareName) //switch to different links based on different social name
-			{
-				case 'twitter':
-					var openLink = 'http://twitter.com/home?status=' + encodeURIComponent( sharetext+ ' ' + pageUrl);
-					//ga('send', 'event', 'restaurante/share', 'click', 'twitter');
-					break;				
-				
-			}
-		
-		//Parameters for the Popup window
-		winWidth 	= 650;	
-		winHeight	= 450;
-		winLeft   	= ($(window).width()  - winWidth)  / 2,
-		winTop    	= ($(window).height() - winHeight) / 2,	
-		winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-		
-		//open Popup window and redirect user to share website.
-		window.open(openLink,'Pre-evento Cyberlunes',winOptions);
-		return false;
-	});
+    if(art_detalle == 'detalle')
+        var text_share = $('meta[http-equiv="og:title"]').attr("content");
+    else
+        var text_share = 'Ya estoy mirando en http://www.cyberlunes.com.co las mejores ofertas de @CyberLunesCo este 1 de diciembre';
 
 
-	
-	/*$(document).on( "click", ".socialesinfoampliada", function(event) {          
+    var openLink = 'http://twitter.com/share?text=' + encodeURIComponent( text_share );
+    
+    onClickShare('twitter', text_share);
+    //Parameters for the Popup window
+    winWidth    = 650;  
+    winHeight   = 450;
+    winLeft     = ($(window).width()  - winWidth)  / 2,
+    winTop      = ($(window).height() - winHeight) / 2, 
+    winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
+    
+    //open Popup window and redirect user to share website.
+    window.open(openLink,'',winOptions);
+    return false;
 
-				//var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
-			    var shareName=$(this).data("red");
-			    var url=$(this).data("url");
 
-				console.log(shareName);
-				switch (shareName) //switch to different links based on different social name
-				{
-					case 'facebook':
-					 		ga('send', 'event', 'restaurante/share', 'click', 'facebook');
-						var openLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url) + '&amp;title=' + encodeURIComponent(pageTitle);
-						break;
-					case 'twitter':
-						var openLink = 'http://twitter.com/home?status=' + encodeURIComponent( sharetext+ ' ' + url);
-						ga('send', 'event', 'restaurante/share', 'click', 'twitter');
-						break;				
-					case 'google':
-						var openLink = 'https://plus.google.com/share?url=' + encodeURIComponent(url) + '&amp;title=' + encodeURIComponent(sharetext);
-						ga('send', 'event', 'restaurante/share', 'click', 'google');
-						break;
-					
-				}
-			
-			//Parameters for the Popup window
-			winWidth 	= 650;	
-			winHeight	= 450;
-			winLeft   	= ($(window).width()  - winWidth)  / 2,
-			winTop    	= ($(window).height() - winHeight) / 2,	
-			winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-			
-			//open Popup window and redirect user to share website.
-			window.open(openLink,'Acabo de descubrir uno de los mejores restaurantes en #loscienmejoresdelagastronomia',winOptions);
-			return false;
-		});*/
+}
+
+$(document).ready(function(){
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : appdiademoda.data.app.fb_appid,
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
 });

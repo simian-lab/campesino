@@ -9,7 +9,7 @@ $memcached['servers'] = array(
 
 	'default' => array(
 
-			'host'			=> '192.168.4.50',
+			'host'			=> 'memcached-cyberlunes.ma1isw.cfg.use1.cache.amazonaws.com',
 			'port'			=> '11211',
 			'weight'		=> '1',
 			'persistent'	=> FALSE
@@ -22,8 +22,8 @@ $memcached['servers'] = array(
 // --------------------------------------------------------------------------
 $memcached['config'] = array(
 
-	'engine'                => 'Memcache',				// Set which caching engine you are using. Acceptable values: Memcached or Memcache
-	'prefix' 				=> '',						// Prefixes every key value (useful for multi environment setups)
+	'engine'                => 'Memcached',				// Set which caching engine you are using. Acceptable values: Memcached or Memcache
+	'prefix' 				=> 'testing',						// Prefixes every key value (useful for multi environment setups)
 	'compression'			=> FALSE,					// Default: FALSE or MEMCACHE_COMPRESSED Compression Method (Memcache only).
 
 	// Not necessary if you already are using 'compression'

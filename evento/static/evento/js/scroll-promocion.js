@@ -1,5 +1,7 @@
 $(document).ready(function() {
             var idPromociones;
+            var id_destacados = [];
+            var id_nodestacados = [];
             jQuery.ias({
                 container : '#contentPromocionesdestacados',
                 item: '.post',
@@ -8,16 +10,29 @@ $(document).ready(function() {
                 loader: '<img src="' + base_url_static +'/img/loading.gif"/>',                
                 triggerPageThreshold: 90,
                 trigger: 'Cargar más items',
-                onPageChange: function(pageNum, pageUrl, scrollOffset) {//alert(1)
-                    s.linkTrackVars="events,products";
-                    s.linkTrackEvents="event41";
-                    s.events="event41";
-                    s.products=$('.idPromo').text();
-                    s.tl(this,"o","impresion elemento");
-                    // console.log('Cargo');
-                    //hoverPromociones();
-                //   path = jQuery('<a/>').attr('href',pageUrl)[0].pathname.replace(/^[^\/]/,'/');                
-               //    ga('send', 'pageview', path + '?provincia=' + filtro.ciudad + '&categoria='+filtro.categoria);
+                onPageChange: function(pageNum, pageUrl, scrollOffset) {},
+                onLoadItems: function(items){
+                    $.each(items, function(){
+                        id_destacados.push($(this).attr('data-id'));
+                    });
+
+                    printOferta(id_destacados);
+                    id_destacados = [];
+
+                    var duplicados = new Array();
+                    $(".destacados ul li").each(function(k,v){
+                        var idPromo = ($(v).data("id"));
+                        var impresiones = new Array();
+                        $(".destacados,.no-destacados ul li").each(function(k1,v1){
+                         if(idPromo == ($(v1).data("id")) ){impresiones.push(idPromo);}
+                        })
+                        if(impresiones.length > 1){duplicados.push(idPromo)}
+                    })
+                    
+                    if(duplicados.length > 1){
+                        console.log("Duplicados: " + duplicados);
+                    }
+
                 }
             });
             //alert(ias)
@@ -29,16 +44,28 @@ $(document).ready(function() {
                 loader: '<img src="' + base_url_static +'/img/loading.gif"/>',                
                 triggerPageThreshold: 90,
                 trigger: 'Cargar más items',
-                onPageChange: function(pageNum, pageUrl, scrollOffset) {
-                    s.linkTrackVars="events,products";
-                    s.linkTrackEvents="event41";
-                    s.events="event41";
-                    s.products=$('.idPromo').text();
-                    s.tl(this,"o","impresion elemento");
-                    // console.log('Cargo');
-                    //hoverPromociones();
-                //   path = jQuery('<a/>').attr('href',pageUrl)[0].pathname.replace(/^[^\/]/,'/');                
-               //    ga('send', 'pageview', path + '?provincia=' + filtro.ciudad + '&categoria='+filtro.categoria);
+                onPageChange: function(pageNum, pageUrl, scrollOffset) {},
+                onLoadItems: function(items){
+                    $.each(items, function(){
+                        id_nodestacados.push($(this).attr('data-id'));
+                    });
+
+                    printOferta(id_nodestacados);
+                    id_nodestacados = [];
+
+                    var duplicados = new Array();
+                    $(".no-destacados ul li").each(function(k,v){
+                        var idPromo = ($(v).data("id"));
+                        var impresiones = new Array();
+                        $(".destacados,.no-destacados ul li").each(function(k1,v1){
+                         if(idPromo == ($(v1).data("id")) ){impresiones.push(idPromo);}
+                        })
+                        if(impresiones.length > 1){duplicados.push(idPromo)}
+                    })
+                    
+                    if(duplicados.length > 1){
+                        console.log("Duplicados: " + duplicados);
+                    }
                 }
             });
 });

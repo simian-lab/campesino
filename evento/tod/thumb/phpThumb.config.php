@@ -14,17 +14,17 @@
 
 switch ($_SERVER['SERVER_NAME'])
 {
-	case 'evento.eltiempo-co-cyberlunes.dev.brandigital.com':
-		$dominiosPermitidos=array('static.eltiempo-co-cyberlunes.dev.brandigital.com','static.cyberlunes.com.co' );		
+	case 'evento.cyberlunes.local.brandigital.com':	 
+		$dominiosPermitidos=array('static.cyberlunes.local.brandigital.com','static.cyberlunes.com.co' );
 	break;
-	case 'eltiempo-co-cyberlunes.dev.cba.brandigital.com':
-		 $dominiosPermitidos=array('static.eltiempo-co-cyberlunes.dev.brandigital.com','static.cyberlunes.com.co' );
+	case 'evento.cyberlunes.dev.brandigital.com':	 
+		$dominiosPermitidos=array('static.cyberlunes.dev.brandigital.com','static.cyberlunes.com.co' );
 	break;
-	case 'evento.eltiempo-co-cyberlunes.stage.brandigital.com':	    	
-        $dominiosPermitidos=array('static.eltiempo-co-cyberlunes.stage.brandigital.com','static.cyberlunes.com.co' );
+	case 'evento-stage.cyberlunes.com':	 
+		$dominiosPermitidos=array('static-stage.cyberlunes.com','static.cyberlunes.com.co' );
 	break;
-	default:
-		$dominiosPermitidos=array('static.eltiempo-co-cyberlunes.live.brandigital.com','static.cyberlunes.com.co' );
+	case 'www.cyberlunes.com.co':	 
+		$dominiosPermitidos=array('static.cyberlunes.com.co' );
 	break;
 }
 

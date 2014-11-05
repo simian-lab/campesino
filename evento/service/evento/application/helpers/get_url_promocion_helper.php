@@ -28,40 +28,18 @@ if ( ! function_exists('get_url_promocion'))
 
         $atts = array('target'      => '_blank',
                       'class'      => 'link red',
-                      'onClick'    => "s.linkTrackVars='events,eVar38,eVar39,products';
-                                      s.linkTrackEvents='event36';
-                                      s.events='event36';
-                                      s.eVar38='".$posicion."';
-                                      s.eVar39='".$creador."';
-                                      s.products=';".$id."';
-                                      s.tl(this,'o','Clic en Promoción');"
+                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
                       );
 
         if($promo_general == 1){
           $atts = array('target'      => '_blank',
                       'class'      => 'link orange',
-                      'onClick'    => "s.linkTrackVars='events,eVar38,eVar39,products';
-                                      s.linkTrackEvents='event36';
-                                      s.events='event36';
-                                      s.eVar38='".$posicion."';
-                                      s.eVar39='".$creador."';
-                                      s.products=';".$id."';
-                                      s.tl(this,'o','Clic en Promoción');"
+                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
                       );
         }
-      $search = array('"',"'");
-       $url=str_replace($search, '',$url);
-
-       $url=prep_url($url);        
 
 
-        $base64string =base64_encode($url);
-        $base64string = strtr($base64string, '+/=', '-_,');
-        $urlencode=rawurlencode($base64string);
-
-    //    $url=site_url('redireccionamiento/externo/' .$urlencode);
-
-            $url=site_url('redireccionamiento/externo/?url=' .$urlencode);
+        $url=site_url('redireccionamiento/externo/?url=' .$url);
 
 
         $strAnchor=anchor($url, $text, $atts);

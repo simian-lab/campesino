@@ -8,6 +8,23 @@
 		        </div>
 		    </div>
 		</div>
+
+
+		<script type="text/javascript">
+
+		    $(document).ready(function(){
+		    	 $("#agradecimiento").modal("show");  
+
+	
+				window.setTimeout(function () {
+			        $("#agradecimiento").modal("hide");
+			    }, 3000);		     
+
+
+		    });
+
+		</script>
+
 		<!-- Facebook Conversion Code for Píxel El Tiempo 2 - Leads -->
 		<script type="text/javascript">
 		var fb_param = {};
@@ -33,20 +50,3 @@
 		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
 		<!-- End Google Tag Manager -->
-
-		<script type="text/javascript">
-
-		    $(document).ready(function(){
-		    	 $("#agradecimiento").modal("show");  
-
-	
-				window.setTimeout(function () {
-			        $("#agradecimiento").modal("hide");
-			    }, 3000);		     
-
-
-		    });
-		    
-
-
-		</script>

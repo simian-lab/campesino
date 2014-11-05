@@ -3,56 +3,15 @@
         <div class="row sponsor">                            
             <div class="col-md-12 center">
                 <div class="marcas-mobile">
-                    <!--<figure>
-                        <a href="#" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>
-                    </figure>-->
-                    <!--<figure>
-                        <a href="#" target="_blank"><img src="<?php echo $base_url_static;?>img/marca2.png" alt="Propiedad para todos" /></a>
+                    <figure class="col-xs-4">
+                        <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
                     </figure>
-                    <figure>
-                        <a href="#" target="_blank"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>
-                    </figure>-->
-                    <?php if($this->agent->is_mobile()): ?>
-                    <figure>
-                            <!--<a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca1.png" alt="MinTIC" /></a>-->
-                        <script type="text/javascript">
-                            sas_pageid='41700/282275'; // Página : Cyberlunes/home
-                            sas_formatid=25677;  // Formato : Patrocimio MinTic  97x24
-                            sas_target='';   // Segmentación
-                            SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                        </script>
-                        <noscript>
-                            <a href="http://ads.eltiempo.com/call/pubjumpi/41700/282275/25677/S/[timestamp]/?" target="_blank">
-                            <img src="http://ads.eltiempo.com/call/pubi/41700/282275/25677/S/[timestamp]/?" border="0" alt="" /></a>
-                        </noscript>
+                    <figure class="col-xs-4">
+                        <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Footer')"><img src="<?php echo $base_url_static;?>img/digital.png" alt="Vive digital" /></a>
                     </figure>
-                    <figure>
-                        <!--<a href="http://wsp.presidencia.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca2.png" alt="Propiedad para todos" /></a>-->
-                        <script type="text/javascript">
-                            sas_pageid='41700/282275'; // Página : Cyberlunes/home
-                            sas_formatid=25678;  // Formato : Patrocimio Prosperidad 131x24
-                            sas_target='';   // Segmentación
-                            SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                        </script>
-                        <noscript>
-                            <a href="http://ads.eltiempo.com/call/pubjumpi/41700/282275/25678/S/[timestamp]/?" target="_blank">
-                            <img src="http://ads.eltiempo.com/call/pubi/41700/282275/25678/S/[timestamp]/?" border="0" alt="" /></a>
-                        </noscript>
+                    <figure class="col-xs-4">
+                        <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Footer')"><img src="<?php echo $base_url_static;?>img/colombia.png" alt="Gobierno de Colombia" /></a>
                     </figure>
-                    <figure>
-                        <!--<a href="http://www.vivedigital.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/marca3.png" alt="Vive digital" /></a>-->
-                        <script type="text/javascript">
-                            sas_pageid='41700/282275'; // Página : Cyberlunes/home
-                            sas_formatid=25679;  // Formato : Patrocimio Vivedigital 115x24
-                            sas_target='';   // Segmentación
-                            SmartAdServer(sas_pageid,sas_formatid,sas_target);
-                        </script>
-                        <noscript>
-                            <a href="http://ads.eltiempo.com/call/pubjumpi/41700/282275/25679/S/[timestamp]/?" target="_blank">
-                            <img src="http://ads.eltiempo.com/call/pubi/41700/282275/25679/S/[timestamp]/?" border="0" alt="" /></a>
-                        </noscript>
-                    </figure>
-                    <?php endif; ?>
                 </div>
                 <div class="invita">
                     <div class="texto">
@@ -60,23 +19,24 @@
                         --><span>invita:</span>
                     </div>
                     <div class="logos">                                
-                        <a href="http://ccce.org.co/" target="_blank"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a><!--
-                        --><a href="http://www.eltiempo.com/" target="_blank"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
+                        <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Footer')"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a><!--
+                        --><a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
                     </div>
                 </div>
             </div>
             <div class="social">
-                <a href="#" class="fb" onClick='shareFacebook(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Facebook";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
-                <a href="#" class="tw" onClick='shareTwitter(); s.linkTrackVars="events,eVar13";  s.linkTrackEvents="event6";  s.events="event6";  s.eVar13="Twitter";  s.products=";18442";  s.tl(true,"o","Compartir  en  Social  Media");'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
+                <a href="#" class="fb" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
+                <a href="#" class="tw" onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
             </div>
         </div>                                   
     </div>                
     <div class="row terminos">
         <div class="col-md-12 center">                    
             <div>
-                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  cyberlunes@eltiempo.com</span>
-                <span><b>Cyberlunes</b> es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
-                <span>© 2014 - <b>Cyberlunes</b> Todos los derechos reservados .</span>
+                <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a>  -  <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Cyberlunes&reg;</a></span>
+                <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
+                <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+                <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
             </div>
         </div>
     </div>            
@@ -92,7 +52,7 @@
             <div class="modal-body">
                 <p>
                     www.cyberlunes.com.co es una página web (“la página web” o “la Página Web”) de 
-                    propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”). Cyberlunes se llevará a cabo el próximo 19 de Mayo, desde las 12:00 a.m. hasta las 11:59 p.m. y comercios importantes del país ofrecerán descuentos y promociones en compras por Internet.
+                    propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”).
                 </p>
                 <p>
                    Las siguientes disposiciones describen los términos y condiciones de uso aplicables al acceso y uso de los servicios ofrecidos por la página web, que deberán ser observados detenidamente por los usuarios y aliados, y que se entenderán aceptados por el solo hecho de navegar por la página web.
@@ -170,38 +130,24 @@
     </div>
 </div>
 
-<div class="modal fade" id="redirect_oferta" style="z-index:2000">
+<div class="modal fade" id="uso_marca" style="z-index:2000">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
-                <h4 class="modal-title">DIRECCIONAMIENTO EXTERNO</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Términos y condiciones para el uso de la marca Cyberlunes&reg;</h4>
             </div>
-            <div class="modal-body" id="redireccion">
-                <header>
-                    <div class="container" style="width:100%">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <figure class="logo">
-                                    <img src="<?php echo $base_url_static;?>img/redireccion.png" alt="">
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-                <section>
-                    <div class="container" style="width:100%">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <span class="small">Los <b>mejores</b> descuentos </span>
-                                <img src="<?php echo $base_url_static;?>img/redireccion_.png" alt="">
-                                <span class="medium"><b>redireccionamiento</b></span>
-                                <span class="large">externo</span>
-                                <div id="contenido_redirect"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <div class="modal-body">
+                <p>Por favor descargue y lea estos instructivos para el uso adecuado de la marca y logos de Cyberlunes®. Recuerde que Cyberlunes® es una marca registrada, de uso exclusivo de la Cámara Colombiana de Comercio Electrónico CCCE.</p>
+            	<br><br>
+            	<ul>
+            		<li>
+            			- <a href="<?php echo $url_static;?>multimedia/TERMINOS-Y-CONDICIONES-CYBERLUNES.PDF" target="_blank">Términos y condiciones de uso de la marca (Descargar PDF)</a>
+            		</li>
+            		<li>
+            			- <a href="<?php echo $url_static;?>multimedia/MARCAS-CYBERLUNES-SITE.PDF" target="_blank">Alcance de la marca (Descargar PDF)</a>
+            		</li>
+            	</ul>
             </div>
         </div>
     </div>
@@ -216,13 +162,3 @@ s.channel ="<?php echo $s_channel; ?>";
 /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/ 
 var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
 <!--  End SiteCatalyst  code  --> 
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
-<!-- End Google Tag Manager -->

@@ -17,6 +17,7 @@ evento.eltiempo-co-cyberlunes.stage.brandigital.com
 pre-evento.eltiempo-co-cyberlunes.stage.brandigital.com
 */
 
-$config['base_site_eltiempo'] = ' http://evento.eltiempo-co-cyberlunes.live.brandigital.com/';
-$config['base_site_eltiempo_static'] = 'http://static.eltiempo-co-cyberlunes.live.brandigital.com/';
-$config['base_site_eltiempo_root'] = ' http://evento.eltiempo-co-cyberlunes.live.brandigital.com/'; 
+$config['base_site_eltiempo'] = 'http://www.cyberlunes.com.co/';
+$config['base_site_eltiempo_static'] = 'http://static.cyberlunes.com.co/';
+$config['base_site_eltiempo_root'] = 'http://www.cyberlunes.com.co/';
+

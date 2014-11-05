@@ -6,41 +6,235 @@ class Redireccionamiento extends CI_Controller
    {
        parent::__construct();
        $this->load->helper('string');
+       $this->load->helper('get_url_base');
+       $this->load->library('memcached_library');
    }
 
    public function externo(){
+        $get_url_base = get_url_base();
+        $data['url']  = $get_url_base;
 
-        $data = null;               
-        $data = get_url_base();
-       	//die(rawurlencode(base64_encode("http://us2.php.net/manual/en/function.rawurlencode.php")));
-        $page=$this->input->get('url', TRUE);
+        $pagehash=$this->input->get('url', TRUE);
 
-       	if(empty($page)) {
+        $this->load->library('form_validation');
 
-       		    redirect('/', 'refresh');
-              return;
-        } 
+        if(!$this->form_validation->required($pagehash)){
+            $this->enviar_email('parametro url no válido',$pagehash);
+            show_404();
+            return;   
+        }else{
+           if(!$this->form_validation->exact_length($pagehash,40)){
+                $this->enviar_email('parametro url no válido',$pagehash);
+                show_404();
+                return;   
+            }
+        }
 
-         $base64url=rawurldecode($page);
-         $base64url = strtr($base64url, '-_,', '+/=');
+        
+     
 
-         $data['url_redirect']=base64_decode($base64url);
-         //print_r(filter_var($data['url_redirect'], FILTER_VALIDATE_URL));
-         $data['url_redirect'] = $this->security->xss_clean($data['url_redirect']);
-         // $data['url_redirect'] = htmlspecialchars($data['url_redirect'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
-         $data['url_redirect'] = strip_quotes($data['url_redirect']);
-         $data['url_redirect'] = str_replace('http ', 'http:', $data['url_redirect']);
-         $data['url_redirect'] = str_replace('https ', 'https:', $data['url_redirect']);
-         //print_r($data['url_redirect']);die();
-         //print_r(strip_quotes(($this->security->xss_clean($data['url_redirect']))));
-         /*if (!filter_var($data['url_redirect'], FILTER_VALIDATE_URL)) {
-              redirect('/', 'refresh');
-              return;
-          }*/
+        $key_memcached_novalida='lista_no_valida_url_'.$pagehash;
 
-         $this->load->view('redirect',$data);
-    	
+        $result_memcached_novalida = $this->memcached_library->get($key_memcached_novalida);
+        
+        if($result_memcached_novalida) 
+        {  
+            $this->enviar_email('nuevo intento de promoción con dominio no habilitado , ya en la lista memcache de no validas',$pagehash,$result_memcached_novalida,NULL);
+            show_404();            
+            return;     
+        }       
+
+
+        $key_memcached='lista_valida_url_'.$pagehash;
+        $result_memcached = $this->memcached_library->get($key_memcached);
+        
+        if(!$result_memcached) 
+        {         
+
+            $result_base =$this->_getPromocionbd($pagehash);
+
+            if(!$result_base)
+            {
+                $this->enviar_email('promoción no válida  , no existente o habilitada',$pagehash);
+                $this->memcached_library->add($key_memcached_novalida, $pagehash,300);
+                show_404();                
+                return;                               
+            }      
+
+          
+            $result_base['PRO_URL']= $this->_sanitiseURL($result_base['PRO_URL']);
+
+            if (!$result_base['PRO_URL']) {
+                 $this->memcached_library->add($key_memcached_novalida, $result_base,300);
+                 $this->enviar_email('promoción url no válida',$pagehash,$result_base);
+                 show_404();                 
+                 return;  
+            }
+
+            $listaBlancaDominios = $this->_getListaBlanca();
+
+            $dominio_redirect= $this->_getDomain($result_base['PRO_URL']);
+
+            if (!in_array($dominio_redirect, $listaBlancaDominios)) {
+                $this->memcached_library->add($key_memcached_novalida, $result_base,150);
+                $this->enviar_email('promoción con dominio no habilitado',$pagehash,$result_base,$dominio_redirect);
+                show_404();                
+                return;    
+            }
+
+
+            $this->memcached_library->add($key_memcached, $result_base);
+           
+            $url_redirect=$result_base['PRO_URL']; 
+
+            //die('base_datos = '.$url_redirect);         
+        }
+        else 
+        {          
+            $url_redirect=$result_memcached['PRO_URL'];
+    //        die('memcached = '.$url_redirect);
+        }
+
+     
+
+         if(empty($url_redirect))
+         {
+                $this->enviar_email('promoción url no válida',$pagehash,$result_base,$url_redirect);
+                show_404();                
+                return;                               
+         }                 
+     /* 
+       $url_redirect=$this->_sanitiseURL($url_redirect);
+
+        if (!$url_redirect) {
+             redirect('/', 'refresh');
+             return;
+        }
+  */
+        $data['url_redirect']=$url_redirect;
+    //    echo($url_redirect);
+
+       $this->load->view('redirect',$data);
+        return;
+   }  
+
+   
+
+   private function _getListaBlanca(){
+        $key_memcached='lista_blanca_dominio';
+        $result_memcached = $this->memcached_library->get($key_memcached);
+        
+        if(!$result_memcached) 
+        {       
+              $this->load->database();
+              $this->load->model('lista_blanca_model');  
+              $result = $this->lista_blanca_model->get();
+              $idpromos=array();
+              foreach ($result as $value) {
+                    $idpromos[]=$value['LBD_DOMINIO'];
+              }
+              $this->memcached_library->add($key_memcached, $idpromos,300);
+              return $idpromos;   
+
+        }
+        else
+        {
+              return $result_memcached;  
+        }
+   
+
+
    }
+
+   private function _getPromocionbd($pagehash){
+        $this->load->database();
+        $this->load->model('promociones/promocion_model');  
+        $result = $this->promocion_model->getByHash($pagehash);
+        return $result; 
+   }
+  
+  function _sanitiseURL($url) {
+     //$url = htmlspecialchars($url, ENT_QUOTES | ENT_HTML401, 'UTF-8');
+    $url = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+     $url = strip_quotes($url);
+     $url = str_replace('http ', 'http:', $url);
+     $url = str_replace('https ', 'https:', $url);
+     $url = filter_var($url, FILTER_SANITIZE_URL,FILTER_SANITIZE_SPECIAL_CHARS);
+      if (! filter_var($url, FILTER_VALIDATE_URL))
+          return false;
+      return $url;
+  }
+
+
+  function _getDomain($url) {
+      $pieces = parse_url($url);
+      $domain = isset($pieces['host']) ? $pieces['host'] : '';
+      if (preg_match('/(?P<domain>[a-z0-9][a-z0-9\-]{1,63}\.[a-z\.]{2,6})$/i', $domain, $regs)) {
+        return $regs['domain'];
+      }
+      return false;
+  }
+
+
+    public function enviar_email($motivo,$pagehash,$result_base=NULL,$url_redirect=NULL){
+        $this->load->helper('get_url_base');
+        $url = get_url_base();
+        $data['url'] = $url;
+         $this->load->helper('date');
+       
+       $config_email = $this->config->load('email', TRUE);
+       
+       $this->load->library('email');
+
+        $datestring = "%d-%m-%Y a las %h:%i %a";
+                  $time = time();
+
+
+       $mensaje  = 'Motivo: '.$motivo.' <br><br>';
+       $mensaje .= 'Url : '.current_url().'?url='. $pagehash .' <br>';        
+       if(!empty($result_base)){
+                $mensaje  .= '*************************************<br>';
+                $mensaje  .= 'PROMOCIÓN: <br>';
+                if(!empty($result_base['PRO_ID']))
+                      $mensaje  .= 'id : '.$result_base['PRO_ID'].' <br>';
+                if(!empty($result_base['PRO_NOMBRE']))
+                      $mensaje  .= 'nombre : '.$result_base['PRO_NOMBRE'].' <br>';
+                 if(!empty($result_base['PRO_URL']))
+                      $mensaje  .= 'url : '.$result_base['PRO_URL'].' <br>';
+                $mensaje  .= '*************************************<br>';
+       }
+
+        if(!empty($url_redirect)){
+                
+                $mensaje  .= 'Dominio no válido : '.$url_redirect.' <br>';
+       }
+
+       $mensaje .= 'fecha: '.mdate($datestring, $time).' <br>';
+                    
+
+
+
+
+        $config = Array(
+            'protocol' => 'smtp'
+            ,'smtp_host' => $config_email['smtp_host']
+            ,'mailtype' => 'html'
+            ,'charset' => 'utf-8'
+            ,'newline' => '\r\n'
+            //'smtp_crypto' =>'tls'
+        );
+
+        $this->email->initialize($config);
+
+        $this->email->from($config_email['website_sender'], 'Cyberlunes');
+        $this->email->to($config_email['email_to']);
+        //$this->email->cc('yohmor@eltiempo.com','nelfer@eltiempo.com');
+        //$this->email->bcc('ggiorda@brandigital.com','npiazza@brandigital.com');
+        $this->email->subject('Cyberlunes: alerta Redireccionamiento/externo');
+        $this->email->message($mensaje);
+        $this->email->send();
+
+    } 
   
     	
 }

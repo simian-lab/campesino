@@ -44,6 +44,9 @@ class Breadcrumb extends MX_Controller {
 
     }
 
+    public function get_categoria_name(){
+      return $this->breadcrumb_model->get_categoria($this->uri->segment(2));
+    }
 
 }
 

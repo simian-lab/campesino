@@ -56,6 +56,22 @@ function emailCheck (emailStr) {
        alert(errStr);
        return false;
     }
+
+    var checkEmail = $.ajax({
+                        type: 'POST',
+                        data: {email: emailStr},
+                        async: false,
+                        global: false,
+                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/checkEmailExist'); ?>',
+                        success: function response(data){}
+                    }).responseText;
+
+    var json_data = JSON.parse(checkEmail);
+    if(json_data.status.code == 101){
+        $('#alerta-form-usuario-registrado').modal();
+        return false;
+    }
+    
     return true;
     }
     function UPTvalidateform(thisform)
@@ -66,6 +82,7 @@ function emailCheck (emailStr) {
         }
         var checkbox = false;
         var checkbox_len = 1;
+        var intereses = [];
 
         if(thisform.elements["val_66010[]"].length != undefined )
         {
@@ -75,7 +92,7 @@ function emailCheck (emailStr) {
                 if (thisform.elements['val_66010[]'][i].selected)
                 {
                     checkbox = true;
-                    break;
+                    intereses.push(thisform.elements['val_66010[]'][i].value);
                 }
             }
         }
@@ -114,15 +131,27 @@ function emailCheck (emailStr) {
             else if(( (document.getElementById('unsubscribe')
                 && !document.getElementById('unsubscribe').checked) || (!document.getElementById('unsubscribe')) ) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")){
                 
-                //setCookie('user','suscription','56000');
                 
-                //$("#agradecimiento").modal("show");
                 $.ajax({
-                    type: 'POST',
-                    dataType: 'json',                        
+                    type: 'POST',                    
                     async :false,
-                    url: '<?php echo site_url('home/home/setOrigen'); ?>',
+                    dataType: 'html',
+                    data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
+                    url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
                     success: function(xmldata) {
+                        
+                        onClickRegistro(thisform.email.value);
+
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',                        
+                            async :false,
+                            url: '<?php echo site_url('home/home/setOrigen'); ?>',
+                            success: function(xmldata) {
+                                return(true);
+                            }
+                        });
+
                         return(true);
                     }
                 });
@@ -137,30 +166,6 @@ function emailCheck (emailStr) {
 </script>
 
 
-
-<script type="text/javascript">
-    
-    function setCookie(cname,cvalue,exdays)
-    {
-        var d = new Date();
-        d.setTime(d.getTime()+(exdays*24*60*60*1000));
-        var expires = "expires="+d.toGMTString();
-        document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
-    }
-
-    function getCookie(cname)
-    {
-        var name = cname + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++)
-          {
-          var c = ca[i].trim();
-          if (c.indexOf(name)==0) return c.substring(name.length,c.length);
-        }
-        return "";
-    }
-
-</script>
 <script type="text/javascript">
     $('#nombre').alphanum({
         allowNumeric : false,
@@ -218,72 +223,9 @@ function emailCheck (emailStr) {
         return true;
     }
 
-    function shareFacebook(){
-        var pageTitle = document.title; //HTML page title
-        var pageUrl = location.href; //Location of the page
-
-        
-        sharetext='Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
-        //var shareName = $(this).attr('class').split(' ')[0]; //get the first class name of clicked element
-        var shareName= 'facebook';
-
-        //console.log(shareName);
-        switch (shareName) //switch to different links based on different social name
-        {
-            case 'facebook':
-                    //ga('send', 'event', 'restaurante/share', 'click', 'facebook');
-                var openLink = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(pageUrl) + '&amp;title=' + encodeURIComponent(pageTitle);
-                break;  
-            
-        }
-        
-        //Parameters for the Popup window
-        winWidth    = 650;  
-        winHeight   = 450;
-        winLeft     = ($(window).width()  - winWidth)  / 2,
-        winTop      = ($(window).height() - winHeight) / 2, 
-        winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-        
-        //open Popup window and redirect user to share website.
-        window.open(openLink,'',winOptions);
-        return false;
-
-    }
-
-    function shareTwitter(){
-        var pageTitle = document.title; //HTML page title
-        var pageUrl = location.href; //Location of the page
-
-        
-        var shareName= 'twitter';
-
-        sharetext = 'Ya estoy listo para el próximo @CyberLunesCo este 19 de Mayo. Alístate tu también en http://www.cyberlunes.com.co';
-
-        //console.log(shareName);
-        switch (shareName) //switch to different links based on different social name
-        {
-            case 'twitter':
-                var openLink = 'http://twitter.com/home?status=' + encodeURIComponent( sharetext );
-                //ga('send', 'event', 'restaurante/share', 'click', 'twitter');
-                break;              
-            
-        }
-        
-        //Parameters for the Popup window
-        winWidth    = 650;  
-        winHeight   = 450;
-        winLeft     = ($(window).width()  - winWidth)  / 2,
-        winTop      = ($(window).height() - winHeight) / 2, 
-        winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-        
-        //open Popup window and redirect user to share website.
-        window.open(openLink,'',winOptions);
-        return false;
-
-    }
-
+    
     $(document).ready(function(){
-        //alert(getCookie('user'))
+       
 
         if(typeof String.prototype.trim !== 'function') {
             String.prototype.trim = function() {
@@ -304,6 +246,10 @@ function emailCheck (emailStr) {
                     $('#form-collapse').show();
                     $('#registrate').show();
                 }
+
+                if(data['hide_form'] == 1){
+                    $('#footer_main').css({'margin-bottom':'0'});
+                }
             }
         });
 
@@ -311,27 +257,39 @@ function emailCheck (emailStr) {
             $('#collapseOne').toggle();
             if($('#collapseOne').is(':hidden')){
                 $('#icon-collapse-form').attr('src', '<?php echo $base_url_static?>img/arrow-up.png');
+                $('#footer_main').css({'margin-bottom':'41px'});
             }
             else{
                 $('#icon-collapse-form').attr('src', '<?php echo $base_url_static?>img/arrow-down.png');
+                $('#footer_main').css({'margin-bottom':'150px'});
             }
         });
         
-       /* if(getCookie('user') && getCookie('user') == 'suscription'){
-            //$('#id-form-detalle-mobile').css({display: 'none'});
-            //$('#form-collapse').children('section').css({display: 'none'});
-            //$('.box-form').addClass('mobile');
-            //$('#id-form-detalle-mobile').attr('id','form-collapse');
-            //$("#registrate").modal("hide");
-            //$('#accordion').css({display: 'none'});
-            //$('footer').css({'margin-bottom':'0'});
-        }
-        else{
-           //$('.vistaFormulario').removeClass('mobile');
-           //$('#id-form-detalle-mobile').attr('id','id-form-detalle-mobile'); 
-        }*/
 
     });
     
     
 </script>
+
+<div class="modal fade" id="uso_marca" style="z-index:2000">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Términos y condiciones para el uso de la marca Cyberlunes&reg;</h4>
+            </div>
+            <div class="modal-body">
+                <p>Por favor descargue y lea estos instructivos para el uso adecuado de la marca y logos de Cyberlunes®. Recuerde que Cyberlunes® es una marca registrada, de uso exclusivo de la Cámara Colombiana de Comercio Electrónico CCCE.</p>
+                <br><br>
+                <ul>
+                    <li>
+                        - <a href="<?php echo $url_static;?>multimedia/TERMINOS-Y-CONDICIONES-CYBERLUNES.PDF" target="_blank">Términos y condiciones de uso de la marca (Descargar PDF)</a>
+                    </li>
+                    <li>
+                        - <a href="<?php echo $url_static;?>multimedia/MARCAS-CYBERLUNES-SITE.PDF" target="_blank">Alcance de la marca (Descargar PDF)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
