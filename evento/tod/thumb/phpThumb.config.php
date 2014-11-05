@@ -23,6 +23,9 @@ switch ($_SERVER['SERVER_NAME'])
 	case 'evento-stage.cyberlunes.com':	 
 		$dominiosPermitidos=array('static-stage.cyberlunes.com','static.cyberlunes.com.co' );
 	break;
+	case 'origin-www2.cyberlunes.com.co':	 
+		$dominiosPermitidos=array('static-stage.cyberlunes.com','static.cyberlunes.com.co' );
+	break;
 	case 'www.cyberlunes.com.co':	 
 		$dominiosPermitidos=array('static.cyberlunes.com.co' );
 	break;
