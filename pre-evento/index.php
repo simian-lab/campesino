@@ -59,7 +59,7 @@ switch ($_SERVER['SERVER_NAME'])
 				'https://static-stage.cyberlunes.com.co',
 				'http://fonts.gstatic.com/'
 			);
-        define('ENVIRONMENT', 'testing');
+        define('ENVIRONMENT', 'origin');
 	break;
 	case 'www.cyberlunes.com.co':	 
 		$dominios_permitidos = array(
