@@ -37,6 +37,10 @@ switch (ENVIRONMENT)
             $base_url = 'http://preevento-stage.cyberlunes.com.co/';
             $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
         break;
+        case 'originpreeve-www2.cyberlunes.com.co':  
+            $base_url = 'http://preevento-stage.cyberlunes.com.co/';
+            $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
+        break;
         case 'www.cyberlunes.com.co':    
             $base_url = 'http://www.cyberlunes.com.co/';
             $base_url_static = 'http://www.cyberlunes.com.co/static/pre-evento/'; 
