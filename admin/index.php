@@ -62,7 +62,8 @@ switch ($_SERVER['SERVER_NAME'])
 				'https://admin.cyberlunes.com.co',
 				'http://static.cyberlunes.com.co',
 				'https://static.cyberlunes.com.co',
-				'http://fonts.gstatic.com/'
+				'http://fonts.gstatic.com/',
+				'http://d3b369zdeuh99v.cloudfront.net/​'
 			);
         define('ENVIRONMENT', 'production');
 	break;
