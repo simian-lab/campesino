@@ -53,7 +53,7 @@ $db['default']['hostname'] = '172.31.3.74';
 
 $db['default']['username'] = 'admincyberlunes';
 $db['default']['password'] = 'brtTVO84Lu';
-$db['default']['database'] = 'eltiempo_co_cyber_lunes_v2';
+$db['default']['database'] = 'eltiempo_co_cyber_lunes_staging';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
