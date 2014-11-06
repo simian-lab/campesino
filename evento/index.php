@@ -56,7 +56,8 @@ switch ($_SERVER['SERVER_NAME'])
 				'https://origin-www2.cyberlunes.com.co',
 				'http://static-stage.cyberlunes.com.co',
 				'https://static-stage.cyberlunes.com.co',
-				'http://fonts.gstatic.com/'
+				'http://fonts.gstatic.com/',
+				'http://d3b369zdeuh99v.cloudfront.net/​'
 			);
         define('ENVIRONMENT', 'origin');
 	break;
@@ -66,7 +67,8 @@ switch ($_SERVER['SERVER_NAME'])
 				'https://www.cyberlunes.com.co',
 				'http://static.cyberlunes.com.co',
 				'https://static.cyberlunes.com.co',
-				'http://fonts.gstatic.com/'
+				'http://fonts.gstatic.com/',
+				'http://d3b369zdeuh99v.cloudfront.net/​'
 			);
         define('ENVIRONMENT', 'production');
 	break;
