@@ -11,6 +11,6 @@
 
 
 $config['smtp'] = 'localhost';
-$config['mail_send'] = 'no-reply@brandigital.com';
+$config['mail_send'] = 'promocionescyberlunes@eltiempo.com';
 
 
