@@ -24,10 +24,10 @@ switch ($_SERVER['SERVER_NAME'])
 		$dominiosPermitidos = array('static-stage.cyberlunes.com.co');
 	break;
 	case 'originpreeve-www2.cyberlunes.com.co':	 
-		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','http://d3b369zdeuh99v.cloudfront.net/​');
+		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','http://d3b369zdeuh99v.cloudfront.net/');
 	break;
 	case 'www.cyberlunes.com.co':	 
-		$dominiosPermitidos = array('static.cyberlunes.com.co','http://d3b369zdeuh99v.cloudfront.net/​');
+		$dominiosPermitidos = array('static.cyberlunes.com.co','http://d3b369zdeuh99v.cloudfront.net/');
 	break;
 }
 
