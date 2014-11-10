@@ -24,6 +24,12 @@
 
 //	define('ENVIRONMENT', 'development');
 
+if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+   echo "https on";
+   $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+   header("Location:$redirect");
+}​
+
 switch ($_SERVER['SERVER_NAME'])
 {	
 	case 'admin.cyberlunes.local.brandigital.com':	 
@@ -69,6 +75,8 @@ switch ($_SERVER['SERVER_NAME'])
 	break;
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
+
+
 
 
 /*
