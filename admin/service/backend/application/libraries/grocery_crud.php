@@ -3184,11 +3184,13 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 			case 17: //print
 				$state_info = (object)array();
 				if(!empty($_POST['per_page']))
-				{
+				{	
+					$_POST['per_page'] = filter_var($_POST['per_page'],FILTER_SANITIZE_SPECIAL_CHARS);
 					$state_info->per_page = is_numeric($_POST['per_page']) ? $_POST['per_page'] : null;
 				}
 				if(!empty($_POST['page']))
 				{
+					$_POST['page'] = filter_var($_POST['page'],FILTER_SANITIZE_SPECIAL_CHARS);
 					$state_info->page = is_numeric($_POST['page']) ? $_POST['page'] : null;
 				}
 				//If we request an export or a print we don't care about what page we are
@@ -3199,6 +3201,8 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 				}
 				if(!empty($_POST['order_by'][0]))
 				{
+					$_POST['order_by'][0] = filter_var($_POST['order_by'][0],FILTER_SANITIZE_SPECIAL_CHARS);
+					$_POST['order_by'][1] = filter_var($_POST['order_by'][1],FILTER_SANITIZE_SPECIAL_CHARS);
 					$state_info->order_by = $_POST['order_by'];
 				}
 				if(!empty($_POST['search_text']))
