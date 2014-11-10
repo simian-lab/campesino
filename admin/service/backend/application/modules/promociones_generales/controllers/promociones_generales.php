@@ -266,6 +266,11 @@ if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM']
 	echo '<script>alert("Nombre de imagen incorrecto")</script>';
 	exit();
 }
+
+if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
+	echo '<script>alert("Nombre de imagen incorrecto")</script>';
+	exit();
+}
 	
 $this->load->model('promociones_generales_model');
 
@@ -297,6 +302,11 @@ $msg_error=$datos[0]["RESPUESTA"];
 
 function before_update($post_array, $primary_key){
 	if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM'], FILTER_SANITIZE_SPECIAL_CHARS)){
+		echo '<script>alert("Nombre de imagen incorrecto")</script>';
+		exit();
+	}
+
+	if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
 		echo '<script>alert("Nombre de imagen incorrecto")</script>';
 		exit();
 	}
