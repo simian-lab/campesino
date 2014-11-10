@@ -24,12 +24,6 @@
 
 //	define('ENVIRONMENT', 'development');
 
-if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
-   echo "https on";
-   $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-   header("Location:$redirect");
-}​
-
 switch ($_SERVER['SERVER_NAME'])
 {	
 	case 'admin.cyberlunes.local.brandigital.com':	 
@@ -72,6 +66,11 @@ switch ($_SERVER['SERVER_NAME'])
 				'http://d3b369zdeuh99v.cloudfront.net/​'
 			);
         define('ENVIRONMENT', 'production');
+        if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+		   echo "https on";
+		   $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		   header("Location:$redirect");
+		}
 	break;
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
