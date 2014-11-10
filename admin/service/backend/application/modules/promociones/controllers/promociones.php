@@ -380,6 +380,11 @@ if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM']
 	exit();
 }
 
+if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
+	echo '<script>alert("Nombre de imagen incorrecto")</script>';
+	exit();
+}
+
 $this->load->model('promociones_model');
 //print_R($post_array);die();
 //$pUSER_ID= $this->session->userdata('sadmin_user_id'); // Id de usuario que esta cargando la promo
@@ -413,6 +418,12 @@ function before_update($post_array, $primary_key){
 		echo '<script>alert("Nombre de imagen incorrecto")</script>';
 		exit();
 	}
+
+	if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
+		echo '<script>alert("Nombre de imagen incorrecto")</script>';
+		exit();
+	}
+
 	$this->load->helper('url');
 
 	//print_R($post_array);die();

@@ -253,21 +253,26 @@ function tipo_moneda($value){
 
 
 function before_insert($post_array){
-if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM'], FILTER_SANITIZE_SPECIAL_CHARS)){
-	echo '<script>alert("Nombre de imagen incorrecto")</script>';
-	exit();
-}
-$this->load->model('promociones_premium_model');
+	if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM'], FILTER_SANITIZE_SPECIAL_CHARS)){
+		echo '<script>alert("Nombre de imagen incorrecto")</script>';
+		exit();
+	}
 
-	
-$pUSER_ID= $this->session->userdata('sadmin_user_id'); // Id de usuario que esta cargando la promo
-$pTIPO = 3;
+	if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
+		echo '<script>alert("Nombre de imagen incorrecto")</script>';
+		exit();
+	}
+	$this->load->model('promociones_premium_model');
 
-$datos= $this->promociones_premium_model->decrementar($pUSER_ID,$pTIPO);
-$msg_error=$datos[0]["RESPUESTA"];
-//echo '<script> alert("'.$datos[0]["RESPUESTA"].'" ) </script>';
-//exit();
-//print_R($this->session->userdata('sadmin_user_id'));die();
+		
+	$pUSER_ID= $this->session->userdata('sadmin_user_id'); // Id de usuario que esta cargando la promo
+	$pTIPO = 3;
+
+	$datos= $this->promociones_premium_model->decrementar($pUSER_ID,$pTIPO);
+	$msg_error=$datos[0]["RESPUESTA"];
+	//echo '<script> alert("'.$datos[0]["RESPUESTA"].'" ) </script>';
+	//exit();
+	//print_R($this->session->userdata('sadmin_user_id'));die();
 	if($msg_error!='0'){
 		echo '<script> alert("Ha superado el límite de promociones para este paquete." ) </script>';
 		exit();
@@ -289,6 +294,11 @@ $msg_error=$datos[0]["RESPUESTA"];
 
 function before_update($post_array, $primary_key){
 	if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM'], FILTER_SANITIZE_SPECIAL_CHARS)){
+		echo '<script>alert("Nombre de imagen incorrecto")</script>';
+		exit();
+	}
+
+	if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
 		echo '<script>alert("Nombre de imagen incorrecto")</script>';
 		exit();
 	}
