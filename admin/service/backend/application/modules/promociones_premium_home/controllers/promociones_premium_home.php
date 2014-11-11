@@ -196,6 +196,8 @@ function change_name_image($files_to_upload,$field_info){
 	if($files_to_upload[$field_info->encrypted_field_name]['name'] != filter_var($files_to_upload[$field_info->encrypted_field_name]['name'], FILTER_SANITIZE_SPECIAL_CHARS)){
 		return 'Nombre de imagen incorrecto';
 	}
+	$ext = pathinfo($files_to_upload[$field_info->encrypted_field_name]['name'], PATHINFO_EXTENSION);
+	$_FILES[$field_info->encrypted_field_name]['name'] = mktime().'_imagen.'.$ext;
 	return true;
 }
 
