@@ -49,4 +49,13 @@ class formulario_lyris_model extends CI_Model {
 		}
 	}
 
+	function get(){
+		$this->db->select('REG_EMAIL');
+		$this->db->from('REG_REGISTRADO');
+
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
+
 }
