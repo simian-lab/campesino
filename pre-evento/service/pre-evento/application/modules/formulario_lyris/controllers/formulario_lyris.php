@@ -11,6 +11,7 @@ class formulario_lyris extends CI_Controller {
        	  $this->load->helper('url');
           $this->load->helper('form');
           $this->load->library('form_validation');
+          $this->load->library('memcached_library');
      }
     
     function setUser(){
@@ -28,7 +29,14 @@ class formulario_lyris extends CI_Controller {
             $email = $this->input->post('email');
             $intereses = $this->input->post('intereses');
 
-            $result = $this->formulario_lyris_model->verifiy_insert($nombre, $email, $intereses);
+            //$result = $this->formulario_lyris_model->verifiy_insert($nombre, $email, $intereses);
+            $lista_users = $this->_getListaUsers();
+            if(in_array($email, $lista_users)){
+                $this->formulario_lyris_model->update($nombre, $email, $intereses);
+            }
+            else{
+                $this->formulario_lyris_model->insert($nombre, $email, $intereses);
+            }
 
         }
         else{
@@ -39,9 +47,17 @@ class formulario_lyris extends CI_Controller {
 
     function checkEmailExist(){
 
-    	$this->form_validation->set_rules('email', 'E-mail', 'is_unique[REG_REGISTRADO.REG_EMAIL]');
-
-    	if($this->form_validation->run() == TRUE){
+        $email = $this->input->post('email');
+    	//$this->form_validation->set_rules('email', 'E-mail', 'is_unique[REG_REGISTRADO.REG_EMAIL]');
+        $lista_users = $this->_getListaUsers();
+        if(in_array($email, $lista_users)){
+            $check = FALSE;
+        }
+        else{
+            $check = TRUE;
+        }
+        
+    	if($check == TRUE){
             $response = array(
 			        		'success'	=>	true,
 			        		'status'	=>	array(
@@ -64,6 +80,29 @@ class formulario_lyris extends CI_Controller {
         echo json_encode($response);
 
     }
+
+    private function _getListaUsers(){
+        $key_memcached = 'lista_users';
+        $result_memcached = $this->memcached_library->get($key_memcached);
+        
+        if(!$result_memcached) 
+        {       
+          $result = $this->formulario_lyris_model->get();
+          $emails=array();
+          foreach ($result as $value) {
+            $emails[]=$value->REG_EMAIL;
+          }
+          $this->memcached_library->add($key_memcached, $emails,300);
+          return $emails;   
+        }
+        else
+        {
+            return $result_memcached;  
+        }
+   
+
+
+   }
         
 }
 

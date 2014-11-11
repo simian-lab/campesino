@@ -18,6 +18,7 @@ class Home extends CI_Controller {
           $this->load->helper('fechas-articulos');
           $this->load->library('user_agent');
           $this->load->helper('get_url_encode_tod');
+          $this->load->library('memcached_library');
      }
     
     public function index($paramOrigen='') { 
@@ -50,7 +51,20 @@ class Home extends CI_Controller {
         $this->paginacionArticulos();
         $page = ($this->uri->segment(1)) ? $this->uri->segment(1) : 0;
         $page = ($page == 0) ? 0 : ($page*6)-6;
-        $data['articulos'] = $this->home_model->get_articulos(NULL,$page);
+        
+        $time_memcached='600'; // 10 min
+        $key_memcached='articulos_'.$page;
+        $results = $this->memcached_library->get($key_memcached);
+        //print_r($results);die();
+        if(!$results){
+          $articulos = $this->home_model->get_articulos(NULL,$page);
+          $data['articulos'] = $articulos;
+          $this->memcached_library->add($key_memcached, $articulos,$time_memcached);
+        }
+        else{
+          $data['articulos'] = $results;
+        }
+
 		    $data['paginador_articulos'] = $this->pagination->create_links(); 
         $data['total_articulos'] = $this->home_model->get_count_articulos();
 
