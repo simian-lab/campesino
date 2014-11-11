@@ -3,7 +3,7 @@ Copyright 1996-2012 Adobe, Inc. All Rights Reserved
 More info available at http://www.omniture.com */
 
 // var s_account="eltiempocyberlunesdev"
-var s_account="eltiempocyberlunesdev"
+var s_account="eltiempocyberlunesdev1"
 var s=s_gi(s_account)
 /************************** CONFIG SECTION **************************/
 /* You may add or alter any code config here. */
@@ -14,7 +14,7 @@ s.currencyCode="COP"
 s.trackDownloadLinks=true;s.trackExternalLinks=true;s.trackInlineStats=true
 s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx"
 // s.linkInternalFilters="javascript:,alafija.com"
-s.linkInternalFilters="javascript:,http://www.cyberlunes.com.co"
+s.linkInternalFilters="javascript:,cyberlunes.com.co"
 s.linkLeaveQueryString=false;s.linkTrackVars="None";s.linkTrackEvents="None"
 
 // Channel Manager Config
