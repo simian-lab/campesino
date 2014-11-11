@@ -21,7 +21,11 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/logos.css">
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
         
-        <script src="<?php echo $base_url_static?>js/s_code.js"></script> 
+        <?php if (ENVIRONMENT == 'production'): ?>
+            <script src="<?php echo $base_url_static?>js/s_code.js"></script> 
+        <?php else: ?>
+            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
+        <?php endif; ?>
         <script src="<?php echo $base_url_static;?>js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery-1.10.2.min.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.plugin.js"></script>

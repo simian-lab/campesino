@@ -14,8 +14,10 @@ function shareFacebook(art_detalle){
         description: description
     };
 
+    onClickShare('facebook', title);
+
     function callback(response) {
-        onClickShare('facebook', title);
+        
     }
     FB.ui(obj, callback);
     return false;
