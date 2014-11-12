@@ -29,6 +29,9 @@ switch ($_SERVER['SERVER_NAME'])
 	case 'www.cyberlunes.com.co':	 
 		$dominiosPermitidos = array('static.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
 	break;
+	case 'staging.cyberlunes.com.co':	 
+		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
+	break;
 }
 
 
