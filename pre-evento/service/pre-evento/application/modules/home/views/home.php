@@ -167,7 +167,7 @@
                 <?php endif; ?>
                         <li class="col-lg-6 col-md-6 col-sm-6">
                             <figure class="col-lg-6 col-md-6 col-sm-6">
-                                <a href="<?php echo base_url('detalle/'.$articulo->ART_SLUG.'/'.$page) ?>"><img border="0" src="<?php echo $base_url_tod?>?src=<?php echo ($base_url_img_articulos . $articulo->ART_IMAGEN) ?>&amp;w=130&amp;h=145&amp;zc=1&amp;" alt=""></a>
+                                <a href="<?php echo base_url('detalle/'.$articulo->ART_SLUG.'/'.$page) ?>"><img border="0" src="<?php echo $base_url_tod?>?src=<?php echo ($base_url_img_articulos . $articulo->ART_IMAGEN) ?>&amp;w=130&amp;h=145&amp;zc=1" alt=""></a>
                                 <img src="<?php echo $base_url_static;?>img/border-btn-leermas.png" class="border-impacto">
                             </figure>
                             <aside class="col-lg-6 col-md-6 col-sm-6">
