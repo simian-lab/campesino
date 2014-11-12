@@ -237,7 +237,7 @@ $PHPTHUMB_CONFIG['disable_onlycreateable_passthru'] = true;   // if true, any im
 
 
 // * HTTP remote file opening settings
-$PHPTHUMB_CONFIG['http_fopen_timeout']              = 10;   // timeout (in seconds) for fopen / curl / fsockopen
+$PHPTHUMB_CONFIG['http_fopen_timeout']              = 1;   // timeout (in seconds) for fopen / curl / fsockopen
 $PHPTHUMB_CONFIG['http_follow_redirect']            = true; // if true (default), follow "302 Found" redirects to new URL; if false, return error message
 
 
@@ -255,7 +255,9 @@ $PHPTHUMB_CONFIG['allow_local_http_src']         = true; // If true, 'src' param
 $PHPTHUMB_DEFAULTS_GETSTRINGOVERRIDE = true;  // if true, any parameters in the URL will override the defaults set here; if false, any parameters set here cannot be overridden in the URL
 $PHPTHUMB_DEFAULTS_DISABLEGETPARAMS  = false; // if true, GETstring parameters will be ignored (except for 'src') and only below default parameters will be used; if false, both default and GETstring parameters will be used (depending on $PHPTHUMB_DEFAULTS_GETSTRINGOVERRIDE). Will be auto-set true if !empty($PHPTHUMB_CONFIG['cache_default_only_suffix'])
 
-//$PHPTHUMB_DEFAULTS['w']    = 200;
+$PHPTHUMB_DEFAULTS['w']    = 130;
+$PHPTHUMB_DEFAULTS['h']    = 145;
+$PHPTHUMB_DEFAULTS['zc']    = 1;
 //$PHPTHUMB_DEFAULTS['fltr'] = array('blur|10');
 //$PHPTHUMB_DEFAULTS['q']    =  90;
 
