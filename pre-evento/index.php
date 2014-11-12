@@ -62,6 +62,17 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'origin');
 	break;
+	case 'staging.cyberlunes.com.co':	 
+		$dominios_permitidos = array(
+				'http://staging.cyberlunes.com.co',
+				'https://staging.cyberlunes.com.co',
+				'http://static-stage.cyberlunes.com.co',
+				'https://static-stage.cyberlunes.com.co',
+				'http://fonts.gstatic.com/',
+				'http://d3b369zdeuh99v.cloudfront.net/'
+			);
+        define('ENVIRONMENT', 'staging');
+	break;
 	case 'www.cyberlunes.com.co':	 
 		$dominios_permitidos = array(
 				'http://www.cyberlunes.com.co',
@@ -99,6 +110,7 @@ if (defined('ENVIRONMENT'))
 		break;
 		case 'origin':
 		case 'testing':
+		case 'staging':
 			error_reporting(0);
 		break;
 		case 'production':
