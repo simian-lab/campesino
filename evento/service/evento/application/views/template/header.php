@@ -16,7 +16,7 @@
                         <?php endif; ?>
                     </div>                    
                     <div class="col-md-5 col-md-offset-1 marcas">
-                        <figure>
+                        <!--<figure>
                             <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
                         </figure>
                         <figure>
@@ -24,6 +24,15 @@
                         </figure>
                         <figure>
                             <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Header')"><img src="<?php echo $base_url_static;?>img/colombia_mobile.png" alt="Gobierno de Colombia" /></a>
+                        </figure>-->
+                        <figure>
+                            <a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
+                        </figure>
+                        <figure>
+                            <a href="http://www.vivedigital.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/digital_mobile.png" alt="Vive digital" /></a>
+                        </figure>
+                        <figure>
+                            <a href="http://wsp.presidencia.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/colombia_mobile.png" alt="Gobierno de Colombia" /></a>
                         </figure>
                     </div>
                 </div>                             
