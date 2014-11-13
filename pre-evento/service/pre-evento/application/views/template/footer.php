@@ -66,7 +66,7 @@
                 </div>
             </div>
             <?php endif; ?>
-            <?php //if(!isset($hide_form)): ?>
+            <?php if(!$this->config->item('contingencia')): ?>
             <div class="row-fluid panel-group titulo" id="accordion" style="display:none">
               <div class="panel">
                 <div class="panel-heading">
@@ -156,7 +156,7 @@
                 </div>
               </div>
             </div>
-            <?php //endif; ?>
+            <?php endif; ?>
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
