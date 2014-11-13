@@ -374,3 +374,5 @@ $config['modules_locations'] = array(APPPATH.'modules/' => '../modules/');
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
+
+$config['contingencia'] = FALSE;
