@@ -235,23 +235,31 @@ function emailCheck (emailStr) {
 
         $('#sas_20592').css({'position':'absolute','bottom':'-302px'});
 
-        $.ajax({
-            type: 'post',
-            url: '<?php echo base_url() ?>home/home/getOrigen',
-            dataType: 'json', 
-            success: function response(data){
-                if(data['hide_form'] != 1 && data['is_mobile'] != 1){
-                    $('.main').removeAttr('style');
-                    $('#accordion').show();
-                    $('#form-collapse').show();
-                    $('#registrate').show();
-                }
+        var contingencia = '<?php echo $this->config->item('contingencia') ?>';
+        
+        if(contingencia != 1){
+            $.ajax({
+                type: 'post',
+                url: '<?php echo base_url() ?>home/home/getOrigen',
+                dataType: 'json', 
+                success: function response(data){
+                    if(data['hide_form'] != 1 && data['is_mobile'] != 1){
+                        $('.main').removeAttr('style');
+                        $('#accordion').show();
+                        $('#form-collapse').show();
+                        $('#registrate').show();
+                    }
 
-                if(data['hide_form'] == 1){
-                    $('#footer_main').css({'margin-bottom':'0'});
+                    if(data['hide_form'] == 1){
+                        $('#footer_main').css({'margin-bottom':'0'});
+                    }
                 }
-            }
-        });
+            });
+        }
+        else{
+            $('#footer_main').css({'margin-bottom':'0'});
+        }
+        
 
         $('#icon-collapse-form').click(function(){
             $('#collapseOne').toggle();
