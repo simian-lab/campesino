@@ -3186,13 +3186,15 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 				if(!empty($_POST['per_page']))
 				{	
 					$ci = &get_instance();
-					$_POST['per_page'] = $ci->input->post('per_page', TRUE);
+					$ci->load->database();
+					$_POST['per_page'] = $ci->db->escape_str($_POST['per_page']);
 					$state_info->per_page = is_numeric($_POST['per_page']) ? $_POST['per_page'] : null;
 				}
 				if(!empty($_POST['page']))
 				{
 					$ci = &get_instance();
-					$_POST['page'] = $ci->input->post('page', TRUE);
+					$ci->load->database();
+					$_POST['page'] = $ci->db->escape_str($_POST['page']);
 					$state_info->page = is_numeric($_POST['page']) ? $_POST['page'] : null;
 				}
 				//If we request an export or a print we don't care about what page we are
@@ -3204,7 +3206,9 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 				if(!empty($_POST['order_by'][0]))
 				{
 					$ci = &get_instance();
-					$_POST['order_by'] = $ci->input->post('order_by', TRUE);
+					$ci->load->database();
+					$_POST['order_by'][0] = $ci->db->escape_str($_POST['order_by'][0]);
+					$_POST['order_by'][1] = $ci->db->escape_str($_POST['order_by'][1]);
 					$state_info->order_by = $_POST['order_by'];
 				}
 				if(!empty($_POST['search_text']))

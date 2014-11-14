@@ -44,6 +44,7 @@
             </div>            
         </footer>
         
+        <?php if(!$this->config->item('contingencia')): ?>
         <div class="form-bottom">            
             <?php //if(!isset($hide_form)): ?>
             <div class="row-fluid panel-group titulo" id="accordion" style="display:none">
@@ -137,6 +138,7 @@
             </div>
             <?php //endif; ?>
         </div>
+        <?php endif; ?>
 
         <section>
             <div class="container">                

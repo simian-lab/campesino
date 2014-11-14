@@ -1,3 +1,4 @@
+<?php if(!$this->config->item('contingencia')): ?>
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="registrate">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -65,3 +66,4 @@
         </div>
     </div>
 </div>
+<?php endif; ?>
