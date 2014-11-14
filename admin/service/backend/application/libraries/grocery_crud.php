@@ -3217,7 +3217,7 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 					$_POST['order_by'][0] = $ci->db->escape_str($_POST['order_by'][0]);
 					$_POST['order_by'][1] = $ci->db->escape_str($_POST['order_by'][1]);*/
 					$columns = $this->basic_model->get_columns_db();
-					if(!in_array($_POST['order_by'][0], $columns) || ($_POST['order_by'][1] != 'asc' && $_POST['order_by'][1] != 'desc'))
+					if(!in_array($_POST['order_by'][0], $columns))
 						throw new Exception("Error SQL Injection", 1);
 
 					$state_info->order_by = $_POST['order_by'];
