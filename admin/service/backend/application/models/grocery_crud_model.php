@@ -583,4 +583,13 @@ class grocery_CRUD_Model  extends CI_Model  {
     	return $this->db->escape_str($value);
     }
 
+    function get_columns_db(){
+        $db = $this->db->database;
+        $query = $this->db->query('SELECT `COLUMN_NAME`
+                                   FROM `INFORMATION_SCHEMA`.`COLUMNS`
+                                   WHERE `TABLE_SCHEMA`="$db"');
+        echo $this->db->last_query();
+        return $query->result();
+    }
+
 }
