@@ -146,7 +146,7 @@ class formulario_participacion extends CI_Controller {
 
             $this->email->from($this->config->item('website_sender'));
             $this->email->to($this->config->item('email_to'));
-            $this->email->subject('Formulario de particiación de DiadeModa');
+            $this->email->subject('Formulario de particiación de Cyberlunes');
             $this->email->message($mensaje); 
             $this->email->send();
 
