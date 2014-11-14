@@ -138,6 +138,9 @@ class grocery_CRUD_Model  extends CI_Model  {
 
     function order_by($order_by , $direction)
     {
+        $columns = $this->get_columns_db();
+        if(!in_array($order_by, $columns) || (strcasecmp($direction, 'ASC') != 0 && strcasecmp($direction, 'DESC') != 0))
+            throw new Exception("Error SQL Injection", 1);
     	$this->db->order_by( $order_by , $direction );
     }
 
@@ -173,6 +176,8 @@ class grocery_CRUD_Model  extends CI_Model  {
 
     function limit($value, $offset = '')
     {
+        if(!is_numeric($value))
+            throw new Exception("Error SQL Injection", 1);
     	$this->db->limit( $value , $offset );
     }
 
