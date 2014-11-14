@@ -3184,17 +3184,13 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 			case 17: //print
 				$state_info = (object)array();
 				
-				array_walk_recursive($_POST, function(&$entry){
-					$entry = $this->basic_model->escape_str($entry);
-				});
-				
 				if(!empty($_POST['per_page']))
 				{	
 					/*$ci = &get_instance();
 					$ci->load->database();
 					$_POST['per_page'] = $ci->db->escape_str($_POST['per_page']);*/
-					/*if(!is_numeric($_POST['per_page']))
-						throw new Exception("Error SQL Injection", 1);*/
+					if(!is_numeric($_POST['per_page']))
+						throw new Exception("Error SQL Injection", 1);
 						
 					$state_info->per_page = is_numeric($_POST['per_page']) ? $_POST['per_page'] : null;
 				}
@@ -3203,8 +3199,8 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 					/*$ci = &get_instance();
 					$ci->load->database();
 					$_POST['page'] = $ci->db->escape_str($_POST['page']);*/
-					/*if(!is_numeric($_POST['per_page']))
-						throw new Exception("Error SQL Injection", 1);*/
+					if(!is_numeric($_POST['per_page']))
+						throw new Exception("Error SQL Injection", 1);
 
 					$state_info->page = is_numeric($_POST['page']) ? $_POST['page'] : null;
 				}
@@ -3220,8 +3216,10 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 					$ci->load->database();
 					$_POST['order_by'][0] = $ci->db->escape_str($_POST['order_by'][0]);
 					$_POST['order_by'][1] = $ci->db->escape_str($_POST['order_by'][1]);*/
-					/*$columns = $this->basic_model->get_columns_db();
-					print_R($columns);die();*/
+					$columns = $this->basic_model->get_columns_db();
+					if(!in_array($_POST['order_by'][0], $columns) || ($_POST['order_by'][1] != 'asc' && $_POST['order_by'][1] != 'desc'))
+						throw new Exception("Error SQL Injection", 1);
+
 					$state_info->order_by = $_POST['order_by'];
 				}
 				if(!empty($_POST['search_text']))
