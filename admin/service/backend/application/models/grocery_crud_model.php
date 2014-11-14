@@ -587,9 +587,12 @@ class grocery_CRUD_Model  extends CI_Model  {
         $db = $this->db->database;
         $query = $this->db->query('SELECT `COLUMN_NAME`
                                    FROM `INFORMATION_SCHEMA`.`COLUMNS`
-                                   WHERE `TABLE_SCHEMA`="$db"');
-        echo $this->db->last_query();
-        return $query->result();
+                                   WHERE `TABLE_SCHEMA`=\''.$db.'\'');
+        $result = array();
+        foreach($query->result() as $value){
+            $result[] = $value->COLUMN_NAME;
+        }
+        return $result;
     }
 
 }
