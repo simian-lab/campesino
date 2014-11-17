@@ -1,0 +1,142 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/*@import "compass/reset";*/
+/* line 13, ../sass/screen.scss */
+.mainRobaPagina {
+  font-family: 'SohoStdCondensed', sans-serif;
+  margin: 20px auto;
+  width: 300px;
+  height: 250px;
+  background-color: #ec008a;
+}
+/* line 20, ../sass/screen.scss */
+.mainRobaPagina .logo {
+  padding-top: 6px;
+}
+/* line 22, ../sass/screen.scss */
+.mainRobaPagina .logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+/* line 30, ../sass/screen.scss */
+.mainRobaPagina div.contenedor {
+  position: relative;
+}
+/* line 32, ../sass/screen.scss */
+.mainRobaPagina div.contenedor span.start-day {
+  display: block;
+  position: absolute;
+  color: #fff100;
+  background-color: #22b24c;
+  padding: 8px 5px;
+  border: 1px solid #ffffff;
+  text-transform: uppercase;
+  top: -17px;
+  left: 25px;
+}
+/* line 43, ../sass/screen.scss */
+.mainRobaPagina div.contenedor span.start-day:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 27px;
+  width: 17px;
+  height: 11px;
+  background-image: url(../img/arrow.png);
+  background-repeat: no-repeat;
+}
+/* line 55, ../sass/screen.scss */
+.mainRobaPagina div.contenedor div.countdown {
+  width: 225px;
+  height: 75px;
+  background-color: #00aff1;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  text-align: center;
+  padding-top: 22px;
+  box-sizing: border-box;
+}
+/* line 68, ../sass/screen.scss */
+.mainRobaPagina div.contenedor div.countdown .items-time span.item {
+  font-size: 37px;
+  color: #fff100;
+  margin-right: 10px;
+}
+/* line 73, ../sass/screen.scss */
+.mainRobaPagina div.contenedor div.countdown .items-time span.item:last-child {
+  margin-right: 0;
+}
+/* line 79, ../sass/screen.scss */
+.mainRobaPagina div.contenedor div.countdown .items-description {
+  position: relative;
+  top: -4px;
+}
+/* line 82, ../sass/screen.scss */
+.mainRobaPagina div.contenedor div.countdown .items-description span.item {
+  color: #ffffff;
+  font-size: 11px;
+  margin-right: 27px;
+}
+/* line 87, ../sass/screen.scss */
+.mainRobaPagina div.contenedor div.countdown .items-description span.item:last-child {
+  margin-right: 0;
+}
+/* line 94, ../sass/screen.scss */
+.mainRobaPagina div.contenedor p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+}
+/* line 102, ../sass/screen.scss */
+.mainRobaPagina div.contenedor .formRobaPagina {
+  padding: 0 10px;
+}
+/* line 105, ../sass/screen.scss */
+.mainRobaPagina div.contenedor .formRobaPagina .formularioRobaPagina input {
+  font-family: 'SohoStdCondensed',sans-serif;
+}
+/* line 107, ../sass/screen.scss */
+.mainRobaPagina div.contenedor .formRobaPagina .formularioRobaPagina input[type="text"] {
+  width: 165px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+/* line 116, ../sass/screen.scss */
+.mainRobaPagina div.contenedor .formRobaPagina .formularioRobaPagina input[type="submit"] {
+  background: #fff100;
+  border: 2px solid #ffffff;
+  color: #ec008a;
+  height: 27px;
+  font-size: 16px;
+  margin: 0 0 0 15px;
+  padding: 0 15px;
+  width: inherit;
+}
+/* line 131, ../sass/screen.scss */
+.mainRobaPagina div.contenedor .legals p {
+  font-size: 7.5px;
+  color: #000000;
+}
+/* line 134, ../sass/screen.scss */
+.mainRobaPagina div.contenedor .legals p a {
+  color: #00aff1;
+}
+
+/* FONTS */
+@font-face {
+  font-family: 'SohoStdCondensed';
+  src: url("../font/sohostd-condensed.eot");
+  src: url("../font/sohostd-condensed.eot") format("embedded-opentype"), url("../font/sohostd-condensed.woff2") format("woff2"), url("../font/sohostd-condensed.woff") format("woff"), url("../font/sohostd-condensed.ttf") format("truetype"), url("../font/sohostd-condensed.svg#SohoStdCondensed") format("svg");
+}

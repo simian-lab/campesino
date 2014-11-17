@@ -76,49 +76,51 @@ function emailCheck (emailStr) {
     }
     function UPTvalidateform(thisform)
     {
-        if (thisform.val_58933.value=="" || thisform.val_58933.value=="Nombre"){  
-            $('#alerta-form-nombre').modal('show');
-            return(true);
-        }
-        var checkbox = false;
-        var checkbox_len = 1;
-        var intereses = [];
+        if(thisform.name != 'UPTml251013'){
+            if (thisform.val_58933.value=="" || thisform.val_58933.value=="Nombre"){  
+                $('#alerta-form-nombre').modal('show');
+                return(true);
+            }
+            var checkbox = false;
+            var checkbox_len = 1;
+            var intereses = [];
 
-        if(thisform.elements["val_66010[]"].length != undefined )
-        {
-            checkbox_len = thisform.elements["val_66010[]"].length;
-            for (var i = 0; i < checkbox_len;i++)
+            if(thisform.elements["val_66010[]"].length != undefined )
             {
-                if (thisform.elements['val_66010[]'][i].selected)
+                checkbox_len = thisform.elements["val_66010[]"].length;
+                for (var i = 0; i < checkbox_len;i++)
                 {
-                    checkbox = true;
-                    intereses.push(thisform.elements['val_66010[]'][i].value);
+                    if (thisform.elements['val_66010[]'][i].selected)
+                    {
+                        checkbox = true;
+                        intereses.push(thisform.elements['val_66010[]'][i].value);
+                    }
                 }
             }
-        }
-        else
-        {
-            if (thisform.elements['val_66010[]'].selected)
+            else
             {
-                checkbox = true;
+                if (thisform.elements['val_66010[]'].selected)
+                {
+                    checkbox = true;
+                }
             }
-        }
 
-        if(thisform.elements['val_66010[]'].value == ''){
-            checkbox = false;
-        }
+            if(thisform.elements['val_66010[]'].value == ''){
+                checkbox = false;
+            }
 
-        if (!checkbox)
-        {
-            $('#alerta-form-intereses').modal('show');
-            return(true);
-        }
+            if (!checkbox)
+            {
+                $('#alerta-form-intereses').modal('show');
+                return(true);
+            }
 
-        /*if (!(thisform.elements['val_66009'].checked))
-        {
-            $('#alerta-form-terminos').modal('show');
-            return(true);
-        }*/
+            /*if (!(thisform.elements['val_66009'].checked))
+            {
+                $('#alerta-form-terminos').modal('show');
+                return(true);
+            }*/
+        }
 
         if (emailCheck(thisform.email.value)) 
         {   
@@ -131,30 +133,56 @@ function emailCheck (emailStr) {
             else if(( (document.getElementById('unsubscribe')
                 && !document.getElementById('unsubscribe').checked) || (!document.getElementById('unsubscribe')) ) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")){
                 
-                
-                $.ajax({
-                    type: 'POST',                    
-                    async :false,
-                    dataType: 'html',
-                    data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
-                    url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
-                    success: function(xmldata) {
-                        
-                        onClickRegistro(thisform.email.value);
+                if(thisform.name != 'UPTml251013'){
+                    $.ajax({
+                        type: 'POST',                    
+                        async :false,
+                        dataType: 'html',
+                        data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
+                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
+                        success: function(xmldata) {
+                            
+                            onClickRegistro(thisform.email.value);
 
-                        $.ajax({
-                            type: 'POST',
-                            dataType: 'json',                        
-                            async :false,
-                            url: '<?php echo site_url('home/home/setOrigen'); ?>',
-                            success: function(xmldata) {
-                                return(true);
-                            }
-                        });
+                            $.ajax({
+                                type: 'POST',
+                                dataType: 'json',                        
+                                async :false,
+                                url: '<?php echo site_url('home/home/setOrigen'); ?>',
+                                success: function(xmldata) {
+                                    return(true);
+                                }
+                            });
 
-                        return(true);
-                    }
-                });
+                            return(true);
+                        }
+                    });
+                }
+                else{
+                    $.ajax({
+                        type: 'POST',                    
+                        async :false,
+                        dataType: 'html',
+                        data: {email: thisform.email.value},
+                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUserOnlyEmail'); ?>',
+                        success: function(xmldata) {
+                            
+                            onClickRegistro(thisform.email.value);
+
+                            $.ajax({
+                                type: 'POST',
+                                dataType: 'json',                        
+                                async :false,
+                                url: '<?php echo site_url('home/home/setOrigen'); ?>',
+                                success: function(xmldata) {
+                                    return(true);
+                                }
+                            });
+
+                            return(true);
+                        }
+                    });
+                }
             }
             return false;
         }

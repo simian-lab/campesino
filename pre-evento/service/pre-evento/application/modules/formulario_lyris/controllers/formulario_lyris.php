@@ -45,6 +45,35 @@ class formulario_lyris extends CI_Controller {
         
     }
 
+    function setUserOnlyEmail(){
+
+        $this->form_validation->set_rules('email', 'E-mail', 'required|valid_email|trim|xss_clean');
+
+        $this->form_validation->set_message('required', '%s obligatorio'); 
+        $this->form_validation->set_message('valid_email', 'E-mail inválido'); 
+        $this->form_validation->set_error_delimiters('', ''); 
+
+        if($this->form_validation->run() == TRUE){
+            $nombre = null;
+            $email = $this->input->post('email');
+            $intereses = null;
+
+            //$result = $this->formulario_lyris_model->verifiy_insert($nombre, $email, $intereses);
+            $lista_users = $this->_getListaUsers();
+            if(in_array($email, $lista_users)){
+                $this->formulario_lyris_model->update($nombre, $email, $intereses);
+            }
+            else{
+                $this->formulario_lyris_model->insert($nombre, $email, $intereses);
+            }
+
+        }
+        else{
+            echo (validation_errors());
+        }
+        
+    }
+
     function checkEmailExist(){
 
         $email = $this->input->post('email');

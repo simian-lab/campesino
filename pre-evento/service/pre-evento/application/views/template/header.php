@@ -20,6 +20,10 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/fix.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/logos.css">
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
+
+        <?php if ($this->uri->segment(1) == 'detalle'): ?>
+            <link rel="stylesheet" href="<?php echo $base_url_static;?>robapagina/stylesheets/screen.css">
+        <?php endif; ?>
         
         <?php if (ENVIRONMENT == 'production'): ?>
             <script src="<?php echo $base_url_static?>js/s_code.js"></script> 
