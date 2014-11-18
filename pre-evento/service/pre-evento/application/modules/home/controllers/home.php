@@ -172,7 +172,6 @@ class Home extends CI_Controller {
       }
 
       $data['breadcrumb'] = $this->home_model->get_titulo_slug($this->uri->segment(2));
-      $data['robapagina'] = $this->load->view('template/robapagina',$data, TRUE);
 
       $this->load->view('template/header', $data);
       if($this->agent->is_mobile()){
