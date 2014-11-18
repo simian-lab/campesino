@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SohoStdCondensed';
+    src: url('sohostd-condensed.eot');
+    src: url('sohostd-condensed.eot') format('embedded-opentype'),
+         url('sohostd-condensed.woff2') format('woff2'),
+         url('sohostd-condensed.woff') format('woff'),
+         url('sohostd-condensed.ttf') format('truetype'),
+         url('sohostd-condensed.svg#SohoStdCondensed') format('svg');
+}

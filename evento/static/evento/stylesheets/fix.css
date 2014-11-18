@@ -100,3 +100,26 @@ footer div.container div.sponsor div.marcas-mobile figure img{
 #redireccion section div.container div.row div.col-lg-12 p a {
 	word-wrap: break-word;
 }
+
+
+
+
+header .marcas{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+header .marcas figure:first-child, header .marcas figure:first-child + figure{
+	position: relative;
+	top: -7px;
+}
+
+
+
+footer .sponsor .marcas-mobile figure{
+	width: 25% !important;
+}
+
+footer{
+	padding-top: 20px;
+}
