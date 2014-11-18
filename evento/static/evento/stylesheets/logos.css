@@ -8,7 +8,7 @@ header .container .head .marcas figure:first-child + figure + figure img {
 }
 
 header .container .head .marcas figure:first-child + figure + figure{
-	width: 25%;
+	/*width: 25%;*/
 }
 
 header .container .head .marcas figure:first-child, header .container .head .marcas figure:first-child + figure{
