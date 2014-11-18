@@ -43,17 +43,29 @@
             </div>       
             <div class="countDown">
                 <span class="title">FALTAN</span>
-                <div id="defaultCountdown"></div>
+                <!--<div id="defaultCountdown"></div>
                 <script>
                     var date = new Date(Date.UTC(2014,11,01,5,0,0)); 
                     $('#defaultCountdown').countdown({until: date, format: 'dHM', labels:['', '', '', '', '', '', ''], labels1:['', '', '', '', '', '', ''], padZeroes:true}); 
-                </script> 
+                </script> -->
+                <ul class="numbs">
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>                            
+                </ul>
                 <ul class="tiempo">
                     <li style="padding-left:4px">Dias</li>
                     <li>Horas</li>
                     <li>Minutos</li>
                 </ul>
             </div> 
+            <script type="text/javascript">
+                var timespan = countdown( new Date(2014, 11, 01) ,function(ts) {
+                                $('.numbs').find('li').eq(0).find('span').html(ts.days)
+                                $('.numbs').find('li').eq(1).find('span').html(ts.hours)
+                                $('.numbs').find('li').eq(2).find('span').html(ts.minutes)
+                            } ,countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS).toString();
+            </script>  
             <?php if(count($slider_pautas) > 1): ?>          
             <div class="customNavigation bg">
                 <div class="navigation">

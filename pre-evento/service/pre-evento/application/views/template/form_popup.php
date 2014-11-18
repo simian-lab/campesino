@@ -5,7 +5,7 @@
             <a href="#" class="close" data-dismiss="modal" aria-hidden="true"><img src="<?php echo $base_url_static?>img/close.png" alt=""></a>                    
             <h1>Regístrate en</h1><img src="<?php echo $base_url_static?>img/logo.png" alt="">
             <h2>Y entérate primero de las ofertas</h2>
-            <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251012" onSubmit='s.linkTrackVars="events,eVar38"; s.linkTrackEvents="event5"; s.eVar38="lightbox";s.events="event5";s.tl(true,"o","Formulario Registro"); return (!(UPTvalidateform(document.UPTml251012)));'>
+            <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251012" onSubmit='return (!(UPTvalidateform(document.UPTml251012)));'>
                 <input type="hidden" name="submitaction" value="3">
                 <input type="hidden" name="mlid" value="251010">
                 <input type="hidden" name="siteid" value="2010001358">

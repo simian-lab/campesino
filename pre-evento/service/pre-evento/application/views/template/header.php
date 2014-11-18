@@ -84,6 +84,9 @@
                     <?php endif; ?>               
                     <div class="col-md-6 marcas">
                         <figure>
+                            <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Header')"><img src="<?php echo $base_url_static;?>img/aval_mobile.png" alt="Grupo Aval" /></a>
+                        </figure>
+                        <figure>
                             <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
                         </figure>
                         <figure>
