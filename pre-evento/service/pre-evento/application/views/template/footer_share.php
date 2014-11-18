@@ -4,7 +4,7 @@
                     <div class="col-md-12 center">
                         <div class="marcas-mobile clearfix">
                             <figure class="col-xs-3">
-                                <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/grupo-aval.png" alt="MinTIC" /></a>
+                                <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Footer')" ><img src="<?php echo $base_url_static;?>img/grupo-aval.png" alt="Grupo Aval" /></a>
                             </figure>
                             <figure class="col-xs-3">
                                 <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>

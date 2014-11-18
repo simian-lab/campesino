@@ -3,16 +3,16 @@
                 <div class="row sponsor">                            
                     <div class="col-md-12 center">
                         <div class="marcas-mobile clearfix">
-                            <figure class="col-xs-4">
-                                <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/grupo-aval.png" alt="MinTIC" /></a>
+                            <figure class="col-xs-3">
+                                <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Footer')" ><img src="<?php echo $base_url_static;?>img/grupo-aval.png" alt="Grupo Aval" /></a>
                             </figure>
-                            <figure class="col-xs-4">
+                            <figure class="col-xs-3">
                                 <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
                             </figure>
-                            <figure class="col-xs-4">
+                            <figure class="col-xs-3">
                                 <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Footer')"><img src="<?php echo $base_url_static;?>img/digital.png" alt="Vive digital" /></a>
                             </figure>
-                            <figure class="col-xs-4">
+                            <figure class="col-xs-3">
                                 <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Footer')"><img src="<?php echo $base_url_static;?>img/colombia.png" alt="Gobierno de Colombia" /></a>
                             </figure>
                         </div>
