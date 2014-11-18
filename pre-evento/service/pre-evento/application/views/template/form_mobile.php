@@ -5,7 +5,7 @@
         </hgroup>
     </header>                        
     <section>
-        <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251011" onSubmit='s.linkTrackVars="events,eVar38"; s.linkTrackEvents="event5"; s.eVar38="header";s.events="event5";s.tl(true,"o","Formulario Registro"); return (!(UPTvalidateform(document.UPTml251011)));'>
+        <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251011" onSubmit='return (!(UPTvalidateform(document.UPTml251011)));'>
             <input type="hidden" name="submitaction" value="3">
             <input type="hidden" name="mlid" value="251010">
             <input type="hidden" name="siteid" value="2010001358">

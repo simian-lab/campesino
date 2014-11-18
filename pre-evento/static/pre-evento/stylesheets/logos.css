@@ -8,7 +8,7 @@ header .container .head .marcas figure:first-child + figure + figure img {
 }
 
 header .container .head .marcas figure:first-child + figure + figure{
-	width: 25%;
+	width: 20%;
 }
 
 header .container .head .marcas figure:first-child, header .container .head .marcas figure:first-child + figure{
@@ -35,4 +35,25 @@ footer .sponsor .marcas-mobile{
 
 .marcas-mobile figure:first-child, .marcas-mobile figure:first-child + figure{
 	padding-top: 0;
+}
+
+header .container .head .marcas figure:first-child {
+	margin-left: 0;
+	position: relative;
+	top: -7px;
+}
+
+
+header .container .head .marcas figure:first-child  + figure{
+	position: relative;
+	top: -7px;
+}
+
+footer .marcas-mobile figure:first-child + figure + figure {
+	width: 25%;
+}
+
+footer .marcas-mobile figure{
+	padding-left: 5px;
+	padding-right: 5px;
 }
