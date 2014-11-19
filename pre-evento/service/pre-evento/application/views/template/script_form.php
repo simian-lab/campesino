@@ -159,13 +159,13 @@ function emailCheck (emailStr) {
                     });
                 }
                 else{
-                    $.ajax({
+                    /*$.ajax({
                         type: 'POST',                    
                         async :false,
                         dataType: 'html',
                         data: {email: thisform.email.value},
                         url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUserOnlyEmail'); ?>',
-                        success: function(xmldata) {
+                        success: function(xmldata) {*/
                             
                             onClickRegistro(thisform.email.value);
 
@@ -179,9 +179,9 @@ function emailCheck (emailStr) {
                                 }
                             });
 
-                            return(true);
+                            /*return(true);
                         }
-                    });
+                    });*/
                 }
             }
             return false;
