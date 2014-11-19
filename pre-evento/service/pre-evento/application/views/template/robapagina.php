@@ -12,7 +12,7 @@
 	<body>
 		<div class="main">
 			<div class="logo">
-				<img src="<?php echo $base_url_static ?>robapagina/img/logo.png" alt="CyberLunes" />
+				<a href="<?php echo $base_url ?>"><img src="<?php echo $base_url_static ?>robapagina/img/logo.png" alt="CyberLunes" /></a>
 			</div>
 			<div class="contenedor">
 				<span class="start-day">Lunes 1 de Diciembre</span>
