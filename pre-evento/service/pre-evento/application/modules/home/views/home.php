@@ -31,7 +31,7 @@
                        $target = ''; 
                     }
 
-                    if($this->agent->is_mobile()){
+                    if(isset($slider_is_mobile)){
                         $img = $pauta->PAU_MOVIL_IMAGEN;
                     }
                     else{
