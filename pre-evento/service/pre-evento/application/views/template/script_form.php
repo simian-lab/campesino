@@ -1,5 +1,5 @@
 <script language="Javascript">
-function emailCheck (emailStr) {
+function emailCheck (emailStr, formName) {
     var emailPat=/^(.+)@(.+)$/;
     var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]";
     var validChars="\[^\\s" + specialChars + "\]";
@@ -57,20 +57,22 @@ function emailCheck (emailStr) {
        return false;
     }
 
-    var checkEmail = $.ajax({
-                        type: 'POST',
-                        data: {email: emailStr},
-                        async: false,
-                        global: false,
-                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/checkEmailExist'); ?>',
-                        success: function response(data){}
-                    }).responseText;
+    if(formName != 'UPTml251013'){
+	    var checkEmail = $.ajax({
+	                        type: 'POST',
+	                        data: {email: emailStr},
+	                        async: false,
+	                        global: false,
+	                        url: '<?php echo site_url('formulario_lyris/formulario_lyris/checkEmailExist'); ?>',
+	                        success: function response(data){}
+	                    }).responseText;
 
-    var json_data = JSON.parse(checkEmail);
-    if(json_data.status.code == 101){
-        $('#alerta-form-usuario-registrado').modal();
-        return false;
-    }
+	    var json_data = JSON.parse(checkEmail);
+	    if(json_data.status.code == 101){
+	        $('#alerta-form-usuario-registrado').modal();
+	        return false;
+	    }
+	}
     
     return true;
     }
@@ -122,7 +124,7 @@ function emailCheck (emailStr) {
             }*/
         }
 
-        if (emailCheck(thisform.email.value)) 
+        if (emailCheck(thisform.email.value, thisform.name)) 
         {   
 
             if ((document.getElementById('unsubscribe') 
