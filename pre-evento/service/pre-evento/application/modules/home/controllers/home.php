@@ -76,7 +76,12 @@ class Home extends CI_Controller {
 
         $data['siteId'] = 58465;
         $data['pageId'] = 438587;
-        
+
+        require_once(APPPATH.'third_party/Mobile_Detect.php');
+        $detect = new Mobile_Detect();
+        if($detect->isMobile() && !$detect->isTablet()){
+          $data['slider_is_mobile'] = 1;
+        }
 
         if($this->agent->is_mobile()){
           $data['is_mobile'] = 1;
