@@ -49,6 +49,14 @@
 		                <input type="hidden" name="val_66009" value="on"/>
 		                <input type="hidden" id="showpopup" value="on" name="showpopup">
 
+		                <input type="checkbox" name="val_68390" style="display:none" checked="checked">
+		                <input type="checkbox" name="val_66010[]" style="display:none" value="Tecnologia" checked="checked">
+		                <input type="checkbox" name="val_66010[]" style="display:none" value="Moviles" checked="checked">
+		                <input type="checkbox" name="val_66010[]" style="display:none" value="Viajes y turismo" checked="checked">
+		                <input type="checkbox" name="val_66010[]" style="display:none" value="Moda" checked="checked">
+		                <input type="checkbox" name="val_66010[]" style="display:none" value="Otras categorias" checked="checked">
+		                <input type="checkbox" name="val_68391" style="display:none" checked="checked">
+
 						<input type="text" class="form-control" placeholder="E-mail" name="email" />
 						<input type="submit" value="Regístrate">
 					</form>
