@@ -31,15 +31,14 @@
                        $target = ''; 
                     }
 
-                    /*if($this->agent->is_mobile()){
+                    if(isset($slider_is_mobile)){
                         $img = $pauta->PAU_MOVIL_IMAGEN;
                     }
                     else{
                         $img = $pauta->PAU_IMAGEN;
-                    }*/
+                    }
                 ?>
-                <div class="item visible-xs"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img src="<?php echo $base_url_img_pautas;?><?php echo $pauta->PAU_MOVIL_IMAGEN; ?>" alt=""></a></div>
-                <div class="item hidden-xs"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img src="<?php echo $base_url_img_pautas;?><?php echo $pauta->PAU_IMAGEN ?>" alt=""></a></div>
+                <div class="item"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img src="<?php echo $base_url_img_pautas;?><?php echo $img ?>" alt=""></a></div>
                 <?php endforeach; ?>
             </div>       
             <div class="countDown">
