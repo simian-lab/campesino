@@ -58,7 +58,15 @@ $(function() {
 		paginationSpeed : 400,    
 		slideSpeed : 300,
 		singleItem:true,
-		transitionStyle : "fadeUp"
+		transitionStyle : "fadeUp",
+		afterInit: function(){
+			img = $('.owl-item').eq(this.currentItem).find('img').attr('alt');
+			onClickPauta(img);
+        },
+		afterMove : function(){
+			img = $('.owl-item').eq(this.currentItem).find('img').attr('alt');
+			onClickPauta(img);
+        }
 	});
 	$(".next").click(function(){
 		owl.trigger('owl.next');
