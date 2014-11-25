@@ -64,3 +64,11 @@ function onSubmitFormulario(nombre){
 	s.eVar16 = nombre;
 	s.tl(true,"o","Formulario"); 
 }
+
+function onClickPauta(nombre){
+	s.linkTrackVars = "events,products";
+	s.linkTrackEvents = "event41";
+	s.events = "event41";
+	s.products = ";"+nombre;
+	s.tl(true,"o","Pauta"); 
+}
