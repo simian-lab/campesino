@@ -38,7 +38,7 @@
                         $img = $pauta->PAU_IMAGEN;
                     }
                 ?>
-                <div class="item"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img src="<?php echo $base_url_img_pautas;?><?php echo $img ?>" alt=""></a></div>
+                <div class="item"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img onload="onClickPauta('<?php echo $pauta->PAU_NOMBRE ?>')" src="<?php echo $base_url_img_pautas;?><?php echo $img ?>" alt=""></a></div>
                 <?php endforeach; ?>
             </div>       
             <div class="countDown">
