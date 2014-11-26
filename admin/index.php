@@ -72,6 +72,9 @@ switch ($_SERVER['SERVER_NAME'])
 		   header("Location:$redirect");
 		}
 	break;
+	default:
+		define('ENVIRONMENT', 'testing');
+		break;
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
 
