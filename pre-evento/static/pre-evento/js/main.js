@@ -68,6 +68,7 @@ $(function() {
 			onClickPauta(img);
         }
 	});
+	
 	$(".next").click(function(){
 		owl.trigger('owl.next');
 	});
