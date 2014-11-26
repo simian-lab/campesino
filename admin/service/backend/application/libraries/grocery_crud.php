@@ -3216,7 +3216,7 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 					$ci->load->database();
 					$_POST['order_by'][0] = $ci->db->escape_str($_POST['order_by'][0]);
 					$_POST['order_by'][1] = $ci->db->escape_str($_POST['order_by'][1]);*/
-					$columns = $this->basic_model->get_columns_db();
+					$columns = $this->get_columns_db();
 					if(!in_array($_POST['order_by'][0], $columns))
 						throw new Exception("Error SQL Injection", 1);
 
@@ -3279,6 +3279,19 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
 
 		return $state_info;
 	}
+
+	function get_columns_db(){
+		$ci = &get_instance();
+        $db = $ci->db->database;
+        $query = $ci->db->query('SELECT `COLUMN_NAME`
+                                   FROM `INFORMATION_SCHEMA`.`COLUMNS`
+                                   WHERE `TABLE_SCHEMA`=\''.$db.'\'');
+        $result = array();
+        foreach($query->result() as $value){
+            $result[] = $value->COLUMN_NAME;
+        }
+        return $result;
+    }
 }
 
 
