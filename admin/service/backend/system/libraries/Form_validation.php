@@ -951,7 +951,10 @@ class CI_Form_validation {
 	public function is_unique($str, $field)
 	{
 		list($table, $field)=explode('.', $field);
-		$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
+		$binary = 'BINARY';
+		//$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
+		//$query = $this->CI->db->limit(1)->from($table)->where($binary.' '.$field.' = "'.$str.'"')->get();
+		$query = $this->CI->db->query('SELECT * FROM (`PRO_PROMOCIONES`) WHERE BINARY '.$field.' = "'.$str.'" LIMIT 1');
 		
 		return $query->num_rows() === 0;
     }
