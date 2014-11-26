@@ -325,6 +325,7 @@ function before_update($post_array, $primary_key){
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
 
 	$visibilidad = $this->promociones_generales_model->verificar_visibilidad($primary_key);
+	$post_array['VISIBILITY'] = 1;
 
     if($post_array['VISIBILITY'] == 0 && $visibilidad['VISIBILITY'] == 1){
     	$post_array['PRO_ACTIVA'] = 2;
