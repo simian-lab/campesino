@@ -46,10 +46,10 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'development');
 	break;
-	case 'admin-stage.cyberlunes.com':	 
+	case 'admin-stage.cyberlunes.com.co':	 
 		$dominios_permitidos = array(
-				'http://admin-stage.cyberlunes.com',
-				'https://admin-stage.cyberlunes.com',
+				'http://admin-stage.cyberlunes.com.co',
+				'https://admin-stage.cyberlunes.com.co',
 				'http://static-stage.cyberlunes.com',
 				'https://static-stage.cyberlunes.com',
 				'http://fonts.gstatic.com/'
@@ -72,6 +72,9 @@ switch ($_SERVER['SERVER_NAME'])
 		   header("Location:$redirect");
 		}
 	break;
+	default:
+		define('ENVIRONMENT', 'testing');
+		break;
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
 
