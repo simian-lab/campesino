@@ -7,7 +7,9 @@ class Descuentosfiltro extends MX_Controller
        parent::__construct();
        $this->load->library('user_agent');
        $this->load->helper('get_app_data');
-       //$this->load->library('memcached_library');
+       $this->load->library('CollectorPromo');
+       $this->load->library('session');
+       $this->load->library('memcached_library');
        //$this->output->enable_profiler(TRUE);
    }
 
@@ -38,6 +40,11 @@ class Descuentosfiltro extends MX_Controller
    private function get_promociones($filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos') { 
         $this->load->helper('url');
         $this->load->library('user_agent');
+
+        $session_id = $this->session->userdata('session_id');
+        $session_id = sha1('lista_promos'.$session_id);
+
+        $this->collectorpromo->int($session_id);
 
         $dataFiltrado= array('categoria' =>$categoria 
                             ,'tienda' =>$tienda 
@@ -96,8 +103,8 @@ class Descuentosfiltro extends MX_Controller
           $data['publicidad_home'] = 0;
         }
         if($filtro=='home'){
-            $data['promocionespremium_html'] =modules::run('promociones/promocion/get/load','premiumhome',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
-            $data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','premiumgenerales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
+            $data['promocionespremium_html'] =modules::run('promociones/promocion/get/load','premiumhome',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
+            $data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','premiumgenerales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
         }else{
             $data['promocionespremium_html'] =modules::run('promociones/promocion/get/load','premiumhomepremium',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
             $data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','generales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
@@ -176,13 +183,14 @@ class Descuentosfiltro extends MX_Controller
 
        public function page($tipo='premium',$filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed='',$page='') {
           
-           $data = null;
-           $data = get_url_base();
+          $data = null;
+          $data = get_url_base();
 
-        
+          $session_id = $this->session->userdata('session_id');
+          $session_id = sha1('lista_promos'.$session_id);
     
 
-          $dataPromociones=modules::run('promociones/promocion/get/load',$tipo,$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
+          $dataPromociones=modules::run('promociones/promocion/get/load',$tipo,$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
           switch ($tipo) {       
                case 'premiumhome':              
                     $data['promocionespremium_html'] = $dataPromociones;

@@ -7,6 +7,8 @@ class Promocion extends MX_Controller {
     
     public function __construct() {
           parent:: __construct();
+          $this->load->library('memcached_library');
+          $this->load->library('CollectorPromo');
       //   $this->output->enable_profiler(TRUE);
        
     }
@@ -15,7 +17,7 @@ class Promocion extends MX_Controller {
 
   
 
-  public function load($tipo='premium',$data='',$page=1,$seed=1,$filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos'){
+  public function load($tipo='premium',$data='',$page=1,$seed=1,$filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$session){
 
 
 
@@ -76,11 +78,14 @@ class Promocion extends MX_Controller {
        $data['nextpage']=$nextpage;
        $data['offset'] = $offset;
 
+       $idPromosRepetido=$this->collectorpromo->get($session);
+
         switch ($filtro) {
            case 'home':
                    
-                    $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset);
-                                           
+                    $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset,$idPromosRepetido);
+                    $this->collectorpromo->set($data['promociones'],$session);
+
            break;  
            case 'categoria':                   
                     
@@ -133,7 +138,8 @@ class Promocion extends MX_Controller {
                       
 
 
-                  $data['promociones'] = $this->promocion_model->getFiltro($idtipo,$idCategoria,$idTienda,$idMarca,$idSubcategoria,$seed,$cant,$offset);                    
+                  $data['promociones'] = $this->promocion_model->getFiltro($idtipo,$idCategoria,$idTienda,$idMarca,$idSubcategoria,$seed,$cant,$offset,$idPromosRepetido); 
+                  $this->collectorpromo->set($data['promociones'],$session);                   
                   
            break;   
                   
