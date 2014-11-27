@@ -82,10 +82,10 @@ class Promocion extends MX_Controller {
                    
                     $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset);
                     for($i=0; $i < count($data['promociones']); $i++){
-                      $key_memcached = 'promo_id_'.$promocion[$i]['PRO_ID'];
+                      $key_memcached = 'promo_id_'.$data['promociones'][$i]['PRO_ID'];
                       $results = $this->memcached_library->get($key_memcached);
                       if(!$results){
-                        $this->memcached_library->add($key_memcached, $promocion[$i]['PRO_ID']);
+                        $this->memcached_library->add($key_memcached, $data['promociones'][$i]['PRO_ID']);
                       }
                       else{
                         unset($promocion[$i]);
@@ -163,7 +163,7 @@ class Promocion extends MX_Controller {
       if($filtro == 'categoria' && $categoria != 'todos'){
         $data['categoria_promocion'] = modules::run('breadcrumb/breadcrumb/get_categoria_name');
       }
-      
+      //print_r($this->memcached_library->getAllKeys());die;
        return  $this->load->view($templateContainer,$data,true);    
 
     }
