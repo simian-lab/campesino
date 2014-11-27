@@ -7,13 +7,15 @@ class promocion_model extends CI_Model {
     }
 
 
-   function get($idtipo='2',$seed=1,$cant='0',$offset='0') {
+   function get($idtipo='2',$seed=1,$cant='0',$offset='0',$idPromosRepetido='') {
            $this->db->select('*');
            $this->db->from('PRO_PROMOCIONES');
            $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
            $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
            //$this->db->where('PRO_SRC_ID', $idtipo);
            $this->db->where_in('PRO_SRC_ID', $idtipo);
+           if(!empty($idPromosRepetido))
+                $this->db->where_not_in('PRO_ID', $idPromosRepetido);
            $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
 
            $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
@@ -41,7 +43,7 @@ class promocion_model extends CI_Model {
 
     }*/
 
-    function getFiltro($idtipo='2',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed=1,$cant='0',$offset='0') {
+    function getFiltro($idtipo='2',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed=1,$cant='0',$offset='0',$idPromosRepetido='') {
            $this->db->select('*');
            $this->db->from('PRO_PROMOCIONES');
            $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
@@ -60,6 +62,9 @@ class promocion_model extends CI_Model {
 
            if($subcategoria!='todos')
                 $this->db->where('SUB_ID', $subcategoria);
+
+            if(!empty($idPromosRepetido))
+                $this->db->where_not_in('PRO_ID', $idPromosRepetido);
 
            $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
            //$this->db->order_by("PRO_FECHA",'desc', FALSE);
