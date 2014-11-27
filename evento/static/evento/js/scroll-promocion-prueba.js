@@ -29,7 +29,7 @@ $(document).ready(function() {
                     })
                     
                     if(duplicados.length > 1){
-                        alert("Duplicados: " + duplicados);
+                        console.log("Duplicados: " + duplicados);
                     }
                 }
             });
@@ -62,7 +62,7 @@ $(document).ready(function() {
                     })
                     
                     if(duplicados.length > 1){
-                        alert("Duplicados: " + duplicados);
+                        console.log("Duplicados: " + duplicados);
                     }
                 }
             });
