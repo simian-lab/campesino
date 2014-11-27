@@ -7,6 +7,7 @@ class Promocion extends MX_Controller {
     
     public function __construct() {
           parent:: __construct();
+          $this->load->library('memcached_library');
       //   $this->output->enable_profiler(TRUE);
        
     }
@@ -80,7 +81,16 @@ class Promocion extends MX_Controller {
            case 'home':
                    
                     $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset);
-                                           
+                    for($i=0; $i < count($data['promociones']); $i++){
+                      $key_memcached = 'promo_id_'.$promocion[$i]['PRO_ID'];
+                      $results = $this->memcached_library->get($key_memcached);
+                      if(!$results){
+                        $this->memcached_library->add($key_memcached, $promocion[$i]['PRO_ID']);
+                      }
+                      else{
+                        unset($promocion[$i]);
+                      }
+                    }
            break;  
            case 'categoria':                   
                     
