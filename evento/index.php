@@ -72,6 +72,9 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'production');
 	break;
+	default:
+		define('ENVIRONMENT', 'testing');
+	break;
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));  
 
