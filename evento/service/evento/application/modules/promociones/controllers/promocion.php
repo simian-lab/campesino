@@ -88,7 +88,7 @@ class Promocion extends MX_Controller {
                         $this->memcached_library->add($key_memcached, $data['promociones'][$i]['PRO_ID']);
                       }
                       else{
-                        unset($promocion[$i]);
+                        unset($data['promociones'][$i]);
                       }
                     }
            break;  
