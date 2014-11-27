@@ -53,32 +53,27 @@ class Promociones_procesos extends MX_Controller {
 
       if($promocion[0]->AUTORIZADO == 1){
 
-        /*if($promocion[0]->PRO_ACTIVA == 1){
+        if($promocion[0]->PRO_ACTIVA == 1){
             $asunto='Su promoción ha sido ACTIVADA';
             $this->email->subject($asunto);
             $this->email->message('Se ha activado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
              Autor: '.$promocion[0]->PRO_AUTOR);
         }
-        elseif($promocion[0]->PRO_ACTIVA == 2){
+        /*elseif($promocion[0]->PRO_ACTIVA == 2){
             $asunto='Su promoción ha sido INACTIVADA';
             $this->email->subject($asunto);
             $this->email->message('Se ha inactivado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
              Autor: '.$promocion[0]->PRO_AUTOR);
-        }
+        }*/
         else{
             $asunto='Su promoción ha sido APROBADA';
             $this->email->subject($asunto);
             $this->email->message('Se ha aprobado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
              Autor: '.$promocion[0]->PRO_AUTOR);  
-        }*/
-        $asunto='Su promoción ha sido APROBADA';
-        $this->email->subject($asunto);
-        $this->email->message('Se ha aprobado la promoción:
-         Promoción: '.$promocion[0]->PRO_NOMBRE.'
-         Autor: '.$promocion[0]->PRO_AUTOR); 
+        }
         
       }
 

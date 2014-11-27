@@ -954,8 +954,8 @@ class CI_Form_validation {
 		$binary = 'BINARY';
 		//$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
 		//$query = $this->CI->db->limit(1)->from($table)->where($binary.' '.$field.' = "'.$str.'"')->get();
-		$query = $this->CI->db->query('SELECT * FROM (`PRO_PROMOCIONES`) WHERE BINARY '.$field.' = "'.$str.'" LIMIT 1');
-		
+		$query = $this->CI->db->query('SELECT * FROM (`'.$table.'`) WHERE BINARY '.$field.' = "'.$str.'" LIMIT 1');
+		//print_R($this->CI->db->last_query());die();
 		return $query->num_rows() === 0;
     }
 
