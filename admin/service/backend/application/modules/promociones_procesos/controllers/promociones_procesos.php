@@ -74,11 +74,6 @@ class Promociones_procesos extends MX_Controller {
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
              Autor: '.$promocion[0]->PRO_AUTOR);  
         }
-        $asunto='Su promoción ha sido APROBADA';
-        $this->email->subject($asunto);
-        $this->email->message('Se ha aprobado la promoción:
-         Promoción: '.$promocion[0]->PRO_NOMBRE.'
-         Autor: '.$promocion[0]->PRO_AUTOR); 
         
       }
 
