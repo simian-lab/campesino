@@ -110,7 +110,7 @@ header .marcas{
 }
 
 header .marcas figure:first-child, header .marcas figure:first-child + figure{
-	position: relative;
+	/*position: relative;*/
 	top: -7px;
 }
 
