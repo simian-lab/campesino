@@ -77,3 +77,18 @@ section#home .container .publicidades figure {
 	bottom: 0;
 	position: fixed;
 }
+
+.marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child{
+	position: relative;
+	top: -4px;
+}
+
+.marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child + figure{
+	position: relative;
+	top: -1px;
+}
+
+.marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child + figure + figure{
+	position: relative;
+	top: 5px;
+}
