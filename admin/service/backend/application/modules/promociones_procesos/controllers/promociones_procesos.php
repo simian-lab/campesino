@@ -53,7 +53,7 @@ class Promociones_procesos extends MX_Controller {
 
       if($promocion[0]->AUTORIZADO == 1){
 
-        if($promocion[0]->PRO_ACTIVA == 1){
+        if((int)$promocion[0]->PRO_ACTIVA === (int)1){
             $asunto='Su promoción ha sido ACTIVADA';
             $this->email->subject($asunto);
             $this->email->message('Se ha activado la promoción:
