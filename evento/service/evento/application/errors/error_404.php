@@ -24,6 +24,7 @@ switch (ENVIRONMENT)
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
 //print_R($_SERVER['SERVER_NAME']);
+
 switch ($_SERVER['SERVER_NAME'])
 {   
     case 'evento.cyberlunes.local.brandigital.com':  
