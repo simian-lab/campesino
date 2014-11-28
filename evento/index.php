@@ -59,7 +59,7 @@ switch (trim($_SERVER['SERVER_NAME']))
 				'http://fonts.gstatic.com/',
 				'http://d3b369zdeuh99v.cloudfront.net/'
 			);
-        define('ENVIRONMENT', 'testing');
+        define('ENVIRONMENT', 'production');
 	break;
 	case 'origin-www2.cyberlunes.com.co':	 
 		$dominios_permitidos = array(
