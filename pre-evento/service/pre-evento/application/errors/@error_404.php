@@ -34,9 +34,9 @@ switch ($_SERVER['SERVER_NAME'])
         $base_url = 'http://pre-evento.cyberlunes.dev.brandigital.com/';
         $base_url_static = 'http://pre-evento.cyberlunes.dev.brandigital.com/static/pre-evento/'; 
     break;
-    case 'pre-evento-stage.cyberlunes.com.co':  
-        $base_url = 'http://pre-evento-stage.cyberlunes.com.co/';
-        $base_url_static = 'http://pre-evento-stage.cyberlunes.com.co/static/pre-evento/'; 
+    case 'preevento-stage.cyberlunes.com.co':  
+        $base_url = 'http://preevento-stage.cyberlunes.com.co/';
+        $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
     break;
     case 'www.cyberlunes.com.co':    
         $base_url = 'http://www.cyberlunes.com.co/';
