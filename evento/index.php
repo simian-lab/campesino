@@ -56,7 +56,8 @@ switch (trim($_SERVER['SERVER_NAME']))
 				'https://staging.cyberlunes.com.co',
 				'http://static-stage.cyberlunes.com.co',
 				'https://static-stage.cyberlunes.com.co',
-				'http://fonts.gstatic.com/'
+				'http://fonts.gstatic.com/',
+				'http://d3b369zdeuh99v.cloudfront.net/'
 			);
         define('ENVIRONMENT', 'testing');
 	break;
