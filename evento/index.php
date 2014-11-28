@@ -50,6 +50,16 @@ switch (trim($_SERVER['SERVER_NAME']))
 			);
         define('ENVIRONMENT', 'testing');
 	break;
+	case 'staging.cyberlunes.com.co':	 
+		$dominios_permitidos = array(
+				'http://staging.cyberlunes.com.co',
+				'https://staging.cyberlunes.com.co',
+				'http://static-stage.cyberlunes.com.co',
+				'https://static-stage.cyberlunes.com.co',
+				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'testing');
+	break;
 	case 'origin-www2.cyberlunes.com.co':	 
 		$dominios_permitidos = array(
 				'http://origin-www2.cyberlunes.com.co',
