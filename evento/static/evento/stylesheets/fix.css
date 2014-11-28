@@ -123,3 +123,10 @@ footer .sponsor .marcas-mobile figure{
 footer{
 	padding-top: 20px;
 }
+
+@media	screen and (max-width: 767px){
+	section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje{
+		width: 70px;
+		height: 56px;
+	}
+}
