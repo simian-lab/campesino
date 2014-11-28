@@ -130,3 +130,23 @@ footer{
 		height: 56px;
 	}
 }
+
+header .container .head .marcas figure:first-child{
+	position: relative;
+	top: -4px;
+}
+
+header .container .head .marcas figure:first-child{
+	position: relative;
+	top: -4px;
+}
+
+header .container .head .marcas figure:first-child + figure{
+	position: relative;
+	top: -1px;
+}
+
+header .container .head .marcas figure:first-child + figure + figure{
+	position: relative;
+	top: 5px;
+}
