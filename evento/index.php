@@ -18,7 +18,7 @@
  *
  */
 
-switch ($_SERVER['SERVER_NAME'])
+switch (trim($_SERVER['SERVER_NAME']))
 {	
 	case 'evento.cyberlunes.local.brandigital.com':	 
 		$dominios_permitidos = array(
