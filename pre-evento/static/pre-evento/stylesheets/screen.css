@@ -258,7 +258,7 @@ input[type="submit"], .form-bottom .form input[type="submit"] {
 }
 /* line 128, ../sass/screen.scss */
 .marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child + figure + figure {
-  width: 30%;
+  /*width: 30%;*/
 }
 
 /* line 133, ../sass/screen.scss */
