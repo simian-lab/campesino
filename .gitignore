@@ -1,0 +1,9 @@
+dmin/index.php
+evento/index.php
+pre-evento/index.php
+admin/multimedia*
+static/multimedia*
+pre-evento/multimedia*
+evento/multimedia*
+pre-evento/service/pre-evento/application/logs/
+
