@@ -18,7 +18,7 @@
  *
  */
 
-switch ($_SERVER['SERVER_NAME'])
+switch (trim($_SERVER['SERVER_NAME']))
 {	
 	case 'evento.cyberlunes.local.brandigital.com':	 
 		$dominios_permitidos = array(
@@ -47,6 +47,17 @@ switch ($_SERVER['SERVER_NAME'])
 				'http://static-stage.cyberlunes.com.co',
 				'https://static-stage.cyberlunes.com.co',
 				'http://fonts.gstatic.com/'
+			);
+        define('ENVIRONMENT', 'testing');
+	break;
+	case 'staging.cyberlunes.com.co':	 
+		$dominios_permitidos = array(
+				'http://staging.cyberlunes.com.co',
+				'https://staging.cyberlunes.com.co',
+				'http://static-stage.cyberlunes.com.co',
+				'https://static-stage.cyberlunes.com.co',
+				'http://fonts.gstatic.com/',
+				'http://d3b369zdeuh99v.cloudfront.net/'
 			);
         define('ENVIRONMENT', 'testing');
 	break;

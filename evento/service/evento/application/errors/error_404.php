@@ -24,6 +24,7 @@ switch (ENVIRONMENT)
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
 //print_R($_SERVER['SERVER_NAME']);
+
 switch ($_SERVER['SERVER_NAME'])
 {   
     case 'evento.cyberlunes.local.brandigital.com':  
@@ -37,6 +38,10 @@ switch ($_SERVER['SERVER_NAME'])
     case 'evento-stage.cyberlunes.com.co':  
         $base_url = 'http://evento-stage.cyberlunes.com.co/';
         $base_url_static = 'http://evento-stage.cyberlunes.com.co/static/evento/'; 
+    break;
+    case 'staging.cyberlunes.com.co':  
+        $base_url = 'http://staging.cyberlunes.com.co/';
+        $base_url_static = 'http://staging.cyberlunes.com.co/static/evento/'; 
     break;
     case 'origin-www2.cyberlunes.com.co':  
         $base_url = 'http://origin-www2.cyberlunes.com.co/';
