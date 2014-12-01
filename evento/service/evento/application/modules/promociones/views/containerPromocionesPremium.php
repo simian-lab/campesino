@@ -84,7 +84,7 @@
                             </div>   
                             <?php endif; ?>
                               <?php                                    
-                                   echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta');
+                                   echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta',0, array($posicion, $promocion['TIE_NOMBRE'], $promocion['PRO_ID']));
                               ?>
 
                         </article>                                    
