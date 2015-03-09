@@ -13,4 +13,4 @@ $config['website_sender'] = 'promocionescyberlunes@eltiempo.com';
 $config['website_contacto'] = 'ggiorda@brandigital.com';
 $config['website_name'] = '';
 $config['smtp_host'] = 'localhost';
-$config['email_to'] = array('pathen@eltiempo.com','nelfer@eltiempo.com','jean1052@gmail.com','yohmor@eltiempo.com');
+$config['email_to'] = array('pathen@eltiempo.com','cargue@eltiempo.com','jean1052@gmail.com','yohmor@eltiempo.com');
