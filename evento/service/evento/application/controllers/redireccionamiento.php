@@ -228,7 +228,7 @@ class Redireccionamiento extends CI_Controller
 
         $this->email->from($config_email['website_sender'], 'Cyberlunes');
         $this->email->to($config_email['email_to']);
-        //$this->email->cc('yohmor@eltiempo.com','nelfer@eltiempo.com');
+        //$this->email->cc('yohmor@eltiempo.com','cargue@eltiempo.com');
         //$this->email->bcc('ggiorda@brandigital.com','npiazza@brandigital.com');
         $this->email->subject('Cyberlunes: alerta Redireccionamiento/externo');
         $this->email->message($mensaje);
