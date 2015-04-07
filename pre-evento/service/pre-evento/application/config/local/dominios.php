@@ -9,8 +9,8 @@
  */
 	
 
-$config['base_site_eltiempo'] = 'http://pre-evento.cyberlunes.local.brandigital.com/';
-$config['base_site_eltiempo_static'] = 'http://static.cyberlunes.local.brandigital.com/';
-$config['base_site_eltiempo_root'] = 'http://pre-evento.cyberlunes.local.brandigital.com/'; 
+$config['base_site_eltiempo'] = 'http://pre-evento.cyberlunes.local';
+$config['base_site_eltiempo_static'] = 'http://static.cyberlunes.local';
+$config['base_site_eltiempo_root'] = 'http://pre-evento.cyberlunes.local'; 
 
 
