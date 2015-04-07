@@ -9,6 +9,7 @@ mkdir /vagrant/logs/preevento
 
 # Create some dirs for the app
 mkdir /vagrant/admin/multimedia/articulos
+mkdir /vagrant/admin/multimedia/aliados
 
 # Create a database
 mysql --user=root --password=root < /vagrant/stack/eltiempo_co_cyber_lunes_live2.sql
