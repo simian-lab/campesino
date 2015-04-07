@@ -32,20 +32,19 @@ sudo service mysqld status
 
 Si alguno de los dos está detenido puedes subirlo con `sudo service SERVICIO start`.
 
-Si todo ha salido bien, debes poder acceder la aplicación en http://192.168.100.116.
+#### Definir dominio de trabajo
+Debes agregar a tu archivo de hosts (`/etc/hosts`) una línea al final que mapee la IP definida en el Vagrantfile (es decir, 192.168.100.116) a los dominios de trabajo, es decir:
+
+```
+192.168.100.116 	admin.cyberlunes.local static.cyberlunes.local
+```
+
+De esta manera, puedes acceder a tu entorno en la dirección `http://cyberlunes.local`
+
 
 ### Deteniendo y reiniciando el entorno de trabajo
 
 Cada vez que detengas la máquina virtual de Vagrant –bien sea porque reiniciaste tu computador o porque paraste la máquina con `vagrant halt`– debes recordar que al reiniciar es conveniente actualizar el repositorio a la última versión
-
-#### Definir dominio de trabajo
-Debes agregar a tu archivo de hosts (`/etc/hosts`) una línea al final que mapee la IP definida en el Vagrantfile (es decir, 192.168.100.116) el dominio de trabajo, es decir:
-
-```
-192.168.100.116 	cyberlunes.local
-```
-
-De esta manera, puedes acceder a tu entorno en la dirección `http://cyberlunes.local`
 
 ## Dependencias
 Por favor, documenta aquí las dependencias que se creen para el sitio.
