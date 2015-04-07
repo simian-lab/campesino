@@ -26,12 +26,12 @@
 
 switch ($_SERVER['SERVER_NAME'])
 {	
-	case 'admin.cyberlunes.local.brandigital.com':	 
+	case 'admin.cyberlunes.local':	 
 		$dominios_permitidos = array(
-				'http://admin.cyberlunes.local.brandigital.com',
-				'https://admin.cyberlunes.local.brandigital.com',
-				'http://static.cyberlunes.local.brandigital.com',
-				'https://static.cyberlunes.local.brandigital.com',
+				'http://admin.cyberlunes.local',
+				'https://admin.cyberlunes.local',
+				'http://static.cyberlunes.local',
+				'https://static.cyberlunes.local',
 				'http://fonts.gstatic.com/'
 			);
         define('ENVIRONMENT', 'local');
