@@ -5,6 +5,9 @@ ln -fs /vagrant /var/www/public
 # Make sure log folder exists
 mkdir /vagrant/logs
 
+# Create some dirs for the app
+mkdir /vagrant/admin/multimedia/articulos
+
 # Create a database
 mysql --user=root --password=root < /vagrant/stack/eltiempo_co_cyber_lunes_live2.sql
 
