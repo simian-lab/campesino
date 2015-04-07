@@ -27,7 +27,7 @@ Una vez estés en la máquina, es necesario verificar que apache y mysql están 
 
 ```
 sudo service apache2 status
-sudo service mysqld status
+sudo service mysql status
 ```
 
 Si alguno de los dos está detenido puedes subirlo con `sudo service SERVICIO start`.
