@@ -36,7 +36,7 @@ Si alguno de los dos está detenido puedes subirlo con `sudo service SERVICIO st
 Debes agregar a tu archivo de hosts (`/etc/hosts`) una línea al final que mapee la IP definida en el Vagrantfile (es decir, 192.168.100.116) a los dominios de trabajo, es decir:
 
 ```
-192.168.100.116 	admin.cyberlunes.local static.cyberlunes.local
+192.168.100.116 	admin.cyberlunes.local static.cyberlunes.local pre-evento.cyberlunes.local evento.cyberlunes.local
 ```
 
 De esta manera, puedes acceder a tu entorno en la dirección `http://cyberlunes.local`
