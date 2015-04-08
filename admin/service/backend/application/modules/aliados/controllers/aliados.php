@@ -30,11 +30,12 @@ class Aliados extends Main {
 			->display_as('PAT_FECHA','Fecha')
 			->display_as('PAT_URL','Url')
 			->display_as('PAT_URL_EVENT','Url evento')
-			->display_as('VISIBILITY','Visibilidad');
+			->display_as('VISIBILITY','Visibilidad')
+			->display_as('PAT_PAQUETE', 'Paquete');
 			$crud->unset_read();
 			$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
-			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO');
+			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE');
 			$crud->required_fields('PAT_NOMBRE','PAT_LOGO','PAT_FECHA','VISIBILITY');
 			$crud->columns('PAT_NOMBRE','PAT_FECHA','VISIBILITY');
 
@@ -57,7 +58,6 @@ class Aliados extends Main {
 				}
 				/*CONTROL*/
 
-
 				$crud->field_type('PAT_ID','invisible');
 				$crud->field_type('PAT_NOMBRE','String');
 				$crud->field_type('PAT_IDENTIFICADOR','String');
@@ -67,7 +67,8 @@ class Aliados extends Main {
 				$crud->field_type('VISIBILITY','true_false');
 				$crud->field_type('PAT_USER_CREADOR','invisible');
 				$crud->field_type('PAT_USER_ULTIMO','invisible');
-				$crud->field_type('Paquete','dropdown');
+				$packages = array('Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
+				$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
 
 
 				$crud->callback_before_insert(array($this,'limpiar_datos'));
