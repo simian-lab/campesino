@@ -1,4 +1,4 @@
-# Aplicación Concurso Ventures
+# Cyberlunes
 Este es el repositorio para el sitio de Cyberlunes (http://www.cyberlunes.com.co/). En este README se puede ver la documentación básica del proyecto.
 
 ## ¿Cómo empezar?
