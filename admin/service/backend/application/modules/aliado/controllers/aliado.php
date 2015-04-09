@@ -1,8 +1,10 @@
 <style>
-.delete-anchor {
-	display: none;
+/* Sorry for this. But grocerycrud doesn't have a function for only showing the image. */
+.delete-anchor, .fileinput-button {
+	display: none !important;
 	}
-	</style>
+</style>
+
 	<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 	class Aliado extends Main {
