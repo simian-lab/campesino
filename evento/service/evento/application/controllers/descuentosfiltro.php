@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Descuentosfiltro extends MX_Controller 
+class Descuentosfiltro extends MX_Controller
 {
    function __construct()
    {
@@ -14,16 +14,16 @@ class Descuentosfiltro extends MX_Controller
    }
 
    public function todos() {
-      
+
             $filtro='todos';
-            $this->get_promociones('home',$filtro); 
-            return;     
-   } 
+            $this->get_promociones('home',$filtro);
+            return;
+   }
    public function categoria($categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos') {
-                  
+
           /*if($categoria!='todos'){
                  $this->load->database();
-                 $this->load->model('menu/categoria_model');    
+                 $this->load->model('menu/categoria_model');
                  if(!$this->categoria_model->existCategoria($categoria)){
                           echo show_404();
                           return;
@@ -32,12 +32,12 @@ class Descuentosfiltro extends MX_Controller
           }*/
 
 
-          $this->get_promociones('categoria',$categoria,$tienda,$marca,$subcategoria); 
-          return;     
-   } 
+          $this->get_promociones('categoria',$categoria,$tienda,$marca,$subcategoria);
+          return;
+   }
 
-  
-   private function get_promociones($filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos') { 
+
+   private function get_promociones($filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos') {
         $this->load->helper('url');
         $this->load->library('user_agent');
 
@@ -46,9 +46,9 @@ class Descuentosfiltro extends MX_Controller
 
         $this->collectorpromo->int($session_id);
 
-        $dataFiltrado= array('categoria' =>$categoria 
-                            ,'tienda' =>$tienda 
-                            ,'marca' =>$marca 
+        $dataFiltrado= array('categoria' =>$categoria
+                            ,'tienda' =>$tienda
+                            ,'marca' =>$marca
                             ,'subcategoria' =>$subcategoria  );
 
 
@@ -71,16 +71,16 @@ class Descuentosfiltro extends MX_Controller
         $data['image_src'] = $meta_imagen;
         $data['meta_url'] = $meta_url;
         $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
-      
+
 /* mencache menu*/
 		    $data['menu_html'] =modules::run('menu/menu/load',$data);
-/* mencache menu*/       
+/* mencache menu*/
 
 
  /*if($this->agent->is_mobile() ){
-               $data['ads_movil'] ='movil'; 
+               $data['ads_movil'] ='movil';
   }*/
-/* mencache promociones*/	
+/* mencache promociones*/
         $seed= rand(1, 5);
         $page=1;
 
@@ -89,7 +89,7 @@ class Descuentosfiltro extends MX_Controller
         $data['smart_id'] ='todaslascategorias';
 
 
-   
+
         $data['tiendas'] = modules::run('promociones/tienda/load',$data);
         $data['marcas'] = modules::run('promociones/marca/load',$data);
         $data['subCategorias'] = modules::run('promociones/subcategoria/load',$data,$categoria);
@@ -110,12 +110,12 @@ class Descuentosfiltro extends MX_Controller
             $data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','generales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
             $data['publicidad_categoria'] = 1;
         }
-        
+
         $data['breadcrumb'] = modules::run('breadcrumb/breadcrumb/index');
-        
+
         //$data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','generales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
         $templateContainer='template/containerPromocion';
-        
+
         if($filtro == 'home'){
           $data['s_pageName']="evento: home"; // Slider de la home de articulos
           $data['s_channel']="evento: home";
@@ -167,7 +167,7 @@ class Descuentosfiltro extends MX_Controller
         else{
           $data['sas_taget_lan'] = '';
         }
-        
+
         $data['s_prop2']= '';
 
         $this->load->view('template/head',$data);
@@ -178,21 +178,21 @@ class Descuentosfiltro extends MX_Controller
         $this->load->view('template/scripts',$data);
 
         return;
-      
+
     }
 
        public function page($tipo='premium',$filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed='',$page='') {
-          
+
           $data = null;
           $data = get_url_base();
 
           $session_id = $this->session->userdata('session_id');
           $session_id = sha1('lista_promos'.$session_id);
-    
+
 
           $dataPromociones=modules::run('promociones/promocion/get/load',$tipo,$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
-          switch ($tipo) {       
-               case 'premiumhome':              
+          switch ($tipo) {
+               case 'premiumhome':
                     $data['promocionespremium_html'] = $dataPromociones;
                     echo $data['promocionespremium_html'];
 
@@ -209,11 +209,11 @@ class Descuentosfiltro extends MX_Controller
                    $data['promocionesgenerales_html'] = $dataPromociones;
                    echo $data['promocionesgenerales_html'];
                break;
-       
+
           }
-          
+
         return;
     }
-  
-    	
+
+
 }
