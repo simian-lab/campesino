@@ -52,7 +52,7 @@ class Ion_users_model extends CI_Model
 		if($id_grupo==3){
 		$this->db->join('admin_users_groups', 'admin_users_groups.user_id =admin_users.id AND admin_users_groups.group_id =5 OR admin_users_groups.group_id =2'); //AND admin_users_groups.group_id = 5
 		}elseif($id_grupo==4){
-		$this->db->join('admin_users_groups', 'admin_users_groups.user_id =admin_users.id AND admin_users_groups.group_id !=1');  
+		$this->db->join('admin_users_groups', 'admin_users_groups.user_id =admin_users.id AND admin_users_groups.group_id !=1');
 		}
 
 		$query = $this->db->get();
@@ -74,7 +74,7 @@ class Ion_users_model extends CI_Model
 			// 	$arrMails[] = $valor['email'];
 			// }
 			// $listado_mails = implode(',',$arrMails);
-			
+
 
 			$config['protocol'] = 'sendmail';
 			$config['smtp_host'] = 'localhost';
@@ -84,15 +84,30 @@ class Ion_users_model extends CI_Model
 			$this->email->initialize($config);
 
 			$this->email->from('no-reply@cyberlunes.com.co', 'Cambio de clave');
-			$this->email->to($resp['email']); 
-			// $this->email->to('mgranada@brandigital.com'); 
+			$this->email->to($resp['email']);
+			// $this->email->to('mgranada@brandigital.com');
 
 			$this->email->subject('Cambio de Clave');
-			$this->email->message('La Clave de su cuenta fue modificada. <br>Su nueva clave es: '. $datos_envio['clave']);	
+			$this->email->message('La Clave de su cuenta fue modificada. <br>Su nueva clave es: '. $datos_envio['clave']);
 
 			$this->email->send();
 			return true;
 			// echo $this->email->print_debugger();
+	}
+
+	/**
+	 * @return array Get an array of allies with its ids and names.
+	 */
+	function get_allies() {
+		$this->db->select('PAT_ID, PAT_NOMBRE');
+    $this->db->from('PAT_PATROCINADORES');
+
+    $results = $this->db->get();
+    $allies='';
+    foreach ($results->result() as $row) {
+			$allies[$row->PAT_ID] = $row->PAT_NOMBRE;
+			}
+    return $allies;
 	}
 
 	function insert_tienda($username, $visibility){
@@ -114,7 +129,7 @@ class Ion_users_model extends CI_Model
 
 			);
 		$this->db->insert('TIE_TIENDAS', $data);
-		
+
 	}
 
 	function update_tienda($username, $visibility){
@@ -136,14 +151,14 @@ class Ion_users_model extends CI_Model
 
 			);
 		$this->db->where('TIE_ID_USER', $respUser['id']);
-		$this->db->update('TIE_TIENDAS', $data); 
-		
+		$this->db->update('TIE_TIENDAS', $data);
+
 	}
 
 	function delete_tienda($id_user){
-		
+
 		$this->db->where('TIE_ID_USER',$id_user);
-		$this->db->delete('TIE_TIENDAS'); 
+		$this->db->delete('TIE_TIENDAS');
 
 	}
 
