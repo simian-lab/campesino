@@ -44,7 +44,8 @@
     <div class="important-brand col-md-12">
       <h2>PATROCINADORES <small>DESTACADOS</small></h2>
 
-      <?php foreach($patrocinadores as $patrocinador): ?>
+      <?php shuffle($patrocinadores);
+      foreach($patrocinadores as $patrocinador): ?>
       <div class="wrapper-box col-md-3 col-xs-12">
         <div class="box">
           <?php if($patrocinador->PAT_URL!=''): ?>
