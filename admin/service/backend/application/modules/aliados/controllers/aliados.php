@@ -67,7 +67,7 @@ class Aliados extends Main {
 				$crud->field_type('VISIBILITY','true_false');
 				$crud->field_type('PAT_USER_CREADOR','invisible');
 				$crud->field_type('PAT_USER_ULTIMO','invisible');
-				$packages = array('Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
+				$packages = array('Sin paquete', 'Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
 				$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
 
 
