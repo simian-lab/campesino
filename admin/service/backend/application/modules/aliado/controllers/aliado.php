@@ -19,8 +19,8 @@ class Aliado extends Main {
 
 	/**
 	 * [send_notification_email description]
-	 * @param  [type] $post_array [description]
-	 * @return [type]             [description]
+	 * @param  array $post_array
+	 * @return boolean returns TRUE when the email has been sended.
 	 */
 	function send_notification_email($post_array) {
 		$this->load->library('email');
@@ -43,8 +43,8 @@ class Aliado extends Main {
 
 		$this->email->initialize($email_config);
 		$this->email->from('no-reply@cyberlunes.com.co', 'Patrocinadores');
-		//$this->email->to($mails_list);
-		$this->email->to('nicolas@simian.co'); // This email is for testing.
+		$this->email->to($mails_list);
+		//$this->email->to('nicolas@simian.co'); // This email is for testing.
 		$this->email->subject('Se modifico una URL de evento');
 		$this->email->message('El aliado '.$post_array['PAT_NOMBRE'].' agregó la siguiente URL de evento:<br>URL evento: '.$post_array['PAT_URL_EVENT']);
 		$this->email->send();
@@ -53,8 +53,7 @@ class Aliado extends Main {
 	}
 
 	/**
-	 * [index description]
-	 * @return [type] [description]
+	 * Main function.
 	 */
 	function index() {
 		$breadcrums[]='<a class="current" href="'.site_url('main/aliado').'">Patrocinador</a>';
@@ -63,6 +62,8 @@ class Aliado extends Main {
 		$this->data['titulo']='Patrocinadores';
 		$this->data['encabezado']='Patrocinadores';
 		$this->load->model('aliado_model');
+
+		$user_id = $this->session->userdata('sadmin_user_id');
 
 		$crud = new grocery_CRUD();
 
@@ -81,27 +82,27 @@ class Aliado extends Main {
 		$crud->unset_add();
 		$crud->unset_delete();
 		$crud->unset_read();
-		echo 'User id: '.$this->session->userdata('sadmin_user_id');
-		$crud->where('PAT_ID',56);
+		$crud->where('PAT_ALIADO', $user_id);
 
 		$state = $crud->getState();
+
+		// If i'm on an edit screen...
 		if($state == 'edit') {
 			$state_info = $crud->getStateInfo();
-			$primary_key = $state_info->primary_key;
-			echo '<br>Patrocinador id: '.$primary_key;
-		}
+			$ally_id = $state_info->primary_key;
+			$query = 'SELECT PAT_ALIADO FROM PAT_PATROCINADORES WHERE PAT_ID = ?';
+			$result = $this->db->query($query, array($ally_id));
+			$user_id_from_ally = $result->result()[0]->PAT_ALIADO;
 
-		/*CONTROL*/
-		/*$result = $this->aliado_model->control_aliado($this->session->userdata('sadmin_user_id'));
-		if($result[0]['RESPUESTA']!=0 ){
-			$this->data['output'] =" <h1>No tenes permiso para acceder esta seccion</h1>" ;
-			$breadcrums[]='<a class="current" href="'.site_url('main/aliado').'">Patrocinadores</a>';
-			$this->data['titulo']='Permiso denegado';
-			$this->data['encabezado']='Error';
-			$this->error('example',$this->data,$breadcrums);
-			die();
+			if($user_id != $user_id_from_ally) {
+				$this->data['output'] =" <h1>No tienes permiso para acceder esta secci&oacute;n.</h1>" ;
+				$breadcrums[]='<a class="current" href="'.site_url('main/aliado').'">Patrocinadores</a>';
+				$this->data['titulo']='Permiso denegado';
+				$this->data['encabezado']='Error';
+				$this->error('example', $this->data, $breadcrums);
+				die();
+			}
 		}
-		/*CONTROL*/
 
 		$this->data['output'] = $output = $crud->render();
 
