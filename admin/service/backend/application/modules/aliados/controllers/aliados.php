@@ -12,6 +12,20 @@ class Aliados extends Main {
 		$this->load->helper('url');
 		}
 
+		/**
+		 * [update_ally_on_user description]
+		 * @param  array $post_array Data from the update.
+		 * @param  int $primary_key Primary key of the ally.
+		 */
+		function update_ally_on_user($post_array, $primary_key) {
+			$user_id = $post_array['PAT_ALIADO'];
+			$ally_id = $primary_key;
+			if($user_id != '') {
+				$query = 'UPDATE admin_users SET ally_id = ? WHERE id = ?';
+				$this->db->query($query, array($ally_id, $user_id));
+			}
+		}
+
 		// Metodo para carga de albunes
 		function index()
 		{
@@ -35,7 +49,7 @@ class Aliados extends Main {
 			->display_as('PAT_URL_EVENT','Url evento')
 			->display_as('VISIBILITY','Visibilidad')
 			->display_as('PAT_PAQUETE', 'Paquete')
-			->display_as('PAT_ALIADO', 'Aliado');
+			->display_as('PAT_ALIADO', 'Usuario');
 			$crud->unset_read();
 			$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
@@ -77,6 +91,7 @@ class Aliados extends Main {
 
 				$crud->callback_before_insert(array($this,'limpiar_datos'));
 				$crud->callback_before_update(array($this,'limpiar_datos'));
+				$crud->callback_after_update(array($this, 'update_ally_on_user'));
 
 				$crud->set_language('spanish');
 
