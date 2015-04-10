@@ -1,15 +1,4 @@
 $(document).ready(function() {
-       $( "#selectTienda" ).change(function() {
-            //onChangeFilter(this.value)
-            url="/descuentos/"+ base_descuentosfiltro.categoria +'/'+ this.value;
-            window.location.href = url;
-        });
-
-        $( "#selectMarca" ).change(function() {
-            //onChangeFilter(this.value)
-            url="/descuentos/"+ base_descuentosfiltro.categoria +'/tiendas/'+this.value;
-            window.location.href = url;
-        });
 
         $( "#selectSubCategoria" ).change(function() {
             //onChangeFilter(this.value)
@@ -17,12 +6,24 @@ $(document).ready(function() {
             window.location.href = url;
         });
 
+        $( "#buscarOfertaButton").click(function() {
+          var tienda = 'tiendas';
+          if( $( "#selectTienda" ).val() != ''){
+            tienda = $( "#selectTienda" ).val();
+          }
+          var url="/descuentos/"+ base_descuentosfiltro.categoria + '/' + tienda;
+          if( $( "#selectMarca" ).val() != 'marcas'){
+            url = url + '/' + $( "#selectMarca" ).val();
+          }
+          window.location.href = url;
+        });
+
 
       var contadorTienda = 0;
       var contadorMarca = 0;
       var contadorSubcategoria = 0;
       $('#selectTienda').find('option').each( function() {
-          
+
           if ($(this).val() == base_descuentosfiltro.tienda) {
                  $("#selectTienda")[0].selectedIndex = contadorTienda;
                  return false;
