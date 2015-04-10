@@ -17,6 +17,8 @@ class Aliados extends Main {
 		{
 			$this->load->model('aliados_model');
 
+			$allies = $this->aliados_model->get_user_aliados();
+
 			$crud = new grocery_CRUD();
 
 			$crud->set_theme('flexigrid');
@@ -31,11 +33,12 @@ class Aliados extends Main {
 			->display_as('PAT_URL','Url')
 			->display_as('PAT_URL_EVENT','Url evento')
 			->display_as('VISIBILITY','Visibilidad')
-			->display_as('PAT_PAQUETE', 'Paquete');
+			->display_as('PAT_PAQUETE', 'Paquete')
+			->display_as('PAT_ALIADO', 'Aliado');
 			$crud->unset_read();
 			$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
-			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE');
+			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO');
 			$crud->required_fields('PAT_NOMBRE','PAT_LOGO','PAT_FECHA','VISIBILITY');
 			$crud->columns('PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE');
 
@@ -69,7 +72,7 @@ class Aliados extends Main {
 				$crud->field_type('PAT_USER_ULTIMO','invisible');
 				$packages = array('Sin paquete', 'Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
 				$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
-
+				$crud->field_type('PAT_ALIADO', 'dropdown', $allies);
 
 				$crud->callback_before_insert(array($this,'limpiar_datos'));
 				$crud->callback_before_update(array($this,'limpiar_datos'));
