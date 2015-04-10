@@ -18,6 +18,7 @@ class Aliados extends Main {
 			$this->load->model('aliados_model');
 
 			$allies = $this->aliados_model->get_user_aliados();
+			asort($allies);
 
 			$crud = new grocery_CRUD();
 
