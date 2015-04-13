@@ -1,22 +1,21 @@
-function getScrollOffsets() {    
-    if ( window.pageXOffset != null ) 
+function getScrollOffsets() {
+    if ( window.pageXOffset != null )
        return {
-           x: window.pageXOffset, 
+           x: window.pageXOffset,
            y: window.pageYOffset
-       };    
+       };
     var doc = window.document;
     if ( document.compatMode === "CSS1Compat" ) {
         return {
-            x: doc.documentElement.scrollLeft, 
+            x: doc.documentElement.scrollLeft,
             y: doc.documentElement.scrollTop
         };
-    }    
-    return { 
-        x: doc.body.scrollLeft, 
-        y: doc.body.scrollTop 
-    }; 
+    }
+    return {
+        x: doc.body.scrollLeft,
+        y: doc.body.scrollTop
+    };
 }
-
 
 
 $(function() {
@@ -25,9 +24,9 @@ $(function() {
       autoPlay: 3000, //Set AutoPlay to 3 seconds
       items : 3,
       itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3],      
-      itemsMobile : [768,1],  
-    });  
+      itemsDesktopSmall : [979,3],
+      itemsMobile : [768,1],
+    });
     $(".next").click(function(event){
       event.preventDefault();
       sliderPubli.trigger('owl.next');
@@ -37,7 +36,7 @@ $(function() {
       sliderPubli.trigger('owl.prev');
     });
   }, 1000);
-    
+
 
   owlMarcas = $('#slider-marcas-content').owlCarousel({
     autoPlay: true,
@@ -51,7 +50,7 @@ $(function() {
   $('.prev-marcas').click(function() {
     owlMarcas.trigger('owl.prev');
   });
-  owlMarcasAside = $('#slide-marcas').owlCarousel({ 
+  owlMarcasAside = $('#slide-marcas').owlCarousel({
     singleItem:true,
     itemsDesktop: [1200,6],
     itemsTablet: [992,5]
@@ -64,10 +63,10 @@ $(function() {
     event.preventDefault();
     owlMarcasAside.trigger('owl.prev');
   });
-  $(window).scroll(function(event) {         
-    var getScrollY = getScrollOffsets();        
+  $(window).scroll(function(event) {
+    var getScrollY = getScrollOffsets();
     var scrollY = getScrollY.y;
-    var resta = (window.innerHeight+window.outerHeight)-scrollY;        
+    var resta = (window.innerHeight+window.outerHeight)-scrollY;
     if(scrollY>71) {
       $('#menu').css({
         position: 'fixed',
@@ -80,6 +79,6 @@ $(function() {
       $('#menu').css({
         position: 'relative'
       });
-    }    
+    }
   });
 });

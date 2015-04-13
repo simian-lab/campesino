@@ -4,27 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Cyberlunes</title>
-        
+
         <?php echo $metatag; ?>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">     
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/normalize.min.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/owl.carousel.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/owl.transitions.css">
-        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/jquery.bxslider.css">  
+        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/jquery.bxslider.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/screen.css">
         <!-- clase fix-->
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/molfis.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/fix.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/logos.css">
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
-        
+
         <?php if (ENVIRONMENT == 'production'): ?>
-            <script src="<?php echo $base_url_static?>js/s_code.js"></script> 
+            <script src="<?php echo $base_url_static?>js/s_code.js"></script>
         <?php else: ?>
-            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
+            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script>
         <?php endif; ?>
         <script src="<?php echo $base_url_static;?>js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery-1.10.2.min.js"></script>
@@ -48,18 +48,15 @@
 
             var appdiademoda = {
                 jssdkload:false,
-                idioma: 'es',              
+                idioma: 'es',
                 data: eval(<?php echo $jsonParam; ?>)
             };
         </script>
-
-        <?php $this->load->view('piwik'); ?>
-
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->        
+        <![endif]-->
         <style>
             #defaultCountdown ul li{
                 margin-left: 2px;
@@ -73,15 +70,15 @@
             <div class="container">
                 <div class="row head">
                     <div class="col-md-3 col-sm-6 col-xs-6 logo">
-                        <a href="<?php echo $base_url;?>">                            
-                            <img src="<?php echo $base_url_static?>img/logo.png" alt="cybermonday">           
+                        <a href="<?php echo $base_url;?>">
+                            <img src="<?php echo $base_url_static?>img/logo.png" alt="cybermonday">
                         </a>
                     </div>
                     <?php if(!$this->agent->is_mobile()): ?>
                     <div class="col-md-3 col-sm-6 col-xs-6 title">
                         <!--<span>19 de Mayo <br>--><span>¡Espéralo pronto!</span>
-                    </div>     
-                    <?php endif; ?>               
+                    </div>
+                    <?php endif; ?>
                     <div class="col-md-6 marcas">
                         <figure>
                             <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Header')"><img src="<?php echo $base_url_static;?>img/aval.png" alt="Grupo Aval" /></a>
@@ -96,6 +93,6 @@
                             <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Header')"><img src="<?php echo $base_url_static;?>img/colombia.png" alt="Gobierno de Colombia" /></a>
                         </figure>
                     </div>
-                </div>                             
-            </div>            
+                </div>
+            </div>
         </header>
