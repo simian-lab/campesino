@@ -171,7 +171,6 @@ class Descuentosfiltro extends MX_Controller
         $data['s_prop2']= '';
 
         $this->load->view('template/head',$data);
-        $this->load->view('piwik',$data);
         $this->load->view('template/header',$data);
         $this->load->view($templateContainer,$data);
         $this->load->view('template/footer',$data);

@@ -32,7 +32,6 @@ class Home extends MX_Controller {
     $data['menu_html'] =modules::run('menu/menu/load',$data);
 
     $this->load->view('template/head',$data);
-    $this->load->view('piwik',$data);
     $this->load->view('template/header',$data);
     $this->load->view('home',$data);
     $this->load->view('template/footer',$data);
