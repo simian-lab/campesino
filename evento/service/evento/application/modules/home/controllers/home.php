@@ -15,7 +15,49 @@ class Home extends MX_Controller {
     $data['tiendas'] = modules::run('promociones/tienda/load',$data);
     $data['marcas'] = modules::run('promociones/marca/load',$data);
 
-    $data['patrocinadores'] = $this->home_model->get_patrocinadores();
+    $patrocinadores = $this->home_model->get_patrocinadores();
+    $oro_plus = array();
+    $oro = array();
+    $plata = array();
+    $bronce = array();
+    $platino = array();
+    $general = array();
+
+    foreach($patrocinadores as $patrocinador) {
+      switch($patrocinador->PAT_PAQUETE){
+        case "1":
+          array_push($oro_plus, $patrocinador);
+          break;
+
+        case "2":
+          array_push($oro, $patrocinador);
+          break;
+
+        case "3":
+          array_push($plata, $patrocinador);
+          break;
+
+        case "4":
+          array_push($bronce, $patrocinador);
+          break;
+
+        case "5":
+          array_push($platino, $patrocinador);
+          break;
+
+        case "6":
+          array_push($general, $patrocinador);
+          break;
+      }
+    }
+
+    $data['patrocinadores_oro_plus'] = $oro_plus;
+    $data['patrocinadores_oro'] = $oro;
+    $data['patrocinadores_plata'] = $plata;
+    $data['patrocinadores_bronce'] = $bronce;
+    $data['patrocinadores_platino'] = $platino;
+    $data['patrocinadores_general'] = $general;
+
 
     $meta_title = 'Cyberlunes';
     $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';

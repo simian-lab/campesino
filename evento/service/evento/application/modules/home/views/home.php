@@ -44,12 +44,11 @@
     <div class="important-brand col-md-12">
       <h2>PATROCINADORES <small>DESTACADOS</small></h2>
 
-      <?php shuffle($patrocinadores);
-      foreach($patrocinadores as $patrocinador): ?>
+      <?php foreach($patrocinadores_oro_plus as $patrocinador): ?>
       <div class="wrapper-box col-md-3 col-xs-12">
         <div class="box">
-          <?php if($patrocinador->PAT_URL!=''): ?>
-            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL); ?>">
+          <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
+            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
               <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
               <span>Ir a la tienda</span>
             </a>
@@ -93,16 +92,20 @@
 
     <div class="important-brand col-md-12">
 
-      <!-- Aquí el FOR -->
+      <?php foreach($patrocinadores_oro as $patrocinador): ?>
       <div class="wrapper-box col-md-3 col-xs-12">
         <div class="box">
-          <a href="">
-            <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/adidas.jpg">
-            <span>Ir a la tienda</span>
-          </a>
+          <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
+            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
+              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <span>Ir a la tienda</span>
+            </a>
+          <?php else: ?>
+            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+          <?php endif; ?>
         </div>
       </div>
-      <!-- Hasta aquí el FOR -->
+      <?php endforeach; ?>
 
       <div class="clear"></div>
     </div><!-- End important-brand-->
@@ -112,16 +115,20 @@
     <div class="comercios col-md-12">
       <h2>COMERCIOS <small>PARTICIPANTES</small></h2>
 
-      <!-- Aquí el FOR -->
+      <?php foreach($patrocinadores_plata as $patrocinador): ?>
       <div class="wrapper-box col-md-2 col-xs-4">
         <div class="box">
-          <a href="">
-            <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tigo.jpg">
-            <span>Ir a la tienda</span>
-          </a>
+          <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
+            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
+              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <span>Ir a la tienda</span>
+            </a>
+          <?php else: ?>
+            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+          <?php endif; ?>
         </div>
       </div>
-      <!-- Hasta aquí el FOR -->
+      <?php endforeach; ?>
 
       <div class="clear"></div>
       <hr>
@@ -130,15 +137,42 @@
     <div class="clear"></div>
 
     <div class="comercios col-md-12">
-
+      <?php foreach($patrocinadores_bronce as $patrocinador): ?>
       <div class="wrapper-box col-md-2 col-xs-4">
         <div class="box">
-          <a href="">
-            <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tigo.jpg">
-            <span>Ir a la tienda</span>
-          </a>
+          <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
+            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
+              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <span>Ir a la tienda</span>
+            </a>
+          <?php else: ?>
+            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+          <?php endif; ?>
         </div>
       </div>
+      <?php endforeach; ?>
+
+      <div class="clear"></div>
+      <hr>
+    </div><!-- End Comercios -->
+
+    <div class="clear"></div>
+
+    <div class="comercios col-md-12">
+      <?php foreach($patrocinadores_platino as $patrocinador): ?>
+      <div class="wrapper-box col-md-2 col-xs-4">
+        <div class="box">
+          <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
+            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
+              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <span>Ir a la tienda</span>
+            </a>
+          <?php else: ?>
+            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+          <?php endif; ?>
+        </div>
+      </div>
+      <?php endforeach; ?>
 
       <div class="clear"></div>
       <hr>
@@ -147,15 +181,20 @@
     <div class="clear"></div>
 
     <div class="mini col-md-12">
+      <?php foreach($patrocinadores_general as $patrocinador): ?>
       <div class="wrapper-box">
         <div class="box">
-          <a href="">
-            <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tigo.jpg">
-            <span>Ir a la tienda</span>
-          </a>
+          <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
+            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
+              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <span>Ir a la tienda</span>
+            </a>
+          <?php else: ?>
+            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+          <?php endif; ?>
         </div>
       </div>
-
+      <?php endforeach; ?>
       <div class="clear"></div>
     </div><!-- End mini -->
   </div>
