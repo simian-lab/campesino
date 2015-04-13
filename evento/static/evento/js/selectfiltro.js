@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+        $( "#selectTienda" ).change(function() {
+          //onChangeFilter(this.value)
+          if($( "#selectMarca" ).val() != 'marcas'){
+            $( "#selectMarca" ).val('marcas');
+          }
+        });
+
+        $( "#selectMarca" ).change(function() {
+          //onChangeFilter(this.value)
+          if($( "#selectTienda" ).val() != 'tiendas'){
+            $( "#selectTienda" ).val('tiendas');
+          }
+        });
+
         $( "#selectSubCategoria" ).change(function() {
             //onChangeFilter(this.value)
             url="/descuentos/"+ base_descuentosfiltro.categoria +'/tiendas/marcas/'+this.value;
@@ -12,8 +26,12 @@ $(document).ready(function() {
             tienda = $( "#selectTienda" ).val();
           }
           var url="/descuentos/"+ base_descuentosfiltro.categoria + '/' + tienda;
-          if( $( "#selectMarca" ).val() != 'marcas'){
-            url = url + '/' + $( "#selectMarca" ).val();
+          var marca = $( "#selectMarca" ).val();
+          if( marca != 'marcas'){
+            url = url + '/' + marca;
+          }
+          if(tienda=='tiendas' && marca == 'marcas'){
+            url = "/descuentos/";
           }
           window.location.href = url;
         });
