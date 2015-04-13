@@ -58,7 +58,6 @@ class Home extends MX_Controller {
     $data['patrocinadores_platino'] = $platino;
     $data['patrocinadores_general'] = $general;
 
-
     $meta_title = 'Cyberlunes';
     $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
     $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
