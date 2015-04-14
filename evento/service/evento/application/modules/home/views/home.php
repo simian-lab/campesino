@@ -186,7 +186,7 @@
 
     <div class="clear"></div>
 
-    <div class="mini col-md-12">
+    <div class="mini col-md-12" id="anchor-ofertas-destacadas">
       <?php foreach($patrocinadores_general as $patrocinador): ?>
         <div class="wrapper-box">
           <div class="box">
@@ -205,111 +205,10 @@
     </div><!-- End mini -->
 
     <div class="ofertas-destacadas col-md-12">
-    <h3 id="anchor-ofertas-destacadas">OFERTAS <small>DESTACADAS</small></h3>
-    <ul>
-      <li class="post col-lg-6 col-md-6 col-sm-6 col-sx-12">
-        <figure>
-          <div class="overlay">
-            <p>¡Compra ahora!</p>
-            <a href="#" target="_blank" class="link red">ir a oferta</a>
-          </div>
-          <a style="display: block;" target="_blank" href="#">
-            <img src="http://d3b369zdeuh99v.cloudfront.net/multimedia/promociones/173fc-1416953993_imagen.jpg" alt="¡Compra ahora!" title="Cartagena en oferta"></a>
-          </figure>
-          <article>
-            <div class="info">
-              <h2>LAN</h2>
-            </div>
-            <div class="desc">
-              <p>Cartagena en oferta</p>
-
-            </div>
-            <a href="#" target="_blank" class="link red">ir a oferta</a>
-          </article>
-        </li>
-        <li class="descuento nm  post col-lg-6 col-md-6 col-sm-6 col-sx-12">
-          <figure>
-            <div class="overlay">
-              <p>¡Envío gratis!</p>
-              <a href="#" target="_blank" class="link red">ir a oferta</a>
-            </div>
-            <a style="display: block;" target="_blank" href="#"><img src="http://d3b369zdeuh99v.cloudfront.net/multimedia/promociones/6a371-1416932149_imagen.png" alt="¡Envío gratis!
-              " title="INVICTA 17734 para hombre"></a>
-
-            </figure>
-            <article>
-              <div class="info">
-                <h2>Estuyo.com</h2>
-              </div>
-              <div class="desc">
-                <p>INVICTA 17734 para hombre</p>
-
-                <span class="ahora">Ahora $219,900</span> - <span class="antes">Antes $2,130,769</span>
-              </div>
-              <div class="porcentaje">
-                <img src="http://origin-www2.cyberlunes.com.co/static/evento/img/top-percent.png" alt="">
-                <span class="num">90</span>
-                <span class="signo">%</span>
-                <span>Descuento</span>
-              </div>
-              <a href="#" target="_blank" class="link red">ir a oferta</a>
-            </article>
-          </li>
-
-          <li class=" post col-lg-6 col-md-6 col-sm-6 col-sx-12">
-            <figure>
-              <div class="overlay">
-                <p>$119.000 Triple Play TV Digital+10Megas+ClaroVideo</p>
-                <a href="#" target="_blank" class="link red">ir a oferta</a>
-              </div>
-
-
-              <a style="display: block;" target="_blank" href="#">
-                <img src="http://d3b369zdeuh99v.cloudfront.net/multimedia/promociones/08830-1417045245_imagen.jpg" alt="$119.000 Triple Play TV Digital+10Megas+ClaroVideo" title="Compra YA y paga en marzo">
-              </a>
-
-            </figure>
-            <article>
-              <div class="info">
-                <h2>Claro</h2>
-              </div>
-              <div class="desc">
-                <p>Compra YA y paga en marzo</p>
-
-                <span class="ahora">Ahora $119,000</span>
-              </div>
-              <a href="#" target="_blank" class="link red">ir a oferta</a>
-            </article>
-          </li>
-
-          <li class="descuento nm  post col-lg-6 col-md-6 col-sm-6 col-sx-12">
-            <figure>
-              <div class="overlay">
-                <p>Referencias seleccionadas</p>
-                <a href="#" target="_blank" class="link red">ir a oferta</a>
-              </div>
-              <a style="display: block;" target="_blank" href="#">
-                <img src="http://d3b369zdeuh99v.cloudfront.net/multimedia/promociones/98924-1416952309_imagen.jpg" alt="Referencias seleccionadas" title="Televisores LG">
-              </a>
-
-            </figure>
-            <article>
-              <div class="info">
-                <h2>Falabella.com</h2>
-              </div>
-              <div class="desc">
-                <p>Televisores LG</p>
-
-              </div>
-              <div class="porcentaje">
-                <img src="http://origin-www2.cyberlunes.com.co/static/evento/img/top-percent.png" alt="">
-                <span class="num">30</span>
-                <span class="signo">%</span>
-                <span>Descuento</span>
-              </div>
-              <a href="#" target="_blank" class="link red">ir a oferta</a>
-            </article>
-          </li>
-        </div>
-      </div>
-    </section>
+      <h3>
+        OFERTAS <small>DESTACADAS</small>
+      </h3>
+      <?php echo $promocionespremium_html ?>
+    </div>
+  </div>
+</section>
