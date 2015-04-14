@@ -12,6 +12,20 @@ class Home extends MX_Controller {
     $data = null;
     $data = get_url_base();
 
+    $meta_title = 'Cyberlunes';
+    $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
+    $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
+    $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
+    $meta_url = base_url();
+
+    $data['meta_title'] = $meta_title;
+    $data['meta_descripcion'] = $meta_descripcion;
+    $data['image_src'] = $meta_imagen;
+    $data['meta_url'] = $meta_url;
+    $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys));
+
+    $data['menu_html'] =modules::run('menu/menu/load',$data);
+
     $data['tiendas'] = modules::run('promociones/tienda/load',$data);
     $data['marcas'] = modules::run('promociones/marca/load',$data);
 
@@ -57,20 +71,6 @@ class Home extends MX_Controller {
     $data['patrocinadores_bronce'] = $bronce;
     $data['patrocinadores_platino'] = $platino;
     $data['patrocinadores_general'] = $general;
-
-    $meta_title = 'Cyberlunes';
-    $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
-    $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
-    $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
-    $meta_url = base_url();
-
-    $data['meta_title'] = $meta_title;
-    $data['meta_descripcion'] = $meta_descripcion;
-    $data['image_src'] = $meta_imagen;
-    $data['meta_url'] = $meta_url;
-    $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys));
-
-    $data['menu_html'] =modules::run('menu/menu/load',$data);
 
     $this->load->view('template/head',$data);
     $this->load->view('template/header',$data);
