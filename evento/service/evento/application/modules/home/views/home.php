@@ -186,7 +186,7 @@
 
     <div class="clear"></div>
 
-    <div class="mini col-md-12">
+    <div class="mini col-md-12" id="anchor-ofertas-destacadas">
       <?php foreach($patrocinadores_general as $patrocinador): ?>
         <div class="wrapper-box">
           <div class="box">
@@ -205,7 +205,9 @@
     </div><!-- End mini -->
 
     <div class="ofertas-destacadas col-md-12">
-      <h3>OFERTAS <small>DESTACADAS</small></h3>
+      <h3>
+        OFERTAS <small>DESTACADAS</small>
+      </h3>
       <?php echo $promocionespremium_html ?>
     </div>
   </div>
