@@ -3,9 +3,11 @@
 class Home extends MX_Controller {
   function __construct() {
     parent::__construct();
-    $this->load->model('home_model');
-
     $this->load->library('user_agent');
+    $this->load->helper('get_app_data');
+    $this->load->model('home_model');
+    $this->load->library('session');
+    $this->load->library('memcached_library');
   }
 
   public function index() {
@@ -25,6 +27,13 @@ class Home extends MX_Controller {
     $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys));
 
     $data['menu_html'] =modules::run('menu/menu/load',$data);
+
+    $dataFiltrado = array('categoria' => 'todos'
+                            ,'tienda' => 'tiendas'
+                            ,'marca' => 'marcas'
+                            ,'subcategoria' => 'todos' );
+    $data['descuentosfiltro']=json_encode($dataFiltrado);
+    $data['jsonParam']=get_app_data();
 
     $data['tiendas'] = modules::run('promociones/tienda/load',$data);
     $data['marcas'] = modules::run('promociones/marca/load',$data);
@@ -71,6 +80,14 @@ class Home extends MX_Controller {
     $data['patrocinadores_bronce'] = $bronce;
     $data['patrocinadores_platino'] = $platino;
     $data['patrocinadores_general'] = $general;
+
+    $session_id = $this->session->userdata('session_id');
+    $session_id = sha1('lista_promos'.$session_id);
+
+    $dataPromociones=modules::run('promociones/promocion/get/load', 'home', $data, '', '','home', 'todos', 'tiendas', 'marcas', 'todos', $session_id);
+
+    $data['promocionespremium_html'] = $dataPromociones;
+    //echo $data['promocionespremium_html'];
 
     $this->load->view('template/head',$data);
     $this->load->view('template/header',$data);
