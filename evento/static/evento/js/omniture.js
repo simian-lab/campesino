@@ -108,11 +108,11 @@ function printPatrocinador(array_id) {
 
   for(var i = 0; i < array_id.length; i++) {
     if(array_id[i] != undefined){
-      s.list1 += array_id[i];
+      s.list1 += ";"+array_id[i];
       if(i < array_id.length - 1){
         s.list1 += ",";
       }
     }
   }
-  s.tl(true,"o","Impresión Patrocinador");
+  s.tl(true,"o","Impresión Retail");
 }
