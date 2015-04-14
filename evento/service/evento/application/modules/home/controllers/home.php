@@ -10,7 +10,7 @@ class Home extends MX_Controller {
     $this->load->library('memcached_library');
   }
 
-  public function index() {
+  public function index($filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos') {
     $data = null;
     $data = get_url_base();
 
@@ -84,10 +84,15 @@ class Home extends MX_Controller {
     $session_id = $this->session->userdata('session_id');
     $session_id = sha1('lista_promos'.$session_id);
 
-    $dataPromociones=modules::run('promociones/promocion/get/load', 'home', $data, '', '','home', 'todos', 'tiendas', 'marcas', 'todos', $session_id);
+    $seed = rand(1, 5);
+    $page = 1;
 
-    $data['promocionespremium_html'] = $dataPromociones;
-    //echo $data['promocionespremium_html'];
+    $data['promocionespremium_html'] = modules::run('promociones/promocion/get/load','premiumhome',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
+
+    //$dataPromociones=modules::run('promociones/promocion/get/load', 'home', $data, '', '','home', 'todos', 'tiendas', 'marcas', 'todos', $session_id);
+
+    //$data['promocionespremium_html'] = $dataPromociones;
+    //var_dump($data['promocionespremium_html']);
 
     $this->load->view('template/head',$data);
     $this->load->view('template/header',$data);

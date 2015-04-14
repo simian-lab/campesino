@@ -205,6 +205,7 @@
     </div><!-- End mini -->
 
     <div class="ofertas-destacadas col-md-12">
+      <h3>OFERTAS <small>DESTACADAS</small></h3>
       <?php echo $promocionespremium_html ?>
     </div>
   </div>
