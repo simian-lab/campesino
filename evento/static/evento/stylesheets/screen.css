@@ -1706,3 +1706,864 @@ footer .terminos span a {
 #sas_image_10260209 img {
   width: 100%;
 }
+
+/**************************************/
+/**************************************/
+/**      ESTILOS NUEVOS PREHOME      **/
+/**************************************/
+/**************************************/
+
+/* CSS */
+.clear{
+    display: block;
+    width: 100%;
+    margin:0px;
+    clear: both;
+}
+.item-menu-current{
+  background: #ff5d15;
+}
+.wrapper-filter {
+    display: inline-block;
+    background: #f4f4f4;
+    border-top: solid 1px #00b6c9;
+    width: 100%;
+    padding: 17px 0px 16px 0px;
+    position: relative;
+    border-bottom: solid 1px #00b6c9;
+    border-left: #f4f4f4 solid 1px;
+    border-right: solid 1px #f4f4f4;
+}
+.wrapper-filter .filter{
+}
+.wrapper-filter .item-filter label{
+  display:block;
+  width:100%;
+  color:#00b6c9;
+  font-size: 15px;
+  margin: 0px 0px 0px 6px;
+}
+.wrapper-filter .item-filter select{
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    color: #696969;
+    -webkit-appearance: none;
+    height: 30px;
+    margin: 0px;
+    border: 1px solid #d8d7d7;
+    outline: none;
+    background: #FFF url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/arrow-select.jpg') no-repeat 97% center;
+    padding: 0px 0px 0px 3px;
+}
+.wrapper-filter .button-search{
+  padding:0px;
+}
+.wrapper-filter input[type="submit"]{
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+    background: #00b6c9;
+    margin: 15px 0px 0px 0px;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    color: #FFF;
+    border: none;
+    outline: none;
+}
+.wrapper-filter img.extra-left {
+    display: block;
+    position: absolute;
+    left: -12px;
+    top: -1px;
+}
+.wrapper-filter img.extra-right {
+    display: block;
+    position: absolute;
+    right: -12px;
+    top: -1px;
+}
+.important-brand{
+
+}
+.important-brand h2{
+    color: #00b6c9;
+    display: block;
+    width: 100%;
+    border-top: solid 1px #00b6c9;
+    border-bottom: solid 1px #00b6c9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.3em 0em;
+    line-height: 1;
+    margin: 0em 0em 1em 0em;
+}
+.important-brand h2 small{
+    color: #00b6c9;
+    font-size: 24px;
+    font-weight: normal;
+}
+.important-brand .wrapper-box{
+    margin: 0em 0em 1.2em 0em;
+}
+.important-brand .wrapper-box .box{
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.important-brand .wrapper-box a{
+    display: block;
+    border: solid 1px #d7d7d7;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.important-brand .wrapper-box a img{
+    max-width: 204px;
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    max-height: 115px;
+}
+.important-brand .wrapper-box a:hover span{
+  left: -0.3%;
+}
+.important-brand .wrapper-box a span{
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    color: #FFF;
+    font-size: 15px;
+    width: 101%;
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: -80%;
+    -kebkit-transition: left 0.2s ease-out;
+    -moz-transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out;
+    padding: 0.5em 0em 0.5em 0.7em;
+}
+.important-brand {
+    margin: 0em 0em 0em 0em;
+}
+hr{
+    border-top: solid 1px #d7d7d7;
+    width: 97%;
+}
+.publicidad{
+    display: block;
+
+    margin: 0em 0em 0em 0em;
+}
+.publicidad .box{
+    display: block;
+
+    margin: 1em 0em 1em 0em;
+}
+.publicidad .box a{
+  text-decoration:none;
+  display: block;
+}
+.publicidad .box a:hover p{
+  text-decoration:none;
+}
+.publicidad .box a p{
+    color: #636363;
+
+    font-size: 10px;
+    border-right: 1px solid #00b6c9;
+    border-top: 1px solid #00b6c9;
+    border-left: 1px solid #00b6c9;
+    padding: 0.5em 0em 0.4em 0.5em;
+    text-transform: uppercase;
+}
+.publicidad .box a img{
+    max-width: 297px;
+    width: 100%;
+    max-height: 100px;
+}
+/*Comercios Destacados*/
+.comercios{
+
+}
+.comercios h2{
+    color: #00b6c9;
+    display: block;
+    width: 100%;
+    border-top: solid 1px #00b6c9;
+    border-bottom: solid 1px #00b6c9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.3em 0em;
+    line-height: 1;
+    margin: 0em 0em 1em 0em;
+}
+.comercios h2 small{
+    color: #00b6c9;
+    font-size: 24px;
+    font-weight: normal;
+}
+.comercios .wrapper-box{
+    margin: 0em 0em 1.2em 0em;
+}
+.comercios .wrapper-box .box{
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0em 0em 1.8em 0em;
+    position: relative;
+}
+.comercios .wrapper-box a{
+    display: block;
+    border: solid 1px #d7d7d7;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.comercios .wrapper-box a img{
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    max-width: 132px;
+    max-height: 74px;
+}
+.comercios .wrapper-box a:hover span{
+  left: -0.3%;
+}
+.comercios .wrapper-box a span{
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    color: #FFF;
+    font-size: 15px;
+    width: 101%;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: -70%;
+    -kebkit-transition: left 0.2s ease-out;
+    -moz-transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out;
+    padding: 0.5em 0em 0.5em 0.7em;
+}
+.comercios {
+    margin: 1em 0em 0em 0em;
+}
+/*Marcas Participantes*/
+.brands{
+
+}
+.brands h2{
+    color: #00b6c9;
+    display: block;
+    width: 100%;
+    border-top: solid 1px #00b6c9;
+    border-bottom: solid 1px #00b6c9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.3em 0em;
+    line-height: 1;
+    margin: 0em 0em 1em 0em;
+}
+.brands h2 small{
+    color: #00b6c9;
+    font-size: 24px;
+    font-weight: normal;
+}
+.brands .wrapper-box{
+    margin: 0em 0em 1.2em 0em;
+}
+.brands .wrapper-box .box{
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0em 0em 1.8em 0em;
+    position: relative;
+}
+.brands .wrapper-box a{
+    display: block;
+    border: solid 1px #d7d7d7;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 2;
+}
+.brands .wrapper-box a img{
+    width: 100%;
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    max-width: 126px;
+}
+.brands .wrapper-box a:hover span{
+  left: -0.3%;
+}
+.brands .wrapper-box a span{
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    color: #FFF;
+    font-size: 15px;
+    width: 101%;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: -70%;
+    -kebkit-transition: left 0.2s ease-out;
+    -moz-transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out;
+    padding: 0.5em 0em 0.5em 0.7em;
+}
+.brands {
+    margin: 1em 0em 0em 0em;
+}
+/* mini */
+.mini{
+
+}
+.mini h2{
+    color: #00b6c9;
+    display: block;
+    width: 100%;
+    border-top: solid 1px #00b6c9;
+    border-bottom: solid 1px #00b6c9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.3em;
+    line-height: 1;
+    margin: 0em 0em 1em 0em;
+}
+.mini h2 small{
+    color: #00b6c9;
+    font-size: 24px;
+    font-weight: normal;
+}
+.mini .wrapper-box{
+    display: block;
+    margin: 0em 0em 1.2em 0em;
+    width: 12.5%;
+    float: left;
+    padding: 0px 0.7em;
+}
+.mini .wrapper-box .box{
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0em 0em 1.8em 0em;
+    position: relative;
+}
+.mini .wrapper-box a{
+    display: block;
+    border: solid 1px #d7d7d7;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.mini .wrapper-box a img{
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+}
+.mini .wrapper-box a:hover span{
+  left: -0.3%;
+}
+.mini .wrapper-box a span{
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    color: #FFF;
+    font-size: 15px;
+    width: 140%;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    left: -100%;
+    -kebkit-transition: left 0.2s ease-out;
+    -moz-transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out;
+    padding: 0.5em 0em 0.5em 0.5em;
+}
+.mini {
+    margin: 1em 0em 0em 0em;
+}
+
+.menu-tabs {
+    display: inline-block;
+    width: 100%;
+    margin: 1em 0em 0.8em;
+}
+
+.menu-tabs ul {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+}
+
+.menu-tabs ul li {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 80px;
+    text-align: center;
+    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tabiv.png') no-repeat 0px top;
+}
+.menu-tabs ul li a:hover{
+  text-decoration:none;
+}
+.menu-tabs ul li a {
+    display: block;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 2.3em 0em 1.1em;
+    color: #FFF;
+    text-shadow: 1px 1px 2px #007884;
+}
+
+.menu-tabs ul li.active {
+    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tab-activeiv.png') center 0px no-repeat;
+}
+.menu-tabs ul li.active a{
+    font-size: 23px;
+    text-shadow: 1px 1px 2px #b4cdd0;
+    color: #00b6c9;
+    padding: 1.7em 0em 0.7em;
+}
+/**/
+.ofertas-destacadas h3{
+    color: #00b6c9;
+    display: block;
+    width: 100%;
+    border-top: solid 1px #00b6c9;
+    border-bottom: solid 1px #00b6c9;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.3em 0em;
+    line-height: 1;
+    margin: 0em 0em 1em 0em;
+}
+.ofertas-destacadas h3 small{
+    color: #00b6c9;
+    font-size: 24px;
+    font-weight: normal;
+}
+.link.red {
+  background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/bg-button-red.jpg') left top no-repeat #b9363c;
+}
+.link.red, .link.orange {
+  border: 1px solid white;
+  color: white;
+  display: block;
+  font-family: "Conv_MyriadPro-Bold";
+  font-size: 0.938em;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 152px;
+}
+.link {
+  padding: 9px 32px;
+}
+.ofertas-destacadas ul li{
+  margin-bottom: 10px;
+  z-index: 8;
+}
+@media screen and (min-width: 1025px) {
+  /* line 720, ../sass/screen.scss */
+  .ofertas-destacadas ul li:hover {
+    cursor: pointer;
+  }
+  /* line 723, ../sass/screen.scss */
+  .ofertas-destacadas ul li:hover figure .overlay{
+    display: block;
+  }
+  /* line 727, ../sass/screen.scss */
+  .ofertas-destacadas ul li:hover article{
+    background-color: #f1f6f6;
+    background-image: -webkit-gradient linear, 0% 0%, 0% 100%, from(white), to(#e3eded);
+    background-image: -webkit-linear-gradient top, white, #e3eded;
+    background-image: -moz-linear-gradient top, white, #e3eded;
+    background-image: -ms-linear-gradient top, white, #e3eded;
+    background-image: -o-linear-gradient top, white, #e3eded;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient
+      (startColorStr='$from-color', EndColorStr='$to-color')";
+  }
+  /* line 729, ../sass/screen.scss */
+  .ofertas-destacadas ul li:hover article .desc{
+    color: #787878;
+  }
+  /* line 736, ../sass/screen.scss */
+  .ofertas-destacadas ul li:active figure .overlay{
+    display: block;
+  }
+}
+/* line 742, ../sass/screen.scss */
+.ofertas-destacadas ul li figure{
+  border: 1px solid #00b6c9;
+  max-height: 343px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+/* line 748, ../sass/screen.scss */
+.ofertas-destacadas ul li figure .overlay{
+  background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/bg-hover.png') repeat;
+  display: none;
+  height: 345px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 756, ../sass/screen.scss */
+.ofertas-destacadas ul li figure .overlay p{
+  color: white;
+  display: block;
+  font-size: 0.813em;
+  line-height: 20px;
+  margin: 0 auto;
+  margin-bottom: 20%;
+  margin-top: 13%;
+  text-align: center;
+  width: 70%;
+}
+/* line 767, ../sass/screen.scss */
+.ofertas-destacadas ul li figure .overlay a{
+  color: white;
+  font-family: "Conv_MyriadPro-Bold";
+  font-size: 0.938em;
+  text-transform: uppercase;
+}
+/* line 773, ../sass/screen.scss */
+.ofertas-destacadas ul li figure .overlay .marca{
+  bottom: 20px;
+  height: 35px;
+  position: absolute;
+  right: 19px;
+  width: 96%;
+}
+/* line 779, ../sass/screen.scss */
+.ofertas-destacadas ul li figure .overlay .marca .isologo{
+  display: inline-block;
+  color: white;
+  float: right;
+  margin-right: 10px;
+  margin-top: 8px;
+  vertical-align: top;
+}
+/* line 787, ../sass/screen.scss */
+.ofertas-destacadas ul li figure .overlay .marca .visa_logo{
+  display: inline-block;
+  float: right;
+}
+/* line 793, ../sass/screen.scss */
+.ofertas-destacadas ul li figure img{
+  vertical-align: top;
+  width: 100%;
+}
+/* line 798, ../sass/screen.scss */
+.ofertas-destacadas ul li article{
+  background-color: #454646;
+  border: 1px solid #00b6c9;
+  border-top: 0;
+  height: 88px;
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  /* line 798, ../sass/screen.scss */
+  .ofertas-destacadas ul li article{
+    height: auto;
+  }
+}
+/* line 807, ../sass/screen.scss */
+.ofertas-destacadas ul li article .info, .ofertas-destacadas ul li article .desc{
+  padding: 5px 10px;
+}
+/* line 810, ../sass/screen.scss */
+.ofertas-destacadas ul li article .info, .ofertas-destacadas ul li article .desc{
+  width: 100%;
+}
+/* line 813, ../sass/screen.scss */
+.ofertas-destacadas ul li article .info{
+  border-bottom: 1px solid #00b6c9;
+}
+/* line 815, ../sass/screen.scss */
+.ofertas-destacadas ul li article .info h2{
+  color: #00b6c9;
+  font-family: "Conv_MyriadPro-Bold";
+  font-size: 0.813em;
+  text-transform: uppercase;
+}
+/* line 822, ../sass/screen.scss */
+.ofertas-destacadas ul li article .desc{
+  border-right: none;
+  border-top: none;
+  color: white;
+  font-size: 0.875em;
+}
+/* line 827, ../sass/screen.scss */
+.ofertas-destacadas ul li article .desc p{
+  height: 33px;
+}
+@media screen and (max-width: 992px) {
+  /* line 827, ../sass/screen.scss */
+  .ofertas-destacadas ul li article .desc p{
+    height: auto;
+  }
+}
+/* line 833, ../sass/screen.scss */
+.ofertas-destacadas ul li article .desc .ahora{
+  color: #00b6c9;
+  font-family: "Conv_MyriadPro-Bold";
+  font-size: 1.313em;
+}
+/* line 838, ../sass/screen.scss */
+.ofertas-destacadas ul li article .desc .antes{
+  font-size: 0.938em;
+  text-decoration: line-through;
+}
+/* line 846, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .info,
+.ofertas-destacadas ul li.descuento article .desc{
+  max-width: 335px;
+}
+/* line 849, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .porcentaje{
+  background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/bg-percent.jpg') no-repeat;
+  border: 1px solid #00b6c9;
+  border-bottom: none;
+  bottom: 0;
+  color: white;
+  height: 97px;
+  padding: 7px 6px;
+  position: absolute;
+  text-align: center;
+  right: 5px;
+  width: 113px;
+}
+.clear-box{
+  padding-left:0px;
+  padding-right:0px;
+}
+@media screen and (max-width: 992px) {
+  /* line 849, ../sass/screen.scss */
+  .ofertas-destacadas ul li.descuento article .porcentaje{
+    height: 56px;
+    top: -10px;
+    width: 90px;
+  }
+}
+/* line 866, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .porcentaje img{
+  position: absolute;
+  top: -2px;
+  left: -6px;
+}
+/* line 871, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .porcentaje .num{
+  font-family: "Conv_MyriadPro-Bold";
+  font-size: 2.8em;
+}
+@media screen and (max-width: 992px) {
+  /* line 871, ../sass/screen.scss */
+  .ofertas-destacadas ul li.descuento article .porcentaje .num{
+    font-size: 1.5em;
+  }
+}
+/* line 878, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .porcentaje span{
+  vertical-align: top;
+}
+@media screen and (max-width: 992px) {
+  /* line 878, ../sass/screen.scss */
+  .ofertas-destacadas ul li.descuento article .porcentaje span{
+    font-size: 0.8em;
+  }
+}
+/* line 883, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .porcentaje span.signo{
+  display: inline-block;
+  font-size: 1.5em;
+  margin-top: 8px;
+}
+@media screen and (max-width: 992px) {
+  /* line 883, ../sass/screen.scss */
+  .ofertas-destacadas ul li.descuento article .porcentaje span.signo{
+    font-size: 0.875em;
+    margin-top: 3px;
+  }
+}
+@media screen and (max-width: 1007px) {
+  /* line 901, ../sass/screen.scss */
+  .ofertas-destacadas ul li {
+    height: 430px;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 901, ../sass/screen.scss */
+  .ofertas-destacadas ul li {
+    padding: 0px;
+    height: auto;
+  }
+}
+/* line 908, ../sass/screen.scss */
+.ofertas-destacadas ul li article {
+  padding-bottom: 10px;
+}
+/* line 910, ../sass/screen.scss */
+.ofertas-destacadas ul li article .link {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  /* line 910, ../sass/screen.scss */
+  .ofertas-destacadas ul li article .link {
+    display: block;
+
+    font-size: 0.7em;
+}
+}
+/* line 919, ../sass/screen.scss */
+.ofertas-destacadas ul li.descuento article .desc {
+  max-width: 75%;
+}
+.ancla {
+    display: block;
+    position: fixed;
+    right: 20px;
+    top: 280px;
+    z-index: 10;
+}
+.ancla .esc{
+  display: block;
+}
+.ancla .mov{
+  display: none;
+}
+
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
+
+
+
+
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */
+    @media only screen and (min-width : 320px) {
+
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
+
+
+
+    /*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+
+    }
+
+    /* Extra Small Devices, Phones */
+    @media only screen and (max-width : 480px) {
+        .wrapper-filter img.extra-left,
+        .wrapper-filter img.extra-right{display: none;}
+        .important-brand h2,
+        .important-brand h2 small,
+        .comercios h2,
+        .comercios h2 small{font-size:16px}
+        .wrapper-filter .button-search{ padding: inherit;}
+        .wrapper-filter .item-filter select{height: 40px; margin: 0em 0em 1.5em 0em;}
+        .wrapper-filter input[type="submit"]{height:40px;}
+        .mini .wrapper-box{ width:33.3%;}
+        .important-brand .wrapper-box a span{
+    left: 0px;
+    bottom: -30px;
+}
+.important-brand .wrapper-box .box{
+    padding: 0em 0em 2em 0em;
+}
+.comercios .wrapper-box .box,
+.mini .wrapper-box .box{
+    max-height: 68px;
+
+    padding: 0em 0em 5.5em 0em;
+}
+.comercios .wrapper-box .box img,
+.mini .wrapper-box .box img{
+    padding: 0.9em 0em;
+}
+.comercios .wrapper-box a span,
+.mini .wrapper-box a span{
+    bottom: -20px;
+    left: -1px;
+    text-align: center;
+    background-image: none;
+    font-size: 11px;
+    width: 103%;
+    padding: 0.5em 0em 0.5em 0em;
+}
+.menu-tabs ul li{
+    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-tabs.png') 0px 12px;
+    background-size: cover;
+}
+.menu-tabs ul li.active{
+    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-active-movil.png');
+    background-size: cover;
+}
+.menu-tabs ul li.active a{
+  font-size: 1.2em;
+}
+.menu-tabs ul{ font-size:11px;}
+.brands{padding:0px;}
+.brands .wrapper-box a span{
+    left: 0px;
+}
+.menu-tabs{
+    margin-bottom: 0px;
+}
+.ancla {
+    right: 0px;
+    top: 10%;
+}
+.ancla .esc{display: none;}
+.ancla .mov{display: block;width: 80%;margin: 0px auto;}
+    }
+    /* Custom, iPhone Retina */
+    @media only screen and (max-width : 320px) {
+
+    }

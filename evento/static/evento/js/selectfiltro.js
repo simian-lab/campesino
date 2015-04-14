@@ -1,14 +1,17 @@
 $(document).ready(function() {
-       $( "#selectTienda" ).change(function() {
-            //onChangeFilter(this.value)
-            url="/descuentos/"+ base_descuentosfiltro.categoria +'/'+ this.value;
-            window.location.href = url;
+
+        $( "#selectTienda" ).change(function() {
+          //onChangeFilter(this.value)
+          if($( "#selectMarca" ).val() != 'marcas'){
+            $( "#selectMarca" ).val('marcas');
+          }
         });
 
         $( "#selectMarca" ).change(function() {
-            //onChangeFilter(this.value)
-            url="/descuentos/"+ base_descuentosfiltro.categoria +'/tiendas/'+this.value;
-            window.location.href = url;
+          //onChangeFilter(this.value)
+          if($( "#selectTienda" ).val() != 'tiendas'){
+            $( "#selectTienda" ).val('tiendas');
+          }
         });
 
         $( "#selectSubCategoria" ).change(function() {
@@ -17,12 +20,28 @@ $(document).ready(function() {
             window.location.href = url;
         });
 
+        $( "#buscarOfertaButton").click(function() {
+          var tienda = 'tiendas';
+          if( $( "#selectTienda" ).val() != ''){
+            tienda = $( "#selectTienda" ).val();
+          }
+          var url="/descuentos/"+ base_descuentosfiltro.categoria + '/' + tienda;
+          var marca = $( "#selectMarca" ).val();
+          if( marca != 'marcas'){
+            url = url + '/' + marca;
+          }
+          if(tienda=='tiendas' && marca == 'marcas'){
+            url = "/descuentos/";
+          }
+          window.location.href = url;
+        });
+
 
       var contadorTienda = 0;
       var contadorMarca = 0;
       var contadorSubcategoria = 0;
       $('#selectTienda').find('option').each( function() {
-          
+
           if ($(this).val() == base_descuentosfiltro.tienda) {
                  $("#selectTienda")[0].selectedIndex = contadorTienda;
                  return false;
