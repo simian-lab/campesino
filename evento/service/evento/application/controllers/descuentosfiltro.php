@@ -72,23 +72,18 @@ class Descuentosfiltro extends MX_Controller
         $data['meta_url'] = $meta_url;
         $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
 
-/* mencache menu*/
+        /* mencache menu*/
 		    $data['menu_html'] =modules::run('menu/menu/load',$data);
-/* mencache menu*/
+        /* mencache menu*/
 
-
- /*if($this->agent->is_mobile() ){
-               $data['ads_movil'] ='movil';
-  }*/
-/* mencache promociones*/
+        /*if($this->agent->is_mobile() ){
+          $data['ads_movil'] ='movil';
+        }*/
+        /* mencache promociones*/
         $seed= rand(1, 5);
         $page=1;
 
-
-
         $data['smart_id'] ='todaslascategorias';
-
-
 
         $data['tiendas'] = modules::run('promociones/tienda/load',$data);
         $data['marcas'] = modules::run('promociones/marca/load',$data);
@@ -102,10 +97,12 @@ class Descuentosfiltro extends MX_Controller
         if($tienda != 'tiendas' || $marca != 'marcas'){
           $data['publicidad_home'] = 0;
         }
-        if($filtro=='home'){
+
+        if($filtro=='home') {
             $data['promocionespremium_html'] =modules::run('promociones/promocion/get/load','premiumhome',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
             $data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','premiumgenerales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
-        }else{
+        }
+        else{
             $data['promocionespremium_html'] =modules::run('promociones/promocion/get/load','premiumhomepremium',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
             $data['promocionesgenerales_html'] =modules::run('promociones/promocion/get/load','generales',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria);
             $data['publicidad_categoria'] = 1;
