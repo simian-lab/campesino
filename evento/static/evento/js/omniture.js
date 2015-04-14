@@ -4,7 +4,7 @@ function onClickPublicidad(nombre, posicion){
 	s.events = "event20";
 	s.eVar27 = nombre;
 	s.eVar30 = posicion;
-	s.tl(true,"o","Click publicidad"); 
+	s.tl(true,"o","Click publicidad");
 }
 
 function onClickCarrousel(nombre, posicion){
@@ -13,7 +13,7 @@ function onClickCarrousel(nombre, posicion){
 	s.events = "event12";
 	s.eVar19 = nombre;
 	s.eVar18 = posicion;
-	s.tl(true,"o","Click carrousel"); 
+	s.tl(true,"o","Click carrousel");
 }
 
 function onClickRegistro(nombre, posicion){
@@ -22,7 +22,7 @@ function onClickRegistro(nombre, posicion){
 	s.events = "event5";
 	s.eVar16 = nombre;
 	s.eVar34 = posicion;
-	s.tl(true,"o","Registro"); 
+	s.tl(true,"o","Registro");
 }
 
 function onClickCerrarLightbox(nombre){
@@ -30,7 +30,7 @@ function onClickCerrarLightbox(nombre){
 	s.linkTrackEvents = "event17";
 	s.events = "event17";
 	s.eVar16 = nombre;
-	s.tl(true,"o","Cerrar lightbox"); 
+	s.tl(true,"o","Cerrar lightbox");
 }
 
 function onClickSocialMedia(canal){
@@ -38,7 +38,7 @@ function onClickSocialMedia(canal){
 	s.linkTrackEvents = "event22";
 	s.events = "event22";
 	s.eVar13 = canal;
-	s.tl(true,"o","Click Redes Sociales"); 
+	s.tl(true,"o","Click Redes Sociales");
 }
 
 function onClickArticulo(nombre, posicion){
@@ -47,7 +47,7 @@ function onClickArticulo(nombre, posicion){
 	s.events = "event15";
 	s.eVar17 = nombre;
 	s.eVar18 = posicion;
-	s.tl(true,"o","Click Articulo"); 
+	s.tl(true,"o","Click Articulo");
 }
 
 function onClickShare(canal, nombre){
@@ -55,7 +55,7 @@ function onClickShare(canal, nombre){
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
 	s.eVar13 = canal;
-	s.tl(true,"o","Compartir"); 
+	s.tl(true,"o","Compartir");
 }
 
 function onSubmitFormulario(nombre){
@@ -63,7 +63,7 @@ function onSubmitFormulario(nombre){
 	s.linkTrackEvents = "event21";
 	s.events = "event21";
 	s.eVar16 = nombre;
-	s.tl(true,"o","Formulario"); 
+	s.tl(true,"o","Formulario");
 }
 
 function onChangeFilter(valor){
@@ -71,7 +71,7 @@ function onChangeFilter(valor){
 	s.linkTrackEvents = "event11";
 	s.events = "event11";
 	s.eVar25 = valor;
-	s.tl(true,"o","Filtro"); 
+	s.tl(true,"o","Filtro");
 }
 
 function onClickOferta(id, posicion, tienda){
@@ -81,7 +81,7 @@ function onClickOferta(id, posicion, tienda){
 	s.eVar38 = posicion;
 	s.eVar39 = tienda;
 	s.products = ";"+id;
-	s.tl(true,"o","Click en Oferta"); 
+	s.tl(true,"o","Click en Oferta");
 }
 
 function printOferta(array_id){
@@ -89,7 +89,7 @@ function printOferta(array_id){
 	s.linkTrackEvents = "event41";
 	s.events = "event41";
 	s.products = '';
-	for(var i = 0; i < array_id.length; i++){
+	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined){
 			s.products += ";"+array_id[i];
 			if(i < array_id.length - 1){
@@ -97,5 +97,22 @@ function printOferta(array_id){
 			}
 		}
 	}
-	s.tl(true,"o","Impresión Oferta"); 
+	s.tl(true,"o","Impresión Oferta");
+}
+
+function printPatrocinador(array_id) {
+  s.linkTrackVars = "events,list1";
+  s.linkTrackEvents = "event42";
+  s.events = "event42";
+  s.list1 = '';
+
+  for(var i = 0; i < array_id.length; i++) {
+    if(array_id[i] != undefined){
+      s.list1 += array_id[i];
+      if(i < array_id.length - 1){
+        s.list1 += ",";
+      }
+    }
+  }
+  s.tl(true,"o","Impresión Patrocinador");
 }
