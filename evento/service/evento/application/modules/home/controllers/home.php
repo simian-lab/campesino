@@ -35,6 +35,10 @@ class Home extends MX_Controller {
     $data['descuentosfiltro']=json_encode($dataFiltrado);
     $data['jsonParam']=get_app_data();
 
+    $data['s_pageName']="evento: home";
+    $data['s_channel']="evento: home";
+    $data['s_prop1']= '';
+
     $data['tiendas'] = modules::run('promociones/tienda/load',$data);
     $data['marcas'] = modules::run('promociones/marca/load',$data);
 
