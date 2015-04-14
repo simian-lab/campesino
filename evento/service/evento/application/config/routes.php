@@ -38,8 +38,8 @@
 |
 */
 
-$route['default_controller'] = 'descuentosfiltro/todos';
-$route['404_override'] = ''; 
+$route['default_controller'] = 'home/index';
+$route['404_override'] = '';
 $route['contenidos'] = "contenidos/todos";
 $route['contenidos/(:num)'] = "contenidos/todos/$1";
 $route['articulo/(:any)'] = "detalleArticulo/todos/$1";
