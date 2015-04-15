@@ -424,6 +424,13 @@ class Auth_ion extends Main {
 		$ally_id = $post_array['ally_id'];
 		$user_id = $primary_key;
 		if($ally_id != '') {
+			$query = 'SELECT PAT_ID FROM PAT_PATROCINADORES WHERE PAT_ALIADO = ? AND PAT_ID != ?';
+			$result = $this->db->query($query, array($user_id, $ally_id));
+			foreach($result->result() as $row) {
+				$pat_id = $row->PAT_ID;
+				$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = NULL WHERE PAT_ID = ?';
+				$this->db->query($query, array($pat_id));
+			}
 			$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = ? WHERE PAT_ID = ?';
 			$this->db->query($query, array($user_id, $ally_id));
 		}

@@ -21,6 +21,17 @@ class Aliados extends Main {
 			$user_id = $post_array['PAT_ALIADO'];
 			$ally_id = $primary_key;
 			if($user_id != '') {
+				$query = 'SELECT PAT_ID FROM PAT_PATROCINADORES WHERE PAT_ALIADO = ? AND PAT_ID != ?';
+				$result = $this->db->query($query, array($user_id, $ally_id));
+				$ids = $result->result();
+				if(!empty($ids)) {
+					foreach($ids as $id) {
+						$pat_id = $id->PAT_ID;
+						$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = NULL WHERE PAT_ID = ?';
+						$this->db->query($query, array($pat_id));
+					}
+				}
+
 				$query = 'UPDATE admin_users SET ally_id = ? WHERE id = ?';
 				$this->db->query($query, array($ally_id, $user_id));
 			}
