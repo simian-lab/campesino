@@ -53,23 +53,6 @@ class Aliado extends Main {
 	}
 
 	/**
-	 * [valid_url_format description]
-	 * @param  [type] $array [description]
-	 * @return [type]        [description]
-	 */
-	function valid_url_format($array){
-		$str = $array["PAT_URL_EVENT"];
-		$pattern = '_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS';
-
-		if (!preg_match($pattern, $str)){
-			$this->form_validation->set_message('valid_url_format', 'The URL you entered is not correctly formatted.');
-			return FALSE;
-		}
-
-			return TRUE;
-	}
-
-	/**
 	 * Main function.
 	 */
 	function index() {
@@ -85,7 +68,6 @@ class Aliado extends Main {
 		$crud = new grocery_CRUD();
 
 		$crud->callback_after_update(array($this,'send_notification_email'));
-		$crud->callback_before_update(array($this,'valid_url_format'));
 		$crud->columns('PAT_NOMBRE','PAT_URL_EVENT');
 		$crud->display_as('PAT_NOMBRE', 'Nombre');
 		$crud->display_as('PAT_LOGO','Imagen <br>(100x73) - png');
@@ -119,6 +101,23 @@ class Aliado extends Main {
 				$this->data['encabezado']='Error';
 				$this->error('example', $this->data, $breadcrums);
 				die();
+			}
+		}
+
+		if($state == 'insert_validation' || $state == 'update_validation'){
+			$url = $this->input->post('PAT_URL_EVENT');
+
+			if (! filter_var($url, FILTER_VALIDATE_URL)){
+
+				echo '<textarea>'.json_encode(
+												array(
+															'success'	=>	false,
+															'error_message'	=>"<p>URL inválida</p>",
+															"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+													)
+											).'</textarea>';
+				die();
+
 			}
 		}
 
