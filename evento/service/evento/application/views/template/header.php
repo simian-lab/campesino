@@ -12,7 +12,7 @@
       </div>
       <div class="col-md-3 col-sm-6 col-xs-6 title">
         <?php if(!$this->agent->is_mobile()): ?>
-          <span>¡Hasta media noche!</span>
+          <span>¡Dos días de las mejores ofertas!</span>
         <?php endif; ?>
       </div>
       <div class="col-md-6 marcas">
