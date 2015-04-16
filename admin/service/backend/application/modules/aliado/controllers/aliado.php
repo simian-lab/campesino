@@ -27,7 +27,7 @@ class Aliado extends Main {
 
 		$this->db->select('email');
 		$this->db->from('admin_users');
-		$this->db->join('admin_users_groups', 'admin_users_groups.user_id =admin_users.id AND admin_users_groups.group_id =3'); //AND admin_users_groups.group_id = 5
+		$this->db->join('admin_users_groups', 'admin_users_groups.user_id = admin_users.id AND admin_users_groups.group_id in (3,4)'); //AND admin_users_groups.group_id = 5
 
 		$query = $this->db->get();
 		$resp =  $query->result_array();
@@ -52,6 +52,17 @@ class Aliado extends Main {
 		return true;
 	}
 
+	function before_update($post_array) {
+		if($post_array["PAT_URL_EVENT"] != "") {
+			$post_array['PAT_HASH_URL_EVENT'] = $this->generar_hash($post_array["PAT_URL_EVENT"]);
+		}
+		return $post_array;
+	}
+
+	function generar_hash($string) {
+		return sha1($string);
+	}
+
 	/**
 	 * Main function.
 	 */
@@ -68,13 +79,15 @@ class Aliado extends Main {
 		$crud = new grocery_CRUD();
 
 		$crud->callback_after_update(array($this,'send_notification_email'));
+		$crud->callback_before_update(array($this, 'before_update'));
 		$crud->columns('PAT_NOMBRE','PAT_URL_EVENT');
 		$crud->display_as('PAT_NOMBRE', 'Nombre');
 		$crud->display_as('PAT_LOGO','Imagen <br>(204x113) max 100kb');
 		$crud->display_as('PAT_URL_EVENT','Url evento (http://www.example.com)');
 		$crud->field_type('PAT_URL_EVENT','STRING');
 		$crud->field_type('PAT_NOMBRE','hidden');
-		$crud->fields('PAT_NOMBRE', 'PAT_LOGO', 'PAT_URL_EVENT');
+		$crud->field_type('PAT_HASH_URL_EVENT','invisible');
+		$crud->fields('PAT_NOMBRE', 'PAT_LOGO', 'PAT_URL_EVENT', 'PAT_HASH_URL_EVENT');
 		$crud->set_field_upload('PAT_LOGO','multimedia/aliados/');
 		$crud->set_language('spanish');
 		$crud->set_theme('flexigrid');
