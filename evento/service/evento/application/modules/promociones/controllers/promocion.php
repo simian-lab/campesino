@@ -39,31 +39,31 @@ class Promocion extends MX_Controller {
     switch ($tipo) {
       case 'premium':
       $idtipo = 2;
-      $cant = 4;
+      $cant = NUMERO_PROMOCIONES_PREMIUM;
       $templateContainer='containerPromocionesPremium';
       break;
 
       case 'premiumhome':
       $idtipo = 2;
-      $cant = 4;
+      $cant = NUMERO_PROMOCIONES_PREMIUM;
       $templateContainer='containerPromocionesPremium';
       break;
 
       case 'premiumgenerales':
       $idtipo = array(3,1);
-      $cant = 6;
+      $cant = NUMERO_PROMOCIONES_GENERALES;
       $templateContainer = 'containerPromocionesGenerales';
       break;
 
       case 'premiumhomepremium':
       $idtipo = array(3,2);
-      $cant = 4;
+      $cant = NUMERO_PROMOCIONES_PREMIUM;
       $templateContainer = 'containerPromocionesPremium';
       break;
 
       default:
       $idtipo = 1;
-      $cant = 6;
+      $cant = NUMERO_PROMOCIONES_GENERALES;
       $templateContainer='containerPromocionesGenerales';
       break;
     }

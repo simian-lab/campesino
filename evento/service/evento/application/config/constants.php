@@ -36,6 +36,13 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
+/*
+New constants to define the number of promotions per page.
+
+— Added on Apr 16, 2015 by ivan@simian.co
+*/
+define('NUMERO_PROMOCIONES_PREMIUM',    36);
+define('NUMERO_PROMOCIONES_GENERALES',    36);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
