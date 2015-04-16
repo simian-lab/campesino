@@ -1,4 +1,4 @@
-<div class="item-filter col-md-3">
+<div class="item-filter col-md-3 col-sm-3">
   <label>Marca</label>
   <select name="selectMarca" id="selectMarca">
     <option value="marcas">Marca</option>

@@ -1831,18 +1831,18 @@ footer .terminos span a {
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
     display: block;
     position: absolute;
     bottom: -1px;
-    left: -80%;
+    left: -84%;
     -kebkit-transition: left 0.2s ease-out;
     -moz-transition: left 0.2s ease-out;
     transition: left 0.2s ease-out;
-    padding: 0.5em 0em 0.5em 0.7em;
+    padding: 0.3em 0em 0.3em 0.7em;
 }
 .important-brand {
     margin: 0em 0em 0em 0em;
@@ -1933,18 +1933,18 @@ hr{
   left: -0.3%;
 }
 .comercios .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
     display: block;
     position: absolute;
-    bottom: -30px;
-    left: -70%;
+    bottom: -24px;
+    left: -80%;
     -kebkit-transition: left 0.2s ease-out;
     -moz-transition: left 0.2s ease-out;
     transition: left 0.2s ease-out;
-    padding: 0.5em 0em 0.5em 0.7em;
+    padding: 0.3em 0em 0.3em 0.7em;
 }
 .comercios {
     margin: 1em 0em 0em 0em;
@@ -2073,18 +2073,18 @@ hr{
   left: -0.3%;
 }
 .mini .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 95% center;
     color: #FFF;
     font-size: 15px;
     width: 140%;
     display: block;
     position: absolute;
-    bottom: -30px;
-    left: -100%;
+    bottom: -24px;
+    left: -109%;
     -kebkit-transition: left 0.2s ease-out;
     -moz-transition: left 0.2s ease-out;
     transition: left 0.2s ease-out;
-    padding: 0.5em 0em 0.5em 0.5em;
+    padding: 0.3em 0em 0.3em 0.5em;
 }
 .mini {
     margin: 1em 0em 0em 0em;
@@ -2490,78 +2490,120 @@ hr{
 
     /* Medium Devices, Desktops */
     @media only screen and (max-width : 992px) {
+      .important-brand .wrapper-box a span{
+          background-size: 12%;
+          padding: 0.3em 0em 0.3em 0.7em;
+      }
+      .comercios .wrapper-box a span{
 
+      }
+      .mini .wrapper-box a span{
+      }
+      .menu-tabs ul li.active,
+      .menu-tabs ul li{
+        background-size: contain;
+        background-position: 0px 75%;
+      }
+      .ancla{
+        right: 0px;
+      }
     }
 
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
-
+      .important-brand .wrapper-box a span{
+        background-size: inherit;
+      }
+      .comercios .wrapper-box a span{
+        background-size: inherit;
+      }
+      .mini .wrapper-box a span{
+        background-size: inherit;
+      }
     }
 
     /* Extra Small Devices, Phones */
     @media only screen and (max-width : 480px) {
         .wrapper-filter img.extra-left,
-        .wrapper-filter img.extra-right{display: none;}
+        .wrapper-filter img.extra-right{
+          display: none;
+        }
         .important-brand h2,
         .important-brand h2 small,
         .comercios h2,
-        .comercios h2 small{font-size:16px}
-        .wrapper-filter .button-search{ padding: inherit;}
-        .wrapper-filter .item-filter select{height: 40px; margin: 0em 0em 1.5em 0em;}
-        .wrapper-filter input[type="submit"]{height:40px;}
-        .mini .wrapper-box{ width:33.3%;}
+        .comercios h2 small{
+          font-size:16px
+        }
+        .wrapper-filter .button-search{
+          padding: inherit;
+        }
+        .wrapper-filter .item-filter select{
+          height: 40px;
+          margin: 0em 0em 1.5em 0em;
+        }
+        .wrapper-filter input[type="submit"]{
+          height:40px;
+        }
+        .mini .wrapper-box{
+          width:33.3%;
+        }
         .important-brand .wrapper-box a span{
-    left: 0px;
-    bottom: -30px;
-}
-.important-brand .wrapper-box .box{
-    padding: 0em 0em 2em 0em;
-}
-.comercios .wrapper-box .box,
-.mini .wrapper-box .box{
-    max-height: 68px;
-
-    padding: 0em 0em 5.5em 0em;
-}
-.comercios .wrapper-box .box img,
-.mini .wrapper-box .box img{
-    padding: 0.9em 0em;
-}
-.comercios .wrapper-box a span,
-.mini .wrapper-box a span{
-    bottom: -20px;
-    left: -1px;
-    text-align: center;
-    background-image: none;
-    font-size: 11px;
-    width: 103%;
-    padding: 0.5em 0em 0.5em 0em;
-}
-.menu-tabs ul li{
-    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-tabs.png') 0px 12px;
-    background-size: cover;
-}
-.menu-tabs ul li.active{
-    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-active-movil.png');
-    background-size: cover;
-}
-.menu-tabs ul li.active a{
-  font-size: 1.2em;
-}
-.menu-tabs ul{ font-size:11px;}
-.brands{padding:0px;}
-.brands .wrapper-box a span{
-    left: 0px;
-}
-.menu-tabs{
-    margin-bottom: 0px;
-}
-.ancla {
-    right: 0px;
-    top: 10%;
-}
-.ancla .esc{display: none;}
-.ancla .mov{display: block;width: 80%;margin: 0px auto;}
+          left: -1px;
+          bottom: -25px;
+        }
+        .important-brand .wrapper-box .box{
+          padding: 0em 0em 2em 0em;
+        }
+        .comercios .wrapper-box .box,
+        .mini .wrapper-box .box{
+          max-height: 68px;
+          padding: 0em 0em 5.5em 0em;
+        }
+        .comercios .wrapper-box .box img,
+        .mini .wrapper-box .box img{
+          padding: 0.9em 0em;
+        }
+        .comercios .wrapper-box a span,
+        .mini .wrapper-box a span{
+          bottom: -20px;
+          left: -1px;
+          text-align: center;
+          background-image: none;
+          font-size: 11px;
+          width: 103%;
+          padding: 0.5em 0em 0.5em 0em;
+        }
+        .menu-tabs ul li{
+          background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-tabs.png') 0px 12px;
+          background-size: cover;
+        }
+        .menu-tabs ul li.active{
+          background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-active-movil.png');
+          background-size: cover;
+        }
+        .menu-tabs ul li.active a{
+          font-size: 1.2em;
+        }
+        .menu-tabs ul{ font-size:11px;}
+        .brands{padding:0px;}
+        .brands .wrapper-box a span{
+          left: 0px;
+        }
+        .menu-tabs{
+          margin-bottom: 0px;
+        }
+        .ancla {
+          right: 0px;
+          top: 10%;
+        }
+        .ancla .esc{
+          display: none;
+        }
+        .ancla .mov{
+          display: block;
+          width: 80%;
+          margin: 0px auto;
+        }
     }
     /* Custom, iPhone Retina */
     @media only screen and (max-width : 320px) {

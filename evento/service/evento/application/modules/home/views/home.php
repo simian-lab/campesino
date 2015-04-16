@@ -21,16 +21,14 @@
   </div>
   <div class="container">
     <div class="wrapper-filter">
-      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-left-filter.png" class="extra-left" style="
-      ">
-      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right" style="
-      ">
-      <div class="filter row col-md-10 col-md-offset-1">
+      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-left-filter.png" class="extra-left">
+      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right">
+      <div class="filter row col-md-12">
         <?php echo $tiendas ?>
 
         <?php echo $marcas ?>
 
-        <div class="button-search col-md-2 col-xs-12">
+        <div class="button-search col-md-3 col-xs-12">
           <input type="submit" name="Buscar" value="Buscar">
         </div>
       </div><!--End Filter-->

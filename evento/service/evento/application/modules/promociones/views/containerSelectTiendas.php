@@ -1,4 +1,4 @@
-<div class="item-filter col-md-3">
+<div class="item-filter col-md-3 col-sm-3 col-md-offset-1 col-sm-offset-1">
   <label>Tienda</label>
   <select name="selectTienda" id="selectTienda">
     <option value="tiendas">Tienda</option>
