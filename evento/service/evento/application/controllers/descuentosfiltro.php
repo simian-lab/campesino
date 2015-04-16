@@ -41,10 +41,7 @@ class Descuentosfiltro extends MX_Controller
 
     $this->collectorpromo->int($session_id);
 
-    $dataFiltrado= array('categoria' =>$categoria
-      ,'tienda' =>$tienda
-      ,'marca' =>$marca
-      ,'subcategoria' =>$subcategoria  );
+    $dataFiltrado = array( 'categoria' => $categoria ,'tienda' => $tienda ,'marca' => $marca, 'subcategoria' => $subcategoria );
 
     $data = null;
     $data = get_url_base();
@@ -73,8 +70,8 @@ class Descuentosfiltro extends MX_Controller
       $data['ads_movil'] ='movil';
     }*/
     /* mencache promociones*/
-    $seed= rand(1, 5);
-    $page=1;
+    $seed = rand(1, 5);
+    $page = 1;
 
     $data['smart_id'] ='todaslascategorias';
 
