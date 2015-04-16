@@ -9,7 +9,7 @@ $(document).ready(function() {
     pagination: '.navigation',
     next: '.next-posts a',
     loader: '<img src="' + base_url_static +'/img/loading.gif"/>',
-    triggerPageThreshold: 90,
+    triggerPageThreshold: 10000000, // 10 million? see explanation below
     trigger: 'Cargar más items',
     onPageChange: function(pageNum, pageUrl, scrollOffset) {},
     onLoadItems: function(items){
@@ -48,7 +48,7 @@ $(document).ready(function() {
     pagination: '.navigation-no-destacados',
     next: '.next-posts-no-destacados a',
     loader: '<img src="' + base_url_static +'/img/loading.gif"/>',
-    triggerPageThreshold: 90,
+    triggerPageThreshold: 10000000, // 10 million? see explanation below
     trigger: 'Cargar más items',
     onPageChange: function(pageNum, pageUrl, scrollOffset) {},
     onLoadItems: function(items) {
@@ -76,3 +76,5 @@ $(document).ready(function() {
     }
   });
 });
+
+/* 10 Million seems hacky... well, it actually is. But it was the easiest way to guarantee that we will never see the "load more" button. */
