@@ -47,6 +47,25 @@ class Aliados extends Main {
 
 			$crud = new grocery_CRUD();
 
+			$state = $crud->getState();
+
+			if($state == 'insert_validation' || $state == 'update_validation'){
+				$url = $this->input->post('PAT_URL_EVENT');
+
+				if (! filter_var($url, FILTER_VALIDATE_URL)){
+
+					echo '<textarea>'.json_encode(
+													array(
+																'success'	=>	false,
+																'error_message'	=>"<p>URL inválida</p>",
+																"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+														)
+												).'</textarea>';
+					die();
+
+				}
+			}
+
 			$crud->set_theme('flexigrid');
 			$crud->set_table('PAT_PATROCINADORES');
 			$crud->set_subject('patrocinadores');
@@ -64,7 +83,7 @@ class Aliados extends Main {
 			$crud->unset_read();
 			$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
-			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO');
+			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO', 'PAT_HASH_URL_EVENT');
 			$crud->required_fields('PAT_NOMBRE','PAT_LOGO','PAT_FECHA','VISIBILITY');
 			$crud->columns('PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO');
 
@@ -99,9 +118,10 @@ class Aliados extends Main {
 				$packages = array('Sin paquete', 'Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
 				$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
 				$crud->field_type('PAT_ALIADO', 'dropdown', $allies);
+				$crud->field_type('PAT_HASH_URL_EVENT','invisible');
 
-				$crud->callback_before_insert(array($this,'limpiar_datos'));
-				$crud->callback_before_update(array($this,'limpiar_datos'));
+				$crud->callback_before_insert(array($this,'before'));
+				$crud->callback_before_update(array($this,'before'));
 				$crud->callback_after_update(array($this, 'update_ally_on_user'));
 
 				$crud->set_language('spanish');
@@ -116,6 +136,19 @@ class Aliados extends Main {
 
 
 				/* ****************************************************************************************** */
+
+				function before($post_array) {
+					$this->limpiar_datos($post_array);
+
+					if($post_array["PAT_URL_EVENT"] != "") {
+						$post_array['PAT_HASH_URL_EVENT'] = $this->generar_hash($post_array["PAT_URL_EVENT"]);
+					}
+					return $post_array;
+				}
+
+				function generar_hash($string) {
+					return sha1($string);
+				}
 
 				function mover_imagen($uploader_response,$field_info, $files_to_upload){
 					$this->load->library('image_moo');
