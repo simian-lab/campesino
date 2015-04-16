@@ -34,6 +34,9 @@ class Aliados extends Main {
 
 				$query = 'UPDATE admin_users SET ally_id = ? WHERE id = ?';
 				$this->db->query($query, array($ally_id, $user_id));
+			} else {
+				$query = 'UPDATE admin_users SET ally_id = NULL WHERE ally_id = ?';
+				$this->db->query($query, array($ally_id));
 			}
 		}
 
@@ -42,27 +45,36 @@ class Aliados extends Main {
 		{
 			$this->load->model('aliados_model');
 
-			$allies = $this->aliados_model->get_user_aliados();
-			asort($allies);
-
 			$crud = new grocery_CRUD();
 
 			$state = $crud->getState();
 
+			if($state == "edit") {
+				$state_info = $crud->getStateInfo();
+				$allies = $this->aliados_model->get_user_aliados($state_info->primary_key);
+			} else if ($state == "add") {
+				$allies = $this->aliados_model->get_user_aliados("add");
+			} else {
+				$allies = $this->aliados_model->get_user_aliados('list');
+			}
+			asort($allies);
+
 			if($state == 'insert_validation' || $state == 'update_validation'){
 				$url = $this->input->post('PAT_URL_EVENT');
 
-				if (! filter_var($url, FILTER_VALIDATE_URL)){
+				if($url != "") {
+					if (! filter_var($url, FILTER_VALIDATE_URL)){
 
-					echo '<textarea>'.json_encode(
-													array(
-																'success'	=>	false,
-																'error_message'	=>"<p>URL inválida</p>",
-																"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
-														)
-												).'</textarea>';
-					die();
+						echo '<textarea>'.json_encode(
+														array(
+																	'success'	=>	false,
+																	'error_message'	=>"<p>URL inválida</p>",
+																	"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+															)
+													).'</textarea>';
+						die();
 
+					}
 				}
 			}
 
