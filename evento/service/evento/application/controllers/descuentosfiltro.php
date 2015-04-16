@@ -166,7 +166,13 @@ class Descuentosfiltro extends MX_Controller
     return;
 
   }
-
+  public function marcas_por_tienda($tienda = 'tiendas'){
+    $data = null;
+    $data = get_url_base();
+    $data['tienda'] = $tienda;
+    echo modules::run('promociones/marca/marcasOptions',$data);
+    return;
+  }
   public function page($tipo='premium', $filtro='home', $categoria='todos', $tienda='tiendas', $marca='marcas', $subcategoria='todos', $seed='', $page='') {
 
     $data = null;
