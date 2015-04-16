@@ -53,11 +53,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -101,11 +101,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -124,11 +124,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -146,11 +146,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -168,11 +168,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -195,11 +195,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>

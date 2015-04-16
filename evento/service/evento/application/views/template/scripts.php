@@ -4,6 +4,7 @@
 <script src="<?php echo $base_url_static;?>js/selectfiltro.js"></script>
 <script src="<?php echo $base_url_static;?>js/omniture.js"></script>
 <script src="<?php echo $base_url_static;?>js/share.js"></script>
+<script src="<?php echo $base_url_static;?>js/jquery.lazyload.min.js"></script>
 
 <script type="text/javascript">
   $(document).ready(function(){
@@ -59,7 +60,10 @@
       console.log("Duplicados: " + duplicados);
     }
 
-
+    // Lazy load images
+    $(".lazy-load-image").lazyload({
+      effect: 'fadeIn'
+    });
   });
 </script>
 

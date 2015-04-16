@@ -12,7 +12,7 @@ $(document).ready(function() {
     triggerPageThreshold: 10000000, // 10 million? see explanation below
     trigger: 'Cargar más items',
     onPageChange: function(pageNum, pageUrl, scrollOffset) {},
-    onLoadItems: function(items){
+    onLoadItems: function(items) {
       $.each(items, function() {
         id_destacados.push($(this).attr('data-id'));
       });
@@ -39,6 +39,12 @@ $(document).ready(function() {
       if(duplicados.length > 1){
         console.log("Duplicados: " + duplicados);
       }
+    },
+    onRenderComplete: function(items) {
+      // Make sure new images are lazy loaded too
+      $(".lazy-load-image").lazyload({
+        effect: 'fadeIn'
+      });
     }
   });
 
@@ -73,6 +79,12 @@ $(document).ready(function() {
       if(duplicados.length > 1) {
         console.log("Duplicados: " + duplicados);
       }
+    },
+    onRenderComplete: function(items) {
+      // Make sure new images are lazy loaded too
+      $(".lazy-load-image").lazyload({
+        effect: 'fadeIn'
+      });
     }
   });
 });
