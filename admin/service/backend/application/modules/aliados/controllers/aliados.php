@@ -53,7 +53,7 @@ class Aliados extends Main {
 
 			$crud->display_as('PAT_ID','TID')
 			->display_as('PAT_NOMBRE','Nombre')
-			->display_as('PAT_LOGO','Imagen <br>(100x73) - png')
+			->display_as('PAT_LOGO','Imagen <br>(204x113) max 100kb')
 			->display_as('PAT_IDENTIFICADOR','Identificador Smart')
 			->display_as('PAT_FECHA','Fecha')
 			->display_as('PAT_URL','Url')

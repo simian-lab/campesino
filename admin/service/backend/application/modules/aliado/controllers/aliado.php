@@ -70,7 +70,7 @@ class Aliado extends Main {
 		$crud->callback_after_update(array($this,'send_notification_email'));
 		$crud->columns('PAT_NOMBRE','PAT_URL_EVENT');
 		$crud->display_as('PAT_NOMBRE', 'Nombre');
-		$crud->display_as('PAT_LOGO','Imagen <br>(100x73) - png');
+		$crud->display_as('PAT_LOGO','Imagen <br>(204x113) max 100kb');
 		$crud->display_as('PAT_URL_EVENT','Url evento (http://www.example.com)');
 		$crud->field_type('PAT_URL_EVENT','STRING');
 		$crud->field_type('PAT_NOMBRE','hidden');
