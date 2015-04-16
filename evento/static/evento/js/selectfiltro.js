@@ -9,9 +9,6 @@ $(document).ready(function() {
 
         $( "#selectMarca" ).change(function() {
           //onChangeFilter(this.value)
-          if($( "#selectTienda" ).val() != 'tiendas'){
-            $( "#selectTienda" ).val('tiendas');
-          }
         });
 
         $( "#selectSubCategoria" ).change(function() {

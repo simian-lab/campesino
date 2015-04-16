@@ -515,7 +515,15 @@ class Auth_ion extends Main {
 				$crud->field_type('active','dropdown',array('0' => 'No','1' => 'Si'));
 
 				$allies = $this->ion_users_model->get_allies();
-				asort($allies);
+
+				if(is_array($allies)) {
+					asort($allies);
+				} else {
+					$allies = array(
+						NULL => 'No se encontraron resultados'
+					);
+				}
+
 				$crud->field_type('ally_id', 'dropdown', $allies);
 
  			// Defino regla de validacion

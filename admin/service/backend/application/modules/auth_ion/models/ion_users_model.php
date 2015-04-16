@@ -99,10 +99,10 @@ class Ion_users_model extends CI_Model
 	 * @return array Get an array of allies with its ids and names.
 	 */
 	function get_allies() {
-		$this->db->select('PAT_ID, PAT_NOMBRE');
-    $this->db->from('PAT_PATROCINADORES');
 
-    $results = $this->db->get();
+		$query = 'SELECT PAT_ID, PAT_NOMBRE FROM PAT_PATROCINADORES WHERE (PAT_PAQUETE > 0) AND (PAT_ALIADO IS NULL) AND (VISIBILITY = 1)';
+
+    $results = $this->db->query($query);;
     $allies='';
     foreach ($results->result() as $row) {
 			$allies[$row->PAT_ID] = $row->PAT_NOMBRE;
