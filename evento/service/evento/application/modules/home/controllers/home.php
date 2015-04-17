@@ -5,6 +5,7 @@ class Home extends MX_Controller {
     parent::__construct();
     $this->load->library('user_agent');
     $this->load->helper('get_app_data');
+    $this->load->library('CollectorPromo');
     $this->load->model('home_model');
     $this->load->library('session');
     $this->load->library('memcached_library');
@@ -13,6 +14,19 @@ class Home extends MX_Controller {
   public function index($filtro='home',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos') {
     $data = null;
     $data = get_url_base();
+
+    $this->load->helper('url');
+    $this->load->library('user_agent');
+
+    $dataFiltrado = array( 'categoria' => $categoria ,'tienda' => $tienda ,'marca' => $marca, 'subcategoria' => $subcategoria );
+
+    $session_id = $this->session->userdata('session_id');
+    $session_id = sha1('lista_promos'.$session_id);
+
+    $this->collectorpromo->int($session_id);
+
+    $data['jsonParam']=get_app_data();
+    $data['descuentosfiltro']=json_encode($dataFiltrado);
 
     $meta_title = 'Cyberlunes';
     $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
@@ -99,11 +113,6 @@ class Home extends MX_Controller {
     $page = 1;
 
     $data['promocionespremium_html'] = modules::run('promociones/promocion/get/load','premiumhome',$data,$page,$seed,$filtro,$categoria,$tienda,$marca,$subcategoria,$session_id);
-
-    //$dataPromociones=modules::run('promociones/promocion/get/load', 'home', $data, '', '','home', 'todos', 'tiendas', 'marcas', 'todos', $session_id);
-
-    //$data['promocionespremium_html'] = $dataPromociones;
-    //var_dump($data['promocionespremium_html']);
 
     $this->load->view('template/head',$data);
     $this->load->view('template/header',$data);
