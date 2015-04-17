@@ -78,6 +78,13 @@ class Home extends MX_Controller {
       }
     }
 
+    shuffle($oro_plus);
+    shuffle($oro);
+    shuffle($plata);
+    shuffle($bronce);
+    shuffle($platino);
+    shuffle($general);
+
     $data['patrocinadores_oro_plus'] = $oro_plus;
     $data['patrocinadores_oro'] = $oro;
     $data['patrocinadores_plata'] = $plata;

@@ -424,11 +424,20 @@ class Auth_ion extends Main {
 		$ally_id = $post_array['ally_id'];
 		$user_id = $primary_key;
 		if($ally_id != '') {
+			$query = 'SELECT PAT_ID FROM PAT_PATROCINADORES WHERE PAT_ALIADO = ? AND PAT_ID != ?';
+			$result = $this->db->query($query, array($user_id, $ally_id));
+			foreach($result->result() as $row) {
+				$pat_id = $row->PAT_ID;
+				$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = NULL WHERE PAT_ID = ?';
+				$this->db->query($query, array($pat_id));
+			}
 			$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = ? WHERE PAT_ID = ?';
 			$this->db->query($query, array($user_id, $ally_id));
+		} else {
+			$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = NULL WHERE PAT_ALIADO = ?';
+			$this->db->query($query, array($user_id));
 		}
 	}
-
 
 	//USUARIOS
 	function list_user()
@@ -514,14 +523,24 @@ class Auth_ion extends Main {
 
 				$crud->field_type('active','dropdown',array('0' => 'No','1' => 'Si'));
 
-				$allies = $this->ion_users_model->get_allies();
+				$state = $crud->getState();
 
-				if(is_array($allies)) {
-					asort($allies);
-				} else {
-					$allies = array(
-						NULL => 'No se encontraron resultados'
-					);
+				$allies = "";
+
+				if($state == "edit") {
+					$state_info = $crud->getStateInfo();
+
+					$allies = $this->ion_users_model->get_allies($state_info->primary_key);
+
+					if(is_array($allies)) {
+						asort($allies);
+					} else {
+						$allies = array(
+							NULL => 'No se encontraron resultados'
+						);
+					}
+				} else if($state == "add") {
+					$allies = $this->ion_users_model->get_allies("add");
 				}
 
 				$crud->field_type('ally_id', 'dropdown', $allies);
@@ -540,6 +559,7 @@ class Auth_ion extends Main {
 				    $crud->set_relation_n_n('users_groups', 'admin_users_groups', 'admin_groups', 'user_id', 'group_id', 'name',null,array('id !='=>'1') );
 				 }
 
+				$crud->callback_after_insert(array($this, 'update_user_on_ally'));
 				$crud->callback_after_update(array($this, 'update_user_on_ally'));
 				$crud->callback_before_insert(array($this,'encrypt_password_callback'));
 				$crud->callback_before_update(array($this,'encrypt_password_callback'));

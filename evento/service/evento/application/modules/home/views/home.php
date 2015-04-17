@@ -21,16 +21,14 @@
   </div>
   <div class="container">
     <div class="wrapper-filter">
-      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-left-filter.png" class="extra-left" style="
-      ">
-      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right" style="
-      ">
-      <div class="filter row col-md-10 col-md-offset-1">
+      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-left-filter.png" class="extra-left">
+      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right">
+      <div class="filter row col-md-12">
         <?php echo $tiendas ?>
 
         <?php echo $marcas ?>
 
-        <div class="button-search col-md-2 col-xs-12">
+        <div class="button-search col-md-3 col-xs-12">
           <input type="submit" name="Buscar" value="Buscar">
         </div>
       </div><!--End Filter-->
@@ -55,11 +53,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -103,11 +101,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -126,11 +124,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -148,11 +146,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -170,11 +168,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
@@ -197,11 +195,11 @@
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
             <?php else: ?>
-              <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
             <?php endif; ?>
           </div>
         </div>
