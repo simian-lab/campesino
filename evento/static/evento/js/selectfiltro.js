@@ -34,6 +34,7 @@ $(document).ready(function() {
           if(tienda=='tiendas' && marca == 'marcas'){
             url = "/descuentos/";
           }
+          onClickBuscar(tienda, marca);
           window.location.href = url;
         });
 
