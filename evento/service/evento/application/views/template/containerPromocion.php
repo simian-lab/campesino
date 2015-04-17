@@ -26,7 +26,7 @@
 
         <?php echo $subCategorias ?>
 
-        <div class="button-search col-md-3 col-xs-12" id="buscarOfertaButton" name="buscarOfertaButton">
+        <div class="button-search <?php if(empty($subCategorias)) { echo 'col-md-3'; } else {echo 'col-md-1';} ?> col-xs-12" id="buscarOfertaButton" name="buscarOfertaButton">
           <input type="submit" name="Buscar" value="Buscar">
         </div>
       </div><!--End Filter-->
