@@ -21,14 +21,14 @@ class promocion_model extends CI_Model {
            $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
            //$this->db->order_by("PRO_FECHA",'desc', FALSE);
            $this->db->limit($cant,$offset);
-           
+
            $query = $this->db->get();
            //print_r($this->db->last_query());die();
-           if ($query->num_rows() > 0)                
+           if ($query->num_rows() > 0)
                 return $query->result_array();
 
             return NULL;
-        
+
     }
 
     /*function get_tienda_id($id_user){
@@ -36,7 +36,7 @@ class promocion_model extends CI_Model {
         $this->db->from('TIE_TIENDAS');
         $this->db->where('TIE_ID_USER', $id_user);
         $query = $this->db->get();
-        if ($query->num_rows() > 0)                
+        if ($query->num_rows() > 0)
             return $query->result_array();
 
         return NULL;
@@ -50,7 +50,7 @@ class promocion_model extends CI_Model {
            $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
            $this->db->where_in('PRO_SRC_ID', $idtipo);
            $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
-           
+
            if($categoria!='todos')
                 $this->db->where('CAT_ID', $categoria);
 
@@ -69,14 +69,14 @@ class promocion_model extends CI_Model {
            $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
            //$this->db->order_by("PRO_FECHA",'desc', FALSE);
            $this->db->limit($cant,$offset);
-           
+
            $query = $this->db->get();
 
-           if ($query->num_rows() > 0)                
+           if ($query->num_rows() > 0)
                 return $query->result_array();
 
             return NULL;
-        
+
     }
 
 
@@ -85,63 +85,63 @@ class promocion_model extends CI_Model {
    function getCategoriaSlug($slug) {
             $this->db->select('CAT_ID');
             $this->db->from('CAT_CATEGORIA');
-            $this->db->where('CAT_SLUG', $slug);            
+            $this->db->where('CAT_SLUG', $slug);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function getSubCategoriaSlug($slug) {
             $this->db->select('SUB_ID');
             $this->db->from('SUB_SUBCATEGORIA');
-            $this->db->where('SUB_SLUG', $slug);            
+            $this->db->where('SUB_SLUG', $slug);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function getTiendaSlug($slug) {
             $this->db->select('TIE_ID_USER');
             $this->db->from('TIE_TIENDAS');
-            $this->db->where('TIE_SLUG', $slug);            
+            $this->db->where('TIE_SLUG', $slug);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function getMarcaSlug($slug) {
             $this->db->select('MAR_ID ');
             $this->db->from('MAR_MARCAS');
-            $this->db->where('MAR_SLUG', $slug);            
+            $this->db->where('MAR_SLUG', $slug);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
-   
+
 
 
     public function get_tiendas(){
@@ -153,7 +153,7 @@ class promocion_model extends CI_Model {
 
            $query = $this->db->get();
 
-           if ($query->num_rows() > 0)                
+           if ($query->num_rows() > 0)
                 return $query->result_array();
 
             return NULL;
@@ -166,11 +166,11 @@ class promocion_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('MAR_MARCAS');
         $this->db->where('VISIBILITY', '1');
-        $this->db->order_by("MAR_NOMBRE", "asc"); 
+        $this->db->order_by("MAR_NOMBRE", "asc");
 
            $query = $this->db->get();
 
-           if ($query->num_rows() > 0)                
+           if ($query->num_rows() > 0)
                 return $query->result_array();
 
             return NULL;
@@ -183,31 +183,56 @@ class promocion_model extends CI_Model {
         $this->db->from('SUB_SUBCATEGORIA');
         $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
         $this->db->join('CAT_CATEGORIA', 'CAT_CATEGORIA.CAT_ID = SXC_SUBCATEGORIAXCATEGORIA.CAT_ID');
-        $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1'); 
-        $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc"); 
+        $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1');
+        $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc");
 
            $query = $this->db->get();
 
-           if ($query->num_rows() > 0)                
+           if ($query->num_rows() > 0)
                 return $query->result_array();
 
             return NULL;
 
     }
 
+    function get_marcas_by_tienda($tienda='tiendas',$idPromosRepetido='') {
+      $this->db->select('MAR_NOMBRE,MAR_SLUG');
+      $this->db->distinct();
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
+      $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
+      $this->db->join('MAR_MARCAS', 'MAR_MARCAS.MAR_ID = PRO_PROMOCIONES.MAR_ID');
+
+      if($tienda!='tiendas')
+      $this->db->where('PRO_AUTOR', $tienda);
+
+      $this->db->where('MAR_SLUG !=', 'no-aplica');
+      if(!empty($idPromosRepetido))
+      $this->db->where_not_in('PRO_ID', $idPromosRepetido);
+
+      $this->db->order_by("MAR_NOMBRE", "asc");
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0)
+      return $query->result_array();
+
+      return NULL;
+
+    }
+
     function getByHash($hash) {
         $this->db->select('PRO_ID,PRO_NOMBRE,PRO_HASH,PRO_URL');
         $this->db->from('PRO_PROMOCIONES');
-        $this->db->where('PRO_HASH', $hash);            
+        $this->db->where('PRO_HASH', $hash);
         $this->db->limit(1);
-       
+
         $query = $this->db->get();
 
-        if ($query->num_rows() > 0)                
+        if ($query->num_rows() > 0)
             return $query->row_array();
 
         return NULL;
-        
+
     }
 
 
