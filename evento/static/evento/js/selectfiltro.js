@@ -2,7 +2,7 @@ $(document).ready(function() {
 
         $( "#selectTienda" ).change(function() {
           //onChangeFilter(this.value)
-          $.get("marcas/" + this.value, function(data, status){
+          $.get('http://' + window.location.host + "/marcas/" + this.value, function(data, status){
             $( "#selectMarca" ).empty().append(data);
           });
           if($( "#selectMarca" ).val() != 'marcas'){
