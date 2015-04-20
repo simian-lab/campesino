@@ -1805,27 +1805,34 @@ footer .terminos span a {
 }
 .important-brand .wrapper-box{
     margin: 0em 0em 1.2em 0em;
+    height: auto;
+    display: block;
+    position: relative;
 }
 .important-brand .wrapper-box .box{
     overflow: hidden;
     display: block;
     width: 100%;
-    height: 100%;
+    height: 0px;
+    padding-top: 56.8%;
     position: relative;
+    border: solid 1px #d7d7d7;
 }
 .important-brand .wrapper-box a{
     display: block;
-    border: solid 1px #d7d7d7;
+    border: none;
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .important-brand .wrapper-box a img{
-    max-width: 204px;
+    /*max-width: 204px;*/
     width: 100%;
     display: block;
     margin: 0px auto;
-    max-height: 115px;
+    /*max-height: 115px;*/
 }
 .important-brand .wrapper-box a:hover span{
   left: -0.3%;
@@ -1858,7 +1865,7 @@ hr{
 }
 .publicidad .box{
     display: block;
-
+    
     margin: 1em 0em 1em 0em;
 }
 .publicidad .box a{
@@ -1870,7 +1877,7 @@ hr{
 }
 .publicidad .box a p{
     color: #636363;
-
+    
     font-size: 10px;
     border-right: 1px solid #00b6c9;
     border-top: 1px solid #00b6c9;
@@ -1911,40 +1918,47 @@ hr{
     overflow: hidden;
     display: block;
     width: 100%;
-    height: 100%;
-    padding: 0em 0em 1.8em 0em;
+    height: 0px;
+    padding-top: 56.8%;
     position: relative;
+    /* border: solid 1px #d7d7d7; */
+    /* margin-bottom: 22px; */
+    padding-bottom: 22px;
 }
 .comercios .wrapper-box a{
     display: block;
-    border: solid 1px #d7d7d7;
+    border: none;
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* padding-bottom: 22px; */
 }
 .comercios .wrapper-box a img{
     width: 100%;
     display: block;
     margin: 0px auto;
-    max-width: 132px;
-    max-height: 74px;
+    border: solid 1px #d7d7d7;
+    position: relative;
 }
 .comercios .wrapper-box a:hover span{
-  left: -0.3%;
+    left: 0%;
 }
 .comercios .wrapper-box a span{
     background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
+    line-height: 23px;
     width: 101%;
     display: block;
     position: absolute;
-    bottom: -24px;
+    bottom: 0px;
     left: -80%;
     -kebkit-transition: left 0.2s ease-out;
     -moz-transition: left 0.2s ease-out;
     transition: left 0.2s ease-out;
-    padding: 0.3em 0em 0.3em 0.7em;
+    padding: 0em 0em 0em 0.7em;
 }
 .comercios {
     margin: 1em 0em 0em 0em;
@@ -2053,38 +2067,45 @@ hr{
     overflow: hidden;
     display: block;
     width: 100%;
-    height: 100%;
-    padding: 0em 0em 1.8em 0em;
+    height: 0px;
+    padding-top: 56.8%;
     position: relative;
+    /* border: solid 1px #d7d7d7; */
+    padding-bottom: 22px;
 }
 .mini .wrapper-box a{
     display: block;
-    border: solid 1px #d7d7d7;
+    border: none;
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .mini .wrapper-box a img{
     width: 100%;
     display: block;
     margin: 0px auto;
+    border: solid 1px #d7d7d7;
+    position: relative;
 }
 .mini .wrapper-box a:hover span{
-  left: -0.3%;
+  left: 0%;
 }
 .mini .wrapper-box a span{
     background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 95% center;
     color: #FFF;
     font-size: 15px;
+    line-height: 23px;
     width: 140%;
     display: block;
     position: absolute;
-    bottom: -24px;
+    bottom: 0px;
     left: -109%;
     -kebkit-transition: left 0.2s ease-out;
     -moz-transition: left 0.2s ease-out;
     transition: left 0.2s ease-out;
-    padding: 0.3em 0em 0.3em 0.5em;
+    padding: 0em 0em 0em 0.5em;
 }
 .mini {
     margin: 1em 0em 0em 0em;
@@ -2423,7 +2444,7 @@ hr{
   /* line 910, ../sass/screen.scss */
   .ofertas-destacadas ul li article .link {
     display: block;
-
+  
     font-size: 0.7em;
 }
 }
@@ -2454,12 +2475,12 @@ hr{
 
     /*==========  Mobile First Method  ==========*/
 
-    /* Custom, iPhone Retina */
+    /* Custom, iPhone Retina */ 
     @media only screen and (min-width : 320px) {
-
+        
     }
 
-    /* Extra Small Devices, Phones */
+    /* Extra Small Devices, Phones */ 
     @media only screen and (min-width : 480px) {
 
     }
@@ -2494,10 +2515,26 @@ hr{
           background-size: 12%;
           padding: 0.3em 0em 0.3em 0.7em;
       }
+      .comercios .wrapper-box .box {
+        padding-bottom: 16px;
+      }
       .comercios .wrapper-box a span{
-
+          background: #666665 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
+        background-size: auto 80%;
+        font-size: 12px;
+        line-height: 16px;
+        width: 100%;
+        left: -75%;
+      }
+      .mini .wrapper-box .box {
+        padding-bottom: 16px;
       }
       .mini .wrapper-box a span{
+          background: #666665 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
+          font-size: 12px;
+          line-height: 16px;
+          left: -106%;
+          background-size: auto 80%;
       }
       .menu-tabs ul li.active,
       .menu-tabs ul li{
@@ -2511,19 +2548,31 @@ hr{
 
     /* Small Devices, Tablets */
     @media only screen and (max-width : 768px) {
+      .important-brand .wrapper-box {
+        width: 33.33333333333333%;
+      }
       .important-brand .wrapper-box a span{
         background-size: inherit;
       }
       .comercios .wrapper-box a span{
-        background-size: inherit;
+        left: -80%;
+      }
+      .mini .wrapper-box{
+        width:16.666666666666664%;
       }
       .mini .wrapper-box a span{
-        background-size: inherit;
+        
+      }
+      .comercios .wrapper-box {
+        width: 25%;
       }
     }
 
-    /* Extra Small Devices, Phones */
+    /* Extra Small Devices, Phones */ 
     @media only screen and (max-width : 480px) {
+        .important-brand .wrapper-box {
+          width: 100%;
+        }
         .wrapper-filter img.extra-left,
         .wrapper-filter img.extra-right{
           display: none;
@@ -2538,7 +2587,7 @@ hr{
           padding: inherit;
         }
         .wrapper-filter .item-filter select{
-          height: 40px;
+          height: 40px; 
           margin: 0em 0em 1.5em 0em;
         }
         .wrapper-filter input[type="submit"]{
@@ -2549,29 +2598,40 @@ hr{
         }
         .important-brand .wrapper-box a span{
           left: -1px;
-          bottom: -25px;
+          /*bottom: -25px;*/
+          bottom: 0px;
         }
         .important-brand .wrapper-box .box{
-          padding: 0em 0em 2em 0em;
+          /*padding: 0em 0em 2em 0em;*/
         }
         .comercios .wrapper-box .box,
         .mini .wrapper-box .box{
-          max-height: 68px;
-          padding: 0em 0em 5.5em 0em;
+          /*max-height: 68px;
+          padding: 0em 0em 5.5em 0em;*/
+          max-height: inherit;
         }
         .comercios .wrapper-box .box img,
         .mini .wrapper-box .box img{
-          padding: 0.9em 0em;
+          /*padding: 0.9em 0em;*/
         }
         .comercios .wrapper-box a span,
         .mini .wrapper-box a span{
-          bottom: -20px;
-          left: -1px;
+          bottom: 0px;
+          left: 0px;
           text-align: center;
           background-image: none;
           font-size: 11px;
           width: 103%;
-          padding: 0.5em 0em 0.5em 0em;
+          /*padding: 0.5em 0em 0.5em 0em;*/
+          padding: 0px;
+        }
+        .comercios .wrapper-box a span{
+          font-size: 15px;
+          line-height: 19px;
+        }
+        .mini .wrapper-box a span{
+          font-size: 11px;
+          line-height: 15px;
         }
         .menu-tabs ul li{
           background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-tabs.png') 0px 12px;
@@ -2604,8 +2664,23 @@ hr{
           width: 80%;
           margin: 0px auto;
         }
+        .publicidad .box{
+          width: 100%;
+        }
+        .comercios .wrapper-box {
+          width: 33.3%;
+        }
+        .publicidad .box a img {
+          max-width: inherit;
+          width: 100%;
+          height: auto;
+          max-height: inherit;
+        }
+        .mini .wrapper-box .box{
+          padding-bottom: 12px;
+        }
     }
-    /* Custom, iPhone Retina */
+    /* Custom, iPhone Retina */ 
     @media only screen and (max-width : 320px) {
-
+        
     }
