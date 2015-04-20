@@ -134,6 +134,7 @@ class Aliados extends Main {
 
 				$crud->callback_before_insert(array($this,'before'));
 				$crud->callback_before_update(array($this,'before'));
+				$crud->callback_after_insert(array($this, 'update_ally_on_user'));
 				$crud->callback_after_update(array($this, 'update_ally_on_user'));
 
 				$crud->set_language('spanish');

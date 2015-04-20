@@ -74,6 +74,14 @@ function onChangeFilter(valor){
 	s.tl(true,"o","Filtro");
 }
 
+function onClickBuscar(tienda, marca){
+	s.linkTrackVars="events,eVar24,eVar25";
+	s.linkTrackEvents="event11";
+	s.events="event11";
+	s.eVar25=tienda;
+	s.eVar24=marca;
+	s.tl(true,"o","filtro");
+}
 function onClickOferta(id, posicion, tienda){
 	s.linkTrackVars = "events,eVar38,eVar39,products";
 	s.linkTrackEvents = "event36";
