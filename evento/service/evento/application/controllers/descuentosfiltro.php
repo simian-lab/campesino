@@ -75,6 +75,8 @@ class Descuentosfiltro extends MX_Controller
 
     $data['smart_id'] ='todaslascategorias';
 
+    $data['tienda'] = $tienda;
+
     $data['tiendas'] = modules::run('promociones/tienda/load', $data);
     $data['marcas'] = modules::run('promociones/marca/load', $data);
     $data['subCategorias'] = modules::run('promociones/subcategoria/load', $data, $categoria);

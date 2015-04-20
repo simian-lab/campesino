@@ -16,8 +16,7 @@ class marca extends MX_Controller {
 
 	      $this->load->model('promociones/promocion_model');
 
-	      $data['marcas'] = $this->promocion_model->get_marcas();
-
+	      $data['marcas'] = $this->promocion_model->get_marcas_by_tienda($data['tienda']);
 
 	      return $this->load->view('containerSelectMarcas',$data,true);
 
