@@ -43,11 +43,11 @@ class Redireccionamiento extends CI_Controller {
     $result_memcached = $this->memcached_library->get($key_memcached);
 
     if(!$result_memcached) {
-      $result_base =$this->_getPromocionbd($pagehash);
+      $result_base = $this->_getPromocionbd($pagehash);
 
       if(!$result_base) {
-        $this->enviar_email('promoción no válida  , no existente o habilitada',$pagehash);
-        $this->memcached_library->add($key_memcached_novalida, $pagehash,300);
+        $this->enviar_email('promoción no válida, no existente o habilitada', $pagehash);
+        $this->memcached_library->add($key_memcached_novalida, $pagehash, 300);
         show_404();
         return;
       }
@@ -55,8 +55,8 @@ class Redireccionamiento extends CI_Controller {
       $result_base['PRO_URL']= $this->_sanitiseURL($result_base['PRO_URL']);
 
       if (!$result_base['PRO_URL']) {
-        $this->memcached_library->add($key_memcached_novalida, $result_base,300);
-        $this->enviar_email('promoción url no válida',$pagehash,$result_base);
+        $this->memcached_library->add($key_memcached_novalida, $result_base, 300);
+        $this->enviar_email('promoción url no válida', $pagehash, $result_base);
         show_404();
         return;
       }
