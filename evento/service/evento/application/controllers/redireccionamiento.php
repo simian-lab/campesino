@@ -18,23 +18,23 @@ class Redireccionamiento extends CI_Controller {
     $this->load->library('form_validation');
 
     if(!$this->form_validation->required($pagehash)) {
-      $this->enviar_email('parametro url no válido',$pagehash);
+      $this->enviar_email('parametro url no válido', $pagehash);
       show_404();
       return;
     }
     else {
-      if(!$this->form_validation->exact_length($pagehash,40)) {
-        $this->enviar_email('parametro url no válido',$pagehash);
+      if(!$this->form_validation->exact_length($pagehash, 40)) {
+        $this->enviar_email('parametro url no válido', $pagehash);
         show_404();
         return;
       }
     }
 
-    $key_memcached_novalida='lista_no_valida_url_'.$pagehash;
+    $key_memcached_novalida = 'lista_no_valida_url_'.$pagehash;
     $result_memcached_novalida = $this->memcached_library->get($key_memcached_novalida);
 
     if($result_memcached_novalida) {
-      $this->enviar_email('nuevo intento de promoción con dominio no habilitado, ya en la lista memcache de no validas',$pagehash,$result_memcached_novalida,NULL);
+      $this->enviar_email('nuevo intento de promoción con dominio no habilitado, ya en la lista memcache de no válidas', $pagehash, $result_memcached_novalida, NULL);
       show_404();
       return;
     }
