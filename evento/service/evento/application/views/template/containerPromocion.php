@@ -164,13 +164,13 @@
                 sas.call("std", {
                   siteId:  41700, //
                   pageId:  439811, // Página : Cyberlunes/home_contenido
-                  formatId:  12803, // Formato : Megabanner 960x90
+                  formatId:  31982, // Formato : Megabanner 960x90
                   target:  ''   // Segmentación
                 });
               </script>
               <noscript>
-                <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home_contenido&fmtid=12803&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
-                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home_contenido&fmtid=12803&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+                <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home_contenido&fmtid=31982&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
+                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home_contenido&fmtid=31982&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                 </noscript>
               </div>
             </div>
