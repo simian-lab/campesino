@@ -16,26 +16,17 @@
         <?php endif; ?>
       </div>
       <div class="col-md-6 marcas">
-        <!--<figure>
-          <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
-          </figure>
-          <figure>
-          <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Header')"><img src="<?php echo $base_url_static;?>img/digital_mobile.png" alt="Vive digital" /></a>
-          </figure>
-          <figure>
-          <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Header')"><img src="<?php echo $base_url_static;?>img/colombia_mobile.png" alt="Gobierno de Colombia" /></a>
-        </figure>-->
         <figure>
-          <a href="https://www.grupoaval.com" target="_blank"><img src="<?php echo $base_url_static;?>img/aval.png" alt="Grupo Aval" /></a>
+          <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Header')"><img src="<?php echo $base_url_static;?>img/aval.png" alt="Grupo Aval" /></a>
         </figure>
         <figure>
-          <a href="http://www.mintic.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
+          <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
         </figure>
         <figure>
-          <a href="http://www.vivedigital.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/digital.png" alt="Vive digital" /></a>
+          <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Header')"><img src="<?php echo $base_url_static;?>img/digital.png" alt="Vive digital" /></a>
         </figure>
         <figure>
-          <a href="http://wsp.presidencia.gov.co" target="_blank"><img src="<?php echo $base_url_static;?>img/colombia.png" alt="Gobierno de Colombia" /></a>
+          <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Header')"><img src="<?php echo $base_url_static;?>img/colombia.png" alt="Gobierno de Colombia" /></a>
         </figure>
       </div>
     </div>
