@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-9 col-md-9">
+      <div class="col-lg-9 col-md-9 menu-section">
         <nav class="navbar-collapse collapse">
           <ul id="menuTop">
             <li class="item-menu-current">
@@ -56,7 +56,7 @@
           </ul>
         </nav>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3 box-right">
         <div class="sponsor right">
           <span>Evento de:</span>
           <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Menu')"><img src="<?php echo $base_url_static;?>img/camara-de-comercio.png" alt=""></a>
