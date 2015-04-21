@@ -1,4 +1,4 @@
-<div class="item-filter col-md-3">
+<div class="item-filter col-sm-3 col-xs-12">
   <label>Subcategoría</label>
   <select>
     <option value="todos">SubCategoría</option>
