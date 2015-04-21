@@ -75,21 +75,51 @@
 
     <div class="publicidad col-xs-12">
       <div class="box col-sm-4">
-        <a href="" target="_blank">
+        <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
           <p>Publicidad</p>
-          <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/publicidad1.jpg">
+          <script type="text/javascript">
+          sas.call("std", {
+                  siteId:  41700, //
+                  pageId:  282275, // Página : Cyberlunes/home
+                  formatId:  9611, // Formato : Primer Boton 300x100 300x100
+                  target:  ''   // Segmentación
+                });
+          </script>
+          <noscript>
+            <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]" border="0" alt="" />
+          </noscript>
         </a>
       </div>
       <div class="box col-sm-4">
-        <a href="" target="_blank">
+        <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
           <p>Publicidad</p>
-          <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/publicidad1.jpg">
+          <script type="text/javascript">
+          sas.call("std", {
+                      siteId:  41700, //
+                      pageId:  282275, // Página : Cyberlunes/home
+                      formatId:  9608, // Formato : Segundo Boton 300x100 300x100
+                      target:  ''   // Segmentación
+                    });
+          </script>
+            <noscript>
+              <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=9608&visit=m&tmstp=[timestamp]" border="0" alt="" />
+            </noscript>
         </a>
       </div>
       <div class="box col-sm-4">
-        <a href="" target="_blank">
+        <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
           <p>Publicidad</p>
-          <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/publicidad1.jpg">
+          <script type="text/javascript">
+          sas.call("std", {
+                      siteId:  41700, //
+                      pageId:  282275, // Página : Cyberlunes/home
+                      formatId:  11772, // Formato : Tercer Boton 300x100 300x100
+                      target:  ''   // Segmentación
+                    });
+          </script>
+          <noscript>
+            <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=11772&visit=m&tmstp=[timestamp]" border="0" alt="" />
+          </noscript>
         </a>
       </div>
       <div class="clear"></div>
