@@ -46,10 +46,15 @@ class Redireccionamiento extends CI_Controller {
       $result_base = $this->_getPromocionbd($pagehash);
 
       if(!$result_base) {
-        $this->enviar_email('promoción no válida, no existente o habilitada', $pagehash);
-        $this->memcached_library->add($key_memcached_novalida, $pagehash, 300);
-        show_404();
-        return;
+        // If we didn't find a promotion, we look for a sponsor
+        $result_base = $this->_getPatrocinadorBd($pagehash);
+
+        if(!$result_base) {
+          $this->enviar_email('patrocinador o promoción no válida, inexistente o inhabilitada', $pagehash);
+          $this->memcached_library->add($key_memcached_novalida, $pagehash, 300);
+          show_404();
+          return;
+        }
       }
 
       $result_base['PRO_URL']= $this->_sanitiseURL($result_base['PRO_URL']);
@@ -62,7 +67,7 @@ class Redireccionamiento extends CI_Controller {
       }
 
       $listaBlancaDominios = $this->_getListaBlanca();
-      $dominio_redirect= $this->_getDomain($result_base['PRO_URL']);
+      $dominio_redirect = $this->_getDomain($result_base['PRO_URL']);
 
       if (!in_array($dominio_redirect, $listaBlancaDominios)) {
         $this->memcached_library->add($key_memcached_novalida, $result_base,150);
@@ -128,6 +133,13 @@ class Redireccionamiento extends CI_Controller {
     $this->load->database();
     $this->load->model('promociones/promocion_model');
     $result = $this->promocion_model->getByHash($pagehash);
+    return $result;
+  }
+
+  private function _getPatrocinadorBd($pagehash) {
+    $this->load->database();
+    $this->load->model('home/home_model');
+    $result = $this->home_model->getByHash($pagehash);
     return $result;
   }
 
