@@ -1865,7 +1865,7 @@ hr{
 }
 .publicidad .box{
     display: block;
-    
+
     margin: 1em 0em 1em 0em;
 }
 .publicidad .box a{
@@ -1877,7 +1877,7 @@ hr{
 }
 .publicidad .box a p{
     color: #636363;
-    
+
     font-size: 10px;
     border-right: 1px solid #00b6c9;
     border-top: 1px solid #00b6c9;
@@ -2444,7 +2444,7 @@ hr{
   /* line 910, ../sass/screen.scss */
   .ofertas-destacadas ul li article .link {
     display: block;
-  
+
     font-size: 0.7em;
 }
 }
@@ -2475,12 +2475,12 @@ hr{
 
     /*==========  Mobile First Method  ==========*/
 
-    /* Custom, iPhone Retina */ 
+    /* Custom, iPhone Retina */
     @media only screen and (min-width : 320px) {
-        
+
     }
 
-    /* Extra Small Devices, Phones */ 
+    /* Extra Small Devices, Phones */
     @media only screen and (min-width : 480px) {
 
     }
@@ -2561,14 +2561,14 @@ hr{
         width:16.666666666666664%;
       }
       .mini .wrapper-box a span{
-        
+
       }
       .comercios .wrapper-box {
         width: 25%;
       }
     }
 
-    /* Extra Small Devices, Phones */ 
+    /* Extra Small Devices, Phones */
     @media only screen and (max-width : 480px) {
         .important-brand .wrapper-box {
           width: 100%;
@@ -2587,7 +2587,7 @@ hr{
           padding: inherit;
         }
         .wrapper-filter .item-filter select{
-          height: 40px; 
+          height: 40px;
           margin: 0em 0em 1.5em 0em;
         }
         .wrapper-filter input[type="submit"]{
@@ -2680,7 +2680,22 @@ hr{
           padding-bottom: 12px;
         }
     }
-    /* Custom, iPhone Retina */ 
+    /* Custom, iPhone Retina */
     @media only screen and (max-width : 320px) {
-        
+
     }
+    /* iPad Portrait */
+  @media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: portrait)  {
+    .navbar-toggle {
+      display: block;
+    }
+    .navbar-collapse.collapse {
+      display: none!important;
+    }
+    .navbar-collapse.collapse.in {
+      display: block!important;
+    }
+    .collapsing {
+      overflow: hidden!important;
+    }
+  }
