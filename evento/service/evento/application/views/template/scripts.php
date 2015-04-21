@@ -1,6 +1,5 @@
 <script src="<?php echo $base_url_static;?>js/bootstrap/bootstrap.js"></script>
 <script src="<?php echo $base_url_static;?>js/vendor/owl.carousel.js"></script>
-<script src="<?php echo $base_url_static;?>js/main.js"></script>
 
 <!-- js temporal de dynamik -->
 <script src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/temp.js"></script>
@@ -16,7 +15,7 @@
     var id_destacados = [];
     var id_nodestacados = [];
 
-    $.each($('#contentPromocionesdestacados').find('li'), function(){
+    $.each($('#contentPromocionesdestacados').find('li.post'), function(){
       id_destacados.push($(this).attr('data-id'));
     });
 
