@@ -78,7 +78,7 @@ $(function() {
   $(window).scroll(function(event) {
     var getScrollY = getScrollOffsets();
     var scrollY = getScrollY.y;
-    var resta = (window.innerHeight+window.outerHeight)-scrollY;
+    var resta = (window.innerHeight + window.outerHeight) - scrollY;
 
     if(scrollY > 71) {
       $('#menu').css({

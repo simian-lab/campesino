@@ -74,19 +74,19 @@
     <div class="clear"></div>
 
     <div class="publicidad col-xs-12">
-      <div class="box col-md-4">
+      <div class="box col-sm-4">
         <a href="" target="_blank">
           <p>Publicidad</p>
           <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/publicidad1.jpg">
         </a>
       </div>
-      <div class="box col-md-4">
+      <div class="box col-sm-4">
         <a href="" target="_blank">
           <p>Publicidad</p>
           <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/publicidad1.jpg">
         </a>
       </div>
-      <div class="box col-md-4">
+      <div class="box col-sm-4">
         <a href="" target="_blank">
           <p>Publicidad</p>
           <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/publicidad1.jpg">
