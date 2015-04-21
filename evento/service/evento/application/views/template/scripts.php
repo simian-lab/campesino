@@ -16,7 +16,7 @@
     var id_destacados = [];
     var id_nodestacados = [];
 
-    $.each($('#contentPromocionesdestacados').find('li'), function(){
+    $.each($('#contentPromocionesdestacados').find('li.post'), function(){
       id_destacados.push($(this).attr('data-id'));
     });
 

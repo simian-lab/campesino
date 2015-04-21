@@ -106,7 +106,7 @@ function printOferta(array_id){
 			}
 		}
 	}
-  console.log(array_id);
+
 	s.tl(true,"o","Impresión Oferta");
 }
 
@@ -125,5 +125,6 @@ function printPatrocinador(array_id) {
       }
     }
   }
+
   s.tl(true,"o","Impresión Retail");
 }
