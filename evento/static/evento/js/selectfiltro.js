@@ -17,22 +17,43 @@ $(document).ready(function() {
 
         $( "#selectSubCategoria" ).change(function() {
             //onChangeFilter(this.value)
-            url="/descuentos/"+ base_descuentosfiltro.categoria +'/tiendas/marcas/'+this.value;
-            window.location.href = url;
+            $( "#selectTienda" ).val('tiendas');
+            $( "#selectMarca" ).val('marcas');
+            $.get('http://' + window.location.host + "/marcas/tiendas" , function(data, status){
+              $( "#selectMarca" ).empty().append(data);
+            });
         });
 
         $( "#buscarOfertaButton").click(function() {
-          var tienda = 'tiendas';
-          if( $( "#selectTienda" ).val() != ''){
-            tienda = $( "#selectTienda" ).val();
-          }
-          var url="/descuentos/"+ base_descuentosfiltro.categoria + '/' + tienda;
+          var tienda = $( "#selectTienda" ).val();
           var marca = $( "#selectMarca" ).val();
-          if( marca != 'marcas'){
-            url = url + '/' + marca;
-          }
+          var subCategoria = $( "#selectSubCategoria" ).val();
+          var url="/descuentos/"+ base_descuentosfiltro.categoria + '/' + tienda;
           if(tienda=='tiendas' && marca == 'marcas'){
-            url = "/descuentos/";
+            if(subCategoria != undefined){
+              if(subCategoria == 'todos'){
+                url = "/descuentos/" + base_descuentosfiltro.categoria;
+              }else{
+                url = "/descuentos/" + base_descuentosfiltro.categoria + "/"
+                + tienda + "/" + marca + "/" + subCategoria;
+              }
+            }else{
+              url = "/descuentos/";
+            }
+          }else{
+            if(subCategoria != undefined){
+              if(subCategoria == 'todos'){
+                url = "/descuentos/" + base_descuentosfiltro.categoria + "/"
+                + tienda + "/" + marca;
+              }else{
+                url = "/descuentos/" + base_descuentosfiltro.categoria + "/"
+                + tienda + "/" + marca + "/" + subCategoria;
+              }
+            }else{
+              if( marca != 'marcas'){
+                url = url + '/' + marca;
+              }
+            }
           }
           onClickBuscar(tienda, marca);
           window.location.href = url;
