@@ -78,7 +78,7 @@ $(function() {
   $(window).scroll(function(event) {
     var getScrollY = getScrollOffsets();
     var scrollY = getScrollY.y;
-    var resta = (window.innerHeight + window.outerHeight) - scrollY;
+    var resta = (window.innerHeight+window.outerHeight)-scrollY;
 
     if(scrollY > 71) {
       $('#menu').css({
@@ -88,9 +88,28 @@ $(function() {
         width: '100%',
         opacity: 0.9
       });
+      $('.wrapper-filter').css({
+        position: 'fixed',
+        left: '0px',
+        margin: '36px 0px 0px 0px',
+        'z-index': 99
+      });
+      $('.wrapper-filter .filter').css({
+        position: 'relative',
+        width: '980px',
+        float: 'none'
+      });
+
+
     }
     else {
       $('#menu').css({
+        position: 'relative'
+      });
+      $('.wrapper-filter').css({
+        position: 'relative'
+      });
+      $('.wrapper-filter .filter').css({
         position: 'relative'
       });
     }
