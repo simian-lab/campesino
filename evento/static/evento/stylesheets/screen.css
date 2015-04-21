@@ -1720,6 +1720,26 @@ footer .terminos span a {
     margin:0px;
     clear: both;
 }
+div#menu .container .row nav ul#menuTop li{
+  display: block;
+  float: left;
+}
+div#menu .container .row nav ul#menuTop li a{
+    font-size: 0.9em;
+  padding: 20px 13px;
+}
+div#menu .container .row .sponsor span{
+    padding: 12% 8px !important;
+}
+div#menu .container .row nav ul#menuTop{
+  display: block;
+}
+div#menu .menu-section{
+  padding-left: 0px;
+}
+div#menu .box-right{
+  padding-right: 0px;
+}
 .item-menu-current{
   background: #ff5d15;
 }
@@ -1735,6 +1755,7 @@ footer .terminos span a {
     border-right: solid 1px #f4f4f4;
 }
 .wrapper-filter .filter{
+  margin: 0px auto;
 }
 .wrapper-filter .item-filter label{
   display:block;
