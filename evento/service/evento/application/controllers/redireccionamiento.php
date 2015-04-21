@@ -57,6 +57,12 @@ class Redireccionamiento extends CI_Controller {
         }
       }
 
+      /* Heads up!
+      Both Patrocinadores and Promociones will have a PRO_URL at this point
+      (that is, if they have a valid URL). The fields are named differently
+      in the DB, but we set an alias in promocion_model so that it's easier
+      to handle in here (we're saving ourselves a bunch of if statements).
+      */
       $result_base['PRO_URL']= $this->_sanitiseURL($result_base['PRO_URL']);
 
       if (!$result_base['PRO_URL']) {
