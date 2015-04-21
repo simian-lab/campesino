@@ -91,7 +91,6 @@ $(function() {
       $('.wrapper-filter').css({
         position: 'fixed',
         left: '0px',
-        margin: '36px 0px 0px 0px',
         'z-index': 99
       });
       $('.wrapper-filter .filter').css({
