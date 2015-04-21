@@ -20,13 +20,17 @@
       <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right" style="
       ">
       <div class="filter row col-md-12">
-        <?php echo $tiendas ?>
+        <div class="item-filter <?php if(empty($subCategorias)) { echo 'col-sm-4 col-sm-offset-1'; } else {echo 'col-sm-3 col-xs-12';} ?>">
+          <?php echo $tiendas ?>
+        </div>
 
-        <?php echo $marcas ?>
+        <div class="item-filter <?php if(empty($subCategorias)) { echo 'col-sm-4 col-xs-12'; } else {echo 'col-sm-3 col-xs-12';} ?>">
+          <?php echo $marcas ?>
+        </div>
 
         <?php echo $subCategorias ?>
 
-        <div class="button-search <?php if(empty($subCategorias)) { echo 'col-md-3'; } else {echo 'col-md-1';} ?> col-xs-12" id="buscarOfertaButton" name="buscarOfertaButton">
+        <div class="button-search <?php if(empty($subCategorias)) { echo 'col-sm-2 col-xs-12'; } else {echo 'col-sm-3 col-xs-12';} ?>" id="buscarOfertaButton" name="buscarOfertaButton">
           <input type="submit" name="Buscar" value="Buscar">
         </div>
       </div><!--End Filter-->

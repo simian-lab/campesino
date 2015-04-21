@@ -24,11 +24,15 @@
       <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-left-filter.png" class="extra-left">
       <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right">
       <div class="filter row col-md-12">
-        <?php echo $tiendas ?>
+        <div class="item-filter <?php if(empty($subCategorias)) { echo 'col-sm-4 col-sm-offset-1'; } else {echo 'col-sm-3 col-xs-12';} ?>">
+          <?php echo $tiendas ?>
+        </div>
 
-        <?php echo $marcas ?>
+        <div class="item-filter <?php if(empty($subCategorias)) { echo 'col-sm-4 col-xs-12'; } else {echo 'col-sm-3 col-xs-12';} ?>">
+          <?php echo $marcas ?>
+        </div>
 
-        <div class="button-search col-md-3 col-xs-12" id="buscarOfertaButton" name="buscarOfertaButton">
+        <div class="button-search col-sm-2 col-xs-12" id="buscarOfertaButton" name="buscarOfertaButton">
           <input type="submit" name="Buscar" value="Buscar">
         </div>
       </div><!--End Filter-->
@@ -49,7 +53,7 @@
       <h2>PATROCINADORES <small>DESTACADOS</small></h2>
 
       <?php foreach($patrocinadores_oro_plus as $patrocinador): ?>
-        <div class="wrapper-box col-md-3 col-xs-12 ">
+        <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
@@ -97,7 +101,7 @@
     <div class="important-brand col-md-12 content-patrocinadores-destacados">
 
       <?php foreach($patrocinadores_oro as $patrocinador): ?>
-        <div class="wrapper-box col-md-3 col-xs-12">
+        <div class="wrapper-box col-sm-3 col-xs-12">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
@@ -120,7 +124,7 @@
       <h2>COMERCIOS <small>PARTICIPANTES</small></h2>
 
       <?php foreach($patrocinadores_plata as $patrocinador): ?>
-        <div class="wrapper-box col-md-2 col-xs-4">
+        <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
@@ -142,7 +146,7 @@
 
     <div class="comercios col-md-12 content-patrocinadores-destacados">
       <?php foreach($patrocinadores_bronce as $patrocinador): ?>
-        <div class="wrapper-box col-md-2 col-xs-4">
+        <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
@@ -164,7 +168,7 @@
 
     <div class="comercios col-md-12 content-patrocinadores-destacados">
       <?php foreach($patrocinadores_platino as $patrocinador): ?>
-        <div class="wrapper-box col-md-2 col-xs-4">
+        <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
             <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
               <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
