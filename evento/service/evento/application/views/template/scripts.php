@@ -1,6 +1,10 @@
 <script src="<?php echo $base_url_static;?>js/bootstrap/bootstrap.js"></script>
 <script src="<?php echo $base_url_static;?>js/vendor/owl.carousel.js"></script>
 <script src="<?php echo $base_url_static;?>js/main.js"></script>
+
+<!-- js temporal de dynamik -->
+<script src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/temp.js"></script>
+
 <script src="<?php echo $base_url_static;?>js/selectfiltro.js"></script>
 <script src="<?php echo $base_url_static;?>js/omniture.js"></script>
 <script src="<?php echo $base_url_static;?>js/share.js"></script>
@@ -19,7 +23,9 @@
     printOferta(id_destacados);
 
     $.each($('#contentPromocionesnodestacados').find('li'), function(){
-      id_nodestacados.push($(this).attr('data-id'));
+      var id_dest = $(this).attr('data-id');
+      if(id_dest != undefined)
+        id_nodestacados.push(id_dest);
     });
 
     printOferta(id_nodestacados);

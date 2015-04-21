@@ -98,13 +98,15 @@ function printOferta(array_id){
 	s.events = "event41";
 	s.products = '';
 	for(var i = 0; i < array_id.length; i++) {
-		if(array_id[i] != undefined){
+		if(array_id[i] != undefined) {
 			s.products += ";"+array_id[i];
+
 			if(i < array_id.length - 1){
 				s.products += ",";
 			}
 		}
 	}
+  console.log(array_id);
 	s.tl(true,"o","Impresión Oferta");
 }
 
@@ -115,8 +117,9 @@ function printPatrocinador(array_id) {
   s.list1 = '';
 
   for(var i = 0; i < array_id.length; i++) {
-    if(array_id[i] != undefined){
+    if(array_id[i] != undefined) {
       s.list1 += ";"+array_id[i];
+
       if(i < array_id.length - 1){
         s.list1 += ",";
       }
