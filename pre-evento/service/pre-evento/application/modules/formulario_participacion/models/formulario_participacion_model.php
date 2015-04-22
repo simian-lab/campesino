@@ -19,6 +19,7 @@ class Formulario_participacion_model extends CI_Model {
     			$this->input->post('nombre_empresa'),
     			$this->input->post('nombre_contacto'),
     			$this->input->post('cargo'),
+                $this->input->post('ciudad'),
     			$this->input->post('email'),
     			$this->input->post('celular'),
     			$this->input->post('telefono'),
@@ -27,7 +28,7 @@ class Formulario_participacion_model extends CI_Model {
 
     		);
 
-		$sql = "CALL AB_US_USUARIOS_PARTICIPACION_SET(?,?,?,?,?,?,?,?)";
+		$sql = "CALL AB_US_USUARIOS_PARTICIPACION_SET(?,?,?,?,?,?,?,?,?)";
 
 		$query = $this->db->query($sql, $param); //->row_array();
         return $query->result();
