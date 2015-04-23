@@ -19,7 +19,9 @@
       id_destacados.push($(this).attr('data-id'));
     });
 
-    printOferta(id_destacados);
+    if(id_destacados.length > 0) {
+      printOferta(id_destacados);
+    }
 
     $.each($('#contentPromocionesnodestacados').find('li'), function(){
       var id_dest = $(this).attr('data-id');
@@ -27,7 +29,9 @@
         id_nodestacados.push(id_dest);
     });
 
-    printOferta(id_nodestacados);
+    if(id_nodestacados.length > 0) {
+      printOferta(id_nodestacados);
+    }
 
     var filtro = '<?php echo $this->uri->segment(2) ?>';
     if(filtro != ''){
