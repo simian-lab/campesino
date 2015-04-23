@@ -51,9 +51,9 @@
 
     <div class="important-brand col-md-12 content-patrocinadores-destacados">
       <h2>PATROCINADORES <small>DESTACADOS</small></h2>
-
+      <?php $posicion = 1; ?>
       <?php foreach($patrocinadores_oro_plus as $patrocinador): ?>
-      <?php 
+      <?php
         if($patrocinador->PAT_URL_EVENT != '') {
           $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
         } else {
@@ -62,12 +62,13 @@
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-              <a target="_blank" href="<?php echo $url_patrocinador ?>">
+              <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
                 <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
           </div>
         </div>
+      <?php $posicion++; ?>
       <?php endforeach; ?>
 
       <div class="clear"></div>
@@ -134,18 +135,22 @@
     <div class="important-brand col-md-12 content-patrocinadores-destacados">
 
       <?php foreach($patrocinadores_oro as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+      ?>
         <div class="wrapper-box col-sm-3 col-xs-12">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
-              <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-                <span>Ir a la tienda</span>
-              </a>
-            <?php else: ?>
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-            <?php endif; ?>
+              <span>Ir a la tienda</span>
+            </a>
           </div>
         </div>
+      <?php $posicion++; ?>
       <?php endforeach; ?>
 
       <div class="clear"></div>
@@ -157,18 +162,22 @@
       <h2>COMERCIOS <small>PARTICIPANTES</small></h2>
 
       <?php foreach($patrocinadores_plata as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+      ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
-              <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-                <span>Ir a la tienda</span>
-              </a>
-            <?php else: ?>
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-            <?php endif; ?>
+              <span>Ir a la tienda</span>
+            </a>
           </div>
         </div>
+      <?php $posicion++; ?>
       <?php endforeach; ?>
 
       <div class="clear"></div>
@@ -179,18 +188,22 @@
 
     <div class="comercios col-md-12 content-patrocinadores-destacados">
       <?php foreach($patrocinadores_bronce as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+      ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
-              <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL_EVENT); ?>">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-                <span>Ir a la tienda</span>
-              </a>
-            <?php else: ?>
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-            <?php endif; ?>
+              <span>Ir a la tienda</span>
+            </a>
           </div>
         </div>
+      <?php $posicion++; ?>
       <?php endforeach; ?>
 
       <div class="clear"></div>
@@ -201,18 +214,22 @@
 
     <div class="comercios col-md-12 content-patrocinadores-destacados">
       <?php foreach($patrocinadores_platino as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+      ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
-              <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-                <span>Ir a la tienda</span>
-              </a>
-            <?php else: ?>
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-            <?php endif; ?>
+              <span>Ir a la tienda</span>
+            </a>
           </div>
         </div>
+      <?php $posicion++; ?>
       <?php endforeach; ?>
 
       <div class="clear"></div>
@@ -228,18 +245,22 @@
       under the improvements you can make :). -->
     <div class="mini col-md-12 content-patrocinadores-destacados" id="anchor-ofertas-destacadas">
       <?php foreach($patrocinadores_general as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+      ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
-              <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-                <span>Ir a la tienda</span>
-              </a>
-            <?php else: ?>
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-            <?php endif; ?>
+              <span>Ir a la tienda</span>
+            </a>
           </div>
         </div>
+      <?php $posicion++; ?>
       <?php endforeach; ?>
       <div class="clear"></div>
     </div><!-- End mini -->
