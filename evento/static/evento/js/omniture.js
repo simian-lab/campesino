@@ -102,6 +102,38 @@ function onClickOferta(id, posicion, tienda){
 	s.tl(true,"o","Click en Oferta");
 }
 
+function onClickTodasLasTiendas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14"; 
+	s.events = "event14";
+	s.eVar18 = "tab todas las tiendas";
+	s.tl(true, "o", "uso de tab");
+}
+
+function onClickTodasLasOfertas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14"; 
+	s.events = "event14";
+	s.eVar18 = "tab todas las ofertas";
+	s.tl(true, "o", "uso de tab");
+}
+
+function onClickFacebook() {
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar25 = "Facebook";
+	s.tl(true, "o", "redes sociales");
+}
+
+function onClickTwitter() {
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar25 = "Twitter";
+	s.tl(true, "o", "redes sociales");
+}
+
 function onClickPatrocinador (id, posicion, patrocinador) {
   s.linkTrackVars="events,eVar38,eVar39";
   s.linkTrackEvents="event37";
