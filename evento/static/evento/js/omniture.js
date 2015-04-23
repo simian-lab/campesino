@@ -74,22 +74,27 @@ function onChangeFilter(valor){
 	s.tl(true,"o","Filtro");
 }
 
-function onClickBuscar(tienda, marca){
+function onClickBuscar(tienda, marca, subcategoria){
 	s.linkTrackVars="events,eVar24,eVar25";
 	s.linkTrackEvents="event11";
 	s.events="event11";
 
-  if(marca == "marcas") {
-    marca = "Todas";
-  }
+	if(marca == "marcas") {
+		marca = "Todas";
+	}
 
-  if(tienda == "tiendas") {
-    tienda = "Todas";
-  }
+	if(tienda == "tiendas") {
+		tienda = "Todas";
+	}
 
-	s.eVar25=tienda;
-	s.eVar24=marca;
-	s.tl(true,"o","filtro");
+	s.eVar25 = tienda;
+	s.eVar24 = marca;
+	
+	if(subcategoria != undefined) {
+		s.eVar28 = subcategoria;
+	}
+
+	s.tl(true, "o", "filtro");
 }
 
 function onClickOferta(id, posicion, tienda){
@@ -100,6 +105,55 @@ function onClickOferta(id, posicion, tienda){
 	s.eVar39 = tienda;
 	s.products = ";"+id;
 	s.tl(true,"o","Click en Oferta");
+}
+
+function onClickPatrocinador(id, posicion) {
+  s.linkTrackVars="events,eVar38,eVar39";
+  s.linkTrackEvents="event37";
+  s.events="event37";
+  s.eVar38=posicion;
+  s.eVar39=id;
+  s.tl(true,"o","Click en Comercio");
+}
+
+function onClickOfertasDestacadas() {
+  s.linkTrackVars = "events,eVar18";
+  s.linkTrackEvents = "event14";
+  s.events = "event14";
+  s.eVar18 = "botón ofertas destacadas";
+  s.tl(true, "o", "uso de botón");
+}
+
+function onClickTodasLasTiendas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14";
+	s.events = "event14";
+	s.eVar18 = "tab todas las tiendas";
+	s.tl(true, "o", "uso de tab");
+}
+
+function onClickTodasLasOfertas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14";
+	s.events = "event14";
+	s.eVar18 = "tab todas las ofertas";
+	s.tl(true, "o", "uso de tab");
+}
+
+function onClickFacebook() {
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar25 = "Facebook";
+	s.tl(true, "o", "redes sociales");
+}
+
+function onClickTwitter() {
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar25 = "Twitter";
+	s.tl(true, "o", "redes sociales");
 }
 
 function printOferta(array_id){
