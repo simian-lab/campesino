@@ -532,20 +532,24 @@ class Auth_ion extends Main {
 
 					$allies = $this->ion_users_model->get_allies($state_info->primary_key);
 
-					if(is_array($allies)) {
-						asort($allies);
-					} else {
-						$allies = array(
-							NULL => 'No se encontraron resultados'
-						);
-					}
 				} else if($state == "add") {
 					$allies = $this->ion_users_model->get_allies("add");
 				}
 
+				/*
+				Aquí me aseguro que la variable $allies sea un arreglo así la base de datos esté vacía.
+				Así prevengo el error que genera Grocery Crud al intentar llenar el dropdown.
+				- Nicolás, 23 Apr 2015
+			 	*/
+				if(is_array($allies)) {
+					asort($allies);
+				} else {
+					$allies = array('');
+				}
+
 				$crud->field_type('ally_id', 'dropdown', $allies);
 
- 			// Defino regla de validacion
+ 				// Defino regla de validación.
 				$crud->set_rules('email','Email','required|valid_email');
 				$crud->set_rules('email2','Email','valid_email');
 
