@@ -39,10 +39,10 @@
     <div class="menu-tabs">
       <ul>
         <li>
-          <a href="<?php echo $base_url;?>">TODAS LAS TIENDAS</a>
+          <a href="<?php echo $base_url;?>" onclick="onClickTodasLasTiendas()" >TODAS LAS TIENDAS</a>
         </li>
         <li class="active">
-          <a href="<?php echo $base_url."descuentos"?>">TODAS LAS OFERTAS</a>
+          <a href="<?php echo $base_url."descuentos"?>" onclick="onClickTodasLasOfertas()" >TODAS LAS OFERTAS</a>
         </li>
       </ul>
     </div>
