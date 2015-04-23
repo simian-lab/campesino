@@ -60,7 +60,7 @@ $(document).ready(function() {
               }
             }
           }
-          onClickBuscar(tienda, marca);
+          onClickBuscar(tienda, marca, subCategoria);
           window.location.href = url;
         });
 

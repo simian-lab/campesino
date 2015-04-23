@@ -74,22 +74,27 @@ function onChangeFilter(valor){
 	s.tl(true,"o","Filtro");
 }
 
-function onClickBuscar(tienda, marca){
+function onClickBuscar(tienda, marca, subcategoria){
 	s.linkTrackVars="events,eVar24,eVar25";
 	s.linkTrackEvents="event11";
 	s.events="event11";
 
-  if(marca == "marcas") {
-    marca = "Todas";
-  }
+	if(marca == "marcas") {
+		marca = "Todas";
+	}
 
-  if(tienda == "tiendas") {
-    tienda = "Todas";
-  }
+	if(tienda == "tiendas") {
+		tienda = "Todas";
+	}
 
-	s.eVar25=tienda;
-	s.eVar24=marca;
-	s.tl(true,"o","filtro");
+	s.eVar25 = tienda;
+	s.eVar24 = marca;
+	
+	if(subcategoria != undefined) {
+		s.eVar28 = subcategoria;
+	}
+
+	s.tl(true, "o", "filtro");
 }
 
 function onClickOferta(id, posicion, tienda){
