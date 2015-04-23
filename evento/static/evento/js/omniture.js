@@ -102,9 +102,18 @@ function onClickOferta(id, posicion, tienda){
 	s.tl(true,"o","Click en Oferta");
 }
 
+function onClickPatrocinador(id, posicion) {
+  s.linkTrackVars="events,eVar38,eVar39";
+  s.linkTrackEvents="event37";
+  s.events="event37";
+  s.eVar38=posicion;
+  s.eVar39=id;
+  s.tl(true,"o","Click en Comercio");
+}
+
 function onClickTodasLasTiendas() {
 	s.linkTrackVars = "events,eVar18";
-	s.linkTrackEvents = "event14"; 
+	s.linkTrackEvents = "event14";
 	s.events = "event14";
 	s.eVar18 = "tab todas las tiendas";
 	s.tl(true, "o", "uso de tab");
@@ -112,7 +121,7 @@ function onClickTodasLasTiendas() {
 
 function onClickTodasLasOfertas() {
 	s.linkTrackVars = "events,eVar18";
-	s.linkTrackEvents = "event14"; 
+	s.linkTrackEvents = "event14";
 	s.events = "event14";
 	s.eVar18 = "tab todas las ofertas";
 	s.tl(true, "o", "uso de tab");
@@ -132,15 +141,6 @@ function onClickTwitter() {
 	s.events = "event6";
 	s.eVar25 = "Twitter";
 	s.tl(true, "o", "redes sociales");
-}
-
-function onClickPatrocinador (id, posicion, patrocinador) {
-  s.linkTrackVars="events,eVar38,eVar39";
-  s.linkTrackEvents="event37";
-  s.events="event37";
-  s.eVar38=posicion;
-  s.eVar39=patrocinador;
-  s.tl(true,"o","Click en Comercio");
 }
 
 function printOferta(array_id){

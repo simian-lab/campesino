@@ -53,7 +53,9 @@
       id_patrocinadores.push($(this).attr('data-id'));
     });
 
-    printPatrocinador(id_patrocinadores);
+    if(id_patrocinadores.length > 0) {
+      printPatrocinador(id_patrocinadores);
+    }
 
     var duplicados = new Array();
     $(".destacados,.no-destacados ul li").each(function(k,v){
