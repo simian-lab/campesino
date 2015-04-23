@@ -1,119 +1,125 @@
 /* SiteCatalyst code version: H.25.2.
 Copyright 1996-2012 Adobe, Inc. All Rights Reserved
 More info available at http://www.omniture.com */
-
 // var s_account="eltiempocyberlunesdev"
-var s_account="eltiempocyberlunesdev1"
-var s=s_gi(s_account)
-/************************** CONFIG SECTION **************************/
-/* You may add or alter any code config here. */
-s.charSet="ISO-8859-1"
-/* Conversion Config */
-s.currencyCode="COP"
-/* Link Tracking Config */
-s.trackDownloadLinks=true;s.trackExternalLinks=true;s.trackInlineStats=true
-s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx"
+var s_account = "eltiempocyberlunesdev1"
+var s = s_gi(s_account)
+
+    /************************** CONFIG SECTION **************************/
+    /* You may add or alter any code config here. */
+var scVersion="H.25.2|100614";
+s.charSet = "ISO-8859-1"
+    /* Conversion Config */
+s.currencyCode = "COP"
+    /* Link Tracking Config */
+s.trackDownloadLinks = true;
+
+s.trackInlineStats = true
+s.linkDownloadFileTypes = "exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx"
 // s.linkInternalFilters="javascript:,alafija.com"
-s.linkInternalFilters="javascript:,cyberlunes.com.co"
-s.linkLeaveQueryString=false;s.linkTrackVars="None";s.linkTrackEvents="None"
+//s.linkInternalFilters = "javascript:,cyberlunes.com.co"
+s.linkInternalFilters = "javascript:,evento.cyberlunes.local"
+s.linkLeaveQueryString = false;
+s.linkTrackVars = "None";
+s.linkTrackEvents = "None"
 
 // Channel Manager Config
-s._channelDomain="Facebook|Facebook.com>Twitter|twitter.com>Digg|digg.com>LinkedIn|linkedin.com>MySpace|myspace.com>Youtube|youtube.com>Google Plus|plus.google.com>MSN|.msn.com>MSNBC|msnbc.com,msnbc.msn.com>Other Social|diigo.com,tumblr.com,yelp.com,livejournal.com,blogspot.com,wordpress.com,stumbleupon.com,reddit.com,delicious.com,flickr.com,vimeo.com,t.co,bit.ly>Otros Sitios Web|clasificados.eltiempo.com,elempleo.com,guiaacademica.com,metrocuadrado.com,quebuenacompra.com";
-s._channelParameter="cid";
-s._channelPattern="CPC_CY PUB-PROD|CPC_CY_PUB,cpc_cy_pub>CPC_CY POS-MAR|CPC_CY_POS,cpc_cy_pos>CPC_CY BUS-POR|CPC_ME_BUS,cpc_me_bus>CPC_CY CONTEN|CPC_ME_CON,cpc_me_con>BAN_CY PUB-PROD|BAN_CY_PUB,ban_cy_pub>BAN_CY POS-MAR|BAN_CY_POS,ban_cy_pos>BAN_CY BUS-POR|BAN_CY_BUS,ban_cy_bus>BAN_CY CONTEN|BAN_CY_CON,ban_cy_con>AUT_CY PUB-PROD|AUT_CY_PUB,aut_cy_pub>AUT_CY POS-MAR|AUT_CY_POS,aut_cy_pos>AUT_CY BUS-POR|AUT_CY_BUS,aut_cy_bus>AUT_CY CONTEN|AUT_CY_CON,aut_cy_con>PAU_CY PUB-PROD|PAU_CY_PUB,pau_cy_pub>PAU_CY POS-MAR|PAU_CY_POS,pau_cy_pos>PAU_CY BUS-POR|PAU_CY_BUS,pau_cy_bus>PAU_CY CONTEN|PAU_CY_CON,pau_cy_con>EMAIL|EM_,em_";
+s._channelDomain = "Facebook|Facebook.com>Twitter|twitter.com>Digg|digg.com>LinkedIn|linkedin.com>MySpace|myspace.com>Youtube|youtube.com>Google Plus|plus.google.com>MSN|.msn.com>MSNBC|msnbc.com,msnbc.msn.com>Other Social|diigo.com,tumblr.com,yelp.com,livejournal.com,blogspot.com,wordpress.com,stumbleupon.com,reddit.com,delicious.com,flickr.com,vimeo.com,t.co,bit.ly>Otros Sitios Web|clasificados.eltiempo.com,elempleo.com,guiaacademica.com,metrocuadrado.com,quebuenacompra.com";
+s._channelParameter = "cid";
+s._channelPattern = "CPC_CY PUB-PROD|CPC_CY_PUB,cpc_cy_pub>CPC_CY POS-MAR|CPC_CY_POS,cpc_cy_pos>CPC_CY BUS-POR|CPC_ME_BUS,cpc_me_bus>CPC_CY CONTEN|CPC_ME_CON,cpc_me_con>BAN_CY PUB-PROD|BAN_CY_PUB,ban_cy_pub>BAN_CY POS-MAR|BAN_CY_POS,ban_cy_pos>BAN_CY BUS-POR|BAN_CY_BUS,ban_cy_bus>BAN_CY CONTEN|BAN_CY_CON,ban_cy_con>AUT_CY PUB-PROD|AUT_CY_PUB,aut_cy_pub>AUT_CY POS-MAR|AUT_CY_POS,aut_cy_pos>AUT_CY BUS-POR|AUT_CY_BUS,aut_cy_bus>AUT_CY CONTEN|AUT_CY_CON,aut_cy_con>PAU_CY PUB-PROD|PAU_CY_PUB,pau_cy_pub>PAU_CY POS-MAR|PAU_CY_POS,pau_cy_pos>PAU_CY BUS-POR|PAU_CY_BUS,pau_cy_bus>PAU_CY CONTEN|PAU_CY_CON,pau_cy_con>EMAIL|EM_,em_";
 
 /* Form Analysis Config (should be above doPlugins section) */
-s.formList=""
-s.trackFormList=false
-// s.trackPageName=false
-s.trackPageName=true
-s.useCommerce=false
-// s.varUsed="prop12"
-s.varUsed="prop2"
-s.varUsed="prop1"
-s.eventList="" //Abandon,Success,Error
+s.formList = ""
+s.trackFormList = false
+s.trackPageName=false
+s.trackPageName = true
+s.useCommerce = false
+    // s.varUsed="prop12"
+s.varUsed = "prop2"
+s.varUsed = "prop1"
+s.eventList = "" //Abandon,Success,Error
 
-s.usePlugins=true;
+s.usePlugins = true;
 
 function s_doPlugins(s){
-	// 404 page contingency for SC15
-	if (!isBlank(s.pageType)) s.prop9=trimLc(document.location.href);
+  // 404 page contingency for SC15
+  if (!isBlank(s.pageType)) s.prop9=trimLc(document.location.href);
 
-	s.server=document.location.host; s.eVar23='D=server';
-	
-	if(s.pageName){
-		s.pageName=s.pageName.toLowerCase();
-		s.eVar4="D=pageName";
-		s.events = s.apl(s.events,'event1',',',1);
-		s.hier1=s.pageName.replace(/\: /g,":");
-	}
-	s.eVar7 = "+1";
-	
-	if(s.channel){
-		s.channel=s.channel.toLowerCase();
-		s.eVar22="D=ch";
-	}
-	
-	/*terminos de busqueda*/
-	if (!s.prop4 && s.eVar3) s.prop4='D=v3';
-	
-	/*# de resultados de busqueda*/
-	if (!s.prop15 && s.eVar24) s.prop15='D=v24';
-	
-	s.setupFormAnalysis();
-		
-	s.prop5=(s.getPreviousValue(s.pageName,'gpv_pn')||"No previous page");// Previous Page Name
-	
-	
-	if (!s.prop10) s.prop10="D=g"; // Current URL
-	if (!s.prop6) s.prop6="D=r"; // Referring URL
-	
-	/* Numero de Visita  (Mensual) */
-	s.prop7=s.getVisitNum();
-	
-	s.eVar5=s.getNewRepeat(30); // 1 month
-	s.prop8=s.getDaysSinceLastVisit('s_lv'); if (s.prop8) s.eVar6="D=c8";
-	s.prop3=[s.getTimeParting('d','-5'),s.getTimeParting('h','-5')].join("|"); if (s.prop3) s.eVar2="D=c3";// Set TimeParting Variable
-	
-	/* External Campaign */
-	/* if (!s.campaign) s.campaign=s.getValOnce(s.getQueryParam('cid,s_cid',':'),'s_campaign',0); */
-	
-	/* Internal Campaign */
-	if (!s.eVar1) s.eVar1=s.getValOnce(s.getQueryParam('icid'),'s_v1',0);
-	
-	// Plugin: channelManager v2.2
-	s.channelManager('cid,s_cid',':','s_cm','0');
-	
-	if(/search/i.test(s._channel)){
-		s._campaign=trimLc([s._channel,s._partner,trim(s._keywords)].join(": "));
+  s.server=document.location.host; s.eVar23='D=server';
+
+  if(s.pageName){
+    s.pageName=s.pageName.toLowerCase();
+    s.eVar4="D=pageName";
+    s.events = s.apl(s.events,'event1',',',1);
+    s.hier1=s.pageName.replace(/\: /g,":");
+  }
+  s.eVar7 = "+1";
+
+  if(s.channel){
+    s.channel=s.channel.toLowerCase();
+    s.eVar22="D=ch";
+  }
+
+  /*terminos de busqueda*/
+  if (!s.prop4 && s.eVar3) s.prop4='D=v3';
+
+  /*# de resultados de busqueda*/
+  if (!s.prop15 && s.eVar24) s.prop15='D=v24';
+
+  s.setupFormAnalysis();
+
+  s.prop5=(s.getPreviousValue(s.pageName,'gpv_pn')||"No previous page");// Previous Page Name
+
+
+  if (!s.prop10) s.prop10="D=g"; // Current URL
+  if (!s.prop6) s.prop6="D=r"; // Referring URL
+
+  /* Numero de Visita  v3.0(Mensual) */
+  s.prop7=s.getVisitNum();
+
+  s.eVar5=s.getNewRepeat(30); // 1 month
+  s.prop8=s.getDaysSinceLastVisit('s_lv'); if (s.prop8) s.eVar6="D=c8";
+  s.prop3=[s.getTimeParting('d','-5'),s.getTimeParting('h','-5')].join("|"); if (s.prop3) s.eVar2="D=c3";// Set TimeParting Variable
+
+  /* External Campaign */
+  /* if (!s.campaign) s.campaign=s.getValOnce(s.getQueryParam('cid,s_cid',':'),'s_campaign',0); */
+
+  /* Internal Campaign */
+  if (!s.eVar1) s.eVar1=s.getValOnce(s.getQueryParam('icid'),'s_v1',0);
+
+  // Plugin: channelManager v2.2
+  s.channelManager('cid,s_cid',':','s_cm','0');
+
+  if(/search/i.test(s._channel)){
+    s._campaign=trimLc([s._channel,s._partner,trim(s._keywords)].join(": "));
     }else if(/Referrers/i.test(s._channel)){
-		s._campaign=trimLc([s._channel,s._referringDomain].join(": "));
-	}
+    s._campaign=trimLc([s._channel,s._referringDomain].join(": "));
+  }
 
-	/*Fix for Typed/Bookmarked for CM */
-	if(!s._channel && !document.referrer) s._channel="Typed/Bookmarked";
-	
-	/* Channel Manager */ 	
-	s.eVar8=trimLc(s._campaign);
-	s.eVar9=trimLc(s._keywords);
-	s.eVar10=s._channel;
+  /*Fix for Typed/Bookmarked for CM */
+  if(!s._channel && !document.referrer) s._channel="Typed/Bookmarked";
 
-	/* Cross Visit Participation */
-	if (s.eVar10) s.eVar20=s.crossVisitParticipation(s.eVar10,'s_v10','90','5','>','',1); //channel
-	if (s.eVar8) s.eVar21=s.crossVisitParticipation(s.eVar8,'s_v8','90','5','>','',1); //campaign
-	
-	if (!s.transactionID && s.purchaseID) s.transactionID="D=purchaseID";
-	
-	try {
-		var url=s.exitLinkHandler(s.linkInternalFilters)
-		if (url) {
-			s.linkTrackVars=s.apl(s.linkTrackVars,"eVar11",',',1);;
-			s.eVar11=url;
-		}
-	} catch (e) {}
-	
-	/* ID del Anuncio */
-	if (s.prop17) s.prop16 = "D=v17";
+  /* Channel Manager */
+  s.eVar8=trimLc(s._campaign);
+  s.eVar9=trimLc(s._keywords);
+  s.eVar10=s._channel;
+
+  /* Cross Visit Participation */
+  if (s.eVar10) s.eVar20=s.crossVisitParticipation(s.eVar10,'s_v10','90','5','>','',1); //channel
+  if (s.eVar8) s.eVar21=s.crossVisitParticipation(s.eVar8,'s_v8','90','5','>','',1); //campaign
+
+  if (!s.transactionID && s.purchaseID) s.transactionID="D=purchaseID";
+
+  try {
+    var url=s.exitLinkHandler(s.linkInternalFilters)
+    if (url) {
+      s.linkTrackVars=s.apl(s.linkTrackVars,"eVar11",',',1);;
+      s.eVar11=url;
+    }
+  } catch (e) {}
+
+  /* ID del Anuncio */
+  if (s.prop17) s.prop16 = "D=v17";
 }
 
 // PLUGINS SECTION
@@ -138,21 +144,28 @@ Date.prototype.toRelativeTime=function(a){var b=new Date-this;a=parseInt(a,10);i
  * Main Plug-in code (should be in Plug-ins section)
  *
  *******************************************************************/
-/*                                                                  
- * Plugin: Visit Number By Month 2.0 - Return the user visit number 
+/*
+ * Plugin: getVisitNum - version 3.0
  */
-s.getVisitNum=new Function(""
-+"var s=this,e=new Date(),cval,cvisit,ct=e.getTime(),c='s_vnum',c2='s"
-+"_invisit';e.setTime(ct+30*24*60*60*1000);cval=s.c_r(c);if(cval){var"
-+" i=cval.indexOf('&vn='),str=cval.substring(i+4,cval.length),k;}cvis"
-+"it=s.c_r(c2);if(cvisit){if(str){e.setTime(ct+30*60*1000);s.c_w(c2,'"
-+"true',e);return str;}else return 'unknown visit number';}else{if(st"
-+"r){str++;k=cval.substring(0,i);e.setTime(k);s.c_w(c,k+'&vn='+str,e)"
-+";e.setTime(ct+30*60*1000);s.c_w(c2,'true',e);return str;}else{s.c_w"
-+"(c,ct+30*24*60*60*1000+'&vn=1',e);e.setTime(ct+30*60*1000);s.c_w(c2"
-+",'true',e);return 1;}}"
-);
- 
+s.getVisitNum=new Function("tp","c","c2",""
++"var s=this,e=new Date,cval,cvisit,ct=e.getTime(),d;if(!tp){tp='m';}"
++"if(tp=='m'||tp=='w'||tp=='d'){eo=s.endof(tp),y=eo.getTime();e.setTi"
++"me(y);}else {d=tp*86400000;e.setTime(ct+d);}if(!c){c='s_vnum';}if(!"
++"c2){c2='s_invisit';}cval=s.c_r(c);if(cval){var i=cval.indexOf('&vn="
++"'),str=cval.substring(i+4,cval.length),k;}cvisit=s.c_r(c2);if(cvisi"
++"t){if(str){e.setTime(ct+1800000);s.c_w(c2,'true',e);return str;}els"
++"e {return 'unknown visit number';}}else {if(str){str++;k=cval.substri"
++"ng(0,i);e.setTime(k);s.c_w(c,k+'&vn='+str,e);e.setTime(ct+1800000);"
++"s.c_w(c2,'true',e);return str;}else {s.c_w(c,e.getTime()+'&vn=1',e)"
++";e.setTime(ct+1800000);s.c_w(c2,'true',e);return 1;}}");
+s.dimo=new Function("m","y",""
++"var d=new Date(y,m+1,0);return d.getDate();");
+s.endof=new Function("x",""
++"var t=new Date;t.setHours(0);t.setMinutes(0);t.setSeconds(0);if(x=="
++"'m'){d=s.dimo(t.getMonth(),t.getFullYear())-t.getDate()+1;}else if("
++"x=='w'){d=7-t.getDay();}else {d=1;}t.setDate(t.getDate()+d);return "
++"t;");
+
 /*
  * Plugin: Form Analysis 2.1 (Success, Error, Abandonment)
  */
@@ -452,5 +465,20 @@ w.s_ft=new Function("c","c+='';var s,e,o,a,d,q,f,h,x;s=c.indexOf('=function(');w
 +"f(h==q&&!x)q='';if(h=='\\\\')x=x?0:1;else x=0}else{if(h=='\"'||h==\"'\")q=h;if(h=='{')d++;if(h=='}')d--}if(d>0)e++}c=c.substring(0,s)+'new Function('+(a?a+',':'')+'\"'+s_fe(c.substring(o+1,e))+'\")"
 +"'+c.substring(e+1);s=c.indexOf('=function(')}return c;");
 c=s_d(c);if(e>0){a=parseInt(i=v.substring(e+5));if(a>3)a=parseFloat(i)}else if(m>0)a=parseFloat(u.substring(m+10));else a=parseFloat(v);if(a<5||v.indexOf('Opera')>=0||u.indexOf('Opera')>=0)c=s_ft(c);if(!s){s=new Object;if(!w.s_c_in){w.s_c_il=new Array;w.s_c_in=0}s._il=w.s_c_il;s._in=w.s_c_in;s._il[s._in]=s;w.s_c_in++;}s._c='s_c';(new Function("s","un","pg","ss",c))(s,un,pg,ss);return s}
-function s_giqf(){var w=window,q=w.s_giq,i,t,s;if(q)for(i=0;i<q.length;i++){t=q[i];s=s_gi(t.oun);s.sa(t.un);s.setTagContainer(t.tagContainerName)}w.s_giq=0}s_giqf()
+function s_giqf(){var w=window,q=w.s_giq,i,t,s;if(q)for(i=0;i<q.length;i++){t=q[i];s=s_gi(t.oun);s.sa(t.un);s.setTagContainer(t.tagContainerName)}w.s_giq=0}s_giqf();
 
+// (function() {
+//   var proxied = s.tl;
+//   s.tl = function() {
+//     console.log( this, arguments );
+//     return proxied.apply( this, arguments );
+//   };
+// })();
+
+// (function() {
+//   var proxied = s.t;
+//   s.t = function() {
+//     console.log('function called by ' + s.t.caller);
+//     return proxied.apply( this, arguments );
+//   };
+// })();
