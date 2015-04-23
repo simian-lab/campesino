@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Home extends CI_Controller {
-    
+
     public function __construct() {
           parent:: __construct();
        	  $this->load->model('home_model');
@@ -20,8 +20,8 @@ class Home extends CI_Controller {
           $this->load->helper('get_url_encode_tod');
           $this->load->library('memcached_library');
      }
-    
-    public function index($paramOrigen='') { 
+
+    public function index($paramOrigen='') {
 
        if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
                 redirect('/gracias');
@@ -32,9 +32,9 @@ class Home extends CI_Controller {
         $data = get_url_base();
 
         $data['jsonParam']=get_app_data();
-        
+
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Ya quiero que sea 1 de diciembre para disfrutar las mejores ofertas de CyberLunes.  Si te gustan los descuentos ingresa a http://www.cyberlunes.com.co';
+        $meta_descripcion = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com.co';
         $meta_keys = "Descuentos, ofertas, rebajas, outlet, promociones, precios bajos, barato, deals, artículos baratos, productos a menor precio, Colombia, Bogotá, Medellín, Cali, Barranquilla, cyberlunes, ciberlunes, cybermonday, cibermonday";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
@@ -51,7 +51,7 @@ class Home extends CI_Controller {
         $this->paginacionArticulos();
         $page = ($this->uri->segment(1)) ? $this->uri->segment(1) : 0;
         $page = ($page == 0) ? 0 : ($page*6)-6;
-        
+
         $time_memcached='600'; // 10 min
         $key_memcached='articulos_'.$page;
         $results = $this->memcached_library->get($key_memcached);
@@ -65,7 +65,7 @@ class Home extends CI_Controller {
           $data['articulos'] = $results;
         }
 
-		    $data['paginador_articulos'] = $this->pagination->create_links(); 
+		    $data['paginador_articulos'] = $this->pagination->create_links();
         $data['total_articulos'] = $this->home_model->get_count_articulos();
 
 
@@ -100,7 +100,7 @@ class Home extends CI_Controller {
 
         if($paramOrigen=='gracias'){
                 $this->load->view('template/gracias');
-        }     
+        }
 
         $this->load->view('template/terminos_condiciones');
         $this->load->view('template/footer_share', $data);
@@ -110,7 +110,7 @@ class Home extends CI_Controller {
 
 
     public function detalle($art_slug=''){
-       
+
 
        if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
                 redirect('/gracias');
@@ -149,20 +149,20 @@ class Home extends CI_Controller {
       $data['image_src'] = $meta_imagen;
       $data['meta_url'] = $meta_url;
       $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
-      
-      $data['s_pageName']='Cyberlunes: pre-evento: detalle: '.$art_slug; 
+
+      $data['s_pageName']='Cyberlunes: pre-evento: detalle: '.$art_slug;
       $data['s_channel']= 'Cyberlunes: pre-evento: detalle';
       $data['s_prop1']= 'Cyberlunes: pre-evento: detalle: '.$art_slug;
       $data['s_prop2']= '';
-      
+
       $data['siteId'] = 58465;
-      
+
       $image_size = getimagesize($data['base_url_img_articulos'].$data['articulo'][0]->ART_IMAGEN);
       if($image_size[0] > $image_size[1]){
-        $data['pageId'] = 438588; 
+        $data['pageId'] = 438588;
       }
       else{
-        $data['pageId'] = 438589; 
+        $data['pageId'] = 438589;
       }
 
       if($this->agent->is_mobile()){
@@ -221,7 +221,7 @@ class Home extends CI_Controller {
       $config['first_link'] = FALSE;
       $config['last_link'] = FALSE;
 
-      $this->pagination->initialize($config); 
+      $this->pagination->initialize($config);
 
   }
 
@@ -237,7 +237,7 @@ class Home extends CI_Controller {
     setcookie('formularios', 'hidden', time()+60*60*24*30, '/', null, null, true);
     setcookie('origen', 'registro_success', time()+60*60*24*30, '/', null, null, true);
 
-    $salida['code'] = '0'; 
+    $salida['code'] = '0';
     $json= json_encode($salida);
 
 
@@ -276,11 +276,11 @@ class Home extends CI_Controller {
   public function prueba2(){
     $this->load->view('prueba2');
   }
-     
+
 
   public function pruebagracias(){
        $this->load->view('pruebagracias');
-  }   
+  }
 }
 
 /* End of file welcome.php */

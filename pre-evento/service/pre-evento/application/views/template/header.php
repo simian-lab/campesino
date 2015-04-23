@@ -76,7 +76,7 @@
                     </div>
                     <?php if(!$this->agent->is_mobile()): ?>
                     <div class="col-md-3 col-sm-6 col-xs-6 title">
-                        <!--<span>19 de Mayo <br>--><span>¡Espéralo pronto!</span>
+                        <!--<span>19 de Mayo <br>--><span>Espera el evento con los mejores descuentos</span>
                     </div>
                     <?php endif; ?>
                     <div class="col-md-6 marcas">
