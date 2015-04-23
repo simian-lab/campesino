@@ -26,7 +26,7 @@
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
         
         
-        <?php if (ENVIRONMENT == 'production'): ?>
+        <?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
             <script src="<?php echo $base_url_static?>js/s_code.js"></script>     
         <?php else: ?>
             <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 

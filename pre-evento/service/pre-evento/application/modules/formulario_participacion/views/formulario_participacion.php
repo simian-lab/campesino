@@ -83,6 +83,15 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-3 col-lg-offset-2">
+                                <span>*Ciudad</span>
+                            </div>
+                            <div class="col-lg-7">
+                                <input class="validate[required]" type="text" name="ciudad" value="<?php echo set_value('ciudad') ?>">
+                                <?php echo form_error('ciudad'); ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-lg-offset-2">
                                 <span>*Correo electrónico</span>
                             </div>
                             <div class="col-lg-7">

@@ -107,6 +107,8 @@ class formulario_participacion extends CI_Controller {
         $this->form_validation->set_message('required', '%s requerido');
         $this->form_validation->set_rules('cargo', 'Cargo', 'trim|required|xss_clean');
         $this->form_validation->set_message('required', '%s requerido');
+        $this->form_validation->set_rules('ciudad', 'Ciudad', 'trim|required|xss_clean');
+        $this->form_validation->set_message('required', '%s requerido');
         $this->form_validation->set_rules('celular', 'Teléfono móvil', 'trim|numeric|required|xss_clean');
         $this->form_validation->set_message('required', '%s requerido');
         $this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
@@ -138,6 +140,7 @@ class formulario_participacion extends CI_Controller {
             $mensaje = 'Nombre de la empresa: '.$this->input->post('nombre_empresa').'
                         Nombre de contacto: '.$this->input->post('nombre_contacto').'
                         Cargo: '.$this->input->post('cargo').'
+                        Ciudad: '.$this->input->post('ciudad').'
                         Correo electrónico: '.$this->input->post('email').'
                         Teléfono móvil: '.$this->input->post('celular').'
                         Teléfono oficina: '.$this->input->post('telefono').'

@@ -57,7 +57,17 @@ class Aliados extends Main {
 			} else {
 				$allies = $this->aliados_model->get_user_aliados('list');
 			}
-			asort($allies);
+
+			/*
+			Aquí me aseguro que la variable $allies sea un arreglo así la base de datos esté vacía.
+			Así prevengo el error que genera Grocery Crud al intentar llenar el dropdown.
+			- Nicolás, 23 Apr 2015
+			 */
+			if(is_array($allies)) {
+				asort($allies);
+			} else {
+				$allies = array('');
+			}
 
 			if($state == 'insert_validation' || $state == 'update_validation'){
 				$url = $this->input->post('PAT_URL_EVENT');

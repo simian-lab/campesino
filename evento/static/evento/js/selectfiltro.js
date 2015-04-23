@@ -8,11 +8,16 @@ $(document).ready(function() {
           if($( "#selectMarca" ).val() != 'marcas'){
             $( "#selectMarca" ).val('marcas');
           }
-
+          if($( "#selectSubCategoria" ).length != 0){
+            $( "#selectSubCategoria" ).val('todos');
+          }
         });
 
         $( "#selectMarca" ).change(function() {
           //onChangeFilter(this.value)
+          if($( "#selectSubCategoria" ).length != 0){
+            $( "#selectSubCategoria" ).val('todos');
+          }
         });
 
         $( "#selectSubCategoria" ).change(function() {
