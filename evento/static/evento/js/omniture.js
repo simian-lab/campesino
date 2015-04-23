@@ -102,6 +102,15 @@ function onClickOferta(id, posicion, tienda){
 	s.tl(true,"o","Click en Oferta");
 }
 
+function onClickPatrocinador (id, posicion, patrocinador) {
+  s.linkTrackVars="events,eVar38,eVar39";
+  s.linkTrackEvents="event37";
+  s.events="event37";
+  s.eVar38=posicion;
+  s.eVar39=patrocinador;
+  s.tl(true,"o","Click en Comercio");
+}
+
 function printOferta(array_id){
 	s.linkTrackVars = "events,products";
 	s.linkTrackEvents = "event41";
