@@ -53,16 +53,19 @@
       <h2>PATROCINADORES <small>DESTACADOS</small></h2>
 
       <?php foreach($patrocinadores_oro_plus as $patrocinador): ?>
+      <?php 
+        if($patrocinador->PAT_URL_EVENT != '') {
+          $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+        } else {
+          $url_patrocinador = '#';
+        }
+      ?>
         <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <?php if($patrocinador->PAT_URL_EVENT!=''): ?>
-              <a target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $patrocinador->PAT_HASH_URL_EVENT ?>">
+              <a target="_blank" href="<?php echo $url_patrocinador ?>">
                 <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
-            <?php else: ?>
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
-            <?php endif; ?>
           </div>
         </div>
       <?php endforeach; ?>
