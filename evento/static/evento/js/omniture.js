@@ -93,6 +93,22 @@ function onClickOferta(id, posicion, tienda){
 	s.tl(true,"o","Click en Oferta");
 }
 
+function onClickTodasLasTiendas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14"; 
+	s.events = "event14";
+	s.eVar18 = "tab todas las tiendas";
+	s.tl(true, "o", "uso de tab");
+}
+
+function onClickTodasLasOfertas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14"; 
+	s.events = "event14";
+	s.eVar18 = "tab todas las ofertas";
+	s.tl(true, "o", "uso de tab");
+}
+
 function printOferta(array_id){
 	s.linkTrackVars = "events,products";
 	s.linkTrackEvents = "event41";
