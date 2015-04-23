@@ -9,7 +9,7 @@ function shareFacebook(art_detalle){
         method: 'feed',
         link: url,
         picture: image,
-        name: title, 
+        name: title,
         caption: '',
         description: description
     };
@@ -17,7 +17,7 @@ function shareFacebook(art_detalle){
     onClickShare('facebook', title);
 
     function callback(response) {
-        
+
     }
     FB.ui(obj, callback);
     return false;
@@ -30,19 +30,19 @@ function shareTwitter(art_detalle){
     if(art_detalle == 'detalle')
         var text_share = $('meta[http-equiv="og:title"]').attr("content");
     else
-        var text_share = 'Ya estoy mirando en http://www.cyberlunes.com.co las mejores ofertas de @CyberLunesCo este 1 de diciembre';
+        var text_share = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com.co @CyberLunesCo';
 
 
     var openLink = 'http://twitter.com/share?text=' + encodeURIComponent( text_share );
-    
+
     onClickShare('twitter', text_share);
     //Parameters for the Popup window
-    winWidth    = 650;  
+    winWidth    = 650;
     winHeight   = 450;
     winLeft     = ($(window).width()  - winWidth)  / 2,
-    winTop      = ($(window).height() - winHeight) / 2, 
+    winTop      = ($(window).height() - winHeight) / 2,
     winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-    
+
     //open Popup window and redirect user to share website.
     window.open(openLink,'',winOptions);
     return false;

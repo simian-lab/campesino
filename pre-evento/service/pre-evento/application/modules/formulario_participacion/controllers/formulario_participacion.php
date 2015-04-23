@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class formulario_participacion extends CI_Controller {
-    
+
     public function __construct() {
           parent:: __construct();
        	  $this->load->model('formulario_participacion_model');
@@ -15,8 +15,8 @@ class formulario_participacion extends CI_Controller {
           $this->load->library('email');
           $this->load->library('user_agent');
      }
-    
-    public function index($success = '') { 
+
+    public function index($success = '') {
 
 
 
@@ -32,7 +32,7 @@ class formulario_participacion extends CI_Controller {
         $data['jsonParam']=get_app_data();
 
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
+        $meta_descripcion = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com';
         $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
@@ -42,7 +42,7 @@ class formulario_participacion extends CI_Controller {
         $data['image_src'] = $meta_imagen;
         $data['meta_url'] = $meta_url;
         $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
-        
+
         if($success != ''){
             $data['success'] = 'Formulario enviado con éxito';
         }
@@ -62,11 +62,11 @@ class formulario_participacion extends CI_Controller {
 
         $data['slider_patrocinadores'] = $this->formulario_participacion_model->get_patrocinadores();
 
-        $data['s_pageName']='Cyberlunes: pre-evento: formulario: participacion'; 
+        $data['s_pageName']='Cyberlunes: pre-evento: formulario: participacion';
         $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
         $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: participacion';
         $data['s_prop2']= '';
-        
+
         $data['siteId'] = 58465;
         $data['pageId'] = 438590;
 
@@ -79,7 +79,7 @@ class formulario_participacion extends CI_Controller {
         }
         $this->load->view('formulario_participacion', $data);
         $this->load->view('template/footer', $data);
-       
+
 
         $this->load->view('template/terminos_condiciones');
         $this->load->view('template/script_form');
@@ -94,7 +94,7 @@ class formulario_participacion extends CI_Controller {
             'expire' => '86500'
         );
 
-        $this->input->set_cookie($cookie); 
+        $this->input->set_cookie($cookie);
 
       }
 
@@ -121,7 +121,7 @@ class formulario_participacion extends CI_Controller {
         $this->form_validation->set_message('alpha', '%s inválido');
         $this->form_validation->set_rules('url');
         $this->form_validation->set_rules('comentarios');
-        $this->form_validation->set_error_delimiters('<div class="text-error" style="font-size:0.835em;color:#FF0000">', '</div>'); 
+        $this->form_validation->set_error_delimiters('<div class="text-error" style="font-size:0.835em;color:#FF0000">', '</div>');
 
 
         if ($this->form_validation->run() === FALSE)
@@ -133,7 +133,7 @@ class formulario_participacion extends CI_Controller {
             $this->config->load('email');
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = $this->config->item('smtp_host');
-            
+
 
             $this->email->initialize($config);
 
@@ -150,7 +150,7 @@ class formulario_participacion extends CI_Controller {
             $this->email->from($this->config->item('website_sender'));
             $this->email->to($this->config->item('email_to'));
             $this->email->subject('Formulario de particiación de Cyberlunes');
-            $this->email->message($mensaje); 
+            $this->email->message($mensaje);
             $this->email->send();
 
             $this->formulario_participacion_model->insert_participantes();
@@ -160,7 +160,7 @@ class formulario_participacion extends CI_Controller {
         }
 
     }
-        
+
 }
 
 /* End of file welcome.php */

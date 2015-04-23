@@ -78,6 +78,15 @@ function onClickBuscar(tienda, marca){
 	s.linkTrackVars="events,eVar24,eVar25";
 	s.linkTrackEvents="event11";
 	s.events="event11";
+
+  if(marca == "marcas") {
+    marca = "Todas";
+  }
+
+  if(tienda == "tiendas") {
+    tienda = "Todas";
+  }
+
 	s.eVar25=tienda;
 	s.eVar24=marca;
 	s.tl(true,"o","filtro");
