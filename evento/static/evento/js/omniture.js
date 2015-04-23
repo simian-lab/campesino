@@ -111,6 +111,14 @@ function onClickPatrocinador(id, posicion) {
   s.tl(true,"o","Click en Comercio");
 }
 
+function onClickOfertasDestacadas() {
+  s.linkTrackVars = "events,eVar18";
+  s.linkTrackEvents = "event14";
+  s.events = "event14";
+  s.eVar18 = "botón ofertas destacadas";
+  s.tl(true, "o", "uso de botón");
+}
+
 function onClickTodasLasTiendas() {
 	s.linkTrackVars = "events,eVar18";
 	s.linkTrackEvents = "event14";

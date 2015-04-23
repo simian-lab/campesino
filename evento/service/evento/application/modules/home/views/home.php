@@ -14,7 +14,7 @@
 
 <section class="wrapp">
   <div class="ancla">
-    <a href="#anchor-ofertas-destacadas">
+    <a href="#anchor-ofertas-destacadas" onclick="onClickOfertasDestacadas()">
       <img class="esc" src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/ancla.png">
       <img class="mov" src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/ancla-mov.png">
     </a>
