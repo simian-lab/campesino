@@ -91,6 +91,7 @@ function onClickBuscar(tienda, marca, subcategoria){
 	s.eVar24 = marca;
 	
 	if(subcategoria != undefined) {
+		s.linkTrackVars="events,eVar24,eVar25,eVar28";
 		s.eVar28 = subcategoria;
 	}
 
