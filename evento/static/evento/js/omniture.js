@@ -109,6 +109,22 @@ function onClickTodasLasOfertas() {
 	s.tl(true, "o", "uso de tab");
 }
 
+function onClickFacebook() {
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar25 = "Facebook";
+	s.tl(true, "o", "redes sociales");
+}
+
+function onClickTwitter() {
+	s.linkTrackVars = "events,eVar25";
+	s.linkTrackEvents = "event6";
+	s.events = "event6";
+	s.eVar25 = "Twitter";
+	s.tl(true, "o", "redes sociales");
+}
+
 function printOferta(array_id){
 	s.linkTrackVars = "events,products";
 	s.linkTrackEvents = "event41";
