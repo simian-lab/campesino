@@ -144,6 +144,9 @@ class Promociones_aprobadas extends Main {
 		$crud->field_type('PRO_URL','String');
         $crud->field_type('Tags','multiselect');  
         $crud->field_type('PRO_FECHA','invisible');
+
+        asort($arrCategorias);
+	    asort($arrMarcas);
 		
 		$crud->field_type('CAT_ID','dropdown', $arrCategorias);
 		$crud->field_type('SUB_ID','dropdown', $arrSubCategorias);

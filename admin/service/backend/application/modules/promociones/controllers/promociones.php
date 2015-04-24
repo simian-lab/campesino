@@ -182,6 +182,9 @@ class Promociones extends Main {
 			$crud->field_type('VISIBILITY','true_false');
 	    }
 
+	    asort($arrCategorias);
+	    asort($arrMarcas);
+
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
         $crud->field_type('Tags','multiselect');  
