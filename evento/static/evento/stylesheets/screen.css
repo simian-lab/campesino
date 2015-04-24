@@ -1721,6 +1721,11 @@ footer .terminos span a {
     margin:0px;
     clear: both;
 }
+#sas_31982 {
+  float: none !important;
+  text-align: center !important;
+  background-color: white !important;
+}
 div#menu .container .row nav ul#menuTop li{
   display: block;
   float: left;
@@ -1730,7 +1735,10 @@ div#menu .container .row .menu-head button{
 }
 div#menu .container .row nav ul#menuTop li a{
     font-size: 0.9em;
-  padding: 20px 13px;
+    padding: 20px 13px;
+}
+#menu #menuTop .dropdown-menu li a{
+  padding:5px !important;
 }
 div#menu .container .row .sponsor span{
     padding: 12% 8px !important;
