@@ -203,13 +203,22 @@ function cambiarValorCodSms(){
               url: '<?php echo base_url('index.php/tags_subcategorias/get_subcategorias_promociones/index') ?>/'+$('#field-CAT_ID').val(),
               success: function(data){
                 obj = JSON.parse(data);
+                // Aquí ordeno alfabéticamente las subcategorías.
+                var categoriesArray = [];
+                for (category in obj) {
+                  categoriesArray.push([category, obj[category]]);
+                }
+                categoriesArray = categoriesArray.sort(function (a, b) {
+                  if (a[1] < b[1]) return -1;
+                  if (a[1] > b[1]) return 1;
+                  return 0;
+                });
                 if(obj){
                   field2.removeAttr('disabled');
                   field2.children().remove().end();
-                  for (var key in obj) {
-                    if (obj.hasOwnProperty(key)) {
-                      field2.append('<option value="'+key+'">'+obj[key]+'</option>');
-                    }
+                  field2.append('<option value="" selected></option>');
+                  for (var i=0;i<categoriesArray.length;i++) {
+                    field2.append('<option value="' + categoriesArray[i][0] + '" >' + categoriesArray[i][1] + '</option>');
                   }
                   field2.trigger("liszt:updated");
                 } 
