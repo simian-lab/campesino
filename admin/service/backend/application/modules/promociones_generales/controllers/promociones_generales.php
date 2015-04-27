@@ -150,6 +150,7 @@ class Promociones_generales extends Main {
 
 		asort($arrCategorias);
 	    asort($arrMarcas);
+	    asort($arrSubCategorias);
 
 	    $crud->field_type('PRO_LOGO_PREMIUM','hidden',NULL);
 		$crud->field_type('PRO_DESCRIPCION','text');

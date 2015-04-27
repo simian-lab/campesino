@@ -147,6 +147,7 @@ class Promociones_premium_home extends Main {
 
 		asort($arrCategorias);
 	    asort($arrMarcas);
+	    asort($arrSubCategorias);
 
 		$crud->field_type('PRO_LOGO_GENERAL','hidden',NULL);
 		$crud->field_type('PRO_DESCRIPCION','text');
