@@ -147,6 +147,7 @@ class Promociones_aprobadas extends Main {
 
         asort($arrCategorias);
 	    asort($arrMarcas);
+	    asort($arrSubCategorias);
 		
 		$crud->field_type('CAT_ID','dropdown', $arrCategorias);
 		$crud->field_type('SUB_ID','dropdown', $arrSubCategorias);

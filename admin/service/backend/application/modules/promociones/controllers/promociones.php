@@ -184,6 +184,7 @@ class Promociones extends Main {
 
 	    asort($arrCategorias);
 	    asort($arrMarcas);
+	    asort($arrSubCategorias);
 
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
