@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/logos.css">
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
 
-        <?php if (ENVIRONMENT == 'production'): ?>
+        <?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
             <script src="<?php echo $base_url_static?>js/s_code.js"></script>
         <?php else: ?>
             <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script>
@@ -35,22 +35,21 @@
         <script type="text/javascript" src="http://cdn1.smartadserver.com/diff/js/smartadserver.js"></script>
         <script src='http://ads.eltiempo.com/config.js?nwid=484' type="text/javascript"></script>
         <script type="text/javascript">
-            sas.setup({ domain: 'http://ads.eltiempo.com'});
+
+            sas.setup({ domain: 'http://ads.eltiempo.com',async: true, renderMode: 0});
+            
             sas_tmstp=Math.round(Math.random()*10000000000);sas_masterflag=1;
+            
             function sasmobile(sas_pageid,sas_formatid,sas_target) {
                 if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
                 document.write('<scr'+'ipt src="http://ads.eltiempo.com/call2/pubmj/'+sas_pageid+'/'+sas_formatid+'/'+sas_master+'/'+sas_tmstp+'/'+escape(sas_target)+'?"></scr'+'ipt>');
             }
+
             function sascc(sas_imageid,sas_pageid) {
                 img=new Image();
                 img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
             }
 
-            var appdiademoda = {
-                jssdkload:false,
-                idioma: 'es',
-                data: eval(<?php echo $jsonParam; ?>)
-            };
         </script>
     </head>
     <body>
