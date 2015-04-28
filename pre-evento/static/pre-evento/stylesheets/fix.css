@@ -109,10 +109,12 @@ Here we're making sure the images don't 'break' the carousel.
 #slider-marcas .slider-marcas img {
 	max-height: 73px;
 	max-width: 132px;
+}
 
-	@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+	#slider-marcas .slider-marcas img {
 		max-height: 55px;
-	}
+	}	
 }
 
 #slide-marcas img {
