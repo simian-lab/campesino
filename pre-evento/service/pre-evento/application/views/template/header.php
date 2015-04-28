@@ -37,7 +37,7 @@
         <script type="text/javascript">
 
             sas.setup({ domain: 'http://ads.eltiempo.com',async: true, renderMode: 0});
-            
+
             sas_tmstp=Math.round(Math.random()*10000000000);sas_masterflag=1;
             
             function sasmobile(sas_pageid,sas_formatid,sas_target) {
@@ -49,6 +49,12 @@
                 img=new Image();
                 img.src='http://ads.eltiempo.com/call/clicpixel/'+sas_imageid+'/'+sas_pageid+'/'+sas_tmstp+'?';
             }
+
+            var appdiademoda = {
+                jssdkload:false,
+                idioma: 'es',
+                data: eval(<?php echo $jsonParam; ?>)
+            };
 
         </script>
     </head>

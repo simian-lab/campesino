@@ -211,17 +211,16 @@
                         <span>publicidad</span>
                     </div>
                     <script type="text/javascript">
-                    sas.call("std", {
-                      siteId:  41700, // 
-                      pageId:  282275, // Página : Cyberlunes/home
-                      formatId:  9611, // Formato : Primer Boton 300x100 300x100
-                      target:  ''   // Segmentación
-                    });
+                    sas_pageid='41700/282275'; // Página : Cyberlunes/home
+                    sas_formatid=9611;  // Formato : Primer Boton 300x100 300x100
+                    sas_target='';   // Segmentación
+                    SmartAdServer(sas_pageid,sas_formatid,sas_target);
                     </script>
                     <noscript>
-                       <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
-                          <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                      </noscript>
+                    <a href="http://ads.eltiempo.com/call/pubjumpi/41700/282275/9611/S/[timestamp]/?" target="_blank">
+                        <img src="http://ads.eltiempo.com/call/pubi/41700/282275/9611/S/[timestamp]/?" border="0" alt="" />
+                    </a>
+                    </noscript>
                 </figure>
                 <figure>
                     <div class="titulo-publi">
