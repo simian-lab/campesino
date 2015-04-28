@@ -101,3 +101,18 @@ is a little bit higher on the page.
 #afbd_4207246m {
   top: 70px !important;
 }
+
+/*
+"Fix" by nicolas@simian.co on Apr 28 2015
+Here we're making sure the images don't 'break' the carousel.
+*/
+#slider-marcas img {
+	max-height: 73px;
+	max-width: 132px;
+}
+
+#slide-marcas img {
+	max-height: 61px;
+	max-width: 110px;
+	width: auto !important;
+}
