@@ -70,7 +70,7 @@ class Home extends CI_Controller {
 
 
         $data['s_pageName']='Cyberlunes: pre-evento: home'; // Slider de la home de articulos
-        $data['s_channel']= 'Cyberlunes: pre-evento: home  ';
+        $data['s_channel']= 'cyberlunes: pre-evento';
         $data['s_prop1']= '';
         $data['s_prop2']= '';
 

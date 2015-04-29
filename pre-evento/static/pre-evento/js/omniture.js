@@ -65,11 +65,19 @@ function onSubmitFormulario(nombre){
 	s.tl(true,"o","Formulario"); 
 }
 
-
 function onClickPauta(nombre){
 	s.linkTrackVars = "events,products";
 	s.linkTrackEvents = "event41";
 	s.events = "event41";
 	s.products = ";"+nombre;
 	s.tl(true,"o","Pauta"); 
+}
+
+function onClickComercio(nombre, posicion) {
+	s.linkTrackVars = "events,eVar38,eVar39";
+	s.linkTrackEvents = "event37";
+	s.events = "event37";
+	s.eVar39 = nombre;
+	s.eVar38 = "Posicion " + posicion;
+	s.tl(true,"o","clic en comercio");
 }

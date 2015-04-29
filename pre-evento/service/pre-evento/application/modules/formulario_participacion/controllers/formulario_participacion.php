@@ -62,8 +62,8 @@ class formulario_participacion extends CI_Controller {
 
         $data['slider_patrocinadores'] = $this->formulario_participacion_model->get_patrocinadores();
 
-        $data['s_pageName']='Cyberlunes: pre-evento: formulario: participacion';
-        $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
+        $data['s_pageName']='cyberlunes: pre-evento: formulario participacion';
+        $data['s_channel']= 'cyberlunes: pre-evento';
         $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: participacion';
         $data['s_prop2']= '';
 
