@@ -15,7 +15,7 @@ class Pauta extends MX_Controller
 
         $meta_title = 'Cyberlunes';
         $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
-        $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
+        $meta_keys = "Compare,Mejores Ofertas Turísticas";
         $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
 
         $data['meta_title'] = $meta_title;
