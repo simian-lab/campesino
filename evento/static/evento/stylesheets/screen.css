@@ -1721,6 +1721,12 @@ footer .terminos span a {
     margin:0px;
     clear: both;
 }
+.footer .sponsor .social{
+  bottom: -45px !important;
+  left: inherit !important;
+  position: relative !important;
+  text-align: center;
+}
 #sas_31982 {
   float: none !important;
   text-align: center !important;
@@ -2668,8 +2674,8 @@ hr{
           padding: 0px;
         }
         .comercios .wrapper-box a span{
-          font-size: 15px;
-          line-height: 19px;
+          font-size: 11px;
+          line-height: 17px;
         }
         .mini .wrapper-box a span{
           font-size: 11px;
