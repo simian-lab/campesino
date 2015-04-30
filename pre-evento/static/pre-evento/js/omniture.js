@@ -73,11 +73,30 @@ function onClickPauta(nombre){
 	s.tl(true,"o","Pauta"); 
 }
 
-function onClickComercio(nombre, posicion) {
+function onClickComercio(id, posicion) {
 	s.linkTrackVars = "events,eVar38,eVar39";
 	s.linkTrackEvents = "event37";
 	s.events = "event37";
-	s.eVar39 = nombre;
+	s.eVar39 = id;
 	s.eVar38 = "Posicion " + posicion;
 	s.tl(true,"o","clic en comercio");
+}
+
+function printPatrocinador(array_id) {
+  s.linkTrackVars = "events,list1";
+  s.linkTrackEvents = "event42";
+  s.events = "event42";
+  s.list1 = '';
+
+  for(var i = 0; i < array_id.length; i++) {
+    if(array_id[i] != undefined) {
+      s.list1 += ";"+array_id[i];
+
+      if(i < array_id.length - 1){
+        s.list1 += ",";
+      }
+    }
+  }
+
+  s.tl(true,"o","Impresión Retail");
 }

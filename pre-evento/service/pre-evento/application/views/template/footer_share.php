@@ -183,6 +183,18 @@
         <script src="<?php echo $base_url_static;?>js/omniture.js"></script>
         <script src="<?php echo $base_url_static;?>js/share.js"></script>
 
+        <script>
+        var id_patrocinadores = [];
+
+        $.each($('#slider-marcas li'), function(){
+          id_patrocinadores.push($(this).attr('data-id'));
+        });
+        
+        if(id_patrocinadores.length > 0) {
+          printPatrocinador(id_patrocinadores);
+        }
+        </script>
+
         <script language="JavaScript" type="text/javascript"><!--   
         //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  
         s.pageName="<?php echo $s_pageName; ?>";
