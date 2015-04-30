@@ -150,18 +150,18 @@ function onClickTabTodasLasOfertas() {
 }
 
 function onClickFacebook() {
-	s.linkTrackVars = "events,eVar25";
+	s.linkTrackVars = "events,eVar13";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
-	s.eVar25 = "Facebook";
+	s.eVar13 = "Facebook";
 	s.tl(true, "o", "redes sociales");
 }
 
 function onClickTwitter() {
-	s.linkTrackVars = "events,eVar25";
+	s.linkTrackVars = "events,eVar13";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
-	s.eVar25 = "Twitter";
+	s.eVar13 = "Twitter";
 	s.tl(true, "o", "redes sociales");
 }
 
