@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class detalleArticulo extends MX_Controller 
+class detalleArticulo extends MX_Controller
 {
    function __construct()
    {
@@ -9,13 +9,13 @@ class detalleArticulo extends MX_Controller
    }
 
 
-  public function todos($id_art = '') { 
+  public function todos($id_art = '') {
         $data = null;
         $data = get_url_base();
 
 
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
+        $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
         $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
         $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
         $meta_url = base_url();
@@ -29,9 +29,9 @@ class detalleArticulo extends MX_Controller
       /* mencache menu*/
       //  $key['menu']='menu_html';
         $data['menu_html'] =modules::run('menu/menu/load',$data);
-       
-/* mencache menu*/       
-/* mencache articulos*/   
+
+/* mencache menu*/
+/* mencache articulos*/
         //$page=1;
         $data['articulo_html'] = modules::run('articulos/contenidosArticulos/loadArticulo',$data,$id_art);
         $data['articulos_recomendados_html'] = modules::run('articulos/contenidosArticulos/loadArticulosRecomendados',$data,$id_art);
@@ -44,7 +44,7 @@ class detalleArticulo extends MX_Controller
         $this->load->view('template/scripts',$data);
 
        return;
-      
+
   }
-      
+
 }
