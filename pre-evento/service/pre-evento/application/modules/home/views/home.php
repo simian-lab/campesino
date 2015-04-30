@@ -139,18 +139,15 @@
             <img src="<?php echo $base_url_static;?>img/border-left-slider-marcas.png" class="border-left" alt="">
             <ul class="slider-marcas">
                 <?php 
-                $accents = array('Á', 'É', 'Í', 'Ó', 'Ú', 'á', 'é', 'í', 'ó', 'ú');
-                $no_accents = array('A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u');
-                foreach($slider_patrocinadores as $key => $patrocinador): 
+                foreach($slider_patrocinadores as $key => $patrocinador):
+                    $pat_id = $patrocinador->PAT_ID;
                 ?>
-                <li>
+                <li data-id="<?php echo $pat_id ?>">
                         <?php  
                         if($patrocinador->PAT_URL!=''):
-                            $pat_name = $patrocinador->PAT_NOMBRE;
-                            $pat_name = str_replace($accents, $no_accents, $pat_name);
                             $pat_position = $key + 1;
                         ?>
-                        <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL); ?>" onclick="onClickComercio('<?php echo $pat_name ?>', '<?php echo $pat_position ?>')">
+                        <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL); ?>" onclick="onClickComercio('<?php echo $pat_id ?>', '<?php echo $pat_position ?>')">
                                         <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>" alt="">
                                 </a>
                         <?php  else: ?>
