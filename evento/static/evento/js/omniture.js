@@ -184,20 +184,18 @@ function printOferta(array_id){
 }
 
 function printPatrocinador(array_id) {
-  s.linkTrackVars = "events,list1";
-  s.linkTrackEvents = "event42";
-  s.events = "event42";
-  s.list1 = '';
+	s.linkTrackVars = "events,list1";
+	s.linkTrackEvents = "event42";
+	s.events = "event42";
+	s.list1 = '';
 
-  for(var i = 0; i < array_id.length; i++) {
-    if(array_id[i] != undefined) {
-      s.list1 += ";"+array_id[i];
+	for(var i = 0; i < array_id.length; i++) {
+		if((array_id[i] != undefined) && (i > 0)) {
+			s.list1 += ";"+array_id[i];
+		} else {
+			s.list1 += array_id[i];
+		}
+	}
 
-      if(i < array_id.length - 1){
-        s.list1 += ",";
-      }
-    }
-  }
-
-  s.tl(true,"o","Impresión Retail");
+	s.tl(true,"o","Impresión Retail");
 }
