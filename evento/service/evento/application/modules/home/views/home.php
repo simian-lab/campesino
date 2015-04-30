@@ -44,7 +44,7 @@
           <a href="<?php echo $base_url;?>" onclick="onClickTodasLasTiendas()" >TODAS LAS TIENDAS</a>
         </li>
         <li>
-          <a href="<?php echo $base_url."descuentos"?>" onclick="onClickTodasLasOfertas()" >TODAS LAS OFERTAS</a>
+          <a href="<?php echo $base_url."descuentos"?>" onclick="onClickTabTodasLasOfertas()" >TODAS LAS OFERTAS</a>
         </li>
       </ul>
     </div>

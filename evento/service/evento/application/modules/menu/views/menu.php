@@ -18,7 +18,7 @@
         <nav class="navbar-collapse collapse">
           <ul id="menuTop">
             <li class="item-menu-current">
-              <a href="<?php echo $base_url."descuentos"?>" onclick="onClickTodasLasOfertas()">Todas las ofertas</a>
+              <a href="<?php echo $base_url."descuentos"?>" onclick="onClickBotonTodasLasOfertas()">Todas las ofertas</a>
             </li>
             <?php if(isset($resultCategoriasFija)): ?>
               <?php foreach ($resultCategoriasFija as $item): //var_dump($this->uri->segment(2));
