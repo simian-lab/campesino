@@ -170,17 +170,18 @@ function printOferta(array_id){
 	s.linkTrackEvents = "event41";
 	s.events = "event41";
 	s.products = '';
+
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
-			s.products += ";"+array_id[i];
-
-			if(i < array_id.length - 1){
-				s.products += ",";
+			if(i > 0) {
+				s.products += ";" + array_id[i];
+			} else {
+				s.products += array_id[i];
 			}
 		}
 	}
 
-	s.tl(true,"o","Impresión Oferta");
+	s.tl(true, "o", "Impresión Oferta");
 }
 
 function printPatrocinador(array_id) {
@@ -190,10 +191,12 @@ function printPatrocinador(array_id) {
 	s.list1 = '';
 
 	for(var i = 0; i < array_id.length; i++) {
-		if((array_id[i] != undefined) && (i > 0)) {
-			s.list1 += ";"+array_id[i];
-		} else {
-			s.list1 += array_id[i];
+		if(array_id[i] != undefined) {
+			if(i > 0) {
+				s.list1 += ";" + array_id[i];
+			} else {
+				s.list1 += array_id[i];
+			}
 		}
 	}
 
