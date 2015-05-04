@@ -1792,7 +1792,7 @@ div#menu .box-right{
     margin: 0px;
     border: 1px solid #d8d7d7;
     outline: none;
-    background: #FFF url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/arrow-select.jpg') no-repeat 97% center;
+    background: #FFF url('../img/arrow-select.jpg') no-repeat 97% center;
     padding: 0px 0px 0px 3px;
 }
 .wrapper-filter .button-search{
@@ -1877,7 +1877,7 @@ div#menu .box-right{
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
+    background: #666666 url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -1987,7 +1987,7 @@ hr{
     left: 0%;
 }
 .comercios .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
+    background: #666666 url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2060,7 +2060,7 @@ hr{
   left: -0.3%;
 }
 .brands .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 93% center;
+    background: #666666 url('../img/cart.png') no-repeat 93% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -2134,7 +2134,7 @@ hr{
   left: 0%;
 }
 .mini .wrapper-box a span{
-    background: #666666 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 95% center;
+    background: #666666 url('../img/cart.png') no-repeat 95% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2173,7 +2173,7 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tabiv.png') no-repeat 0px top;
+    background: url('../img/tabiv.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
@@ -2188,7 +2188,7 @@ hr{
 }
 
 .menu-tabs ul li.active {
-    background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/tab-activeiv.png') center 0px no-repeat;
+    background: url('../img/tab-activeiv.png') center 0px no-repeat;
 }
 .menu-tabs ul li.active a{
     font-size: 23px;
@@ -2215,7 +2215,7 @@ hr{
     font-weight: normal;
 }
 .link.red {
-  background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/bg-button-red.jpg') left top no-repeat #b9363c;
+  background: url('../img/bg-button-red.jpg') left top no-repeat #b9363c;
 }
 .link.red, .link.orange {
   border: 1px solid white;
@@ -2274,7 +2274,7 @@ hr{
 }
 /* line 748, ../sass/screen.scss */
 .ofertas-destacadas ul li figure .overlay{
-  background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/bg-hover.png') repeat;
+  background: url('../img/bg-hover.png') repeat;
   display: none;
   height: 345px;
   left: 0;
@@ -2396,7 +2396,7 @@ hr{
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
-  background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/bg-percent.jpg') no-repeat;
+  background: url('../img/bg-percent.jpg') no-repeat;
   border: 1px solid #00b6c9;
   border-bottom: none;
   bottom: 0;
@@ -2567,7 +2567,7 @@ hr{
         padding-bottom: 16px;
       }
       .comercios .wrapper-box a span{
-          background: #666665 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
+          background: #666665 url('../img/cart.png') no-repeat 96% center;
         background-size: auto 80%;
         font-size: 12px;
         line-height: 16px;
@@ -2578,7 +2578,7 @@ hr{
         padding-bottom: 16px;
       }
       .mini .wrapper-box a span{
-          background: #666665 url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/cart.png') no-repeat 96% center;
+          background: #666665 url('../img/cart.png') no-repeat 96% center;
           font-size: 12px;
           line-height: 16px;
           left: -106%;
@@ -2682,11 +2682,11 @@ hr{
           line-height: 15px;
         }
         .menu-tabs ul li{
-          background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-tabs.png') 0px 12px;
+          background: url('../img/menu-tabs.png') 0px 12px;
           background-size: cover;
         }
         .menu-tabs ul li.active{
-          background: url('http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/menu-active-movil.png');
+          background: url('../img/menu-active-movil.png');
           background-size: cover;
         }
         .menu-tabs ul li.active a{

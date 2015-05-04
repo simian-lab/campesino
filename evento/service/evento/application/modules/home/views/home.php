@@ -15,14 +15,14 @@
 <section class="wrapp">
   <div class="ancla">
     <a href="#anchor-ofertas-destacadas" onclick="onClickOfertasDestacadas()">
-      <img class="esc" src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/ancla.png">
-      <img class="mov" src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/ancla-mov.png">
+      <img class="esc" src="<?php echo $base_url_static;?>img/ancla.png">
+      <img class="mov" src="<?php echo $base_url_static;?>img/ancla-mov.png">
     </a>
   </div>
   <div class="container">
     <div class="wrapper-filter">
-      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-left-filter.png" class="extra-left">
-      <img src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/assets/extra-right-filter.png" class="extra-right">
+      <img src="<?php echo $base_url_static;?>img/extra-left-filter.png" class="extra-left">
+      <img src="<?php echo $base_url_static;?>img/extra-right-filter.png" class="extra-right">
       <div class="filter row col-md-12">
         <div class="item-filter <?php if(empty($subCategorias)) { echo 'col-sm-4 col-sm-offset-1'; } else {echo 'col-sm-3 col-xs-12';} ?>">
           <?php echo $tiendas ?>
