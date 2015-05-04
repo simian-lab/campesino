@@ -1721,7 +1721,7 @@ footer .terminos span a {
     margin:0px;
     clear: both;
 }
-.footer .sponsor .social{
+footer .sponsor .social{
   bottom: -45px !important;
   left: inherit !important;
   position: relative !important;
@@ -2747,3 +2747,4 @@ hr{
       overflow: hidden!important;
     }
   }
+  
