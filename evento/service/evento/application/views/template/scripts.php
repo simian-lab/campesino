@@ -31,11 +31,6 @@
       printOferta(id_nodestacados);
     }
 
-    var filtro = '<?php echo $this->uri->segment(2) ?>';
-    if(filtro != ''){
-      onChangeFilter(filtro);
-    }
-
     // I put this here because it makes more sense to group the
     // Omniture functionality here. However, let me state that this
     // feels disorganised as hell.

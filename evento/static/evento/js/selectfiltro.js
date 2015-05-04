@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
         $( "#selectTienda" ).change(function() {
-          //onChangeFilter(this.value)
           $.get('http://' + window.location.host + "/marcas/" + this.value, function(data, status){
             $( "#selectMarca" ).empty().append(data);
           });
@@ -14,14 +13,12 @@ $(document).ready(function() {
         });
 
         $( "#selectMarca" ).change(function() {
-          //onChangeFilter(this.value)
           if($( "#selectSubCategoria" ).length != 0){
             $( "#selectSubCategoria" ).val('todos');
           }
         });
 
         $( "#selectSubCategoria" ).change(function() {
-            //onChangeFilter(this.value)
             $( "#selectTienda" ).val('tiendas');
             $( "#selectMarca" ).val('marcas');
             $.get('http://' + window.location.host + "/marcas/tiendas" , function(data, status){
