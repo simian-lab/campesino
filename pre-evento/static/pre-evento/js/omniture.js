@@ -66,10 +66,10 @@ function onSubmitFormulario(nombre){
 }
 
 function onClickPauta(nombre){
-	s.linkTrackVars = "events,products";
+	s.linkTrackVars = "events,eVar27";
 	s.linkTrackEvents = "event43";
 	s.events = "event43";
-	s.products = ";"+nombre;
+	s.eVar27 = nombre;
 	s.tl(true,"o","Pauta"); 
 }
 
