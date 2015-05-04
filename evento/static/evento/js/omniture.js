@@ -133,7 +133,15 @@ function onClickTodasLasTiendas() {
 	s.tl(true, "o", "uso de tab");
 }
 
-function onClickTodasLasOfertas() {
+function onClickBotonTodasLasOfertas() {
+	s.linkTrackVars = "events,eVar18";
+	s.linkTrackEvents = "event14"; 
+	s.events = "event14";
+	s.eVar18 = "boton todas las ofertas";
+	s.tl(true, "o", "uso de boton");
+}
+
+function onClickTabTodasLasOfertas() {
 	s.linkTrackVars = "events,eVar18";
 	s.linkTrackEvents = "event14";
 	s.events = "event14";
@@ -142,18 +150,18 @@ function onClickTodasLasOfertas() {
 }
 
 function onClickFacebook() {
-	s.linkTrackVars = "events,eVar25";
+	s.linkTrackVars = "events,eVar13";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
-	s.eVar25 = "Facebook";
+	s.eVar13 = "Facebook";
 	s.tl(true, "o", "redes sociales");
 }
 
 function onClickTwitter() {
-	s.linkTrackVars = "events,eVar25";
+	s.linkTrackVars = "events,eVar13";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
-	s.eVar25 = "Twitter";
+	s.eVar13 = "Twitter";
 	s.tl(true, "o", "redes sociales");
 }
 
@@ -162,34 +170,35 @@ function printOferta(array_id){
 	s.linkTrackEvents = "event41";
 	s.events = "event41";
 	s.products = '';
+
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
-			s.products += ";"+array_id[i];
-
-			if(i < array_id.length - 1){
-				s.products += ",";
+			if(i > 0) {
+				s.products += ";" + array_id[i];
+			} else {
+				s.products += array_id[i];
 			}
 		}
 	}
 
-	s.tl(true,"o","Impresión Oferta");
+	s.tl(true, "o", "Impresión Oferta");
 }
 
 function printPatrocinador(array_id) {
-  s.linkTrackVars = "events,list1";
-  s.linkTrackEvents = "event42";
-  s.events = "event42";
-  s.list1 = '';
+	s.linkTrackVars = "events,list1";
+	s.linkTrackEvents = "event42";
+	s.events = "event42";
+	s.list1 = '';
 
-  for(var i = 0; i < array_id.length; i++) {
-    if(array_id[i] != undefined) {
-      s.list1 += ";"+array_id[i];
+	for(var i = 0; i < array_id.length; i++) {
+		if(array_id[i] != undefined) {
+			if(i > 0) {
+				s.list1 += ";" + array_id[i];
+			} else {
+				s.list1 += array_id[i];
+			}
+		}
+	}
 
-      if(i < array_id.length - 1){
-        s.list1 += ",";
-      }
-    }
-  }
-
-  s.tl(true,"o","Impresión Retail");
+	s.tl(true,"o","Impresión Retail");
 }

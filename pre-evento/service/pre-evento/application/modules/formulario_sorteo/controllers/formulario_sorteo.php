@@ -31,7 +31,7 @@ class formulario_sorteo extends CI_Controller {
 
         $meta_title = 'Cyberlunes';
         $meta_descripcion = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com';
-        $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
+        $meta_keys = "Compare,Mejores Ofertas Turísticas";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
 

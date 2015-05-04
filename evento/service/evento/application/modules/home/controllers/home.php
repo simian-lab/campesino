@@ -29,8 +29,8 @@ class Home extends MX_Controller {
     $data['descuentosfiltro']=json_encode($dataFiltrado);
 
     $meta_title = 'Cyberlunes';
-    $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
-    $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
+    $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
+    $meta_keys = "Compare,Mejores Ofertas Turísticas";
     $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
     $meta_url = base_url();
 
@@ -49,8 +49,8 @@ class Home extends MX_Controller {
     $data['descuentosfiltro']=json_encode($dataFiltrado);
     $data['jsonParam']=get_app_data();
 
-    $data['s_pageName']="evento: home";
-    $data['s_channel']="evento: home";
+    $data['s_pageName'] = "cyberlunes: evento: home";
+    $data['s_channel'] = "cyberlunes: evento";
     $data['s_prop1']= '';
 
     $data['tiendas'] = modules::run('promociones/tienda/load',$data);
