@@ -122,3 +122,12 @@ Here we're making sure the images don't 'break' the carousel.
 	max-width: 110px;
 	width: auto !important;
 }
+
+@media (max-width: 768px) {
+	#footer_main .social {
+		bottom: -45px !important;
+		left: inherit !important;
+		position: relative !important;
+		text-align: center;
+	}
+}
