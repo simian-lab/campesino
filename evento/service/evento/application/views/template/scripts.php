@@ -1,8 +1,7 @@
 <script src="<?php echo $base_url_static;?>js/bootstrap/bootstrap.js"></script>
 <script src="<?php echo $base_url_static;?>js/vendor/owl.carousel.js"></script>
 
-<!-- js temporal de dynamik -->
-<script src="http://dynamikdemos.a2hosted.com/clients/eltiempo/cyberlunes/temp.js"></script>
+<script src="<?php echo $base_url_static;?>js/temp.js"></script>
 
 <script src="<?php echo $base_url_static;?>js/selectfiltro.js"></script>
 <script src="<?php echo $base_url_static;?>js/share.js"></script>
@@ -30,11 +29,6 @@
 
     if(id_nodestacados.length > 0) {
       printOferta(id_nodestacados);
-    }
-
-    var filtro = '<?php echo $this->uri->segment(2) ?>';
-    if(filtro != ''){
-      onChangeFilter(filtro);
     }
 
     // I put this here because it makes more sense to group the

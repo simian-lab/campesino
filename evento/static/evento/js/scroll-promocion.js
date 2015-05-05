@@ -17,7 +17,10 @@ $(document).ready(function() {
         id_destacados.push($(this).attr('data-id'));
       });
 
-      printOferta(id_destacados);
+      if(id_destacados.length > 0) {
+        printOferta(id_destacados);
+      }
+
       id_destacados = [];
 
       var duplicados = new Array();
@@ -62,7 +65,10 @@ $(document).ready(function() {
         id_nodestacados.push($(this).attr('data-id'));
       });
 
-      printOferta(id_nodestacados);
+      if(id_nodestacados.length > 0) {
+        printOferta(id_nodestacados);  
+      }
+      
       id_nodestacados = [];
 
       var duplicados = new Array();
