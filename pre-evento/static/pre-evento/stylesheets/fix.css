@@ -117,6 +117,12 @@ Here we're making sure the images don't 'break' the carousel.
 	}	
 }
 
+@media (max-width: 400px) {
+	#slider-marcas .slider-marcas img {
+		max-height: 40px;
+	}	
+}
+
 #slide-marcas img {
 	max-height: 61px;
 	max-width: 110px;
