@@ -50,7 +50,7 @@
     </div>
 
     <div class="important-brand col-md-12 content-patrocinadores-destacados">
-      <h2>PATROCINADORES <small>DESTACADOS</small></h2>
+      <h2>ALIADOS <small>DESTACADOS</small></h2>
       <?php $posicion = 1; ?>
       <?php foreach($patrocinadores_oro_plus as $patrocinador): ?>
       <?php
@@ -159,7 +159,7 @@
     <div class="clear"></div>
 
     <div class="comercios col-md-12 content-patrocinadores-destacados">
-      <h2>COMERCIOS <small>PARTICIPANTES</small></h2>
+      <h2>ALIADOS <small>PARTICIPANTES</small></h2>
 
       <?php foreach($patrocinadores_plata as $patrocinador): ?>
       <?php
