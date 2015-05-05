@@ -173,10 +173,9 @@ function printOferta(array_id){
 
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
-			if(i > 0) {
-				s.products += ";" + array_id[i];
-			} else {
-				s.products += array_id[i];
+			s.products += ";" + array_id[i];
+			if(i < array_id.length - 1){
+				s.products += ",";
 			}
 		}
 	}
