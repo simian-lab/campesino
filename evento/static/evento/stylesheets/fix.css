@@ -150,3 +150,12 @@ header .container .head .marcas figure:first-child + figure + figure{
 	position: relative;
 	top: 5px;
 }
+
+@media screen and (max-width: 335px) {
+	section.wrapp .container .row .no-destacados ul li article .link {
+		font-size: 0.9rem;
+		position: relative;
+		right: 2%;
+		width: 146px;
+	}
+}
