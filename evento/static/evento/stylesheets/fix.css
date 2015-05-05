@@ -159,3 +159,15 @@ header .container .head .marcas figure:first-child + figure + figure{
 		width: 146px;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	.ofertas-destacadas ul li article .desc p {
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.ofertas-destacadas ul li article .desc {
+		margin-top: 10px;
+	}
+}
