@@ -143,15 +143,10 @@
         </div>
         <?php endif; ?>
 
-        <section>
+        
             <div class="container">                
                 <?php if($is_mobile == 1): ?>
-                    <div class="row">
-                        <div class="col-lg-12 banner-visa">
-                            <!--<a href="#">
-                                <img src="<?php echo $base_url_static;?>img/banner-visa.jpg" alt="">
-                            </a>-->
-                            <script type="text/javascript">
+                    <script type="text/javascript">
                              sas.call("std", {
                               siteId:  '<?php echo $siteId ?>', // 
                               pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes/home
@@ -163,11 +158,9 @@
                              <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
                               <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                             </noscript>
-                        </div>
-                    </div>
                 <?php endif; ?>                                    
             </div>
-        </section>
+        
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="<?php echo $base_url_static?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>        
