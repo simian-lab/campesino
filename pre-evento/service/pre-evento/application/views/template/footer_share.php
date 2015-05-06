@@ -39,7 +39,7 @@
                         <div>
                             <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a>  -  <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Cyberlunes&reg;</a></span>
                             <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
-                            <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+                            <span>© 2015 - Cyberlunes Todos los derechos reservados .</span>
                             <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
                         </div>
                     </div>
@@ -148,9 +148,6 @@
                 <?php if($is_mobile == 1): ?>
                     <div class="row">
                         <div class="col-lg-12 banner-visa">
-                            <!--<a href="#">
-                                <img src="<?php echo $base_url_static;?>img/banner-visa.jpg" alt="">
-                            </a>-->
                             <script type="text/javascript">
                              sas.call("std", {
                               siteId:  '<?php echo $siteId ?>', // 
@@ -160,8 +157,9 @@
                              });
                             </script>
                             <noscript>
-                             <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
-                              <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+                                <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                                    <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" />
+                                </a>
                             </noscript>
                         </div>
                     </div>

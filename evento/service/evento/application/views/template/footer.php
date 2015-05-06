@@ -36,7 +36,7 @@
       <div>
         <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a>  -  <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Cyberlunes&reg;</a></span>
         <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
-        <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+        <span>© 2015 - Cyberlunes Todos los derechos reservados .</span>
         <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
       </div>
     </div>

@@ -171,3 +171,9 @@ header .container .head .marcas figure:first-child + figure + figure{
 		margin-top: 10px;
 	}
 }
+
+@media screen and (max-width: 400px) {
+	article .info h2 {
+		width: 45%;
+	}
+}
