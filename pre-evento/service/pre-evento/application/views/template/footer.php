@@ -28,8 +28,8 @@
                         </div>
                     </div>
                     <div class="social">
-                        <a target="_blank" class="fb" href="https://www.facebook.com/Cyberlunes"><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
-                        <a target="_blank" class="tw" href="https://twitter.com/Cyberlunesco" ><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
+                        <a class="fb" href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
+                        <a class="tw" href="#" onClick='shareTwitter("<?php echo ($this->uri->segment(1) == 'detalle') ? 'detalle' : '' ?>");'><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
                     </div>
                 </div>                                   
             </div>                
@@ -173,6 +173,8 @@
         <script src="<?php echo $base_url_static?>js/bootstrap/bootstrap-multiselect.js"></script>          
         <script src="<?php echo $base_url_static?>js/main.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.alphanum.js"></script>
+        <script src="<?php echo $base_url_static;?>js/omniture.js"></script>
+        <script src="<?php echo $base_url_static;?>js/share.js"></script>
 
         <script language="JavaScript" type="text/javascript"><!--   
         //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  
