@@ -1,7 +1,8 @@
+
 <section id="formulario">
     <div class="share">
-        <a href="https://www.facebook.com/Cyberlunes" target="_blank" ><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
-        <a href="https://twitter.com/Cyberlunesco" target="_blank"  ><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
+        <a href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
+        <a href="#"  onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
     </div>
     <div class="container">
         <div class="row">

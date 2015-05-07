@@ -187,9 +187,10 @@ class promocion_model extends CI_Model {
     $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
     $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
     $this->db->join('MAR_MARCAS', 'MAR_MARCAS.MAR_ID = PRO_PROMOCIONES.MAR_ID');
+    $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
 
     if($tienda!='tiendas')
-      $this->db->where('PRO_AUTOR', $tienda);
+      $this->db->where('PRO_USER_CREADOR', $tienda);
 
     $this->db->where('MAR_SLUG !=', 'no-aplica');
     if(!empty($idPromosRepetido))

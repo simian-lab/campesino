@@ -19,7 +19,7 @@ class marca extends MX_Controller {
         if(!isset($data['tienda'])) {
           $data['tienda'] = 'tiendas';
         }
-        
+
 	      $data['marcas'] = $this->promocion_model->get_marcas_by_tienda($data['tienda']);
 
 	      return $this->load->view('containerSelectMarcas',$data,true);
@@ -30,7 +30,18 @@ class marca extends MX_Controller {
 
       $this->load->model('promociones/promocion_model');
 
-      $data['marcas'] = $this->promocion_model->get_marcas_by_tienda($data['tienda']);
+      $idTienda = 'tiendas';
+      if($tienda!='tiendas'){
+        $result = $this->promocion_model->getTiendaSlug($data['tienda']);
+        if(!$result)
+        {
+          show_404();
+          return;
+        }
+        $idTienda = $result['TIE_ID_USER'];
+      }
+
+      $data['marcas'] = $this->promocion_model->get_marcas_by_tienda($idTienda);
 
       return $this->load->view('containerSelectMarcasDeTienda',$data,true);
 
