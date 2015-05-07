@@ -36,7 +36,7 @@
       <div>
         <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a>  -  <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Cyberlunes&reg;</a></span>
         <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
-        <span>© 2014 - Cyberlunes Todos los derechos reservados .</span>
+        <span>© 2015 - Cyberlunes Todos los derechos reservados .</span>
         <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
       </div>
     </div>
@@ -123,6 +123,47 @@
         <p>
           15. Este documento estará regido en todos sus puntos por las leyes vigentes en Colombia.
         </p>
+        <p>Condiciones del Concurso 10millones</p>
+        <p>Casa Editorial El Tiempo S.A. (CEET) invitará a las personas registradas en sus bases de datos entre los días 17 y 31 de mayo de 2015, para que se registren  en la página de internet www.cyberlunes.com.co</p>
+        <p>Las personas que deseen registrarse deberán completar en su totalidad la solicitud de sus datos personales.</p>
+        <p>Quienes se registren participaran con su correo electrónico, en el sorteo de la campaña “REGÍSTRATE Y GANA CON CYBERLUNES.COM.CO”, por esta razón es indispensable que en el registro se diligencie correctamente el campo correo electrónico.  El corte para participar en el sorteo es el treinta y uno (31) de mayo  de 2015.</p>
+        <p>Los  inscritos que completen el registro en su totalidad podrán participar en el sorteo. Es un ganador elegido de forma aleatoria de acuerdo al sistema que usa el área de auditoria de CASA EDITORIAL EL TIEMPO S.A quienes junto el delegado de la secretaria de gobierno estarán presentes el día del sorteo en las oficinas principales de EL TIEMPO en Bogotá (Av.Calle 26 # 68B -70).</p>
+        <p>Para la entrega del premio CASA EDITORIAL EL TIEMPO se contactará con el ganador a través del correo electrónico para verificar los datos personales. El ganador deberá entregar la documentación que lo acredita como ganador esto es, fotocopia ampliada de la cédula de ciudadanía. Una vez realizada la verificación se coordinará la entrega del premio.</p>
+        <p>Si el ganador reside en Bogotá, será citado a las oficinas de El Tiempo dentro de quince (15) días hábiles siguientes en que demostró su calidad de ganador. Si el ganador reside afuera de Bogotá y cercanías, el premio será enviado por operador logístico dentro de los quince (15) días hábiles siguientes a la verificación de la identidad del ganador.</p>
+        <p>DURACIÓN: El envió de correos electrónicos y la posibilidad de registrarse en Cyberlunes se hará del 17 de mayo hasta el 31 de mayo de 2015.</p>
+        <p>Por su parte, el sorteo se realizará el 12 de junio de 2015 en las oficinas principales de El Tiempo en Bogotá¸ en presencia de un delegado de la Secretaria de Gobierno de Bogotá y de un representante del área de auditoria de CASA EDITORIAL EL TIEMPO S.A.</p>
+        <p>SORTEO: El sorteo se realizará el doce (12) de junio de 2015, en las oficinas de EL TIEMPO ubicadas en la AV Calle 26 # 68B-70 en la ciudad de Bogotá. </p>
+        <p>Premios</p>
+        <p>1 Tarjetas  de consumo   10.000.000</p>
+        <p>El ganador del premio antes mencionado debe asumir el pago del impuesto de ganancia ocasional de resultar este aplicable. CASA EDITORIAL EL TIEMPO no se hace responsable por este impuesto.</p>
+        <p>CONDICIONES PARA PARTICIPAR EN EL SORTEO:</p>
+        <p>El participante deberá cumplir con una de las siguientes condiciones:</p>
+        <p>1.  Haberse registrado por primera vez en www.cyberlunes.com.co.</p>
+        <p>2.  Haber suministrado la totalidad de la información.</p>
+        <p>3.  Que la información suministrada por el encuestado sea veraz. En el evento de determinarse por parte de EL TIEMPO que la información suministrada por el participante es falsa, o fue de alguna manera manipulada, EL TIEMPO se reserva el derecho de excluir al participante del Juego Promocional.</p>
+        <p>RESTRICCIONES:</p>
+        <p>1.  Si en el momento de reclamar el premio, el ganador se encuentra fuera de Colombia, este deberá acogerse a las condiciones de entrega de premios definidas para este juego promocional, esto es conceder una autorización debidamente suscrita a una persona la cual debe tener anexa la cédula fotocopiada del ganador y del autorizado.</p>
+        <p>2.  El premio no podrá ser canjeado por otro, ni por dinero en efectivo.</p> 
+        <p>3.  El ganador del premio deberá asumir el pago del impuesto de ganancia ocasional </p>
+        <p>4.  Los correos ingresados deberán ser válidos para poder participar.</p>
+        <p>5.  No podrán registrarse diferentes correos electrónicos desde un mismo dominio. </p>
+        <p>CONDICIONES ADICIONALES:</p>
+        <p>1.  El premio es intransferible y se entregará personalmente al ganador o a quien éste autorice por escrito en debida forma para tal efecto.</p>
+        <p>2.  Al registrase en Cyberlunes los participantes declaran que aceptan y entienden los términos y condiciones de la página  así como la política de privacidad, esta aceptación es indispensable para poder participar.</p>
+        <p>3.  No aplica para empleados ni funcionarios de EL TIEMPO Casa Editorial.</p>
+        <p>4.  Solo podrán participar personas mayores de 18 años.</p>
+        <p>5.  Los ganadores deberán demostrar su identidad con el documento de identificación respectivo, válido dentro del territorio colombiano.</p>
+        <p>6.  Solo podrán participar personas residentes en el territorio Colombiano. </p>
+        <p>7.  El premio no podrá ser cambiado por otro ni por dinero en efectivo</p>
+        <p>8.  El ganador que no cumpla con los requisitos exigidos para hacerse acreedor al premio, perderá su derecho por este hecho, y el premio se entregará al ganador suplente.</p>
+        <p>9.  El premio será entregado en la oficina principal EL TIEMPO en Bogotá. Si el ganador no se encuentra en la ciudad de Bogotá, el premio será enviado usando un operador logístico. Los gastos del operador logístico correrán por cuenta de EL TIEMPO. </p>
+        <p>10. Todo tipo de impuestos, incluido pero sin limitarse el de ganancia ocasional estarán a cargo del ganador.</p>
+        <p>11. Los participantes autorizan a CASA EDITORIAL EL TIEMPO en caso de ser ganadores, publicar su nombre y ciudad de residencia o número de cédula, durante la vigencia de la promoción de ser necesario para la divulgación de ganadores a través de los diferentes medios de El Tiempo Casa Editorial.</p>
+        <p>12. De conformidad con lo establecido en la Legislación aplicable en materia de Protección de Datos de Carácter Personal, la información de los datos personales de los participantes serán tratados con la finalidad de gestionar su participación en la promoción y de publicitar sus datos en caso de que resulte ganador y podrá cederlos para la exclusiva finalidad de gestionar la presente promoción.</p>
+        <p>13. Cualquier Participante será descalificado y perderá el derecho a su premio y cualquier derecho relacionado con el mismo, en caso de que incumpla con las reglas de admisión, los presentes términos y condiciones o cualquier disposición derivada de los mismos.</p>
+        <p>14. Casa Editorial El Tiempo, no se responsabiliza, a partir de la entrega del premio frente los ganadores, por el cuidado, el uso o por los daños por uso inapropiado a estos. </p>
+        <p>15. Casa Editorial El Tiempo no asumirán ningún costo o gasto, salvo los que expresamente haya manifestado asumir.</p>
+        <p>16. La participación en el concurso implica la aceptación y conocimiento de estas condiciones y restricciones.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

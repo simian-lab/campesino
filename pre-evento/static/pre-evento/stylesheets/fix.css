@@ -75,9 +75,7 @@ section#home .container .publicidades figure {
 
 #sas_8941 {
 	bottom: 0;
-	left: 50%;
 	position: fixed;
-	transform: translateX(-50%);
 }
 
 .marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child{
@@ -137,6 +135,28 @@ Here we're making sure the images don't 'break' the carousel.
 		left: inherit !important;
 		position: relative !important;
 		text-align: center;
+	}
+}
+
+#first-slider h1 {
+	color: #00b6c9;
+	font-size: 1.313em;
+	margin: 10px 0;
+}
+
+#first-slider h1 b {
+	font-family: "Conv_MyriadPro-Bold";
+}
+
+@media screen and (min-width: 1216px) {
+	#first-slider {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1216px) {
+	#formulario .container .aside h1 {
+		display: none;
 	}
 }
 

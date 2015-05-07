@@ -78,10 +78,8 @@ class articulos extends Main {
         $crud->columns('ART_TITULO','ART_DESCRIPCION','Tags','VISIBILITY','ART_AUTOR','ART_FECHA');
 
 		$crud->set_field_upload('ART_IMAGEN','multimedia/articulos/');
-		$crud->callback_after_upload(array($this,'mover_imagen'));
 
 		$crud->unset_texteditor('ART_DESCRIPCION','full_text');
-		
 		
 		$crud->field_type('ART_TITULO','String');
 		$crud->field_type('ART_DESCRIPCION','text');
@@ -97,10 +95,11 @@ class articulos extends Main {
 
 		$crud->set_rules('ART_TITULO','Título','required|max_length[70]');
 		$crud->set_rules('ART_DESCRIPCION','Descripción','required|max_length[90]');
-	
+		
+		$crud->callback_after_upload(array($this,'mover_imagen'));
         $crud->callback_before_insert(array($this,'before_after_insert')); //  antes de insertar
-	
 		$crud->callback_before_update(array($this,'limpiar_textos_slug'));
+		$crud->callback_before_upload(array($this,'before_image_upload'));
 
 		$this->data['output'] = $output = $crud->render();
 		$this->data['titulo']='Articulos';
@@ -113,24 +112,61 @@ class articulos extends Main {
 
 /* ****************************************************** */
 
+/**
+ * Verifies if the file has a valid image format.
+ * @param  String $file_name The image file name
+ * @return boolean           True if it's valid. False otherwise.
+ */
+function image_is_valid($file_name) {
+	$file_format = explode('.', $file_name)[1];
+	$accepted_image_formats = array('jpg', 'png', 'jpeg');
+	$is_valid = in_array($file_format, $accepted_image_formats);
+	return $is_valid;
+}
+
+/**
+ * [example_callback_before_upload description]
+ * @param  [type] $files_to_upload [description]
+ * @param  [type] $field_info      [description]
+ * @return [type]                  [description]
+ */
+function before_image_upload($files_to_upload, $field_info) {
+	$keys = array_keys($files_to_upload);
+	$file_name = $files_to_upload[$keys[0]]['name'];
+	$file_size = $files_to_upload[$keys[0]]['size'];
+
+	if($this->image_is_valid($file_name)) {
+		if($file_size < 100000) {
+			return true;
+		} else {
+			return 'El archivo de la imagen es muy grande';
+		}
+	} else {
+		return 'El formato de imagen no es válido';
+	}
+}
 
 function before_after_insert($post_array){
+	$this->load->helper('htmlpurifier');
 
     $post_array['AUTORIZADO']='0';
     $post_array['ART_USER_CREADOR']=$this->session->userdata('sadmin_user_id');
     $post_array['ART_USER_ULTIMO']=$this->session->userdata('sadmin_user_id');
     $post_array['ART_USER_AUTORIZADOR']=$this->session->userdata('sadmin_user_id');
     $post_array['ART_AUTOR']=$this->session->userdata('username');
-
-    $this->load->helper('htmlpurifier');
-
-    $post_array['ART_DETALLE'] = $post_array['ART_DETALLE'];
     $result_data=$this->sanar_string($post_array['ART_TITULO']);
     $post_array['ART_SLUG'] = url_title($result_data, 'dash', TRUE);
 
+    $file_name = $post_array['ART_IMAGEN'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['ART_IMAGEN'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['ART_IMAGEN'] = '';
+	}
 
 	return $post_array;
-
 }
 
 function is_image($path){
@@ -160,18 +196,27 @@ function mover_imagen($uploader_response,$field_info, $files_to_upload){
 	return true;
 }
 
-
-	
+/**
+ * [limpiar_textos_slug description]
+ * @param  [type] $post_array [description]
+ * @return [type]             [description]
+ */
 function limpiar_textos_slug($post_array){
-   $this->load->helper('htmlpurifier');
-   $post_array['ART_DETALLE'] = $post_array['ART_DETALLE'];
+	$this->load->helper('htmlpurifier');
+	$post_array['ART_DETALLE'] = $post_array['ART_DETALLE'];
+	$result_data=$this->sanar_string($post_array['ART_TITULO']);
+	$post_array['ART_SLUG'] = url_title($result_data, 'dash', TRUE);
+	$file_name = $post_array['ART_IMAGEN'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['ART_IMAGEN'] = $file_name;
 
-   $result_data=$this->sanar_string($post_array['ART_TITULO']);
-   $post_array['ART_SLUG'] = url_title($result_data, 'dash', TRUE);
-		return $post_array;
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['ART_IMAGEN'] = '';
+	}
 
+	return $post_array;
 }
-
 
 function sanar_string($cadena=''){
 	$cadena = strtolower($cadena);
