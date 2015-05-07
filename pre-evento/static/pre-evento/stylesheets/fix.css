@@ -75,7 +75,13 @@ section#home .container .publicidades figure {
 
 #sas_8941 {
 	bottom: 0;
+	left: 50%;
 	position: fixed;
+	-webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child{
