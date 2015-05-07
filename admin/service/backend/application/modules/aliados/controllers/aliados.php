@@ -76,12 +76,12 @@ class Aliados extends Main {
 					if (! filter_var($url, FILTER_VALIDATE_URL)){
 
 						echo '<textarea>'.json_encode(
-														array(
-																	'success'	=>	false,
-																	'error_message'	=>"<p>URL inválida</p>",
-																	"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
-															)
-													).'</textarea>';
+							array(
+								'success'	=>	false,
+								'error_message'	=>"<p>URL inválida</p>",
+								"error_fields"	=>	array("PRO_URL"	=>	"El campo Url<br>(Debe incluir <strong>http:\/\/<\/strong> ) es requerido.")
+								)
+							).'</textarea>';
 						die();
 
 					}
@@ -114,10 +114,7 @@ class Aliados extends Main {
 			$crud->set_field_upload('PAT_LOGO','multimedia/aliados/');
 			$crud->callback_after_upload(array($this,'mover_imagen'));
 
-
-			/*CONTROL*/
 			$result = $this->aliados_model->control_aliado($this->session->userdata('sadmin_user_id'));
-			//print_r($result);
 			if($result[0]['RESPUESTA']!=0 ){
 				$this->data['output'] =" <h1>No tenes permiso para acceder esta seccion</h1>" ;
 				$breadcrums[]='<a class="current" href="'.site_url('main/aliados').'">Patrocinadores</a>';
@@ -125,86 +122,130 @@ class Aliados extends Main {
 				$this->data['encabezado']='Error';
 				$this->error('example',$this->data,$breadcrums);
 				die();
+			}
+
+			$crud->field_type('PAT_ID','invisible');
+			$crud->field_type('PAT_NOMBRE','String');
+			$crud->field_type('PAT_IDENTIFICADOR','String');
+			$crud->field_type('PAT_FECHA','datetime');
+			$crud->field_type('PAT_URL','STRING');
+			$crud->field_type('PAT_URL_EVENT','STRING');
+			$crud->field_type('VISIBILITY','true_false');
+			$crud->field_type('PAT_USER_CREADOR','invisible');
+			$crud->field_type('PAT_USER_ULTIMO','invisible');
+			$packages = array('Sin paquete', 'Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
+			$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
+			$crud->field_type('PAT_ALIADO', 'dropdown', $allies);
+			$crud->field_type('PAT_HASH_URL_EVENT','invisible');
+
+			$crud->callback_before_insert(array($this,'before'));
+			$crud->callback_before_update(array($this,'before'));
+			$crud->callback_before_upload(array($this,'before_image_upload'));
+			$crud->callback_after_insert(array($this, 'update_ally_on_user'));
+			$crud->callback_after_update(array($this, 'update_ally_on_user'));
+
+			$crud->set_language('spanish');
+
+			$this->data['output'] = $output = $crud->render();
+			$this->data['titulo']='Patrocinadores';
+			$this->data['encabezado']='Patrocinadores';
+
+			$breadcrums[]='<a class="current" href="'.site_url('main/aliados').'">Patrocinadores</a>';
+			$this->salida('example',$this->data, $breadcrums);
+		}
+
+		/**
+		 * Verifies if the file has a valid image format.
+		 * @param  String $file_name The image file name
+		 * @return boolean           True if it's valid. False otherwise.
+		 */
+		function image_is_valid($file_name) {
+			$file_format = explode('.', $file_name)[1];
+			$accepted_image_formats = array('jpg', 'png', 'jpeg');
+			$is_valid = in_array($file_format, $accepted_image_formats);
+			return $is_valid;
+		}
+
+		/**
+		 * [before description]
+		 * @param  [type] $post_array [description]
+		 * @return [type]             [description]
+		 */
+		function before($post_array) {
+
+			$file_name = $post_array['PAT_LOGO'];
+			$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+			$file_name = str_replace(" ", "", $file_name);
+			$post_array['PAT_LOGO'] = $file_name;
+
+			if(!$this->image_is_valid($file_name)) {
+				$post_array['PAT_LOGO'] = '';
+			}
+
+			$this->limpiar_datos($post_array);
+
+			if($post_array["PAT_URL_EVENT"] != "") {
+				$post_array['PAT_HASH_URL_EVENT'] = $this->generar_hash($post_array["PAT_URL_EVENT"]);
+			}
+			return $post_array;
+		}
+
+		/**
+		 * [limpiar_datos description]
+		 * @param  [type] $post_array [description]
+		 * @return [type]             [description]
+		 */
+		function limpiar_datos($post_array){
+
+			$post_array['PAT_USER_CREADOR'] = $this->session->userdata('sadmin_user_id');
+			$post_array['PAT_USER_ULTIMO'] =$this->session->userdata('sadmin_user_id');
+
+			return $post_array;
+		}
+
+		/**
+		 * [generar_hash description]
+		 * @param  [type] $string [description]
+		 * @return [type]         [description]
+		 */
+		function generar_hash($string) {
+			return sha1($string);
+		}
+
+		/**
+		 * [example_callback_before_upload description]
+		 * @param  [type] $files_to_upload [description]
+		 * @param  [type] $field_info      [description]
+		 * @return [type]                  [description]
+		 */
+		function before_image_upload($files_to_upload, $field_info) {
+			$keys = array_keys($files_to_upload);
+			$file_name = $files_to_upload[$keys[0]]['name'];
+			$file_size = $files_to_upload[$keys[0]]['size'];
+
+			if($this->image_is_valid($file_name)) {
+				if($file_size < 100000) {
+					return true;
+				} else {
+					return 'El archivo de la imagen es muy grande';
 				}
-				/*CONTROL*/
+			} else {
+				return 'El formato de imagen no es válido';
+			}
+		}
 
-				$crud->field_type('PAT_ID','invisible');
-				$crud->field_type('PAT_NOMBRE','String');
-				$crud->field_type('PAT_IDENTIFICADOR','String');
-				$crud->field_type('PAT_FECHA','datetime');
-				$crud->field_type('PAT_URL','STRING');
-				$crud->field_type('PAT_URL_EVENT','STRING');
-				$crud->field_type('VISIBILITY','true_false');
-				$crud->field_type('PAT_USER_CREADOR','invisible');
-				$crud->field_type('PAT_USER_ULTIMO','invisible');
-				$packages = array('Sin paquete', 'Oro Plus', 'Oro', 'Plata', 'Bronce', 'Platino', 'General');
-				$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
-				$crud->field_type('PAT_ALIADO', 'dropdown', $allies);
-				$crud->field_type('PAT_HASH_URL_EVENT','invisible');
-
-				$crud->callback_before_insert(array($this,'before'));
-				$crud->callback_before_update(array($this,'before'));
-				$crud->callback_after_insert(array($this, 'update_ally_on_user'));
-				$crud->callback_after_update(array($this, 'update_ally_on_user'));
-
-				$crud->set_language('spanish');
-
-				$this->data['output'] = $output = $crud->render();
-				$this->data['titulo']='Patrocinadores';
-				$this->data['encabezado']='Patrocinadores';
-
-				$breadcrums[]='<a class="current" href="'.site_url('main/aliados').'">Patrocinadores</a>';
-				$this->salida('example',$this->data, $breadcrums);
-				}
-
-
-				/* ****************************************************************************************** */
-
-				function before($post_array) {
-					$this->limpiar_datos($post_array);
-
-					if($post_array["PAT_URL_EVENT"] != "") {
-						$post_array['PAT_HASH_URL_EVENT'] = $this->generar_hash($post_array["PAT_URL_EVENT"]);
-					}
-					return $post_array;
-				}
-
-				function generar_hash($string) {
-					return sha1($string);
-				}
-
-				function mover_imagen($uploader_response,$field_info, $files_to_upload){
-					$this->load->library('image_moo');
-					$file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name;
-					if( !$this->is_image($file_uploaded)){
-						@unlink($file_uploaded);
-						return 'Formato de image incorrecto.';
-						}
-						$ndestino =  '../static/multimedia/aliados/'.$uploader_response[0]->name;
-						copy($file_uploaded, $ndestino);
-						return true;
-						}
-
-						function is_image($path){
-
-							$a = getimagesize($path);
-							$image_type = $a[2];
-
-							if (in_array($image_type , array(IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP)))
-							{
-								return true;
-								}
-								return false;
-								}
-
-
-								function limpiar_datos($post_array){
-
-									$post_array['PAT_USER_CREADOR'] = $this->session->userdata('sadmin_user_id');
-									$post_array['PAT_USER_ULTIMO'] =$this->session->userdata('sadmin_user_id');
-
-									return $post_array;
-
-									}
-
-								}
+		/**
+		 * [mover_imagen description]
+		 * @param  [type] $uploader_response [description]
+		 * @param  [type] $field_info        [description]
+		 * @param  [type] $files_to_upload   [description]
+		 * @return [type]                    [description]
+		 */
+		function mover_imagen($uploader_response,$field_info, $files_to_upload) {
+			$this->load->library('image_moo');
+			$file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name;
+			$ndestino =  '../static/multimedia/aliados/'.$uploader_response[0]->name;
+			copy($file_uploaded, $ndestino);
+			return true;
+		}
+	}
