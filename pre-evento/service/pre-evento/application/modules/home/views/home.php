@@ -104,7 +104,7 @@
                         </select>
                         <?php endif; ?>
                         <?php if($this->agent->is_mobile()): ?>
-                        <select name="val_66010[]" id="interes">
+                        <select name="val_66010[]" id="interes" multiple="multiple">
                             <option value="" disabled selected>Intereses</option>
                             <option value="Tecnologia">Tecnología</option>
                             <option value="Moviles">Móviles</option>
@@ -138,12 +138,12 @@
         <div id="slider-marcas">
             <img src="<?php echo $base_url_static;?>img/border-left-slider-marcas.png" class="border-left" alt="">
             <ul class="slider-marcas">
-                <?php 
+                <?php
                 foreach($slider_patrocinadores as $key => $patrocinador):
                     $pat_id = $patrocinador->PAT_ID;
                 ?>
                 <li data-id="<?php echo $pat_id ?>">
-                        <?php  
+                        <?php
                         if($patrocinador->PAT_URL!=''):
                             $pat_position = $key + 1;
                         ?>
