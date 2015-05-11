@@ -92,7 +92,7 @@ function onClickBuscar(tienda, marca, subcategoria){
 	
 	if(subcategoria != undefined) {
 		s.linkTrackVars="events,eVar24,eVar25,eVar28";
-		if(subcategoria = 'todos') {
+		if(subcategoria == 'todos') {
 			subcategoria = 'Todas';
 		}
 		s.eVar28 = subcategoria;
