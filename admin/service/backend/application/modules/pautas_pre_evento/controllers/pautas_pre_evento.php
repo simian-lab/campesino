@@ -61,12 +61,9 @@ $this->load->model('control_pauta_pre_evento_model');
 		$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
 		$crud->unset_read();
-		$crud->callback_before_insert(array($this,'esconder_campos'));
 
 		$crud->set_field_upload('PAU_IMAGEN','multimedia/pautas/');
-		$crud->callback_after_upload(array($this,'mover_imagen'));
 		$crud->set_field_upload('PAU_MOVIL_IMAGEN','multimedia/pautas/');
-		$crud->callback_after_upload(array($this,'mover_imagen_mobil'));
 		$crud->unset_texteditor('PAU_DESCRIPCION','full_text');
 
 		$crud->field_type('PAU_NOMBRE','String');
@@ -82,6 +79,11 @@ $this->load->model('control_pauta_pre_evento_model');
 		$crud->field_type('PAU_USER_ULTIMO','invisible');
 	 
 	 	$crud->callback_add_field('PAU_TARGET',array($this,'add_field_callback_target'));
+	 	$crud->callback_after_upload(array($this,'mover_imagen'));
+	 	$crud->callback_after_upload(array($this,'mover_imagen_mobil'));
+	 	$crud->callback_before_insert(array($this,'esconder_campos'));
+	 	$crud->callback_before_update(array($this,'before'));
+	 	$crud->callback_before_upload(array($this,'before_image_upload'));
 	 	$crud->callback_edit_field('PAU_TARGET',array($this,'add_field_callback_target'));
 
 		$crud->set_language('spanish');
@@ -94,7 +96,68 @@ $this->load->model('control_pauta_pre_evento_model');
 	}
 
 
-/* ******************************************************************************************************************* */
+/**
+ * [example_callback_before_upload description]
+ * @param  [type] $files_to_upload [description]
+ * @param  [type] $field_info      [description]
+ * @return [type]                  [description]
+ */
+function before_image_upload($files_to_upload, $field_info) {
+	$keys = array_keys($files_to_upload);
+	$file_name = $files_to_upload[$keys[0]]['name'];
+	$file_size = $files_to_upload[$keys[0]]['size'];
+
+	if($this->image_is_valid($file_name)) {
+		if($file_size < 100000) {
+			return true;
+		} else {
+			return 'El archivo de la imagen es muy grande';
+		}
+	} else {
+		return 'El formato de imagen no es válido';
+	}
+}
+
+/**
+ * Verifies if the file has a valid image format.
+ * @param  String $file_name The image file name
+ * @return boolean           True if it's valid. False otherwise.
+ */
+function image_is_valid($file_name) {
+	$file_format = explode('.', $file_name)[1];
+	$accepted_image_formats = array('jpg', 'png', 'jpeg');
+	$is_valid = in_array($file_format, $accepted_image_formats);
+	return $is_valid;
+}
+
+/**
+ * [before description]
+ * @param  [type] $post_array [description]
+ * @return [type]             [description]
+ */
+function before($post_array) {
+
+	$file_name = $post_array['PAU_IMAGEN'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['PAU_IMAGEN'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['PAU_IMAGEN'] = '';
+	}
+
+	$file_name = $post_array['PAU_MOVIL_IMAGEN'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['PAU_MOVIL_IMAGEN'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['PAU_MOVIL_IMAGEN'] = '';
+	}
+
+	return $post_array;
+}
+
 function add_field_callback_target($value){
 	if($value == 1){
 		$checkedNuevaVentana = 'checked="checked"';
@@ -108,6 +171,24 @@ function add_field_callback_target($value){
 }
 
 function esconder_campos($post_array){
+
+	$file_name = $post_array['PAU_IMAGEN'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['PAU_IMAGEN'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['PAU_IMAGEN'] = '';
+	}
+
+	$file_name = $post_array['PAU_MOVIL_IMAGEN'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['PAU_MOVIL_IMAGEN'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['PAU_MOVIL_IMAGEN'] = '';
+	}
 
 	$post_array['PAU_EVENTO']=0;
 	$post_array['PAU_USER_CREADOR']=$this->session->userdata('sadmin_user_id') ;
