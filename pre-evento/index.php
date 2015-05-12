@@ -71,7 +71,7 @@ switch ($_SERVER['SERVER_NAME'])
 				'http://fonts.gstatic.com/',
 				'http://d3b369zdeuh99v.cloudfront.net/'
 			);
-        define('ENVIRONMENT', 'staging');
+        define('ENVIRONMENT', 'testing');
 	break;
 	case 'www.cyberlunes.com.co':
 		$dominios_permitidos = array(
