@@ -1,50 +1,51 @@
 function shareFacebook(art_detalle){
 
-    var title = $('meta[http-equiv="og:title"]').attr("content");
-    var description = $('meta[http-equiv="og:description"]').attr("content");
-    var image = $('meta[http-equiv="og:image"]').attr("content");
-    var url = $('meta[http-equiv="og:url"]').attr("content");
+  // Función para Omniture.
+  onClickFacebook();
 
-    var obj = {
-        method: 'feed',
-        link: url,
-        picture: image,
-        name: title, 
-        caption: '',
-        description: description
-    };
+  var title = $('meta[http-equiv="og:title"]').attr("content");
+  var description = $('meta[http-equiv="og:description"]').attr("content");
+  var image = $('meta[http-equiv="og:image"]').attr("content");
+  var url = $('meta[http-equiv="og:url"]').attr("content");
 
-    function callback(response) {
-        onClickShare('facebook', title);
-    }
-    FB.ui(obj, callback);
-    return false;
+  var obj = {
+    method: 'feed',
+    link: url,
+    picture: image,
+    name: title,
+    caption: '',
+    description: description
+  };
+
+  FB.ui(obj);
+
+  return false;
 }
 
-function shareTwitter(art_detalle){
+function shareTwitter(art_detalle) {
 
-    var url = location.href;
+  // Función para Omniture.
+  onClickTwitter();
 
-    if(art_detalle == 'detalle')
-        var text_share = $('meta[http-equiv="og:title"]').attr("content");
-    else
-        var text_share = 'Ya estoy mirando en http://www.cyberlunes.com.co las mejores ofertas. Aprovecha los descuentos increíbles de @Cyberlunesco';
+  var url = location.href;
 
-    var openLink = 'http://twitter.com/share?text=' + encodeURIComponent( text_share );
-    
-    onClickShare('twitter', text_share);
-    //Parameters for the Popup window
-    winWidth    = 650;  
-    winHeight   = 450;
-    winLeft     = ($(window).width()  - winWidth)  / 2,
-    winTop      = ($(window).height() - winHeight) / 2, 
-    winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
-    
-    //open Popup window and redirect user to share website.
-    window.open(openLink,'',winOptions);
-    return false;
+  if(art_detalle == 'detalle')
+    var text_share = $('meta[http-equiv="og:title"]').attr("content");
+  else
+    var text_share = 'Ya estoy mirando en http://www.cyberlunes.com.co las mejores ofertas. Aprovecha los descuentos increíbles de @Cyberlunesco';
 
+  var openLink = 'http://twitter.com/share?text=' + encodeURIComponent( text_share );
 
+  //Parameters for the Popup window
+  winWidth    = 650;
+  winHeight   = 450;
+  winLeft     = ($(window).width()  - winWidth)  / 2,
+  winTop      = ($(window).height() - winHeight) / 2,
+  winOptions   = 'width='  + winWidth  + ',height=' + winHeight + ',top='    + winTop    + ',left='   + winLeft;
+
+  //open Popup window and redirect user to share website.
+  window.open(openLink,'',winOptions);
+  return false;
 }
 
 $(document).ready(function(){

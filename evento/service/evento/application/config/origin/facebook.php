@@ -1,12 +1,12 @@
 <?php
 
 /*
- * Datos para configuracion de FACEBOOK 
- * 
+ * Datos para configuracion de FACEBOOK
+ *
  */
 
 $config = array(
-    'FB_APPID' => '717143488367759',
+    'FB_APPID' => '1660151617547573',
     'FB_SECRET' => '',
     'FB_SCOPE' => '',
     'FB_BASEURL' => '',

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pauta extends MX_Controller 
+class Pauta extends MX_Controller
 {
    function __construct()
    {
@@ -8,14 +8,14 @@ class Pauta extends MX_Controller
    }
 
 
-  public function mejor_2013() { 
+  public function mejor_2013() {
         $data = null;
         $data = get_url_base();
 
 
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Encuentre y compare diferentes ofertas en planes y paquetes turísticos a cualquier destino nacional e internacional en viveviajar.com';
-        $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
+        $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
+        $meta_keys = "Compare,Mejores Ofertas Turísticas";
         $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
 
         $data['meta_title'] = $meta_title;
@@ -41,31 +41,31 @@ class Pauta extends MX_Controller
 /* mencache menu*/
       //  $key['menu']='menu_html';
         $data['menu_html'] =modules::run('menu/menu/load',$data);
-/* mencache menu*/       
-/* mencache PAUTAS*/   
+/* mencache menu*/
+/* mencache PAUTAS*/
         $page=1;
         $data['pautas_html'] =modules::run('pautas/pautas/load',$data,$page);
-    
+
 
         $this->load->view('template/head',$data);
         $this->load->view('template/header',$data);
         $this->load->view('template/containerPautaHome',$data);
         $this->load->view('template/footer',$data);
        return;
-      
+
   }
 
 
-   
+
   public function page($page='') {
            $data = null;
            $data = get_url_base();
-          
+
           $data['pautas_html'] =modules::run('pautas/pautas/load',$data,$page);
           echo $data['pautas_html'];
         return;
   }
-     
-  
-    	
+
+
+
 }

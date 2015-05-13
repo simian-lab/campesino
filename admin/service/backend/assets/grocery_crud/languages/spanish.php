@@ -25,7 +25,7 @@
 	$lang['form_update_changes'] 	= 'Actualizar cambios';
 	$lang['form_cancel'] 			= 'Cancelar';
 	$lang['form_update_loading'] 	= 'Cargando, actualizando cambios...';
-	$lang['update_success_message'] = 'Tus datos han sido actualizado correcatamente.';
+	$lang['update_success_message'] = 'Tus datos han sido actualizados correctamente.';
 	$lang['form_go_back_to_list'] 	= 'Volver a la lista';
 
 	$lang['form_add'] 				= 'Añadir';

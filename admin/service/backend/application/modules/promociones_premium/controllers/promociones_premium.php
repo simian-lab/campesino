@@ -150,6 +150,10 @@ class Promociones_premium extends Main {
 			$crud->field_type('VISIBILITY','true_false');
 		}
 
+		asort($arrCategorias);
+	    asort($arrMarcas);
+	    asort($arrSubCategorias);
+
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
         $crud->field_type('Tags','multiselect');  

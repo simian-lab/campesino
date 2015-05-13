@@ -47,9 +47,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'ubuntu-mysql-02.brandigital.com';
-$db['default']['username'] = 'usercyberlunes';
-$db['default']['password'] = 'YhishSrmlt';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'root';
 $db['default']['database'] = 'eltiempo_co_cyber_lunes_v2';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

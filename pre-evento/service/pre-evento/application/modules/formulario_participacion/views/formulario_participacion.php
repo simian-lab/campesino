@@ -1,7 +1,8 @@
+
 <section id="formulario">
     <div class="share">
-        <a href="https://www.facebook.com/Cyberlunes" target="_blank" ><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
-        <a href="https://twitter.com/Cyberlunesco" target="_blank"  ><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
+        <a href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/fb.png" alt=""></a>
+        <a href="#"  onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/tw.png" alt=""></a>
     </div>
     <div class="container">
         <div class="row">
@@ -13,7 +14,8 @@
             </div>
         </div>    
         <div class="row">
-            <div class="col-lg-12">
+            <div id="first-slider" class="col-lg-12">
+                <h1><b>Marcas </b>participantes</h1>
                 <div id="slider-marcas-form">                    
                     <img src="<?php echo $base_url_static?>img/border-left-slider-marcas.png" class="border-left"> 
                     <ul class="slider-marcas">
@@ -37,15 +39,15 @@
                     <p>
                         CyberLunes®, un evento de la Cámara Colombiana de Comercio Electrónico (CCCE), está orientado a promover el comercio electrónico en Colombia. Este evento se convierte en la plataforma perfecta para dar a conocer productos y servicios en el mundo de las ventas online.</p>
 
- 
 
-<p>Durante un día (24 horas), muchos compradores online conocerán lo que ofreces y experimentarán tu servicio, convirtiéndose así en tus nuevos clientes recurrentes.</p>
 
- 
+                        <p>Durante un día (24 horas), muchos compradores online conocerán lo que ofreces y experimentarán tu servicio, convirtiéndose así en tus nuevos clientes recurrentes.</p>
 
-<p>Si deseas participar y conocer más acerca de Cyberlunes®, completa los siguientes datos y uno de nuestros asesores comerciales te contactará.
-                    </p>                            
-                </article>   
+
+
+                        <p>Si deseas participar y conocer más acerca de Cyberlunes®, completa los siguientes datos y uno de nuestros asesores comerciales te contactará.
+                        </p>                            
+                    </article>   
                 <div class="formulario">
                 
                     <?php if(isset($success)): ?>
@@ -79,6 +81,15 @@
                             <div class="col-lg-7">
                                 <input class="validate[required]" type="text" name="cargo" value="<?php echo set_value('cargo') ?>">
                                 <?php echo form_error('cargo'); ?>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-lg-offset-2">
+                                <span>*Ciudad</span>
+                            </div>
+                            <div class="col-lg-7">
+                                <input class="validate[required]" type="text" name="ciudad" value="<?php echo set_value('ciudad') ?>">
+                                <?php echo form_error('ciudad'); ?>
                             </div>
                         </div>
                         <div class="row">

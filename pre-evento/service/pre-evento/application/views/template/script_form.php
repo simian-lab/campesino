@@ -33,7 +33,7 @@ function emailCheck (emailStr, formName) {
     }
     var domainArray=domain.match(domainPat);
     if (domainArray==null) {
-        $('#alerta-form-dominio-invalido').modal('show'); 
+        $('#alerta-form-dominio-invalido').modal('show');
         return false;
     }
     var atomPat=new RegExp(atom,"g");
@@ -46,7 +46,7 @@ function emailCheck (emailStr, formName) {
         (domArr[domArr.length-1] != "aero")) {
             if (domArr[domArr.length-1].length<2 ||
                 domArr[domArr.length-1].length>3) {
-                    $('#alerta-form-direccion-dominio').modal('show'); 
+                    $('#alerta-form-direccion-dominio').modal('show');
                     //alert("La dirección debe terminar en un dominio de tres letras, o dos letras del país.");
                     return false;
             }
@@ -73,13 +73,13 @@ function emailCheck (emailStr, formName) {
 	        return false;
 	    }
 	}
-    
+
     return true;
     }
     function UPTvalidateform(thisform)
     {
         if(thisform.name != 'UPTml251013'){
-            if (thisform.val_58933.value=="" || thisform.val_58933.value=="Nombre"){  
+            if (thisform.val_58933.value=="" || thisform.val_58933.value=="Nombre"){
                 $('#alerta-form-nombre').modal('show');
                 return(true);
             }
@@ -124,31 +124,31 @@ function emailCheck (emailStr, formName) {
             }*/
         }
 
-        if (emailCheck(thisform.email.value, thisform.name)) 
-        {   
+        if (emailCheck(thisform.email.value, thisform.name))
+        {
 
-            if ((document.getElementById('unsubscribe') 
+            if ((document.getElementById('unsubscribe')
                 && document.getElementById('unsubscribe').checked) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")) {
-                alert('Gracias, ahora usted esta dado de baja!'); 
-                
+                alert('Gracias, ahora usted esta dado de baja!');
+
             }
             else if(( (document.getElementById('unsubscribe')
                 && !document.getElementById('unsubscribe').checked) || (!document.getElementById('unsubscribe')) ) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")){
-                
+
                 if(thisform.name != 'UPTml251013'){
                     $.ajax({
-                        type: 'POST',                    
+                        type: 'POST',
                         async :false,
                         dataType: 'html',
                         data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
                         url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUser'); ?>',
                         success: function(xmldata) {
-                            
+
                             onClickRegistro(thisform.email.value);
 
                             $.ajax({
                                 type: 'POST',
-                                dataType: 'json',                        
+                                dataType: 'json',
                                 async :false,
                                 url: '<?php echo site_url('home/home/setOrigen'); ?>',
                                 success: function(xmldata) {
@@ -162,18 +162,18 @@ function emailCheck (emailStr, formName) {
                 }
                 else{
                     /*$.ajax({
-                        type: 'POST',                    
+                        type: 'POST',
                         async :false,
                         dataType: 'html',
                         data: {email: thisform.email.value},
                         url: '<?php echo site_url('formulario_lyris/formulario_lyris/setUserOnlyEmail'); ?>',
                         success: function(xmldata) {*/
-                            
+
                             onClickRegistro(thisform.email.value);
 
                             $.ajax({
                                 type: 'POST',
-                                dataType: 'json',                        
+                                dataType: 'json',
                                 async :false,
                                 url: '<?php echo site_url('home/home/setOrigen'); ?>',
                                 success: function(xmldata) {
@@ -241,7 +241,7 @@ function emailCheck (emailStr, formName) {
             alert('Debe ingresar una dirección de correo electrónico');
             return false;
         }
-        
+
         return true;
     }
 
@@ -250,28 +250,30 @@ function emailCheck (emailStr, formName) {
             alert('Debe ingresar una dirección de correo electrónico');
             return false;
         }
+
+        onSubmitFormulario("enviar formulario participación");
         return true;
     }
 
-    
+
     $(document).ready(function(){
-       
+
 
         if(typeof String.prototype.trim !== 'function') {
             String.prototype.trim = function() {
-            return this.replace(/^\s+|\s+$/g, ''); 
+            return this.replace(/^\s+|\s+$/g, '');
           }
         }
 
         $('#sas_20592').css({'position':'absolute','bottom':'-302px'});
 
         var contingencia = '<?php echo $this->config->item('contingencia') ?>';
-        
+
         if(contingencia != 1){
             $.ajax({
                 type: 'post',
                 url: '<?php echo base_url() ?>home/home/getOrigen',
-                dataType: 'json', 
+                dataType: 'json',
                 success: function response(data){
                     if(data['hide_form'] != 1 && data['is_mobile'] != 1){
                         $('.main').removeAttr('style');
@@ -289,7 +291,7 @@ function emailCheck (emailStr, formName) {
         else{
             $('#footer_main').css({'margin-bottom':'0'});
         }
-        
+
 
         $('#icon-collapse-form').click(function(){
             $('#collapseOne').toggle();
@@ -302,11 +304,11 @@ function emailCheck (emailStr, formName) {
                 $('#footer_main').css({'margin-bottom':'150px'});
             }
         });
-        
+
 
     });
-    
-    
+
+
 </script>
 
 <div class="modal fade" id="uso_marca" style="z-index:2000">

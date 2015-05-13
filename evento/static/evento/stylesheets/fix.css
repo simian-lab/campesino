@@ -48,7 +48,7 @@ footer div.container div.sponsor div.marcas-mobile figure img{
 	float: left;
 }
 
-#sas_12803 {
+#sas_31982 {
 	float: left;
 }
 
@@ -69,11 +69,11 @@ footer div.container div.sponsor div.marcas-mobile figure img{
 		margin: 0 auto;
 	}
 
-	#sas_12803 {
+	#sas_31982 {
 		float: none;
 	}
 
-	#sas_12803 > div{
+	#sas_31982 > div{
 		text-align: center;
 	}
 
@@ -149,4 +149,31 @@ header .container .head .marcas figure:first-child + figure{
 header .container .head .marcas figure:first-child + figure + figure{
 	position: relative;
 	top: 5px;
+}
+
+@media screen and (max-width: 335px) {
+	section.wrapp .container .row .no-destacados ul li article .link {
+		font-size: 0.9rem;
+		position: relative;
+		right: 2%;
+		width: 146px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.ofertas-destacadas ul li article .desc p {
+		width: 65%;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.ofertas-destacadas ul li article .desc {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	article .info h2 {
+		width: 45%;
+	}
 }

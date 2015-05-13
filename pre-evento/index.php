@@ -20,18 +20,18 @@
 
 
 switch ($_SERVER['SERVER_NAME'])
-{	
-	case 'pre-evento.cyberlunes.local.brandigital.com':	 
+{
+	case 'pre-evento.cyberlunes.local':
 		$dominios_permitidos = array(
-				'http://pre-evento.cyberlunes.local.brandigital.com',
-				'https://pre-evento.cyberlunes.local.brandigital.com',
-				'http://static.cyberlunes.local.brandigital.com',
-				'https://static.cyberlunes.local.brandigital.com',
+				'http://pre-evento.cyberlunes.local',
+				'https://pre-evento.cyberlunes.local',
+				'http://static.cyberlunes.local',
+				'https://static.cyberlunes.local',
 				'http://fonts.gstatic.com/'
 			);
         define('ENVIRONMENT', 'local');
 	break;
-	case 'pre-evento.cyberlunes.dev.brandigital.com':	 
+	case 'pre-evento.cyberlunes.dev.brandigital.com':
 		$dominios_permitidos = array(
 				'http://pre-evento.cyberlunes.dev.brandigital.com',
 				'https://pre-evento.cyberlunes.dev.brandigital.com',
@@ -41,7 +41,7 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'development');
 	break;
-	case 'preevento-stage.cyberlunes.com.co':	 
+	case 'preevento-stage.cyberlunes.com.co':
 		$dominios_permitidos = array(
 				'http://preevento-stage.cyberlunes.com.co',
 				'https://preevento-stage.cyberlunes.com.co',
@@ -51,18 +51,18 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'testing');
 	break;
-	case 'originpreeve-www2.cyberlunes.com.co':	 
+	case 'origin-www2.cyberlunes.com.co':
 		$dominios_permitidos = array(
-				'http://originpreeve-www2.cyberlunes.com.co',
-				'https://originpreeve-www2.cyberlunes.com.co',
+				'http://origin-www2.cyberlunes.com.co',
+				'https://origin-www2.cyberlunes.com.co',
 				'http://static-stage.cyberlunes.com.co',
 				'https://static-stage.cyberlunes.com.co',
 				'http://fonts.gstatic.com/',
-				'http://d3b369zdeuh99v.cloudfront.net/'
+        'http://d3b369zdeuh99v.cloudfront.net/'
 			);
         define('ENVIRONMENT', 'origin');
 	break;
-	case 'staging.cyberlunes.com.co':	 
+	case 'staging.cyberlunes.com.co':
 		$dominios_permitidos = array(
 				'http://staging.cyberlunes.com.co',
 				'https://staging.cyberlunes.com.co',
@@ -71,9 +71,9 @@ switch ($_SERVER['SERVER_NAME'])
 				'http://fonts.gstatic.com/',
 				'http://d3b369zdeuh99v.cloudfront.net/'
 			);
-        define('ENVIRONMENT', 'staging');
+        define('ENVIRONMENT', 'testing');
 	break;
-	case 'www.cyberlunes.com.co':	 
+	case 'www.cyberlunes.com.co':
 		$dominios_permitidos = array(
 				'http://www.cyberlunes.com.co',
 				'https://www.cyberlunes.com.co',
@@ -85,7 +85,7 @@ switch ($_SERVER['SERVER_NAME'])
         define('ENVIRONMENT', 'production');
 	break;
 }
-header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
+header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));
 
 
 /*

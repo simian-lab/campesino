@@ -41,7 +41,7 @@ class Main extends MX_Controller {
 		$this->load->library('ion_auth');
 		$this->data = array();
 		$this->checkProcess();
-		
+
 
 	}
 
@@ -53,7 +53,7 @@ class Main extends MX_Controller {
 		$cierra = false;
 		foreach ($process_list as $listado)
 		{
-			if($listado->process_id == 0){	
+			if($listado->process_id == 0){
 				if($cierra == TRUE)
 					$menu_list.= '</ul>';
 				$menu_list.= '<h3>'.$listado->process.'</h3><ul class="toggle">';
@@ -89,14 +89,14 @@ class Main extends MX_Controller {
 			$data['user']= $this->session->userdata('username');
 			$data['email']= $this->session->userdata('email');
 			$id = $this->session->userdata('sadmin_user_id');
-		
+
 		}elseif($plantilla == 'auth/forgot_password' || $plantilla == 'auth/reset_password'){
-			
+
 		}else{
 			if(uri_string()!='main/login')
 				redirect('main/login', 'refresh');
 		}
-		
+
 		// Recupero el menu del usuario
 		$data['menu_usuario'] = $this->print_menu();
 		// Cargo los breacrumbs
@@ -105,7 +105,7 @@ class Main extends MX_Controller {
 		$this->load->view('default/header', $data);
 		$this->load->view($plantilla, $datos);
 		$this->load->view('default/pie');
-                    
+
 	}
 
 // METODO OUTPUT - SALIDA A NAVEGADOR.
@@ -118,9 +118,9 @@ class Main extends MX_Controller {
 			$data['user']= $this->session->userdata('username');
 			$data['email']= $this->session->userdata('email');
 			$id = $this->session->userdata('sadmin_user_id');
-		
+
 		}elseif($plantilla == 'auth/forgot_password' || $plantilla == 'auth/reset_password'){
-			
+
 		}else{
 			if(uri_string()!='main/login')
 				redirect('main/login', 'refresh');
@@ -133,11 +133,11 @@ class Main extends MX_Controller {
 		$this->load->view('default/header_error', $data);
 		$this->load->view($plantilla, $datos);
 		$this->load->view('default/pie');
-                    
+
 	}
 
 	function index(){
-		
+
 		$process_list = $this->ion_auth->consulta_menu($this->session->userdata('sadmin_user_id'));
 		$ir='list_user';
 		foreach ($process_list as $listado)
@@ -154,7 +154,7 @@ class Main extends MX_Controller {
 		$this->$ir();
 	}
 
-	
+
 	/* FUNCIONES DE ION_AUTH */
 		function login(){
 			$auth = $this->load->module('auth_ion');
@@ -164,7 +164,7 @@ class Main extends MX_Controller {
 			$auth = $this->load->module('auth_ion');
 			echo $retorno = modules::run('modules/auth_ion/logout');
 		}
-		
+
 		function list_user(){
 			$auth = $this->load->module('auth_ion');
 			echo $retorno = modules::run('modules/auth_ion/list_user');
@@ -184,38 +184,38 @@ class Main extends MX_Controller {
 			$auth = $this->load->module('auth_ion');
 			echo $retorno = modules::run('modules/auth_ion/forgot_password');
 		}
-	
+
 		function reset_password($pais=NULL, $key=NULL){
 			if(!in_array($pais,array('cl','ar','pe')))
-				$key = $pais;		
+				$key = $pais;
 			else{
 				$this->load->database($pais);
 			}
 			$auth = $this->load->module('auth_ion');
 			echo $retorno = modules::run('modules/auth_ion/reset_password',$key);
 		}
-	
+
 		function change_password($id){
 			$auth = $this->load->module('auth_ion');
 			echo $retorno = modules::run('modules/auth_ion/change_password',$id);
 		}
-	
-	
+
+
 		function add_process_groups($id=NULL){
 			$auth = $this->load->module('auth_ion');
 			echo $retorno = modules::run('modules/auth_ion/add_process_groups',$id);
 		}
-	
+
 		function checkProcess(){
 			$this->load->model('ion_auth_model');
-	
+
 			$accesos_predeterminados = array('main/index','main/logout','main/login','');
 			$segment= 'main/'.$this->uri->segment(2);
 			if(in_array($segment,$accesos_predeterminados))
 				return true;
 			if(!$segment || !$this->session->userdata('sadmin_user_id'))
 				return false;
-			
+
 			if(!$this->ion_auth_model->access($segment,$this->session->userdata('sadmin_user_id'))){
 				redirect('main/logout', 'refresh');
 			}/**/
@@ -232,30 +232,30 @@ class Main extends MX_Controller {
 		}
 
 
-              /* FUNCION DE NOVEDADES */ 
+              /* FUNCION DE NOVEDADES */
       function articulos(){
 			$auth = $this->load->module('articulos');
 			echo $retorno = modules::run('modules/articulos/index');
-		}  
+		}
         function promociones(){
 			$auth = $this->load->module('promociones');
 			echo $retorno = modules::run('modules/promociones/index');
-		} 
+		}
 
 		function promociones_premium(){
 			$auth = $this->load->module('promociones_premium');
 			echo $retorno = modules::run('modules/promociones_premium/index');
-		} 
+		}
 
 		function promociones_premium_home(){
 			$auth = $this->load->module('promociones_premium_home');
 			echo $retorno = modules::run('modules/promociones_premium_home/index');
-		} 
+		}
 
 		function promociones_generales(){
 			$auth = $this->load->module('promociones_generales');
 			echo $retorno = modules::run('modules/promociones_generales/index');
-		} 
+		}
 
 		function pautas(){
 			$auth = $this->load->module('pautas');
@@ -278,13 +278,19 @@ class Main extends MX_Controller {
 
 		function pendientes(){
 		$auth = $this->load->module('pendientes');
-			echo $retorno = modules::run('modules/pendientes/index');	
+			echo $retorno = modules::run('modules/pendientes/index');
 		}
 
 		function aliados(){
 			$auth = $this->load->module('aliados');
 			echo $retorno = modules::run('modules/aliados/index');
 		}
+
+		function aliado(){
+			$auth = $this->load->module('aliado');
+			echo $retorno = modules::run('modules/aliado/index');
+		}
+
 		function destinos(){
 			$auth = $this->load->module('destinos');
 			echo $retorno = modules::run('modules/destinos/index');
@@ -319,8 +325,8 @@ class Main extends MX_Controller {
 			$auth = $this->load->module('formulario_sorteo');
 		 	// Imprimo el valor obtenido
 			echo $retorno = modules::run('modules/formulario_sorteo/index');
-			
-			
+
+
 		}
 
 		function formulario_participacion(){
@@ -330,11 +336,11 @@ class Main extends MX_Controller {
 		}
 
 		function marcas(){
-			
+
 			$auth = $this->load->module('marcas');
 		 	// Imprimo el valor obtenido
 			echo $retorno = modules::run('modules/marcas/index');
-			
+
 		}
 
 		function asignar_tiendas(){
@@ -345,22 +351,22 @@ class Main extends MX_Controller {
 
 	    function promociones_aprobadas(){
 	    	$auth = $this->load->module('promociones_aprobadas');
-			echo $retorno = modules::run('modules/promociones_aprobadas/index');	
+			echo $retorno = modules::run('modules/promociones_aprobadas/index');
 	    }
 
 	    function promociones_rechazadas(){
 	    	$auth = $this->load->module('promociones_rechazadas');
-			echo $retorno = modules::run('modules/promociones_rechazadas/index');	
+			echo $retorno = modules::run('modules/promociones_rechazadas/index');
 	    }
 
 	    function lista_blanca_dominios(){
 	    	$auth = $this->load->module('lista_blanca_dominios');
-			echo $retorno = modules::run('modules/lista_blanca_dominios/index');	
+			echo $retorno = modules::run('modules/lista_blanca_dominios/index');
 	    }
 
 	    function formulario_registro(){
 	    	$auth = $this->load->module('formulario_registro');
-			echo $retorno = modules::run('modules/formulario_registro/index');	
+			echo $retorno = modules::run('modules/formulario_registro/index');
 	    }
 
 	    function prueba_mail(){
@@ -368,21 +374,21 @@ class Main extends MX_Controller {
 			$config['protocol'] = 'smtp';
 			$config['smtp_host'] = 'localhost';
 			//$config['smtp_timeout'] = '90';
-			
+
 
 			$this->email->initialize($config);
 
 			$this->email->from('no-reply@cyberlunes.com.co');
-			$this->email->to('mcisneros@brandigital.com,icano@brandigital.com,ggiorda@brandigital.com'); 
+			$this->email->to('mcisneros@brandigital.com,icano@brandigital.com,ggiorda@brandigital.com');
 			$this->email->subject('mail de prueba');
-			$this->email->message('Esto es un asunto de prueba ' . base_url());	
+			$this->email->message('Esto es un asunto de prueba ' . base_url());
 
 			if($this->email->send()){
 				echo 'Mensaje enviado';
 			}
-				
+
 				echo('<br>');
 				 echo $this->email->print_debugger();
 	    }
-	
+
 }

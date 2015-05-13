@@ -65,11 +65,38 @@ function onSubmitFormulario(nombre){
 	s.tl(true,"o","Formulario"); 
 }
 
-
 function onClickPauta(nombre){
-	s.linkTrackVars = "events,products";
-	s.linkTrackEvents = "event41";
-	s.events = "event41";
-	s.products = ";"+nombre;
+	s.linkTrackVars = "events,eVar27";
+	s.linkTrackEvents = "event43";
+	s.events = "event43";
+	s.eVar27 = nombre;
 	s.tl(true,"o","Pauta"); 
+}
+
+function onClickComercio(id, posicion) {
+	s.linkTrackVars = "events,eVar38,eVar39";
+	s.linkTrackEvents = "event37";
+	s.events = "event37";
+	s.eVar39 = id;
+	s.eVar38 = "Posicion " + posicion;
+	s.tl(true,"o","clic en comercio");
+}
+
+function printPatrocinador(array_id) {
+	s.linkTrackVars = "events,list1";
+	s.linkTrackEvents = "event42";
+	s.events = "event42";
+	s.list1 = '';
+
+	for(var i = 0; i < array_id.length; i++) {
+		if(array_id[i] != undefined) {
+			if(i > 0) {
+				s.list1 += ";" + array_id[i];
+			} else {
+				s.list1 += array_id[i];
+			}
+		}
+	}
+
+	s.tl(true,"o","Impresión Retail");
 }

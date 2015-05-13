@@ -72,6 +72,7 @@ class Promociones extends Main {
 		
 
         $crud->display_as('PRO_NOMBRE','Nombre promoción')
+        	 ->display_as('PRO_ID','ID')
 	         ->display_as('PRO_DESCRIPCION','Descripción')
              ->display_as('PRO_ETIQUETA','Etiqueta')
              ->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')
@@ -112,24 +113,22 @@ class Promociones extends Main {
         	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID');
-        $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'Paquete', 'PRO_SRC_ID');
+        $crud->columns('PRO_ID', 'PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'Paquete', 'PRO_SRC_ID');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
 		$crud->set_field_upload('PRO_LOGO_GENERAL','multimedia/promociones/');
-		$crud->callback_before_upload(array($this,'change_name_image'));
-		$crud->callback_after_upload(array($this,'check_imagen'));
-		$crud->callback_column('Paquete', array($this, 'columna_paquete'));
-		
 
-		$crud->callback_after_insert(array($this,'fnc_after_insert')); // despues de insertar
+		$crud->callback_after_insert(array($this,'fnc_after_insert'));
 		$crud->callback_after_update(array($this,'fnc_after_update'));
-		$crud->callback_before_update(array($this,'before_update')); // anets de insertar
-		$crud->callback_before_insert(array($this,'before_insert')); //  antes de insertar
-		
+		$crud->callback_after_upload(array($this,'check_imagen'));
+		$crud->callback_before_insert(array($this,'before_insert'));
+		$crud->callback_before_delete(array($this,'delete_motivo_rechazo'));
+		$crud->callback_before_update(array($this,'before_update'));
+		$crud->callback_before_upload(array($this,'change_name_image'));
+		$crud->callback_column('Paquete', array($this, 'columna_paquete'));
 		$crud->callback_field('PRO_TIPO_MONEDA',array($this,'tipo_moneda'));
 		$crud->callback_field('VISTA_PREVIA',array($this,'link_vista_previa'));
-		$crud->callback_before_delete(array($this,'delete_motivo_rechazo'));
 
 		if($result['group_id']==3){
 			$crud->callback_field('PRO_SRC_ID',array($this,'tipo_promocion'));
@@ -182,6 +181,10 @@ class Promociones extends Main {
 			$crud->field_type('VISIBILITY','true_false');
 	    }
 
+	    asort($arrCategorias);
+	    asort($arrMarcas);
+	    asort($arrSubCategorias);
+
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
         $crud->field_type('Tags','multiselect');  
@@ -226,9 +229,16 @@ class Promociones extends Main {
 
 	}
 
-/********************************************************************/
-function check_url(){
-	return false;
+/**
+ * Verifies if the file has a valid image format.
+ * @param  String $file_name The image file name
+ * @return boolean           True if it's valid. False otherwise.
+ */
+function image_is_valid($file_name) {
+	$file_format = explode('.', $file_name)[1];
+	$accepted_image_formats = array('jpg', 'png', 'jpeg');
+	$is_valid = in_array($file_format, $accepted_image_formats);
+	return $is_valid;
 }
 
 function generar_hash(){
@@ -377,27 +387,30 @@ function limit_titulo($value){
 
 function before_insert($post_array){
 
-if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM'], FILTER_SANITIZE_SPECIAL_CHARS)){
-	echo '<script>alert("Nombre de imagen incorrecto")</script>';
-	exit();
+$file_name = $post_array['PRO_LOGO_PREMIUM'];
+$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+$file_name = str_replace(" ", "", $file_name);
+$post_array['PRO_LOGO_PREMIUM'] = $file_name;
+
+if(!$this->image_is_valid($file_name)) {
+	$post_array['PRO_LOGO_PREMIUM'] = '';
 }
 
-if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
-	echo '<script>alert("Nombre de imagen incorrecto")</script>';
-	exit();
+$file_name = $post_array['PRO_LOGO_GENERAL'];
+$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+$file_name = str_replace(" ", "", $file_name);
+$post_array['PRO_LOGO_GENERAL'] = $file_name;
+
+if(!$this->image_is_valid($file_name)) {
+	$post_array['PRO_LOGO_GENERAL'] = '';
 }
 
 $this->load->model('promociones_model');
-//print_R($post_array);die();
-//$pUSER_ID= $this->session->userdata('sadmin_user_id'); // Id de usuario que esta cargando la promo
 $pUSER_ID=$post_array['PRO_USER_CREADOR'];
 $pTIPO = $post_array['PRO_SRC_ID'];
 
 $datos= $this->promociones_model->decrementar($pUSER_ID,$pTIPO);
-//echo '<script> alert("'.$datos[0]["RESPUESTA"].'" ) </script>';
-//		exit();
 $msg_error=$datos[0]["RESPUESTA"];
-//print_R($this->session->userdata('sadmin_user_id'));die();
 	if($msg_error!='0'){
 		echo '<script> alert("Ha superado el límite de promociones para este paquete." ) </script>';
 		exit();
@@ -416,14 +429,23 @@ $msg_error=$datos[0]["RESPUESTA"];
 }
 
 function before_update($post_array, $primary_key){
-	if($post_array['PRO_LOGO_PREMIUM'] != filter_var($post_array['PRO_LOGO_PREMIUM'], FILTER_SANITIZE_SPECIAL_CHARS)){
-		echo '<script>alert("Nombre de imagen incorrecto")</script>';
-		exit();
+	
+	$file_name = $post_array['PRO_LOGO_PREMIUM'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['PRO_LOGO_PREMIUM'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['PRO_LOGO_PREMIUM'] = '';
 	}
 
-	if($post_array['PRO_LOGO_GENERAL'] != filter_var($post_array['PRO_LOGO_GENERAL'], FILTER_SANITIZE_SPECIAL_CHARS)){
-		echo '<script>alert("Nombre de imagen incorrecto")</script>';
-		exit();
+	$file_name = $post_array['PRO_LOGO_GENERAL'];
+	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
+	$file_name = str_replace(" ", "", $file_name);
+	$post_array['PRO_LOGO_GENERAL'] = $file_name;
+
+	if(!$this->image_is_valid($file_name)) {
+		$post_array['PRO_LOGO_GENERAL'] = '';
 	}
 
 	$this->load->helper('url');

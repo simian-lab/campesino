@@ -26,10 +26,10 @@ section#home .container .publicidades figure .titulo-publi, section#detalle .con
 }
 
 section#detalle .container .publicidades figure, section#formulario .container .publicidades figure {
-	display: inline-block; 
+	display: inline-block;
 }
 
-#sas_9344 { 
+#sas_9344 {
 	min-width: 302px;
 	max-height: 252px;
 	border: 1px solid #00b3c7;
@@ -75,7 +75,13 @@ section#home .container .publicidades figure {
 
 #sas_8941 {
 	bottom: 0;
+	left: 50%;
 	position: fixed;
+	-webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .marcas figure:first-child + figure + figure, .marcas-mobile figure:first-child{
@@ -92,3 +98,72 @@ section#home .container .publicidades figure {
 	position: relative;
 	top: 5px;
 }
+
+/*
+"Fix" by ivan@simian.co on Apr 21 2015
+Here we're making sure the "Banderole" (cool name, BTW)
+is a little bit higher on the page.
+*/
+#afbd_4207246m {
+  top: 70px !important;
+}
+
+/*
+"Fix" by nicolas@simian.co on Apr 28 2015
+Here we're making sure the images don't 'break' the carousel.
+*/
+#slider-marcas .slider-marcas img {
+	max-height: 73px;
+	max-width: 132px;
+}
+
+@media (max-width: 768px) {
+	#slider-marcas .slider-marcas img {
+		max-height: 55px;
+	}	
+}
+
+@media (max-width: 400px) {
+	#slider-marcas .slider-marcas img {
+		max-height: 40px;
+	}	
+}
+
+#slide-marcas img {
+	max-height: 61px;
+	max-width: 110px;
+	width: auto !important;
+}
+
+@media (max-width: 768px) {
+	#footer_main .social {
+		bottom: -45px !important;
+		left: inherit !important;
+		position: relative !important;
+		text-align: center;
+	}
+}
+
+#first-slider h1 {
+	color: #00b6c9;
+	font-size: 1.313em;
+	margin: 10px 0;
+}
+
+#first-slider h1 b {
+	font-family: "Conv_MyriadPro-Bold";
+}
+
+@media screen and (min-width: 1216px) {
+	#first-slider {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1216px) {
+	#formulario .container .aside h1 {
+		display: none;
+	}
+}
+
+

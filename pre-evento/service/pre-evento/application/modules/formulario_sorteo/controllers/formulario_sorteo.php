@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class formulario_sorteo extends CI_Controller {
-    
+
     public function __construct() {
           parent:: __construct();
        	  $this->load->model('formulario_sorteo_model');
@@ -13,10 +13,10 @@ class formulario_sorteo extends CI_Controller {
           $this->load->helper('get_app_data');
           $this->load->library('form_validation');
           $this->load->library('user_agent');
-          
+
      }
-    
-    public function index($success = '') { 
+
+    public function index($success = '') {
 
 
        if(isset($_COOKIE['origen']) && $_COOKIE['origen']=='registro_success'){
@@ -30,8 +30,8 @@ class formulario_sorteo extends CI_Controller {
         $data['jsonParam']=get_app_data();
 
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Si les gustan las ofertas como a mí no se pueden perder CyberLunes este 19 de mayo. Entérense de las tiendas que van a participar aquí: http://www.cyberlunes.com.co';
-        $meta_keys = "Compare,Mejores Ofertas Turísticas,vive viajar";
+        $meta_descripcion = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com';
+        $meta_keys = "Compare,Mejores Ofertas Turísticas";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
 
@@ -53,7 +53,7 @@ class formulario_sorteo extends CI_Controller {
         else{
 
             $data['error_file'] = $success;
-            
+
         }
 
         if($this->agent->is_mobile()){
@@ -62,18 +62,18 @@ class formulario_sorteo extends CI_Controller {
           else{
             $data['is_mobile'] = 0;
           }
-        
+
         if(isset($_COOKIE['formularios']) && $_COOKIE['formularios'] == 'hidden'){
           $data['hide_form'] = 1;
         }
-        
+
         $data['title'] = 'El Tiempo - Cybermonday';
 
         $data['slider_patrocinadores'] = $this->formulario_sorteo_model->get_patrocinadores();
 
         $data['tiendas'] = $this->formulario_sorteo_model->get_tiendas();
 
-        $data['s_pageName']='Cyberlunes: pre-evento: formulario: sorteo'; 
+        $data['s_pageName']='Cyberlunes: pre-evento: formulario: sorteo';
         $data['s_channel']= 'Cyberlunes: pre-evento: formulario ';
         $data['s_prop1']= 'Cyberlunes: pre-evento: formulario: sorteo';
         $data['s_prop2']= '';
@@ -90,7 +90,7 @@ class formulario_sorteo extends CI_Controller {
         }
         $this->load->view('formulario_sorteo', $data);
         $this->load->view('template/footer', $data);
-        
+
 
         $this->load->view('template/terminos_condiciones');
         $this->load->view('template/script_form');
@@ -120,10 +120,10 @@ class formulario_sorteo extends CI_Controller {
         $this->form_validation->set_message('valid_email', '%s inválido');
         $this->form_validation->set_rules('terminos', 'Términos y condiciones', 'trim|required|xss_clean');
         //$this->form_validation->set_message('required', 'Debe aceptar los %s');
-        $this->form_validation->set_error_delimiters('<div class="text-error" style="font-size:0.835em;color:#FF0000">', '</div>'); 
+        $this->form_validation->set_error_delimiters('<div class="text-error" style="font-size:0.835em;color:#FF0000">', '</div>');
 
         if ($this->form_validation->run() === FALSE){
-            
+
             $this->index();
 
         }
@@ -137,10 +137,10 @@ class formulario_sorteo extends CI_Controller {
                 $config['max_size'] = '8192';
                 $ext = end(explode(".", $_FILES['factura']['name']));
                 $config['file_name'] = time().'_factura_cliente.'.$ext;
-                $this->upload->initialize($config); 
+                $this->upload->initialize($config);
                 //print_r($config['upload_path']);
                 if(!$this->upload->do_upload('factura')){
-                    
+
                     $error_file = $this->upload->display_errors();
                     $this->index($error_file);
 
@@ -156,7 +156,7 @@ class formulario_sorteo extends CI_Controller {
                         if(!$this->is_image($path)){
                            @unlink($path);
                            $success = 'formato_de_imagen_incorrecto';
-                           $this->index($success);  
+                           $this->index($success);
                         }
                         else{
                             copy($config['upload_path'].$config['file_name'], $data['base_path_admin_img_facturas'].$config['file_name']);
@@ -192,15 +192,15 @@ class formulario_sorteo extends CI_Controller {
                         }
                         redirect('formulario/sorteo/'.$success);
                     }
-                
+
                 }
-                
+
             }
             else{
                 $success = 'Debe seleccionar un archivo';
                 $this->index($success);
-            }  
-            
+            }
+
         }
 
     }
@@ -214,7 +214,7 @@ class formulario_sorteo extends CI_Controller {
         }
         return false;
     }
-        
+
 }
 
 /* End of file welcome.php */

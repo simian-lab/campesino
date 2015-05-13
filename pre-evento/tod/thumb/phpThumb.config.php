@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 //////////////////////////////////////////////////////////////
 ///  phpThumb() by James Heinrich <info@silisoftware.com>   //
 //        available at http://phpthumb.sourceforge.net     ///
@@ -14,22 +14,22 @@
 
 switch ($_SERVER['SERVER_NAME'])
 {
-	case 'pre-evento.cyberlunes.local.brandigital.com':	 
+	case 'pre-evento.cyberlunes.local.brandigital.com':
 		$dominiosPermitidos = array('static.cyberlunes.local.brandigital.com');
 	break;
-	case 'pre-evento.cyberlunes.dev.brandigital.com':	 
+	case 'pre-evento.cyberlunes.dev.brandigital.com':
 		$dominiosPermitidos = array('static.cyberlunes.dev.brandigital.com');
 	break;
-	case 'preevento-stage.cyberlunes.com.co':	 
+	case 'preevento-stage.cyberlunes.com.co':
 		$dominiosPermitidos = array('static-stage.cyberlunes.com.co');
 	break;
-	case 'originpreeve-www2.cyberlunes.com.co':	 
+	case 'origin-www2.cyberlunes.com.co':
 		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
 	break;
-	case 'www.cyberlunes.com.co':	 
+	case 'www.cyberlunes.com.co':
 		$dominiosPermitidos = array('static.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
 	break;
-	case 'staging.cyberlunes.com.co':	 
+	case 'staging.cyberlunes.com.co':
 		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
 	break;
 }

@@ -11,7 +11,7 @@ class Auth_ion extends Main {
 //		$this->data = array();
 	}
 
-	
+
 	//redirect if needed, otherwise display the user list
 	function index()
 	{
@@ -39,7 +39,7 @@ class Auth_ion extends Main {
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
 		if ($this->form_validation->run() == true)
-		{ 
+		{
 			//check to see if the user is logging in
 			//check for "remember me"
 			$remember = (bool) $this->input->post('remember');
@@ -73,12 +73,12 @@ class Auth_ion extends Main {
 				'id' => 'identity',
 				'type' => 'text',
 				'value' => $this->form_validation->set_value('identity'),
-	            'style'       => 'width:150px',				
+	            'style'       => 'width:150px',
 			);
 			$data['password'] = array('name' => 'password',
 				'id' => 'password',
 				'type' => 'password',
-	            'style'       => 'width:150px',				
+	            'style'       => 'width:150px',
 			);
 
 			$this->salida('auth/login',$data);
@@ -98,7 +98,7 @@ class Auth_ion extends Main {
 	//change password
 	function change_password($id = NULL)
 	{
-		 
+
 		//$this->form_validation->set_rules('old', 'Old password', 'required');
 		$this->form_validation->set_rules('new', 'New Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
 		$this->form_validation->set_rules('new_confirm', 'Confirm New Password', 'required');
@@ -113,7 +113,7 @@ class Auth_ion extends Main {
 		// print_r($user );
 		// die();
 		if ($this->form_validation->run() == false)
-		{ 
+		{
 			//display the form
 			//set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
@@ -155,7 +155,7 @@ class Auth_ion extends Main {
 			//$this->input->post('old')
 
 			if ($change)
-			{ 
+			{
 				//if the password was successfully changed
 			    $this->send_confirmacion($identity,$this->input->post('new'));
 
@@ -173,7 +173,7 @@ class Auth_ion extends Main {
 	function send_confirmacion($ident,$nclave){
 	    $this->load->model('ion_users_model');
 
-	    $datos_envio['titulo'] = 'Usuario'; 
+	    $datos_envio['titulo'] = 'Usuario';
 	    $datos_envio['clave'] = $nclave;
 	    $datos_envio['ident'] = $ident;
 
@@ -189,13 +189,13 @@ class Auth_ion extends Main {
 		$this->form_validation->set_rules('email', 'Email Address', 'required');
 		if ($this->form_validation->run() == false)
 		{
-			
-            
+
+
 
 			//setup the input
 			$this->data['email'] = array('name' => 'email',
 				'id' => 'email',
-				'style' => 'width:250px',				
+				'style' => 'width:250px',
 			);
 
 			//set any errors and display the form
@@ -205,9 +205,9 @@ class Auth_ion extends Main {
 		}
 		else
 		{
-            
+
 			//run the forgotten password method to email an activation code to the user
-			
+
              // echo $this->input->post('email');
              // echo $this->session->userdata('pais_db');
              // die();
@@ -217,8 +217,8 @@ class Auth_ion extends Main {
 	//		die();
 
 			if ($forgotten)
-			{ 
-				 
+			{
+
 				//if there were no errors
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 				redirect("main/login", 'refresh'); //we should display a confirmation page here instead of the login page
@@ -243,7 +243,7 @@ class Auth_ion extends Main {
 		$user = $this->ion_auth->forgotten_password_check($code);
 
 		if ($user)
-		{  
+		{
 			//if the code is valid then display the password reset form
 
 			$this->form_validation->set_rules('new', 'New Password', 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
@@ -261,14 +261,14 @@ class Auth_ion extends Main {
 					'name' => 'new',
 					'id'   => 'new',
 				'type' => 'password',
-					'style'       => 'width:150px',				
+					'style'       => 'width:150px',
 					'pattern' => '^.{'.$this->data['min_password_length'].'}.*$',
 				);
 
 				$this->data['new_password_confirm'] = array(
 					'name' => 'new_confirm',
 					'id'   => 'new_confirm',
-					'style'       => 'width:150px',				
+					'style'       => 'width:150px',
 					'type' => 'password',
 					'pattern' => '^.{'.$this->data['min_password_length'].'}.*$',
 				);
@@ -287,7 +287,7 @@ class Auth_ion extends Main {
 			else
 			{
 				// do we have a valid request?
-				if ($this->_valid_csrf_nonce() === FALSE || $user->id != $this->input->post('user_id')) 
+				if ($this->_valid_csrf_nonce() === FALSE || $user->id != $this->input->post('user_id'))
 				{
 
 					//something fishy might be up
@@ -295,15 +295,15 @@ class Auth_ion extends Main {
 
 					show_error('This form post did not pass our security checks.');
 
-				} 
-				else 
+				}
+				else
 				{
 					// finally change the password
 					$identity = $user->{$this->config->item('identity', 'ion_auth')};
 
 					$change = $this->ion_auth->reset_password($identity, $this->input->post('new'));
 					if ($change)
-					{ 
+					{
 						//if the password was successfully changed
 						$this->session->set_flashdata('message', $this->ion_auth->messages());
 						$this->logout();
@@ -317,7 +317,7 @@ class Auth_ion extends Main {
 			}
 		}
 		else
-		{ 
+		{
 			//if the code is invalid then send them back to the forgot password page
 			$this->session->set_flashdata('message', $this->ion_auth->errors());
 			redirect("main/forgot_password", 'refresh');
@@ -332,7 +332,7 @@ class Auth_ion extends Main {
 		{
 			$activation = $this->ion_auth->activate($id, $code);
 		}
-		else 
+		else
 		{
 			$activation = $this->ion_auth->activate($id);
 		}
@@ -341,7 +341,7 @@ class Auth_ion extends Main {
 		{
 			//redirect them to the auth page
 			$this->session->set_flashdata('message', 'Usuario Activado correctamente');
-			
+
 			redirect("main/list_user", 'refresh');
 		}
 		else
@@ -367,7 +367,7 @@ class Auth_ion extends Main {
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
 
-			$breadcrums[]='<a class="current" href="'.site_url('main/list_user').'">Usuarios</a>'; 
+			$breadcrums[]='<a class="current" href="'.site_url('main/list_user').'">Usuarios</a>';
 
 			$this->salida('auth/deactivate_user', $this->data, $breadcrums);
 		}
@@ -378,7 +378,7 @@ class Auth_ion extends Main {
 			{
 				// do we have a valid request?
 				if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
-				{				
+				{
 					show_error('This form post did not pass our security checks.');
 				}
 
@@ -393,7 +393,7 @@ class Auth_ion extends Main {
 			redirect('main/list_user', 'refresh');
 		}
 	}
-	
+
 
 
 	function _get_csrf_nonce()
@@ -420,11 +420,29 @@ class Auth_ion extends Main {
 		}
 	}
 
+	function update_user_on_ally($post_array, $primary_key) {
+		$ally_id = $post_array['ally_id'];
+		$user_id = $primary_key;
+		if($ally_id != '') {
+			$query = 'SELECT PAT_ID FROM PAT_PATROCINADORES WHERE PAT_ALIADO = ? AND PAT_ID != ?';
+			$result = $this->db->query($query, array($user_id, $ally_id));
+			foreach($result->result() as $row) {
+				$pat_id = $row->PAT_ID;
+				$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = NULL WHERE PAT_ID = ?';
+				$this->db->query($query, array($pat_id));
+			}
+			$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = ? WHERE PAT_ID = ?';
+			$this->db->query($query, array($user_id, $ally_id));
+		} else {
+			$query = 'UPDATE PAT_PATROCINADORES SET PAT_ALIADO = NULL WHERE PAT_ALIADO = ?';
+			$this->db->query($query, array($user_id));
+		}
+	}
 
 	//USUARIOS
 	function list_user()
 	{
-		
+
 
 		if (!$this->ion_auth->logged_in())
 		{
@@ -442,29 +460,25 @@ class Auth_ion extends Main {
 
 			$this->load->model('ion_users_model');
 		    $result = $this->ion_users_model->get_grupo($this->session->userdata('sadmin_user_id'));//gruo del usurio actual
-		    
+
 		    // $usuarios= $this->ion_users_model->get_user_x_grupo('3');
 		    $usuarios= $this->ion_users_model->get_user_x_grupo($result['group_id']);
 
 			//set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
-			$breadcrums[]='<a class="current" href="'.site_url('main/list_user').'">Usuarios</a>'; 
+			$breadcrums[]='<a class="current" href="'.site_url('main/list_user').'">Usuarios</a>';
 
-			$this->load->library('grocery_crud');	
+			$this->load->library('grocery_crud');
 			$crud = new grocery_CRUD();
 			$crud->set_language("spanish"); //Defino el lenguaje
 			$crud->set_theme('flexigrid'); // Defino el tema
 			$crud->set_table('admin_users'); // Tabla a insertar/editar
 			$crud->set_subject('Usuarios'); // Titulo
-			// $crud->where('id',1);
-			// echo $result['group_id'];
 
 			if( $result['group_id']==4 ){
                $crud->where('id !=',1);
 			}
-
-			// echo $this->session->userdata('sadmin_user_id');
 
 			 $q ='';
 		 if($result['group_id']==3 || $result['group_id']==4 ){
@@ -472,7 +486,7 @@ class Auth_ion extends Main {
 		 	$total_user=count($usuarios);
 		 	foreach($usuarios as $key=>$valor){
 		 		if($i<$total_user){
-	 
+
 		 			 $crud->or_where('id',$valor['user_id']);
 		 		}else{
 		 			$crud->where('id',$valor['user_id']);
@@ -480,68 +494,88 @@ class Auth_ion extends Main {
 		 	 	$i++;
 		 	}
 			   }
-		 
 
-			// Defino titulos de los campos 
+			// Defino titulos de los campos
 				$crud->display_as('active','Usuario Activo')
 				->display_as('username','Nombre Usuario')
 				->display_as('first_name','Nombres')
 				->display_as('last_name','Apellido')
 				->display_as('email2','Email corporativo')
-				->display_as('phone','Teléfono');
-
-		
+				->display_as('phone','Teléfono')
+				->display_as('ally_id', 'Patrocinador');
 
 			// Columnas que muestra la tabla
 				$crud->columns('username','email','first_name','last_name','phone','active','users_groups');
 			// Campos a validar
 				$crud->required_fields('username','email','first_name','last_name','password','users_groups','active');
-			// Agrego la opcion de modificar contraseña 
+			// Agrego la opcion de modificar contraseña
 				$crud->add_action('Clave', base_url('/images/change-password.png'), 'main/change_password','');
 
 			// Cuando solo quiero agregar estos campos
-			    $crud->add_fields('username','email','email2','first_name','last_name','password', 'phone','organizacion','users_groups', 'active');
+			    $crud->add_fields('username','email','email2','first_name','last_name','password', 'phone','organizacion','users_groups', 'active', 'ally_id');
 			    // $crud->add_fields('username','email','first_name','last_name','password', 'phone','users_groups', 'active');
 
 			// Defino los campos que quiero editar solamente
 		    	// $crud->edit_fields('username','first_name','last_name','phone','users_groups', 'active','group_id');
-		    	$crud->edit_fields('username','first_name','last_name','phone','users_groups', 'active');
-			// Defino el tipo de campo 
+		    	$crud->edit_fields('username','first_name','last_name','phone','users_groups', 'active', 'ally_id');
+			// Defino el tipo de campo
 				$crud->field_type('password', 'password');
 
 				$crud->field_type('active','dropdown',array('0' => 'No','1' => 'Si'));
-//				$crud->change_field_type('company','text');//Cambio el tipo de campo
- 			// Defino regla de validacion
+
+				$state = $crud->getState();
+
+				$allies = "";
+
+				if($state == "edit") {
+					$state_info = $crud->getStateInfo();
+
+					$allies = $this->ion_users_model->get_allies($state_info->primary_key);
+
+				} else if($state == "add") {
+					$allies = $this->ion_users_model->get_allies("add");
+				}
+
+				/*
+				Aquí me aseguro que la variable $allies sea un arreglo así la base de datos esté vacía.
+				Así prevengo el error que genera Grocery Crud al intentar llenar el dropdown.
+				- Nicolás, 23 Apr 2015
+			 	*/
+				if(is_array($allies)) {
+					asort($allies);
+				} else {
+					$allies = array('');
+				}
+
+				$crud->field_type('ally_id', 'dropdown', $allies);
+
+ 				// Defino regla de validación.
 				$crud->set_rules('email','Email','required|valid_email');
 				$crud->set_rules('email2','Email','valid_email');
-		 		
+
 		 		$crud->unique_fields('username','email');
-		 		
+
 
 				 if($result['group_id']==3 ){
-				    
+
 				    $crud->set_relation_n_n('users_groups', 'admin_users_groups', 'admin_groups', 'user_id', 'group_id', 'name',null,'id = 2 OR id =5' );
 				 }else{
 				    $crud->set_relation_n_n('users_groups', 'admin_users_groups', 'admin_groups', 'user_id', 'group_id', 'name',null,array('id !='=>'1') );
 				 }
 
-			    
+				$crud->callback_after_insert(array($this, 'update_user_on_ally'));
+				$crud->callback_after_update(array($this, 'update_user_on_ally'));
 				$crud->callback_before_insert(array($this,'encrypt_password_callback'));
 				$crud->callback_before_update(array($this,'encrypt_password_callback'));
 				$crud->callback_edit_field('password',array($this,'decrypt_password_callback'));
-				//$crud->callback_after_insert(array($this, 'insert_tienda'));	
-				//$crud->callback_after_update(array($this, 'update_tienda'));	
-				//$crud->callback_after_delete(array($this, 'delete_tienda'));		
-				
+
 			$this->data['output'] = $output = $crud->render();
 			$this->salida('auth/list_user', $this->data, $breadcrums);
 		}
 	}
 
-	
-	
 	/* /// NUEVO - PROCESOS */
-	// LISTADO DE PROCESOS	
+	// LISTADO DE PROCESOS
 	function list_process()
 	{
 		if (!$this->ion_auth->logged_in())
@@ -559,10 +593,10 @@ class Auth_ion extends Main {
 		{
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			//list the users
-			$breadcrums[]='<a class="current" href="'.site_url('main/list_process/').'">Procesos</a>'; 
+			$breadcrums[]='<a class="current" href="'.site_url('main/list_process/').'">Procesos</a>';
 
 			//set the flash data error message if there is one
-			$this->load->library('grocery_crud');	
+			$this->load->library('grocery_crud');
 			$crud = new grocery_CRUD();
 
 			$crud->set_theme('flexigrid');
@@ -571,28 +605,28 @@ class Auth_ion extends Main {
 
 		    $crud->display_as('process_id','Proceso Padre');
 		    $crud->set_relation('process_id','admin_process','process',array('process_id' => NULL));
-			
+
 		    $crud->order_by('orden');
 			// Validacion para el formulario
 			$crud->required_fields('process');
-			
+
 			$crud->set_language("spanish"); //Defino el lenguaje
-			
+
 			// Columnas que muestra la tabla
 				$crud->columns('process','method','process_id', 'orden');
 			// Campos a validar
 				$crud->required_fields('process','menu');
-			// Defino el tipo de campo 
+			// Defino el tipo de campo
 				$crud->field_type('menu','dropdown',array('1' => 'Si', '0' => 'No'));
-				
+
  			// Defino regla de validacion
 	//			$crud->set_rules('email','Email','required|valid_email');
-				
+
 
 
 			$this->data['output'] = $output = $crud->render();
 			$this->salida('auth/list_process', $this->data, $breadcrums);
-			
+
 		}
 	}
 
@@ -619,10 +653,10 @@ class Auth_ion extends Main {
 		{
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 			//list the users
-			$breadcrums[]='<a class="current" href="'.site_url('main/list_groups').'">Grupos</a>'; 
+			$breadcrums[]='<a class="current" href="'.site_url('main/list_groups').'">Grupos</a>';
 
 			//set the flash data error message if there is one
-			$this->load->library('grocery_crud');	
+			$this->load->library('grocery_crud');
 			$crud = new grocery_CRUD();
 
 			$crud->set_theme('flexigrid');
@@ -632,9 +666,9 @@ class Auth_ion extends Main {
 			$crud->columns('name','description');
 			// Validacion para el formulario
 			$crud->required_fields('name','description');
- 
+
 		    $crud->add_action('Permisos', base_url('/images/process.png'), 'main/add_process_groups','');
-			
+
 			$this->data['output'] = $output = $crud->render();
 			$this->salida('auth/list_groups', $this->data, $breadcrums);
 		}
@@ -659,7 +693,7 @@ class Auth_ion extends Main {
 		foreach ($process_groups as $datos){
 			$procesos_en_grupos[]=$datos->process_id;
 		}
-		
+
 		$this->form_validation->set_rules('id', 'ID', 'required|xss_clean');
 
 		$c = 0;
@@ -671,13 +705,13 @@ class Auth_ion extends Main {
 				$style = 'style="margin-left:50px";';
 			if(in_array($listado->id,$procesos_en_grupos))
 				$checked = 'checked="checked"';
-				
+
 			$this->data['proceso'][$c] = '
 			<fieldset '.$style.'>
 				<label>'.$listado->process.'</label>
 				<input type="checkbox" name="proceso['.$c.']" id="proceso_'.$c.'" value="'.$listado->id.'" '.$checked.' />
 			</fieldset>';
-			
+
 			$this->data['proceso_'.$c] = array(
 				'name'  => 'proceso_'.$c,
 				'id'    => 'proceso_'.$c,
@@ -691,7 +725,7 @@ class Auth_ion extends Main {
 		{
 			$proceso    = $this->input->post('proceso');
 			$groups    = $this->input->post('id');
-			
+
 			foreach ($proceso as $id_proceso){
 				$values[]=array(
 					  'process_id' => $id_proceso,
@@ -699,16 +733,16 @@ class Auth_ion extends Main {
 				   );
 			}
 		}
-		
+
 		if ($this->form_validation->run() == true && $this->ion_auth->add_process_groups_db($values, $groups))
-		{ 
+		{
 			//check to see if we are creating the user
 			//redirect them back to the admin page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
 			redirect("main/list_groups", 'refresh');
 		}
 		else
-		{ 
+		{
 			$this->data['id'] = array(
 				'name'  => 'id',
 				'id'    => 'id',
@@ -723,8 +757,8 @@ class Auth_ion extends Main {
 
 			$this->data['groups']=$groups_db->name;
 
-			$breadcrums[]='<a class="current" href="'.site_url('main/list_groups').'">Grupos</a>'; 
-			$breadcrums[]='<a class="current" href="'.site_url('main/add_process_groups/'.$id).'">Agregar procesos al grupo</a>'; 
+			$breadcrums[]='<a class="current" href="'.site_url('main/list_groups').'">Grupos</a>';
+			$breadcrums[]='<a class="current" href="'.site_url('main/add_process_groups/'.$id).'">Agregar procesos al grupo</a>';
 			$this->salida('auth/add_process_groups', $this->data, $breadcrums);
 		}
 	}
@@ -733,7 +767,7 @@ class Auth_ion extends Main {
 	{
 
 		$this->load->library('encrypt');
-	 
+
 		$key = 'super-secret-key';
 		//$post_array['password'] = $this->encrypt->encode($post_array['password'], $key);
 		$post_array['password'] = sha1($post_array['password']);
@@ -768,16 +802,16 @@ class Auth_ion extends Main {
 		$this->ion_users_model->delete_tienda($post_array);
 
 	}
-	 
+
 	function decrypt_password_callback($value)
 	{
 		$this->load->library('encrypt');
-	 
+
 		$key = 'super-secret-key';
 		$decrypted_password = $this->encrypt->decode($value, $key);
 
 		return "<input type='password' name='password' value='$decrypted_password' />";
-	}	
-	
+	}
+
 
 }
