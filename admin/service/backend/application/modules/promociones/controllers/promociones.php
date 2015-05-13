@@ -181,9 +181,24 @@ class Promociones extends Main {
 			$crud->field_type('VISIBILITY','true_false');
 	    }
 
-	    asort($arrCategorias);
-	    asort($arrMarcas);
-	    asort($arrSubCategorias);
+	    // Here I want to be sure that these variables are arrays.
+	    if(is_array($arrCategorias)) {
+	    	asort($arrCategorias);
+	    } else {
+	    	$arrCategorias = array('' => 'No hay categorias');
+	    }
+
+	    if(is_array($arrMarcas)) {
+	    	asort($arrMarcas);
+	    } else {
+	    	$arrMarcas = array('' => 'No hay marcas');
+	    }
+	    
+	    if(is_array($arrSubCategorias)) {
+	    	asort($arrSubCategorias);
+	    } else {
+	    	$arrSubCategorias = array('' => 'No hay subcategorias');
+	    }
 
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
