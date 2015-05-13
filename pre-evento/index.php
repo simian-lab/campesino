@@ -51,7 +51,8 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'testing');
 	break;
-        case 'http://originpreeve-www2.cyberlunes.com.co';
+    
+        case 'originpreeve-www2.cyberlunes.com.co';
             $dominios_permitidos = array(
 				'http://originpreeve-www2.cyberlunes.com.co',
 				'https://originpreeve-www2.cyberlunes.com.co',
