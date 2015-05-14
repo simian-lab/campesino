@@ -23,6 +23,9 @@ switch ($_SERVER['SERVER_NAME'])
 	case 'preevento-stage.cyberlunes.com.co':
 		$dominiosPermitidos = array('static-stage.cyberlunes.com.co');
 	break;
+	case 'originpreeve-www2.cyberlunes.com.co':
+		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
+	break;
 	case 'origin-www2.cyberlunes.com.co':
 		$dominiosPermitidos = array('static-stage.cyberlunes.com.co','d3b369zdeuh99v.cloudfront.net');
 	break;
