@@ -22,9 +22,9 @@
         <link rel="icon" type="image/png" href="<?php echo $base_url_static;?>img/favi_cyberLunes.png">
 
         <?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
-            <script src="<?php echo $base_url_static?>js/s_code.js"></script>     
+            <script src="<?php echo $base_url_static?>js/s_code.js"></script>
         <?php else: ?>
-            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
+            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script>
         <?php endif; ?>
         <script src="<?php echo $base_url_static;?>js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery-1.10.2.min.js"></script>
@@ -39,7 +39,7 @@
             sas.setup({ domain: 'http://ads.eltiempo.com',async: true, renderMode: 0});
 
             sas_tmstp=Math.round(Math.random()*10000000000);sas_masterflag=1;
-            
+
             function sasmobile(sas_pageid,sas_formatid,sas_target) {
                 if (sas_masterflag==1) {sas_masterflag=0;sas_master='M';} else {sas_master='S';};
                 document.write('<scr'+'ipt src="http://ads.eltiempo.com/call2/pubmj/'+sas_pageid+'/'+sas_formatid+'/'+sas_master+'/'+sas_tmstp+'/'+escape(sas_target)+'?"></scr'+'ipt>');
@@ -86,7 +86,7 @@
                     <?php endif; ?>
                     <div class="col-md-6 marcas">
                         <figure>
-                            <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Header')"><img src="<?php echo $base_url_static;?>img/aval.png" alt="Grupo Aval" /></a>
+                            <a href="https://www.bbva.com.co" target="_blank" onclick="onClickPublicidad('BBVA', 'Header')"><img src="<?php echo $base_url_static;?>img/BBVA_87X35.png" alt="Grupo Aval" /></a>
                         </figure>
                         <figure>
                             <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>

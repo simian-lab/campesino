@@ -1,10 +1,10 @@
         <footer class="main" id="footer_main">
             <div class="container">
-                <div class="row sponsor">                            
+                <div class="row sponsor">
                     <div class="col-md-12 center">
                         <div class="marcas-mobile clearfix">
                             <figure class="col-xs-3">
-                                <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Footer')" ><img src="<?php echo $base_url_static;?>img/aval_mobile.png" alt="Grupo Aval" /></a>
+                                <a href="https://www.bbva.com.co" target="_blank" onclick="onClickPublicidad('BBVA', 'Footer')" ><img src="<?php echo $base_url_static;?>img/BBVA_161X81.png" alt="Grupo Aval" /></a>
                             </figure>
                             <figure class="col-xs-3">
                                 <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
@@ -21,9 +21,9 @@
                                 <span>evento de:</span><!--
                                 --><span>invita:</span>
                             </div>
-                            <div class="logos">                                
+                            <div class="logos">
                                 <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Footer')"><img src="<?php echo $base_url_static;?>img/camara.png" alt=""></a>
-                                <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>              
+                                <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>
                             </div>
                         </div>
                     </div>
@@ -31,11 +31,11 @@
                         <a class="fb" href="#" onClick='shareFacebook();'><img src="<?php echo $base_url_static?>img/f.png" alt=""></a>
                         <a class="tw" href="#" onClick='shareTwitter("<?php echo ($this->uri->segment(1) == 'detalle') ? 'detalle' : '' ?>");'><img src="<?php echo $base_url_static?>img/t.png" alt=""></a>
                     </div>
-                </div>                                   
-            </div>                
+                </div>
+            </div>
             <div class="row terminos">
                 <div class="row ">
-                    <div class="col-md-12 center">                    
+                    <div class="col-md-12 center">
                         <div>
                             <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:cyberlunes@eltiempo.com">Contáctanos</a>  -  <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Cyberlunes&reg;</a></span>
                             <span>Cyberlunes es una marca registrada de la CCCE. Prohibido su uso sin autorización.</span>
@@ -44,11 +44,11 @@
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
         </footer>
-        
+
         <?php if(!$this->config->item('contingencia')): ?>
-        <div class="form-bottom">            
+        <div class="form-bottom">
             <?php //if(!isset($hide_form)): ?>
             <div class="row-fluid panel-group titulo" id="accordion" style="display:none">
               <div class="panel">
@@ -64,7 +64,7 @@
                 </div>
                 <div id="collapseOne" class="panel-collapse">
                   <div class="panel-body">
-                    <div class="container form">                
+                    <div class="container form">
                         <div class="row">
                             <div class="col-lg-3">
                                 <h2>Suscríbete</h2>
@@ -102,7 +102,7 @@
                                                 <option value="Moda">Moda</option>
                                                 <option value="Otras categorias">Otras categorías</option>
                                             </select>
-                                            <?php endif; ?>     
+                                            <?php endif; ?>
                                             <?php if($this->agent->is_mobile()): ?>
                                             <select name="val_66010[]" id="interes-mobile">
                                                 <option value="" disabled selected>Intereses</option>
@@ -112,14 +112,14 @@
                                                 <option value="Moda">Moda</option>
                                                 <option value="Otras categorias">Otras categorías</option>
                                             </select>
-                                            <?php endif; ?>  
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-9">
                                             <div class="bases">
                                                 <input type="hidden" name="val_66009" value="on"/>
-                                                <span>Al hacer clic en suscribirte estás aceptando los <a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a> y la <a href="#" data-toggle="modal" data-target="#politicas">política de privacidad</a> del portal.</span>   
+                                                <span>Al hacer clic en suscribirte estás aceptando los <a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a> y la <a href="#" data-toggle="modal" data-target="#politicas">política de privacidad</a> del portal.</span>
                                             </div>
                                             <!--<div class="bases">
                                                 <input type="checkbox" name="val_66095"/>
@@ -134,7 +134,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                   </div>
                 </div>
               </div>
@@ -144,38 +144,38 @@
         <?php endif; ?>
 
         <section>
-            <div class="container">                
+            <div class="container">
                 <?php if($is_mobile == 1): ?>
                     <div class="row">
                         <div class="col-lg-12 banner-visa">
                             <script type="text/javascript">
                              sas.call("std", {
-                              siteId:  '<?php echo $siteId ?>', // 
+                              siteId:  '<?php echo $siteId ?>', //
                               pageId:  '<?php echo $pageId ?>', // Página : Cyberlunes/home
                               formatId:  8941, // Formato : Barra Fija 960x30
                               target:  ''   // Segmentación
                              });
                             </script>
                             <noscript>
-                                <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                                <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
                                     <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=<?php echo $siteId ?>&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" />
                                 </a>
                             </noscript>
                         </div>
                     </div>
-                <?php endif; ?>                                    
+                <?php endif; ?>
             </div>
         </section>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="<?php echo $base_url_static?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>        
+        <script>window.jQuery || document.write('<script src="<?php echo $base_url_static?>js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
         <script src="<?php echo $base_url_static?>js/vendor/owl.carousel.js"></script>
-        <script src="<?php echo $base_url_static?>js/vendor/jquery.bxslider.min.js"></script> 
+        <script src="<?php echo $base_url_static?>js/vendor/jquery.bxslider.min.js"></script>
         <script src="<?php echo $base_url_static?>js/vendor/jquery.placeholder.js"></script>
         <script src="<?php echo $base_url_static?>js/vendor/respond.min.js"></script>
-        <script src="<?php echo $base_url_static?>js/vendor/html5shiv.js"></script>                      
-        <script src="<?php echo $base_url_static?>js/bootstrap/bootstrap.min.js"></script>       
-        <script src="<?php echo $base_url_static?>js/bootstrap/bootstrap-multiselect.js"></script>          
+        <script src="<?php echo $base_url_static?>js/vendor/html5shiv.js"></script>
+        <script src="<?php echo $base_url_static?>js/bootstrap/bootstrap.min.js"></script>
+        <script src="<?php echo $base_url_static?>js/bootstrap/bootstrap-multiselect.js"></script>
         <script src="<?php echo $base_url_static?>js/main.js"></script>
         <script src="<?php echo $base_url_static;?>js/jquery.alphanum.js"></script>
         <script src="<?php echo $base_url_static;?>js/omniture.js"></script>
@@ -187,21 +187,21 @@
         $.each($('#slider-marcas li'), function(){
           id_patrocinadores.push($(this).attr('data-id'));
         });
-        
+
         if(id_patrocinadores.length > 0) {
           printPatrocinador(id_patrocinadores);
         }
         </script>
 
-        <script language="JavaScript" type="text/javascript"><!--   
-        //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  
+        <script language="JavaScript" type="text/javascript"><!--
+        //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION
         s.pageName="<?php echo $s_pageName; ?>";
-        s.channel =   "<?php echo $s_channel; ?>";       
-        <?php if( isset($s_prop1)) { echo  "s.prop1=\"".$s_prop1."\";"; }  ?>      
+        s.channel =   "<?php echo $s_channel; ?>";
+        <?php if( isset($s_prop1)) { echo  "s.prop1=\"".$s_prop1."\";"; }  ?>
         <?php if( isset($s_prop2)) { echo  "s.prop2=\"".$s_prop2."\";"; } ?>
-        /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/ 
-        var s_code=s.t();if(s_code)document.write(s_code)//--></script> 
-        <!--  End SiteCatalyst  code  --> 
+        /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/
+        var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+        <!--  End SiteCatalyst  code  -->
 
         <!-- Google Tag Manager -->
         <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
