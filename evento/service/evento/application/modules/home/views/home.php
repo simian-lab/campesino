@@ -59,6 +59,7 @@
         } else {
           $url_patrocinador = '#';
         }
+        $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
@@ -141,6 +142,8 @@
       } else {
         $url_patrocinador = '#';
       }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
@@ -168,6 +171,8 @@
       } else {
         $url_patrocinador = '#';
       }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
@@ -194,6 +199,8 @@
       } else {
         $url_patrocinador = '#';
       }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
@@ -220,6 +227,8 @@
       } else {
         $url_patrocinador = '#';
       }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
@@ -251,6 +260,8 @@
       } else {
         $url_patrocinador = '#';
       }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
       ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">

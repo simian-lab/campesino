@@ -9,6 +9,7 @@
                             $contador = 0;
                             foreach($participantes as $patrocinador): 
                         ?>
+                    	<?php $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES); ?>
                         <li><a target="_blank" href="<?php echo $patrocinador->PAT_URL; ?>"><img src="<?php echo $base_url_img_aliados . $patrocinador->PAT_LOGO ?>" alt=""></a></li>
                         <?php 
                             $contador++;

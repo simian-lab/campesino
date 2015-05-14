@@ -6,6 +6,7 @@
                      foreach($articulos as $item): 
              ?>
                 <li>
+                    <?php $item['ART_IMAGEN'] = htmlentities($item['ART_IMAGEN'], ENT_QUOTES); ?>
                     <figure>    
                          <a href="<?php echo base_url('articulo/'.$item['ART_SLUG']) ?>">
                                 <img border="0" src="<?php echo $base_url_tod?>?src=<?php echo $base_url_img_articulos . $item['ART_IMAGEN'];?>&amp;w=206&amp;h=130&amp;bg=ffffff&amp;zc=1&amp;q=100" alt="">
