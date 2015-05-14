@@ -50,7 +50,7 @@ $active_record = TRUE;
 $db['default']['hostname'] = '172.31.3.74';
 $db['default']['username'] = 'usercyluneslive';
 $db['default']['password'] = 'pT6FTmVp4Y';
-$db['default']['database'] = 'eltiempo_co_cyber_lunes_staging2';
+$db['default']['database'] = 'eltiempo_co_cyber_lunes_staging3';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';

@@ -5,6 +5,7 @@
                                 <?php foreach($articulosRecomendados as $articulo): ?>
                                     <li>
                                         <figure>
+                                            <?php $articulo->ART_IMAGEN = htmlentities($articulo->ART_IMAGEN, ENT_QUOTES); ?>
                                             <img border="0" src="<?php echo $base_url_tod?>?src=<?php echo $base_url_img_articulos . $articulo->ART_IMAGEN;?>&amp;w=130&amp;h=145&amp;zc=1&amp;" alt="">
                                             <img src="<?php echo $base_url_static ?>img/border-btn-leermas.png" class="border-impacto">
                                         </figure>

@@ -51,6 +51,18 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'testing');
 	break;
+    
+        case 'originpreeve-www2.cyberlunes.com.co';
+            $dominios_permitidos = array(
+				'http://originpreeve-www2.cyberlunes.com.co',
+				'https://originpreeve-www2.cyberlunes.com.co',
+				'http://static-stage.cyberlunes.com.co',
+				'https://static-stage.cyberlunes.com.co',
+				'http://fonts.gstatic.com/',
+                                'http://d3b369zdeuh99v.cloudfront.net/'
+			);
+        define('ENVIRONMENT', 'origin');
+        break;
 	case 'origin-www2.cyberlunes.com.co':
 		$dominios_permitidos = array(
 				'http://origin-www2.cyberlunes.com.co',
