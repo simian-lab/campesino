@@ -22,7 +22,6 @@
         <div class="slider">
             <div id="slider-principal" class="owl-carousel owl-theme">
                 <?php
-
                     foreach($slider_pautas as $pauta):
                     if($pauta->PAU_TARGET == 1){
                         $target = 'target="_blank"';
@@ -37,6 +36,8 @@
                     else{
                         $img = $pauta->PAU_IMAGEN;
                     }
+
+                    $img = htmlentities($img, ENT_QUOTES);
                 ?>
                 <div class="item"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img alt="<?php echo $pauta->PAU_NOMBRE ?>" src="<?php echo $base_url_img_pautas;?><?php echo $img ?>" ></a></div>
                 <?php endforeach; ?>
@@ -141,20 +142,25 @@
                 <?php
                 foreach($slider_patrocinadores as $key => $patrocinador):
                     $pat_id = $patrocinador->PAT_ID;
+                    $image_escaped = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
+                    if($image_escaped == $patrocinador->PAT_LOGO):
                 ?>
-                <li data-id="<?php echo $pat_id ?>">
-                        <?php
-                        if($patrocinador->PAT_URL!=''):
-                            $pat_position = $key + 1;
-                        ?>
-                        <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL); ?>" onclick="onClickComercio('<?php echo $pat_id ?>', '<?php echo $pat_position ?>')">
-                                        <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>" alt="">
-                                </a>
-                        <?php  else: ?>
-                                        <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>" alt="">
-                        <?php  endif; ?>
-                </li>
-                <?php endforeach; ?>
+                    <li data-id="<?php echo $pat_id ?>">
+                            <?php
+                            if($patrocinador->PAT_URL!=''):
+                                $pat_position = $key + 1;
+                            ?>
+                            <a target="_blank" href="<?php echo prep_url($patrocinador->PAT_URL); ?>" onclick="onClickComercio('<?php echo $pat_id ?>', '<?php echo $pat_position ?>')">
+                                            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>" alt="">
+                                    </a>
+                            <?php  else: ?>
+                                            <img src="<?php echo $base_url_img_aliados;?><?php echo $patrocinador->PAT_LOGO ?>" alt="">
+                            <?php  endif; ?>
+                    </li>
+                <?php 
+                endif;
+                endforeach; 
+                ?>
             </ul>
             <img src="<?php echo $base_url_static;?>img/border-right-slider-marcas.png" class="border-right" alt="">
         </div>
@@ -180,6 +186,9 @@
                 <?php endif; ?>
                         <li class="col-lg-6 col-md-6 col-sm-6">
                             <figure class="col-lg-6 col-md-6 col-sm-6">
+                                <?php
+                                    $articulo->ART_IMAGEN = htmlentities($articulo->ART_IMAGEN, ENT_QUOTES);
+                                ?>
                                 <a href="<?php echo base_url('detalle/'.$articulo->ART_SLUG.'/'.$page) ?>"><img border="0" src="<?php echo $base_url_tod?>?src=<?php echo ($base_url_img_articulos . $articulo->ART_IMAGEN) ?>" alt=""></a>
                                 <img src="<?php echo $base_url_static;?>img/border-btn-leermas.png" class="border-impacto">
                             </figure>
