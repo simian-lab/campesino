@@ -42,17 +42,13 @@ $route['default_controller'] = 'home/index';
 $route['404_override'] = '';
 $route['contenidos'] = "contenidos/todos";
 $route['contenidos/(:num)'] = "contenidos/todos/$1";
-$route['articulo/(:any)'] = "detalleArticulo/todos/$1";
+$route['articulo/(:any)'] = "/404";
+$route['articulos'] = "/404";
 
 $route['descuentos'] = 'descuentosfiltro/todos';
 $route['descuentos/(:any)'] = 'descuentosfiltro/categoria/$1';
 
 $route['marcas/(:any)'] = 'descuentosfiltro/marcas_por_tienda/$1';
-
-$route['prueba'] = 'prueba_smart/index';
-$route['prueba-promos'] = 'prueba_promos/todos';
-
-
 
 /*
 
