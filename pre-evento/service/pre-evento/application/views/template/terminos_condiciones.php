@@ -159,23 +159,6 @@
         <h4 class="modal-title">Términos y condiciones</h4>
       </div>
       <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="politicas" style="z-index:2000">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Políticas de privacidad</h4>
-      </div>
-      <div class="modal-body">
         <p>www.cyberlunes.com.co es una página web (“la página web” o “la Página Web”) de propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”).</p>
         <p>Las siguientes disposiciones describen los términos y condiciones de uso aplicables al acceso y uso de los servicios ofrecidos por la página web, que deberán ser observados detenidamente por los usuarios y aliados, y que se entenderán aceptados por el solo hecho de navegar por la página web.</p>
         <p>1. La página web presenta ofertas sobre productos o servicios de propiedad de empresas diferentes a la CCCE (en adelante, “aliado(s)”), para que puedan ser adquiridos por los visitantes de la página web (en adelante ‘usuarios compradores’), directamente en los portales de internet de los aliados, a través del enlace previo que la página web facilita. Los únicos responsables de los productos o servicios indicados en las ofertas son los respectivos aliados, los cuales realizan esas prestaciones de acuerdo con las respectivas condiciones del acuerdo comercial regulado en sus propios portales de internet.</p>
@@ -212,3 +195,49 @@
       </div>
     </div>
   </div>
+<div class="modal fade" id="politicas" style="z-index:2000">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Políticas de privacidad</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    CASA EDITORIAL EL TIEMPO S.A., con domicilio en Bogotá D.C., Colombia, es responsable del tratamiento de los datos personales.
+                </p>
+                <p>
+                    Según nuestras políticas de tratamiento de datos personales, los mecanismos a través de los cuales hacemos uso de éstos son seguros y confidenciales, pues contamos con los medios tecnológicos idóneos para asegurar que sean almacenados de manera tal que se impida el acceso indeseado por parte de terceras personas, y en ese mismo orden aseguramos la confidencialidad de los mismos.
+                </p>
+                <p>
+                    Cómo contactarnos
+                </p>
+                <p>
+                    Dirección oficinas: Avenida Calle 26 # 68B – 70 Bogotá, D.C.
+                </p>
+                <p>
+                    Correo electrónico: <a href="#">servicioalcliente@eltiempo.com</a><br>
+                    Teléfono: 5714444 en Bogotá y 018000110211 en el resto del país
+                </p>
+                <p>
+                    Sus datos personales serán incluidos en una base de datos y serán utilizados para las siguientes finalidades:
+                </p>
+                <ul>
+                    <li>- Lograr una eficiente comunicación relacionada con nuestros productos, servicios, ofertas, promociones, alianzas, estudios, concursos, contenidos, así como los de nuestras compañías vinculadas, y para facilitarle el acceso general a la información de éstos;</li>
+                    <li>- Proveer nuestros servicios y productos;</li>
+                    <li>- Informar sobre nuevos productos o servicios que estén relacionados con el o los contratado(s) o adquirido(s);</li>
+                    <li>- Dar cumplimiento a obligaciones contraídas con nuestros clientes, proveedores, y empleados;</li>
+                    <li>- Informar sobre cambios de nuestros productos o servicios;</li>
+                    <li>- Evaluar la calidad del servicio, y</li>
+                    <li>- Realizar estudios internos sobre hábitos de consumo.</li>
+                </ul>
+                <p>
+                    Se le informa a los titulares de información que pueden consultar el <a href="<?php echo base_url() ?>static/pre-evento/pdf/20130412_HABEAS_DATA_Manual_Interno_CEET.pdf" target="_blank">Manual Interno de Políticas y Procedimientos de Datos Personales de CASA EDITORIAL EL TIEMPO S.A.,</a> que contiene nuestras políticas para el tratamiento de la información recogida, así como los procedimientos de consulta y reclamación que le permitirán hacer efectivos sus derechos al acceso, consulta, rectificación, actualización y supresión de los datos, haciendo click en el siguiente enlace: <a href="<?php echo base_url() ?>static/pre-evento/pdf/20130412_HABEAS_DATA_Manual_Interno_CEET.pdf" target="_blank">Ver enlace</a>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
