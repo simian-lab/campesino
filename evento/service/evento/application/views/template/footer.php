@@ -4,7 +4,7 @@
       <div class="col-md-12 center">
         <div class="marcas-mobile clearfix">
           <figure class="col-xs-3">
-            <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Footer')"><img src="<?php echo $base_url_static;?>img/aval_mobile.png" alt="Grupo Aval" /></a>
+            <a href="https://www.bbva.com.co" target="_blank" onclick="onClickPublicidad('BBVA', 'Footer')"><img src="<?php echo $base_url_static;?>img/BBVA_161X81.png" alt="Grupo Aval" /></a>
           </figure>
           <figure class="col-xs-3">
             <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
@@ -143,7 +143,7 @@
         <p>3.  Que la información suministrada por el encuestado sea veraz. En el evento de determinarse por parte de EL TIEMPO que la información suministrada por el participante es falsa, o fue de alguna manera manipulada, EL TIEMPO se reserva el derecho de excluir al participante del Juego Promocional.</p>
         <p>RESTRICCIONES:</p>
         <p>1.  Si en el momento de reclamar el premio, el ganador se encuentra fuera de Colombia, este deberá acogerse a las condiciones de entrega de premios definidas para este juego promocional, esto es conceder una autorización debidamente suscrita a una persona la cual debe tener anexa la cédula fotocopiada del ganador y del autorizado.</p>
-        <p>2.  El premio no podrá ser canjeado por otro, ni por dinero en efectivo.</p> 
+        <p>2.  El premio no podrá ser canjeado por otro, ni por dinero en efectivo.</p>
         <p>3.  El ganador del premio deberá asumir el pago del impuesto de ganancia ocasional </p>
         <p>4.  Los correos ingresados deberán ser válidos para poder participar.</p>
         <p>5.  No podrán registrarse diferentes correos electrónicos desde un mismo dominio. </p>

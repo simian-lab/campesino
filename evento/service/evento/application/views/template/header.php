@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-6 marcas">
         <figure>
-          <a href="https://www.grupoaval.com" target="_blank" onclick="onClickPublicidad('Grupo Aval', 'Header')"><img src="<?php echo $base_url_static;?>img/aval.png" alt="Grupo Aval" /></a>
+          <a href="https://www.bbva.com.co" target="_blank" onclick="onClickPublicidad('BBVA', 'Header')"><img src="<?php echo $base_url_static;?>img/BBVA_87X35.png" alt="Grupo Aval" /></a>
         </figure>
         <figure>
           <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>

@@ -5,12 +5,6 @@
       $contador = 1;
       foreach($promociones as $promocion):
 
-        /* if(!get_mime_by_extension($base_url_img_promociones . $promocion['PRO_LOGO_PREMIUM'])){
-          //$contador = $contador - 1;
-          unset($promociones[$promocion['PRO_ID']]);
-          continue;
-        }*/
-
         if($offset == 0) {
           $posicion = $contador;
         }
@@ -36,10 +30,6 @@
 
               echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta',0, array($posicion, $promocion['TIE_NOMBRE'], $promocion['PRO_ID']));
               ?>
-              <!--<a data-keyboard="false" data-backdrop="static" data-toggle="modal" data-target="#redirect_oferta" href="#" class="link red" onClick="s.linkTrackVars='events,eVar38,eVar39,products';s.linkTrackEvents='event36';s.events='event36';s.eVar38='<?php echo $posicion?>';s.eVar39='<?php echo $promocion['PRO_USER_CREADOR']?>';s.products=';<?php echo $promocion['PRO_ID']?>';s.tl(true,'o','Clic en Promoción');tagManager(window,document,'script','dataLayer','GTM-NGBVTZ');facebookPixel();redirectPromocion('<?php echo $promocion['PRO_URL']; ?>');">ir a oferta</a>-->
-                <!--<div class="marca">
-                <img src="<?php echo $base_url_static;?>img/visa.jpg" alt="">
-              </div>-->
 
               <?php if($promocion['TIE_LOGO_VISA'] == 1): ?>
                 <div class="marca">
@@ -55,7 +45,8 @@
               <?php endif; ?>
             </div>
 
-            <!--<a onClick="s.linkTrackVars='events,eVar38,eVar39,products';s.linkTrackEvents='event36';s.events='event36';s.eVar38='<?php echo $posicion?>';s.eVar39='<?php echo $promocion['PRO_USER_CREADOR']?>';s.products=';<?php echo $promocion['PRO_ID']?>';s.tl(true,'o','Clic en Promoción');" style="display: block;" target="_blank" href="<?php echo get_url_encrypt($promocion['PRO_URL']) ?>"><img src="<?php echo $base_url_tod; ?>?w=458&amp;h=347&amp;bg=ffffff&amp;zc=1&amp;q=100&amp;src=<?php echo get_url_encode_tod($base_url_img_promociones . $promocion['PRO_LOGO_PREMIUM']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags($promocion['PRO_NOMBRE']); ?>"></a>-->
+            <?php $promocion['PRO_LOGO_PREMIUM'] = htmlentities($promocion['PRO_LOGO_PREMIUM'], ENT_QUOTES); ?>
+
             <a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['TIE_NOMBRE']; ?>')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
               <img data-original="<?php echo ($base_url_img_promociones . $promocion['PRO_LOGO_PREMIUM']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags($promocion['PRO_NOMBRE']); ?>" class="lazy-load-image">
             </a>

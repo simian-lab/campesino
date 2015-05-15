@@ -20,10 +20,15 @@
                     <img src="<?php echo $base_url_static?>img/border-left-slider-marcas.png" class="border-left"> 
                     <ul class="slider-marcas">
                         <?php 
-                            foreach($slider_patrocinadores as $patrocinador): 
+                            foreach($slider_patrocinadores as $patrocinador):
+                                $image_escaped = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
+                                if($image_escaped == $patrocinador->PAT_LOGO):
                         ?>
                         <li><a target="_blank" href="<?php echo $patrocinador->PAT_URL; ?>"><img src="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" alt=""></a></li>
-                        <?php endforeach; ?>
+                        <?php 
+                            endif;
+                            endforeach; 
+                        ?>
                     </ul>
                     <img src="<?php echo $base_url_static?>img/border-right-slider-marcas.png" class="border-right" alt="">                    
                 </div>
@@ -153,7 +158,9 @@
                             <ul>
                                 <?php 
                                     $contador = 0;
-                                    foreach($slider_patrocinadores as $patrocinador): 
+                                    foreach($slider_patrocinadores as $patrocinador):
+                                        $image_escaped = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
+                                        if($image_escaped == $patrocinador->PAT_LOGO):
                                 ?>
                                 <li><a target="_blank" href="<?php echo $patrocinador->PAT_URL; ?>"><img src="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" alt=""></a></li>
                                 <?php 
@@ -167,7 +174,10 @@
                                         $contador = 0;
                                     }
                                 ?>
-                                <?php endforeach; ?> 
+                                <?php 
+                                endif;
+                                endforeach;
+                                ?> 
                             </ul>
                         </div>                     
                     </div>
