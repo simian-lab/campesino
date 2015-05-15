@@ -4,7 +4,7 @@
                     <div class="col-md-12 center">
                         <div class="marcas-mobile clearfix">
                             <figure class="col-xs-3">
-                                <a href="https://www.bbva.com.co" target="_blank" onclick="onClickPublicidad('BBVA', 'Footer')" ><img src="<?php echo $base_url_static;?>img/BBVA_161X81.png" alt="Grupo Aval" /></a>
+                                <a href="https://www.bbva.com.co/web/personas/tarjetas" target="_blank" onclick="onClickPublicidad('BBVA', 'Footer')" ><img src="<?php echo $base_url_static;?>img/BBVA_161X81.png" alt="BBVA" /></a>
                             </figure>
                             <figure class="col-xs-3">
                                 <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')" ><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
