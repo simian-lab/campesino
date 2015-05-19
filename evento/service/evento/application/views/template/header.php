@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-6 marcas">
         <figure>
-          <a href="https://www.bbva.com.co/web/personas/tarjetas" target="_blank" onclick="onClickPublicidad('BBVA', 'Header')"><img src="<?php echo $base_url_static;?>img/BBVA_87X35.png" alt="BBVA" /></a>
+          <a href="https://www.bbva.com.co/web/personas/tarjetas/promociones/cyberlunes" target="_blank" onclick="onClickPublicidad('BBVA', 'Header')"><img src="<?php echo $base_url_static;?>img/BBVA_87X35.png" alt="BBVA" /></a>
         </figure>
         <figure>
           <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Header')"><img src="<?php echo $base_url_static;?>img/mintic.png" alt="MinTIC" /></a>
