@@ -106,7 +106,7 @@
                         <?php endif; ?>
                         <?php if($this->agent->is_mobile()): ?>
                         <select name="val_66010[]" id="interes" multiple="multiple">
-                            <option value="" disabled selected>Intereses</option>
+                            <!--<option value="" disabled selected>Intereses</option>-->
                             <option value="Tecnologia">Tecnología</option>
                             <option value="Moviles">Móviles</option>
                             <option value="Viajes y turismo">Viajes y turismo</option>
