@@ -25,8 +25,8 @@
 //	define('ENVIRONMENT', 'development');
 
 switch ($_SERVER['SERVER_NAME'])
-{	
-	case 'admin.cyberlunes.local':	 
+{
+	case 'admin.cyberlunes.local':
 		$dominios_permitidos = array(
 				'http://admin.cyberlunes.local',
 				'https://admin.cyberlunes.local',
@@ -36,7 +36,8 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'local');
 	break;
-	case 'admin.cyberlunes.dev.brandigital.com':	 
+
+	case 'admin.cyberlunes.dev.brandigital.com':
 		$dominios_permitidos = array(
 				'http://admin.cyberlunes.dev.brandigital.com',
 				'https://admin.cyberlunes.dev.brandigital.com',
@@ -46,7 +47,8 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'development');
 	break;
-	case 'admin-stage.cyberlunes.com.co':	 
+
+	case 'admin-stage.cyberlunes.com.co':
 		$dominios_permitidos = array(
 				'http://admin-stage.cyberlunes.com.co',
 				'https://admin-stage.cyberlunes.com.co',
@@ -56,27 +58,31 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'testing');
 	break;
-	case 'admin.cyberlunes.com.co':	 
+
+	case 'admin.cyberlunes.com.co':
 		$dominios_permitidos = array(
-				'http://admin.cyberlunes.com.co',
-				'https://admin.cyberlunes.com.co',
-				'http://static.cyberlunes.com.co',
-				'https://static.cyberlunes.com.co',
-				'http://fonts.gstatic.com/',
-				'http://d3b369zdeuh99v.cloudfront.net/​'
-			);
-        define('ENVIRONMENT', 'production');
-//        if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
-//		   echo "https on";
-//		   $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-//		   header("Location:$redirect");
-//		}
+			'http://admin.cyberlunes.com.co',
+			'https://admin.cyberlunes.com.co',
+			'http://static.cyberlunes.com.co',
+			'https://static.cyberlunes.com.co',
+			'http://fonts.gstatic.com/',
+			'http://d3b369zdeuh99v.cloudfront.net/​'
+		);
+
+    define('ENVIRONMENT', 'production');
+
+    if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+      // echo "https on";
+      $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+      header("Location:$redirect");
+    }
 	break;
+
 	default:
 		define('ENVIRONMENT', 'testing');
 		break;
 }
-header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));   
+header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));
 
 
 
@@ -258,7 +264,7 @@ if (defined('ENVIRONMENT'))
 
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
-	
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
