@@ -59,12 +59,6 @@ switch ($_SERVER['SERVER_NAME'])
 
     define('ENVIRONMENT', 'testing');
 
-    if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
-      // echo "https on";
-      $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-      header("Location:$redirect");
-    }
-
 	break;
 
 	case 'admin.cyberlunes.com.co':
