@@ -50,13 +50,21 @@ switch ($_SERVER['SERVER_NAME'])
 
 	case 'admin-stage.cyberlunes.com.co':
 		$dominios_permitidos = array(
-				'http://admin-stage.cyberlunes.com.co',
-				'https://admin-stage.cyberlunes.com.co',
-				'http://static-stage.cyberlunes.com',
-				'https://static-stage.cyberlunes.com',
-				'http://fonts.gstatic.com/'
-			);
-        define('ENVIRONMENT', 'testing');
+			'http://admin-stage.cyberlunes.com.co',
+			'https://admin-stage.cyberlunes.com.co',
+			'http://static-stage.cyberlunes.com',
+			'https://static-stage.cyberlunes.com',
+			'http://fonts.gstatic.com/'
+		);
+
+    define('ENVIRONMENT', 'testing');
+
+    if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+      // echo "https on";
+      $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+      header("Location:$redirect");
+    }
+
 	break;
 
 	case 'admin.cyberlunes.com.co':
