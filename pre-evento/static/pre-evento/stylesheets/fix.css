@@ -65,7 +65,7 @@ section#detalle .container .publicidades figure, section#formulario .container .
 
 }
 
-#afbd_3793146m {
+#afbd_4321859m {
 	top: 50px !important;
 }
 
@@ -120,13 +120,13 @@ Here we're making sure the images don't 'break' the carousel.
 @media (max-width: 768px) {
 	#slider-marcas .slider-marcas img {
 		max-height: 55px;
-	}	
+	}
 }
 
 @media (max-width: 400px) {
 	#slider-marcas .slider-marcas img {
 		max-height: 40px;
-	}	
+	}
 }
 
 #slide-marcas img {
