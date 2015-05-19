@@ -1,0 +1,712 @@
+<html>
+<head>
+  <title>Roba pagina</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://www.cyberlunes.com.co/static/pre-evento/stylesheets/vendor/normalize.min.css">
+  <link rel="stylesheet" href="http://www.cyberlunes.com.co/static/pre-evento/stylesheets/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="robapagina_files/css/screen.css">
+  <script src="./robapagina_files/jquery-1.10.2.min.js"></script>
+  <script src="./robapagina_files/jquery.countdown.js"></script>
+  <script src="./robapagina_files/jquery.alphanum.js"></script>
+</head>
+<body style="position: static;">
+
+  <div class="main">
+    <div class="logo">
+      <a href="http://www.cyberlunes.com.co/?cid=DIS_CE_PUB_CL__BannerContador___" target="_blank"><img src="./robapagina_files/logo.png" alt="CyberLunes"></a>
+    </div>
+    <div class="contenedor">
+      <div class="start-day">
+        Próximo
+        <span class="second-line">1 y 2 de</span>
+        <span class="third-line">Junio</span>
+      </div>
+      <div class="countdown">
+        <div class="items-time">
+          <span class="item" id="dias">9</span>
+          <span class="item" id="horas">14</span>
+          <span class="item" id="minutos">10</span>
+          <span class="item" id="segundos">49</span>
+        </div>
+        <div class="items-description">
+          <span class="item">Días</span>
+          <span class="item">Horas</span>
+          <span class="item">Min</span>
+          <span class="item">Seg</span>
+        </div>
+      </div>
+      <div class="offer-popup">
+        Entra
+        <span class="second-line">regístrate</span>
+      </div>
+      <div class="form">
+        <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251013" onsubmit="return (!(UPTvalidateform(document.UPTml251013)));">
+          <input type="hidden" name="submitaction" value="3">
+          <input type="hidden" name="mlid" value="251010">
+          <input type="hidden" name="siteid" value="2010001358">
+          <input type="hidden" name="tagtype" value="q2">
+          <input type="hidden" name="demographics" value="-1,58933,66010,66009">
+          <input type="hidden" name="redirection" value="http://cyberlunes.s3.amazonaws.com/campaings/robapagina-1/robapagina.html">
+          <input type="hidden" name="uredirection" value="">
+          <input type="hidden" name="welcome" value="">
+          <input type="hidden" name="double_optin" value="">
+          <input type="hidden" name="append" value="">
+          <input type="hidden" name="update" value="on">
+          <input type="hidden" name="activity" value="submit">
+          <input type="hidden" name="val_66095" value="">
+          <input type="hidden" name="val_66009" value="on">
+          <input type="hidden" id="showpopup" value="on" name="showpopup">
+
+          <input type="checkbox" name="val_68390" style="display:none" checked="checked">
+          <input type="checkbox" name="val_66010[]" style="display:none" value="Tecnologia" checked="checked">
+          <input type="checkbox" name="val_66010[]" style="display:none" value="Moviles" checked="checked">
+          <input type="checkbox" name="val_66010[]" style="display:none" value="Viajes y turismo" checked="checked">
+          <input type="checkbox" name="val_66010[]" style="display:none" value="Moda" checked="checked">
+          <input type="checkbox" name="val_66010[]" style="display:none" value="Otras categorias" checked="checked">
+          <input type="checkbox" name="val_68391" style="display:none" checked="checked">
+
+          <input type="text" class="form-control" placeholder="Correo electrónico" name="email">
+          <input type="submit" value="Regístrate">
+        </form>
+      </div>
+      <div class="legals">
+        <p lingdex="1">Al hacer clic en suscribirte estás aceptando los <a target="_blank" href="terminos.html">Términos y condiciones</a> y la <a href="politica.html" target="_blank">política de privacidad</a> del portal.</p>
+      </div>
+    </div>
+  </div>
+  <script src="./robapagina_files/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    // The date is 01/06/2015. Remember that the Date object in JavaScript
+    // starts at 0 for months, 0 = January.
+    var timespan = countdown( new Date(2015, 5, 1), function(ts) {
+      $('.countdown').find('#dias').html(ts.days)
+      $('.countdown').find('#horas').html(ts.hours)
+      $('.countdown').find('#minutos').html(ts.minutes)
+      $('.countdown').find('#segundos').html(ts.seconds)
+    } ,countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS).toString();
+  </script>
+
+
+
+
+  <script language="Javascript">
+    function emailCheck (emailStr, formName) {
+      var emailPat=/^(.+)@(.+)$/;
+      var specialChars="\\(\\)<>@,;:\\\\\\\"\\.\\[\\]";
+      var validChars="\[^\\s" + specialChars + "\]";
+      var quotedUser="(\"[^\"]*\")";
+      var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+      var atom=validChars + '+';
+      var word="(" + atom + "|" + quotedUser + ")";
+      var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+      var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+      var matchArray=emailStr.match(emailPat);
+      if (matchArray==null) {
+        $('#alerta-form-ingresar-mail').modal('show');
+//alert("Debe ingresar una direccion de correo electrónico");
+return false;
+}
+var user=matchArray[1];
+var domain=matchArray[2];
+if (user.match(userPat)==null) {
+  $('#alerta-form-incorrecto-mail').modal('show');
+  return false;
+}
+var IPArray=domain.match(ipDomainPat);
+if (IPArray!=null) {
+  for (var i=1;i<=4;i++) {
+    if (IPArray[i]>255) {
+      $('#alerta-form-ip-invalida').modal('show');
+      return false;
+    }
+  }
+  return true;
+}
+var domainArray=domain.match(domainPat);
+if (domainArray==null) {
+  $('#alerta-form-dominio-invalido').modal('show');
+  return false;
+}
+var atomPat=new RegExp(atom,"g");
+var domArr=domain.match(atomPat);
+var len=domArr.length;
+if ((domArr[domArr.length-1] != "info") &&
+  (domArr[domArr.length-1] != "name") &&
+  (domArr[domArr.length-1] != "arpa") &&
+  (domArr[domArr.length-1] != "coop") &&
+  (domArr[domArr.length-1] != "aero")) {
+  if (domArr[domArr.length-1].length<2 ||
+    domArr[domArr.length-1].length>3) {
+    $('#alerta-form-direccion-dominio').modal('show');
+//alert("La dirección debe terminar en un dominio de tres letras, o dos letras del país.");
+return false;
+}
+}
+if (len<2) {
+  var errStr="This address is missing a hostname!";
+  alert(errStr);
+  return false;
+}
+
+if(formName != 'UPTml251013'){
+  var checkEmail = $.ajax({
+    type: 'POST',
+    data: {email: emailStr},
+    async: false,
+    global: false,
+    url: 'http://www.cyberlunes.com.co/formulario_lyris/formulario_lyris/checkEmailExist',
+    success: function response(data){}
+  }).responseText;
+
+  var json_data = JSON.parse(checkEmail);
+  if(json_data.status.code == 101){
+    $('#alerta-form-usuario-registrado').modal();
+    return false;
+  }
+}
+
+return true;
+}
+function UPTvalidateform(thisform)
+{
+  if(thisform.name != 'UPTml251013'){
+    if (thisform.val_58933.value=="" || thisform.val_58933.value=="Nombre"){
+      $('#alerta-form-nombre').modal('show');
+      return(true);
+    }
+    var checkbox = false;
+    var checkbox_len = 1;
+    var intereses = [];
+
+    if(thisform.elements["val_66010[]"].length != undefined )
+    {
+      checkbox_len = thisform.elements["val_66010[]"].length;
+      for (var i = 0; i < checkbox_len;i++)
+      {
+        if (thisform.elements['val_66010[]'][i].selected)
+        {
+          checkbox = true;
+          intereses.push(thisform.elements['val_66010[]'][i].value);
+        }
+      }
+    }
+    else
+    {
+      if (thisform.elements['val_66010[]'].selected)
+      {
+        checkbox = true;
+      }
+    }
+
+    if(thisform.elements['val_66010[]'].value == ''){
+      checkbox = false;
+    }
+
+    if (!checkbox)
+    {
+      $('#alerta-form-intereses').modal('show');
+      return(true);
+    }
+
+/*if (!(thisform.elements['val_66009'].checked))
+{
+$('#alerta-form-terminos').modal('show');
+return(true);
+}*/
+}
+
+if (emailCheck(thisform.email.value, thisform.name))
+{
+
+  if ((document.getElementById('unsubscribe')
+    && document.getElementById('unsubscribe').checked) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")) {
+    alert('Gracias, ahora usted esta dado de baja!');
+
+}
+else if(( (document.getElementById('unsubscribe')
+  && !document.getElementById('unsubscribe').checked) || (!document.getElementById('unsubscribe')) ) && (document.getElementById('showpopup') && document.getElementById('showpopup').value == "on")){
+
+  if(thisform.name != 'UPTml251013'){
+    $.ajax({
+      type: 'POST',
+      async :false,
+      dataType: 'html',
+      data: {nombre: thisform.val_58933.value, email: thisform.email.value, intereses: intereses.join(', ')},
+      url: 'http://www.cyberlunes.com.co/formulario_lyris/formulario_lyris/setUser',
+      success: function(xmldata) {
+
+        onClickRegistro(thisform.email.value);
+
+        $.ajax({
+          type: 'POST',
+          dataType: 'json',
+          async :false,
+          url: 'http://www.cyberlunes.com.co/home/home/setOrigen',
+          success: function(xmldata) {
+            return(true);
+          }
+        });
+
+        return(true);
+      }
+    });
+  }
+  else{
+/*$.ajax({
+type: 'POST',
+async :false,
+dataType: 'html',
+data: {email: thisform.email.value},
+url: 'http://www.cyberlunes.com.co/formulario_lyris/formulario_lyris/setUserOnlyEmail',
+success: function(xmldata) {*/
+
+  onClickRegistro(thisform.email.value);
+
+  $.ajax({
+    type: 'POST',
+    dataType: 'json',
+    async :false,
+    url: 'http://www.cyberlunes.com.co/home/home/setOrigen',
+    success: function(xmldata) {
+      return(true);
+    }
+  });
+
+/*return(true);
+}
+});*/
+}
+}
+return false;
+}
+else
+{
+  return true;
+}
+}
+</script>
+
+
+<script type="text/javascript">
+  $('#nombre').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#nombre_formmobile').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#nombre_form_bottom').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#nombre_sorteo').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#nombre_participacion').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#nombre_formpopup').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#id-nombre-contacto').alphanum({
+    allowNumeric : false,
+    disallow     : '',
+  });
+
+  $('#id-telefono').numeric();
+
+  $('#id-celular').numeric();
+
+  function validarEmail(){
+    if(document.getElementById('email-form-sorteo').value == ''){
+      alert('Debe ingresar una dirección de correo electrónico');
+      return false;
+    }
+
+    return true;
+  }
+
+  function validarEmailPart(){
+    if(document.getElementById('email-form-participacion').value == ''){
+      alert('Debe ingresar una dirección de correo electrónico');
+      return false;
+    }
+    return true;
+  }
+
+
+  $(document).ready(function(){
+
+
+    if(typeof String.prototype.trim !== 'function') {
+      String.prototype.trim = function() {
+        return this.replace(/^\s+|\s+$/g, '');
+      }
+    }
+
+    $('#sas_20592').css({'position':'absolute','bottom':'-302px'});
+
+    var contingencia = '';
+
+    if(contingencia != 1){
+      $.ajax({
+        type: 'post',
+        url: 'http://www.cyberlunes.com.co/home/home/getOrigen',
+        dataType: 'json',
+        success: function response(data){
+          if(data['hide_form'] != 1 && data['is_mobile'] != 1){
+            $('.main').removeAttr('style');
+            $('#accordion').show();
+            $('#form-collapse').show();
+            $('#registrate').show();
+          }
+
+          if(data['hide_form'] == 1){
+            $('#footer_main').css({'margin-bottom':'0'});
+          }
+        }
+      });
+    }
+    else{
+      $('#footer_main').css({'margin-bottom':'0'});
+    }
+
+
+    $('#icon-collapse-form').click(function(){
+      $('#collapseOne').toggle();
+      if($('#collapseOne').is(':hidden')){
+        $('#icon-collapse-form').attr('src', 'http://www.cyberlunes.com.co/static/pre-evento/img/arrow-up.png');
+        $('#footer_main').css({'margin-bottom':'41px'});
+      }
+      else{
+        $('#icon-collapse-form').attr('src', 'http://www.cyberlunes.com.co/static/pre-evento/img/arrow-down.png');
+        $('#footer_main').css({'margin-bottom':'150px'});
+      }
+    });
+
+
+  });
+
+
+</script>
+
+<div class="modal fade" id="uso_marca" style="z-index:2000">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Términos y condiciones para el uso de la marca Cyberlunes®</h4>
+      </div>
+      <div class="modal-body">
+        <p lingdex="2">Por favor descargue y lea estos instructivos para el uso adecuado de la marca y logos de Cyberlunes®. Recuerde que Cyberlunes® es una marca registrada, de uso exclusivo de la Cámara Colombiana de Comercio Electrónico CCCE.</p>
+        <br><br>
+        <ul>
+          <li>
+            - <a href="http://d3b369zdeuh99v.cloudfront.net/multimedia/TERMINOS-Y-CONDICIONES-CYBERLUNES.PDF" target="_blank">Términos y condiciones de uso de la marca (Descargar PDF)</a>
+          </li>
+          <li>
+            - <a href="http://d3b369zdeuh99v.cloudfront.net/multimedia/MARCAS-CYBERLUNES-SITE.PDF" target="_blank">Alcance de la marca (Descargar PDF)</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div><div class="modal fade " id="alerta-form-usuario-registrado" style="z-index:2000">
+<div class="modal-dialog modal-sm">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h4 class="modal-title">Alerta!</h4>
+    </div>
+    <div class="modal-body" id="alerta-form-content">
+      E-mail ya registrado
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="modal fade " id="alerta-form-nombre" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        Por favor ingrese su nombre
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-intereses" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        Por favor seleccione un valor para Intereses
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-terminos" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        Por favor acepte los Términos y Condiciones y las Politicas de Privacidad
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-ingresar-mail" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        Debe ingresar una direccion de correo electrónico
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-incorrecto-mail" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        La dirección de correo electrónico es incorrecta (compruebe @ y .'s)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-ip-invalida" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        Dirección IP de destino inválida!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-dominio-invalido" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        El nombre de dominio parece inválido
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade " id="alerta-form-direccion-dominio" style="z-index:2000">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Alerta!</h4>
+      </div>
+      <div class="modal-body" id="alerta-form-content">
+        La dirección debe terminar en un dominio de tres letras, o dos letras del país.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="terminos" style="z-index:2000">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Términos y condiciones</h4>
+      </div>
+      <div class="modal-body">
+        <p lingdex="3">
+          www.cyberlunes.com.co es una página web (“la página web” o “la Página Web”) de
+          propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Cyberlunes”).
+        </p>
+        <p lingdex="4">
+          Las siguientes disposiciones describen los términos y condiciones de uso aplicables al acceso y uso de los servicios ofrecidos por la página web, que deberán ser observados detenidamente por los usuarios y aliados, y que se entenderán aceptados por el solo hecho de navegar por la página web.
+        </p>
+        <p lingdex="5">
+          1. La página web presenta ofertas sobre productos o servicios de propiedad de empresas diferentes a la CCCE (en adelante, “aliado(s)”), para que puedan ser adquiridos por los visitantes de la página web (en adelante ‘usuarios compradores’), directamente en los portales de internet de los aliados, a través del enlace previo que la página web facilita. Los únicos responsables de los productos o servicios indicados en las ofertas son los respectivos aliados, los cuales realizan esas prestaciones de acuerdo con las respectivas condiciones del acuerdo comercial regulado en sus propios portales de internet.
+        </p>
+        <p lingdex="6">
+          En virtud de lo anterior, el usuario es consciente que el acceso a portales de internet de terceros lo hace bajo su propio riesgo. Estos portales no están bajo el control de la página web y por ende el usuario reconoce que ésta no se hace responsable por su contenido, funciones, precisión, legalidad, adecuación o cualquier otro aspecto de dichos sitios o recursos. La inclusión de estos enlaces no implica aprobación por parte de la página web. Además, el usuario reconoce y acepta que la página web no será responsable, directa o indirectamente, por cualquier daño o pérdida causados por el uso de cualquier contenido, bienes o servicios disponibles en o a través de cualquier otro portal de internet o recurso externos.
+        </p>
+        <p lingdex="7">
+          2. Los aliados son los únicos fabricantes, comercializadores o prestadores de los productos y servicios ofrecidos en la Pagina Web, por ello, el cumplimiento de las garantías legales y adicionales están a su exclusivo cargo y se deben reclamar ante ellos directamente. Los aliados también son los únicos encargados de las labores de envío a domicilio, cobro o facturación de los productos o servicios y el usuario le reclamará directamente a éstos cualquier incumplimiento relacionado con tales actividades.
+        </p>
+        <p lingdex="8">
+          3. El usuario comprador tiene con base en las norma del estatuto del consumidor, la posibilidad de ejercer el derecho de retracto, reportar daños o insatisfacción del producto adquirido directamente ante el aliado con el que haya celebrado un negocio jurídico para la adquisición de un producto o servicio. Cualquier reclamación por falla o idoneidad del producto o servicio, ocurrida posterior a su entrega, deberá ser dirigida exclusivamente al aliado. Para el caso de servicio la garantía se hace efectiva en todo caso directamente con el establecimiento del aliado.
+        </p>
+        <p lingdex="9">
+          4. Los elementos objetivos y subjetivos contenidos en las ofertas o promociones ofrecidas en la Página Web serán de exclusiva responsabilidad del aliado que las ofrece y solo él es el responsable de su elaboración y publicación. Los plazos de redención y vigencia, también son de la exclusiva responsabilidad del aliado y es éste quien debe responder ante el visitante o usuario en caso de incumplimiento.
+        </p>
+        <p lingdex="10">
+          5. El funcionamiento del portal de internet de los aliados durante el Cyberlunes será de la exclusiva responsabilidad de éstos, como lo será el manejo y aplicación de los términos y condiciones y de las políticas de privacidad que ofrecen cumplir a los usuarios.
+        </p>
+        <p lingdex="11">
+          6. Para hacer uso de la página web y acceder a las ofertas y promociones de los aliados, los usuarios interesados podrán hacerlo, siempre y cuando proporcionen previamente la información necesaria para tal efecto, especificada en el formulario de registro de la página web y sin perjuicio de tener que diligenciar otros datos, en el portal de internet de los aliados. Los datos deben ser válidos, veraces, actuales y objeto de comprobación.
+        </p>
+        <p lingdex="12">
+          7. La Página Web se reserva el derecho de solicitar algún comprobante y/o dato adicional para efectos de corroborar los datos personales del usuario, así como de suspender temporal o definitivamente a aquellos usuarios cuyos datos no hayan podido ser confirmados. Los niños, niñas y adolescentes, deben abstenerse de registrarse y hacer uso de esta página web.
+        </p>
+        <p lingdex="13">
+          8. La Página Web se reserva el derecho de rechazar cualquier solicitud de registro o de cancelar un registro previamente aceptado, en cualquier momento y por cualquier razón, sin que esté obligada a comunicar o exponer las razones de su decisión y sin que ello genere algún derecho a indemnización o resarcimiento.
+        </p>
+        <p lingdex="14">
+          9. Cualquier movimiento fraudulento en la tarjeta utilizada para las compras hechas por el usuario en el portal de internet del aliado, deberá ser notificada directamente por el aliado a éste, por la vía más expedita, en el menor plazo de tiempo posible, para que éste pueda llevar a cabo las gestiones oportunas que sean del caso.
+        </p>
+        <p lingdex="15">
+          10. Los aliados y los usuarios reconocen que durante el funcionamiento de la página web, pueden presentarse circunstancias ajenas a la voluntad de ésta, que impliquen que la Página Web o la plataforma computacional no se encuentren operativos durante un determinado período. En tales casos, la Página Web procurará restablecer el portal y el sistema computacional con la mayor celeridad posible, sin que por ello pueda imputársele algún tipo de responsabilidad.
+        </p>
+        <p lingdex="16">
+          La página web se pone a disposición en el estado en que se encuentra al momento de su salida a producción y la CCCE no otorga garantía alguna sobre la exactitud, confiabilidad u oportunidad del material, los servicios, los textos, el software, las gráficas y los links o vínculos de terceras personas. En ningún caso la CCCE será responsable por daños de cualquier naturaleza, resultantes del uso o la imposibilidad de uso del Portal, ni de la imposibilidad de enlace de o con otros portales de internet, cuando éstos daños provengan de causas extrañas tales como, el hecho de un tercero, la fuerza mayor, el caso fortuito o la propia culpa de quien alega.
+        </p>
+        <p lingdex="17">
+          11. Se deja expresa constancia que las marcas, nombres comerciales, logos y demás signos distintivos contenidos en el portal, en los que se identifique Cyberlunes.com.co son de propiedad exclusiva del propietario de la Página Web. Se encuentra prohibida la reproducción total o parcial de la Página Web, así como su traducción a cualquier idioma sin el permiso expreso y por escrito de su propietario. Igualmente, se deja constancia que las marcas, nombres comerciales, logos y demás signos distintivos contenidos en la página web, en los que se identifiquen los productos, servicios o marcas de los aliados, son de su exclusiva propiedad y por ende, gozan de protección legal.
+        </p>
+        <p lingdex="18">
+          12. El usuario se abstendrá, directa o indirectamente de:
+        </p>
+        <ul>
+          <li>- Infringir cualquier patente, marca registrada, secreto comercial, derechos de autor, derecho de publicidad u otro derecho de cualquier otra persona o entidad;</li>
+          <li>- Incluir en la página web contenido que sea ilegal, amenazador, abusivo, acosador, difamatorio, calumnioso, injurioso, engañoso, fraudulento, invasivo de la privacidad, tortuoso, obsceno, ofensivo, o profano;</li>
+          <li>- Enviar publicidad no autorizada o no solicitada, correo no deseado o correo electrónico no solicitado ("spam");</li>
+          <li>- Adelantar actividades comerciales y/o ventas sin el consentimiento previo por escrito de la página web, tales como concursos, sorteos, trueque, publicidad o esquemas piramidales;</li>
+          <li>- Generar virus informáticos o cualesquiera otros códigos informáticos, archivos o programas que están diseñados o destinados a interrumpir, dañar, limitar o interferir con el correcto funcionamiento de cualquier software, hardware o equipo de telecomunicaciones o para dañar u obtener acceso no autorizado a cualquier sistema de datos, contraseña u otra información de la página web o cualquier tercero, o</li>
+          <li>- Hacerse pasar por cualquier persona o entidad, incluyendo cualquier empleado o representante de la página web.</li>
+        </ul>
+        <p lingdex="19">
+          Además el usuario no deberá: (i) tomar cualquier acción que imponga o pueda imponer (según lo determinado por la página web a su entera discreción) una carga irrazonable o desproporcionadamente grande sobre la infraestructura de la página web (o de sus proveedores o terceros), (ii) interferir o intentar interferir con el correcto funcionamiento de ésta o de cualquier actividad relacionada con ésta, (iii) liderar cualquier acción contra la página web que pueda utilizar para evitar o restringir el acceso a sus funcionalidades o servicios (o de otras cuentas, sistemas informáticos o redes conectadas al Servicio); (iv) correr listas de correo, Listserv, cualquier forma de auto-respuesta o "spam" en la página web, o (v) utilizar el software, los manuales o los dispositivos automáticos, o de otros procesos para alterar la página web.
+        </p>
+        <p lingdex="20">
+          No se permite (directa o indirectamente): (i) descifrar, descompilar, desensamblar, realizar ingeniería inversa o intentar derivar el código fuente o ideas subyacentes o algoritmos de cualquier parte de la página web, excepto por las leyes aplicables que prohíban tales restricciones, (ii) modificar, traducir o crear trabajos derivados de cualquier parte de la página web, o (iii) copiar, alquilar, arrendar, distribuir o transferir cualquiera o todos sus derechos en relación la página web.
+        </p>
+        <p lingdex="21">
+          13. Los usuarios y afiliados que participan en la página web, observarán el cumplimiento de todos los deberes y derechos a su cargo, de conformidad con las obligaciones exigidas en las normas de protección del consumidor (Ley 1480 de 2011) y del tratamiento de datos personales (Ley 1581 de 2012). Lo anterior, con el fin de minimizar al máximo la presentación de quejas y reclamaciones, y para que de manera clara se establezcan los términos y condiciones que los usuarios deben aceptar para llevar a cabo cualquier transacción en los portales de internet de los afiliados.
+        </p>
+        <p lingdex="22">
+          14. La Página Web se reserva el derecho a modificar unilateralmente, en cualquier momento, los Términos y Condiciones. Los usuarios y/o compradores pueden consultar los presentes Términos y Condiciones en cualquier momento.
+        </p>
+        <p lingdex="23">
+          15. Este documento estará regido en todos sus puntos por las leyes vigentes en Colombia.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="politicas" style="z-index:2000">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Políticas de privacidad</h4>
+      </div>
+      <div class="modal-body">
+        <p lingdex="24">
+          CASA EDITORIAL EL TIEMPO S.A., con domicilio en Bogotá D.C., Colombia, es responsable del tratamiento de los datos personales.
+        </p>
+        <p lingdex="25">
+          Según nuestras políticas de tratamiento de datos personales, los mecanismos a través de los cuales hacemos uso de éstos son seguros y confidenciales, pues contamos con los medios tecnológicos idóneos para asegurar que sean almacenados de manera tal que se impida el acceso indeseado por parte de terceras personas, y en ese mismo orden aseguramos la confidencialidad de los mismos.
+        </p>
+        <p lingdex="26">
+          Cómo contactarnos
+        </p>
+        <p lingdex="27">
+          Dirección oficinas: Avenida Calle 26 # 68B – 70 Bogotá, D.C.
+        </p>
+        <p lingdex="28">
+          Correo electrónico:&nbsp;<a href="http://www.cyberlunes.com.co/robapagina#">servicioalcliente@eltiempo.com</a><br>
+          Teléfono: 5714444 en Bogotá y 018000110211 en el resto del país
+        </p>
+        <p lingdex="29">
+          Sus datos personales serán incluidos en una base de datos y serán utilizados para las siguientes finalidades:
+        </p>
+        <ul>
+          <li>- Lograr una eficiente comunicación relacionada con nuestros productos, servicios, ofertas, promociones, alianzas, estudios, concursos, contenidos, así como los de nuestras compañías vinculadas, y para facilitarle el acceso general a la información de éstos;</li>
+          <li>- Proveer nuestros servicios y productos;</li>
+          <li>- Informar sobre nuevos productos o servicios que estén relacionados con el o los contratado(s) o adquirido(s);</li>
+          <li>- Dar cumplimiento a obligaciones contraídas con nuestros clientes, proveedores, y empleados;</li>
+          <li>- Informar sobre cambios de nuestros productos o servicios;</li>
+          <li>- Evaluar la calidad del servicio, y</li>
+          <li>- Realizar estudios internos sobre hábitos de consumo.</li>
+        </ul>
+        <p lingdex="30">
+          Se le informa a los titulares de información que pueden consultar el&nbsp;<a href="http://www.cyberlunes.com.co/static/pre-evento/pdf/20130412_HABEAS_DATA_Manual_Interno_CEET.pdf" target="_blank">Manual Interno de Políticas y Procedimientos de Datos Personales de CASA EDITORIAL EL TIEMPO S.A.,</a>&nbsp;que contiene nuestras políticas para el tratamiento de la información recogida, así como los procedimientos de consulta y reclamación que le permitirán hacer efectivos sus derechos al acceso, consulta, rectificación, actualización y supresión de los datos, haciendo click en el siguiente enlace: <a href="http://www.cyberlunes.com.co/static/pre-evento/pdf/20130412_HABEAS_DATA_Manual_Interno_CEET.pdf" target="_blank">Ver enlace</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
