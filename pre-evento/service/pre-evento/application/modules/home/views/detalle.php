@@ -23,7 +23,7 @@
                 <ol class="breadcrumb">
                     <?php $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : ''; ?>
                     <li><a href="<?php echo base_url().$page; ?>">Home</a></li>
-                    <li class="active"><a href="<?php echo current_url() ?>"><?php echo $breadcrumb['ART_TITULO'] ?></a></li>
+                    <li class="active"><a href="<?php echo current_url() ?>"><?php echo htmlentities($breadcrumb['ART_TITULO'], ENT_QUOTES) ?></a></li>
                 </ol>
             </div>
         </div>                            
@@ -32,7 +32,7 @@
                 <article>
                     <?php foreach($articulo as $articulo): ?>
                     <hgroup>
-                        <h1><?php echo $articulo->ART_TITULO ?></h1>
+                        <h1><?php echo htmlentities($articulo->ART_TITULO, ENT_QUOTES) ?></h1>
                         <date><?php echo convertirFecha($articulo->ART_FECHA) ?></date>
                     </hgroup>                   
                     <figure>
@@ -136,7 +136,7 @@
                             </figure>
                             <aside class="col-lg-6 col-md-6 col-sm-6">
                                 <hgroup>
-                                    <a href="<?php echo base_url().'detalle/'.$articulo_recomendado->ART_SLUG ?>"><h3><?php echo $articulo_recomendado->ART_TITULO ?></h3></a>
+                                    <a href="<?php echo base_url().'detalle/'.$articulo_recomendado->ART_SLUG ?>"><h3><?php echo htmlentities($articulo_recomendado->ART_TITULO, ENT_QUOTES) ?></h3></a>
                                     <date><?php echo convertirFecha($articulo_recomendado->ART_FECHA) ?></date>                                   
                                 </hgroup>
                                 <div class="desc">

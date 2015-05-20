@@ -3,7 +3,7 @@
   <select name="selectSubCategoria" id="selectSubCategoria">
     <option value="todos">Todas</option>
     <?php foreach($subCategorias as $subCategoria): ?>
-      <option value="<?php echo $subCategoria['SUB_SLUG'] ?>" ><?php echo $subCategoria['SUB_NOMBRE'] ?></option>
+      <option value="<?php echo $subCategoria['SUB_SLUG'] ?>" ><?php echo htmlentities($subCategoria['SUB_NOMBRE'], ENT_QUOTES) ?></option>
     <?php endforeach; ?>
   </select>
 </div>

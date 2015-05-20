@@ -11,7 +11,7 @@
                                         </figure>
                                         <aside>
                                             <hgroup>
-                                                <h3><?php echo $articulo->ART_TITULO ?></h3>
+                                                <h3><?php echo htmlentities($articulo->ART_TITULO, ENT_QUOTES) ?></h3>
                                                 <date><?php echo convertirFecha($articulo->ART_FECHA) ?></date>                                   
                                             </hgroup>
                                             <div class="desc">
