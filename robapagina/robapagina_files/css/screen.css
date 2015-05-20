@@ -83,7 +83,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .main .logo img {
   display: block;
   max-width: 100%;
-  height: 56px;
+  height: 50px;
   margin: 0 auto;
 }
 /* line 30, ../sass/screen.scss */
@@ -96,12 +96,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: absolute;
   color: #FFF;
   background-color: #e54647;
-  padding: 8px 5px;
+  padding: 15px 10px;
   border: 0;
   border-radius: 50%;
   text-transform: uppercase;
-  top: -20px;
-  left: 25px;
+  top: -42px;
+  left: 2px;
   text-align: center;
   font-size: 0.5rem;
   box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
@@ -111,33 +111,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .main div.contenedor .start-day .second-line {
   display: block;
   font-size: 0.75rem;
+  font-family: "uni_sansheavy_caps", sans-serif;
 }
 
 .main div.contenedor .start-day .third-line {
   display: block;
   font-size: 1rem;
+  font-family: "uni_sansheavy_caps", sans-serif;
 }
 
 .main div.contenedor .offer-popup {
   display: block;
   position: absolute;
-  color: #FFF;
+  color: #DF4365;
   background-color: #fceb40;
-  padding: 8px 5px;
+  padding: 22px 9px;
   border: 0;
   border-radius: 50%;
   text-transform: uppercase;
-  top: -20px;
-  right: 25px;
+  top: -40px;
+  right: 2px;
   text-align: center;
-  font-size: 0.5rem;
+  font-size: 16px;
   box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
   z-index: 0;
+  font-family: "uni_sansheavy_caps", sans-serif;
 }
 
 .main div.contenedor .offer-popup .second-line {
   display: block;
-  font-size: 0.75rem;
+  color: #78BFC6;
+  font-size: 8px;
 }
 
 /* line 43, ../sass/screen.scss */
@@ -145,8 +149,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   display: block;
   position: absolute;
-  top: 36px;
-  left: 35px;
+  top: 47px;
+  left: 56px;
   transform: rotate(20deg);
   width: 0;
   height: 0;
@@ -161,8 +165,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   display: block;
   position: absolute;
-  top: 36px;
-  left: 35px;
+  top: 47px;
+  left: 56px;
   transform: rotate(20deg);
   width: 0;
   height: 0;
@@ -176,8 +180,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   display: block;
   position: absolute;
-  top: 36px;
-  left: 35px;
+  top: 50px;
+  left: 0px;
   transform: rotate(-20deg);
   width: 0;
   height: 0;
@@ -192,8 +196,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: '';
   display: block;
   position: absolute;
-  top: 36px;
-  left: 35px;
+  top: 52px;
+  left: -1px;
   transform: rotate(-20deg);
   width: 0;
   height: 0;
@@ -208,22 +212,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 75px;
   background-color: #e64667;
   margin: 0 auto;
-  margin-top: 25px;
+  margin-top: 35px;
   border-radius: 10px;
   border: 1px solid #ffffff;
   text-align: center;
-  padding-top: 22px;
+  padding-top: 20px;
   box-sizing: border-box;
 }
 /* line 68, ../sass/screen.scss */
-.main div.contenedor div.countdown .items-time span.item {
-  font-size: 37px;
-  color: #fff100;
-  margin-right: 10px;
+.main div.contenedor div.countdown .items-time {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 175px;
 }
-/* line 73, ../sass/screen.scss */
-.main div.contenedor div.countdown .items-time span.item:last-child {
-  margin-right: 0;
+
+.main div.contenedor div.countdown .items-time span.item {
+  font-size: 25px;
+  display: block;
+  float: left;
+  width: 28px;
+  color: #fff100;
+  margin: 0 7px;
 }
 /* line 79, ../sass/screen.scss */
 .main div.contenedor div.countdown .items-description {
@@ -231,14 +240,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: -4px;
 }
 /* line 82, ../sass/screen.scss */
+.main div.contenedor div.countdown .items-description {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 175px;
+}
+
 .main div.contenedor div.countdown .items-description span.item {
   color: #ffffff;
   font-size: 11px;
-  margin-right: 27px;
-}
-/* line 87, ../sass/screen.scss */
-.main div.contenedor div.countdown .items-description span.item:last-child {
-  margin-right: 0;
+  display: block;
+  float: left;
+  width: 28px;
+  margin: 13px 7px 0;
 }
 /* line 94, ../sass/screen.scss */
 .main div.contenedor p {
@@ -248,11 +262,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 102, ../sass/screen.scss */
 .main div.contenedor .form {
+  margin: 10px 0;
   padding: 0 10px;
-}
-/* line 105, ../sass/screen.scss */
-.main div.contenedor .form form input {
-  font-family: 'SohoStdCondensed',sans-serif;
 }
 /* line 107, ../sass/screen.scss */
 .main div.contenedor .form form input[type="text"] {
@@ -263,6 +274,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border-radius: 3px;
   box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   float: left;
+  font-family: sans-serif;
 }
 /* line 117, ../sass/screen.scss */
 .main div.contenedor .form form input[type="submit"] {
@@ -270,20 +282,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   border: 0;
   color: #e74768;
   height: 27px;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 10px;
-  padding: 0 15px;
+  padding: 0 10px;
   text-transform: uppercase;
+  font-family: "uni_sansheavy_caps", sans-serif;
 }
 /* line 131, ../sass/screen.scss */
 .main div.contenedor .legals p {
-  font-size: 7.5px;
+  font-size: 7.75px;
   color: #ffffff;
   text-transform: uppercase;
 }
 /* line 134, ../sass/screen.scss */
 .main div.contenedor .legals p a {
-  color: #e64667;
+  color: #CF5473;
+  text-decoration: underline;
 }
 
 /* FONTS */
