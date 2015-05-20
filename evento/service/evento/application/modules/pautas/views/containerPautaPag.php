@@ -7,7 +7,7 @@
 		                    <div class="col-md-4 col-xs-12 post">
 		                        <div class="box">
 		                            <hgroup>
-		                                <h2><?php echo $item['PAU_NOMBRE']; ?></h2>
+		                                <h2><?php echo htmlentities($item['PAU_NOMBRE'], ENT_QUOTES); ?></h2>
 		                            </hgroup>
 		                            <a href="<?php echo base_url("lo-mejor-del-2013/" .$item['PAU_SLUG']); ?>">
 			                            <figure >

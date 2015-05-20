@@ -194,7 +194,7 @@
                             </figure>
                             <aside class="col-lg-6 col-md-6 col-sm-6">
                                 <hgroup>
-                                    <a href="<?php echo base_url('detalle/'.$articulo->ART_SLUG.'/'.$page) ?>"><h3><?php echo $articulo->ART_TITULO ?></h3></a>
+                                    <a href="<?php echo base_url('detalle/'.$articulo->ART_SLUG.'/'.$page) ?>"><h3><?php echo htmlentities($articulo->ART_TITULO, ENT_QUOTES) ?></h3></a>
                                     <date><?php echo convertirFecha($articulo->ART_FECHA) ?></date>
                                 </hgroup>
                                 <div class="desc">

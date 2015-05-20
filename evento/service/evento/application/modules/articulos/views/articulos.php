@@ -15,7 +15,7 @@
                     </figure>
                     <aside>
                         <hgroup>
-                            <h2><?php echo strip_tags($item['ART_TITULO']); ?></h2>
+                            <h2><?php echo strip_tags(htmlentities($item['ART_TITULO'], ENT_QUOTES)); ?></h2>
                             <date><?php echo convertirFecha($item['ART_FECHA']); ?></date>                 
                         </hgroup>
                         <div class="desc">

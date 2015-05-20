@@ -63,10 +63,10 @@
                         </figure>
                         <article>
                             <div class="info">
-                                <h2><?php echo $promocion['TIE_NOMBRE']; ?></h2>
+                                <h2><?php echo htmlentities($promocion['TIE_NOMBRE'], ENT_QUOTES); ?></h2>
                             </div>
                             <div class="desc">
-                                <p><?php echo $promocion['PRO_NOMBRE']; ?></p>     
+                                <p><?php echo htmlentities($promocion['PRO_NOMBRE'], ENT_QUOTES); ?></p>     
                                 <?php if($promocion['PRO_PRECIO_FINAL'] != ''): ?>                         
                                 <span class="ahora">Ahora <?php echo $promocion['PRO_TIPO_MONEDA']; echo number_format($promocion['PRO_PRECIO_FINAL']); ?></span><?php ($promocion['PRO_PRECIO_INICIAL'] != '') ? print(' - ') : print('') ?>
                                 <?php endif; ?>
