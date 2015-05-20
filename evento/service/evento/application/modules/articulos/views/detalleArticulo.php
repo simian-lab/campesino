@@ -1,6 +1,6 @@
 <article>
     <hgroup>
-        <h1><?php echo $articulo[0]['ART_TITULO'] ?></h1>
+        <h1><?php echo htmlentities($articulo[0]['ART_TITULO'], ENT_QUOTES) ?></h1>
         <date><?php echo convertirFecha($articulo[0]['ART_FECHA']) ?></date>
     </hgroup>                   
     <figure>

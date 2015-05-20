@@ -29,7 +29,7 @@
                 }
                 ?>
                 <li <?php echo $class_active ?>>
-                  <a onClick='s.eVar28="<?php echo $item['CAT_NOMBRE'] ?>"' href="<?php echo base_url('descuentos/'.$item['CAT_SLUG']);?>"><?php echo $item['CAT_NOMBRE']; ?></a>
+                  <a onClick='s.eVar28="<?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES) ?>"' href="<?php echo base_url('descuentos/'.$item['CAT_SLUG']);?>"><?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES); ?></a>
                 </li>
               <?php endforeach; ?>
             <?php endif; ?>
@@ -47,7 +47,7 @@
                 <?php if(isset($resultCategoriasSubMenu)): ?>
                   <?php foreach ($resultCategoriasSubMenu as $item): ?>
                     <li>
-                      <a onClick='s.eVar28="<?php echo $item['CAT_NOMBRE'] ?>"' href="<?php echo base_url('descuentos/'.$item['CAT_SLUG']);?>"><?php echo $item['CAT_NOMBRE']; ?></a>
+                      <a onClick='s.eVar28="<?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES) ?>"' href="<?php echo base_url('descuentos/'.$item['CAT_SLUG']);?>"><?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES); ?></a>
                     </li>
                   <?php endforeach; ?>
                 <?php endif; ?>
