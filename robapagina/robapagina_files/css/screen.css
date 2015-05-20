@@ -152,6 +152,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 47px;
   left: 56px;
   transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
   width: 0;
   height: 0;
   border-style: solid;
@@ -168,6 +169,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 47px;
   left: 56px;
   transform: rotate(20deg);
+  -webkit-transform: rotate(20deg);
   width: 0;
   height: 0;
   border-style: solid;
@@ -183,6 +185,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 50px;
   left: 0px;
   transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
   width: 0;
   height: 0;
   border-style: solid;
@@ -199,6 +202,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 52px;
   left: -1px;
   transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
   width: 0;
   height: 0;
   border-style: solid;
