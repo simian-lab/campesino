@@ -40,7 +40,7 @@
                         }
                         $pau_html .= '<div class="item'.$active.'">';
                         // $pau_html .= '<a href="http://'. $item['CAR_LINK'].'" target="_blank"><img src="'.$base_url_tod.'?w=1585&amp;h=320&amp;bg=000000&amp;far=C&amp;zc=1&amp;src='.$base_url_img_pautas_slider.$item['CAR_IMAGEN_SLIDER'].'" alt=""></a>';
-                        $pau_html .= '<a href="'. prep_url($item['CAR_LINK']).'" target="_blank"><img src="'.$base_url_tod.'?w=1585&amp;h=416&amp;bg=000000&amp;far=C&amp;zc=1&amp;src='.$base_url_img_pautas_slider.$item['CAR_IMAGEN_SLIDER'].'"  title="'.$item['CAR_TITULO'].'" alt="'.strip_tags($item['CAR_DESCRIPCION']).'"></a>';
+                        $pau_html .= '<a href="'. prep_url($item['CAR_LINK']).'" target="_blank"><img src="'.$base_url_tod.'?w=1585&amp;h=416&amp;bg=000000&amp;far=C&amp;zc=1&amp;src='.$base_url_img_pautas_slider.$item['CAR_IMAGEN_SLIDER'].'"  title="'.htmlentities($item['CAR_TITULO'], ENT_QUOTES).'" alt="'.strip_tags($item['CAR_DESCRIPCION']).'"></a>';
                         $pau_html .= '</div>';
                         $i++;
                     }

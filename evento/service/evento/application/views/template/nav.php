@@ -19,7 +19,7 @@
                 <nav class="navbar-collapse collapse">
                     <ul>
                         <?php foreach($categorias as $categoria):  ?>
-                            <li><a href="#" onClick='s.eVar28="<?php echo $categoria->CAT_NOMBRE; ?>"'><?php echo $categoria->CAT_NOMBRE; ?></a></li>
+                            <li><a href="#" onClick='s.eVar28="<?php echo $categoria->CAT_NOMBRE; ?>"'><?php echo htmlentities($categoria->CAT_NOMBRE, ENT_QUOTES); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </nav>
