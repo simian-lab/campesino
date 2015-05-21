@@ -252,15 +252,11 @@ header .container .head .marcas figure {
 .banner {
   bottom: 0;
   position: fixed;
-  z-index: 9;
   text-align: center;
+  width: 100%;
+  z-index: 9;
 }
-@media screen and (max-width: 1170px) {
-  /* line 127, ../sass/screen.scss */
-  .banner {
-    width: 100%;
-  }
-}
+
 @media screen and (max-width: 768px) {
   /* line 127, ../sass/screen.scss */
   .banner {
