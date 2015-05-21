@@ -80,6 +80,8 @@
           <p>13. Los usuarios y afiliados que participan en la página web, observarán el cumplimiento de todos los deberes y derechos a su cargo, de conformidad con las obligaciones exigidas en las normas de protección del consumidor (Ley 1480 de 2011) y del tratamiento de datos personales (Ley 1581 de 2012). Lo anterior, con el fin de minimizar al máximo la presentación de quejas y reclamaciones, y para que de manera clara se establezcan los términos y condiciones que los usuarios deben aceptar para llevar a cabo cualquier transacción en los portales de internet de los afiliados.</p>
           <p>14. La Página Web se reserva el derecho a modificar unilateralmente, en cualquier momento, los Términos y Condiciones. Los usuarios y/o compradores pueden consultar los presentes Términos y Condiciones en cualquier momento.</p>
           <p>15. Este documento estará regido en todos sus puntos por las leyes vigentes en Colombia.</p>
+          <p>CONDICIONES MEMBRESIA FOX PLAY</p>
+          <p>30.000 suscripciones por 1 mes a FOXPLAY disponibles , las membresias seran otorgadas via correo electronico 96 horas habiles despues del registro, unidades limitadas a los primeros 30.000 registros realizados en cyberlunes.com.co apartir del 20/05/2015 a las 11:50 pm hasta el 31/05/2015 a las 11:59pm, sujeto a restricciones, 1 membresia por correo electronico.</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
