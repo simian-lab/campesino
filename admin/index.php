@@ -73,7 +73,7 @@ switch ($_SERVER['SERVER_NAME'])
 
     define('ENVIRONMENT', 'production');
 
-    if(!isset($ _SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+    if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
       // echo "https on";
       $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       header("Location:$redirect");
