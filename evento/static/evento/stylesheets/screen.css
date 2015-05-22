@@ -1709,7 +1709,6 @@ footer .terminos span a {
 /**************************************/
 /**************************************/
 
-
 /* CSS */
 
 .clear{
@@ -1850,9 +1849,10 @@ div#menu .box-right{
     display: block;
     width: 100%;
     height: 0px;
-    padding-top: 56.8%;
+    padding-top: 54.8%;
     position: relative;
     border: solid 1px #d7d7d7;
+    max-height: 115px;
 }
 .important-brand .wrapper-box a{
     display: block;
