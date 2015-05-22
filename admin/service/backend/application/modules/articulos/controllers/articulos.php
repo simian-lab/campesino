@@ -136,7 +136,7 @@ function before_image_upload($files_to_upload, $field_info) {
 	$file_size = $files_to_upload[$keys[0]]['size'];
 
 	if($this->image_is_valid($file_name)) {
-		if($file_size < 1000000) {
+		if($file_size < 6000000) {
 			return true;
 		} else {
 			return 'El archivo de la imagen es muy grande';
