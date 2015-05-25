@@ -151,6 +151,10 @@ header .container .head .marcas figure:first-child + figure + figure{
 	top: 5px;
 }
 
+#slide-publi .owl-wrapper .owl-item .item .publi-content img {
+  border: 1px solid #00b3c7;
+}
+
 @media screen and (max-width: 335px) {
 	section.wrapp .container .row .no-destacados ul li article .link {
 		font-size: 0.9rem;
