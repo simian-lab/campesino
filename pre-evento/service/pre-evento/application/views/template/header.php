@@ -70,6 +70,10 @@
                 width: 100%;
                 height: 300px;
             }
+            .quizz{
+                width: 100%;
+                height: 900px;
+            }
         </style>
         <header>
             <div class="container">
