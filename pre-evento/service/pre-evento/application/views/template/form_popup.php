@@ -3,8 +3,6 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <a href="#" class="close" data-dismiss="modal" aria-hidden="true"><img src="<?php echo $base_url_static?>img/close.png" alt=""></a>                    
-            <h1>Regístrate en</h1><img src="<?php echo $base_url_static?>img/logo.png" alt="">
-            <h2>Y entérate primero de las ofertas</h2>
             <form action="http://www.elabs10.com/functions/mailing_list.html" method="post" name="UPTml251012" onSubmit='return (!(UPTvalidateform(document.UPTml251012)));'>
                 <input type="hidden" name="submitaction" value="3">
                 <input type="hidden" name="mlid" value="251010">
@@ -21,11 +19,9 @@
                 <input type="hidden" name="val_66095" value=""/>
 
                 <div class="input">
-                    <label class="green" for="">Nombre</label>
-                    <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre_formpopup"/>
+                    <input type="text" name="val_58933" placeholder="¿Cuál ha sido tu compra más curiosa?" maxlength="150" value="" id="nombre_formpopup"/>
                 </div>                        
                 <div class="input">
-                    <label class="green" for="">E-mail</label>
                     <input type="text" name="email" placeholder="Email" value="" />
                 </div>                 
                 <div class="input">
@@ -60,7 +56,7 @@
                 </div>-->            
                 <div class="submit">
                     <input type="hidden" id="showpopup" value="on" name="showpopup">                               
-                    <input type="submit" value="suscríbete" />
+                    <input class="suscribe" type="submit" value="suscríbete" />
                 </div>
             </form>
         </div>
