@@ -247,12 +247,7 @@
 
     <div class="clear"></div>
 
-    <!-- Head's up! anchor-ofertas-destacadas is here. Why?, pray, isn't it below,
-      in the actual Offers? good question! unfortunately, we didn't have much time for
-      this, and since we have a fixed menu, leaving the anchor below would leave the
-      title *below* the menu. This should be better handled through js, so list that
-      under the improvements you can make :). -->
-    <div class="mini col-md-12 content-patrocinadores-destacados" id="anchor-ofertas-destacadas">
+    <div class="mini col-md-12 content-patrocinadores-destacados">
       <?php foreach($patrocinadores_general as $patrocinador): ?>
       <?php
       if($patrocinador->PAT_URL_EVENT != '') {
@@ -277,6 +272,7 @@
     </div><!-- End mini -->
 
     <div class="ofertas-destacadas col-md-12">
+      <div  id="anchor-ofertas-destacadas"></div>
       <h3>
         OFERTAS <small>DESTACADAS</small>
       </h3>
