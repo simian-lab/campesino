@@ -101,9 +101,6 @@ footer div.container div.sponsor div.marcas-mobile figure img{
 	word-wrap: break-word;
 }
 
-
-
-
 header .marcas{
 	padding-left: 0;
 	padding-right: 0;
@@ -113,8 +110,6 @@ header .marcas figure:first-child, header .marcas figure:first-child + figure{
 	/*position: relative;*/
 	top: -7px;
 }
-
-
 
 footer .sponsor .marcas-mobile figure{
 	width: 25% !important;
@@ -179,5 +174,16 @@ header .container .head .marcas figure:first-child + figure + figure{
 @media screen and (max-width: 400px) {
 	article .info h2 {
 		width: 45%;
+	}
+}
+
+#anchor-ofertas-destacadas {
+	position: absolute;
+  	top: -140px;
+}
+
+@media screen and (max-width: 768px) {
+	#anchor-ofertas-destacadas {
+		top: -5px;
 	}
 }
