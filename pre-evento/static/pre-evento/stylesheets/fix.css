@@ -166,4 +166,8 @@ Here we're making sure the images don't 'break' the carousel.
 	}
 }
 
-
+#registrate .modal-content form {
+  margin-left: 59px;
+  margin-top: 95px;
+  width: 400px;
+}
