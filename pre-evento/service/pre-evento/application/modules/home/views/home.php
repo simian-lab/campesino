@@ -93,7 +93,7 @@
                         <input type="hidden" name="activity" value="submit">
                         <input type="hidden" name="val_66095" value=""/>
 
-                        <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre"/>
+                        <input type="text" name="val_58933" placeholder="¿Cuál ha sido tu compra más curiosa?" maxlength="150" value="" id="nombre"/>
                         <input type="text" name="email" placeholder="Email" value="" />
                         <?php if(!$this->agent->is_mobile()): ?>
                         <select name="val_66010[]" id="interes" multiple="multiple">

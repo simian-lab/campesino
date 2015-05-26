@@ -88,7 +88,7 @@
 
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre_form_bottom"/>
+                                            <input type="text" name="val_58933" placeholder="¿Cuál fue tu compra más curiosa?" maxlength="150" value="" id="nombre_form_bottom"/>
                                         </div>
                                         <div class="col-lg-4">
                                             <input type="text" name="email" placeholder="Email" value="" />
