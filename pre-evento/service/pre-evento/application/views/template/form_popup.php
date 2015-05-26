@@ -19,11 +19,9 @@
                 <input type="hidden" name="val_66095" value=""/>
 
                 <div class="input">
-                    <label class="green" for="">Nombre</label>
-                    <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre_formpopup"/>
+                    <input type="text" name="val_58933" placeholder="¿Cuál ha sido tu compra más curiosa?" maxlength="150" value="" id="nombre_formpopup"/>
                 </div>                        
                 <div class="input">
-                    <label class="green" for="">E-mail</label>
                     <input type="text" name="email" placeholder="Email" value="" />
                 </div>                 
                 <div class="input">
@@ -58,7 +56,7 @@
                 </div>-->            
                 <div class="submit">
                     <input type="hidden" id="showpopup" value="on" name="showpopup">                               
-                    <input type="submit" value="suscríbete" />
+                    <input class="suscribe" type="submit" value="suscríbete" />
                 </div>
             </form>
         </div>
