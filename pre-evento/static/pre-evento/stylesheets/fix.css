@@ -168,6 +168,24 @@ Here we're making sure the images don't 'break' the carousel.
 
 #registrate .modal-content form {
   margin-left: 59px;
-  margin-top: 95px;
+  margin-top: 110px;
   width: 400px;
+}
+
+#registrate .modal-content form .input {
+	padding-bottom: 5px;
+}
+
+#registrate .modal-content form .suscribe {
+	height: 27px;
+	margin-top: -9px;
+}
+
+#registrate .modal-content form .input input {
+	height: 34px;
+	width: 100%;
+}
+
+#registrate .modal-content form .intereses span {
+  font-size: 0.7em;
 }
