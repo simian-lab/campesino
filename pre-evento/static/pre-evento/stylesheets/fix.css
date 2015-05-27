@@ -189,3 +189,7 @@ Here we're making sure the images don't 'break' the carousel.
 #registrate .modal-content form .intereses span {
   font-size: 0.7em;
 }
+
+.box-form header hgroup h1 {
+	font-size: 0.9em;
+}

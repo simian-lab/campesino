@@ -74,7 +74,7 @@
             <div class="box-form main">
                 <header>
                     <hgroup>
-                        <h1>SÉ EL PRIMERO EN RECIBIR LAS OFERTAS</h1>
+                        <h1>GANA 10 MILLONES, REGÍSTRATE Y CUENTANOS</h1>
                     </hgroup>
                 </header>
                 <section>

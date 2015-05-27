@@ -1,7 +1,7 @@
 <div class="box-form <?php (isset($hide_form)?print('mobile'):print('')) ?> <?php (isset($class_form_mobile)?print('mobile'):print('')) ?>" id="form-collapse">
     <header>
         <hgroup>
-            <h1>SÉ EL PRIMERO EN RECIBIR LAS OFERTAS</h1>
+            <h1>GANA 10 MILLONES, REGÍSTRATE Y CUENTANOS</h1>
         </hgroup>
     </header>
     <section>
