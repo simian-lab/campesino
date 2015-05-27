@@ -75,7 +75,7 @@
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-parent="#accordion" href="#collapseOne" id="slidetoggle">
-                      <span> SUSCRÍBETE Y RECIBE LAS OFERTAS ANTES QUE LOS DEMÁS</span>
+                      <span>GANA 10 MILLONES, REGÍSTRATE Y CUENTANOS</span>
                     </a>
                   </h4>
                   <div style="float: left; width: 100%; text-align: right; margin-top: -31px;">
