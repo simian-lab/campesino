@@ -181,7 +181,7 @@ Here we're making sure the images don't 'break' the carousel.
 	margin-top: -9px;
 }
 
-#registrate .modal-content form .input input {
+#registrate .modal-content form .input > input {
 	height: 34px;
 	width: 100%;
 }
