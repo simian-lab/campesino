@@ -71,7 +71,6 @@
 
     <div class="row">
       <div class="col-lg-12">
-
         <?php echo $promocionespremium_html ?>
 
       </div>
@@ -162,15 +161,15 @@
               <h3 class="title-superbanner">Publicidad</h3>
                 <script type="text/javascript">
                  sas.call("std", {
-                  siteId:  41700, // 
+                  siteId:  41700, //
                   pageId:  439812, // Página : Cyberlunes/categoria
                   formatId:  31982, // Formato : Superbanner categoria 960x90
-                  target:  'seccion=tecnologia',   // Segmentación
-                  
+                  target:  'seccion=<?php echo $this->uri->segment(2); ?>',   // Segmentación
+
                  });
                 </script>
                 <noscript>
-                  <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                  <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
                     <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]" border="0" alt="" />
                   </a>
                 </noscript>
