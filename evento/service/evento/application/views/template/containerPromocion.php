@@ -167,8 +167,7 @@
                   formatId:  31982, // Formato : Superbanner categoria 960x90
                   target:  'tecnologia',   // Segmentación
                   seccion:  'tecnologia',   // Segmentación
-                  categoria:  'tecnologia'   // Segmentación
-                  
+                  categoria:  'tecnologia',   // Segmentación
                  });
                 </script>
                 <noscript>
