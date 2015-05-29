@@ -134,7 +134,7 @@
                       siteId:  41700, //
                       pageId:  282275, // Página : Cyberlunes/home
                       formatId:  11772, // Formato : Tercer Boton 300x100 300x100
-                      target:  'tecnologia'   // Segmentación
+                      target:  ''   // Segmentación
                     });
                   </script>
                   <noscript>
@@ -165,7 +165,7 @@
                   siteId:  41700, // 
                   pageId:  439812, // Página : Cyberlunes/categoria
                   formatId:  31982, // Formato : Superbanner categoria 960x90
-                  target:  ''   // Segmentación
+                  target:  'tecnologia'   // Segmentación
                  });
                 </script>
                 <noscript>
