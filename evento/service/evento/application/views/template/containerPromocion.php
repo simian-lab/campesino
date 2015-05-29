@@ -165,9 +165,8 @@
                   siteId:  41700, // 
                   pageId:  439812, // Página : Cyberlunes/categoria
                   formatId:  31982, // Formato : Superbanner categoria 960x90
-                  target:  'tecnologia',   // Segmentación
-                  seccion:  'tecnologia',   // Segmentación
-                  categoria:  'tecnologia',   // Segmentación
+                  target:  'seccion=tecnologia',   // Segmentación
+                  
                  });
                 </script>
                 <noscript>
