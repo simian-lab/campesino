@@ -165,9 +165,10 @@
                   siteId:  41700, // 
                   pageId:  439812, // Página : Cyberlunes/categoria
                   formatId:  31982, // Formato : Superbanner categoria 960x90
-                  target:  ''   // Segmentación
+                  target:  'tecnologia'   // Segmentación
                  });
                 </script>
+                <h1>Gio</h1>
                 <noscript>
                   <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
                     <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]" border="0" alt="" />
