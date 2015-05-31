@@ -24,32 +24,29 @@ switch (ENVIRONMENT)
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
 //print_R($_SERVER['SERVER_NAME']);
-    switch ($_SERVER['SERVER_NAME']){
-        case 'pre-evento.cyberlunes.local.brandigital.com':  
-            $base_url = 'http://pre-evento.cyberlunes.local.brandigital.com/';
-            $base_url_static = 'http://pre-evento.cyberlunes.local.brandigital.com/static/pre-evento/'; 
-        break;
-        case 'pre-evento.cyberlunes.dev.brandigital.com':    
-            $base_url = 'http://pre-evento.cyberlunes.dev.brandigital.com/';
-            $base_url_static = 'http://pre-evento.cyberlunes.dev.brandigital.com/static/pre-evento/'; 
-        break;
-        case 'preevento-stage.cyberlunes.com.co':  
-            $base_url = 'http://preevento-stage.cyberlunes.com.co/';
-            $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
-        break;
-        case 'originpreeve-www2.cyberlunes.com.co':  
-            $base_url = 'http://preevento-stage.cyberlunes.com.co/';
-            $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
-        break;
-        case 'www.cyberlunes.com.co':    
-            $base_url = 'http://www.cyberlunes.com.co/';
-            $base_url_static = 'http://www.cyberlunes.com.co/static/pre-evento/'; 
-        break;
-        case 'staging.cyberlunes.com.co':    
-            $base_url = 'http://staging.cyberlunes.com.co/';
-            $base_url_static = 'http://staging.cyberlunes.com.co/static/pre-evento/'; 
-        break;
-    }
+switch ($_SERVER['SERVER_NAME'])
+{   
+    case 'pre-evento.cyberlunes.local.brandigital.com':  
+        $base_url = 'http://pre-evento.cyberlunes.local.brandigital.com/';
+        $base_url_static = 'http://pre-evento.cyberlunes.local.brandigital.com/static/pre-evento/'; 
+    break;
+    case 'pre-evento.cyberlunes.dev.brandigital.com':    
+        $base_url = 'http://pre-evento.cyberlunes.dev.brandigital.com/';
+        $base_url_static = 'http://pre-evento.cyberlunes.dev.brandigital.com/static/pre-evento/'; 
+    break;
+    case 'preevento-stage.cyberlunes.com.co':  
+        $base_url = 'http://preevento-stage.cyberlunes.com.co/';
+        $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
+    break;
+    case 'www.cyberlunes.com.co':    
+        $base_url = 'http://www.cyberlunes.com.co/';
+        $base_url_static = 'http://www.cyberlunes.com.co/static/pre-evento/'; 
+    break;
+    case 'originpreeve-www2.cyberlunes.com.co':  
+        $base_url = 'http://preevento-stage.cyberlunes.com.co/';
+        $base_url_static = 'http://preevento-stage.cyberlunes.com.co/static/pre-evento/'; 
+    break;
+}
     
 ?>
 <html lang="en">
@@ -59,7 +56,7 @@ switch (ENVIRONMENT)
         <link rel="stylesheet" href="<?php echo $base_url_static ?>stylesheets/errores.css">
         <title>404</title>
     </head>
-    <body>
+    <body class="conbg">
         <div class="header">
             <div class="container">
                 <div class="row">
@@ -67,15 +64,15 @@ switch (ENVIRONMENT)
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" style="background: url('../static/pre-evento/img/fondo_404-prev.jpg') no-repeat scroll top center rgba(0, 0, 0, 0)">
             <div class="container">
                 <div class="row">
-                    <h1>Los <b>mejores</b> descuentos</h1>
-                    <img src="<?php echo $base_url_static;?>img/carpa.png" alt="" style="width:90%">
-                    <h2 style="margin-bottom: 14px;">¡Lo sentimos!</h2>
-                    <span class="numb">404</span>
-                    <p>Has llegado a una esquina de nuestro sitio que no hemos finalizado.<br>
-                    Mientras la terminamos regresa al inicio o consulta uno de nuestros artículos</p>
+                    <h1 style="margin-bottom:360px">Los <b>mejores</b> descuentos</h1>
+                    <h2 style="margin-bottom: 20px;">Aún no inicia CyberLunes</h2>
+                    <span class="numb">FALTA POCO</span>
+                    <p>No te despegues de tu computador, tablet o teléfono pues las mejores ofertas se agotan rápido.<br>
+                      Y tú no te puedes quedar sin la tuya.
+                  </p>
                     <a href="<?php echo $base_url; ?>" class="boton">ir al <b>inicio</b></a>
                 </div>
             </div>
@@ -98,10 +95,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
 <!-- End Google Tag Manager -->
 
-<!-- Facebook Conversion Code for Píxel El Tiempo 2 - Leads -->
+<!-- Facebook Conversion Code for Pixel El Tiempo -->
 <script type="text/javascript">
 var fb_param = {};
-fb_param.pixel_id = '6015078203399';
+fb_param.pixel_id = '6014934086599';
 fb_param.value = '0.01';
 fb_param.currency = 'EUR';
 (function(){
@@ -112,7 +109,7 @@ fb_param.currency = 'EUR';
   ref.parentNode.insertBefore(fpw, ref);
 })();
 </script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6015078203399&amp;value=0.01&amp;currency=EUR" /></noscript>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6014934086599&amp;value=0.01&amp;currency=EUR" /></noscript>
 
   <script language="JavaScript" type="text/javascript"><!--   
   //  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION  
