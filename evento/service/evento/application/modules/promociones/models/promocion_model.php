@@ -4,6 +4,8 @@ class promocion_model extends CI_Model {
   function __construct() {
     // Call the Model constructor
     parent::__construct();
+
+    $this->load->library('memcached_library');
   }
 
   function get($idtipo='2', $seed=1, $cant='0', $offset='0', $idPromosRepetido='') {
@@ -181,28 +183,36 @@ class promocion_model extends CI_Model {
   }
 
   function get_marcas_by_tienda($tienda='tiendas',$idPromosRepetido='') {
-    $this->db->select('MAR_NOMBRE,MAR_SLUG');
-    $this->db->distinct();
-    $this->db->from('PRO_PROMOCIONES');
-    $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
-    $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
-    $this->db->join('MAR_MARCAS', 'MAR_MARCAS.MAR_ID = PRO_PROMOCIONES.MAR_ID');
-    $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
 
-    if($tienda!='tiendas')
-      $this->db->where('PRO_USER_CREADOR', $tienda);
+    $key_memcached_marcas_hfx = $tienda.'_'.$idPromosRepetido;
+    $result_memcached_marcas_hfx = $this->memcached_library->get($key_memcached_marcas_hfx);
 
-    $this->db->where('MAR_SLUG !=', 'no-aplica');
-    if(!empty($idPromosRepetido))
-      $this->db->where_not_in('PRO_ID', $idPromosRepetido);
+    if(!$result_memcached_marcas_hfx) {
+      $this->db->select('MAR_NOMBRE,MAR_SLUG');
+      $this->db->distinct();
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
+      $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
+      $this->db->join('MAR_MARCAS', 'MAR_MARCAS.MAR_ID = PRO_PROMOCIONES.MAR_ID');
+      $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
 
-    $this->db->order_by("MAR_NOMBRE", "asc");
-    $query = $this->db->get();
+      if($tienda!='tiendas')
+        $this->db->where('PRO_USER_CREADOR', $tienda);
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+      $this->db->where('MAR_SLUG !=', 'no-aplica');
+      if(!empty($idPromosRepetido))
+        $this->db->where_not_in('PRO_ID', $idPromosRepetido);
 
-    return NULL;
+      $this->db->order_by("MAR_NOMBRE", "asc");
+      $query = $this->db->get();
+
+      $result = $query->result_array();
+
+      $this->memcached_library->add($key_memcached_marcas_hfx, $result, 86400);
+      return $result;
+    }
+
+    return $result_memcached_marcas_hfx;
   }
 
   function getByHash($hash) {

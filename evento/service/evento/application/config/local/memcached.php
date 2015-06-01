@@ -9,7 +9,7 @@ $memcached['servers'] = array(
 
 	'default' => array(
 
-			'host'			=> '192.168.4.50',
+			'host'			=> 'localhost',
 			'port'			=> '11211',
 			'weight'		=> '1',
 			'persistent'	=> FALSE
