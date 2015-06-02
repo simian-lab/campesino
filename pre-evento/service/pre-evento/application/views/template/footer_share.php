@@ -55,7 +55,7 @@
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-parent="#accordion" href="#collapseOne" id="slidetoggle">
-                      <span>GANA 10 MILLONES, REGÍSTRATE Y CUENTANOS</span>
+                      <span>SÉ EL PRIMERO EN RECIBIR LAS OFERTAS</span>
                     </a>
                   </h4>
                   <div style="float: left; width: 100%; text-align: right; margin-top: -31px;">
@@ -88,7 +88,7 @@
 
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <input type="text" name="val_58933" placeholder="¿Cuál fue tu compra más curiosa?" maxlength="150" value="" id="nombre_form_bottom"/>
+                                            <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre_form_bottom"/>
                                         </div>
                                         <div class="col-lg-4">
                                             <input type="text" name="email" placeholder="Email" value="" />

@@ -76,7 +76,7 @@
             <div class="box-form main">
                 <header>
                     <hgroup>
-                        <h1>GANA 10 MILLONES, REGÍSTRATE Y CUENTANOS</h1>
+                        <h1>SÉ EL PRIMERO EN RECIBIR LAS OFERTAS</h1>
                     </hgroup>
                 </header>
                 <section>
@@ -95,7 +95,7 @@
                         <input type="hidden" name="activity" value="submit">
                         <input type="hidden" name="val_66095" value=""/>
 
-                        <input type="text" name="val_58933" placeholder="¿Cuál ha sido tu compra más curiosa?" maxlength="150" value="" id="nombre"/>
+                        <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre"/>
                         <input type="text" name="email" placeholder="Email" value="" />
                         <?php if(!$this->agent->is_mobile()): ?>
                         <select name="val_66010[]" id="interes" multiple="multiple">
