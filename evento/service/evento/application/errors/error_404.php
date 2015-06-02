@@ -1,7 +1,4 @@
 <?php
-
-
-
 /*
 switch (ENVIRONMENT)
 {
@@ -23,12 +20,10 @@ switch (ENVIRONMENT)
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
-//print_R($_SERVER['SERVER_NAME']);
-switch ($_SERVER['SERVER_NAME'])
-{   
-    case 'evento.cyberlunes.local.brandigital.com':  
-        $base_url = 'http://evento.cyberlunes.local.brandigital.com/';
-        $base_url_static = 'http://evento.cyberlunes.local.brandigital.com/static/evento/'; 
+switch ($_SERVER['SERVER_NAME']) {   
+    case 'evento.cyberlunes.local':  
+        $base_url = 'http://evento.cyberlunes.local/';
+        $base_url_static = 'http://evento.cyberlunes.local/static/evento/'; 
     break;
     case 'evento.cyberlunes.dev.brandigital.com':    
         $base_url = 'http://evento.cyberlunes.dev.brandigital.com/';
@@ -38,13 +33,17 @@ switch ($_SERVER['SERVER_NAME'])
         $base_url = 'http://evento-stage.cyberlunes.com.co/';
         $base_url_static = 'http://evento-stage.cyberlunes.com.co/static/evento/'; 
     break;
-    case 'www.cyberlunes.com.co':    
-        $base_url = 'http://www.cyberlunes.com.co/';
-        $base_url_static = 'http://www.cyberlunes.com.co/static/evento/'; 
+    case 'staging.cyberlunes.com.co':  
+        $base_url = 'http://staging.cyberlunes.com.co/';
+        $base_url_static = 'http://staging.cyberlunes.com.co/static/evento/'; 
     break;
     case 'origin-www2.cyberlunes.com.co':  
         $base_url = 'http://origin-www2.cyberlunes.com.co/';
         $base_url_static = 'http://origin-www2.cyberlunes.com.co/static/evento/'; 
+    break;
+    case 'www.cyberlunes.com.co':    
+        $base_url = 'http://www.cyberlunes.com.co/';
+        $base_url_static = 'http://www.cyberlunes.com.co/static/evento/'; 
     break;
 }
     
@@ -68,11 +67,10 @@ switch ($_SERVER['SERVER_NAME'])
             <div class="container">
                 <div class="row">
                     <h1>Los <b>mejores</b> descuentos</h1>
-                    <h2 style="margin-bottom: 20px;">Aún no inicia CyberLunes</h2>
-                    <span class="numb">FALTA POCO</span>
-                    <p>No te despegues de tu computador, tablet o teléfono pues las mejores ofertas se agotan rápido.<br>
-                      Y tú no te puedes quedar sin la tuya.
-                  </p>
+                    <h2 style="margin-bottom: 20px;">¡Lo sentimos!</h2>
+                    <span class="numb">404</span>
+                    <p>Has llegado a una esquina de nuestro sitio que no hemos finalizado.<br>
+                    Mientras la terminamos regresa al inicio y disfruta de nuestras promociones</p>
                     <a href="<?php echo $base_url; ?>" class="boton">ir al <b>inicio</b></a>
                 </div>
             </div>
