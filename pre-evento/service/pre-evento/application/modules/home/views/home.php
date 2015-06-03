@@ -42,6 +42,7 @@
                 <div class="item"><a <?php echo $target ?> href="<?php echo prep_url($pauta->PAU_URL) ?>"><img alt="<?php echo $pauta->PAU_NOMBRE ?>" src="<?php echo $base_url_img_pautas;?><?php echo $img ?>" ></a></div>
                 <?php endforeach; ?>
             </div>
+            <!-- Aquí está la cuenta regresiva y la ocultamos temporalmente.
             <div class="countDown">
                 <span class="title">FALTAN</span>
                 <ul class="numbs">
@@ -62,6 +63,7 @@
                                 $('.numbs').find('li').eq(2).find('span').html(ts.minutes)
                             } ,countdown.DAYS|countdown.HOURS|countdown.MINUTES|countdown.SECONDS).toString();
             </script>
+            -->
             <?php if(count($slider_pautas) > 1): ?>
             <div class="customNavigation bg">
                 <div class="navigation">
@@ -74,7 +76,7 @@
             <div class="box-form main">
                 <header>
                     <hgroup>
-                        <h1>GANA 10 MILLONES, REGÍSTRATE Y CUENTANOS</h1>
+                        <h1>SÉ EL PRIMERO EN RECIBIR LAS OFERTAS</h1>
                     </hgroup>
                 </header>
                 <section>
@@ -93,7 +95,7 @@
                         <input type="hidden" name="activity" value="submit">
                         <input type="hidden" name="val_66095" value=""/>
 
-                        <input type="text" name="val_58933" placeholder="¿Cuál ha sido tu compra más curiosa?" maxlength="150" value="" id="nombre"/>
+                        <input type="text" name="val_58933" placeholder="Nombre" value="" id="nombre"/>
                         <input type="text" name="email" placeholder="Email" value="" />
                         <?php if(!$this->agent->is_mobile()): ?>
                         <select name="val_66010[]" id="interes" multiple="multiple">

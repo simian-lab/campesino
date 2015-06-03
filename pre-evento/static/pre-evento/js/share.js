@@ -30,7 +30,7 @@ function shareTwitter(art_detalle){
     if(art_detalle == 'detalle')
         var text_share = $('meta[http-equiv="og:title"]').attr("content");
     else
-        var text_share = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com.co @CyberLunesCo';
+        var text_share = 'Ahorré en mis compras y ahora voy a disfrutarlas. Pronto www.cyberlunes.com de nuevo.';
 
 
     var openLink = 'http://twitter.com/share?text=' + encodeURIComponent( text_share );

@@ -30,7 +30,7 @@ class formulario_sorteo extends CI_Controller {
         $data['jsonParam']=get_app_data();
 
         $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Descubre los mejores descuentos el 1 y 2 de junio en http://www.cyberlunes.com';
+        $meta_descripcion = 'Ahorré en mis compras y ahora voy a disfrutarlas. Pronto www.cyberlunes.com de nuevo.';
         $meta_keys = "Compare,Mejores Ofertas Turísticas";
         $meta_imagen = $data['base_url_static']."img/logo200x200.jpg";
         $meta_url = base_url();
