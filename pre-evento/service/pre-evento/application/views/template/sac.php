@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
     <center>
-        <img src="<?php echo $base_url_static ?>sac/img/tabla_cyberclientes.jpg.png"  alt="CyberLunes">
+        <img src="<?php echo $base_url_static ?>sac/tabla_cyberclientes.jpg"  alt="CyberLunes">
         </center>
     </body>
 </html>
