@@ -1,6 +1,6 @@
 <?php
 
-class Robapagina extends CI_Controller 
+class Sac extends CI_Controller 
 {	
 
 	function index(){
