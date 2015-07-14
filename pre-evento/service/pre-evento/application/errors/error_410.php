@@ -54,7 +54,7 @@ switch ($_SERVER['SERVER_NAME']){
         <meta charset="UTF-8">
         <link rel="stylesheet" href="<?php echo $base_url_static ?>stylesheets/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="<?php echo $base_url_static ?>stylesheets/errores.css">
-        <title>404</title>
+        <title>410</title>
     </head>
     <body>
         <div class="header">
