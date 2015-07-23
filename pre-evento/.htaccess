@@ -31,5 +31,5 @@
     ErrorDocument 404 /index.php
 </IfModule> 
 
-Redirect 410 /index.php
+#Redirect 410 /index.php
 

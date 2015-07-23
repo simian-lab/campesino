@@ -65,8 +65,8 @@ switch ($_SERVER['SERVER_NAME'])
 		$dominios_permitidos = array(
 			'http://admin-cyberlunes.loencontraste.com',
 			'https://admin-cyberlunes.loencontraste.com',
-			'http://static.cyberlunes.com.co',
-			'https://static.cyberlunes.com.co',
+			'http://static-cyberlunes.loencontraste.com',
+			'https://static-cyberlunes.loencontraste.com',
 			'http://fonts.gstatic.com/',
 			'http://d3b369zdeuh99v.cloudfront.net/​'
 		);
