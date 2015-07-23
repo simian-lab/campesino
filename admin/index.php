@@ -61,10 +61,10 @@ switch ($_SERVER['SERVER_NAME'])
 
 	break;
 
-	case 'admin.cyberlunes.com.co':
+	case 'admin-cyberlunes.loencontraste.com':
 		$dominios_permitidos = array(
-			'http://admin.cyberlunes.com.co',
-			'https://admin.cyberlunes.com.co',
+			'http://admin-cyberlunes.loencontraste.com',
+			'https://admin-cyberlunes.loencontraste.com',
 			'http://static.cyberlunes.com.co',
 			'https://static.cyberlunes.com.co',
 			'http://fonts.gstatic.com/',
@@ -73,11 +73,11 @@ switch ($_SERVER['SERVER_NAME'])
 
     define('ENVIRONMENT', 'production');
 
-    if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+    /*if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
       // echo "https on";
       $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
       header("Location:$redirect");
-    }
+    }*/
 	break;
 
 	default:

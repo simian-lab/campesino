@@ -85,10 +85,10 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'testing');
 	break;
-	case 'www.cyberlunes.com.co':
+	case 'cyberlunes.loencontraste.com':
 		$dominios_permitidos = array(
-				'http://www.cyberlunes.com.co',
-				'https://www.cyberlunes.com.co',
+				'http://cyberlunes.loencontraste.com',
+				'https://cyberlunes.loencontraste.com',
 				'http://static.cyberlunes.com.co',
 				'https://static.cyberlunes.com.co',
 				'http://fonts.gstatic.com/',
