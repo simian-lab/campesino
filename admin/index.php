@@ -61,10 +61,10 @@ switch ($_SERVER['SERVER_NAME'])
 
 	break;
 
-	case 'admin.cyberlunes.com.co':
+	case 'admin-cyberlunes.loencontraste.com':
 		$dominios_permitidos = array(
-			'http://admin.cyberlunes.com.co',
-			'https://admin.cyberlunes.com.co',
+			'http://admin-cyberlunes.loencontraste.com',
+			'https://admin-cyberlunes.loencontraste.com',
 			'http://static.cyberlunes.com.co',
 			'https://static.cyberlunes.com.co',
 			'http://fonts.gstatic.com/',
