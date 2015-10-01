@@ -34,7 +34,12 @@ switch ($_SERVER['SERVER_NAME'])
 				'https://static.cyberlunes.local',
 				'http://fonts.gstatic.com/'
 			);
-        define('ENVIRONMENT', 'local');
+    define('ENVIRONMENT', 'local');
+	break;
+	
+	case 'sss-pre-adm-stg':
+	  $dominios_permitidos = array();
+	  define('ENVIRONMENT', 'stagins');
 	break;
 
 	case 'admin.cyberlunes.dev.brandigital.com':
@@ -45,7 +50,7 @@ switch ($_SERVER['SERVER_NAME'])
 				'https://static.cyberlunes.dev.brandigital.com',
 				'http://fonts.gstatic.com/'
 			);
-        define('ENVIRONMENT', 'development');
+    define('ENVIRONMENT', 'development');
 	break;
 
 	case 'admin-stage.cyberlunes.com.co':
@@ -105,6 +110,7 @@ if (defined('ENVIRONMENT'))
 	{
 		case 'local':
 		case 'development':
+		case 'staging':
 			error_reporting(E_ALL);
 			ini_set('display_errors', TRUE);
 			ini_set('display_startup_errors', TRUE);
