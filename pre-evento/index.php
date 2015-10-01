@@ -31,6 +31,12 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'local');
 	break;
+	
+	case 'sss-pre-stg.loencontraste.com':
+	  define('ENVIRONMENT', 'local');
+	  $dominios_permitidos = array();
+	break;
+	  
 	case 'pre-evento.cyberlunes.dev.brandigital.com':
 		$dominios_permitidos = array(
 				'http://pre-evento.cyberlunes.dev.brandigital.com',
