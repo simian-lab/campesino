@@ -1,15 +1,16 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Prueba_smart extends MX_Controller 
+class Prueba_smart extends Default_Controller
 {
-   function __construct()
-   {
-       parent::__construct();
-   }
+    function __construct()
+    {
+        parent::__construct();
+    }
 
-   public function index(){
-    $this->load->view('template/prueba_smart');
-   }
-  
-    	
+    public function index()
+    {
+        $this->load->view('template/prueba_smart');
+    }
+
+
 }

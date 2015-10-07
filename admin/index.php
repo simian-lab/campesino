@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -22,72 +18,8 @@
  *
  */
 
-//	define('ENVIRONMENT', 'development');
-
-switch ($_SERVER['SERVER_NAME'])
-{
-	case 'admin.cyberlunes.local':
-		$dominios_permitidos = array(
-				'http://admin.cyberlunes.local',
-				'https://admin.cyberlunes.local',
-				'http://static.cyberlunes.local',
-				'https://static.cyberlunes.local',
-				'http://fonts.gstatic.com/'
-			);
-        define('ENVIRONMENT', 'local');
-	break;
-
-	case 'admin.cyberlunes.dev.brandigital.com':
-		$dominios_permitidos = array(
-				'http://admin.cyberlunes.dev.brandigital.com',
-				'https://admin.cyberlunes.dev.brandigital.com',
-				'http://static.cyberlunes.dev.brandigital.com',
-				'https://static.cyberlunes.dev.brandigital.com',
-				'http://fonts.gstatic.com/'
-			);
-        define('ENVIRONMENT', 'development');
-	break;
-
-	case 'admin-stage.cyberlunes.com.co':
-		$dominios_permitidos = array(
-			'http://admin-stage.cyberlunes.com.co',
-			'https://admin-stage.cyberlunes.com.co',
-			'http://static-stage.cyberlunes.com',
-			'https://static-stage.cyberlunes.com',
-			'http://fonts.gstatic.com/'
-		);
-
-    define('ENVIRONMENT', 'testing');
-
-	break;
-
-	case 'admin-cyberlunes.loencontraste.com':
-		$dominios_permitidos = array(
-			'http://admin-cyberlunes.loencontraste.com',
-			'https://admin-cyberlunes.loencontraste.com',
-			'http://static-cyberlunes.loencontraste.com',
-			'https://static-cyberlunes.loencontraste.com',
-			'http://fonts.gstatic.com/',
-			'http://d3b369zdeuh99v.cloudfront.net/​'
-		);
-
-    define('ENVIRONMENT', 'production');
-
-    /*if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
-      // echo "https on";
-      $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-      header("Location:$redirect");
-    }*/
-	break;
-
-	default:
-		define('ENVIRONMENT', 'testing');
-		break;
-}
-header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));
-
-
-
+defined('ENVIRONMENT')
+    || define('ENVIRONMENT', (getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'production'));
 
 /*
  *---------------------------------------------------------------
