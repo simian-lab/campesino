@@ -3,6 +3,6 @@
 *
 */
 $config['allowed_domains'] = array(
-    'http://static-sss-pre-stage.loencontraste.com',
-    ' http://sss-pre-stg.loencontraste.com'
+    'http://static-sss-'.EVENTO.'-stage.loencontraste.com',
+    ' http://sss-'.EVENTO.'-stg.loencontraste.com'
 ); 
