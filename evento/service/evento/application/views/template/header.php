@@ -12,7 +12,7 @@
       </div>
       <div class="col-md-3 col-sm-6 col-xs-6 title">
         <?php if(!$this->agent->is_mobile()): ?>
-          <span><?php echo TAG_TAG_LINE ?></span>
+          <span><?php echo TAG_LINE ?></span>
         <?php endif; ?>
       </div>
       <div class="col-md-6 marcas">

@@ -44,7 +44,7 @@ New constants to define the number of promotions per page.
 define('NUMERO_PROMOCIONES_PREMIUM',    36);
 define('NUMERO_PROMOCIONES_GENERALES',    36);
 
-/*Deinfe una constante para el tage line segun el evetno*/
+/*Deinfe una constante para el tage line segun el evento*/
 switch (EVENTO) {
 	case 'bfr':
 		define('TAG_LINE',		'EVENTO BLACK FRIDAY');
