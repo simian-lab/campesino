@@ -21,6 +21,8 @@
 defined('ENVIRONMENT')
     || define('ENVIRONMENT', (getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'production'));
 
+defined('EVENTO')
+    || define('EVENTO', (getenv('SUB') ? getenv('SUB') : 'cyber'));
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
