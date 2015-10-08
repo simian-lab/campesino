@@ -18,6 +18,7 @@
  *
  */
 
+<<<<<<< HEAD
 
 switch ($_SERVER['SERVER_NAME'])
 {
@@ -105,6 +106,10 @@ switch ($_SERVER['SERVER_NAME'])
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));
 
+=======
+defined('ENVIRONMENT')
+    || define('ENVIRONMENT', (getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'production'));
+>>>>>>> development
 
 /*
  *---------------------------------------------------------------
