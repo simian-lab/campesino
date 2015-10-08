@@ -22,7 +22,7 @@ defined('ENVIRONMENT')
     || define('ENVIRONMENT', (getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'production'));
 
 defined('EVENTO')
-    || define('EVENTO', (getenv('SUB') ? getenv('SUB') : 'cyber'));
+    || define('EVENTO', (getenv('SUB') ? getenv('SUB') : 'bfr'));
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
