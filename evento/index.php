@@ -37,14 +37,13 @@ if (defined('ENVIRONMENT'))
 	{
 		case 'local':
 		case 'development':
+		case 'stage':
 			error_reporting(E_ALL);
 			ini_set('display_errors', TRUE);
 			ini_set('display_startup_errors', TRUE);
 		break;
 		case 'origin':
 		case 'testing':
-			error_reporting(0);
-		break;
 		case 'production':
 			error_reporting(0);
 		break;
