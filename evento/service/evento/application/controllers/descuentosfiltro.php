@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Descuentosfiltro extends Default_Controller
+class Descuentosfiltro extends MX_Controller
 {
     function __construct()
     {
