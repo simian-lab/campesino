@@ -9,3 +9,10 @@ pre-evento/service/pre-evento/application/logs/
 
 .vagrant
 logs
+
+# sublime file
+.directory
+
+# JetBrains PhpStorm project dir.
+.idea/
+
