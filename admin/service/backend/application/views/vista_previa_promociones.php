@@ -36,7 +36,7 @@
         foreach ($arrEventos as $evento) {
         if($seccion == 'premium_home' || $seccion == 'premium'):
         ?>
-        <div class="wrapp section">
+        <div class="wrapp section <?php echo $evento;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
