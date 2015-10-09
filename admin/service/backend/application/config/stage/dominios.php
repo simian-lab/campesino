@@ -9,6 +9,6 @@
 
  */
 
-$config['base_site_eltiempo_evento'] = 'http://sss-bfr-stg.loencontraste.com/';
+$config['base_site_eltiempo_evento'] = 'http://sss-adm-stg.loencontraste.com/';
 $config['base_site_eltiempo_pre-evento'] = 'http://sss-pre-stg.loencontraste.com/';
-$config['base_site_eltiempo_static'] = 'http://static-sss-pre-stage.loencontraste.com/';
+$config['base_site_eltiempo_static'] = 'http://static-sss-stage.loencontraste.com/';
