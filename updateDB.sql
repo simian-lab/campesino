@@ -34,9 +34,6 @@ CREATE TABLE `EXP_EVENTOXPROMOCION` (
 
 ALTER TABLE `PAQUETES_NOMBRES` ADD `PAQ_EVENTO` int(11);
 
-/*ALTER TABLE `admin_users` DROP `paquete`;*/;
-
-
 DROP TABLE IF EXISTS `AXP_ADMINXPAQUETE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

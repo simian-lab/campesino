@@ -68,7 +68,7 @@ class Asignar_paquetes_aliados extends Main {
 		$crud->field_type('first_name', 'readonly');
 		$crud->field_type('last_name', 'readonly');
 		$crud->field_type('email', 'readonly');
-    $crud->field_type('paquete', 'dropdown', $arrpaquetes);
+    $crud->field_type('paquete', 'hidden');
 		$crud->field_type('paquetes', 'multiselect', $arrpaquetes);
 
 		$crud->set_language('spanish');
