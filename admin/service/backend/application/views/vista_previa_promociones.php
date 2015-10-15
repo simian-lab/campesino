@@ -12,7 +12,7 @@
 
         <?php
              //$this->load->helper('get_url_encode_tod');
-             $this->load->helper('get_url_base'); 
+             $this->load->helper('get_url_base');
              $get_url_base = get_url_base();
              //print_r($get_url_base);
         ?>
@@ -31,9 +31,12 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-    
-        <?php if($seccion == 'premium_home' || $seccion == 'premium'): ?>       
-        <div class="wrapp section">
+        <?php
+        $arrEventos = explode( ',', $eventos );
+        foreach ($arrEventos as $evento) {
+        if($seccion == 'premium_home' || $seccion == 'premium'):
+        ?>
+        <div class="wrapp section <?php echo $evento;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -56,18 +59,18 @@
                                                 <a href="<?php echo $url_promocion ?>" class="link red">ir a oferta</a>
                                                 <?php endif; ?>
                                                 <?php if($logo_visa == 1): ?>
-                                                <div class="marca">                                                
+                                                <div class="marca">
                                                     <div class="visa_logo">
                                                         <img src="<?php echo $get_url_base['base_url'] ?>vistaprevia/img/visa.jpg" alt="" />
-                                                    </div>   
+                                                    </div>
                                                     <div class="isologo">
                                                         <span>
                                                             <?php echo $texto_visa; ?>
                                                         </span>
-                                                    </div>           
+                                                    </div>
                                                 </div>
                                                 <?php endif; ?>
-                                            </div>  
+                                            </div>
                                             <img src="<?php echo $get_url_base['base_url'] ?>multimedia/promociones/<?php echo $imagen_premium_promocion ?>" alt="" />
                                         </div>
                                         <div class="article">
@@ -75,37 +78,37 @@
                                                 <h2><?php echo $nombre_tienda; ?></h2>
                                             </div>
                                             <div class="desc">
-                                                <p><?php echo $nombre_promocion ?></p>   
-                                                <?php if($precio_final_promocion != ''): ?>                         
+                                                <p><?php echo $nombre_promocion ?></p>
+                                                <?php if($precio_final_promocion != ''): ?>
                                                 <span class="ahora">Ahora <?php echo $tipo_moneda_promocion . number_format($precio_final_promocion); ?></span><?php ($precio_inicial_promocion != '') ? print(' - ') : print('') ?>
                                                 <?php endif; ?>
                                                 <?php if($precio_inicial_promocion != ''): ?>
-                                                <span class="antes">Antes <?php echo $tipo_moneda_promocion . number_format($precio_inicial_promocion); ?></span>  
-                                                <?php endif; ?>      
-                                            </div>       
+                                                <span class="antes">Antes <?php echo $tipo_moneda_promocion . number_format($precio_inicial_promocion); ?></span>
+                                                <?php endif; ?>
+                                            </div>
                                             <?php if($descuento_promocion != ''): ?>
                                             <div class="porcentaje">
                                                 <img src="<?php echo $get_url_base['base_url'] ?>vistaprevia/img/top-percent.png" alt="" />
                                                 <span class="num"><?php echo $descuento_promocion ?></span>
                                                 <span class="signo">%</span>
                                                 <span>Descuento</span>
-                                            </div>   
+                                            </div>
                                             <?php endif; ?>
                                             <a href="<?php echo $url_promocion ?>" class="link orange">ir a oferta</a>
-                                        </div>                                    
+                                        </div>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>                
-            </div>            
+                </div>
+            </div>
         </div>
-        <?php endif; ?>
+        <?php endif;  ?>
 
         <?php if($seccion == 'general' || $seccion == 'premium'): ?>
-        <div class="wrapp section">
+        <div class="wrapp section <?php echo $evento;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -128,56 +131,56 @@
                                                 <a target="_blank" href="<?php echo $url_promocion ?>" class="link orange">ir a oferta</a>
                                                 <?php endif; ?>
                                                 <?php if($logo_visa == 1): ?>
-                                                <div class="marca">                                                
+                                                <div class="marca">
                                                     <div class="visa_logo">
                                                         <img src="<?php echo $get_url_base['base_url'] ?>vistaprevia/img/visa.jpg" alt="" />
-                                                    </div>   
+                                                    </div>
                                                     <div class="isologo">
                                                         <span>
                                                             <?php echo $texto_visa; ?>
                                                         </span>
-                                                    </div>           
+                                                    </div>
                                                 </div>
                                                 <?php endif; ?>
                                             </div>
                                             <img src="<?php echo $get_url_base['base_url'] ?>multimedia/promociones/<?php echo $imagen_general_promocion ?>" alt="" />
-                                            
+
                                         </div>
                                         <div class="article">
                                             <div class="info">
                                                 <h2><?php echo $nombre_tienda; ?></h2>
                                             </div>
                                             <div class="desc">
-                                                <p><?php echo $nombre_promocion ?></p>   
-                                                <?php if($precio_final_promocion != ''): ?>                         
+                                                <p><?php echo $nombre_promocion ?></p>
+                                                <?php if($precio_final_promocion != ''): ?>
                                                 <span class="ahora">Ahora <?php echo $tipo_moneda_promocion . number_format($precio_final_promocion); ?></span>
                                                 <?php endif; ?>
                                                 <?php if($precio_inicial_promocion != ''): ?>
-                                                <span class="antes">Antes <?php echo $tipo_moneda_promocion . number_format($precio_inicial_promocion); ?></span>  
+                                                <span class="antes">Antes <?php echo $tipo_moneda_promocion . number_format($precio_inicial_promocion); ?></span>
                                                 <?php endif; ?>
-                                            </div>       
+                                            </div>
                                             <?php if($descuento_promocion != ''): ?>
                                             <div class="porcentaje">
                                                 <img src="<?php echo $get_url_base['base_url'] ?>vistaprevia/img/top-percent.png" alt="" />
                                                 <span class="num"><?php echo $descuento_promocion ?></span>
                                                 <span class="signo">%</span>
                                                 <span>Descuento</span>
-                                            </div>   
-                                            <?php endif; ?> 
+                                            </div>
+                                            <?php endif; ?>
                                             <a target="_blank" href="<?php echo $url_promocion ?>" class="link orange">ir a oferta</a>
-                                        </div>                                    
+                                        </div>
                                     </li>
-                                    
+
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div> 
-            </div>            
-        </div>        
-        <?php endif; ?>
-      
-        
+                </div>
+            </div>
+        </div>
+        <?php endif; };?>
+
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="<?php echo $get_url_base['base_url'] ?>vistaprevia/js/vendor/jquery-1.10.1.min.js"></script>
         <script src="<?php echo $get_url_base['base_url'] ?>vistaprevia/js/bootstrap/bootstrap.js"></script>
@@ -185,6 +188,6 @@
         <script src="<?php echo $get_url_base['base_url'] ?>vistaprevia/js/vendor/respond.min.js"></script>
         <script src="<?php echo $get_url_base['base_url'] ?>vistaprevia/js/vendor/html5shiv.js"></script>
         <script src="<?php echo $get_url_base['base_url'] ?>vistaprevia/js/main.js"></script>
-        
+
     </body>
 </html>
