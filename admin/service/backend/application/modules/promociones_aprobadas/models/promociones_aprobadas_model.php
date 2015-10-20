@@ -43,15 +43,15 @@ class Promociones_aprobadas_model extends CI_Model
     public function get_paquete($id_user){
         $this->db->select('PAQ_ID,PAQ_NOMBRE');
         $this->db->from('PAQUETES_NOMBRES');
-        $this->db->join('admin_users', 'admin_users.paquete = PAQUETES_NOMBRES.PAQ_ID');
-        $this->db->where('admin_users.id', $id_user);
+        $this->db->join('AXP_ADMINXPAQUETE', 'AXP_ADMINXPAQUETE.AXP_PAQUETE = PAQUETES_NOMBRES.PAQ_ID');
+        $this->db->where('AXP_ADMINXPAQUETE.AXP_ADMIN', $id_user);
 
         $query = $this->db->get();
         $salida='';
         foreach ($query->row_array() as $row)
         {
             $salida[$id_user]=$row;
-           
+
         }
         return  $salida;
     }
@@ -101,7 +101,7 @@ class Promociones_aprobadas_model extends CI_Model
 				$arrMails[] = $valor['email'];
 			}
 			$listado_mails = implode(',',$arrMails);
-			
+
 
 			$config['protocol'] = 'sendmail';
 			$config['smtp_host'] = 'localhost';
@@ -111,12 +111,12 @@ class Promociones_aprobadas_model extends CI_Model
 			$this->email->initialize($config);
 
 			$this->email->from('no-reply@cyberlunes.com.co', 'Promociones');
-			$this->email->to($listado_mails); 
-			// $this->email->to('mgranada@brandigital.com'); 
-			
+			$this->email->to($listado_mails);
+			// $this->email->to('mgranada@brandigital.com');
+
 
 			$this->email->subject('Nueva promocion para aprobar');
-			$this->email->message('Se ha cargado una nueva promocion para aprobar.<br>Titulo: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );	
+			$this->email->message('Se ha cargado una nueva promocion para aprobar.<br>Titulo: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
 			$this->email->send();
 			return true;
@@ -125,11 +125,11 @@ class Promociones_aprobadas_model extends CI_Model
 
     function get_marca($id){
         $this->db->select('MAR_ID, MAR_NOMBRE');
-        $this->db->from('MAR_MARCAS'); 
+        $this->db->from('MAR_MARCAS');
         $this->db->where('MAR_ID', $id);
         $query = $this->db->get();
 
-        if ($query->num_rows() > 0)                
+        if ($query->num_rows() > 0)
             return $query->row_array();
 
         return NULL;
@@ -138,16 +138,16 @@ class Promociones_aprobadas_model extends CI_Model
     function getCategoriaId($id) {
             $this->db->select('*');
             $this->db->from('CAT_CATEGORIA');
-            $this->db->where('CAT_ID', $id);            
+            $this->db->where('CAT_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function get_user($id_user){
@@ -164,18 +164,18 @@ class Promociones_aprobadas_model extends CI_Model
     function getSubCategoriaId($id) {
             $this->db->select('*');
             $this->db->from('SUB_SUBCATEGORIA');
-            $this->db->where('SUB_ID', $id);            
+            $this->db->where('SUB_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
-    
+
 	function get_marcas()
     {
         $this->db->select('MAR_ID, MAR_NOMBRE');
@@ -186,10 +186,10 @@ class Promociones_aprobadas_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->MAR_ID]=$row->MAR_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
     function get_categorias()
     {
@@ -201,10 +201,10 @@ class Promociones_aprobadas_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->CAT_ID]=$row->CAT_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
        function get_subcategorias()
     {
@@ -216,10 +216,10 @@ class Promociones_aprobadas_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->SUB_ID]=$row->SUB_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
 	function get_paquetes()
     {
@@ -231,24 +231,24 @@ class Promociones_aprobadas_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->PAQ_ID]=$row->PAQ_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
 
     function decrementar($pUSER_ID,$pTIPO){
-        
+
 
     	$param = array(
     	   $pUSER_ID  // ,pUSER_ID INT
     	   ,$pTIPO  // ,pTIPO INT
     	);
-    	
+
 
     	$sql = "CALL AB_DESCONTAR_MAX(?,?)";
-    	$query = $this->db->query($sql, $param);  
-    	
+    	$query = $this->db->query($sql, $param);
+
         // $query->next_result(); // Dump the extra resultset.
         // $query->free_result(); // Does what it says.
 
@@ -264,7 +264,7 @@ class Promociones_aprobadas_model extends CI_Model
         );
 
         $sql = "CALL AB_CONTROL_PROMOCIONES_BEFORE_UPDATE_ALIADOS(?,?)";
-        $query = $this->db->query($sql, $param);  
+        $query = $this->db->query($sql, $param);
         return $query->result_array();
 
     }

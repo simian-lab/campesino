@@ -5,10 +5,10 @@ class Promociones extends Main {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->load->database();
-		
-		$this->load->library('grocery_crud');	
+
+		$this->load->library('grocery_crud');
 		$this->load->helper('url');
 	}
 
@@ -23,7 +23,7 @@ class Promociones extends Main {
         $arrMarcas = $this->promociones_model->get_marcas();
         $arrTipoPromocion=array('1'=>'Básica','2'=>'Premium Home','3'=>'Premium Categorías');
         $arrUsersAliados = $this->promociones_model->get_user_aliados();
-       
+
 		$crud = new grocery_CRUD();
 		$crud->set_theme('flexigrid');
 		$crud->set_table('PRO_PROMOCIONES');
@@ -39,7 +39,7 @@ class Promociones extends Main {
 			          	// $breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>';
 			          	$this->data['output'] =" <h1>No tenes permiso para acceder esta seccion</h1>" ;// $output = $crud->render();
 			            // $this->data['output'] = $output = $crud->render(); ;// $output = $crud->render();
-			            $breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>'; 
+			            $breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>';
 			          	$this->data['titulo']='Permiso denegado';
 			          	$this->data['encabezado']='Error';
 			          	$this->error('promociones',$this->data,$breadcrums);
@@ -57,7 +57,7 @@ class Promociones extends Main {
 		   $crud->field_type('VISIBILITY','hidden');
 
 	   }
-         		 
+
 
 		$crud->set_subject('Promociones');
 
@@ -67,9 +67,9 @@ class Promociones extends Main {
 			$crud->unset_add();
 		}
 		else{
-			$crud->unset_read();	
+			$crud->unset_read();
 		}
-		
+
 
         $crud->display_as('PRO_NOMBRE','Nombre promoción')
         	 ->display_as('PRO_ID','ID')
@@ -87,6 +87,7 @@ class Promociones extends Main {
              ->display_as('CAT_ID','Categoría')
              ->display_as('SUB_ID','Subcategoría')
              ->display_as('AUTORIZADO','Estado')
+             ->display_as('eventos','Eventos')
              ->display_as('MAR_ID','Marca')
              ->display_as('Paquete')
              ->display_as('PRO_TIPO_MONEDA', 'Moneda')
@@ -99,21 +100,24 @@ class Promociones extends Main {
 
 
 
- 		 
-       //***************************	Relacion de tablas ***************************	
+
+       //***************************	Relacion de tablas ***************************
        $crud->set_relation_n_n('Tags', 'TAG_PROMOCIONES', 'TAGS_NOMBRES', 'PRO_ID', 'TAGS_ID', 'TAGS_NOMBRE' );
-       
+
+
+       $crud->set_relation_n_n('eventos', 'EXP_EVENTOXPROMOCION', 'EVE_EVENTOS', 'EXP_PROMOCION', 'EXP_EVENTO', 'EVE_NOMBRE');
+
        $crud->order_by('PRO_FECHA','DESC');
 
-		
+
         if($result['group_id']==3){
-        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_URL','PRO_AUTOR','ID_USER_CREADOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
+        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_URL','PRO_AUTOR','ID_USER_CREADOR','PRO_FECHA','AUTORIZADO','eventos', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         else{
-        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
+        	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','eventos', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
-        $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID');
-        $crud->columns('PRO_ID', 'PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'Paquete', 'PRO_SRC_ID');
+        $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID','eventos');
+        $crud->columns('PRO_ID', 'PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
@@ -141,16 +145,16 @@ class Promociones extends Main {
 			$crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
 			$crud->callback_field('ID_USER_CREADOR',array($this,'get_id_user_creador'));
 		}
-		
+
 		$crud->set_rules('PRO_PRECIO_INICIAL','Precio inicial','integer|less_than[100000000]');
 		$crud->set_rules('PRO_PRECIO_FINAL','Precio final','integer|less_than[100000000]');
 		$crud->set_rules('PRO_DESCUENTO','Descuento','is_natural|max_length[3]|less_than[101]');
-		
+
 		if($state == 'insert_validation' || $state == 'update_validation'){
 			$url = $this->input->post('PRO_URL');
-			
+
 			if (! filter_var($url, FILTER_VALIDATE_URL)){
-			
+
 				echo '<textarea>'.json_encode(
 												array(
 															'success'	=>	false,
@@ -159,14 +163,14 @@ class Promociones extends Main {
 													)
 											).'</textarea>';
 				die();
-				
+
 			}
 		}
 
 		$crud->unique_fields('PRO_NOMBRE');
 
 		$crud->callback_column('PRO_SRC_ID',array($this,'tipo_promocion'));
-		
+
 
         $crud->unset_texteditor('PRO_DESCRIPCION','full_text');
 		$crud->field_type('PRO_ID','hidden');
@@ -193,7 +197,7 @@ class Promociones extends Main {
 	    } else {
 	    	$arrMarcas = array('' => 'No hay marcas');
 	    }
-	    
+
 	    if(is_array($arrSubCategorias)) {
 	    	asort($arrSubCategorias);
 	    } else {
@@ -202,7 +206,7 @@ class Promociones extends Main {
 
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
-        $crud->field_type('Tags','multiselect');  
+        $crud->field_type('Tags','multiselect');
         $crud->field_type('PRO_FECHA','invisible');
 		$crud->field_type('CAT_ID','dropdown', $arrCategorias);
 		$crud->field_type('SUB_ID','dropdown', $arrSubCategorias);
@@ -212,7 +216,7 @@ class Promociones extends Main {
 		$crud->field_type('PRO_HASH','invisible');
 		$crud->field_type('PRO_ACTIVA','invisible');
 
-		 
+
 		if( $state=='edit'){
 
 			$crud->field_type('AUTORIZADO','hidden',0);
@@ -229,17 +233,17 @@ class Promociones extends Main {
 		$crud->field_type('PRO_AUTOR','invisible');
 
 		$crud->set_language('spanish');
-		
+
 		$this->data['output'] = $output = $crud->render();
 		$this->data['titulo']='Promociones';
 		$this->data['encabezado']='Gestión de promociones';
 
-		$breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>'; 
+		$breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>';
 		if($result['group_id']==3){
 			$this->salida('promociones/promociones',$this->data, $breadcrums);
 		}
 		else{
-			$this->salida('promociones_view',$this->data, $breadcrums);	
+			$this->salida('promociones_view',$this->data, $breadcrums);
 		}
 
 	}
@@ -386,7 +390,7 @@ function tipo_promocion($post_array){
         break;
       case '3':
          return 'Premium';
-        break;  
+        break;
       default:
          return 'Sin Ubicación';
         break;
@@ -424,12 +428,19 @@ $this->load->model('promociones_model');
 $pUSER_ID=$post_array['PRO_USER_CREADOR'];
 $pTIPO = $post_array['PRO_SRC_ID'];
 
-$datos= $this->promociones_model->decrementar($pUSER_ID,$pTIPO);
-$msg_error=$datos[0]["RESPUESTA"];
-	if($msg_error!='0'){
-		echo '<script> alert("Ha superado el límite de promociones para este paquete." ) </script>';
-		exit();
-	}
+
+foreach ($post_array['eventos'] as $evento){
+
+  $datos= $this->promociones_model->decrementar($pUSER_ID,$pTIPO,$evento);
+  $msg_error=$datos[0]["RESPUESTA"];
+  $msg_msg=$datos[0]["COMENTARIO"];
+  //print_R($this->session->userdata('sadmin_user_id'));die();
+    if($msg_error!='0'){
+      echo '<script> alert("'.$msg_msg.'" ) </script>';
+      exit();
+    }
+
+}
 
     $post_array['AUTORIZADO']='0';
     $post_array['PRO_FECHA']=date('Y-m-d h:m:s');
@@ -444,7 +455,7 @@ $msg_error=$datos[0]["RESPUESTA"];
 }
 
 function before_update($post_array, $primary_key){
-	
+
 	$file_name = $post_array['PRO_LOGO_PREMIUM'];
 	$file_name = preg_replace("/([^a-zA-Z0-9\.\-\_]+?){1}/i", '', $file_name);
 	$file_name = str_replace(" ", "", $file_name);
@@ -483,7 +494,7 @@ function before_update($post_array, $primary_key){
     }
     else{
     	$post_array['PRO_ACTIVA'] = '';
-    	$this->promociones_model->send_mail_aliado_edit($datos_envio);	
+    	$this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
 
 	return $post_array;
@@ -496,7 +507,7 @@ function fnc_after_update($post_array){ //print_r($post_array);die();
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $post_array['PRO_USER_CREADOR'];
     $this->promociones_model->send_mail_user_edit($datos_envio);
-    
+
 
 }
 
@@ -545,7 +556,7 @@ function control_size($path){
 function control_size_name($name){
 	$name = explode('.',$name);
 
-	if(strlen($name[0]) > 31){ // Cuenta 25 caracteres. 
+	if(strlen($name[0]) > 31){ // Cuenta 25 caracteres.
 		return false;
 	}
 
@@ -554,8 +565,8 @@ function control_size_name($name){
 
 
 public function check_imagen($uploader_response,$field_info, $files_to_upload){
-		
-		$file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name; 
+
+		$file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name;
 
 	//print_r($files_to_upload);die();
 		 if( !$this->is_image($file_uploaded)){
@@ -586,7 +597,7 @@ public function check_imagen($uploader_response,$field_info, $files_to_upload){
 		$this->image_moo->set_jpeg_quality(100);
 		$this->image_moo->load($file_uploaded)->resize_crop($width,$height)->save($file_uploaded,true);
 
-	 	
+
 	 	$ndestino =  '../static/multimedia/promociones/'.$uploader_response[0]->name;
 		copy($file_uploaded, $ndestino);
 
