@@ -318,16 +318,17 @@ class Promociones_premium_model extends CI_Model
 
     }
 
-    function decrementar($pUSER_ID,$pTIPO){
+    function decrementar($pUSER_ID,$pTIPO,$evento){
 
 
     	$param = array(
     	   $pUSER_ID  // ,pUSER_ID INT
     	   ,$pTIPO  // ,pTIPO INT
+         ,$evento  // ,evento INT
     	);
 
 
-    	$sql = "CALL AB_DESCONTAR_MAX(?,?)";
+    	$sql = "CALL AB_DESCONTAR_MAX(?,?,?)";
     	$query = $this->db->query($sql, $param);
 
         // $query->next_result(); // Dump the extra resultset.

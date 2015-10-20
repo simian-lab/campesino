@@ -55,13 +55,12 @@ class Asignar_paquetes_aliados extends Main {
 		->display_as('first_name','Nombres')
 		->display_as('last_name','Apellido')
 		->display_as('email2','Email corporativo')
-    ->display_as('paquete','Tipo de paquete')
 		->display_as('paquetes','Tipo de paquete')
 		->display_as('phone','Teléfono');
 
     $crud->set_relation_n_n('paquetes', 'AXP_ADMINXPAQUETE', 'PAQUETES_NOMBRES', 'AXP_ADMIN', 'AXP_PAQUETE', 'PAQ_NOMBRE');
 
-		$crud->columns('username','email','first_name','last_name','paquete','paquetes');
+		$crud->columns('username','email','first_name','last_name','paquetes');
 		$crud->fields('username','email','first_name','last_name','paquete','paquetes');
 
 		$crud->field_type('username', 'readonly');
