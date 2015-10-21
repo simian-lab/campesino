@@ -13,7 +13,7 @@ function cambiarValorCodSms(){
 	//#field-SOC_NOMBRE
 	var txt = $("#field-SOC_NOMBRE").val();
 	var str = txt.substr(0,5);
-	var strf=str.replace(" ","_"); 
+	var strf=str.replace(" ","_");
 	document.getElementById("field-SOC_CODIGO").value = strf.toUpperCase();
 }
 </script>
@@ -33,7 +33,7 @@ function cambiarValorCodSms(){
         <article class="module width_full">
             <div class="module_content">
                 <fieldset>
-                    
+
                     <label>Búsqueda</label>
                     <?php echo form_input($search);?>
                 <div class="submit_link">
@@ -44,7 +44,7 @@ function cambiarValorCodSms(){
         </article>
 	<?php echo form_close();?>
 	<?php }?>
-    <?php 
+    <?php
 	if(isset($output->output))
 		echo $output->output;
 	else
@@ -73,6 +73,13 @@ function cambiarValorCodSms(){
         else if(nombre_imagen_promocion_general != ''){
           var seccion = 'general';
         }
+
+
+        var eventos_promocion = "";
+        $( "#field_eventos_chzn ul li.search-choice span" ).each(function() {
+            eventos_promocion += $( this ).text()+",";
+        });
+        eventos_promocion = eventos_promocion.substring(0, eventos_promocion.length-1);
         //alert(nombre_imagen_promocion_general)
         //window.open('<?php echo base_url('index.php/main/vista_previa_promociones') ?>/'+nombre_promocion+'/'+descripcion_promocion+'/'+precio_inicial_promocion+'/'+precio_final_promocion+'/'+descuento_promocion+'/'+url_promocion);
         var newWin = window.open();
@@ -80,22 +87,22 @@ function cambiarValorCodSms(){
         $.ajax({
           type: 'POST',
           url: '<?php echo base_url('index.php/vista_previa/vista_previa/vista_previa_promociones') ?>',
-          data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion, tipo_moneda: tipo_moneda_promocion},
+          data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion, tipo_moneda: tipo_moneda_promocion, eventos: eventos_promocion},
           success: function(data){
             newWin.document.write(data);
             newWin.document.title = 'Vista previa';
           }
         });
     }
-    
-    $('#field-PRO_DESCRIPCION').keypress(function(e){ 
+
+    $('#field-PRO_DESCRIPCION').keypress(function(e){
       var cantCaracteres = $(this).val();
       var limit = $('#field-PRO_DESCRIPCION').attr('maxlength');
       if(limit == undefined){
         limit = 1;
       }
       if(cantCaracteres.length > limit){
-        $(this).val(cantCaracteres.substring(0,limit));    
+        $(this).val(cantCaracteres.substring(0,limit));
       }
     });
 
@@ -105,7 +112,7 @@ function cambiarValorCodSms(){
         //$('#field-PRO_DESCRIPCION').val('');
         $('#field-PRO_NOMBRE').attr('maxlength', '35');
         $('#field-PRO_DESCRIPCION').attr('maxlength', '68');
-        
+
       }
       else{
         var cantTitulo = $('#field-PRO_NOMBRE').val();
@@ -129,7 +136,7 @@ function cambiarValorCodSms(){
         //$('#field-PRO_DESCRIPCION').val('');
         $('#field-PRO_NOMBRE').attr('maxlength', '35');
         $('#field-PRO_DESCRIPCION').attr('maxlength', '68');
-        
+
       }
       else{
         var cantTitulo = $('#field-PRO_NOMBRE').val();
@@ -161,13 +168,13 @@ function cambiarValorCodSms(){
         $('input[name="s3a7c77a9"]').removeAttr('disabled');
       }
     });
-  
-    
-      
+
+
+
         var field2 = $('select[name="SUB_ID"]');
             //field2.children().remove().end();
             //field2.append('<option value="" ></option>')
-            //field2.trigger("liszt:updated"); 
+            //field2.trigger("liszt:updated");
 
         if($('#field-CAT_ID').val() != ''){
           var sub_id_selected = $('#field-SUB_ID').val();
@@ -192,13 +199,13 @@ function cambiarValorCodSms(){
                   }
                 }
                 field2.trigger("liszt:updated");
-              } 
+              }
             }
           });
         }
 
-        
-        
+
+
         $('#field-CAT_ID').on('change', function() {
             $.ajax({
               type: 'POST',
@@ -223,13 +230,13 @@ function cambiarValorCodSms(){
                     field2.append('<option value="' + categoriesArray[i][0] + '" >' + categoriesArray[i][1] + '</option>');
                   }
                   field2.trigger("liszt:updated");
-                } 
+                }
               }
             });
         });
-        
-     
-    
+
+
+
   </script>
 
   <script>

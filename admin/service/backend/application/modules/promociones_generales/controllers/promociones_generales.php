@@ -75,7 +75,8 @@ class Promociones_generales extends Main {
 	         ->display_as('PRO_AUTOR','Autor')
 	         ->display_as('CAT_ID','Categoría')
 	         ->display_as('SUB_ID','Subcategoría')
-	         ->display_as('AUTORIZADO','Estado')
+           ->display_as('AUTORIZADO','Estado')
+	         ->display_as('eventos','Eventos')
 	         ->display_as('MAR_ID','Marca')
 	         ->display_as('PRO_LOGO_VISA', 'Visa')
 	         ->display_as('PRO_TIPO_MONEDA', 'Moneda')
@@ -96,7 +97,7 @@ class Promociones_generales extends Main {
 
 		$crud->fields('PRO_NOMBRE','PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA','eventos','VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         $crud->required_fields('PRO_NOMBRE','PRO_LOGO_GENERAL','PRO_DESCRIPCION','PRO_URL','CAT_ID','MAR_ID','eventos');
-        $crud->columns('PRO_NOMBRE','PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO');
+        $crud->columns('PRO_NOMBRE','PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','eventos');
 
 		$crud->set_field_upload('PRO_LOGO_GENERAL','multimedia/promociones/');
 		$crud->callback_before_upload(array($this,'change_name_image'));
@@ -288,13 +289,18 @@ $this->load->model('promociones_generales_model');
 $pUSER_ID= $this->session->userdata('sadmin_user_id'); // Id de usuario que esta cargando la promo
 $pTIPO = 1;
 
-$datos= $this->promociones_generales_model->decrementar($pUSER_ID,$pTIPO);
-$msg_error=$datos[0]["RESPUESTA"];
-//print_R($this->session->userdata('sadmin_user_id'));die();
-	if($msg_error!='0'){
-		echo '<script> alert("Ha superado el límite de promociones para este paquete." ) </script>';
-		exit();
-	}
+foreach ($post_array['eventos'] as $evento){
+
+  $datos= $this->promociones_generales_model->decrementar($pUSER_ID,$pTIPO,$evento);
+  $msg_error=$datos[0]["RESPUESTA"];
+  $msg_msg=$datos[0]["COMENTARIO"];
+  //print_R($this->session->userdata('sadmin_user_id'));die();
+    if($msg_error!='0'){
+      echo '<script> alert("'.$msg_msg.'" ) </script>';
+      exit();
+    }
+
+}
 
 
     $post_array['AUTORIZADO']='0';

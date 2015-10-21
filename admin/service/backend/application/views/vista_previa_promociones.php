@@ -36,6 +36,7 @@
         foreach ($arrEventos as $evento) {
         if($seccion == 'premium_home' || $seccion == 'premium'):
         ?>
+        <hr><h1 style="font-weight: bolder;text-transform: uppercase;margin-left: 40px;"><?php echo $evento;?></h1><hr>
         <div class="wrapp section <?php echo $evento;?>">
             <div class="container">
                 <div class="row">
@@ -108,6 +109,7 @@
         <?php endif;  ?>
 
         <?php if($seccion == 'general' || $seccion == 'premium'): ?>
+        <hr><h1 style="font-weight: bolder;text-transform: uppercase;margin-left: 40px;"><?php echo $evento;?></h1><hr>
         <div class="wrapp section <?php echo $evento;?>">
             <div class="container">
                 <div class="row">
