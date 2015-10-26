@@ -59,7 +59,7 @@
       <!--<div class="col-lg-3 box-right">
         <div class="sponsor right">
           <span>Evento de:</span>
-          <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Menu')"><img src="<?php echo $base_url_static;?>img/camara-de-comercio.png" alt=""></a>
+          <a href="http://ccce.org.co/" target="_blank" onclick="onClickPublicidad('CCCE', 'Menu')"><img src="<?php //echo $base_url_static;?>img/camara-de-comercio.png" alt=""></a>
         </div>
       </div>-->
     </div>
