@@ -223,7 +223,8 @@ function delete_motivo_rechazo($id_promo){
 	$result = $this->promociones_generales_model->getPromocionById($id_promo);
 	$datos_envio['titulo'] = $result['PRO_NOMBRE'];
 	$datos_envio['autor'] = $result['PRO_AUTOR'];
-	$datos_envio['aliado'] = $result['PRO_USER_CREADOR'];
+  $datos_envio['aliado'] = $result['PRO_USER_CREADOR'];
+	$datos_envio['eventos'] = $this->promociones_generales_model->get_eventos_promocion($id_promo);
 	$datos= $this->promociones_generales_model->send_mail_delete_user($datos_envio);
 	$this->promociones_generales_model->send_mail_delete_aliado($datos_envio);
 }
