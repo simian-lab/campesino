@@ -170,7 +170,7 @@ class Promociones_generales_model extends CI_Model
 
 
             $this->email->subject('Nueva promoción para aprobar');
-            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
             $this->email->send();
             return true;

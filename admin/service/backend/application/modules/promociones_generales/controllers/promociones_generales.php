@@ -358,12 +358,13 @@ function before_update($post_array, $primary_key){
 	return $post_array;
 }
 
-function fnc_after_update($post_array){ //print_r($post_array);die();
+function fnc_after_update($post_array, $primary_key){ //print_r($post_array);die();
 	$this->load->model('promociones_generales_model');
 
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
+  $datos_envio['eventos'] = $this->promociones_generales_model->get_eventos_promocion($primary_key);
     $this->promociones_generales_model->send_mail_user_edit($datos_envio);
 
 }
