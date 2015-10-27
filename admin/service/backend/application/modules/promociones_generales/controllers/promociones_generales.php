@@ -339,6 +339,7 @@ function before_update($post_array, $primary_key){
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
+  $datos_envio['eventos'] = $this->promociones_generales_model->get_eventos_promocion($primary_key);
 
 	$visibilidad = $this->promociones_generales_model->verificar_visibilidad($primary_key);
 	$post_array['VISIBILITY'] = 1;
