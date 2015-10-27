@@ -88,18 +88,17 @@
               <div class="titulo-publicidad">
                 <span>Publicidad</span>
               </div>
-              <script type="text/javascript">
-                sas.call("std", {
-                  siteId:  41700, //
-                  pageId:  282275, // Página : Cyberlunes/home
-                  formatId:  9611, // Formato : Primer Boton 300x100 300x100
-                  target:  ''   // Segmentación
-                });
-              </script>
-              <noscript>
-                <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
-                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                </noscript>
+              <script type=""text/javascript"">
+          sas_pageid='57473/592107'; // Página : LoEncontraste/especiales
+              sas_formatid='9611';  // Formato : Push Down Top 960x90
+              sas_target='';   // Segmentación
+              SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
+
+          </script>
+          <noscript>
+           <a href=""http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich"" target=""_blank"">                
+            <img src=""http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]"" border=""0"" alt="""" /></a>
+          </noscript>
               </div>
             </div>
             <div class="item">
@@ -109,17 +108,15 @@
                   <span>Publicidad</span>
                 </div>
                 <script type="text/javascript">
-                  sas.call("std", {
-                    siteId:  41700, //
-                    pageId:  282275, // Página : Cyberlunes/home
-                    formatId:  9608, // Formato : Segundo Boton 300x100 300x100
-                    target:  ''   // Segmentación
-                  });
-                </script>
-                <noscript>
-                  <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
-                    <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=9608&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                  </noscript>
+            sas_pageid='57473/592107'; // Página : LoEncontraste/especiales
+                sas_formatid='9608';  // Formato : Push Down Top 960x90
+                sas_target='';   // Segmentación
+                SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
+            </script>
+            <noscript>
+             <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+              <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+            </noscript>
                 </div>
               </div>
               <div class="item">
@@ -129,17 +126,15 @@
                     <span>Publicidad</span>
                   </div>
                   <script type="text/javascript">
-                    sas.call("std", {
-                      siteId:  41700, //
-                      pageId:  282275, // Página : Cyberlunes/home
-                      formatId:  11772, // Formato : Tercer Boton 300x100 300x100
-                      target:  ''   // Segmentación
-                    });
-                  </script>
-                  <noscript>
-                    <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
-                      <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=11772&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
-                    </noscript>
+            sas_pageid='57473/592107'; // Página : LoEncontraste/especiales
+                sas_formatid='11772';  // Formato : Push Down Top 960x90
+                sas_target='';   // Segmentación
+                SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);           
+          </script>
+          <noscript>
+           <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+            <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
+          </noscript>
                   </div>
                 </div>
               </div>
