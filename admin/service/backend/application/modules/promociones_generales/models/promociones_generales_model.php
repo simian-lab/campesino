@@ -75,7 +75,7 @@ class Promociones_generales_model extends CI_Model
         $this->email->to($result['email']);
 
         $this->email->subject('Nueva promoción creada');
-        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos']  );
 
         $this->email->send();
     }
@@ -135,7 +135,7 @@ class Promociones_generales_model extends CI_Model
 
 
 			$this->email->subject('Nueva promoción para aprobar');
-			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
 			$this->email->send();
 			return true;

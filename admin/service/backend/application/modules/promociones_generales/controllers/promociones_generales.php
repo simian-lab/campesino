@@ -369,7 +369,7 @@ function fnc_after_update($post_array, $primary_key){ //print_r($post_array);die
 
 }
 
-function fnc_after_insert($post_array){
+function fnc_after_insert($post_array, $primary_key){
     $this->load->helper('url');
 	$this->load->model('promociones_generales_model');
 
@@ -379,6 +379,7 @@ function fnc_after_insert($post_array){
 	  $datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
 	  $datos_envio['autor'] = $post_array['PRO_AUTOR'];
 	  $datos_envio['aliado'] = $post_array['PRO_USER_CREADOR'];
+    $datos_envio['eventos'] = $this->promociones_generales_model->get_eventos_promocion($primary_key);
 	  $datos= $this->promociones_generales_model->send_mail_user($datos_envio);
 	  $this->promociones_generales_model->send_mail_aliado($datos_envio);
        // return true;
