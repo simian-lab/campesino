@@ -75,7 +75,7 @@ class Promociones_generales_model extends CI_Model
         $this->email->to($result['email']);
 
         $this->email->subject('Nueva promoción creada');
-        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos']  );
 
         $this->email->send();
     }
@@ -101,7 +101,7 @@ class Promociones_generales_model extends CI_Model
         $this->email->to($result['email']);
 
         $this->email->subject('Promoción editada');
-        $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos']  );
 
         $this->email->send();
     }
@@ -135,7 +135,7 @@ class Promociones_generales_model extends CI_Model
 
 
 			$this->email->subject('Nueva promoción para aprobar');
-			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
 			$this->email->send();
 			return true;
@@ -170,7 +170,7 @@ class Promociones_generales_model extends CI_Model
 
 
             $this->email->subject('Nueva promoción para aprobar');
-            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
             $this->email->send();
             return true;
@@ -197,7 +197,7 @@ class Promociones_generales_model extends CI_Model
         $this->email->to($result['email']);
 
         $this->email->subject('Promoción eliminada');
-        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos']  );
 
         $this->email->send();
     }
@@ -230,12 +230,29 @@ class Promociones_generales_model extends CI_Model
 
 
             $this->email->subject('Promoción eliminada');
-            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
             $this->email->send();
             //echo $this->email->print_debugger();die();
             return true;
             // echo $this->email->print_debugger();
+    }
+
+
+
+    function get_eventos_promocion($id_promo){
+            $this->db->select('EVE_NOMBRE');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_NOMBRE'];
+            }
+            $listado_eventos = implode(',',$arraEventos);
+            return $listado_eventos;
     }
 
 
