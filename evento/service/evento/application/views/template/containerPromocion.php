@@ -160,18 +160,14 @@
               <img src="<?php echo $base_url_static;?>img/publi_left.jpg" class="img-publi" alt="Publicidad" />
               <h3 class="title-superbanner">Publicidad</h3>
                 <script type="text/javascript">
-                 sas.call("std", {
-                  siteId:  41700, //
-                  pageId:  439812, // Página : Cyberlunes/categoria
-                  formatId:  31982, // Formato : Superbanner categoria 960x90
-                  target:  'seccion=<?php echo $this->uri->segment(2); ?>',   // Segmentación
-
-                 });
+                    sas_pageid='57473/592115'; // Página : LoEncontraste/especiales
+                    sas_formatid='31982';  // Formato : Push Down Top 960x90
+                    sas_target='seccion=<?php echo $this->uri->segment(2); ?>',   // Segmentación
+                    SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
                 </script>
                 <noscript>
-                  <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
-                    <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=categoria&fmtid=31982&visit=m&tmstp=[timestamp]" border="0" alt="" />
-                  </a>
+                 <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=blackfriday&fmtid=31982&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+                  <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=blackfriday&fmtid=31982&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                 </noscript>
               </div>
             </div>
