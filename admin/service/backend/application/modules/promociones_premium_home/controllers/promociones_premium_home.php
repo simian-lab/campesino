@@ -349,7 +349,7 @@ function fnc_after_update($post_array, $primary_key){ //print_r($post_array);die
 
 }
 
-function fnc_after_insert($post_array){
+function fnc_after_insert($post_array, $primary_key){
     $this->load->helper('url');
 	$this->load->model('promociones_premium_home_model');
 
