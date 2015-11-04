@@ -304,7 +304,7 @@ function before_update($post_array, $primary_key){
 	return $post_array;
 }
 
-function fnc_after_insert($post_array){
+function fnc_after_insert($post_array, $primary_key){
     $this->load->helper('url');
 	$this->load->model('promociones_aprobadas_model');
 
@@ -313,6 +313,7 @@ function fnc_after_insert($post_array){
 
       $datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
       $datos_envio['autor'] = $post_array['PRO_AUTOR'];
+    $datos_envio['eventos'] = $this->promociones_aprobadas_model->get_eventos_promocion($primary_key);
       $datos= $this->promociones_aprobadas_model->send_mail_user($datos_envio);
        // return true;
 	return $post_array;

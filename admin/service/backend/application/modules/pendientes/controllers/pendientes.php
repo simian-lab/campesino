@@ -5,10 +5,10 @@ class Pendientes extends Main {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->load->database();
-		
-		$this->load->library('grocery_crud');	
+
+		$this->load->library('grocery_crud');
 		$this->load->helper('url');
 	}
 
@@ -69,9 +69,9 @@ class Pendientes extends Main {
     $crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
     $crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
 
-    	//***************************	Relacion de tablas ***************************	
+    	//***************************	Relacion de tablas ***************************
 
-      
+
     $crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_AUTOR','AUTORIZADO','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL', 'VISTA_PREVIA');
 
     $crud->columns('PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_NOMBRE','PRO_AUTOR','VISIBILITY','AUTORIZADO','PRO_SRC_ID', 'Paquete');
@@ -93,17 +93,17 @@ class Pendientes extends Main {
     $crud->callback_field('VISTA_PREVIA',array($this,'link_vista_previa'));
 
 
-    $crud->field_type('PRO_USER_ULTIMO','hidden',$this->session->userdata('sadmin_user_id')); 
-    $crud->field_type('PRO_USER_AUTORIZADOR','hidden',$this->session->userdata('sadmin_user_id')); 
-  
+    $crud->field_type('PRO_USER_ULTIMO','hidden',$this->session->userdata('sadmin_user_id'));
+    $crud->field_type('PRO_USER_AUTORIZADOR','hidden',$this->session->userdata('sadmin_user_id'));
+
     $crud->order_by('PRO_FECHA','DESC');
-       
-    
+
+
     $this->data['output'] = $output = $crud->render();
     $this->data['titulo']='Promociones pendientes';
     $this->data['encabezado']='Gestión de novedades';
 
-    $breadcrums[]='<a class="current" href="'.site_url('main/pendientes').'">Promocines pendientes</a>'; 
+    $breadcrums[]='<a class="current" href="'.site_url('main/pendientes').'">Promocines pendientes</a>';
     $this->salida('pendientes/pendientes',$this->data, $breadcrums);
   }
 
@@ -207,7 +207,7 @@ function columna_paquete($value, $row){
   //print_R($row);
   $paquete = $this->pendientes_model->get_paquete($row->PRO_USER_CREADOR);
 
-  
+
   if(empty($paquete)){
     return 'sin paquete';
   }
@@ -225,7 +225,7 @@ function tipo_promocion($post_array){
         break;
       case '3':
          return 'Premium';
-        break;  
+        break;
       default:
          return 'Sin Ubicación';
         break;
@@ -240,17 +240,18 @@ function tipo_promocion($post_array){
         $usuario_creador =$post_array['PRO_USER_CREADOR'];
         $autor=$post_array['PRO_AUTOR'];
         $motivo_rechazo = $post_array['PRO_MOTIVO_RECHAZO'];
+        $eventos_promo = $this->pendientes_model->get_eventos_promocion($primary_key);
 
       if($post_array['AUTORIZADO']==2 ){
         $asunto='Su promocion ha sido RECHAZADA';
-        $datos= $this->pendientes_model->send_mail_rechazado($titulo_promo,$usuario_creador,$asunto,$autor, $post_array['AUTORIZADO'],$motivo_rechazo);
+        $datos= $this->pendientes_model->send_mail_rechazado($titulo_promo,$usuario_creador,$asunto,$autor, $post_array['AUTORIZADO'],$eventos_promo,$motivo_rechazo);
       }
 
        if($post_array['AUTORIZADO']==1 ){
         // $titulo_promo =$post_array['PRO_NOMBRE'];
         // $usuario_creador =$post_array['PRO_USER_CREADOR'];
         $asunto='Su promocion ha sido APROBADA';
-        $datos= $this->pendientes_model->send_mail_rechazado($titulo_promo,$usuario_creador,$asunto,$autor,$post_array['AUTORIZADO']);
+        $datos= $this->pendientes_model->send_mail_rechazado($titulo_promo,$usuario_creador,$asunto,$autor,$post_array['AUTORIZADO'],$eventos_promo);
       }
 
       // return true;
