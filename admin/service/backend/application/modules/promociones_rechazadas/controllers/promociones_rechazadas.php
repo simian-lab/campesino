@@ -5,10 +5,10 @@ class Promociones_rechazadas extends Main {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->load->database();
-		
-		$this->load->library('grocery_crud');	
+
+		$this->load->library('grocery_crud');
 		$this->load->helper('url');
 	}
 
@@ -24,7 +24,7 @@ class Promociones_rechazadas extends Main {
         $arrMarcas = $this->promociones_rechazadas_model->get_marcas();
         $arrTipoPromocion=array('1'=>'General','2'=>'Premium Home','3'=>'Premium Categorías');
         $arrUsersAliados = $this->promociones_rechazadas_model->get_user_aliados();
-       
+
 		$crud = new grocery_CRUD();
 		$crud->set_theme('flexigrid');
 		$crud->set_table('PRO_PROMOCIONES');
@@ -41,7 +41,7 @@ class Promociones_rechazadas extends Main {
 			          	// $breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>';
 			          	$this->data['output'] =" <h1>No tenes permiso para acceder esta seccion</h1>" ;// $output = $crud->render();
 			            // $this->data['output'] = $output = $crud->render(); ;// $output = $crud->render();
-			            $breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>'; 
+			            $breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>';
 			          	$this->data['titulo']='Permiso denegado';
 			          	$this->data['encabezado']='Error';
 			          	$this->error('promociones',$this->data,$breadcrums);
@@ -59,7 +59,7 @@ class Promociones_rechazadas extends Main {
 		   $crud->field_type('VISIBILITY','hidden');
 
 	   }
-         		 
+
 
 		$crud->set_subject('Promociones');
 
@@ -79,6 +79,7 @@ class Promociones_rechazadas extends Main {
              ->display_as('CAT_ID','Categoría')
              ->display_as('SUB_ID','Subcategoría')
              ->display_as('AUTORIZADO','Estado')
+             ->display_as('eventos','Eventos')
              ->display_as('MAR_ID','Marca')
              ->display_as('Paquete')
              ->display_as('PRO_TIPO_MONEDA', 'Moneda')
@@ -91,28 +92,31 @@ class Promociones_rechazadas extends Main {
 	     $crud->unset_edit();
 	     $crud->unset_delete();
 	     $crud->unset_add();
-		 
-       //***************************	Relacion de tablas ***************************	
+
+       //***************************	Relacion de tablas ***************************
 
        $crud->set_relation_n_n('Tags', 'TAG_PROMOCIONES', 'TAGS_NOMBRES', 'PRO_ID', 'TAGS_ID', 'TAGS_NOMBRE' );
-       
+
+
+       $crud->set_relation_n_n('eventos', 'EXP_EVENTOXPROMOCION', 'EVE_EVENTOS', 'EXP_PROMOCION', 'EXP_EVENTO', 'EVE_NOMBRE');
+
        $crud->order_by('PRO_FECHA','DESC');
 
 
-		$crud->fields('PRO_NOMBRE','PRO_SRC_ID','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL','MOTIVO','VISTA_PREVIA');
-        $crud->required_fields('PRO_NOMBRE','PRO_SRC_ID','PRO_DESCRIPCION','PRO_URL', 'CAT_ID','PRO_USER_CREADOR');
-        $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO', 'Paquete','PRO_SRC_ID','VISIBILITY');
+		$crud->fields('PRO_NOMBRE','PRO_SRC_ID','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL','MOTIVO','VISTA_PREVIA','eventos');
+        $crud->required_fields('PRO_NOMBRE','PRO_SRC_ID','PRO_DESCRIPCION','PRO_URL', 'CAT_ID','PRO_USER_CREADOR','eventos');
+        $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','PRO_SRC_ID','VISIBILITY','eventos');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
 		$crud->set_field_upload('PRO_LOGO_GENERAL','multimedia/promociones/');
 		$crud->callback_after_upload(array($this,'check_imagen'));
 		$crud->callback_column('Paquete', array($this, 'columna_paquete'));
-	
+
 		$crud->callback_after_insert(array($this,'fnc_after_insert')); // despues de insertar
 		$crud->callback_before_update(array($this,'before_update')); // anets de insertar
 		$crud->callback_before_insert(array($this,'before_insert')); //  antes de insertar
-		
+
 		$crud->callback_field('PRO_TIPO_MONEDA',array($this,'tipo_moneda'));
 		$crud->callback_field('PRO_SRC_ID',array($this,'tipo_promocion'));
 		$crud->callback_field('MAR_ID',array($this,'get_marca'));
@@ -145,7 +149,7 @@ class Promociones_rechazadas extends Main {
 
 		$crud->field_type('PRO_DESCRIPCION','text');
 		$crud->field_type('PRO_URL','String');
-        $crud->field_type('Tags','multiselect');  
+        $crud->field_type('Tags','multiselect');
         $crud->field_type('PRO_FECHA','invisible');
 		$crud->field_type('PRO_SRC_ID','dropdown', $arrTipoPromocion);
 		$crud->field_type('CAT_ID','dropdown', $arrCategorias);
@@ -175,12 +179,12 @@ class Promociones_rechazadas extends Main {
 		$crud->field_type('PRO_AUTOR','invisible');
 
 		$crud->set_language('spanish');
-		
+
 		$this->data['output'] = $output = $crud->render();
 		$this->data['titulo']='Promociones';
 		$this->data['encabezado']='Gestión de promociones';
 
-		$breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>'; 
+		$breadcrums[]='<a class="current" href="'.site_url('main/promociones').'">Promociones</a>';
 		$this->salida('promociones_rechazadas/promociones_rechazadas',$this->data, $breadcrums);
 	}
 
@@ -334,8 +338,8 @@ function is_image($path){
 
 public function check_imagen($uploader_response,$field_info, $files_to_upload){
 
-		$file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name; 
-		  
+		$file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name;
+
 		 if( !$this->is_image($file_uploaded)){
 
 		 	@unlink($file_uploaded);
@@ -347,9 +351,9 @@ public function check_imagen($uploader_response,$field_info, $files_to_upload){
 	 	return true;
 }
 
- 
 
 
-          
+
+
 
 }

@@ -58,16 +58,16 @@ class Pendientes_model extends CI_Model
             $this->db->select('*');
             $this->db->from('PRO_PROMOCIONES');
             $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
-            $this->db->where('PRO_ID', $id);            
+            $this->db->where('PRO_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
 	public function get_paquete($id_user){
@@ -81,7 +81,7 @@ class Pendientes_model extends CI_Model
         foreach ($query->row_array() as $row)
         {
             $salida[$id_user]=$row;
-           
+
         }
         return  $salida;
 	}
@@ -104,6 +104,20 @@ class Pendientes_model extends CI_Model
 		return $row;
 	}
 
+    function get_eventos_promocion($id_promo){
+            $this->db->select('EVE_NOMBRE');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_NOMBRE'];
+            }
+            $listado_eventos = implode(',',$arraEventos);
+            return $listado_eventos;
+    }
 
 	function get_user($id_user){
 		$this->db->select('id,username');
@@ -131,7 +145,7 @@ class Pendientes_model extends CI_Model
 	}
 
 
-	function send_mail_rechazado($titulo_promo,$usuario_creador,$asunto,$autor, $estado, $motivo_rechazo = ''){
+	function send_mail_rechazado($titulo_promo,$usuario_creador,$asunto,$autor, $estado,$eventos_promo, $motivo_rechazo = ''){
 	       $this->load->library('email');
 
 			$this->db->select('id,email');
@@ -158,15 +172,15 @@ class Pendientes_model extends CI_Model
 
 			$this->email->from('no-reply@cyberlunes.com.co','Promociones');
 			$this->email->to($resp['email']);
-			// $this->email->to('mgranada@brandigital.com'); 
-			
+			// $this->email->to('mgranada@brandigital.com');
+
 
 			$this->email->subject($asunto);
 			if($estado == 2){
-				$this->email->message('Se ha rechazado la promoción:<br> Promoción: '.$titulo_promo.'<br> Autor: '.$autor.'<br> Motivo: '.$motivo_rechazo);	
+				$this->email->message('Se ha rechazado la promoción:<br> Promoción: '.$titulo_promo.'<br> Autor: '.$autor.'<br> Eventos: '.$eventos_promo.'<br> Motivo: '.$motivo_rechazo);
 		    }
 		    else{
-		    	$this->email->message('Se ha aprobado la promoció:<br> Promoción: '.$titulo_promo.'<br> Autor: '.$autor);	
+		    	$this->email->message('Se ha aprobado la promoció:<br> Promoción: '.$titulo_promo.'<br> Autor: '.$autor.'<br> Eventos: '.$eventos_promo);
 		    }
 			$this->email->send();
 			return true;
@@ -176,64 +190,64 @@ class Pendientes_model extends CI_Model
 	function getCategoriaId($id) {
             $this->db->select('*');
             $this->db->from('CAT_CATEGORIA');
-            $this->db->where('CAT_ID', $id);            
+            $this->db->where('CAT_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function getSubCategoriaId($id) {
             $this->db->select('*');
             $this->db->from('SUB_SUBCATEGORIA');
-            $this->db->where('SUB_ID', $id);            
+            $this->db->where('SUB_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function getTiendaId($id) {
             $this->db->select('*');
             $this->db->from('TIE_TIENDAS');
-            $this->db->where('TIE_ID_USER', $id);            
+            $this->db->where('TIE_ID_USER', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
     function getMarcaId($id) {
             $this->db->select('* ');
             $this->db->from('MAR_MARCAS');
-            $this->db->where('MAR_ID', $id);            
+            $this->db->where('MAR_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
-    
-   
-	
+
+
+
 }
