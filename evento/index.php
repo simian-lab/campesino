@@ -1,5 +1,5 @@
 <?php
- /*
+/*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
  *---------------------------------------------------------------
@@ -18,78 +18,11 @@
  *
  */
 
-switch (trim($_SERVER['SERVER_NAME']))
-{	
-	case 'evento.cyberlunes.local':	 
-		$dominios_permitidos = array(
-				'http://evento.cyberlunes.local',
-				'https://evento.cyberlunes.local',
-				'http://static.cyberlunes.local',
-				'https://static.cyberlunes.local',
-				'http://fonts.gstatic.com/'
-			);
-        define('ENVIRONMENT', 'local');
-	break;
-	case 'evento.cyberlunes.dev.brandigital.com':	 
-		$dominios_permitidos = array(
-				'http://evento.cyberlunes.dev.brandigital.com',
-				'https://evento.cyberlunes.dev.brandigital.com',
-				'http://static.cyberlunes.dev.brandigital.com',
-				'https://static.cyberlunes.dev.brandigital.com',
-				'http://fonts.gstatic.com/'
-			);
-        define('ENVIRONMENT', 'development');
-	break;
-	case 'evento-stage.cyberlunes.com.co':	 
-		$dominios_permitidos = array(
-				'http://evento-stage.cyberlunes.com.co',
-				'https://evento-stage.cyberlunes.com.co',
-				'http://static-stage.cyberlunes.com.co',
-				'https://static-stage.cyberlunes.com.co',
-				'http://fonts.gstatic.com/'
-			);
-        define('ENVIRONMENT', 'testing');
-	break;
-	case 'staging.cyberlunes.com.co':	 
-		$dominios_permitidos = array(
-				'http://staging.cyberlunes.com.co',
-				'https://staging.cyberlunes.com.co',
-				'http://static-stage.cyberlunes.com.co',
-				'https://static-stage.cyberlunes.com.co',
-				'http://fonts.gstatic.com/',
-				'http://d3b369zdeuh99v.cloudfront.net/'
-			);
-        define('ENVIRONMENT', 'production');
-	break;
-	case 'origin-www2.cyberlunes.com.co':	 
-		$dominios_permitidos = array(
-				'http://origin-www2.cyberlunes.com.co',
-				'https://origin-www2.cyberlunes.com.co',
-				'http://static-stage.cyberlunes.com.co',
-				'https://static-stage.cyberlunes.com.co',
-				'http://fonts.gstatic.com/',
-				'http://d3b369zdeuh99v.cloudfront.net/'
-			);
-        define('ENVIRONMENT', 'origin');
-	break;
-	case 'www.cyberlunes.com.co':	 
-		$dominios_permitidos = array(
-				'http://www.cyberlunes.com.co',
-				'https://www.cyberlunes.com.co',
-				'http://static.cyberlunes.com.co',
-				'https://static.cyberlunes.com.co',
-				'http://fonts.gstatic.com/',
-				'http://d3b369zdeuh99v.cloudfront.net/'
-			);
-        define('ENVIRONMENT', 'production');
-	break;
-	default:
-		define('ENVIRONMENT', 'testing');
-	break;
-}
-header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));  
+defined('ENVIRONMENT')
+    || define('ENVIRONMENT', (getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'production'));
 
-
+defined('EVENTO')
+    || define('EVENTO', (getenv('SUB') ? getenv('SUB') : 'bfr'));
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -106,14 +39,13 @@ if (defined('ENVIRONMENT'))
 	{
 		case 'local':
 		case 'development':
+		case 'stage':
 			error_reporting(E_ALL);
 			ini_set('display_errors', TRUE);
 			ini_set('display_startup_errors', TRUE);
 		break;
 		case 'origin':
 		case 'testing':
-			error_reporting(0);
-		break;
 		case 'production':
 			error_reporting(0);
 		break;

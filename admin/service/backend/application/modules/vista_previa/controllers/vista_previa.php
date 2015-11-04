@@ -5,10 +5,10 @@ class Vista_previa extends MX_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->load->database();
-		
-		$this->load->library('grocery_crud');	
+
+		$this->load->library('grocery_crud');
 		$this->load->helper('url');
 		$this->load->helper('text');
 		$this->load->helper('get_url_base');
@@ -29,8 +29,9 @@ class Vista_previa extends MX_Controller {
 		$data['imagen_general_promocion'] = filter_var($this->input->post('imagen_general'),FILTER_SANITIZE_SPECIAL_CHARS);
 		$data['seccion'] = $this->input->post('seccion');
 		$data['tipo_moneda_promocion'] = filter_var($this->input->post('tipo_moneda'),FILTER_SANITIZE_SPECIAL_CHARS);
+    $data['eventos'] = $this->input->post('eventos');
 //print_r($this->input->post('url',true));die();
-		
+
 		$result = $this->vista_previa_model->get_tienda_by_id($data['id_user']);
 
 		$data['logo_visa'] = $result['TIE_LOGO_VISA'];

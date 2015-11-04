@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/normalize.min.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/owl.carousel.css">
-        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/screen.css">
+        <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/screen-<?php echo EVENTO;?>.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/molfis.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/3dhover.css">
 

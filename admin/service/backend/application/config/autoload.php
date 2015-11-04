@@ -81,7 +81,7 @@ $autoload['helper'] = array();
 |
 */
 
-$autoload['config'] = array('dominios','access_control','email');
+$autoload['config'] = array('dominios','access_control','email','xdomain');
 
 
 /*

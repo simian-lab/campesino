@@ -42,13 +42,13 @@ class Promociones_model extends CI_Model
         foreach ($query->row_array() as $row)
         {
             $salida[$id_user]=$row;
-           
+
         }
         return  $salida;
     }
 
     public function delete_motivo_rechazo($id_promo){
-        $query = $this->db->delete('CXP_COMENTARIOSXPROMOCION', array('PRO_ID' => $id_promo)); 
+        $query = $this->db->delete('CXP_COMENTARIOSXPROMOCION', array('PRO_ID' => $id_promo));
         return $query;
     }
 
@@ -102,10 +102,10 @@ class Promociones_model extends CI_Model
         $this->email->initialize($config);
 
         $this->email->from($this->config->item('mail_send'), 'Promociones');
-        $this->email->to($result['email']); 
+        $this->email->to($result['email']);
 
         $this->email->subject('Nueva promoción creada');
-        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
         $this->email->send();
     }
@@ -128,10 +128,10 @@ class Promociones_model extends CI_Model
         $this->email->initialize($config);
 
         $this->email->from($this->config->item('mail_send'), 'Promociones');
-        $this->email->to($result['email']); 
+        $this->email->to($result['email']);
 
         $this->email->subject('Promoción editada');
-        $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+        $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
         $this->email->send();
     }
@@ -150,7 +150,7 @@ class Promociones_model extends CI_Model
 				$arrMails[] = $valor['email'];
 			}
 			$listado_mails = implode(',',$arrMails);
-			
+
 
 			$config['protocol'] = 'smtp';
             $config['smtp_host'] = $this->config->item('smtp');
@@ -160,12 +160,12 @@ class Promociones_model extends CI_Model
 			$this->email->initialize($config);
 
 			$this->email->from($this->config->item('mail_send'), 'Promociones');
-			$this->email->to($listado_mails); 
-			// $this->email->to('mgranada@brandigital.com'); 
-			
+			$this->email->to($listado_mails);
+			// $this->email->to('mgranada@brandigital.com');
+
 
 			$this->email->subject('Nueva promoción para aprobar');
-			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );	
+			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
 			$this->email->send();
 			return true;
@@ -185,7 +185,7 @@ class Promociones_model extends CI_Model
                 $arrMails[] = $valor['email'];
             }
             $listado_mails = implode(',',$arrMails);
-            
+
 
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = $this->config->item('smtp');
@@ -195,12 +195,12 @@ class Promociones_model extends CI_Model
             $this->email->initialize($config);
 
             $this->email->from($this->config->item('mail_send'), 'Promociones');
-            $this->email->to($listado_mails); 
-            // $this->email->to('mgranada@brandigital.com'); 
-            
+            $this->email->to($listado_mails);
+            // $this->email->to('mgranada@brandigital.com');
+
 
             $this->email->subject('Nueva promoción para aprobar');
-            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
             $this->email->send();
             return true;
@@ -224,10 +224,10 @@ class Promociones_model extends CI_Model
         $this->email->initialize($config);
 
         $this->email->from($this->config->item('mail_send'), 'Promociones');
-        $this->email->to($result['email']); 
+        $this->email->to($result['email']);
 
         $this->email->subject('Promoción eliminada');
-        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
         $this->email->send();
     }
@@ -245,7 +245,7 @@ class Promociones_model extends CI_Model
                 $arrMails[] = $valor['email'];
             }
             $listado_mails = implode(',',$arrMails);
-            
+
 
             $config['protocol'] = 'smtp';
             $config['smtp_host'] = $this->config->item('smtp');
@@ -255,12 +255,12 @@ class Promociones_model extends CI_Model
             $this->email->initialize($config);
 
             $this->email->from($this->config->item('mail_send'), 'Promociones');
-            $this->email->to($listado_mails); 
-            // $this->email->to('mgranada@brandigital.com'); 
-            
+            $this->email->to($listado_mails);
+            // $this->email->to('mgranada@brandigital.com');
+
 
             $this->email->subject('Promoción eliminada');
-            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );  
+            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
 
             $this->email->send();
             //echo $this->email->print_debugger();die();
@@ -268,7 +268,7 @@ class Promociones_model extends CI_Model
             // echo $this->email->print_debugger();
     }
 
- 
+
     function get_marca_id($id)
     {
         $this->db->select('MAR_ID, MAR_NOMBRE');
@@ -276,11 +276,11 @@ class Promociones_model extends CI_Model
         $this->db->where('MAR_ID', $id);
 
         $results = $this->db->get();
-        if ($results->num_rows() > 0)                
+        if ($results->num_rows() > 0)
             return $results->row_array();
 
         return NULL;
- 
+
     }
 
     public function get_user_x_promocion($id_promo){
@@ -291,7 +291,7 @@ class Promociones_model extends CI_Model
         $query = $this->db->get();
         return $query->row_array();
     }
-    
+
     function get_user($id_user){
         $this->db->select('id,username');
         $this->db->from('admin_users');
@@ -302,7 +302,7 @@ class Promociones_model extends CI_Model
         $row = $query->row_array();
         return $row;
     }
-    
+
 	function get_marcas()
     {
         $this->db->select('MAR_ID, MAR_NOMBRE');
@@ -313,10 +313,10 @@ class Promociones_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->MAR_ID]=$row->MAR_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
     function get_categorias()
     {
@@ -328,40 +328,40 @@ class Promociones_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->CAT_ID]=$row->CAT_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
 
     function getCategoriaId($id) {
         $this->db->select('*');
         $this->db->from('CAT_CATEGORIA');
-        $this->db->where('CAT_ID', $id);            
+        $this->db->where('CAT_ID', $id);
         $this->db->limit(1);
-       
+
         $query = $this->db->get();
 
-        if ($query->num_rows() > 0)                
+        if ($query->num_rows() > 0)
             return $query->row_array();
 
         return NULL;
-        
+
     }
 
     function getSubCategoriaId($id) {
             $this->db->select('*');
             $this->db->from('SUB_SUBCATEGORIA');
-            $this->db->where('SUB_ID', $id);            
+            $this->db->where('SUB_ID', $id);
             $this->db->limit(1);
-           
+
             $query = $this->db->get();
 
-            if ($query->num_rows() > 0)                
+            if ($query->num_rows() > 0)
                 return $query->row_array();
 
             return NULL;
-        
+
     }
 
 
@@ -375,10 +375,10 @@ class Promociones_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->SUB_ID]=$row->SUB_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
 	function get_paquetes()
     {
@@ -390,24 +390,25 @@ class Promociones_model extends CI_Model
         foreach ($results->result() as $row)
         {
             $salida[$row->PAQ_ID]=$row->PAQ_NOMBRE;
-           
+
         }
         return  $salida;
- 
+
     }
 
-    function decrementar($pUSER_ID,$pTIPO){
-        
+    function decrementar($pUSER_ID,$pTIPO,$evento){
+
 
     	$param = array(
     	   $pUSER_ID  // ,pUSER_ID INT
     	   ,$pTIPO  // ,pTIPO INT
+         ,$evento  // ,evento INT
     	);
-    	
 
-    	$sql = "CALL AB_DESCONTAR_MAX(?,?)";
-    	$query = $this->db->query($sql, $param);  
-    	
+
+    	$sql = "CALL AB_DESCONTAR_MAX(?,?,?)";
+    	$query = $this->db->query($sql, $param);
+
         // $query->next_result(); // Dump the extra resultset.
         // $query->free_result(); // Does what it says.
 
@@ -423,7 +424,7 @@ class Promociones_model extends CI_Model
         );
 
         $sql = "CALL AB_CONTROL_PROMOCIONES_BEFORE_UPDATE(?,?)";
-        $query = $this->db->query($sql, $param);  
+        $query = $this->db->query($sql, $param);
         return $query->result_array();
 
     }

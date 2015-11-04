@@ -18,6 +18,7 @@
  *
  */
 
+<<<<<<< HEAD
 
 switch ($_SERVER['SERVER_NAME'])
 {
@@ -31,6 +32,12 @@ switch ($_SERVER['SERVER_NAME'])
 			);
         define('ENVIRONMENT', 'local');
 	break;
+	
+	case 'sss-pre-stg.loencontraste.com':
+	  define('ENVIRONMENT', 'local');
+	  $dominios_permitidos = array();
+	break;
+	  
 	case 'pre-evento.cyberlunes.dev.brandigital.com':
 		$dominios_permitidos = array(
 				'http://pre-evento.cyberlunes.dev.brandigital.com',
@@ -99,6 +106,10 @@ switch ($_SERVER['SERVER_NAME'])
 }
 header('Access-Control-Allow-Origin:'.implode(',', $dominios_permitidos));
 
+=======
+defined('ENVIRONMENT')
+    || define('ENVIRONMENT', (getenv('ENVIRONMENT') ? getenv('ENVIRONMENT') : 'production'));
+>>>>>>> development
 
 /*
  *---------------------------------------------------------------

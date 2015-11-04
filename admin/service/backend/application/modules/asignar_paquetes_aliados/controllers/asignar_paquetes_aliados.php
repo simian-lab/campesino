@@ -5,10 +5,10 @@ class Asignar_paquetes_aliados extends Main {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->load->database();
-		
-		$this->load->library('grocery_crud');	
+
+		$this->load->library('grocery_crud');
 		$this->load->helper('url');
 	}
 
@@ -29,9 +29,9 @@ class Asignar_paquetes_aliados extends Main {
 		$crud->set_subject('Usuarios'); // Titulo
 
 		$crud->unset_read();
-		$crud->unset_add(); 
+		$crud->unset_add();
 
-		 
+
 		 $q ='';
 	 	if($result['group_id']==3 or $result['group_id']==1 or $result['group_id']==4  ){ //Habilitar para filtrar solo para siertos grupos de usuario
 
@@ -47,32 +47,35 @@ class Asignar_paquetes_aliados extends Main {
 		 	}
 
 		}
-	 
 
-		// Defino titulos de los campos 
+
+		// Defino titulos de los campos
 		$crud->display_as('active','Usuario Activo')
 		->display_as('username','Nombre Usuario')
 		->display_as('first_name','Nombres')
 		->display_as('last_name','Apellido')
 		->display_as('email2','Email corporativo')
-		->display_as('Paquete','Tipo de paquete')
+		->display_as('paquetes','Tipo de paquete')
 		->display_as('phone','Teléfono');
 
-		$crud->columns('username','email','first_name','last_name','paquete');
-		$crud->fields('username','email','first_name','last_name','paquete');
+    $crud->set_relation_n_n('paquetes', 'AXP_ADMINXPAQUETE', 'PAQUETES_NOMBRES', 'AXP_ADMIN', 'AXP_PAQUETE', 'PAQ_NOMBRE');
+
+		$crud->columns('username','email','first_name','last_name','paquetes');
+		$crud->fields('username','email','first_name','last_name','paquete','paquetes');
 
 		$crud->field_type('username', 'readonly');
 		$crud->field_type('first_name', 'readonly');
 		$crud->field_type('last_name', 'readonly');
 		$crud->field_type('email', 'readonly');
-		$crud->field_type('paquete', 'dropdown',$arrpaquetes);
+    $crud->field_type('paquete', 'hidden');
+		$crud->field_type('paquetes', 'multiselect', $arrpaquetes);
 
 		$crud->set_language('spanish');
 		$this->data['output'] = $output = $crud->render();
 		$this->data['titulo']='Asignar paquetes a usuario';
 		$this->data['encabezado']='Asignar paquetes a usuarios';
 
-		$breadcrums[]='<a class="current" href="'.site_url('main/asignar_paquetes_aliados').'">Asignar paquetes a usuarios</a>'; 
+		$breadcrums[]='<a class="current" href="'.site_url('main/asignar_paquetes_aliados').'">Asignar paquetes a usuarios</a>';
 		$this->salida('example',$this->data, $breadcrums);
 	}
 

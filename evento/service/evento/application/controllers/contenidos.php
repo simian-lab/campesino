@@ -1,16 +1,17 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Contenidos extends MX_Controller
+class Contenidos extends Default_Controller
 {
-   function __construct()
-   {
-       parent::__construct();
-       $this->load->helper('fechas-articulos');
-       //$this->output->enable_profiler(TRUE);
-   }
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('fechas-articulos');
+        //$this->output->enable_profiler(TRUE);
+    }
 
 
-  public function todos($page = 1) {
+    public function todos($page = 1)
+    {
         $data = null;
         $data = get_url_base();
 
@@ -28,39 +29,39 @@ class Contenidos extends MX_Controller
         $data['image_src'] = $meta_imagen;
         $data['meta_url'] = $meta_url;
         $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys, $meta_url));
-      /* mencache menu*/
-      //  $key['menu']='menu_html';
-        $data['menu_html'] =modules::run('menu/menu/load',$data);
+        /* mencache menu*/
+        //  $key['menu']='menu_html';
+        $data['menu_html'] = modules::run('menu/menu/load', $data);
 
-/* mencache menu*/
-/* mencache articulos*/
+        /* mencache menu*/
+        /* mencache articulos*/
         //$page=1;
-        $data['articulos_html'] = modules::run('articulos/contenidosArticulos/load',$data);
+        $data['articulos_html'] = modules::run('articulos/contenidosArticulos/load', $data);
 
-        $data['participantes_html'] =modules::run('articulos/participantes/load',$data);
-
-
-        $templateContainer='template/containerArticulo';
-        $this->load->view('template/head',$data);
-        $this->load->view('template/header',$data);
-        $this->load->view($templateContainer,$data);
-        $this->load->view('template/footer',$data);
-        $this->load->view('template/scripts',$data);
-
-       return;
-
-  }
+        $data['participantes_html'] = modules::run('articulos/participantes/load', $data);
 
 
-     public function page($page='') {
-           $data = null;
-           $data = get_url_base();
+        $templateContainer = 'template/containerArticulo';
+        $this->load->view('template/head', $data);
+        $this->load->view('template/header', $data);
+        $this->load->view($templateContainer, $data);
+        $this->load->view('template/footer', $data);
+        $this->load->view('template/scripts', $data);
 
-           $data['articulos_html'] =modules::run('articulos/contenidosArticulos/load',$data,$page);
-           echo $data['articulos_html'];
         return;
-  }
 
+    }
+
+
+    public function page($page = '')
+    {
+        $data = null;
+        $data = get_url_base();
+
+        $data['articulos_html'] = modules::run('articulos/contenidosArticulos/load', $data, $page);
+        echo $data['articulos_html'];
+        return;
+    }
 
 
 }

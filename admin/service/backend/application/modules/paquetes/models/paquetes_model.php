@@ -6,7 +6,7 @@ class Paquetes_model extends CI_Model
   	{
   		parent::__construct();
   	}
-  		
+
 
 
     public function insert_tag($ident,$primary_key){
@@ -21,7 +21,7 @@ class Paquetes_model extends CI_Model
                         'VISIBILITY' => 0
                 );
 
-           $results = $this->db->insert('TAG_ARTICULOS', $data); 
+           $results = $this->db->insert('TAG_ARTICULOS', $data);
 
     }
 
@@ -31,8 +31,25 @@ class Paquetes_model extends CI_Model
       );
 
       $sql = "CALL AB_TAGS_NOMBRES_INSERT(?)";
-      $query = $this->db->query($sql, $param);  
+      $query = $this->db->query($sql, $param);
       return $query->result_array();
+    }
+
+
+    function get_eventos()
+    {
+        $this->db->select('EVE_ID, EVE_NOMBRE');
+        $this->db->from('EVE_EVENTOS');
+
+        $results = $this->db->get();
+        $salida='';
+        foreach ($results->result() as $row)
+        {
+            $salida[$row->EVE_ID]=$row->EVE_NOMBRE;
+
+        }
+        return  $salida;
+
     }
 
 
