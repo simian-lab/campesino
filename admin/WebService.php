@@ -17,9 +17,7 @@
         die();
       break;
     }
-
     /*Set the connections*/
-
       switch ($_SERVER['SERVER_NAME'])
       {
         case 'sss-adm-stg.loencontraste.com':
@@ -28,14 +26,13 @@
           $DB_USERNAME = 'seasons';
           $DB_PASSWORD = 'h0h0h0';
         break;
-
+        case 'especiales.loencontraste.com':
         case 'sss-adm-pro.loencontraste.com':
-          $DB_HOST = '';
-          $DB_NAME = '';
-          $DB_USERNAME = '';
-          $DB_PASSWORD = '';
+          $DB_HOST = '172.31.42.171';
+          $DB_NAME = 'loe_sss';
+          $DB_USERNAME = 'loe_sss';
+          $DB_PASSWORD = 'MGV8$EhL';
         break;
-
         default:
           $DB_HOST = 'localhost';
           $DB_NAME = 'eltiempo_co_cyber_lunes_v2';
@@ -43,7 +40,6 @@
           $DB_PASSWORD = 'root';
         break;
       }
-
     /*Try the connection*/
     try {
       $DB = new PDO( "mysql:host=".$DB_HOST.";"."dbname=".$DB_NAME, $DB_USERNAME, $DB_PASSWORD, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
