@@ -28,6 +28,7 @@ class Reporte_promociones extends Main {
 			$crud->or_where('PAT_ID', $user_id);
 		}
 
+		$crud->display_as('PAT_ID', 'ID Aliado');
 		$crud->display_as('PAQ_NOMBRE', 'Paquete');
 		$crud->display_as('EVE_NOMBRE', 'Evento');
 		$crud->display_as('PAQ_MONTO_PREMIUM', 'Cantidad Premium Asignadas');
@@ -39,6 +40,11 @@ class Reporte_promociones extends Main {
 
 		$crud->set_primary_key('AXP_ID');
 		$crud->set_table('V_REPORTE_PROMOCIONES');
+
+		$crud->unset_add();
+		$crud->unset_delete();
+        $crud->unset_edit();
+        $crud->unset_read();
 
 		$this->data['output'] = $output = $crud->render();
 		$this->data['titulo'] = 'Reporte';
