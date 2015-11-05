@@ -26,11 +26,12 @@
           $DB_USERNAME = 'seasons';
           $DB_PASSWORD = 'h0h0h0';
         break;
+        case 'especiales.loencontraste.com':
         case 'sss-adm-pro.loencontraste.com':
-          $DB_HOST = '';
-          $DB_NAME = '';
-          $DB_USERNAME = '';
-          $DB_PASSWORD = '';
+          $DB_HOST = '172.31.42.171';
+          $DB_NAME = 'loe_sss';
+          $DB_USERNAME = 'loe_sss';
+          $DB_PASSWORD = 'MGV8$EhL';
         break;
         default:
           $DB_HOST = 'localhost';
