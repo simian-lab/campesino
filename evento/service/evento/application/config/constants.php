@@ -52,8 +52,8 @@ switch (EVENTO) {
 	case 'cyl':
 		define('TAG_LINE',		'EVENTO CYBER LUNES');
 		break;
-	case 'reg':
-		define('TAG_LINE',		'EVENTO REGALAZO');
+	case 'cys':
+		define('TAG_LINE',		'EVENTO Cyber Santa');
 		break;
 	default:
 		define('TAG_LINE',		'EVENTO NO DEFINIDO');
