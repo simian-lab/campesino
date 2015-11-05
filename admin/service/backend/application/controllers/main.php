@@ -415,4 +415,9 @@ class Main extends MX_Controller
         echo $this->email->print_debugger();
     }
 
+    function reporte_promociones() {
+        $auth = $this->load->module('reporte_promociones');
+        echo $retorno = modules::run('modules/reporte_promociones/index');
+    }
+
 }
