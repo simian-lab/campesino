@@ -101,13 +101,14 @@ class Aliados extends Main {
 			->display_as('PAT_URL_EVENT','Url evento')
 			->display_as('VISIBILITY','Visibilidad')
 			->display_as('PAT_PAQUETE', 'Paquete')
-			->display_as('PAT_ALIADO', 'Usuario');
+			->display_as('PAT_ALIADO', 'Usuario')
+			->display_as('OMNITURE_ID', 'Omniture ID ');
 			$crud->unset_read();
 			$this->data= array('autor'=>$this->session->userdata('username') . ' ('.$this->session->userdata('email').')' , 'ident'=>$this->session->userdata('sadmin_user_id') );
 
-			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO', 'PAT_HASH_URL_EVENT');
+			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO', 'PAT_HASH_URL_EVENT','OMNITURE_ID');
 			$crud->required_fields('PAT_NOMBRE','PAT_LOGO','PAT_FECHA','VISIBILITY');
-			$crud->columns('PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO');
+			$crud->columns('OMNITURE_ID','PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO');
 
 			$crud->callback_before_update(array($this,'encrypt_password_callback'));
 
