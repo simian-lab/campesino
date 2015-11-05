@@ -20,32 +20,8 @@ switch (ENVIRONMENT)
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
-switch ($_SERVER['SERVER_NAME']) {   
-    case 'evento.cyberlunes.local':  
-        $base_url = 'http://evento.cyberlunes.local/';
-        $base_url_static = 'http://evento.cyberlunes.local/static/evento/'; 
-    break;
-    case 'evento.cyberlunes.dev.brandigital.com':    
-        $base_url = 'http://evento.cyberlunes.dev.brandigital.com/';
-        $base_url_static = 'http://evento.cyberlunes.dev.brandigital.com/static/evento/'; 
-    break;
-    case 'evento-stage.cyberlunes.com.co':  
-        $base_url = 'http://evento-stage.cyberlunes.com.co/';
-        $base_url_static = 'http://evento-stage.cyberlunes.com.co/static/evento/'; 
-    break;
-    case 'staging.cyberlunes.com.co':  
-        $base_url = 'http://staging.cyberlunes.com.co/';
-        $base_url_static = 'http://staging.cyberlunes.com.co/static/evento/'; 
-    break;
-    case 'origin-www2.cyberlunes.com.co':  
-        $base_url = 'http://origin-www2.cyberlunes.com.co/';
-        $base_url_static = 'http://origin-www2.cyberlunes.com.co/static/evento/'; 
-    break;
-    case 'www.cyberlunes.com.co':    
-        $base_url = 'http://www.cyberlunes.com.co/';
-        $base_url_static = 'http://www.cyberlunes.com.co/static/evento/'; 
-    break;
-}
+$base_url = 'http://sss-' . EVENTO . '-stg.loencontraste.com/';
+$base_url_static = 'http://sss-' . EVENTO . '-stg.loencontraste.com/static/evento/';
     
 ?>
 <html lang="en">
