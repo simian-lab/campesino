@@ -20,8 +20,8 @@ switch (ENVIRONMENT)
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
-$base_url = 'http://sss-' . EVENTO . '-stg.loencontraste.com/';
-$base_url_static = 'http://sss-' . EVENTO . '-stg.loencontraste.com/static/evento/';
+$base_url = 'http://'.$_SERVER['SERVER_NAME'].'/';
+$base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
     
 ?>
 <html lang="en">
