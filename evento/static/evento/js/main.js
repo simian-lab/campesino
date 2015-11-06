@@ -88,6 +88,7 @@ $(function() {
         width: '100%',
         opacity: 0.9
       });
+      $('#menu').addClass("logo_fixed_menu");
       $('.wrapper-filter').css({
         position: 'fixed',
         left: '0px',
@@ -103,7 +104,8 @@ $(function() {
     }
     else {
       $('#menu').css({
-        position: 'relative'
+        position: 'relative',
+        opacity: '1'
       });
       $('.wrapper-filter').css({
         position: 'relative'
