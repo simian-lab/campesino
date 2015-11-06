@@ -107,8 +107,8 @@ function add_promotions_from_special($db, $file, $evento) {
     . '	0'
     . '	' . $promotion['PRO_NOMBRE']
     . '	' . $category_slug
-    . '	' . $category_slug
     . '	' . $subcategory_slug
+    . '	NA'
     . '	NA'
     . '	0'
     . '	1'
