@@ -81,6 +81,7 @@ $(function() {
     var resta = (window.innerHeight+window.outerHeight)-scrollY;
 
     if(scrollY > 71) {
+      $('#menu').addClass("logo_fixed_menu");
       $('#menu').css({
         position: 'fixed',
         top: 0,
@@ -88,7 +89,6 @@ $(function() {
         width: '100%',
         opacity: 0.9
       });
-      $('#menu').addClass("logo_fixed_menu");
       $('.wrapper-filter').css({
         position: 'fixed',
         left: '0px',
@@ -105,7 +105,7 @@ $(function() {
     else {
       $('#menu').css({
         position: 'relative',
-        opacity: '1'
+        opacity: 1
       });
       $('.wrapper-filter').css({
         position: 'relative'
