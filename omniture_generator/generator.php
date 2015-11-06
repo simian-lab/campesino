@@ -53,7 +53,7 @@ else {
   init($DB, $FTP_CREDENTIALS);
 }
 function init($db, $ftp_credentials) {
-    $file_name = "omniture.tab";
+    $file_name = "omniture-eventos.tab";
     $date = date_format(date_create(), 'Y-m-d H:i:s');
     $header = "## SC    SiteCatalyst SAINT Import File  v:2.1\n"
     . "## SC    '## SC' indicates a SiteCatalyst pre-process header. Please do not remove these lines.\n"
@@ -76,7 +76,7 @@ function init($db, $ftp_credentials) {
 function add_promotions_from_special($db, $file, $evento) {
     $evento_id = $evento['EVE_ID'];
     $evento_prefix = $evento['EVE_PREFIJO'];
-    $key_prefix = 'ofe' . $evento_prefix .'-';
+    $key_prefix = 'eve' . $evento_prefix .'-';
     $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES INNER JOIN EXP_EVENTOXPROMOCION ON  PRO_PROMOCIONES.PRO_ID=EXP_EVENTOXPROMOCION.EXP_PROMOCION  WHERE EXP_EVENTO = :evento_id");
     $query_promotions->bindParam(':evento_id', $evento_id);
     $query_promotions->execute();
