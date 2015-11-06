@@ -9,7 +9,7 @@ $memcached['servers'] = array(
 
 	'default' => array(
 
-			'host'			=> 'cache.eltiempo-co-teconviene.brandigital.com',
+			'host'			=> 'localhost',
 			'port'			=> '11211',
 			'weight'		=> '1',
 			'persistent'	=> FALSE
