@@ -63,6 +63,7 @@ class Home extends MX_Controller {
     $bronce = array();
     $platino = array();
     $general = array();
+    $otros = array();
 
     foreach($patrocinadores as $patrocinador) {
       switch($patrocinador->PAT_PAQUETE){
@@ -89,6 +90,10 @@ class Home extends MX_Controller {
         case "6":
           array_push($general, $patrocinador);
           break;
+
+        case "7":
+          array_push($otros, $patrocinador);
+          break;
       }
     }
 
@@ -98,6 +103,7 @@ class Home extends MX_Controller {
     shuffle($bronce);
     shuffle($platino);
     shuffle($general);
+    shuffle($otros);
 
     $data['patrocinadores_oro_plus'] = $oro_plus;
     $data['patrocinadores_oro'] = $oro;
@@ -105,6 +111,7 @@ class Home extends MX_Controller {
     $data['patrocinadores_bronce'] = $bronce;
     $data['patrocinadores_platino'] = $platino;
     $data['patrocinadores_general'] = $general;
+    $data['patrocinadores_otros'] = $otros;
 
     $session_id = $this->session->userdata('session_id');
     $session_id = sha1('lista_promos'.$session_id);

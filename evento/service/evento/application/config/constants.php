@@ -48,15 +48,19 @@ define('NUMERO_PROMOCIONES_GENERALES',    36);
 switch (EVENTO) {
 	case 'bfr':
 		define('TAG_LINE',		'EVENTO BLACK FRIDAY');
+    define('ID_EVENTO',   2);
 		break;
 	case 'cyl':
 		define('TAG_LINE',		'EVENTO CYBER LUNES');
+    define('ID_EVENTO',   1);
 		break;
 	case 'cys':
 		define('TAG_LINE',		'EVENTO Cyber Santa');
+    define('ID_EVENTO',   3);
 		break;
 	default:
 		define('TAG_LINE',		'EVENTO NO DEFINIDO');
+    define('ID_EVENTO',   0);
 		break;
 }
 
