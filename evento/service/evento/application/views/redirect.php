@@ -66,7 +66,25 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        
+        <!-- Google Code for Eventos Redireccionamiento Conversion Page -->
+        <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 969745351;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "3sfYCJvri18Qx8e0zgM";
+        var google_remarketing_only = false;
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+        <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/969745351/?label=3sfYCJvri18Qx8e0zgM&amp;guid=ON&amp;script=0"/>
+        </div>
+        </noscript>
+
         <header>
             <div class="container">
                 <div class="row">
@@ -97,33 +115,36 @@
         </section>                            
         
 
-        <!-- Facebook Conversion Code for Pixel El Tiempo 2 - Leads -->
-        <script type="text/javascript">
-        var fb_param = {};
-        fb_param.pixel_id = '6015078203399';
-        fb_param.value = '0.01';
-        fb_param.currency = 'EUR';
-        (function(){
-          var fpw = document.createElement('script');
-          fpw.async = true;
-          fpw.src = '//connect.facebook.net/en_US/fp.js';
-          var ref = document.getElementsByTagName('script')[0];
-          ref.parentNode.insertBefore(fpw, ref);
-        })();
-        </script>
-        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6015078203399&amp;value=0.01&amp;currency=EUR" /></noscript>
+       <!-- Facebook Conversion Code for LO ENCONTRASTE - Checkouts -->
 
-        <!-- Facebook Conversion Code for Redireccionamiento Cyber Lunes -->
-        <script>(function() {
-            var _fbq = window._fbq || (window._fbq = []);
-            if (!_fbq.loaded)
-                { var fbds = document.createElement('script'); fbds.async = true; fbds.src = '//connect.facebook.net/en_US/fbds.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fbds, s); _fbq.loaded = true; }
-        })();
-        window._fbq = window._fbq || [];
-        window._fbq.push(['track', '6028444649480', {'value':'0.00','currency':'COP'}]);
-        </script>
-        <noscript>
-            <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6028444649480&cd[value]=0.00&cd[currency]=COP&noscript=1" />
-        </noscript>
+<script>(function() {
+
+var _fbq = window._fbq || (window._fbq = []);
+
+if (!_fbq.loaded) {
+
+var fbds = document.createElement('script');
+
+fbds.async = true;
+
+fbds.src = '//connect.facebook.net/en_US/fbds.js';
+
+var s = document.getElementsByTagName('script')[0];
+
+s.parentNode.insertBefore(fbds, s);
+
+_fbq.loaded = true;
+
+}
+
+})();
+
+window._fbq = window._fbq || [];
+
+window._fbq.push(['track', '6031250315599', {'value':'0.01','currency':'EUR'}]);
+
+</script>
+
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6031250315599&amp;cd[value]=0.01&amp;cd[currency]=EUR&amp;noscript=1" /></noscript>
     </body>
 </html>
