@@ -181,7 +181,8 @@ body {
 
 /* line 78, ../sass/screen.scss */
 header {
-  background-color: #f4f4f4;
+  background: #683a8c url("../img/lights.png") repeat;
+  height: 69px;
 }
 /* line 81, ../sass/screen.scss */
 header .container .head {
@@ -190,6 +191,7 @@ header .container .head {
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
   border-right: 1px solid white;
+  margin: 10px 0px 0px;
 }
 @media screen and (max-width: 768px) {
   /* line 83, ../sass/screen.scss */
@@ -201,12 +203,17 @@ header .container .head .logo {
 header .container .head .logo a {
   display: block;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 0px;
   width: 213px;
 }
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
+  background: url("../img/bf_logo.png") no-repeat;
+  width: 245px;
+  height: 65px;
+  margin: 0;
+  padding: 0;
 }
 @media screen and (max-width: 992px) {
   /* line 95, ../sass/screen.scss */
@@ -217,7 +224,7 @@ header .container .head .title {
 /* line 100, ../sass/screen.scss */
 header .container .head .title span {
   color: #00b6c9;
-  display: block;
+  display: none;
   font-size: 0.875em;
   text-transform: uppercase;
   margin-top: 28px;
@@ -295,7 +302,7 @@ header .container .head .marcas figure {
 
 /* line 161, ../sass/screen.scss */
 div#menu {
-  background-color: #00afc9;
+  background: url("../img/bg_menu_bf.png") repeat;
   border-bottom: 1px solid #96a98f;
 }
 /* line 166, ../sass/screen.scss */
