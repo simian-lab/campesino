@@ -4,7 +4,7 @@ if(!$argv) {
   error("Este script solo se debe ejecutar por consola.");
 }
 if(count($argv) != 2) {
-  error("Este script recibe un único parámetro, el entorno. Las opciones válidas son 'development', 'local', 'production' y 'origin'");
+  error("Este script recibe un único parámetro, el entorno. Las opciones válidas son 'development', 'stage', 'production' y 'origin'");
 }
 else {
   switch ($argv[1]) {
@@ -15,17 +15,16 @@ else {
     $DB_PASSWORD = 'root';
     break;
     case 'stage':
-
-    $DB_HOST = 'localhost';
-    $DB_NAME = 'stage_loe_specials';
-    $DB_USERNAME = 'loe-specials';
-    $DB_PASSWORD = 'sp3c14ls';
+    $DB_HOST = '54.83.30.83';
+    $DB_NAME = 'sss_stg';
+    $DB_USERNAME = 'seasons';
+    $DB_PASSWORD = 'h0h0h0';
     break;
     case 'production':
-        $DB_HOST = '52.20.189.63';
-        $DB_NAME = 'dbespeciales_prod';
-        $DB_USERNAME = 'especialprod';
-        $DB_PASSWORD = 'Esp3cial3456!';
+        $DB_HOST = '172.31.42.171';
+        $DB_NAME = 'loe_sss';
+        $DB_USERNAME = 'loe_sss';
+        $DB_PASSWORD = 'MGV8$EhL';
     break;
     case 'origin':
       // TODO: Define this
