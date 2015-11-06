@@ -12,7 +12,7 @@ class Promocion extends MX_Controller {
     //$this->output->enable_profiler(TRUE);
   }
 
-  public function load($tipo='premium', $data='', $page=1, $seed=1, $filtro='home', $categoria='todos', $tienda='tiendas', $marca='marcas', $subcategoria='todos', $session) {
+  public function load($tipo='premium', $data='', $page=1, $seed=1, $filtro='home', $categoria='todos', $tienda='tiendas', $marca='marcas', $subcategoria='todos', $idEvento=0, $session) {
     if(!is_numeric($page)) {
       //show_404();
       return;
@@ -78,7 +78,7 @@ class Promocion extends MX_Controller {
     switch ($filtro) {
       case 'home':
 
-      $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset,$idPromosRepetido);
+      $data['promociones'] = $this->promocion_model->get($idtipo,$seed,$cant,$offset,$idPromosRepetido, $idEvento);
       $this->collectorpromo->set($data['promociones'],$session);
 
       break;
@@ -132,7 +132,7 @@ class Promocion extends MX_Controller {
         $idSubcategoria=$result['SUB_ID'];
       }
 
-      $data['promociones'] = $this->promocion_model->getFiltro($idtipo,$idCategoria,$idTienda,$idMarca,$idSubcategoria,$seed,$cant,$offset,$idPromosRepetido);
+      $data['promociones'] = $this->promocion_model->getFiltro($idtipo,$idCategoria,$idTienda,$idMarca,$idSubcategoria,$seed,$cant,$offset,$idPromosRepetido, $idEvento);
       $this->collectorpromo->set($data['promociones'],$session);
 
       break;
