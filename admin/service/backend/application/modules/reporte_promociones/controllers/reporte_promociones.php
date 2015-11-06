@@ -21,7 +21,7 @@ class Reporte_promociones extends Main {
 		$crud = new grocery_CRUD();
 
 		if($group_id == 4) {
-			$crud->columns('PAT_ID', 'PAQ_NOMBRE', 'EVE_NOMBRE', 'PAQ_MONTO_PREMIUM', 'PAQ_CREADAS_PREMIUM', 'PAQ_MONTO_PREMIUM_CATEGORIA', 'PAQ_CREADAS_PREMIUM_CATEGORIA', 'PAQ_MONTO_GENERAL', 'PAQ_CREADAS_GENERAL');
+			$crud->columns('PAT_ID', 'PAT_NOMBRE', 'PAQ_NOMBRE', 'EVE_NOMBRE', 'PAQ_MONTO_PREMIUM', 'PAQ_CREADAS_PREMIUM', 'PAQ_MONTO_PREMIUM_CATEGORIA', 'PAQ_CREADAS_PREMIUM_CATEGORIA', 'PAQ_MONTO_GENERAL', 'PAQ_CREADAS_GENERAL');
 		}
 		else {
 			$crud->columns('PAQ_NOMBRE', 'EVE_NOMBRE', 'PAQ_MONTO_PREMIUM', 'PAQ_CREADAS_PREMIUM', 'PAQ_MONTO_PREMIUM_CATEGORIA', 'PAQ_CREADAS_PREMIUM_CATEGORIA', 'PAQ_MONTO_GENERAL', 'PAQ_CREADAS_GENERAL');
@@ -29,6 +29,7 @@ class Reporte_promociones extends Main {
 		}
 
 		$crud->display_as('PAT_ID', 'ID Aliado');
+		$crud->display_as('PAT_NOMBRE', 'Aliado');
 		$crud->display_as('PAQ_NOMBRE', 'Paquete');
 		$crud->display_as('EVE_NOMBRE', 'Evento');
 		$crud->display_as('PAQ_MONTO_PREMIUM', 'Cantidad Premium Asignadas');
@@ -40,6 +41,7 @@ class Reporte_promociones extends Main {
 
 		$crud->set_primary_key('AXP_ID');
 		$crud->set_table('V_REPORTE_PROMOCIONES');
+		$crud->set_theme('datatables');
 
 		$crud->unset_add();
 		$crud->unset_delete();
