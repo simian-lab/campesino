@@ -52,12 +52,16 @@ else {
   init($DB, $FTP_CREDENTIALS);
 }
 function init($db, $ftp_credentials) {
-    $file_name = "omniture-eventos.tab";
-    $date = date_format(date_create(), 'Y-m-d H:i:s');
-    $header = "## SC    SiteCatalyst SAINT Import File  v:2.1\n"
-    . "## SC    '## SC' indicates a SiteCatalyst pre-process header. Please do not remove these lines.\n"
-    . "## SC    D:" . $date . " A:2864550:51\n";
-    $table_header = "\nKey ID-Anterior Nombre Categoria Sub-Categoria Tipo Contenido Comentarios Precios Configuracion\n";
+
+  $file_name = "omniture-eventos.tab";
+
+  $date = date_format(date_create(), 'Y-m-d H:i:s');
+
+  $header = "## SC	SiteCatalyst SAINT Import File	v:2.1\n"
+  . "## SC	'## SC' indicates a SiteCatalyst pre-process header. Please do not remove these lines.\n"
+  . "## SC	D:" . $date . " A:2864550:51\n";
+
+  $table_header = "\nKey	ID-Anterior	Nombre	Categoria	Sub-Categoria	Tipo	Contenido	Comentarios	Precios	Configuracion\n";
     $query_eventos = $db->prepare("SELECT * FROM EVE_EVENTOS");
     $query_eventos->execute();
     $eventos = $query_eventos->fetchAll();
@@ -76,7 +80,7 @@ function add_promotions_from_special($db, $file, $evento) {
     $evento_id = $evento['EVE_ID'];
     $evento_prefix = $evento['EVE_PREFIJO'];
     $key_prefix = 'eve' . $evento_prefix .'-';
-    $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES INNER JOIN EXP_EVENTOXPROMOCION ON  PRO_PROMOCIONES.PRO_ID=EXP_EVENTOXPROMOCION.EXP_PROMOCION  WHERE EXP_EVENTO = :evento_id");
+    $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES INNER JOIN EXP_EVENTOXPROMOCION ON	PRO_PROMOCIONES.PRO_ID=EXP_EVENTOXPROMOCION.EXP_PROMOCION	WHERE EXP_EVENTO = :evento_id");
     $query_promotions->bindParam(':evento_id', $evento_id);
     $query_promotions->execute();
     $promotions = $query_promotions->fetchAll();
@@ -99,17 +103,17 @@ function add_promotions_from_special($db, $file, $evento) {
 
 
 
-        $row = $key_prefix . $promotion['PRO_ID']
-        . ' 0'
-        . ' ' . $promotion['PRO_NOMBRE']
-        . ' ' . $category_slug
-        . ' ' . $category_slug
-        . ' ' . $subcategory_slug
-        . ' NA'
-        . ' 0'
-        . ' 1'
-        . ' automatic'
-        . "\n";
+    $row = $key_prefix . $promotion['PRO_ID']
+    . '	0'
+    . '	' . $promotion['PRO_NOMBRE']
+    . '	' . $category_slug
+    . '	' . $category_slug
+    . '	' . $subcategory_slug
+    . '	NA'
+    . '	0'
+    . '	1'
+    . '	automatic'
+    . "\n";
         fwrite($file, $row);
     }
 }
