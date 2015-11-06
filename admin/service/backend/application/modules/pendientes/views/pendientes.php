@@ -13,7 +13,7 @@ function cambiarValorCodSms(){
 	//#field-SOC_NOMBRE
 	var txt = $("#field-SOC_NOMBRE").val();
 	var str = txt.substr(0,5);
-	var strf=str.replace(" ","_"); 
+	var strf=str.replace(" ","_");
 	document.getElementById("field-SOC_CODIGO").value = strf.toUpperCase();
 }
 </script>
@@ -52,7 +52,7 @@ function cambiarValorCodSms(){
         <article class="module width_full">
             <div class="module_content">
                 <fieldset>
-                    
+
                     <label>Búsqueda</label>
                     <?php echo form_input($search);?>
                 <div class="submit_link">
@@ -63,7 +63,7 @@ function cambiarValorCodSms(){
         </article>
 	<?php echo form_close();?>
 	<?php }?>
-    <?php 
+    <?php
 	if(isset($output->output))
 		echo $output->output;
 	else
@@ -90,8 +90,8 @@ function cambiarValorCodSms(){
         arrayImagenPromocionGeneral = nombre_imagen_promocion_general.split('/');
         nombre_imagen_promocion_general = arrayImagenPromocionGeneral[arrayImagenPromocionGeneral.length - 1];
       }
-        
-      
+
+
       var tipo_moneda_promocion = $('input[name="PRO_TIPO_MONEDA"]:checked').val();
       if(nombre_imagen_promocion_general != undefined && nombre_imagen_promocion_premium != undefined){
         var seccion = 'premium';
@@ -102,13 +102,17 @@ function cambiarValorCodSms(){
       else if(nombre_imagen_promocion_general != undefined){
         var seccion = 'general';
       }
+
+
+      var eventos_promocion = $( "#eventos_input_box" ).html();
+
       //alert(nombre_imagen_promocion_general)
       //window.open('<?php echo base_url('index.php/main/vista_previa_promociones') ?>/'+nombre_promocion+'/'+descripcion_promocion+'/'+precio_inicial_promocion+'/'+precio_final_promocion+'/'+descuento_promocion+'/'+url_promocion);
       var newWin = window.open();
       $.ajax({
         type: 'POST',
         url: '<?php echo base_url('index.php/vista_previa/vista_previa/vista_previa_promociones') ?>',
-        data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion, tipo_moneda: tipo_moneda_promocion},
+        data: {id: id_user, nombre: nombre_promocion, descripcion: descripcion_promocion, precio_inicial: precio_inicial_promocion, precio_final: precio_final_promocion, descuento: descuento_promocion, url: url_promocion, imagen_premium: nombre_imagen_promocion_premium, imagen_general: nombre_imagen_promocion_general, seccion: seccion, tipo_moneda: tipo_moneda_promocion, eventos: eventos_promocion},
         success: function(data){//alert(data)
           newWin.document.write(data);
           newWin.document.title = 'Vista previa';
@@ -126,7 +130,7 @@ function cambiarValorCodSms(){
             url: '<?php echo base_url('index.php/promociones_procesos/rechazar_promocion') ?>',
             data: {id_promocion: id_promocion, motivo: motivo_rechazo, user_autorizador: '<?php echo $this->session->userdata('sadmin_user_id') ?>'},
             success: function(data){
-               location.reload(); 
+               location.reload();
             }
           });
         }
@@ -144,12 +148,12 @@ function cambiarValorCodSms(){
           url: '<?php echo base_url('index.php/promociones_procesos/aceptar_promocion') ?>',
           data: {id_promocion: id_promocion, user_autorizador: '<?php echo $this->session->userdata('sadmin_user_id') ?>'},
           success: function(data){
-             location.reload(); 
+             location.reload();
           }
         });
       }
     }
-    
+
     function showMotivoRechazo(id_promo){
       $.ajax({
         type: 'POST',
@@ -173,11 +177,11 @@ function cambiarValorCodSms(){
     $('#crudForm').submit(function(){
       return false;
     });
-  
+
   });
 
   </script>
 
 <div id="dialog-motivo-rechazo" title="Basic dialog">
- 
+
 </div>
