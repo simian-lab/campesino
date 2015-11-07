@@ -331,7 +331,7 @@ class Promociones_premium_model extends CI_Model
                 }
                }
               }else{
-                $respuesta = 'Esta Promocion no se puede agregar al Evento '.$lista_eventos[$evento_agregado].', favor comunicar con atencion al cliente, para validar su paquetes asociados';
+                $respuesta = 'Esta Promocion no se puede agregar al Evento '.$lista_eventos[$evento_agregado].', favor comunicar con atencion al cliente, para validar sus paquetes asociados';
               }
             }
         return  $respuesta;

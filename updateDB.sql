@@ -97,7 +97,7 @@ IF NOT EXISTS (SELECT 1 FROM PAQUETES_NOMBRES WHERE PAQ_ID=pPAQ_ID )
 THEN
 
     SET vRESPUESTA = 101;
-        SET vCOMENTARIO = CONCAT('Esta Promocion no se puede agregar, favor comunicar con atencion al cliente para validar su paquetes asociados al evento ',pEVEN);
+        SET vCOMENTARIO = CONCAT('Esta Promocion no se puede agregar, favor comunicar con atencion al cliente para validar sus paquetes asociados a ',pEVEN);
 END IF;
 
 
