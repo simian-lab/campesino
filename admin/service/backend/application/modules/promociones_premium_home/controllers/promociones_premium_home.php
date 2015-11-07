@@ -325,7 +325,7 @@ function before_update($post_array, $primary_key){
   //validar limite paquete
   $comprobacion = $this->promociones_premium_home_model->validar_limite_edit($primary_key,$post_array);
   if($comprobacion!=1){
-    echo '<script>alert("'.$comprobacion.'")</script>';|
+    echo '<script>alert("'.$comprobacion.'")</script>';
     exit();
   }
   //fin validacion
