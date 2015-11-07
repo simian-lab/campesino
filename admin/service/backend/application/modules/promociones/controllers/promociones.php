@@ -484,6 +484,15 @@ function before_update($post_array, $primary_key){
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
 
+
+  //validar limite paquete
+  $comprobacion = $this->promociones_model->validar_limite_edit($primary_key,$post_array);
+  if($comprobacion!=1){
+    echo '<script>alert("'.$comprobacion.'")</script>';
+    exit();
+  }
+  //fin validacion
+
 	$visibilidad = $this->promociones_model->verificar_visibilidad($primary_key);
 
     if($post_array['VISIBILITY'] == 0 && $visibilidad['VISIBILITY'] == 1){
