@@ -341,6 +341,14 @@ function before_update($post_array, $primary_key){
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
   $datos_envio['eventos'] = $this->promociones_generales_model->get_eventos_promocion($primary_key);
 
+  //validar limite paquete
+  $comprobacion = $this->promociones_generales_model->validar_limite_edit($primary_key,$post_array);
+  if($comprobacion!=1){
+    echo '<script>alert("'.$comprobacion.'")</script>';
+    exit();
+  }
+  //fin validacion
+
 	$visibilidad = $this->promociones_generales_model->verificar_visibilidad($primary_key);
 	$post_array['VISIBILITY'] = 1;
 
