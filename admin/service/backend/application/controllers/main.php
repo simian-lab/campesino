@@ -420,4 +420,9 @@ class Main extends MX_Controller
         echo $retorno = modules::run('modules/reporte_promociones/index');
     }
 
+    function eventos() {
+        $auth = $this->load->module('eventos');
+        echo $retorno = modules::run('modules/eventos/index');
+    }
+
 }

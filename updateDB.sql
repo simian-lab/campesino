@@ -305,3 +305,20 @@ VALUES
 INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
 VALUES
   (2013, 78, 5);
+
+/* Creo los enlaces de Eventos para el menú */
+INSERT INTO `admin_process` (`id`, `process`, `method`, `process_id`, `menu`, `orden`, `style`)
+VALUES
+  (79, 'EVENTOS', '', NULL, 1, 1, NULL);
+INSERT INTO `admin_process` (`id`, `process`, `method`, `process_id`, `menu`, `orden`, `style`)
+VALUES
+  (80, 'Administrar eventos', 'main/eventos', 79, 1, 106, NULL);
+
+/* Agrego los enlaces de Eventos al menú del super usuario */
+INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
+VALUES
+  (2014, 79, 4);
+INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
+VALUES
+  (2015, 80, 4);
+
