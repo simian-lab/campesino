@@ -189,35 +189,35 @@ class promocion_model extends CI_Model {
 
   function get_marcas_by_tienda($tienda='tiendas',$idPromosRepetido='') {
 
-    // $key_memcached_marcas_hfx = $tienda.'_'.$idPromosRepetido;
-    // $result_memcached_marcas_hfx = $this->memcached_library->get($key_memcached_marcas_hfx);
+    $key_memcached_marcas_hfx = $tienda.'_'.$idPromosRepetido;
+    $result_memcached_marcas_hfx = $this->memcached_library->get($key_memcached_marcas_hfx);
 
-    // if(!$result_memcached_marcas_hfx) {
-    //   $this->db->select('MAR_NOMBRE,MAR_SLUG');
-    //   $this->db->distinct();
-    //   $this->db->from('PRO_PROMOCIONES');
-    //   $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
-    //   $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
-    //   $this->db->join('MAR_MARCAS', 'MAR_MARCAS.MAR_ID = PRO_PROMOCIONES.MAR_ID');
-    //   $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
+    if(!$result_memcached_marcas_hfx) {
+      $this->db->select('MAR_NOMBRE,MAR_SLUG');
+      $this->db->distinct();
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
+      $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
+      $this->db->join('MAR_MARCAS', 'MAR_MARCAS.MAR_ID = PRO_PROMOCIONES.MAR_ID');
+      $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
 
-    //   if($tienda!='tiendas')
-    //     $this->db->where('PRO_USER_CREADOR', $tienda);
+      if($tienda!='tiendas')
+        $this->db->where('PRO_USER_CREADOR', $tienda);
 
-    //   $this->db->where('MAR_SLUG !=', 'no-aplica');
-    //   if(!empty($idPromosRepetido))
-    //     $this->db->where_not_in('PRO_ID', $idPromosRepetido);
+      $this->db->where('MAR_SLUG !=', 'no-aplica');
+      if(!empty($idPromosRepetido))
+        $this->db->where_not_in('PRO_ID', $idPromosRepetido);
 
-    //   $this->db->order_by("MAR_NOMBRE", "asc");
-    //   $query = $this->db->get();
+      $this->db->order_by("MAR_NOMBRE", "asc");
+      $query = $this->db->get();
 
-    //   $result = $query->result_array();
+      $result = $query->result_array();
 
-    //   $this->memcached_library->add($key_memcached_marcas_hfx, $result, 86400);
-    //   return $result;
-    // }
+      $this->memcached_library->add($key_memcached_marcas_hfx, $result, 86400);
+      return $result;
+    }
 
-    // return $result_memcached_marcas_hfx;
+    return $result_memcached_marcas_hfx;
 
     return NULL;
   }
