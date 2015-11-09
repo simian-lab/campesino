@@ -19,8 +19,9 @@ class Eventos extends Main {
 
 		$crud->display_as('EVE_NOMBRE', 'Nombre');
 		$crud->display_as('EVE_DESCRIPCION', 'Descripción');
+		$crud->display_as('EVE_PREFIJO', 'Prefijo');
 
-		$crud->required_fields('EVE_NOMBRE', 'EVE_DESCRIPCION');
+		$crud->required_fields('EVE_NOMBRE', 'EVE_DESCRIPCION', 'EVE_PREFIJO');
 
 		$crud->set_subject('evento');
 
