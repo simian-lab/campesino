@@ -159,7 +159,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -345,9 +345,12 @@ div#menu .container .row nav.navbar-collapse {
 }
 /* line 193, ../sass/screen.scss */
 div#menu .container .row nav ul li {
-  border-right: 1px solid #b8e9f0;
+  border-right: 1px solid #aea7c3;
   display: inline-block;
   position: relative;
+}
+div#menu .container .row nav ul li:first-child {
+  border-left: 1px solid #aea7c3;
 }
 @media screen and (max-width: 768px) {
   /* line 193, ../sass/screen.scss */
@@ -361,57 +364,62 @@ div#menu .container .row nav ul li {
   }
 }
 /* line 204, ../sass/screen.scss */
-div#menu .container .row nav ul li:last-child {
+/*div#menu .container .row nav ul li:last-child {
   border-right: none;
-}
+}*/
 /* line 208, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child.active {
-  background-color: #f0c02a;
+div#menu .container .row nav ul li.active a{
+  color: #d8d5df;
+  text-decoration: underline;
 }
 /* line 213, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li.active {
-  background-color: #e04b8d;
-}
+/*div#menu .container .row nav ul li:first-child + li.active a{
+  color: #d8d5df;
+  text-decoration: underline;
+}*/
 /* line 218, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li.active {
   background-color: #8d6ba2;
-}
+}*/
 /* line 223, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li + li.active {
   background-color: #b9363c;
-}
+}*/
 /* line 228, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li.active {
   background-color: #4b3579;
-}
+}*/
 /* line 233, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li + li.active {
   background-color: #0866a2;
-}
+}*/
 /* line 237, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child:hover {
-  background-color: #f0c02a;
+div#menu .container .row nav ul li:hover {
+  background-color: #401f5a;
+}
+div#menu .container .row nav ul li:hover a {
+  color: #fff !important;
 }
 /* line 240, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li :hover {
+/*div#menu .container .row nav ul li:first-child + li :hover {
   background-color: #e04b8d;
-}
+}*/
 /* line 243, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li :hover {
   background-color: #8d6ba2;
-}
+}*/
 /* line 246, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li + li :hover {
   background-color: #b9363c;
-}
+}*/
 /* line 249, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li :hover {
   background-color: #4b3579;
-}
+}*/
 /* line 252, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li + li :hover {
   background-color: #0866a2;
-}
+}*/
 /* line 255, ../sass/screen.scss */
 div#menu .container .row nav ul li a, div#menu .container .row nav ul li a:hover {
   color: white;
@@ -1763,8 +1771,9 @@ div#menu .menu-section{
 div#menu .box-right{
   padding-right: 0px;
 }
-.item-menu-current{
-  background: #ff5d15;
+.item-menu-current.active a{
+  color: #d8d5df;
+  text-decoration: underline;
 }
 .wrapper-filter {
     display: inline-block;
@@ -2222,7 +2231,7 @@ hr{
     font-weight: normal;
 }
 .link.red {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #b9363c;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 .link.red, .link.orange {
   border: 1px solid white;
@@ -2337,8 +2346,8 @@ hr{
 }
 /* line 798, ../sass/screen.scss */
 .ofertas-destacadas ul li article{
-  background-color: #454646;
-  border: 1px solid #00b6c9;
+  background: #F2F2F2;
+  border: 1px solid #683A8C;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -2363,7 +2372,7 @@ hr{
 }
 /* line 815, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info h2{
-  color: #00b6c9;
+  color: #683A8C;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 0.813em;
   text-transform: uppercase;
@@ -2378,6 +2387,7 @@ hr{
 /* line 827, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc p{
   height: 33px;
+  color: #424242;
 }
 @media screen and (max-width: 992px) {
   /* line 827, ../sass/screen.scss */
@@ -2387,7 +2397,7 @@ hr{
 }
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
-  color: #00b6c9;
+  color: #683A8C;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 1.313em;
 }
@@ -2395,6 +2405,7 @@ hr{
 .ofertas-destacadas ul li article .desc .antes{
   font-size: 0.938em;
   text-decoration: line-through;
+  color: #424242;
 }
 /* line 846, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .info,
@@ -2403,13 +2414,13 @@ hr{
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
-  background: url('../img/bg-percent.jpg') no-repeat;
-  border: 1px solid #00b6c9;
+ background: url("../img/bg_bf_percent_big.jpg") no-repeat;
+  border: 1px solid #683A8C;
   border-bottom: none;
   bottom: 0;
   color: white;
   height: 97px;
-  padding: 7px 6px;
+  padding: 14px 6px;
   position: absolute;
   text-align: center;
   right: 5px;
@@ -2436,12 +2447,12 @@ hr{
 /* line 871, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje .num{
   font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.8em;
+  font-size: 2.9em;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
   .ofertas-destacadas ul li.descuento article .porcentaje .num{
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 }
 /* line 878, ../sass/screen.scss */
@@ -2506,6 +2517,15 @@ hr{
     right: 20px;
     top: 280px;
     z-index: 100;
+}
+.ancla  a{
+  background: url("../img/ancla_bf.png") no-repeat;
+  width: 92px;
+  height: 53px;
+  display: block;
+}
+.ancla img{
+  display: none !important;
 }
 .ancla .esc{
   display: block;
