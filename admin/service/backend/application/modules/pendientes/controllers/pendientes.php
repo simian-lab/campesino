@@ -47,8 +47,8 @@ class Pendientes extends Main {
          ->display_as('CAT_ID','Categoría')
          ->display_as('SUB_ID','Subcategoría')
          ->display_as('AUTORIZADO','Estado')
+         ->display_as('eventos','Eventos')
          ->display_as('PRO_MOTIVO_RECHAZO','Motivo rechazo')
-         ->display_as('Paquete')
          ->display_as('PRO_TIPO_MONEDA', 'Moneda')
          ->display_as('PRO_FECHA', 'Fecha')
          ->display_as('PRO_AUTOR', 'Autor')
@@ -71,16 +71,17 @@ class Pendientes extends Main {
 
     	//***************************	Relacion de tablas ***************************
 
+    $crud->set_relation_n_n('eventos', 'EXP_EVENTOXPROMOCION', 'EVE_EVENTOS', 'EXP_PROMOCION', 'EXP_EVENTO', 'EVE_NOMBRE');
 
-    $crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_AUTOR','AUTORIZADO','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL', 'VISTA_PREVIA');
 
-    $crud->columns('PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_NOMBRE','PRO_AUTOR','VISIBILITY','AUTORIZADO','PRO_SRC_ID', 'Paquete');
+    $crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_AUTOR','AUTORIZADO','eventos','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL', 'VISTA_PREVIA');
+
+    $crud->columns('PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_NOMBRE','PRO_AUTOR','VISIBILITY','AUTORIZADO','eventos','PRO_SRC_ID');
 
 
     $crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
     $crud->set_field_upload('PRO_LOGO_GENERAL','multimedia/promociones/');
     $crud->callback_column('PRO_SRC_ID',array($this, 'tipo_promocion'));
-    $crud->callback_column('Paquete', array($this, 'columna_paquete'));
     $crud->callback_field('PRO_TIPO_MONEDA',array($this,'tipo_moneda'));
     $crud->callback_column('AUTORIZADO',array($this,'estado_promocion'));
     $crud->add_action('Aceptar','../../images/aprobar.png','','aceptar-promocion',array($this,'aceptar_promociones'));
@@ -90,6 +91,7 @@ class Pendientes extends Main {
     $crud->callback_field('AUTORIZADO',array($this,'estado_promocion_field'));
     $crud->callback_field('PRO_USER_CREADOR',array($this,'get_usuarios_aliados'));
     $crud->callback_field('ID_USER_CREADOR',array($this,'get_id_user_creador'));
+    $crud->callback_field('eventos',array($this,'get_eventos'));
     $crud->callback_field('VISTA_PREVIA',array($this,'link_vista_previa'));
 
 
@@ -123,6 +125,11 @@ function show_imagen_genereal($value){
 function get_id_user_creador($value, $id_promo){
   $result = $this->pendientes_model->get_user_x_promocion($id_promo);
   return $result['PRO_USER_CREADOR'];
+}
+
+function get_eventos($value, $id_promo){
+  $result = $this->pendientes_model->get_eventos_promocion($id_promo);
+  return $result;
 }
 
 function link_vista_previa(){

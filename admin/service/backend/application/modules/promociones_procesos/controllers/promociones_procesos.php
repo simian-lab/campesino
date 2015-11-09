@@ -21,88 +21,130 @@ class Promociones_procesos extends MX_Controller {
       $this->promociones_procesos_model->aceptar_promocion($id_promocion, $user_autorizador);
 
       $this->send_mail($id_promocion);
+  }
+
+  function rechazar_promocion(){
+    $id_promocion = $this->input->post('id_promocion');
+    $motivo = $this->input->post('motivo');
+    $user_autorizador = $this->input->post('user_autorizador');
+
+    $this->promociones_procesos_model->rechazar_promocion($id_promocion, $motivo, $user_autorizador);
+
+    $this->send_mail($id_promocion, $motivo);
+  }
+
+  function send_mail($id_promocion, $motivo = ''){
+
+    $promocion = $this->promociones_procesos_model->get_promocion($id_promocion);
+
+    $user = $this->promociones_procesos_model->get_user($promocion[0]->PRO_USER_CREADOR);
+
+
+    $this->config->load('email');
+    $config['protocol'] = 'smtp';
+    $config['smtp_host'] = $this->config->item('smtp');
+    $config['charset'] = 'utf-8';
+    $config['wordwrap'] = TRUE;
+
+    $this->email->initialize($config);
+
+    $this->email->from($this->config->item('mail_send'), 'Promociones');
+    $this->email->to($user[0]->email); 
+
+    if($promocion[0]->AUTORIZADO == 1){
+
+      if((int)$promocion[0]->PRO_ACTIVA === (int)1){
+          $asunto='Su promoción ha sido ACTIVADA';
+          $this->email->subject($asunto);
+          $this->email->message('Se ha activado la promoción:
+           Promoción: '.$promocion[0]->PRO_NOMBRE.'
+           Autor: '.$promocion[0]->PRO_AUTOR);
+      }
+      elseif((int)$promocion[0]->PRO_ACTIVA === (int)2){
+          $asunto='Su promoción ha sido INACTIVADA';
+          $this->email->subject($asunto);
+          $this->email->message('Se ha inactivado la promoción:
+           Promoción: '.$promocion[0]->PRO_NOMBRE.'
+           Autor: '.$promocion[0]->PRO_AUTOR);
+      }
+      else{
+          $asunto='Su promoción ha sido APROBADA';
+          $this->email->subject($asunto);
+          $this->email->message('Se ha aprobado la promoción:
+           Promoción: '.$promocion[0]->PRO_NOMBRE.'
+           Autor: '.$promocion[0]->PRO_AUTOR);  
+      }
+      $asunto='Su promoción ha sido APROBADA';
+      $this->email->subject($asunto);
+      $this->email->message('Se ha aprobado la promoción:
+       Promoción: '.$promocion[0]->PRO_NOMBRE.'
+       Autor: '.$promocion[0]->PRO_AUTOR); 
+      
     }
 
-    function rechazar_promocion(){
-      $id_promocion = $this->input->post('id_promocion');
-      $motivo = $this->input->post('motivo');
-      $user_autorizador = $this->input->post('user_autorizador');
-
-      $this->promociones_procesos_model->rechazar_promocion($id_promocion, $motivo, $user_autorizador);
-
-      $this->send_mail($id_promocion, $motivo);
+    if($promocion[0]->AUTORIZADO == 2){
+      $this->db->insert('CXP_COMENTARIOSXPROMOCION', array('PRO_ID' => $id_promocion, 'CXP_DESCRIPCION' => $motivo, 'CXP_USER_ID' => $promocion[0]->PRO_USER_AUTORIZADOR));
+      $asunto='Su promoción ha sido RECHAZADA';
+      $this->email->subject($asunto);
+      $this->email->message('Se ha rechazado la promoción:
+                             Promoción: '.$promocion[0]->PRO_NOMBRE.'
+                             Autor: '.$promocion[0]->PRO_AUTOR.'
+                             Motivo: '.$motivo); 
     }
 
-    function send_mail($id_promocion, $motivo = ''){
+    $this->email->send();
 
-      $promocion = $this->promociones_procesos_model->get_promocion($id_promocion);
+  }
 
-      $user = $this->promociones_procesos_model->get_user($promocion[0]->PRO_USER_CREADOR);
+  function get_motivo_rechazo(){
+      $id_pro = $this->input->post('id_promo');
 
+      $result = $this->promociones_procesos_model->get_motivo_rechazo($id_pro);
 
-      $this->config->load('email');
-      $config['protocol'] = 'smtp';
-      $config['smtp_host'] = $this->config->item('smtp');
-      $config['charset'] = 'utf-8';
-      $config['wordwrap'] = TRUE;
+      echo $result;
+  }
 
-      $this->email->initialize($config);
+  function activateUser() {
+    $user_id = $this->input->post('user_id');
+    $this->db->where('id', $user_id);
+    $this->db->update('admin_users', array('active' => 1));
+  }
 
-      $this->email->from($this->config->item('mail_send'), 'Promociones');
-      $this->email->to($user[0]->email); 
+  function deactivateUser() {
+    $user_id = $this->input->post('user_id');
+    $this->db->where('id', $user_id);
+    $this->db->update('admin_users', array('active' => 0));
+  }
 
-      if($promocion[0]->AUTORIZADO == 1){
-
-        if((int)$promocion[0]->PRO_ACTIVA === (int)1){
-            $asunto='Su promoción ha sido ACTIVADA';
-            $this->email->subject($asunto);
-            $this->email->message('Se ha activado la promoción:
-             Promoción: '.$promocion[0]->PRO_NOMBRE.'
-             Autor: '.$promocion[0]->PRO_AUTOR);
-        }
-        elseif((int)$promocion[0]->PRO_ACTIVA === (int)2){
-            $asunto='Su promoción ha sido INACTIVADA';
-            $this->email->subject($asunto);
-            $this->email->message('Se ha inactivado la promoción:
-             Promoción: '.$promocion[0]->PRO_NOMBRE.'
-             Autor: '.$promocion[0]->PRO_AUTOR);
-        }
-        else{
-            $asunto='Su promoción ha sido APROBADA';
-            $this->email->subject($asunto);
-            $this->email->message('Se ha aprobado la promoción:
-             Promoción: '.$promocion[0]->PRO_NOMBRE.'
-             Autor: '.$promocion[0]->PRO_AUTOR);  
-        }
-        $asunto='Su promoción ha sido APROBADA';
-        $this->email->subject($asunto);
-        $this->email->message('Se ha aprobado la promoción:
-         Promoción: '.$promocion[0]->PRO_NOMBRE.'
-         Autor: '.$promocion[0]->PRO_AUTOR); 
-        
-      }
-
-      if($promocion[0]->AUTORIZADO == 2){
-        $this->db->insert('CXP_COMENTARIOSXPROMOCION', array('PRO_ID' => $id_promocion, 'CXP_DESCRIPCION' => $motivo, 'CXP_USER_ID' => $promocion[0]->PRO_USER_AUTORIZADOR));
-        $asunto='Su promoción ha sido RECHAZADA';
-        $this->email->subject($asunto);
-        $this->email->message('Se ha rechazado la promoción:
-                               Promoción: '.$promocion[0]->PRO_NOMBRE.'
-                               Autor: '.$promocion[0]->PRO_AUTOR.'
-                               Motivo: '.$motivo); 
-      }
-
-      $this->email->send();
-
+  function activateAll() {
+    $user_group_id = $this->input->post('user_group_id');
+    $sql = 'UPDATE admin_users 
+    JOIN admin_users_groups 
+    ON admin_users.id = admin_users_groups.user_id 
+    SET admin_users.active = 1 ';
+    if($user_group_id == 4) {
+      $sql = $sql . 'WHERE admin_users_groups.group_id in (3, 5)';
     }
+    else {
+      $sql = $sql . 'WHERE admin_users_groups.group_id = 5';
+    }
+    $this->db->query($sql);
+  }
 
-    function get_motivo_rechazo(){
-        $id_pro = $this->input->post('id_promo');
-
-        $result = $this->promociones_procesos_model->get_motivo_rechazo($id_pro);
-
-        echo $result;
-      }
-
+  function deactivateAll() {
+    $user_group_id = $this->input->post('user_group_id');
+    $sql = 'UPDATE admin_users 
+    JOIN admin_users_groups 
+    ON admin_users.id = admin_users_groups.user_id 
+    SET admin_users.active = 0 ';
+    if($user_group_id == 4) {
+      $sql = $sql . 'WHERE admin_users_groups.group_id in (3, 5)';
+    }
+    else {
+      $sql = $sql . 'WHERE admin_users_groups.group_id = 5';
+    }
+    
+    $this->db->query($sql);
+  }
 }
 

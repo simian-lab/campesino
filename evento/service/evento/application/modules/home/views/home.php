@@ -90,7 +90,7 @@
 
           </script>
           <noscript>
-           <a href=""http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich"" target=""_blank"">                
+           <a href=""http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich"" target=""_blank"">
             <img src=""http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]"" border=""0"" alt="""" /></a>
           </noscript>
         </a>
@@ -105,7 +105,7 @@
                 SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
             </script>
             <noscript>
-             <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+             <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
               <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
             </noscript>
         </a>
@@ -117,10 +117,10 @@
             sas_pageid='57473/592107'; // Página : LoEncontraste/especiales
                 sas_formatid='11772';  // Formato : Push Down Top 960x90
                 sas_target='';   // Segmentación
-                SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);           
+                SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
           </script>
           <noscript>
-           <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+           <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
             <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
           </noscript>
         </a>
@@ -247,6 +247,31 @@
 
     <div class="mini col-md-12 content-patrocinadores-destacados">
       <?php foreach($patrocinadores_general as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
+      ?>
+        <div class="wrapper-box">
+          <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+              <span>Ir a la tienda</span>
+            </a>
+          </div>
+        </div>
+      <?php $posicion++; ?>
+      <?php endforeach; ?>
+      <div class="clear"></div>
+      <hr>
+    </div><!-- End mini -->
+
+    <div class="mini col-md-12 content-patrocinadores-destacados">
+      <?php foreach($patrocinadores_otros as $patrocinador): ?>
       <?php
       if($patrocinador->PAT_URL_EVENT != '') {
         $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;

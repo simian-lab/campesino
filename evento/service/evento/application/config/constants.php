@@ -45,21 +45,19 @@ define('NUMERO_PROMOCIONES_PREMIUM',    36);
 define('NUMERO_PROMOCIONES_GENERALES',    36);
 
 /*Deinfe una constante para el tage line segun el evento*/
-switch (EVENTO) {
-	case 'bfr':
-		define('TAG_LINE',		'EVENTO BLACK FRIDAY');
-		break;
-	case 'cyl':
-		define('TAG_LINE',		'EVENTO CYBER LUNES');
-		break;
-	case 'reg':
-		define('TAG_LINE',		'EVENTO REGALAZO');
-		break;
-	default:
-		define('TAG_LINE',		'EVENTO NO DEFINIDO');
-		break;
-}
 
+require_once( BASEPATH .'database/DB'. EXT );
+$db =& DB();
+$db->select('EVE_ID, EVE_NOMBRE, EVE_PREFIJO');
+$db->from('EVE_EVENTOS');
+$db->where('EVE_PREFIJO', EVENTO);
+$db->limit(1);
+
+$query = $db->get();
+$eve_result = $query->row_array();
+
+define('TAG_LINE',    $eve_result["EVE_NOMBRE"]);
+define('ID_EVENTO',   $eve_result["EVE_ID"]);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
