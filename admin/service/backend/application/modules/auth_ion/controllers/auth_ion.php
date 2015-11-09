@@ -495,6 +495,8 @@ class Auth_ion extends Main {
 		 	}
 			   }
 
+			$crud->callback_column('active', array($this,'callback_active'));
+
 			// Defino titulos de los campos
 				$crud->display_as('active','Usuario Activo')
 				->display_as('username','Nombre Usuario')
@@ -570,6 +572,8 @@ class Auth_ion extends Main {
 				$crud->callback_edit_field('password',array($this,'decrypt_password_callback'));
 
 			$this->data['output'] = $output = $crud->render();
+			$this->data['state'] = $crud->getState();
+			$this->data['user_group_id'] = $result['group_id'];
 			$this->salida('auth/list_user', $this->data, $breadcrums);
 		}
 	}
@@ -813,5 +817,29 @@ class Auth_ion extends Main {
 		return "<input type='password' name='password' value='$decrypted_password' />";
 	}
 
-
+	function callback_active($value, $row) {
+		$rol = $row->users_groups;
+		$user_id = $row->id;
+		$this->db->select('group_id');
+		$this->db->from('admin_users_groups');
+		$this->db->where('user_id', $user_id);
+		$result = $this->db->get();
+		$group_id = $result->result_array()[0]["group_id"];
+		if(!in_array($group_id, array('3', '5'))) {
+			if($value) {
+				return 'Activo';
+			} 
+			else {
+				return 'Inactivo';
+			}
+		} 
+		else {
+			if($value) {
+				return "<a href='' onclick='deactivate(event, " . $user_id . ");'>Desactivar<a/>";
+			} 
+			else {
+				return "<a href='' onclick='activate(event, " . $user_id . ");'>Activar<a/>";
+			}
+		}
+	}
 }
