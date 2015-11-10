@@ -58,7 +58,7 @@ $eve_result = $query->row_array();
 
 define('TAG_LINE',    $eve_result["EVE_NOMBRE"].': Ofertas y Descuentos de tus Marcas y Tiendas Favoritas  - LoEncontraste.com');
 define('TITLE',    $eve_result["EVE_NOMBRE"].': Ofertas y Descuentos de tus Marcas y Tiendas Favoritas  - LoEncontraste.com');
-define('META_DESCRIPTION',	'Llegó a Loencontraste '.$eve_result["EVE_NOMBRE"].', del '.$eve_result["EVE_NOMBRE"].' aprovecha los mejores descuentos de tus marcas y tiendas favoritas. ¡Ahorra en tus compras!');
+define('META_DESCRIPTION',	'Llegó a Loencontraste '.$eve_result["EVE_NOMBRE"].', del '.$eve_result["EVE_DESCRIPCION"].' aprovecha los mejores descuentos de tus marcas y tiendas favoritas. ¡Ahorra en tus compras!');
 define('META_KEY',	'');
 define('ID_EVENTO',   $eve_result["EVE_ID"]);
 
