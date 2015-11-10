@@ -106,6 +106,7 @@ $(function() {
       });
     } else{
         if(scrollY > 71) {
+          $('#menu').addClass("logo_fixed_menu");
           $('#menu').css({
             position: 'fixed',
             top: 0,
@@ -126,8 +127,10 @@ $(function() {
           });
         }
       else {
+        $('#menu').removeClass("logo_fixed_menu");
         $('#menu').css({
-          position: 'relative'
+          position: 'relative',
+          opacity: 1
         });
         $('.wrapper-filter').css({
           position: 'relative',

@@ -21,17 +21,17 @@ class Promociones_procesos extends MX_Controller {
       $this->promociones_procesos_model->aceptar_promocion($id_promocion, $user_autorizador);
 
       $this->send_mail($id_promocion);
-    }
+  }
 
-    function rechazar_promocion(){
-      $id_promocion = $this->input->post('id_promocion');
-      $motivo = $this->input->post('motivo');
-      $user_autorizador = $this->input->post('user_autorizador');
+  function rechazar_promocion(){
+    $id_promocion = $this->input->post('id_promocion');
+    $motivo = $this->input->post('motivo');
+    $user_autorizador = $this->input->post('user_autorizador');
 
-      $this->promociones_procesos_model->rechazar_promocion($id_promocion, $motivo, $user_autorizador);
+    $this->promociones_procesos_model->rechazar_promocion($id_promocion, $motivo, $user_autorizador);
 
-      $this->send_mail($id_promocion, $motivo);
-    }
+    $this->send_mail($id_promocion, $motivo);
+  }
 
     function send_mail($id_promocion, $motivo = ''){
 
@@ -94,21 +94,63 @@ class Promociones_procesos extends MX_Controller {
         $this->email->message('Se ha rechazado la promoción:
                                Promoción: '.$promocion[0]->PRO_NOMBRE.'
                                Eventos: '.$eventos_promo.'
-                               Autor: '.$promocion[0]->PRO_AUTOR.'
-                               Motivo: '.$motivo);
-      }
-
-      $this->email->send();
-
+                             Autor: '.$promocion[0]->PRO_AUTOR.'
+                             Motivo: '.$motivo); 
     }
 
-    function get_motivo_rechazo(){
-        $id_pro = $this->input->post('id_promo');
+    $this->email->send();
 
-        $result = $this->promociones_procesos_model->get_motivo_rechazo($id_pro);
+  }
 
-        echo $result;
-      }
+  function get_motivo_rechazo(){
+      $id_pro = $this->input->post('id_promo');
 
+      $result = $this->promociones_procesos_model->get_motivo_rechazo($id_pro);
+
+      echo $result;
+  }
+
+  function activateUser() {
+    $user_id = $this->input->post('user_id');
+    $this->db->where('id', $user_id);
+    $this->db->update('admin_users', array('active' => 1));
+  }
+
+  function deactivateUser() {
+    $user_id = $this->input->post('user_id');
+    $this->db->where('id', $user_id);
+    $this->db->update('admin_users', array('active' => 0));
+  }
+
+  function activateAll() {
+    $user_group_id = $this->input->post('user_group_id');
+    $sql = 'UPDATE admin_users 
+    JOIN admin_users_groups 
+    ON admin_users.id = admin_users_groups.user_id 
+    SET admin_users.active = 1 ';
+    if($user_group_id == 4) {
+      $sql = $sql . 'WHERE admin_users_groups.group_id in (3, 5)';
+    }
+    else {
+      $sql = $sql . 'WHERE admin_users_groups.group_id = 5';
+    }
+    $this->db->query($sql);
+  }
+
+  function deactivateAll() {
+    $user_group_id = $this->input->post('user_group_id');
+    $sql = 'UPDATE admin_users 
+    JOIN admin_users_groups 
+    ON admin_users.id = admin_users_groups.user_id 
+    SET admin_users.active = 0 ';
+    if($user_group_id == 4) {
+      $sql = $sql . 'WHERE admin_users_groups.group_id in (3, 5)';
+    }
+    else {
+      $sql = $sql . 'WHERE admin_users_groups.group_id = 5';
+    }
+    
+    $this->db->query($sql);
+  }
 }
 

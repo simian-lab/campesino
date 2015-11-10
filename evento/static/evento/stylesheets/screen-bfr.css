@@ -159,7 +159,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -174,7 +174,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bg.png) repeat;
+  background: url(../img/bg-navidad.jpg) repeat;
+  background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
 }
@@ -192,6 +193,7 @@ header .container .head {
 header .container .head .logo {
   border-right: 1px solid white;
   margin: 10px 0px 0px;
+  width: 245px;
 }
 @media screen and (max-width: 768px) {
   /* line 83, ../sass/screen.scss */
@@ -343,9 +345,12 @@ div#menu .container .row nav.navbar-collapse {
 }
 /* line 193, ../sass/screen.scss */
 div#menu .container .row nav ul li {
-  border-right: 1px solid #b8e9f0;
+  border-right: 1px solid #aea7c3;
   display: inline-block;
   position: relative;
+}
+div#menu .container .row nav ul li:first-child {
+  border-left: 1px solid #aea7c3;
 }
 @media screen and (max-width: 768px) {
   /* line 193, ../sass/screen.scss */
@@ -359,57 +364,62 @@ div#menu .container .row nav ul li {
   }
 }
 /* line 204, ../sass/screen.scss */
-div#menu .container .row nav ul li:last-child {
+/*div#menu .container .row nav ul li:last-child {
   border-right: none;
-}
+}*/
 /* line 208, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child.active {
-  background-color: #f0c02a;
+div#menu .container .row nav ul li.active a{
+  color: #d8d5df;
+  text-decoration: underline;
 }
 /* line 213, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li.active {
-  background-color: #e04b8d;
-}
+/*div#menu .container .row nav ul li:first-child + li.active a{
+  color: #d8d5df;
+  text-decoration: underline;
+}*/
 /* line 218, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li.active {
   background-color: #8d6ba2;
-}
+}*/
 /* line 223, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li + li.active {
   background-color: #b9363c;
-}
+}*/
 /* line 228, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li.active {
   background-color: #4b3579;
-}
+}*/
 /* line 233, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li + li.active {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li + li.active {
   background-color: #0866a2;
-}
+}*/
 /* line 237, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child:hover {
-  background-color: #f0c02a;
+div#menu .container .row nav ul li:hover {
+  background-color: #401f5a;
+}
+div#menu .container .row nav ul li:hover a {
+  color: #fff !important;
 }
 /* line 240, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li :hover {
+/*div#menu .container .row nav ul li:first-child + li :hover {
   background-color: #e04b8d;
-}
+}*/
 /* line 243, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li :hover {
   background-color: #8d6ba2;
-}
+}*/
 /* line 246, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li + li :hover {
   background-color: #b9363c;
-}
+}*/
 /* line 249, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li :hover {
   background-color: #4b3579;
-}
+}*/
 /* line 252, ../sass/screen.scss */
-div#menu .container .row nav ul li:first-child + li + li + li + li + li :hover {
+/*div#menu .container .row nav ul li:first-child + li + li + li + li + li :hover {
   background-color: #0866a2;
-}
+}*/
 /* line 255, ../sass/screen.scss */
 div#menu .container .row nav ul li a, div#menu .container .row nav ul li a:hover {
   color: white;
@@ -1011,7 +1021,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 }
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
-  border: 1px solid #00b6c9;
+  border: solid thin #683a8c;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1075,8 +1085,8 @@ section.wrapp .container .row .destacados ul li figure img, section.wrapp .conta
 }
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
-  background-color: #454646;
-  border: 1px solid #00b6c9;
+  background: #f2f2f2;
+  border: solid thin #683a8c;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -1097,11 +1107,11 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: 1px solid #00b6c9;
+  border-bottom: solid thin #683a8c;
 }
 /* line 815, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info h2, section.wrapp .container .row .no-destacados ul li article .info h2 {
-  color: #00b6c9;
+  color: #683a8c;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 0.813em;
   text-transform: uppercase;
@@ -1110,7 +1120,7 @@ section.wrapp .container .row .destacados ul li article .info h2, section.wrapp 
 section.wrapp .container .row .destacados ul li article .desc, section.wrapp .container .row .no-destacados ul li article .desc {
   border-right: none;
   border-top: none;
-  color: white;
+  color: #424242;
   font-size: 0.875em;
 }
 /* line 827, ../sass/screen.scss */
@@ -1125,7 +1135,7 @@ section.wrapp .container .row .destacados ul li article .desc p, section.wrapp .
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora, section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-  color: #00b6c9;
+  color: #683a8c;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 1.313em;
 }
@@ -1140,13 +1150,13 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 }
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
-  background: url(../img/bg-percent.jpg) no-repeat;
-  border: 1px solid #00b6c9;
+  background: url(../img/bg_bf_percent_big.jpg) no-repeat;
+  border: solid thin #683a8c;
   border-bottom: none;
   bottom: 0;
   color: white;
   height: 97px;
-  padding: 7px 6px;
+  padding: 14px 6px;
   position: absolute;
   text-align: center;
   right: 5px;
@@ -1169,12 +1179,12 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje im
 /* line 871, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
   font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.8em;
+  font-size: 2.9em;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
   section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 }
 /* line 878, ../sass/screen.scss */
@@ -1761,8 +1771,9 @@ div#menu .menu-section{
 div#menu .box-right{
   padding-right: 0px;
 }
-.item-menu-current{
-  background: #ff5d15;
+.item-menu-current.active a{
+  color: #d8d5df;
+  text-decoration: underline;
 }
 .wrapper-filter {
     display: inline-block;
@@ -1781,7 +1792,7 @@ div#menu .box-right{
 .wrapper-filter .item-filter label{
   display:block;
   width:100%;
-  color:#00b6c9;
+  color:#6b3e8f;
   font-size: 15px;
   margin: 0px 0px 0px 6px;
 }
@@ -1805,7 +1816,7 @@ div#menu .box-right{
     width: 100%;
     height: 30px;
     font-size: 15px;
-    background: #00b6c9;
+    background: #6b3e8f;
     margin: 15px 0px 0px 0px;
     text-transform: uppercase;
     -webkit-appearance: none;
@@ -1829,11 +1840,11 @@ div#menu .box-right{
 
 }
 .important-brand h2{
-    color: #00b6c9;
+    color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #00b6c9;
-    border-bottom: solid 1px #00b6c9;
+    border-top: solid 1px #5e5773;
+    border-bottom: solid 1px #5e5773;
     font-size: 24px;
     font-weight: bold;
     padding: 0.3em 0em;
@@ -1841,7 +1852,7 @@ div#menu .box-right{
     margin: 0em 0em 1em 0em;
 }
 .important-brand h2 small{
-    color: #00b6c9;
+    color: #6b3e8f;
     font-size: 24px;
     font-weight: normal;
 }
@@ -1941,11 +1952,11 @@ hr{
 
 }
 .comercios h2{
-    color: #00b6c9;
+    color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #00b6c9;
-    border-bottom: solid 1px #00b6c9;
+    border-top: solid 1px #5e5773;
+    border-bottom: solid 1px #5e5773;
     font-size: 24px;
     font-weight: bold;
     padding: 0.3em 0em;
@@ -1953,7 +1964,7 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .comercios h2 small{
-    color: #00b6c9;
+    color: #6b3e8f;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2178,7 +2189,7 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('../img/tabiv.png') no-repeat 0px top;
+    background: url('../img/tabiv_bf.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
@@ -2188,26 +2199,26 @@ hr{
     width: 100%;
     font-size: 1.1em;
     padding: 2.3em 0em 1.1em;
-    color: #FFF;
-    text-shadow: 1px 1px 2px #007884;
+    color: #6b3e8f;
+    text-shadow: 1px 1px 1px #838383;
 }
 
 .menu-tabs ul li.active {
-    background: url('../img/tab-activeiv.png') center 0px no-repeat;
+    background: url('../img/tab-activeiv_bf.png') center 0px no-repeat;
 }
 .menu-tabs ul li.active a{
     font-size: 23px;
-    text-shadow: 1px 1px 2px #b4cdd0;
-    color: #00b6c9;
+    text-shadow: 1px 1px 2px #444;
+    color: #94f768;
     padding: 1.7em 0em 0.7em;
 }
 /**/
 .ofertas-destacadas h3{
-    color: #00b6c9;
+    color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #00b6c9;
-    border-bottom: solid 1px #00b6c9;
+    border-top: solid 1px #5e5773;
+    border-bottom: solid 1px #5e5773;
     font-size: 24px;
     font-weight: bold;
     padding: 0.3em 0em;
@@ -2215,12 +2226,12 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .ofertas-destacadas h3 small{
-    color: #00b6c9;
+    color: #6b3e8f;
     font-size: 24px;
     font-weight: normal;
 }
 .link.red {
-  background: url('../img/bg-button-red.jpg') left top no-repeat #b9363c;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 .link.red, .link.orange {
   border: 1px solid white;
@@ -2335,8 +2346,8 @@ hr{
 }
 /* line 798, ../sass/screen.scss */
 .ofertas-destacadas ul li article{
-  background-color: #454646;
-  border: 1px solid #00b6c9;
+  background: #F2F2F2;
+  border: 1px solid #683A8C;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -2361,7 +2372,7 @@ hr{
 }
 /* line 815, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info h2{
-  color: #00b6c9;
+  color: #683A8C;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 0.813em;
   text-transform: uppercase;
@@ -2376,6 +2387,7 @@ hr{
 /* line 827, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc p{
   height: 33px;
+  color: #424242;
 }
 @media screen and (max-width: 992px) {
   /* line 827, ../sass/screen.scss */
@@ -2385,7 +2397,7 @@ hr{
 }
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
-  color: #00b6c9;
+  color: #683A8C;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 1.313em;
 }
@@ -2393,6 +2405,7 @@ hr{
 .ofertas-destacadas ul li article .desc .antes{
   font-size: 0.938em;
   text-decoration: line-through;
+  color: #424242;
 }
 /* line 846, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .info,
@@ -2401,13 +2414,13 @@ hr{
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
-  background: url('../img/bg-percent.jpg') no-repeat;
-  border: 1px solid #00b6c9;
+ background: url("../img/bg_bf_percent_big.jpg") no-repeat;
+  border: 1px solid #683A8C;
   border-bottom: none;
   bottom: 0;
   color: white;
   height: 97px;
-  padding: 7px 6px;
+  padding: 14px 6px;
   position: absolute;
   text-align: center;
   right: 5px;
@@ -2434,12 +2447,12 @@ hr{
 /* line 871, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje .num{
   font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.8em;
+  font-size: 2.9em;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
   .ofertas-destacadas ul li.descuento article .porcentaje .num{
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 }
 /* line 878, ../sass/screen.scss */
@@ -2504,6 +2517,15 @@ hr{
     right: 20px;
     top: 280px;
     z-index: 100;
+}
+.ancla  a{
+  background: url("../img/ancla_bf.png") no-repeat;
+  width: 92px;
+  height: 53px;
+  display: block;
+}
+.ancla img{
+  display: none !important;
 }
 .ancla .esc{
   display: block;
@@ -2752,3 +2774,25 @@ hr{
       overflow: hidden!important;
     }
   }
+#menu.logo_fixed_menu {
+  height: 56px;
+}
+.logo_fixed_menu .container:after  {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 56px;
+  background: url("../img/fixed_menu_logo.png") no-repeat;
+  float: right;
+  position: relative;
+  top: -54px;
+}
+@media screen and (max-width: 992px) {
+  .logo_fixed_menu .container:after {
+    display: none;
+  }
+}
+/*estilos provisionales errores*/
+body > div:nth-child(1), body > div:nth-child(2) {
+  display: none;
+}
