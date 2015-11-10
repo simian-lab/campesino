@@ -48,7 +48,7 @@ define('NUMERO_PROMOCIONES_GENERALES',    36);
 
 require_once( BASEPATH .'database/DB'. EXT );
 $db =& DB();
-$db->select('EVE_ID, EVE_NOMBRE, EVE_PREFIJO');
+$db->select('EVE_ID, EVE_NOMBRE, EVE_PREFIJO, EVE_DESCRIPCION');
 $db->from('EVE_EVENTOS');
 $db->where('EVE_PREFIJO', EVENTO);
 $db->limit(1);
@@ -56,7 +56,10 @@ $db->limit(1);
 $query = $db->get();
 $eve_result = $query->row_array();
 
-define('TAG_LINE',    $eve_result["EVE_NOMBRE"]);
+define('TAG_LINE',    $eve_result["EVE_NOMBRE"].': Ofertas y Descuentos de tus Marcas y Tiendas Favoritas  - LoEncontraste.com');
+define('TITLE',    $eve_result["EVE_NOMBRE"].': Ofertas y Descuentos de tus Marcas y Tiendas Favoritas  - LoEncontraste.com');
+define('META_DESCRIPTION',	'Llegó a Loencontraste '.$eve_result["EVE_NOMBRE"].', del '.$eve_result["EVE_DESCRIPCION"].' aprovecha los mejores descuentos de tus marcas y tiendas favoritas. ¡Ahorra en tus compras!');
+define('META_KEY',	'');
 define('ID_EVENTO',   $eve_result["EVE_ID"]);
 
 /* End of file constants.php */
