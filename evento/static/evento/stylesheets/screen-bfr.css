@@ -2912,3 +2912,17 @@ hr{
 body > div:nth-child(1), body > div:nth-child(2) {
   display: none;
 }
+header .container .row.head:before {
+  content: "";
+  display: block;
+  width: 272px;
+  height: 67px;
+  background: url("../img/banner_header_bf.png") no-repeat;
+  float: right;
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  header .container .row.head:before {
+    display: none;
+  }
+}
