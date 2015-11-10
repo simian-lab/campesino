@@ -45,6 +45,7 @@ CREATE TABLE `AXP_ADMINXPAQUETE` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+ALTER TABLE EVE_EVENTOS ADD EVE_PREFIJO varchar(5);
 
 -- ----------------------------
 --  Procedure structure for `AB_DESCONTAR_MAX`
