@@ -47,6 +47,11 @@ if (defined('ENVIRONMENT'))
 		break;
 		case 'production':
 			error_reporting(0);
+			if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {
+		      // echo "https on";
+		      $redirect = "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		      header("Location:$redirect");
+		    }
 		break;
 
 		default:
