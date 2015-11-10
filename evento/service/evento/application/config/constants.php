@@ -48,7 +48,7 @@ define('NUMERO_PROMOCIONES_GENERALES',    36);
 
 require_once( BASEPATH .'database/DB'. EXT );
 $db =& DB();
-$db->select('EVE_ID, EVE_NOMBRE, EVE_PREFIJO','EVE_DESCRIPCION');
+$db->select('EVE_ID, EVE_NOMBRE, EVE_PREFIJO, EVE_DESCRIPCION');
 $db->from('EVE_EVENTOS');
 $db->where('EVE_PREFIJO', EVENTO);
 $db->limit(1);
