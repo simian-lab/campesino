@@ -5,10 +5,10 @@ class Promociones_procesos extends MX_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
+
 		$this->load->database();
-		
-		$this->load->library('grocery_crud');	
+
+		$this->load->library('grocery_crud');
 		$this->load->helper('url');
     $this->load->library('email');
     $this->load->model('promociones_procesos_model');
@@ -17,7 +17,7 @@ class Promociones_procesos extends MX_Controller {
 	function aceptar_promocion(){
       $id_promocion = $this->input->post('id_promocion');
       $user_autorizador = $this->input->post('user_autorizador');
-      
+
       $this->promociones_procesos_model->aceptar_promocion($id_promocion, $user_autorizador);
 
       $this->send_mail($id_promocion);
@@ -49,7 +49,7 @@ class Promociones_procesos extends MX_Controller {
       $this->email->initialize($config);
 
       $this->email->from($this->config->item('mail_send'), 'Promociones');
-      $this->email->to($user[0]->email); 
+      $this->email->to($user[0]->email);
 
       if($promocion[0]->AUTORIZADO == 1){
 
@@ -72,14 +72,14 @@ class Promociones_procesos extends MX_Controller {
             $this->email->subject($asunto);
             $this->email->message('Se ha aprobado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
-             Autor: '.$promocion[0]->PRO_AUTOR);  
+             Autor: '.$promocion[0]->PRO_AUTOR);
         }
         $asunto='Su promoción ha sido APROBADA';
         $this->email->subject($asunto);
         $this->email->message('Se ha aprobado la promoción:
          Promoción: '.$promocion[0]->PRO_NOMBRE.'
-         Autor: '.$promocion[0]->PRO_AUTOR); 
-        
+         Autor: '.$promocion[0]->PRO_AUTOR);
+
       }
 
       if($promocion[0]->AUTORIZADO == 2){
@@ -89,7 +89,7 @@ class Promociones_procesos extends MX_Controller {
         $this->email->message('Se ha rechazado la promoción:
                                Promoción: '.$promocion[0]->PRO_NOMBRE.'
                                Autor: '.$promocion[0]->PRO_AUTOR.'
-                               Motivo: '.$motivo); 
+                               Motivo: '.$motivo);
       }
 
       $this->email->send();
