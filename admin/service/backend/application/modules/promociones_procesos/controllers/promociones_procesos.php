@@ -36,6 +36,7 @@ class Promociones_procesos extends MX_Controller {
     function send_mail($id_promocion, $motivo = ''){
 
       $promocion = $this->promociones_procesos_model->get_promocion($id_promocion);
+      $eventos_promo = $this->promociones_procesos_model->get_eventos_promocion($id_promocion);
 
       $user = $this->promociones_procesos_model->get_user($promocion[0]->PRO_USER_CREADOR);
 
@@ -58,6 +59,7 @@ class Promociones_procesos extends MX_Controller {
             $this->email->subject($asunto);
             $this->email->message('Se ha activado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
+             Eventos: '.$eventos_promo.'
              Autor: '.$promocion[0]->PRO_AUTOR);
         }
         elseif((int)$promocion[0]->PRO_ACTIVA === (int)2){
@@ -65,6 +67,7 @@ class Promociones_procesos extends MX_Controller {
             $this->email->subject($asunto);
             $this->email->message('Se ha inactivado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
+             Eventos: '.$eventos_promo.'
              Autor: '.$promocion[0]->PRO_AUTOR);
         }
         else{
@@ -72,12 +75,14 @@ class Promociones_procesos extends MX_Controller {
             $this->email->subject($asunto);
             $this->email->message('Se ha aprobado la promoción:
              Promoción: '.$promocion[0]->PRO_NOMBRE.'
+             Eventos: '.$eventos_promo.'
              Autor: '.$promocion[0]->PRO_AUTOR);
         }
         $asunto='Su promoción ha sido APROBADA';
         $this->email->subject($asunto);
         $this->email->message('Se ha aprobado la promoción:
          Promoción: '.$promocion[0]->PRO_NOMBRE.'
+         Eventos: '.$eventos_promo.'
          Autor: '.$promocion[0]->PRO_AUTOR);
 
       }
@@ -88,6 +93,7 @@ class Promociones_procesos extends MX_Controller {
         $this->email->subject($asunto);
         $this->email->message('Se ha rechazado la promoción:
                                Promoción: '.$promocion[0]->PRO_NOMBRE.'
+                               Eventos: '.$eventos_promo.'
                                Autor: '.$promocion[0]->PRO_AUTOR.'
                                Motivo: '.$motivo);
       }
