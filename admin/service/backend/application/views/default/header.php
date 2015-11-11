@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Administrador :: Cyberlunes</title>
+	<title>Administrador :: Especiales LoEncontraste.com</title>
 
 	<link rel="stylesheet" href="<?php echo base_url();?>css/layout.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo base_url();?>css/styles.css" type="text/css" media="screen" />
