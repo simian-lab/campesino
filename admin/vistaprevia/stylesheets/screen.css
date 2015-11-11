@@ -1080,6 +1080,18 @@ div.wrapp .container .row .destacados ul li div.article .info, div.wrapp .contai
 div.wrapp .container .row .destacados ul li div.article .info, div.wrapp .container .row .no-destacados ul li div.article .info {
   border-bottom: 1px solid #00b6c9;
 }
+div.wrapp.evento-bfr .container .row .destacados ul li div.article .info {
+  border-bottom: solid thin #683a8c;
+}
+div.wrapp.evento-cyl .container .row .destacados ul li div.article .info {
+  border-bottom: solid thin #3f80d2;
+}
+div.wrapp.evento-cys .container .row .destacados ul li div.article .info {
+  border-bottom: solid thin #e02d4f;
+}
+div.wrapp .container .row .destacados ul li:hover div.article .info {
+  border-bottom: solid thin #fff;
+}
 /* line 806, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .info h2, div.wrapp .container .row .no-destacados ul li div.article .info h2 {
   color: #00b6c9;
