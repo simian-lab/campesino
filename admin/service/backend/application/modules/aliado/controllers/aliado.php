@@ -42,7 +42,7 @@ class Aliado extends Main {
 		$email_config['wordwrap'] = TRUE;
 
 		$this->email->initialize($email_config);
-		$this->email->from('no-reply@cyberlunes.com.co', 'Patrocinadores');
+		$this->email->from('no-reply@loencontraste.com', 'Patrocinadores');
 		$this->email->to($mails_list);
 		//$this->email->to('nicolas@simian.co'); // This email is for testing.
 		$this->email->subject('Se modifico una URL de evento');
