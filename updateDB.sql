@@ -306,6 +306,9 @@ VALUES
 INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
 VALUES
   (2013, 78, 5);
+INSERT INTO `admin_process_groups` (`process_id`, `group_id`)
+VALUES
+  (78, 3);
 
 /* Creo los enlaces de Eventos para el menú */
 INSERT INTO `admin_process` (`id`, `process`, `method`, `process_id`, `menu`, `orden`, `style`)

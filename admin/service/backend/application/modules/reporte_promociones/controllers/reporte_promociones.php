@@ -20,7 +20,7 @@ class Reporte_promociones extends Main {
 
 		$crud = new grocery_CRUD();
 
-		if($group_id == 4) {
+		if($group_id == 4 || $group_id == 3) {
 			$crud->columns('PAT_ID', 'PAT_NOMBRE', 'PAQ_NOMBRE', 'EVE_NOMBRE', 'PAQ_MONTO_PREMIUM', 'PAQ_CREADAS_PREMIUM', 'PAQ_MONTO_PREMIUM_CATEGORIA', 'PAQ_CREADAS_PREMIUM_CATEGORIA', 'PAQ_MONTO_GENERAL', 'PAQ_CREADAS_GENERAL');
 		}
 		else {
