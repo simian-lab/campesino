@@ -1671,11 +1671,14 @@ footer .terminos span a {
 /* line 1200, ../sass/screen.scss */
 #slide-publi .owl-wrapper .owl-item .item .publi-content .titulo-publicidad {
   background-color: white;
-  border-top: 1px solid #00b3c7;
-  border-right: 1px solid #00b3c7;
-  border-left: 1px solid #00b3c7;
+  border-top: 1px solid #6b3e8f;
+  border-right: 1px solid #6b3e8f;
+  border-left: 1px solid #6b3e8f;
   margin: 0 auto;
   width: 300px;
+}
+.publi-content img {
+  border: solid thin #6b3e8f !important;
 }
 /* line 1207, ../sass/screen.scss */
 #slide-publi .owl-wrapper .owl-item .item .publi-content .titulo-publicidad span {
