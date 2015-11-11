@@ -34,10 +34,25 @@
         <?php
         $arrEventos = explode( ',', $eventos );
         foreach ($arrEventos as $evento) {
+          switch (trim($evento))
+          {
+            case 'Cyber Lunes':
+              $prefijo_evento = 'evento-cyl';
+            break;
+            case 'Black Friday':
+              $prefijo_evento = 'evento-bfr';
+            break;
+            case 'Cyber Santa':
+              $prefijo_evento = 'evento-cys';
+            break;
+            default:
+              $prefijo_evento = $evento;
+            break;
+          }
         if($seccion == 'premium_home' || $seccion == 'premium'):
         ?>
         <hr><h1 style="font-weight: bolder;text-transform: uppercase;margin-left: 40px;"><?php echo $evento;?></h1><hr>
-        <div class="wrapp section <?php echo $evento;?>">
+        <div class="wrapp section <?php echo $prefijo_evento;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -110,7 +125,7 @@
 
         <?php if($seccion == 'general' || $seccion == 'premium'): ?>
         <hr><h1 style="font-weight: bolder;text-transform: uppercase;margin-left: 40px;"><?php echo $evento;?></h1><hr>
-        <div class="wrapp section <?php echo $evento;?>">
+        <div class="wrapp section <?php echo $prefijo_evento;?>">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
