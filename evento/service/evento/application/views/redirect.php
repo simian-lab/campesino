@@ -53,7 +53,8 @@
 
         ?>
     </head>
-    <body id="redireccion">
+    <body>
+        <div class="redirect-loading"></div>
                 <!-- Google Tag Manager -->
       <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MPFWLN"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
