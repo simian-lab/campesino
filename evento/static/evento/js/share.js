@@ -32,7 +32,7 @@ function shareTwitter(art_detalle) {
   if(art_detalle == 'detalle')
     var text_share = $('meta[http-equiv="og:title"]').attr("content");
   else
-    var text_share = 'Ya estoy mirando en http://www.cyberlunes.com.co las mejores ofertas. Aprovecha los descuentos increíbles de @Cyberlunesco';
+    var text_share = $('#twitter_tag_line').val();
 
   var openLink = 'http://twitter.com/share?text=' + encodeURIComponent( text_share );
 
