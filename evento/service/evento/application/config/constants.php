@@ -56,8 +56,8 @@ $db->limit(1);
 $query = $db->get();
 $eve_result = $query->row_array();
 
-define('TAG_LINE',    $eve_result["EVE_TAG_LINE"];
-define('TITLE',    $eve_result["EVE_TITLE"];
+define('TAG_LINE',    $eve_result["EVE_TAG_LINE"]);
+define('TITLE',    $eve_result["EVE_TITLE"]);
 define('META_KEY',	'');
 define('ID_EVENTO',   $eve_result["EVE_ID"]);
 define('META_DESCRIPTION', $eve_result["EVE_META_DESCRIPTION"]);
