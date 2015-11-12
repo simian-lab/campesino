@@ -69,5 +69,5 @@
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
       <!-- End Google Tag Manager -->
-      <input type="hidden" it="twitter_tag_line" value="<?php echo TAG_TWITTER;?>"> 
-      <input type="hidden" it="facebook_tag_line" value="<?php echo TAG_FACEBOOK;?>"> 
+      <input type="hidden" id="twitter_tag_line" value="<?php echo TAG_TWITTER;?>"> 
+      <input type="hidden" id="facebook_tag_line" value="<?php echo TAG_FACEBOOK;?>"> 
