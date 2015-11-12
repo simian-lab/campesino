@@ -497,12 +497,17 @@ function before_update($post_array, $primary_key){
 
     if($post_array['VISIBILITY'] == 0 && $visibilidad['VISIBILITY'] == 1){
     	$post_array['PRO_ACTIVA'] = 2;
+      $datos_envio['PRO_ACTIVA'] = 2;
+      $this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
     elseif($post_array['VISIBILITY'] == 1 && $visibilidad['VISIBILITY'] == 0){
     	$post_array['PRO_ACTIVA'] = 1;
+      $datos_envio['PRO_ACTIVA'] = 1;
+      $this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
     else{
     	$post_array['PRO_ACTIVA'] = '';
+      $datos_envio['PRO_ACTIVA'] = '';
     	$this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
 
@@ -515,6 +520,7 @@ function fnc_after_update($post_array){ //print_r($post_array);die();
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $post_array['PRO_USER_CREADOR'];
+    $datos_envio['PRO_ACTIVA'] = $post_array['PRO_ACTIVA'];
     $this->promociones_model->send_mail_user_edit($datos_envio);
 
 

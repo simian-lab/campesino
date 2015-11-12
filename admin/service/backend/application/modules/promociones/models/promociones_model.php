@@ -130,8 +130,16 @@ class Promociones_model extends CI_Model
         $this->email->from($this->config->item('mail_send'), 'Promociones');
         $this->email->to($result['email']);
 
-        $this->email->subject('Promoción editada');
-        $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        if($datos_envio['PRO_ACTIVA']==2){
+          $this->email->subject('Su promoción ha sido DESACTIVADA');
+          $this->email->message('Su promoción ha sido desactivada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        }elseif($datos_envio['PRO_ACTIVA']==1){
+          $this->email->subject('Su promoción ha sido ACTIVADA');
+          $this->email->message('Su promoción ha sido activada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        }else{
+          $this->email->subject('Promoción editada');
+          $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        }
 
         $this->email->send();
     }
@@ -199,8 +207,16 @@ class Promociones_model extends CI_Model
             // $this->email->to('mgranada@brandigital.com');
 
 
-            $this->email->subject('Nueva promoción para aprobar');
-            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            if($datos_envio['PRO_ACTIVA']==2){
+              $this->email->subject('Promoción DESACTIVADA');
+              $this->email->message('Una promoción ha sido desactivada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            }elseif($datos_envio['PRO_ACTIVA']==1){
+              $this->email->subject('Promoción ACTIVADA');
+              $this->email->message('Una promoción ha sido activada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            }else{
+              $this->email->subject('Nueva promoción para aprobar');
+              $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            }
 
             $this->email->send();
             return true;
