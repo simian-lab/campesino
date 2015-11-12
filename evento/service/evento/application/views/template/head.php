@@ -70,3 +70,4 @@
       })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
       <!-- End Google Tag Manager -->
       <input type="hidden" it="twitter_tag_line" value="<?php echo TAG_TWITTER;?>"> 
+      <input type="hidden" it="facebook_tag_line" value="<?php echo TAG_FACEBOOK;?>"> 
