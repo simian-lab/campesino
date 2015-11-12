@@ -132,13 +132,13 @@ class Promociones_model extends CI_Model
 
         if($datos_envio['PRO_ACTIVA']==2){
           $this->email->subject('Su promoción ha sido DESACTIVADA');
-          $this->email->message('Su promoción ha sido desactivada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+          $this->email->message('Su promoción ha sido desactivada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
         }elseif($datos_envio['PRO_ACTIVA']==1){
           $this->email->subject('Su promoción ha sido ACTIVADA');
-          $this->email->message('Su promoción ha sido activada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+          $this->email->message('Su promoción ha sido activada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
         }else{
           $this->email->subject('Promoción editada');
-          $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+          $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
         }
 
         $this->email->send();
@@ -297,6 +297,22 @@ class Promociones_model extends CI_Model
 
         return NULL;
 
+    }
+
+
+    function get_eventos_promocion($id_promo){
+            $this->db->select('EVE_NOMBRE');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_NOMBRE'];
+            }
+            $listado_eventos = implode(',',$arraEventos);
+            return $listado_eventos;
     }
 
     public function get_user_x_promocion($id_promo){
