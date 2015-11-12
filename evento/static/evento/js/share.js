@@ -4,7 +4,7 @@ function shareFacebook(art_detalle){
   onClickFacebook();
 
   //var title = $('meta[http-equiv="og:title"]').attr("content");
-  var titel = $('#facebook_tag_line').val();
+  var title = $('#facebook_tag_line').val();
   var description = $('meta[http-equiv="og:description"]').attr("content");
   var image = $('meta[http-equiv="og:image"]').attr("content");
   var url = $('meta[http-equiv="og:url"]').attr("content");
