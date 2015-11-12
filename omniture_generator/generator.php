@@ -62,26 +62,16 @@ function init($db, $ftp_credentials) {
   . "## SC	D:" . $date . " A:2864550:51\n";
 
   $table_header = "\nKey	ID-Anterior	Nombre	Categoria	Sub-Categoria	Tipo	Contenido	Comentarios	Precios	Configuracion\n";
-    $query_eventos = $db->prepare("SELECT * FROM EVE_EVENTOS");
-    $query_eventos->execute();
-    $eventos = $query_eventos->fetchAll();
-    if(!empty($eventos)) {
         $file = fopen($file_name, "w");
         fwrite($file, $header);
         fwrite($file, $table_header);
-        foreach($eventos as $evento) {
-          add_promotions_from_special($db, $file, $evento);
-        }
+          add_promotions_from_special($db, $file);
         fclose($file);
         upload_file_ftp($ftp_credentials, $file_name);
-    }
 }
-function add_promotions_from_special($db, $file, $evento) {
-    $evento_id = $evento['EVE_ID'];
-    $evento_prefix = $evento['EVE_PREFIJO'];
-    $key_prefix = 'eve' . $evento_prefix .'-';
-    $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES INNER JOIN EXP_EVENTOXPROMOCION ON	PRO_PROMOCIONES.PRO_ID=EXP_EVENTOXPROMOCION.EXP_PROMOCION	WHERE EXP_EVENTO = :evento_id");
-    $query_promotions->bindParam(':evento_id', $evento_id);
+function add_promotions_from_special($db, $file) {
+    $key_prefix = 'evenav-';
+    $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES");
     $query_promotions->execute();
     $promotions = $query_promotions->fetchAll();
     foreach($promotions as $promotion) {
