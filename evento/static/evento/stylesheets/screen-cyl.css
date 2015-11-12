@@ -2947,7 +2947,7 @@ header .container .row.head:before {
   display: block;
   width: 272px;
   height: 67px;
-  background: url("../img/banner_header_bf.png") no-repeat;
+  background: url("../img/banner_header_cyl.png") no-repeat;
   float: right;
   position: relative;
 }

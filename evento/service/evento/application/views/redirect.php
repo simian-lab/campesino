@@ -80,71 +80,25 @@
         <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
         </script>
         <noscript>
-        <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/969745351/?label=3sfYCJvri18Qx8e0zgM&amp;guid=ON&amp;script=0"/>
-        </div>
-        </noscript>
-
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure class="logo">
-                            <img src="<?php echo $url['base_url_static'];?>img/redireccion.png" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <span class="small">Los <b>mejores</b> descuentos </span>
-                        <img src="<?php echo $url['base_url_static'];?>img/redireccion_.png" alt="">
-                        <span class="medium"><b>redireccionamiento</b></span>
-                        <span class="large">externo</span>
-                        <p>Usted está saliendo de Cyberlunes.com, se le llevará a la página<br>
-                                <a href="<?php echo $url_redirect;?>"><?php echo $url_redirect;?></a>
-                            <br>Si no ha sido redirigido en <b id="countdown"></b> segundos, presione el botón.</p>
-                        <a href="<?php echo $url_redirect;?>" class="redir">ir a la <b>página</b></a>
-                    </div>
-                </div>
-            </div>
-        </section>                            
         
 
-       <!-- Facebook Conversion Code for LO ENCONTRASTE - Checkouts -->
-
-<script>(function() {
-
-var _fbq = window._fbq || (window._fbq = []);
-
-if (!_fbq.loaded) {
-
-var fbds = document.createElement('script');
-
-fbds.async = true;
-
-fbds.src = '//connect.facebook.net/en_US/fbds.js';
-
-var s = document.getElementsByTagName('script')[0];
-
-s.parentNode.insertBefore(fbds, s);
-
-_fbq.loaded = true;
-
-}
-
+<!-- Facebook Conversion Code for LO ENCONTRASTE - Checkouts -->
+<script>
+(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+    }
 })();
-
 window._fbq = window._fbq || [];
-
 window._fbq.push(['track', '6031250315599', {'value':'0.01','currency':'EUR'}]);
-
 </script>
-
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6031250315599&amp;cd[value]=0.01&amp;cd[currency]=EUR&amp;noscript=1" /></noscript>
+  
     </body>
 </html>
