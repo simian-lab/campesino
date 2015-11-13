@@ -352,6 +352,11 @@ div#menu .container .row .menu-head {
     margin: 0 auto;
     padding: 0 15px !important; 
   }
+  div#menu .container .row nav.navbar-collapse {
+    overflow-y: visible;
+    margin: 0 auto;
+    padding: 0 15px !important; 
+  }
 }
 @media screen and (max-width: 520px) {
   div#menu .container .row .menu-head span.title {
