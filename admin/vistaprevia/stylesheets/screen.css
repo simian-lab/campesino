@@ -174,11 +174,11 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bg.png) repeat;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
+  background: url(../img/bg-navidad.jpg) repeat-x;
+  background-attachment: fixed;
 }
-
 /* line 78, ../sass/screen.scss */
 header {
   background-color: #f4f4f4;

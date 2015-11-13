@@ -311,7 +311,7 @@ div#menu {
 div#menu .container .row .menu-head {
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   /* line 166, ../sass/screen.scss */
   div#menu .container .row .menu-head {
     display: block;
@@ -377,7 +377,7 @@ div#menu .container .row .menu-head span.title {
 }
 /* line 177, ../sass/screen.scss */
 div#menu .container .row .menu-head button {
-  background-color: #5e9eb9;
+  /*background-color: #5e9eb9;*/
   margin: 0;
 }
 /* line 180, ../sass/screen.scss */
@@ -2928,4 +2928,7 @@ header .container .row.head:before {
   header .container .row.head:before {
     display: none;
   }
+}
+.logo_fixed_menu .container {
+    width: 1200px !important;
 }

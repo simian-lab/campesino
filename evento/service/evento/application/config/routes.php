@@ -50,6 +50,8 @@ $route['descuentos/(:any)'] = 'descuentosfiltro/categoria/$1';
 
 $route['marcas/(:any)'] = 'descuentosfiltro/marcas_por_tienda/$1';
 
+
+$route['terminos-y-condiciones'] = "terminosYcondiciones/terminos";
 /*
 
 $route['mexico'] = 'home/mexico/';

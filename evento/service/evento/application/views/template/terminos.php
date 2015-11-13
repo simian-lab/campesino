@@ -1,56 +1,15 @@
-<footer>
-  <div class="container">
-    <div class="row sponsor">
-      <div class="col-md-12 center">
-<!--         <div class="marcas-mobile clearfix">
-          <figure class="col-xs-3">
-            <a href="https://www.bbva.com.co/web/personas/tarjetas/promociones/cyberlunes" target="_blank" onclick="onClickPublicidad('BBVA', 'Footer')"><img src="<?php echo $base_url_static;?>img/BBVA_161X81.png" alt="BBVA" /></a>
-          </figure>
-          <figure class="col-xs-3">
-            <a href="http://www.mintic.gov.co" target="_blank" onclick="onClickPublicidad('MinTIC', 'Footer')"><img src="<?php echo $base_url_static;?>img/mintic_mobile.png" alt="MinTIC" /></a>
-          </figure>
-          <figure class="col-xs-3">
-            <a href="http://www.vivedigital.gov.co" target="_blank" onclick="onClickPublicidad('Vive digital', 'Footer')"><img src="<?php echo $base_url_static;?>img/digital_mobile.png" alt="Vive digital" /></a>
-          </figure>
-          <figure class="col-xs-3">
-            <a href="http://wsp.presidencia.gov.co" target="_blank" onclick="onClickPublicidad('Gobierno de Colombia', 'Footer')"><img src="<?php echo $base_url_static;?>img/colombia_mobile.png" alt="Gobierno de Colombia" /></a>
-          </figure>
-        </div> -->
-        <div class="invita clearfix">
-          <div class="texto">
-            <span>evento de:</span><!-- -->
-          </div>
-          <div class="logos">
-            <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>
-          </div>
-        </div>
-      </div>
-      <div class="social">
-        <a href="#" class="fb" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
-        <a href="#" class="tw" onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
-      </div>
-    </div>
-  </div>
-  <div class="row terminos">
-    <div class="col-md-12 center">
-      <div>
-        <span><a href="/terminos-y-condiciones"target="_BLANK">términos y condiciones</a>  -  <a href="mailto:servicio@loencontraste.com">Contáctanos</a>  -  <!-- <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Loencontraste.com&reg;</a></span> -->
-        <span>Loencontraste.com es una marca registrada de El Tiempo Casa Editorial. Prohibido su uso sin autorización.</span>
-        <span>© 2015 - Loencontraste.com Todos los derechos reservados .</span>
-        <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
-      </div>
-    </div>
-  </div>
-</footer>
+<link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/jquery.ias.css">
+<script src="<?php echo $base_url_static;?>js/jquery-ias.js"></script>
+<script src="<?php echo $base_url_static;?>js/scroll-promocion.js"></script>
 
-<div class="modal fade" id="terminos" style="z-index:2000">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Términos y condiciones</h4>
-      </div>
-      <div class="modal-body">
+<section class="wrapp">
+  <div class="container">
+    <div class="wrapper-filter" style="padding:50px;">
+
+      <div class="header">
+        <h2>Términos y condiciones</h2>
+      </div><br>
+      <div class="body" style="text-align:justify">
         <p>Loencontraste.com es una página web (“la página web” o “la Página Web”) de propiedad de la Cámara de Comercio Electrónico (en adelante, “la CCCE”), mediante la cual se materializa una iniciativa que ésta emprendió con el objetivo de promover el comercio electrónico en Colombia y enlazar la oferta y demanda de comercio electrónico, para darle la oportunidad al consumidor (en adelante, “consumidor” o “usuario” o “visitante”) de acceder, solo por un día, a grandes ofertas y promociones por Internet (en adelante, “Loencontraste.com”).</p>
         <p>Las siguientes disposiciones describen los términos y condiciones de uso aplicables al acceso y uso de los servicios ofrecidos por la página web, que deberán ser observados detenidamente por los usuarios y aliados, y que se entenderán aceptados por el solo hecho de navegar por la página web.</p>
         <p>1. La página web presenta ofertas sobre productos o servicios de propiedad de empresas diferentes a la CCCE (en adelante, “aliado(s)”), para que puedan ser adquiridos por los visitantes de la página web (en adelante ‘usuarios compradores’), directamente en los portales de internet de los aliados, a través del enlace previo que la página web facilita. Los únicos responsables de los productos o servicios indicados en las ofertas son los respectivos aliados, los cuales realizan esas prestaciones de acuerdo con las respectivas condiciones del acuerdo comercial regulado en sus propios portales de internet.</p>
@@ -129,42 +88,7 @@
         <p>15. Casa Editorial El Tiempo no asumirán ningún costo o gasto, salvo los que expresamente haya manifestado asumir.</p>
         <p>16. La participación en la actividad implica la aceptación y conocimiento de estas condiciones y restricciones.</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-      </div>
+
     </div>
   </div>
-</div>
-
-<div class="modal fade" id="uso_marca" style="z-index:2000">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Términos y condiciones para el uso de la marca Loencontraste.com&reg;</h4>
-      </div>
-      <div class="modal-body">
-        <p>Por favor descargue y lea estos instructivos para el uso adecuado de la marca y logos de Loencontraste.com®. Recuerde que Loencontraste.com® es una marca registrada, de uso exclusivo de la Casa Editorial El Tiempo.</p>
-        <br><br>
-        <ul>
-          <li>
-            - <a href="<?php echo $url_static;?>multimedia/TERMINOS-Y-CONDICIONES-CYBERLUNES.PDF" target="_blank">Términos y condiciones de uso de la marca (Descargar PDF)</a>
-          </li>
-          <li>
-            - <a href="<?php echo $url_static;?>multimedia/MARCAS-CYBERLUNES-SITE.PDF" target="_blank">Alcance de la marca (Descargar PDF)</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script language="JavaScript" type="text/javascript"><!--
-//  ASIGNAR VALORES A LAS VARIABLES EN  ESTA  SECCION
-s.pageName="<?php echo $s_pageName; ?>";
-s.channel ="<?php echo $s_channel; ?>";
-<?php if( isset($s_prop1)) { echo  "s.prop1=\"".$s_prop1."\";"; }  ?>
-<?php if( isset($s_prop2)) { echo  "s.prop2=\"".$s_prop2."\";"; } ?>
-/*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/
-var s_code=s.t();if(s_code)document.write(s_code)//--></script>
-<!--  End SiteCatalyst  code  -->
+</section>
