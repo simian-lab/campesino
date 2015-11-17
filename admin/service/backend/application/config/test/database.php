@@ -48,9 +48,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = '172.31.42.171';
-$db['default']['username'] = 'loe_sss_test';
+$db['default']['username'] = 'loe_sss';
 $db['default']['password'] = 'MGV8$EhL';
-$db['default']['database'] = 'loe_sss';
+$db['default']['database'] = 'loe_sss_test';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
