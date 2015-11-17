@@ -59,7 +59,7 @@ class Prueba_promos extends Default_Controller
         $meta_title = TITLE;
         $meta_descripcion = META_DESCRIPTION;
         $meta_keys = META_KEY;
-        $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
+        $meta_imagen = base_url() . "static/evento/img/share-".EVENTO.".jpg";
         $meta_url = base_url();
 
         $data['meta_title'] = $meta_title;
