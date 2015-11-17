@@ -47,22 +47,38 @@ define('NUMERO_PROMOCIONES_GENERALES',    36);
 /*Deinfe una constante para el tage line segun el evento*/
 
 require_once( BASEPATH .'database/DB'. EXT );
-$db =& DB();
-$db->select('*');
-$db->from('EVE_EVENTOS');
-$db->where('EVE_PREFIJO', EVENTO);
-$db->limit(1);
 
-$query = $db->get();
-$eve_result = $query->row_array();
+/*conecta a memcached*/
+$memcached  = new Memcached();
+$memcached->addServer('127.0.0.1',11211);
 
-define('TAG_LINE',    $eve_result["EVE_TAG_LINE"]);
-define('TITLE',    $eve_result["EVE_TITLE"]);
+/*Revisa en memcached*/
+$key_memcached_eve_result = 'ARREGLO_EVENTOS';
+$result_memcached_eve_result = $memcached->get($key_memcached_eve_result);
+
+
+
+if(!$result_memcached_eve_result) {
+  $db =& DB();
+  $db->select('*');
+  $db->from('EVE_EVENTOS');
+  $db->where('EVE_PREFIJO', EVENTO);
+  $db->limit(1);
+
+  $query = $db->get();
+  $eve_result = $query->row_array();
+
+
+  $memcached->add($key_memcached_eve_result, $eve_result, 86400);
+};
+
+define('TAG_LINE',    $result_memcached_eve_result["EVE_TAG_LINE"]);
+define('TITLE',    $result_memcached_eve_result["EVE_TITLE"]);
 define('META_KEY',	'');
-define('ID_EVENTO',   $eve_result["EVE_ID"]);
-define('META_DESCRIPTION', $eve_result["EVE_META_DESCRIPTION"]);
-define('TAG_FACEBOOK', $eve_result["EVE_FACEBOOK"]);
-define('TAG_TWITTER', $eve_result["EVE_TWITTER"]);
+define('ID_EVENTO',   $result_memcached_eve_result["EVE_ID"]);
+define('META_DESCRIPTION', $result_memcached_eve_result["EVE_META_DESCRIPTION"]);
+define('TAG_FACEBOOK', $result_memcached_eve_result["EVE_FACEBOOK"]);
+define('TAG_TWITTER', $result_memcached_eve_result["EVE_TWITTER"]);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
