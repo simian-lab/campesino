@@ -9,7 +9,7 @@
 
  */
 
-$config['base_site_eltiempo_evento'] = 'http://'.$_SERVER['SERVER_NAME'].'/';;
+$config['base_site_eltiempo_evento'] = 'http://'.$_SERVER['SERVER_NAME'].'/';
 $config['base_site_eltiempo_pre-evento'] = 'http://'.$_SERVER['SERVER_NAME'].'/';
 $config['base_site_eltiempo_static'] = 'http://static-sss-pro.loencontraste.com/';
 
