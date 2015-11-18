@@ -2933,12 +2933,13 @@ hr{
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 280px;
+  width: 250px;
   height: 56px;
-  background: url("../img/fixed_menu_logo_cyl.png") no-repeat;
+  background: url("../img/fixed_menu_logo_cys.png") no-repeat;
+  background-size: 100%;
   float: right;
   position: relative;
-  top: -54px;
+  top: -50px;
 }
 @media screen and (max-width: 992px) {
   .logo_fixed_menu .container:after {
