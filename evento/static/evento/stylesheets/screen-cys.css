@@ -190,6 +190,8 @@ header {
   background: -o-linear-gradient(90deg, rgb(175, 28, 56) 15%, rgb(224, 45, 79) 70%);
   background: -ms-linear-gradient(90deg, rgb(175, 28, 56) 15%, rgb(224, 45, 79) 70%);
   background: linear-gradient(180deg, rgb(175, 28, 56) 15%, rgb(224, 45, 79) 70%);
+  position: relative;
+  z-index: 1;
 }
 header:after {
   content: "";
@@ -203,6 +205,8 @@ header:after {
 /* line 81, ../sass/screen.scss */
 header .container .head {
   padding-bottom: 10px;
+  position: relative;
+  z-index: 2;
 }
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
