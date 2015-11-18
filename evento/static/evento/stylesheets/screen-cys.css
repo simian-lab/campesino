@@ -190,6 +190,8 @@ header {
   background: -o-linear-gradient(90deg, rgb(175, 28, 56) 15%, rgb(224, 45, 79) 70%);
   background: -ms-linear-gradient(90deg, rgb(175, 28, 56) 15%, rgb(224, 45, 79) 70%);
   background: linear-gradient(180deg, rgb(175, 28, 56) 15%, rgb(224, 45, 79) 70%);
+  position: relative;
+  z-index: 1;
 }
 header:after {
   content: "";
@@ -203,6 +205,8 @@ header:after {
 /* line 81, ../sass/screen.scss */
 header .container .head {
   padding-bottom: 10px;
+  position: relative;
+  z-index: 2;
 }
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
@@ -1084,7 +1088,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
       (startColorStr='$from-color', EndColorStr='$to-color')";
   }
   section.wrapp .container .row .destacados ul li:hover article {
-    background: #7698ea;
+    background: #e02d4f;
   }
   /* line 729, ../sass/screen.scss */
   section.wrapp .container .row .destacados ul li:hover article .desc, section.wrapp .container .row .no-destacados ul li:hover article .desc {
@@ -2482,7 +2486,7 @@ hr{
 }
 /* line 813, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info{
-  border-bottom: 1px solid #00b6c9;
+  border-bottom: 1px solid #e02d4f;
 }
 .ofertas-destacadas ul li:hover article .info{
   border-bottom: 1px solid #D5D5D5;
@@ -2625,7 +2629,7 @@ hr{
   padding-bottom: 10px;
 }
 .ofertas-destacadas ul li:hover article {
-  background: #7698EA;
+  background: #e02d4f;
 }
 /* line 910, ../sass/screen.scss */
 .ofertas-destacadas ul li article .link {
@@ -2658,7 +2662,7 @@ hr{
 }
 @media screen and (max-width: 480px) {
   .ancla  a{
-    background: url("../img/ancla-mov-cyl.png") no-repeat;
+    background: url("../img/ancla-mov-cys.png") no-repeat;
     width: 92px;
     height: 297px;
     display: block;
@@ -2865,7 +2869,7 @@ hr{
           background-size: cover;
         }
         .menu-tabs ul li.active{
-          background: url('../img/menu-active-movil-cyl.png');
+          background: url('../img/menu-active-movil-cys.png');
           background-size: cover;
         }
         .menu-tabs ul li.active a{
@@ -2933,12 +2937,13 @@ hr{
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 280px;
+  width: 250px;
   height: 56px;
-  background: url("../img/fixed_menu_logo_cyl.png") no-repeat;
+  background: url("../img/fixed_menu_logo_cys.png") no-repeat;
+  background-size: 100%;
   float: right;
   position: relative;
-  top: -54px;
+  top: -50px;
 }
 @media screen and (max-width: 992px) {
   .logo_fixed_menu .container:after {
@@ -2954,7 +2959,7 @@ header .container .row.head:before {
   display: block;
   width: 272px;
   height: 67px;
-  background: url("../img/banner_header_cyl.png") no-repeat;
+  background: url("../img/banner_header_cys.png") no-repeat;
   float: right;
   position: relative;
 }
