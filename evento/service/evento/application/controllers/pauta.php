@@ -25,10 +25,10 @@ class Pauta extends Default_Controller
         $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys));
 
         $data['bodyClass'] = ''; // Slider de la home de articulos
-        $data['s_pageName'] = 'vivaviajar evento'; // Slider de la home de articulos
-        $data['s_channel'] = 'vivaviajar evento: lo mejor del 2013  ';
-        $data['s_prop1'] = '';
-        $data['s_prop2'] = '';
+        $data['s_pageName'] = EVENTO.': pauta: : '; // Slider de la home de articulos
+        $data['s_channel'] = EVENTO.': pauta';
+        $data['s_prop1'] = EVENTO.': pauta: ';
+        $data['s_prop2'] = EVENTO.': pauta: : ';
 
         $data['breadcrumb_categoria'] = '';
         $data['breadcrumb_destino'] = 'Lo mejor del 2013';
