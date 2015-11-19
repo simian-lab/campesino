@@ -53,7 +53,7 @@ $memcached  = new Memcached();
 $memcached->addServer('127.0.0.1',11211);
 
 /*Revisa en memcached*/
-$key_memcached_eve_result = 'ARREGLO_EVENTOS';
+$key_memcached_eve_result = 'ARREGLO_EVENTO_'.EVENTO;
 $result_memcached_eve_result = $memcached->get($key_memcached_eve_result);
 
 
