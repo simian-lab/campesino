@@ -111,52 +111,52 @@ class Prueba_promos extends Default_Controller
         $templateContainer = 'template/prueba/containerPromocion';
 
         if ($filtro == 'home') {
-            $data['s_pageName'] = EVENTO.": home: : "; // Slider de la home de articulos
-            $data['s_channel'] = EVENTO.": home";
-            $data['s_prop1'] = EVENTO.": home: ";
-			$data['s_prop2'] = EVENTO.": home: : ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": home: : "; // Slider de la home de articulos
+            $data['s_channel'] = EVENTO_NOMBRE.": home";
+            $data['s_prop1'] = EVENTO_NOMBRE.": home: ";
+			$data['s_prop2'] = EVENTO_NOMBRE.": home: : ";
         }
 
         if ($filtro == 'categoria' && $tienda != 'tiendas') {
-            $data['s_pageName'] = EVENTO.": ".$tienda.": : ";
-            $data['s_channel'] = EVENTO.": ".$tienda;
-            $data['s_prop1'] = EVENTO.": ".$tienda.": ";
-			$data['s_prop2'] = EVENTO.": ".$tienda.": : ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": ".$tienda.": : ";
+            $data['s_channel'] = EVENTO_NOMBRE.": ".$tienda;
+            $data['s_prop1'] = EVENTO_NOMBRE.": ".$tienda.": ";
+			$data['s_prop2'] = EVENTO_NOMBRE.": ".$tienda.": : ";
         }
 
         if ($filtro == 'categoria' && $marca != 'marcas') {
-            $data['s_pageName'] = EVENTO.": ".$marca.": : ";
-            $data['s_channel'] = EVENTO.": ".$marca;
-            $data['s_prop1'] = EVENTO.": ".$marca.": ";
-			$data['s_prop2'] = EVENTO.": ".$marca.": : ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": ".$marca.": : ";
+            $data['s_channel'] = EVENTO_NOMBRE.": ".$marca;
+            $data['s_prop1'] = EVENTO_NOMBRE.": ".$marca.": ";
+			$data['s_prop2'] = EVENTO_NOMBRE.": ".$marca.": : ";
         }
 
         if ($filtro == 'categoria' && $categoria != 'todos') {
-            $data['s_pageName'] = EVENTO.": ".$categoria.": : ";
-            $data['s_channel'] = EVENTO.": ".$categoria;
-            $data['s_prop1'] = EVENTO.": ".$categoria.": ";
-			$data['s_prop2'] = EVENTO.": ".$categoria.": : ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": ".$categoria.": : ";
+            $data['s_channel'] = EVENTO_NOMBRE.": ".$categoria;
+            $data['s_prop1'] = EVENTO_NOMBRE.": ".$categoria.": ";
+			$data['s_prop2'] = EVENTO_NOMBRE.": ".$categoria.": : ";
         }
 
         if ($filtro == 'categoria' && $categoria != 'todos' && $tienda != 'tiendas') {
-            $data['s_pageName'] = EVENTO.": ".$categoria.": ".$tienda.": ";
-            $data['s_channel'] = EVENTO.": ".$categoria;
-            $data['s_prop1'] = EVENTO.": ".$categoria.": ".$tienda;
-			$data['s_prop2'] = EVENTO.": ".$categoria.": ".$tienda.": ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": ".$categoria.": ".$tienda.": ";
+            $data['s_channel'] = EVENTO_NOMBRE.": ".$categoria;
+            $data['s_prop1'] = EVENTO_NOMBRE.": ".$categoria.": ".$tienda;
+			$data['s_prop2'] = EVENTO_NOMBRE.": ".$categoria.": ".$tienda.": ";
         }
 
         if ($filtro == 'categoria' && $categoria != 'todos' && $marca != 'marcas') {
-            $data['s_pageName'] = EVENTO.": ".$categoria.": ".$marca.": ";
-            $data['s_channel'] = EVENTO.": ".$categoria;
-            $data['s_prop1'] = EVENTO.": ".$categoria.": ".$marca;
-			$data['s_prop2'] = EVENTO.": ".$categoria.": ".$marca.": ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": ".$categoria.": ".$marca.": ";
+            $data['s_channel'] = EVENTO_NOMBRE.": ".$categoria;
+            $data['s_prop1'] = EVENTO_NOMBRE.": ".$categoria.": ".$marca;
+			$data['s_prop2'] = EVENTO_NOMBRE.": ".$categoria.": ".$marca.": ";
         }
 
         if ($filtro == 'categoria' && $categoria != 'todos' && $subcategoria != 'todos') {
-            $data['s_pageName'] = EVENTO.": ".$categoria.": ".$subcategoria.": ";
-            $data['s_channel'] = EVENTO.": ".$categoria;
-            $data['s_prop1'] = EVENTO.": ".$categoria.": ".$subcategoria;
-			$data['s_prop2'] = EVENTO.": ".$categoria.": ".$subcategoria.": ";
+            $data['s_pageName'] = EVENTO_NOMBRE.": ".$categoria.": ".$subcategoria.": ";
+            $data['s_channel'] = EVENTO_NOMBRE.": ".$categoria;
+            $data['s_prop1'] = EVENTO_NOMBRE.": ".$categoria.": ".$subcategoria;
+			$data['s_prop2'] = EVENTO_NOMBRE.": ".$categoria.": ".$subcategoria.": ";
         }
 
         if ($categoria == 'viajes-y-turismo') {
