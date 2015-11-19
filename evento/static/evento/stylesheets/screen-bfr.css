@@ -2672,7 +2672,10 @@ hr{
   width: 100%;
   top: -80px;
   position: relative;
-  display: none;
+  visibility: hidden;
+}
+#botones_pautas tr {
+  width: 100%;
 }
 #botones_pautas td {
   width: 50%;
@@ -2802,6 +2805,15 @@ hr{
       .comercios .wrapper-box {
         width: 25%;
       }
+      .publicidad .box {
+        display: none;
+      }
+      .publicidad .box:first-child {
+        display: block;
+      }
+      #botones_pautas{
+        visibility: visible;
+      }
     }
 
     /* Extra Small Devices, Phones */
@@ -2912,17 +2924,8 @@ hr{
           height: auto;
           max-height: inherit;
         }
-        .publicidad .box {
-          display: none;
-        }
-        .publicidad .box:first-child {
-          display: block;
-        }
         .mini .wrapper-box .box{
           padding-bottom: 12px;
-        }
-        #botones_pautas{
-          display: block;
         }
     }
     /* Custom, iPhone Retina */
