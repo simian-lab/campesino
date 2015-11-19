@@ -45,6 +45,9 @@ if (defined('ENVIRONMENT'))
 		case 'testing':
 			error_reporting(0);
 		break;
+		case 'test':
+		error_reporting(0);
+		break;
 		case 'production':
 			error_reporting(0);
 			if(!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != "on") {

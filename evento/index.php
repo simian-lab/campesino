@@ -44,6 +44,9 @@ if (defined('ENVIRONMENT'))
 			ini_set('display_errors', TRUE);
 			ini_set('display_startup_errors', TRUE);
 		break;
+		case 'test':
+		error_reporting(0);
+		break;
 		case 'origin':
 		case 'testing':
 		case 'production':
