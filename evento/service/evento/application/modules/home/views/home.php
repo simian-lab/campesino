@@ -128,28 +128,23 @@
       </div>
       <script type="text/javascript">
         function MoverPauta (movimiento) {
-          altura = $(".publicidad .box:nth-child(1)").height();
+          altura = $(".publicidad").height();
+          $(".publicidad").css("height", altura+"px");
           if (movimiento==1) {
             if($(".publicidad .box:nth-child(1)").is(":visible")){
-              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"}, 500);
-              $(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 500);
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});
             }else if($(".publicidad .box:nth-child(2)").is(":visible")){
-              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"}, 500);
-              $(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 500);
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
             }else if($(".publicidad .box:nth-child(3)").is(":visible")){
-              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"}, 500);
-              $(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 500);
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
             }
           }else{
             if($(".publicidad .box:nth-child(1)").is(":visible")){
-              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"}, 500);
-              $(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 500);
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
             }else if($(".publicidad .box:nth-child(2)").is(":visible")){
-              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"}, 500);
-              $(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 500);
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});;
             }else if($(".publicidad .box:nth-child(3)").is(":visible")){
-              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"}, 500);
-              $(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 500);
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
             }
           }
         }
