@@ -79,6 +79,7 @@
     <div class="clear"></div>
 
     <div class="publicidad col-xs-12">
+
       <div class="box col-sm-4">
         <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
           <p>Publicidad</p>
@@ -125,6 +126,30 @@
           </noscript>
         </a>
       </div>
+      <script type="text/javascript">
+        function MoverPauta (movimiento) {
+          altura = $(".publicidad").height();
+          $(".publicidad").css("height", altura+"px");
+          if (movimiento==1) {
+            if($(".publicidad .box:nth-child(1)").is(":visible")){
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }else if($(".publicidad .box:nth-child(2)").is(":visible")){
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }else if($(".publicidad .box:nth-child(3)").is(":visible")){
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }
+          }else{
+            if($(".publicidad .box:nth-child(1)").is(":visible")){
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }else if($(".publicidad .box:nth-child(2)").is(":visible")){
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});;
+            }else if($(".publicidad .box:nth-child(3)").is(":visible")){
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }
+          }
+        }
+      </script>
+      <table id="botones_pautas"><tr><td><div id="boton_pauta_izquierda" onclick="MoverPauta(1)"><</div></td><td><div id="boton_pauta_derecha" onclick="MoverPauta(2)">></div></td></tr></table>
       <div class="clear"></div>
       <hr>
     </div><!-- End publicidad-->

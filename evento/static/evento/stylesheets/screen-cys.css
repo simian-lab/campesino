@@ -349,12 +349,12 @@ div#menu .container .row .menu-head {
     border-top: 0 !important;
     border-left: 0 !important;
     border:-right: 0 !important;
-    border-bottom: solid thin #AEA7C3 !important; 
+    border-bottom: solid thin #AEA7C3 !important;
   }
   div#menu .container .row nav.navbar-collapse {
     overflow-y: visible;
     margin: 0 auto;
-    padding: 0 15px !important; 
+    padding: 0 15px !important;
   }
   div#menu .container .row nav ul#menuTop li {
     display: block;
@@ -386,12 +386,12 @@ div#menu .container .row .menu-head {
     border-top: 0 !important;
     border-left: 0 !important;
     border:-right: 0 !important;
-    border-bottom: solid thin #AEA7C3 !important; 
+    border-bottom: solid thin #AEA7C3 !important;
   }
   div#menu .container .row nav.navbar-collapse {
     overflow-y: visible;
     margin: 0 auto;
-    padding: 0 15px !important; 
+    padding: 0 15px !important;
   }
 }
 /* line 171, ../sass/screen.scss */
@@ -2697,6 +2697,44 @@ hr{
 .share .button_twitter_top {
   background: url("../img/icon_twitter_cys.png") no-repeat;
 }
+/*Botones pautas*/
+#botones_pautas{
+  width: 100%;
+  top: -80px;
+  position: relative;
+  visibility: hidden;
+}
+#botones_pautas tr {
+  width: 100%;
+}
+#botones_pautas td {
+  width: 50%;
+  padding-left:8%;
+  padding-right:8%;
+}
+#boton_pauta_derecha{
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.7);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 900;
+  float: right;
+}
+#boton_pauta_izquierda{
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.7);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 900;
+}
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
@@ -2796,6 +2834,15 @@ hr{
       }
       .comercios .wrapper-box {
         width: 25%;
+      }
+      .publicidad .box {
+        display: none;
+      }
+      .publicidad .box:first-child {
+        display: block;
+      }
+      #botones_pautas{
+        visibility: visible;
       }
     }
 
