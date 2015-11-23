@@ -41,24 +41,23 @@ $base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
       <!-- End Google Tag Manager -->
-        <div class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12"><img src="<?php echo $base_url_static;?>img/logo.png" alt=""></div>
-                </div>
-            </div>
+        <div class="main-logo-LoE-404">
+            <img src="<?php echo $base_url_static;?>img/logo-loencontraste.png">
         </div>
-        <div class="section">
-            <div class="container">
-                <div class="row">
-                    <h1>Los <b>mejores</b> descuentos</h1>
-                    <h2 style="margin-bottom: 20px;">¡Lo sentimos!</h2>
-                    <span class="numb">404</span>
-                    <p>Has llegado a una esquina de nuestro sitio que no hemos finalizado.<br>
-                    Mientras la terminamos regresa al inicio y disfruta de nuestras promociones</p>
-                    <a href="<?php echo $base_url; ?>" class="boton">ir al <b>inicio</b></a>
-                </div>
-            </div>
+        <!-- img principal desktop -->
+        <div class="principal-content">
+            <img src="<?php echo $base_url_static;?>img/pagina_404_bk_principal.png">
+        </div>
+        <!-- img principal 720 -->
+        <div class="principal-content-720">
+            <img src="<?php echo $base_url_static;?>img/pagina_404_bk_principal-720.png">
+        </div>
+        <!-- img principal 420 -->
+        <div class="principal-content-420">
+            <img src="<?php echo $base_url_static;?>img/pagina_404_bk_principal-420.png">
+        </div>
+        <div class="button_back_404">
+            <a href="<?php echo $base_url ?>">volver</a>
         </div>
         <script src="<?php echo $base_url_static ?>js/vendor/respond.min.js"></script>
         <script src="<?php echo $base_url_static ?>js/vendor/html5shiv.js"></script>       
