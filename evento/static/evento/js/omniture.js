@@ -118,6 +118,11 @@ function onClickPatrocinador(id, posicion) {
   s.eVar38=posicion;
   s.eVar39=id;
   s.tl(true,"o","Click en Comercio");
+  // pixel de google
+	dataLayer.push({
+		'event' : 'event.clicOfertas',
+		'clicOfertas' : true
+	});
 }
 
 function onClickOfertasDestacadas() {
