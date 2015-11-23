@@ -33,7 +33,7 @@ if ( ! function_exists('get_url_promocion'))
 
         if($promo_general == 1){
           $atts = array('target'      => '_blank',
-                      'class'      => 'link orange',
+                      'class'      => 'link orange tagj',
                       'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
                       );
         }
