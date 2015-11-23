@@ -27,13 +27,13 @@ if ( ! function_exists('get_url_promocion'))
 
 
         $atts = array('target'      => '_blank',
-                      'class'      => 'link red',
+                      'class'      => 'link red tagj',
                       'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
                       );
 
         if($promo_general == 1){
           $atts = array('target'      => '_blank',
-                      'class'      => 'link orange',
+                      'class'      => 'link orange tagj',
                       'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
                       );
         }

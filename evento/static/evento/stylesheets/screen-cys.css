@@ -2700,7 +2700,7 @@ hr{
 /*Botones pautas*/
 #botones_pautas{
   width: 100%;
-  top: -80px;
+  top: -100px;
   position: relative;
   visibility: hidden;
 }
@@ -2714,7 +2714,7 @@ hr{
 }
 #boton_pauta_derecha{
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   width: 30px;
   height: 30px;
   text-align: center;
@@ -2723,10 +2723,11 @@ hr{
   font-size: 20px;
   font-weight: 900;
   float: right;
+  pointer-events:visible;
 }
 #boton_pauta_izquierda{
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   width: 30px;
   height: 30px;
   text-align: center;
@@ -2734,6 +2735,7 @@ hr{
   line-height: 30px;
   font-size: 20px;
   font-weight: 900;
+  pointer-events:visible;
 }
 /*==================================================
 =            Bootstrap 3 Media Queries             =
@@ -2840,6 +2842,9 @@ hr{
       }
       .publicidad .box:first-child {
         display: block;
+      }
+      .publicidad .box a>p {
+        display: none;
       }
       #botones_pautas{
         visibility: visible;

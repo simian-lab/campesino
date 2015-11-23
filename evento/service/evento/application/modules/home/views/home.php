@@ -63,8 +63,8 @@
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-              <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+              <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
                 <span>Ir a la tienda</span>
               </a>
           </div>
@@ -127,32 +127,70 @@
         </a>
       </div>
       <script type="text/javascript">
+        setInterval(function(){if(screen.width<=768){MoverPauta(2)}}, 5000);
         function MoverPauta (movimiento) {
           altura = $(".publicidad").height();
           $(".publicidad").css("height", altura+"px");
           if (movimiento==1) {
             if($(".publicidad .box:nth-child(1)").is(":visible")){
-              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});
+              $(".publicidad .box:nth-child(2),.publicidad .box:nth-child(3)").css({display:"none"});
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,right:"200px"},{duration:400, complete: function () {
+                $(".publicidad .box:nth-child(1)").css({right: "0px",display:"none"});
+                $(".publicidad .box:nth-child(3)").css({right: "-200px",display:"block"});
+                $(".publicidad .box:nth-child(3)").animate({opacity: 1,right:"0px"}, 400);
+                }
+              });
             }else if($(".publicidad .box:nth-child(2)").is(":visible")){
-              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
+              $(".publicidad .box:nth-child(1),.publicidad .box:nth-child(3)").css({display:"none"});
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,right:"200px"},{duration:400, complete: function () {
+                $(".publicidad .box:nth-child(2)").css({right: "0px",display:"none"});
+                $(".publicidad .box:nth-child(1)").css({right: "-200px",display:"block"});
+                $(".publicidad .box:nth-child(1)").animate({opacity: 1,right:"0px"}, 400);
+                }
+              });
             }else if($(".publicidad .box:nth-child(3)").is(":visible")){
-              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
+              $(".publicidad .box:nth-child(2),.publicidad .box:nth-child(1)").css({display:"none"});
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,right:"200px"},{duration:400, complete: function () {
+                $(".publicidad .box:nth-child(3)").css({right: "0px",display:"none"});
+                $(".publicidad .box:nth-child(2)").css({right: "-200px",display:"block"});
+                $(".publicidad .box:nth-child(2)").animate({opacity: 1,right:"0px"}, 400);
+                }
+              });
             }
           }else{
             if($(".publicidad .box:nth-child(1)").is(":visible")){
-              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
+              $(".publicidad .box:nth-child(2),.publicidad .box:nth-child(3)").css({display:"none"});
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,right:"-200px"},{duration:400, complete: function () {
+                $(".publicidad .box:nth-child(1)").css({right: "0px",display:"none"});
+                $(".publicidad .box:nth-child(2)").css({right: "200px",display:"block"});
+                $(".publicidad .box:nth-child(2)").animate({opacity: 1,right:"0px"}, 400);
+                }
+              });
             }else if($(".publicidad .box:nth-child(2)").is(":visible")){
-              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});;
+              $(".publicidad .box:nth-child(1),.publicidad .box:nth-child(3)").css({display:"none"});
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,right:"-200px"},{duration:400, complete: function () {
+                $(".publicidad .box:nth-child(2)").css({right: "0px",display:"none"});
+                $(".publicidad .box:nth-child(3)").css({right: "200px",display:"block"});
+                $(".publicidad .box:nth-child(3)").animate({opacity: 1,right:"0px"}, 400);
+                }
+              });
             }else if($(".publicidad .box:nth-child(3)").is(":visible")){
-              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
+              $(".publicidad .box:nth-child(2),.publicidad .box:nth-child(1)").css({display:"none"});
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,right:"-200px"},{duration:400, complete: function () {
+                $(".publicidad .box:nth-child(3)").css({right: "0px",display:"none"});
+                $(".publicidad .box:nth-child(1)").css({right: "200px",display:"block"});
+                $(".publicidad .box:nth-child(1)").animate({opacity: 1,right:"0px"}, 400);
+                }
+              });
             }
           }
         }
       </script>
-      <table id="botones_pautas"><tr><td><div id="boton_pauta_izquierda" onclick="MoverPauta(1)"><</div></td><td><div id="boton_pauta_derecha" onclick="MoverPauta(2)">></div></td></tr></table>
       <div class="clear"></div>
       <hr>
     </div><!-- End publicidad-->
+
+      <table id="botones_pautas"><tr><td><div id="boton_pauta_izquierda" onclick="MoverPauta(1)"><</div></td><td><div id="boton_pauta_derecha" onclick="MoverPauta(2)">></div></td></tr></table>
 
     <div class="clear"></div>
 
@@ -170,8 +208,8 @@
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -199,8 +237,8 @@
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -227,8 +265,8 @@
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -255,8 +293,8 @@
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -283,8 +321,8 @@
       ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -308,8 +346,8 @@
       ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
           </div>
