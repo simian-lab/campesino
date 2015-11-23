@@ -47,11 +47,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '172.31.3.74';
-
-$db['default']['username'] = 'usercyluneslive';
-$db['default']['password'] = 'pT6FTmVp4Y';
-$db['default']['database'] = 'eltiempo_co_cyber_lunes_live3';
+$db['default']['hostname'] = '172.31.42.171';
+$db['default']['username'] = 'loe_sss';
+$db['default']['password'] = 'MGV8$EhL';
+$db['default']['database'] = 'loe_sss';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
@@ -64,7 +63,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

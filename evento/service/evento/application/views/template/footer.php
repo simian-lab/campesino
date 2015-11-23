@@ -34,8 +34,8 @@
   <div class="row terminos">
     <div class="col-md-12 center">
       <div>
-        <span><a href="#" data-toggle="modal" data-target="#terminos">términos y condiciones</a>  -  <a href="mailto:servicio@loencontraste.com">Contáctanos</a>  -  <!-- <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Loencontraste.com&reg;</a></span> -->
-        <span>Loencontraste.com es una marca registrada de El Tiempo. Prohibido su uso sin autorización.</span>
+        <span><a href="/terminos-y-condiciones"target="_BLANK">términos y condiciones</a>  -  <a href="mailto:servicio@loencontraste.com">Contáctanos</a>  -  <!-- <a href="#" data-toggle="modal" data-target="#uso_marca">Uso de marca Loencontraste.com&reg;</a></span> -->
+        <span>Loencontraste.com es una marca registrada de El Tiempo Casa Editorial. Prohibido su uso sin autorización.</span>
         <span>© 2015 - Loencontraste.com Todos los derechos reservados .</span>
         <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
       </div>

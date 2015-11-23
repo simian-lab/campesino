@@ -20,32 +20,8 @@ switch (ENVIRONMENT)
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <?php 
-switch ($_SERVER['SERVER_NAME']) {   
-    case 'evento.cyberlunes.local':  
-        $base_url = 'http://evento.cyberlunes.local/';
-        $base_url_static = 'http://evento.cyberlunes.local/static/evento/'; 
-    break;
-    case 'evento.cyberlunes.dev.brandigital.com':    
-        $base_url = 'http://evento.cyberlunes.dev.brandigital.com/';
-        $base_url_static = 'http://evento.cyberlunes.dev.brandigital.com/static/evento/'; 
-    break;
-    case 'evento-stage.cyberlunes.com.co':  
-        $base_url = 'http://evento-stage.cyberlunes.com.co/';
-        $base_url_static = 'http://evento-stage.cyberlunes.com.co/static/evento/'; 
-    break;
-    case 'staging.cyberlunes.com.co':  
-        $base_url = 'http://staging.cyberlunes.com.co/';
-        $base_url_static = 'http://staging.cyberlunes.com.co/static/evento/'; 
-    break;
-    case 'origin-www2.cyberlunes.com.co':  
-        $base_url = 'http://origin-www2.cyberlunes.com.co/';
-        $base_url_static = 'http://origin-www2.cyberlunes.com.co/static/evento/'; 
-    break;
-    case 'www.cyberlunes.com.co':    
-        $base_url = 'http://www.cyberlunes.com.co/';
-        $base_url_static = 'http://www.cyberlunes.com.co/static/evento/'; 
-    break;
-}
+$base_url = 'http://'.$_SERVER['SERVER_NAME'].'/';
+$base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
     
 ?>
 <html lang="en">
@@ -56,6 +32,15 @@ switch ($_SERVER['SERVER_NAME']) {
         <title>404</title>
     </head>
     <body class="conbg">
+                <!-- Google Tag Manager -->
+      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MPFWLN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
+      <!-- End Google Tag Manager -->
         <div class="main-logo-LoE-404">
             <img src="<?php echo $base_url_static;?>img/logo-loencontraste.png">
         </div>
@@ -81,16 +66,6 @@ switch ($_SERVER['SERVER_NAME']) {
 
 
 <script src="<?php echo $base_url_static ?>js/s_code.js"></script>  
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
-<!-- End Google Tag Manager -->
 
 <!-- Facebook Conversion Code for Pixel El Tiempo -->
 <script type="text/javascript">

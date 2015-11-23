@@ -105,7 +105,7 @@ class Promociones_model extends CI_Model
         $this->email->to($result['email']);
 
         $this->email->subject('Nueva promoción creada');
-        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        $this->email->message('Su promoción ha sido creada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
         $this->email->send();
     }
@@ -130,8 +130,16 @@ class Promociones_model extends CI_Model
         $this->email->from($this->config->item('mail_send'), 'Promociones');
         $this->email->to($result['email']);
 
-        $this->email->subject('Promoción editada');
-        $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        if($datos_envio['PRO_ACTIVA']==2){
+          $this->email->subject('Su promoción ha sido DESACTIVADA');
+          $this->email->message('Su promoción ha sido desactivada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
+        }elseif($datos_envio['PRO_ACTIVA']==1){
+          $this->email->subject('Su promoción ha sido ACTIVADA');
+          $this->email->message('Su promoción ha sido activada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
+        }else{
+          $this->email->subject('Promoción editada');
+          $this->email->message('Su promoción ha sido editada con éxito.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
+        }
 
         $this->email->send();
     }
@@ -165,7 +173,7 @@ class Promociones_model extends CI_Model
 
 
 			$this->email->subject('Nueva promoción para aprobar');
-			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+			$this->email->message('Se ha cargado una nueva promoción para aprobar.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
 			$this->email->send();
 			return true;
@@ -199,8 +207,16 @@ class Promociones_model extends CI_Model
             // $this->email->to('mgranada@brandigital.com');
 
 
-            $this->email->subject('Nueva promoción para aprobar');
-            $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            if($datos_envio['PRO_ACTIVA']==2){
+              $this->email->subject('Promoción DESACTIVADA');
+              $this->email->message('Una promoción ha sido desactivada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
+            }elseif($datos_envio['PRO_ACTIVA']==1){
+              $this->email->subject('Promoción ACTIVADA');
+              $this->email->message('Una promoción ha sido activada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
+            }else{
+              $this->email->subject('Nueva promoción para aprobar');
+              $this->email->message('Se ha editado una promoción y debe ser aprobada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
+            }
 
             $this->email->send();
             return true;
@@ -227,7 +243,7 @@ class Promociones_model extends CI_Model
         $this->email->to($result['email']);
 
         $this->email->subject('Promoción eliminada');
-        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+        $this->email->message('Su promoción ha sido eliminada.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
         $this->email->send();
     }
@@ -260,7 +276,7 @@ class Promociones_model extends CI_Model
 
 
             $this->email->subject('Promoción eliminada');
-            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'] );
+            $this->email->message('Se ha eliminado una promoción.<br>Título: '.$datos_envio['titulo'].'<br> Autor: '.$datos_envio['autor'].'<br> Eventos: '.$datos_envio['eventos'] );
 
             $this->email->send();
             //echo $this->email->print_debugger();die();
@@ -283,6 +299,22 @@ class Promociones_model extends CI_Model
 
     }
 
+
+    function get_eventos_promocion($id_promo){
+            $this->db->select('EVE_NOMBRE');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_NOMBRE'];
+            }
+            $listado_eventos = implode(',',$arraEventos);
+            return $listado_eventos;
+    }
+
     public function get_user_x_promocion($id_promo){
         $this->db->select('PRO_USER_CREADOR');
         $this->db->from('PRO_PROMOCIONES');
@@ -302,6 +334,110 @@ class Promociones_model extends CI_Model
         $row = $query->row_array();
         return $row;
     }
+
+
+    function get_eventos()
+    {
+        $this->db->select('EVE_ID, EVE_NOMBRE');
+        $this->db->from('EVE_EVENTOS');
+
+        $results = $this->db->get();
+        $salida='';
+        foreach ($results->result() as $row)
+        {
+            $salida[$row->EVE_ID]=$row->EVE_NOMBRE;
+
+        }
+        return  $salida;
+
+    }
+
+
+    function validar_limite_edit($id_promo,$post_array){
+            //definir tipo de promocion
+            $tipo_promocion = $post_array['PRO_SRC_ID'];
+            //definir respeusta default en caso de exito
+            $respuesta = 1;
+            //llama lista de eventos para obtener el nombre
+            $lista_eventos = $this->promociones_model->get_eventos();
+            //buscar eventos a los que pertenece la promocion por ID
+            $this->db->select('EVE_ID');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_ID'];
+            }
+            //calcula cuales eventos fueron inscritos como nuevos
+            $agregados = array_diff($post_array['eventos'], $arraEventos);
+            //busca id del dueño de la promocion
+            $this->db->select('PRO_USER_CREADOR');
+            $this->db->from('PRO_PROMOCIONES');
+            $this->db->where('PRO_ID', $id_promo);
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $id_user = $valor['PRO_USER_CREADOR'];
+            }
+            //ciclo para contar el número de promociones inscritas para los eventos nuevos
+            foreach($agregados as $evento_agregado){
+              //cuenta las promociones del usuario, por evento y tipo
+              $this->db->select('COUNT(*)');
+              $this->db->from('EXP_EVENTOXPROMOCION');
+              $this->db->join('PRO_PROMOCIONES', 'PRO_PROMOCIONES.PRO_ID =EXP_EVENTOXPROMOCION.EXP_PROMOCION');
+              $this->db->where('PRO_USER_CREADOR', $id_user);
+              $this->db->where('EXP_EVENTO', $evento_agregado);
+              $this->db->where('PRO_SRC_ID', $tipo_promocion);
+
+              $query = $this->db->get();
+              $resp =  $query->result_array();
+               foreach($resp as $clave=>$valor){
+                $no_promociones = $valor['COUNT(*)'];
+               }
+               //busca el # de promociones del paquete
+              $this->db->select('*');
+              $this->db->from('PAQUETES_NOMBRES');
+              $this->db->join('AXP_ADMINXPAQUETE', 'AXP_ADMINXPAQUETE.AXP_PAQUETE=PAQUETES_NOMBRES.PAQ_ID');
+              $this->db->where('AXP_ADMIN', $id_user);
+              $this->db->where('PAQ_EVENTO', $evento_agregado);
+
+              $query = $this->db->get();
+              $resp =  $query->result_array();
+              if (!empty($resp)) {//revisa si no hay paquetes asignados para el evento
+               foreach($resp as $clave=>$valor){//ciclo por cada paquete encontrado
+                 switch ($tipo_promocion) {//cambia el mensaje dependiendo de la promocion
+                  case '1':
+                    if ($valor['PAQ_MONTO_BASICO'] <= $no_promociones ) {//compara numero de promociones
+                      $respuesta = 'EL USUARIO SUPERO EL MAXIMO DE PROMOCIONES BASICAS A CARGAR PARA EL EVENTO '.$lista_eventos[$evento_agregado];
+                    }
+                  break;
+                  case '2':
+                    if ($valor['PAQ_MONTO_PREMIUN'] <= $no_promociones ) {
+                      $respuesta = 'EL USUARIO SUPERO EL MAXIMO DE PROMOCIONES PREMIUN A CARGAR PARA EL EVENTO '.$lista_eventos[$evento_agregado];
+                    }
+                  break;
+                  case '3':
+                    if ($valor['PAQ_MONTO_PREMIUN_CATEGORIA'] <= $no_promociones ) {
+                      $respuesta = 'EL USUARIO SUPERO EL MAXIMO DE PROMOCIONES A CARGAR POR CATEGORIA PREMIUN PARA EL EVENTO '.$lista_eventos[$evento_agregado];
+                    }
+                  break;
+                  default:
+                    $respuesta = 'ERROR: el tipo de promocion no esta bien definido';
+                  break;
+                }
+               }
+              }else{
+                $respuesta = 'Esta Promocion no se puede agregar al Evento '.$lista_eventos[$evento_agregado].', favor comunicar con atencion al cliente, para validar sus paquetes asociados';
+              }
+            }
+        return  $respuesta;
+    }
+
+
+
 
 	function get_marcas()
     {

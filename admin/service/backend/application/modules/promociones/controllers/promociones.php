@@ -284,6 +284,7 @@ function delete_motivo_rechazo($id_promo){
 	$datos_envio['titulo'] = $result['PRO_NOMBRE'];
 	$datos_envio['autor'] = $result['PRO_AUTOR'];
 	$datos_envio['aliado'] = $result['PRO_USER_CREADOR'];
+  $datos_envio['eventos'] = $this->promociones_model->get_eventos_promocion($id_promo);
 	$datos= $this->promociones_model->send_mail_delete_user($datos_envio);
 	$this->promociones_model->send_mail_delete_aliado($datos_envio);
 }
@@ -483,35 +484,52 @@ function before_update($post_array, $primary_key){
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $this->session->userdata('sadmin_user_id');
+    $datos_envio['eventos'] = $this->promociones_model->get_eventos_promocion($primary_key);
+
+
+  //validar limite paquete
+  $comprobacion = $this->promociones_model->validar_limite_edit($primary_key,$post_array);
+  if($comprobacion!=1){
+    echo '<script>alert("'.$comprobacion.'")</script>';
+    exit();
+  }
+  //fin validacion
 
 	$visibilidad = $this->promociones_model->verificar_visibilidad($primary_key);
 
     if($post_array['VISIBILITY'] == 0 && $visibilidad['VISIBILITY'] == 1){
     	$post_array['PRO_ACTIVA'] = 2;
+      $datos_envio['PRO_ACTIVA'] = 2;
+      $this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
     elseif($post_array['VISIBILITY'] == 1 && $visibilidad['VISIBILITY'] == 0){
     	$post_array['PRO_ACTIVA'] = 1;
+      $datos_envio['PRO_ACTIVA'] = 1;
+      $this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
     else{
     	$post_array['PRO_ACTIVA'] = '';
+      $datos_envio['PRO_ACTIVA'] = '';
     	$this->promociones_model->send_mail_aliado_edit($datos_envio);
     }
 
 	return $post_array;
 }
 
-function fnc_after_update($post_array){ //print_r($post_array);die();
+function fnc_after_update($post_array, $primary_key){ //print_r($post_array);die();
 	$this->load->model('promociones_model');
 
 	$datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
     $datos_envio['autor'] = $this->session->userdata('username');
     $datos_envio['aliado'] = $post_array['PRO_USER_CREADOR'];
+    $datos_envio['PRO_ACTIVA'] = $post_array['PRO_ACTIVA'];
+    $datos_envio['eventos'] = $this->promociones_model->get_eventos_promocion($primary_key);
     $this->promociones_model->send_mail_user_edit($datos_envio);
 
 
 }
 
-function fnc_after_insert($post_array){
+function fnc_after_insert($post_array, $primary_key){
     $this->load->helper('url');
 	$this->load->model('promociones_model');
 
@@ -521,6 +539,7 @@ function fnc_after_insert($post_array){
       $datos_envio['titulo'] = $this->limpiar_cadena_titulo($post_array['PRO_NOMBRE']);
       $datos_envio['autor'] = $post_array['PRO_AUTOR'];
       $datos_envio['aliado'] = $post_array['PRO_USER_CREADOR'];
+      $datos_envio['eventos'] = $this->promociones_model->get_eventos_promocion($primary_key);
       $datos= $this->promociones_model->send_mail_user($datos_envio);
       $this->promociones_model->send_mail_aliado($datos_envio);
        // return true;

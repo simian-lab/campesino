@@ -31,7 +31,7 @@ class Promociones_procesos_model extends CI_Model
 		// $this->load->library('session');
 	}
 
-	
+
 
     public function aceptar_promocion($id_promo, $user_autorizador){
 
@@ -95,6 +95,22 @@ class Promociones_procesos_model extends CI_Model
 	    return $result;
 
     }
-   
-	
+
+
+    function get_eventos_promocion($id_promo){
+            $this->db->select('EVE_NOMBRE');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_NOMBRE'];
+            }
+            $listado_eventos = implode(',',$arraEventos);
+            return $listado_eventos;
+    }
+
+
 }

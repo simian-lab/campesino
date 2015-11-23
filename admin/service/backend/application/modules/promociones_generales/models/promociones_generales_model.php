@@ -255,6 +255,89 @@ class Promociones_generales_model extends CI_Model
             return $listado_eventos;
     }
 
+    function validar_limite_edit($id_promo,$post_array){
+            //definir tipo de promocion
+            $tipo_promocion = 1;
+            //definir respeusta default en caso de exito
+            $respuesta = 1;
+            //llama lista de eventos para obtener el nombre
+            $lista_eventos = $this->promociones_generales_model->get_eventos();
+            //buscar eventos a los que pertenece la promocion por ID
+            $this->db->select('EVE_ID');
+            $this->db->from('EXP_EVENTOXPROMOCION');
+            $this->db->join('EVE_EVENTOS', 'EVE_EVENTOS.EVE_ID =EXP_EVENTOXPROMOCION.EXP_EVENTO');
+            $this->db->where('EXP_PROMOCION', $id_promo);
+
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $arraEventos[] = $valor['EVE_ID'];
+            }
+            //calcula cuales eventos fueron inscritos como nuevos
+            $agregados = array_diff($post_array['eventos'], $arraEventos);
+            //busca id del dueño de la promocion
+            $this->db->select('PRO_USER_CREADOR');
+            $this->db->from('PRO_PROMOCIONES');
+            $this->db->where('PRO_ID', $id_promo);
+            $query = $this->db->get();
+            $resp =  $query->result_array();
+             foreach($resp as $clave=>$valor){
+                $id_user = $valor['PRO_USER_CREADOR'];
+            }
+            //ciclo para contar el número de promociones inscritas para los eventos nuevos
+            foreach($agregados as $evento_agregado){
+              //cuenta las promociones del usuario, por evento y tipo
+              $this->db->select('COUNT(*)');
+              $this->db->from('EXP_EVENTOXPROMOCION');
+              $this->db->join('PRO_PROMOCIONES', 'PRO_PROMOCIONES.PRO_ID =EXP_EVENTOXPROMOCION.EXP_PROMOCION');
+              $this->db->where('PRO_USER_CREADOR', $id_user);
+              $this->db->where('EXP_EVENTO', $evento_agregado);
+              $this->db->where('PRO_SRC_ID', $tipo_promocion);
+
+              $query = $this->db->get();
+              $resp =  $query->result_array();
+               foreach($resp as $clave=>$valor){
+                $no_promociones = $valor['COUNT(*)'];
+               }
+               //busca el # de promociones del paquete
+              $this->db->select('*');
+              $this->db->from('PAQUETES_NOMBRES');
+              $this->db->join('AXP_ADMINXPAQUETE', 'AXP_ADMINXPAQUETE.AXP_PAQUETE=PAQUETES_NOMBRES.PAQ_ID');
+              $this->db->where('AXP_ADMIN', $id_user);
+              $this->db->where('PAQ_EVENTO', $evento_agregado);
+
+              $query = $this->db->get();
+              $resp =  $query->result_array();
+              if (!empty($resp)) {//revisa si no hay paquetes asignados para el evento
+               foreach($resp as $clave=>$valor){//ciclo por cada paquete encontrado
+                 switch ($tipo_promocion) {//cambia el mensaje dependiendo de la promocion
+                  case '1':
+                    if ($valor['PAQ_MONTO_BASICO'] <= $no_promociones ) {//compara numero de promociones
+                      $respuesta = 'EL USUARIO SUPERO EL MAXIMO DE PROMOCIONES BASICAS A CARGAR PARA EL EVENTO '.$lista_eventos[$evento_agregado];
+                    }
+                  break;
+                  case '2':
+                    if ($valor['PAQ_MONTO_PREMIUN'] <= $no_promociones ) {
+                      $respuesta = 'EL USUARIO SUPERO EL MAXIMO DE PROMOCIONES PREMIUN A CARGAR PARA EL EVENTO '.$lista_eventos[$evento_agregado];
+                    }
+                  break;
+                  case '3':
+                    if ($valor['PAQ_MONTO_PREMIUN_CATEGORIA'] <= $no_promociones ) {
+                      $respuesta = 'EL USUARIO SUPERO EL MAXIMO DE PROMOCIONES A CARGAR POR CATEGORIA PREMIUN PARA EL EVENTO '.$lista_eventos[$evento_agregado];
+                    }
+                  break;
+                  default:
+                    $respuesta = 'ERROR: el tipo de promocion no esta bien definido';
+                  break;
+                }
+               }
+              }else{
+                $respuesta = 'Esta Promocion no se puede agregar al Evento '.$lista_eventos[$evento_agregado].', favor comunicar con atencion al cliente, para validar sus paquetes asociados';
+              }
+            }
+        return  $respuesta;
+    }
+
 
 	function get_marcas()
     {

@@ -14,10 +14,10 @@ class Pauta extends Default_Controller
         $data = get_url_base();
 
 
-        $meta_title = 'Cyberlunes';
-        $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
-        $meta_keys = "Compare,Mejores Ofertas Turísticas";
-        $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
+        $meta_title = TITLE;
+        $meta_descripcion = META_DESCRIPTION;
+        $meta_keys = META_KEY;
+        $meta_imagen = base_url() . "static/evento/img/share-".EVENTO.".jpg";
 
         $data['meta_title'] = $meta_title;
         $data['meta_descripcion'] = $meta_descripcion;
@@ -25,10 +25,10 @@ class Pauta extends Default_Controller
         $data = array_merge($data, add_meta_tags($meta_title, $meta_descripcion, $meta_imagen, $meta_keys));
 
         $data['bodyClass'] = ''; // Slider de la home de articulos
-        $data['s_pageName'] = 'vivaviajar evento'; // Slider de la home de articulos
-        $data['s_channel'] = 'vivaviajar evento: lo mejor del 2013  ';
-        $data['s_prop1'] = '';
-        $data['s_prop2'] = '';
+        $data['s_pageName'] = EVENTO_NOMBRE.': pauta: : '; // Slider de la home de articulos
+        $data['s_channel'] = EVENTO_NOMBRE.': pauta';
+        $data['s_prop1'] = EVENTO_NOMBRE.': pauta: ';
+        $data['s_prop2'] = EVENTO_NOMBRE.': pauta: : ';
 
         $data['breadcrumb_categoria'] = '';
         $data['breadcrumb_destino'] = 'Lo mejor del 2013';

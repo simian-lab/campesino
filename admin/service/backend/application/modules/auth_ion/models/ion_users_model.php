@@ -83,7 +83,7 @@ class Ion_users_model extends CI_Model
 
 			$this->email->initialize($config);
 
-			$this->email->from('no-reply@cyberlunes.com.co', 'Cambio de clave');
+			$this->email->from('no-reply@loencontraste.com', 'Cambio de clave');
 			$this->email->to($resp['email']);
 			// $this->email->to('mgranada@brandigital.com');
 

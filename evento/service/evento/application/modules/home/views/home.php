@@ -63,7 +63,7 @@
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-              <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+              <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
                 <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
@@ -79,6 +79,7 @@
     <div class="clear"></div>
 
     <div class="publicidad col-xs-12">
+
       <div class="box col-sm-4">
         <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
           <p>Publicidad</p>
@@ -90,7 +91,7 @@
 
           </script>
           <noscript>
-           <a href=""http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich"" target=""_blank"">                
+           <a href=""http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]&out=nonrich"" target=""_blank"">
             <img src=""http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9611&visit=m&tmstp=[timestamp]"" border=""0"" alt="""" /></a>
           </noscript>
         </a>
@@ -105,7 +106,7 @@
                 SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
             </script>
             <noscript>
-             <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+             <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
               <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=9608&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
             </noscript>
         </a>
@@ -117,14 +118,38 @@
             sas_pageid='57473/592107'; // Página : LoEncontraste/especiales
                 sas_formatid='11772';  // Formato : Push Down Top 960x90
                 sas_target='';   // Segmentación
-                SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);           
+                SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
           </script>
           <noscript>
-           <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">                
+           <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
             <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=57473&pgname=home_preevento&fmtid=11772&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
           </noscript>
         </a>
       </div>
+      <script type="text/javascript">
+        function MoverPauta (movimiento) {
+          altura = $(".publicidad").height();
+          $(".publicidad").css("height", altura+"px");
+          if (movimiento==1) {
+            if($(".publicidad .box:nth-child(1)").is(":visible")){
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }else if($(".publicidad .box:nth-child(2)").is(":visible")){
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }else if($(".publicidad .box:nth-child(3)").is(":visible")){
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }
+          }else{
+            if($(".publicidad .box:nth-child(1)").is(":visible")){
+              $(".publicidad .box:nth-child(1)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(2)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }else if($(".publicidad .box:nth-child(2)").is(":visible")){
+              $(".publicidad .box:nth-child(2)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(3)").animate({opacity: 1,width: "toggle"}, 150)}});;
+            }else if($(".publicidad .box:nth-child(3)").is(":visible")){
+              $(".publicidad .box:nth-child(3)").animate({opacity: 0,width: "toggle"},{duration:150, complete: function () {$(".publicidad .box:nth-child(1)").animate({opacity: 1,width: "toggle"}, 150)}});
+            }
+          }
+        }
+      </script>
+      <table id="botones_pautas"><tr><td><div id="boton_pauta_izquierda" onclick="MoverPauta(1)"><</div></td><td><div id="boton_pauta_derecha" onclick="MoverPauta(2)">></div></td></tr></table>
       <div class="clear"></div>
       <hr>
     </div><!-- End publicidad-->
@@ -145,7 +170,7 @@
       ?>
         <div class="wrapper-box col-sm-3 col-xs-12">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
@@ -174,7 +199,7 @@
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
@@ -202,7 +227,7 @@
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
@@ -230,7 +255,7 @@
       ?>
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
@@ -258,7 +283,32 @@
       ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
+              <span>Ir a la tienda</span>
+            </a>
+          </div>
+        </div>
+      <?php $posicion++; ?>
+      <?php endforeach; ?>
+      <div class="clear"></div>
+      <hr>
+    </div><!-- End mini -->
+
+    <div class="mini col-md-12 content-patrocinadores-destacados">
+      <?php foreach($patrocinadores_otros as $patrocinador): ?>
+      <?php
+      if($patrocinador->PAT_URL_EVENT != '') {
+        $url_patrocinador = $base_url . 'redireccionamiento/externo/?url=' . $patrocinador->PAT_HASH_URL_EVENT;
+      } else {
+        $url_patrocinador = '#';
+      }
+
+      $patrocinador->PAT_LOGO = htmlentities($patrocinador->PAT_LOGO, ENT_QUOTES);
+      ?>
+        <div class="wrapper-box">
+          <div class="box" data-id="<?php echo $patrocinador->PAT_ID; ?>">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->PAT_ID ?>', '<?php echo $posicion ?>')" class="tagj">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>

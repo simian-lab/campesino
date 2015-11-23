@@ -28,10 +28,10 @@ class Home extends MX_Controller {
     $data['jsonParam']=get_app_data();
     $data['descuentosfiltro']=json_encode($dataFiltrado);
 
-    $meta_title = 'Cyberlunes';
-    $meta_descripcion = 'Ya estoy disfrutando 24 horas de las mejores ofertas en CyberLunes. Ingresa tu también a http://www.cyberlunes.com.co  y aprovecha descuentos increíbles';
-    $meta_keys = "Compare,Mejores Ofertas Turísticas";
-    $meta_imagen = base_url() . "static/evento/img/logo200x200.jpg";
+    $meta_title = TITLE;
+    $meta_descripcion = META_DESCRIPTION;
+    $meta_keys = META_KEY;
+    $meta_imagen = base_url() . "static/evento/img/share-".EVENTO.".jpg";
     $meta_url = base_url();
 
     $data['meta_title'] = $meta_title;
@@ -49,9 +49,10 @@ class Home extends MX_Controller {
     $data['descuentosfiltro']=json_encode($dataFiltrado);
     $data['jsonParam']=get_app_data();
 
-    $data['s_pageName'] = "cyberlunes: evento: home";
-    $data['s_channel'] = "cyberlunes: evento";
-    $data['s_prop1']= '';
+    $data['s_pageName'] = EVENTO_NOMBRE.": home: : ";
+    $data['s_channel'] = EVENTO_NOMBRE.": home";
+    $data['s_prop1']= EVENTO_NOMBRE.": home: ";
+	$data['s_prop2']= EVENTO_NOMBRE.": home: : ";
 
     $data['tiendas'] = modules::run('promociones/tienda/load',$data);
     $data['marcas'] = modules::run('promociones/marca/load',$data);
@@ -63,6 +64,7 @@ class Home extends MX_Controller {
     $bronce = array();
     $platino = array();
     $general = array();
+    $otros = array();
 
     foreach($patrocinadores as $patrocinador) {
       switch($patrocinador->PAT_PAQUETE){
@@ -89,6 +91,10 @@ class Home extends MX_Controller {
         case "6":
           array_push($general, $patrocinador);
           break;
+
+        case "7":
+          array_push($otros, $patrocinador);
+          break;
       }
     }
 
@@ -98,6 +104,7 @@ class Home extends MX_Controller {
     shuffle($bronce);
     shuffle($platino);
     shuffle($general);
+    shuffle($otros);
 
     $data['patrocinadores_oro_plus'] = $oro_plus;
     $data['patrocinadores_oro'] = $oro;
@@ -105,6 +112,7 @@ class Home extends MX_Controller {
     $data['patrocinadores_bronce'] = $bronce;
     $data['patrocinadores_platino'] = $platino;
     $data['patrocinadores_general'] = $general;
+    $data['patrocinadores_otros'] = $otros;
 
     $session_id = $this->session->userdata('session_id');
     $session_id = sha1('lista_promos'.$session_id);

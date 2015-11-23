@@ -402,8 +402,8 @@ class Main extends MX_Controller
 
         $this->email->initialize($config);
 
-        $this->email->from('no-reply@cyberlunes.com.co');
-        $this->email->to('mcisneros@brandigital.com,icano@brandigital.com,ggiorda@brandigital.com');
+        $this->email->from('no-reply@loencontraste.com');
+        $this->email->to('gioar@eltiempo.com');
         $this->email->subject('mail de prueba');
         $this->email->message('Esto es un asunto de prueba ' . base_url());
 
@@ -413,6 +413,16 @@ class Main extends MX_Controller
 
         echo('<br>');
         echo $this->email->print_debugger();
+    }
+
+    function reporte_promociones() {
+        $auth = $this->load->module('reporte_promociones');
+        echo $retorno = modules::run('modules/reporte_promociones/index');
+    }
+
+    function eventos() {
+        $auth = $this->load->module('eventos');
+        echo $retorno = modules::run('modules/eventos/index');
     }
 
 }

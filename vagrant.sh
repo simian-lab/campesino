@@ -22,8 +22,14 @@ a2ensite admin
 cp /vagrant/stack/preevento-virtualhost.conf /etc/apache2/sites-available/preevento.conf
 a2ensite preevento
 
-cp /vagrant/stack/evento-virtualhost.conf /etc/apache2/sites-available/evento.conf
-a2ensite evento
+cp /vagrant/stack/bfr-virtualhost.conf /etc/apache2/sites-available/bfr.conf
+a2ensite bfr
+
+cp /vagrant/stack/cyl-virtualhost.conf /etc/apache2/sites-available/cyl.conf
+a2ensite cyl
+
+cp /vagrant/stack/cys-virtualhost.conf /etc/apache2/sites-available/cys.conf
+a2ensite cys
 
 # Restart for good measure
 service apache2 restart -y

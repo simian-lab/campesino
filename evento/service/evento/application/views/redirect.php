@@ -53,76 +53,53 @@
 
         ?>
     </head>
-    <body id="redireccion">
+    <body>
+        <div class="redirect-loading"></div>
+                <!-- Google Tag Manager -->
+      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MPFWLN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
+      <!-- End Google Tag Manager -->
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <figure class="logo">
-                            <img src="<?php echo $url['base_url_static'];?>img/redireccion.png" alt="">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </header>
-        
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <span class="small">Los <b>mejores</b> descuentos </span>
-                        <img src="<?php echo $url['base_url_static'];?>img/redireccion_.png" alt="">
-                        <span class="medium"><b>redireccionamiento</b></span>
-                        <span class="large">externo</span>
-                        <p>Usted está saliendo de Cyberlunes.com, se le llevará a la página<br>
-                                <a href="<?php echo $url_redirect;?>"><?php echo $url_redirect;?></a>
-                            <br>Si no ha sido redirigido en <b id="countdown"></b> segundos, presione el botón.</p>
-                        <a href="<?php echo $url_redirect;?>" class="redir">ir a la <b>página</b></a>
-                    </div>
-                </div>
-            </div>
-        </section>                            
-        <!-- Google Tag Manager -->
-        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NGBVTZ"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NGBVTZ');</script>
-        <!-- End Google Tag Manager -->
-
-        <!-- Facebook Conversion Code for Pixel El Tiempo 2 - Leads -->
+        <!-- Google Code for Eventos Redireccionamiento Conversion Page -->
         <script type="text/javascript">
-        var fb_param = {};
-        fb_param.pixel_id = '6015078203399';
-        fb_param.value = '0.01';
-        fb_param.currency = 'EUR';
-        (function(){
-          var fpw = document.createElement('script');
-          fpw.async = true;
-          fpw.src = '//connect.facebook.net/en_US/fp.js';
-          var ref = document.getElementsByTagName('script')[0];
-          ref.parentNode.insertBefore(fpw, ref);
-        })();
+        /* <![CDATA[ */
+        var google_conversion_id = 969745351;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "3sfYCJvri18Qx8e0zgM";
+        var google_remarketing_only = false;
+        /* ]]> */
         </script>
-        <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6015078203399&amp;value=0.01&amp;currency=EUR" /></noscript>
-
-        <!-- Facebook Conversion Code for Redireccionamiento Cyber Lunes -->
-        <script>(function() {
-            var _fbq = window._fbq || (window._fbq = []);
-            if (!_fbq.loaded)
-                { var fbds = document.createElement('script'); fbds.async = true; fbds.src = '//connect.facebook.net/en_US/fbds.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fbds, s); _fbq.loaded = true; }
-        })();
-        window._fbq = window._fbq || [];
-        window._fbq.push(['track', '6028444649480', {'value':'0.00','currency':'COP'}]);
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
         </script>
         <noscript>
-            <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6028444649480&cd[value]=0.00&cd[currency]=COP&noscript=1" />
-        </noscript>
+        
+
+<!-- Facebook Conversion Code for LO ENCONTRASTE - Checkouts -->
+<script>
+(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+        var fbds = document.createElement('script');
+        fbds.async = true;
+        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(fbds, s);
+        _fbq.loaded = true;
+    }
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6031250315599', {'value':'0.01','currency':'EUR'}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6031250315599&amp;cd[value]=0.01&amp;cd[currency]=EUR&amp;noscript=1" /></noscript>
+  
     </body>
 </html>

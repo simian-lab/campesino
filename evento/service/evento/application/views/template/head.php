@@ -11,7 +11,6 @@
         <title><?php echo $meta_title; ?></title>
         
          <?php echo $metatag; ?>
-
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/normalize.min.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="<?php echo $base_url_static;?>stylesheets/vendor/owl.carousel.css">
@@ -61,3 +60,14 @@
         
     </head>
     <body>
+              <!-- Google Tag Manager -->
+      <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MPFWLN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
+      <!-- End Google Tag Manager -->
+      <input type="hidden" id="twitter_tag_line" value="<?php echo TAG_TWITTER;?>"> 
+      <input type="hidden" id="facebook_tag_line" value="<?php echo TAG_FACEBOOK;?>"> 
