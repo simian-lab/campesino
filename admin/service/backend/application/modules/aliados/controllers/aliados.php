@@ -108,7 +108,7 @@ class Aliados extends Main {
 
 			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO', 'PAT_HASH_URL_EVENT','OMNITURE_ID');
 			$crud->required_fields('PAT_NOMBRE','PAT_LOGO','PAT_FECHA','VISIBILITY');
-			$crud->columns('OMNITURE_ID','PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO');
+			$crud->columns('OMNITURE_ID','PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO','PAT_URL_EVENT');
 
 			$crud->callback_before_update(array($this,'encrypt_password_callback'));
 
