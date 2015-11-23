@@ -109,6 +109,11 @@ function onClickOferta(id, posicion, tienda){
 	s.eVar39 = tienda;
 	s.products = ";"+id;
 	s.tl(true,"o","Click en Oferta");
+	// pixel de google
+	dataLayer.push({
+		'event' : 'event.clicOfertas',
+		'clicOfertas' : true
+	});
 }
 
 function onClickPatrocinador(id, posicion) {
