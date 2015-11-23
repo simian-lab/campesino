@@ -41,9 +41,6 @@ $base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
       <!-- End Google Tag Manager -->
-        <div class="main-logo-LoE-404">
-            <img src="<?php echo $base_url_static;?>img/logo-loencontraste.png">
-        </div>
         <!-- img principal desktop -->
         <div class="principal-content">
             <img src="<?php echo $base_url_static;?>img/pagina_404_bk_principal.png">
