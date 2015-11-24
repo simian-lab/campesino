@@ -21,9 +21,9 @@ $(document).ready(function() {
         $( "#selectSubCategoria" ).change(function() {
             $( "#selectTienda" ).val('tiendas');
             $( "#selectMarca" ).val('marcas');
-            $.get('http://' + window.location.host + "/marcas/tiendas" , function(data, status){
+            /*$.get('http://' + window.location.host + "/marcas/tiendas" , function(data, status){
               $( "#selectMarca" ).empty().append(data);
-            });
+            });*/
         });
 
         $( "#buscarOfertaButton").click(function() {
