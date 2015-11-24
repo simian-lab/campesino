@@ -1,205 +1,172 @@
-@charset "CP850";
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+body { 
+  background: url("../../img/pagina_404_bk.jpg") repeat;
+  margin: 0 auto;
+  width: 100%;
+  background-size: 100%;
 }
-
-/* line 22, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size-adjust: inherit;
+    font-stretch: inherit;
+    font-feature-settings: inherit;
+    font-language-override: inherit;
+    font-kerning: inherit;
+    font-synthesis: inherit;
+    font-variant: inherit;
+    font-size: 100%;
 }
-
-/* line 24, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
+.main-logo-LoE-404 {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  top: 70px;
+}
+.main-logo-LoE-404 img {
+  margin: 0 auto;
+  display: block;
+}
+.principal-content {
+  width: 100%;
+  margin: 0 auto;
+}
+.principal-content img {
+  width: 90%;
+}
+.main-menu-LoE-404 {
+  width: 100%;
+  max-width: 950px;
+  margin: 0px auto 20px auto;
+  padding: 20px 10px;
+  background-color: rgba(0,0,0,0.4) !important;
+  background: #696969;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.title-menu-LoE-404 {
+  text-align: center;
+  font-family: roboto, arial;
+  font-size: 23px;
+  color: #414141;
+  margin: 10px 0 20px 0;
+}
+.subcategorie-list-LoE-404 {
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  margin: 10px 8px;
+}
+.subcategorie-list-LoE-404 li a {
+  font-size: 14px;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-family: roboto-bold, arial;
+}
+.subcategorie-list-LoE-404 li a:hover {
+  color: #7EE90B;
+}
+.subcategorie-list-LoE-404 li.title-list-LoE-404 {
+  border-bottom: solid thin #fff;
+  border-style: dotted;
+  background: url("../img/ok-title.png") 0px 0px no-repeat;
+  padding: 0 18px;
+}
+.tipe-product-list-LoE-404 {
   list-style: none;
 }
-
-/* line 26, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.tipe-product-list-LoE-404 li a {
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-family: roboto, arial;
+  padding: 0 0 0 18px;
 }
-
-/* line 28, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
+.tipe-product-list-LoE-404 li a:hover {
+  text-decoration: underline;
+  color: #7EE90B;
 }
-
-/* line 30, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
+.principal-content-720 {
+  display: none;
 }
-/* line 103, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
+.principal-content-420 {
+  display: none;
 }
-
-/* line 32, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-@font-face {
-  font-family: 'Conv_MyriadPro-Bold';
-  src: url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.eot");
-  src: local("☺"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.woff") format("woff"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.ttf") format("truetype"), url("../fonts/Myriad/Pro/Bold/ MyriadPro-Bold.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Conv_MyriadPro-Regular';
-  src: url("../fonts/Myriad/Pro/Regular/MyriadPro-Regular.eot");
-  src: local("☺"), url("../fonts/Myriad/Pro/Regular/MyriadPro-Regular.woff") format("woff"), url("../fonts/Myriad/Pro/Regular/MyriadPro-Regular.ttf") format("truetype"), url("../fonts/Myriad/Pro/Regular/MyriadPro-Regular.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Conv_MyriadPro-Cond';
-  src: url("../fonts/Myriad/Pro/Cond/MyriadPro-Cond.eot");
-  src: local("☺"), url("../fonts/Myriad/Pro/Cond/MyriadPro-Cond.woff") format("woff"), url("../fonts/Myriad/Pro/Cond/MyriadPro-Cond.ttf") format("truetype"), url("../fonts/Myriad/Pro/Cond/MyriadPro-Cond.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/** Generated by FG **/
-@font-face {
-  font-family: 'Conv_MyriadPro-CondIt';
-  src: url("../fonts/Myriad/Pro/Cond_it/MyriadPro-CondIt.eot");
-  src: local("☺"), url("../fonts/Myriad/Pro/Cond_it/MyriadPro-CondIt.woff") format("woff"), url("../fonts/Myriad/Pro/Cond_it/MyriadPro-CondIt.ttf") format("truetype"), url("../fonts/Myriad/Pro/Cond_it/MyriadPro-CondIt.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* line 15, ../sass/errores.scss */
-body {
-  background: url(../img/bg.png) repeat;
-}
-
-/* line 18, ../sass/errores.scss */
-.conbg {
-  background: none;
-  background-color: #c4caca;
-}
-/* line 21, ../sass/errores.scss */
-.conbg .section {
-  background: url(../img/fondo_503.jpg) center no-repeat;
-}
-/* line 23, ../sass/errores.scss */
-.conbg .section .container {
-  background: none;
-  background-color: transparent;
-  box-shadow: none;
-}
-/* line 27, ../sass/errores.scss */
-.conbg .section .container h1 {
-  margin-bottom: 310px;
-}
-
-/* line 33, ../sass/errores.scss */
-a.boton {
-  background: url(../img/bg-btn-leermas.jpg) top left no-repeat;
-  color: white;
-  display: block;
-  font-size: 0.938em;
-  height: 35px;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  padding-top: 10px;
+.button_back_404 {
+  margin: 30px auto;
+  width: 280px;
+  height: 30px;
   text-align: center;
-  text-transform: uppercase;
-  width: 150px;
 }
-/* line 45, ../sass/errores.scss */
-a.boton b {
-  font-family: "Conv_MyriadPro-Bold";
-}
-/* line 48, ../sass/errores.scss */
-a.boton:hover {
+.button_back_404 a {
+  background: #b5c420;
+  border-radius: 10px;
+  display: block;
+  height: 30px;
+  padding: 9px 20px 0;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #fff;
+  font-size: 15px;
+  border-bottom: solid 4px #4c5212;
   text-decoration: none;
 }
+.button_back_404 a:hover {
+  position: relative;
+  top: 3px;
+  border-bottom: solid 2px #4c5212;
+}
+@media screen and (max-width: 720px) {
+  .principal-content {
+    display: none;
+  }
+  .principal-content-720 {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .principal-content-720 img {
+    width: 90%;
+  }
+  .main-logo-LoE-404 {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    top: 15px;
+  }
+  .main-logo-LoE-404 img {
+    margin: 0 auto;
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .principal-content-720 {
+  display: none;
+  }
+  .principal-content-420 {
+    width: 100%;
+    margin: 0 auto;
+    display: block; 
+  }
+  .principal-content-420 img {
+    width: 100%;
+  }
+  .main-menu-LoE-404 {
+    margin: 0 auto;
+      width: 72%;
+  }
+  .subcategorie-list-LoE-404 {
+    display: block;
+    vertical-align: top;
+    list-style: none;
+    margin: 10px 20px;
+  }
+}
 
-/* line 52, ../sass/errores.scss */
-.header {
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #e1e1e1;
-  padding: 10px 0;
-}
-/* line 56, ../sass/errores.scss */
-.header img {
-  display: block;
-  margin: 0 auto;
-  vertical-align: top;
-}
 
-/* line 62, ../sass/errores.scss */
-.section {
-  font-family: "Conv_MyriadPro-Regular";
-  text-align: center;
-}
-/* line 65, ../sass/errores.scss */
-.section .container {
-  background-color: white;
-  box-shadow: 0px 3px 3px #888888;
-}
-/* line 68, ../sass/errores.scss */
-.section .container h1 {
-  color: #00b6c9;
-  margin: 10px;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-}
-/* line 73, ../sass/errores.scss */
-.section .container h1 b {
-  font-family: "Conv_MyriadPro-Bold";
-}
-/* line 77, ../sass/errores.scss */
-.section .container h2 {
-  color: #00b6c9;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 1.875em;
-  text-transform: uppercase;
-}
-/* line 84, ../sass/errores.scss */
-.section .container span.numb {
-  color: #00b6c9;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 7.938em;
-  line-height: 78px;
-}
-/* line 91, ../sass/errores.scss */
-.section .container p {
-  color: #1f1f1f;
-  font-size: 1.313em;
-  margin: 30px 0;
-}
