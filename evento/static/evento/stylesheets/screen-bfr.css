@@ -287,7 +287,7 @@ header .container .head .marcas figure {
 .share {
   position: absolute;
   right: 0;
-  top: 170px;
+  top: 250px;
 }
 @media screen and (max-width: 768px) {
   /* line 148, ../sass/screen.scss */
