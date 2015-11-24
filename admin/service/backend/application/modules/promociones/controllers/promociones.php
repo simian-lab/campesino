@@ -75,8 +75,8 @@ class Promociones extends Main {
         	 ->display_as('PRO_ID','ID')
 	         ->display_as('PRO_DESCRIPCION','Descripción')
              ->display_as('PRO_ETIQUETA','Etiqueta')
-             ->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')
-             ->display_as('PRO_LOGO_GENERAL','Imagen General<br>Tamaño recomendado:<br>298x298px')
+             //->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')
+             //->display_as('PRO_LOGO_GENERAL','Imagen General<br>Tamaño recomendado:<br>298x298px')
              ->display_as('PRO_PRECIO_INICIAL','Precio inicial')
              ->display_as('PRO_PRECIO_FINAL','Precio final')
              ->display_as('PRO_DESCUENTO','Descuento')
@@ -117,7 +117,7 @@ class Promociones extends Main {
         	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','eventos', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID','eventos');
-        $crud->columns('PRO_ID', 'PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID');
+        $crud->columns('PRO_ID', 'PRO_NOMBRE','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
@@ -141,8 +141,8 @@ class Promociones extends Main {
 			$crud->callback_field('SUB_ID',array($this,'get_subcategoria'));
 			$crud->callback_field('PRO_USER_CREADOR',array($this,'get_usuarios_aliados'));
 			$crud->callback_field('AUTORIZADO',array($this,'estado_promocion_field'));
-			$crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
-			$crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
+			//$crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
+			//$crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
 			$crud->callback_field('ID_USER_CREADOR',array($this,'get_id_user_creador'));
 		}
 
