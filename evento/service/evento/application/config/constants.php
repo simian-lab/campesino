@@ -80,6 +80,7 @@ define('META_DESCRIPTION', $result_memcached_eve_result["EVE_META_DESCRIPTION"])
 define('TAG_FACEBOOK', $result_memcached_eve_result["EVE_FACEBOOK"]);
 define('TAG_TWITTER', $result_memcached_eve_result["EVE_TWITTER"]);
 define('EVENTO_NOMBRE', $result_memcached_eve_result["EVE_NOMBRE"]);
+define('EVE_LEGAL', $result_memcached_eve_result["EVE_LEGAL"]);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
