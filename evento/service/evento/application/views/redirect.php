@@ -54,9 +54,9 @@
         ?>
 		
 		<?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
-            <script src="<?php echo $base_url_static?>js/s_code.js"></script>     
+            <script src="<?php echo $url['base_url_static'];?>js/s_code.js"></script>     
         <?php else: ?>
-            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
+            <script src="<?php echo $url['base_url_static'];?>js/s_code_dev.js"></script> 
         <?php endif; ?>
 		
 		<script>
