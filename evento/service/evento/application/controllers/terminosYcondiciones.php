@@ -21,6 +21,10 @@ class terminosYcondiciones extends MX_Controller
         $data = get_url_base();
 
         $data['jsonParam'] = get_app_data();
+		$data['s_pageName'] = EVENTO_NOMBRE.': terminos-y-condiciones: : ';
+		$data['s_channel'] = EVENTO_NOMBRE.': terminos-y-condiciones';
+		$data['s_prop1'] = EVENTO_NOMBRE.': terminos-y-condiciones: ';
+		$data['s_prop2'] = EVENTO_NOMBRE.': terminos-y-condiciones: : ';
 
 
         $meta_title = TITLE;

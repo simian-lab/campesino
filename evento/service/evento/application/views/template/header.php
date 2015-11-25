@@ -24,7 +24,7 @@
   <div class="container">
     <div class="row head">
       <div class="col-md-3 col-sm-6 col-xs-6 logo">
-        <a href="<?php echo $base_url;?>">
+        <a href="<?php echo $base_url;?>" onclick="clickHeader('logo LOE')">
           <img src="<?php echo $base_url_static?>img/logo.png" alt="cybermonday">
         </a>
       </div>

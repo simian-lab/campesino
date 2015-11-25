@@ -24,17 +24,24 @@ if ( ! function_exists('get_url_promocion'))
         else{
           $id = '';
         }
+		
+		if(isset($arrayOmniture[3])){
+          $evento = $arrayOmniture[3];
+        }
+        else{
+          $evento = '';
+        }
 
 
         $atts = array('target'      => '_blank',
                       'class'      => 'link red tagj',
-                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
+                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."', '".$evento."', 'premiun')"
                       );
 
         if($promo_general == 1){
           $atts = array('target'      => '_blank',
                       'class'      => 'link orange tagj',
-                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."')"
+                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."', '".$evento."', 'general')"
                       );
         }
 
