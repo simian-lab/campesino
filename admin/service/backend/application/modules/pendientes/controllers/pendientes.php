@@ -36,8 +36,8 @@ class Pendientes extends Main {
     $crud->display_as('PRO_NOMBRE','Titulo promoción')
          ->display_as('PRO_DESCRIPCION','Descripción')
          ->display_as('PRO_ETIQUETA','Etiqueta')
-         //->display_as('PRO_LOGO_PREMIUM','Imagen premium')
-         //->display_as('PRO_LOGO_GENERAL','Imagen general')
+         ->display_as('PRO_LOGO_PREMIUM','Imagen premium')
+         ->display_as('PRO_LOGO_GENERAL','Imagen general')
          ->display_as('PRO_PRECIO_INICIAL','Precio inicial')
          ->display_as('PRO_PRECIO_FINAL','Precio final')
          ->display_as('PRO_DESCUENTO','Descuento')
@@ -66,8 +66,8 @@ class Pendientes extends Main {
     $this->load->model('pendientes_model');
     $result = $this->pendientes_model->get_grupo($this->session->userdata('sadmin_user_id'));
 
-    //$crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
-    //$crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
+    $crud->callback_field('PRO_LOGO_PREMIUM',array($this,'show_imagen_premium'));
+    $crud->callback_field('PRO_LOGO_GENERAL',array($this,'show_imagen_genereal'));
 
     	//***************************	Relacion de tablas ***************************
 
@@ -76,7 +76,7 @@ class Pendientes extends Main {
 
     $crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_LOGO_GENERAL','PRO_DESCRIPCION','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_AUTOR','AUTORIZADO','eventos','PRO_USER_CREADOR','ID_USER_CREADOR','PRO_URL', 'VISTA_PREVIA');
 
-    $crud->columns('PRO_NOMBRE','PRO_AUTOR','VISIBILITY','AUTORIZADO','eventos','PRO_SRC_ID');
+    $crud->columns('PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_NOMBRE','PRO_AUTOR','VISIBILITY','AUTORIZADO','eventos','PRO_SRC_ID');
 
 
     $crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
