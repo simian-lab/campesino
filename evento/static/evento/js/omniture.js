@@ -114,10 +114,10 @@ function onClickOferta(id, posicion, tienda, evento, paquete){
 	s.tl(true,"o","Click en Oferta");
 	
 	// pixel de google
-	dataLayer.push({
+	/*dataLayer.push({
 		'event' : 'event.clicOfertas',
 		'clicOfertas' : true
-	});
+	});*/
 }
 
 function onClickPatrocinador(id, posicion, evento, paquete) {
@@ -130,10 +130,10 @@ function onClickPatrocinador(id, posicion, evento, paquete) {
   s.eVar85=paquete;
   s.tl(true,"o","Click en Comercio");
   // pixel de google
-	dataLayer.push({
+	/*dataLayer.push({
 		'event' : 'event.clicOfertas',
 		'clicOfertas' : true
-	});
+	});*/
 }
 
 function onClickOfertasDestacadas() {
