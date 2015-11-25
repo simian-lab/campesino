@@ -61,9 +61,6 @@ $base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
     </body>
 </html>
 
-
-<!--script src="<?php echo $base_url_static ?>js/s_code.js"></script-->  
-
 <?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
             <script src="<?php echo $base_url_static?>js/s_code.js"></script>     
         <?php else: ?>
@@ -85,6 +82,17 @@ fb_param.currency = 'EUR';
 })();
 </script>
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6014934086599&amp;value=0.01&amp;currency=EUR" /></noscript>
+
+<?php
+			$referej = "";
+			$this->load->library('user_agent');
+			if ($this->agent->is_referral()){
+				$referej = $this->agent->referrer();
+			}
+			else{
+				$referej = "";
+			}
+		?>
 
   <script language="JavaScript" type="text/javascript"><!--
             			
