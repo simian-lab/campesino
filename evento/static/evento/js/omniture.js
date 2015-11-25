@@ -107,7 +107,7 @@ function onClickOferta(id, posicion, tienda, evento, paquete){
 	s.eVar80 = 'evento';
 	s.eVar81 = 'hover';
 	s.eVar82 = posicion;
-	s.eVar83 = "ofenav-"+tienda;
+	s.eVar83 = "ofeloe-"+tienda;
 	s.eVar84 = 'evento-'+evento;
 	s.eVar85 = paquete;
 	s.products = ";ofenav-"+id;
@@ -125,7 +125,7 @@ function onClickPatrocinador(id, posicion, evento, paquete) {
   s.linkTrackEvents="event38";
   s.events="event38";
   s.eVar82=posicion;
-  s.eVar83="ofenav-"+id;
+  s.eVar83="ofeloe-"+id;
   s.eVar84="evento-"+evento;
   s.eVar85=paquete;
   s.tl(true,"o","Click en Comercio");
@@ -211,9 +211,9 @@ function printPatrocinador(array_id) {
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
 			if(i > 0) {
-				s.list1 += ";ofenav-" + array_id[i];
+				s.list1 += ";ofeloe-" + array_id[i];
 			} else {
-				s.list1 += "ofenav-" +array_id[i];
+				s.list1 += "ofeloe-" +array_id[i];
 			}
 		}
 	}
