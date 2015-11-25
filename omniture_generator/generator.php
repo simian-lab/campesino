@@ -70,7 +70,7 @@ function init($db, $ftp_credentials) {
         upload_file_ftp($ftp_credentials, $file_name);
 }
 function add_promotions_from_special($db, $file) {
-    $key_prefix = 'evenav-';
+    $key_prefix = 'ofenav-';
     $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES");
     $query_promotions->execute();
     $promotions = $query_promotions->fetchAll();
