@@ -174,7 +174,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bg.png) repeat;
+  background: #fff;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
 }
