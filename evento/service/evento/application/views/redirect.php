@@ -52,6 +52,69 @@
             }
 
         ?>
+		
+		<?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
+            <script src="<?php echo $base_url_static?>js/s_code.js"></script>     
+        <?php else: ?>
+            <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
+        <?php endif; ?>
+		
+		<script>
+		
+			// ASIGNAR VALORES A LAS VARIABLES EN ESTA SECCION
+			s.pageName="<?php echo EVENTO_NOMBRE;?>: redireccion: : ";
+			s.channel = "<?php echo EVENTO_NOMBRE;?>: redireccion";
+            s.prop1="<?php echo EVENTO_NOMBRE;?>: redireccion: ";
+			s.prop2="<?php echo EVENTO_NOMBRE;?>: redireccion: : ";
+            /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+            var s_code = s.t();
+            if(s_code)document.write(s_code)//-->
+		
+		
+			function getVarsUrl(){
+				var url= location.search.replace("?", "");
+				var arrUrl = url.split("&");
+				var urlObj={};
+				for(var i=0; i<arrUrl.length; i++){
+					var x= arrUrl[i].split("=");
+					urlObj[x[0]]=x[1]
+				}
+				return urlObj;
+			}
+
+			var objetoj = getVarsUrl();
+
+			if(typeof objetoj.id === 'undefined'){
+				s.linkTrackVars = "";
+			}
+			else{
+				s.linkTrackVars = 'events,eVar80,eVar81,eVar83,eVar84,eVar85,products';
+				s.linkTrackEvents = 'event36';
+				s.events = 'event36';
+				s.eVar80 = 'evento';
+				s.eVar81 = objetoj.ele;
+				s.eVar83 = objetoj.tienda;
+				s.eVar84 = objetoj.ori;
+				s.eVar85 = objetoj.tipo;
+				s.products=";"+objetoj.id;
+				s.tl(true, 'o', "clic en oferta");
+			}
+			
+			if(typeof objetoj.idtienda === 'undefined'){
+				s.linkTrackVars = "";
+			}
+			else{
+				s.linkTrackVars = 'events,eVar83,eVar84,eVar85';
+				s.linkTrackEvents = 'event38';
+				s.events = 'event38';
+				s.eVar83 = objetoj.idtienda;
+				s.eVar84 = objetoj.ori;
+				s.eVar85 = objetoj.tipo;
+				s.tl(true, 'o', "clic en retail");
+
+			}
+		</script>
+		
     </head>
     <body>
         <div class="redirect-loading"></div>
