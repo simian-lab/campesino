@@ -321,7 +321,7 @@
       ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', <?php echo EVENTO_NOMBRE;?>, 'generales')" class="">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'generales')" class="">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>
@@ -346,7 +346,7 @@
       ?>
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
-            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', <?php echo EVENTO_NOMBRE;?>, 'generales')" class="">
+            <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'generales')" class="">
               <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj">
               <span>Ir a la tienda</span>
             </a>

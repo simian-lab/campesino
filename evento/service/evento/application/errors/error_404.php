@@ -30,6 +30,7 @@ $base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
         <link rel="stylesheet" href="<?php echo $base_url_static ?>stylesheets/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="<?php echo $base_url_static ?>stylesheets/errores.css">
         <title>404</title>
+		
     </head>
     <body class="conbg">
                 <!-- Google Tag Manager -->
@@ -57,15 +58,17 @@ $base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
             <a href="<?php echo $base_url ?>">volver</a>
         </div>
         <script src="<?php echo $base_url_static ?>js/vendor/respond.min.js"></script>
-        <script src="<?php echo $base_url_static ?>js/vendor/html5shiv.js"></script>       
-    </body>
-</html>
-
+        <script src="<?php echo $base_url_static ?>js/vendor/html5shiv.js"></script>  
 <?php if (ENVIRONMENT == 'production' || ENVIRONMENT == 'origin'): ?>
             <script src="<?php echo $base_url_static?>js/s_code.js"></script>     
         <?php else: ?>
             <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
         <?php endif; ?>
+		
+    </body>
+</html>
+
+
 
 <!-- Facebook Conversion Code for Pixel El Tiempo -->
 <script type="text/javascript">
