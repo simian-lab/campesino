@@ -65,6 +65,28 @@ $base_url_static = 'http://'.$_SERVER['SERVER_NAME'].'/static/evento/';
             <script src="<?php echo $base_url_static?>js/s_code_dev.js"></script> 
         <?php endif; ?>
 		
+		
+  <script language="JavaScript" type="text/javascript"><!--
+            			
+			// ASIGNAR VALORES A LAS VARIABLES EN ESTA SECCION
+			s.pageName="<?php echo EVENTO_NOMBRE;?>: error404: : ";
+			s.channel = "<?php echo EVENTO_NOMBRE;?>: error404";
+            s.pageType = "errorPage";
+            /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+            var s_code = s.t();
+            if(s_code)document.write(s_code)//-->
+			
+			s.linkTrackVars = "events,eVar62,eVar63";
+			s.linkTrackEvents = "event99";
+			s.events = "event99";
+			s.eVar62 = "<?php  echo $_SERVER['HTTP_REFERER'];?>";
+			s.eVar63 = window.location.href;
+			s.tl(true,"o","Error");
+			
+			
+
+        </script>
+		
     </body>
 </html>
 
@@ -86,36 +108,5 @@ fb_param.currency = 'EUR';
 </script>
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6014934086599&amp;value=0.01&amp;currency=EUR" /></noscript>
 
-<?php
-			$referej = "";
-			$this->load->library('user_agent');
-			if ($this->agent->is_referral()){
-				$referej = $this->agent->referrer();
-			}
-			else{
-				$referej = "";
-			}
-		?>
 
-  <script language="JavaScript" type="text/javascript"><!--
-            			
-			// ASIGNAR VALORES A LAS VARIABLES EN ESTA SECCION
-			s.pageName="<?php echo EVENTO_NOMBRE;?>: error404: : ";
-			s.channel = "<?php echo EVENTO_NOMBRE;?>: error404";
-            s.pageType = "errorPage";
-            /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
-            var s_code = s.t();
-            if(s_code)document.write(s_code)//-->
-			
-			s.linkTrackVars = "events,eVar62,eVar63";
-			s.linkTrackEvents = "event99";
-			s.events = "event99";
-			s.eVar62 = "<?php echo $referej;?>";
-			s.eVar63 = window.location.href;
-			s.tl(true,"o","Error");
-			
-			
-
-        </script>
-    </body>
-</html>
+    
