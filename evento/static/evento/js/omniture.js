@@ -1,9 +1,9 @@
 function onClickPublicidad(nombre, posicion){
-	s.linkTrackVars = "events,eVar27,eVar30";
-	s.linkTrackEvents = "event20";
-	s.events = "event20";
-	s.eVar27 = nombre;
-	s.eVar30 = posicion;
+	s.linkTrackVars = "events,eVar18,eVar19";
+	s.linkTrackEvents = "event16";
+	s.events = "event16";
+	s.eVar18 = posicion;
+	s.eVar19 = nombre;
 	s.tl(true,"o","Click publicidad");
 }
 
@@ -66,27 +66,26 @@ function onSubmitFormulario(nombre){
 	s.tl(true,"o","Formulario");
 }
 
-function onChangeFilter(valor){
+/*function onChangeFilter(valor){
 	s.linkTrackVars = "events,eVar25";
 	s.linkTrackEvents = "event11";
 	s.events = "event11";
 	s.eVar25 = valor;
 	s.tl(true,"o","Filtro");
-}
+}*/
 
 function onClickBuscar(tienda, marca, subcategoria){
-	s.linkTrackVars="events,eVar24,eVar25";
-	s.linkTrackEvents="event11";
-	s.events="event11";
-
 	if(marca == "marcas") {
 		marca = "Todas";
 	}
-
+	
 	if(tienda == "tiendas") {
 		tienda = "Todas";
 	}
-
+	
+	s.linkTrackVars="events,eVar24,eVar25";
+	s.linkTrackEvents="event11";
+	s.events="event11";
 	s.eVar25 = tienda;
 	s.eVar24 = marca;
 	
@@ -101,14 +100,19 @@ function onClickBuscar(tienda, marca, subcategoria){
 	s.tl(true, "o", "filtro");
 }
 
-function onClickOferta(id, posicion, tienda){
-	s.linkTrackVars = "events,eVar38,eVar39,products";
+function onClickOferta(id, posicion, tienda, evento, paquete){
+	s.linkTrackVars = "events,eVar80,eVar81,eVar82,eVar83,eVar84,eVar85,products";
 	s.linkTrackEvents = "event36";
 	s.events = "event36";
-	s.eVar38 = posicion;
-	s.eVar39 = tienda;
-	s.products = ";"+id;
+	s.eVar80 = 'evento';
+	s.eVar81 = 'hover';
+	s.eVar82 = posicion;
+	s.eVar83 = "ofenav-"+tienda;
+	s.eVar84 = 'evento-'+evento;
+	s.eVar85 = paquete;
+	s.products = ";ofenav-"+id;
 	s.tl(true,"o","Click en Oferta");
+	
 	// pixel de google
 	dataLayer.push({
 		'event' : 'event.clicOfertas',
@@ -116,12 +120,14 @@ function onClickOferta(id, posicion, tienda){
 	});
 }
 
-function onClickPatrocinador(id, posicion) {
-  s.linkTrackVars="events,eVar38,eVar39";
-  s.linkTrackEvents="event37";
-  s.events="event37";
-  s.eVar38=posicion;
-  s.eVar39=id;
+function onClickPatrocinador(id, posicion, evento, paquete) {
+  s.linkTrackVars="events,eVar82,eVar83,eVar84,eVar85";
+  s.linkTrackEvents="event38";
+  s.events="event38";
+  s.eVar82=posicion;
+  s.eVar83="ofenav-"+id;
+  s.eVar84="evento-"+evento;
+  s.eVar85=paquete;
   s.tl(true,"o","Click en Comercio");
   // pixel de google
 	dataLayer.push({
@@ -131,34 +137,34 @@ function onClickPatrocinador(id, posicion) {
 }
 
 function onClickOfertasDestacadas() {
-  s.linkTrackVars = "events,eVar18";
+  s.linkTrackVars = "events,eVar30";
   s.linkTrackEvents = "event14";
   s.events = "event14";
-  s.eVar18 = "botón ofertas destacadas";
+  s.eVar30 = "botón ofertas destacadas";
   s.tl(true, "o", "uso de botón");
 }
 
 function onClickTodasLasTiendas() {
-	s.linkTrackVars = "events,eVar18";
+	s.linkTrackVars = "events,eVar30";
 	s.linkTrackEvents = "event14";
 	s.events = "event14";
-	s.eVar18 = "tab todas las tiendas";
+	s.eVar30 = "tab todas las tiendas";
 	s.tl(true, "o", "uso de tab");
 }
 
 function onClickBotonTodasLasOfertas() {
-	s.linkTrackVars = "events,eVar18";
+	s.linkTrackVars = "events,eVar30";
 	s.linkTrackEvents = "event14"; 
 	s.events = "event14";
-	s.eVar18 = "boton todas las ofertas";
+	s.eVar30 = "boton todas las ofertas";
 	s.tl(true, "o", "uso de boton");
 }
 
 function onClickTabTodasLasOfertas() {
-	s.linkTrackVars = "events,eVar18";
+	s.linkTrackVars = "events,eVar30";
 	s.linkTrackEvents = "event14";
 	s.events = "event14";
-	s.eVar18 = "tab todas las ofertas";
+	s.eVar30 = "tab todas las ofertas";
 	s.tl(true, "o", "uso de tab");
 }
 
@@ -180,13 +186,13 @@ function onClickTwitter() {
 
 function printOferta(array_id){
 	s.linkTrackVars = "events,products";
-	s.linkTrackEvents = "event41";
-	s.events = "event41";
+	s.linkTrackEvents = "event37";
+	s.events = "event37";
 	s.products = '';
 
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
-			s.products += ";" + array_id[i];
+			s.products += ";ofenav-" + array_id[i];
 			if(i < array_id.length - 1){
 				s.products += ",";
 			}
@@ -198,19 +204,35 @@ function printOferta(array_id){
 
 function printPatrocinador(array_id) {
 	s.linkTrackVars = "events,list1";
-	s.linkTrackEvents = "event42";
-	s.events = "event42";
+	s.linkTrackEvents = "event40";
+	s.events = "event40";
 	s.list1 = '';
 
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
 			if(i > 0) {
-				s.list1 += ";" + array_id[i];
+				s.list1 += ";ofenav-" + array_id[i];
 			} else {
-				s.list1 += array_id[i];
+				s.list1 += "ofenav-" +array_id[i];
 			}
 		}
 	}
 
 	s.tl(true,"o","Impresión Retail");
+}
+
+function clickHeader(valor){
+	s.linkTrackVars = 'events,eVar86';
+	s.linkTrackEvents = 'event80';
+	s.events = 'event80';
+	s.eVar86 = valor;
+	s.tl(true, 'o', 'clic header');
+}
+
+function clickMenu(valor){
+	s.linkTrackVars = 'events,eVar17';
+	s.linkTrackEvents = 'event12';
+	s.events = 'event12';
+	s.eVar17 = valor;
+	s.tl(true, 'o', 'clic menu');
 }

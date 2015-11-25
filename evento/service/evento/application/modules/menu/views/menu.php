@@ -18,7 +18,7 @@
         <nav class="navbar-collapse collapse">
           <ul id="menuTop">
             <li class="item-menu-current">
-              <a href="<?php echo $base_url."descuentos"?>" onclick="onClickBotonTodasLasOfertas()">Todas las ofertas</a>
+              <a href="<?php echo $base_url."descuentos"?>" onclick="onClickBotonTodasLasOfertas(),clickMenu('Todas las ofertas')">Todas las ofertas</a>
             </li>
             <?php if(isset($resultCategoriasFija)): ?>
               <?php foreach ($resultCategoriasFija as $item): //var_dump($this->uri->segment(2));
@@ -29,7 +29,7 @@
                 }
                 ?>
                 <li <?php echo $class_active ?>>
-                  <a onClick='s.eVar28="<?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES) ?>"' href="<?php echo base_url('descuentos/'.$item['CAT_SLUG']);?>"><?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES); ?></a>
+                  <a onclick="clickMenu('<?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES); ?>')" href="<?php echo base_url('descuentos/'.$item['CAT_SLUG']);?>"><?php echo htmlentities($item['CAT_NOMBRE'], ENT_QUOTES); ?></a>
                 </li>
               <?php endforeach; ?>
             <?php endif; ?>

@@ -26,7 +26,7 @@
           <div class="overlay">
             <p><?php echo $promocion['PRO_DESCRIPCION']; ?></p>
             <?php
-            echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['TIE_NOMBRE'], $promocion['PRO_ID']));
+            echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
             if($promocion['TIE_LOGO_VISA'] == 1): ?>
               <div class="marca">
                 <div class="visa_logo">
@@ -70,7 +70,7 @@
             </div>
           <?php endif; ?>
           <?php
-          echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['TIE_NOMBRE'], $promocion['PRO_ID']));
+          echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
           ?>
         </article>
       </li>
