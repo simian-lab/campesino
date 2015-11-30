@@ -117,7 +117,7 @@ class Promociones extends Main {
         	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','eventos', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID','eventos');
-        $crud->columns('PRO_ID','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL', 'PRO_NOMBRE','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID');
+        $crud->columns('PRO_ID',/*'PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL',*/ 'PRO_NOMBRE','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
