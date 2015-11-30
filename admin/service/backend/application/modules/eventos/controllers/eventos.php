@@ -25,9 +25,10 @@ class Eventos extends Main {
 		$crud->display_as('EVE_META_DESCRIPTION', 'SEO: Meta Descriptio');
 		$crud->display_as('EVE_FACEBOOK', 'Tag Line de Facebook');
 		$crud->display_as('EVE_TWITTER', 'Tag Line de Twitter');
+		$crud->display_as('EVE_LEGAL', 'Texto Legal');
 
 
-		$crud->required_fields('EVE_NOMBRE', 'EVE_DESCRIPCION', 'EVE_PREFIJO', 'EVE_TAG_LINE', 'EVE_META_DESCRIPTION', 'EVE_FACEBOOK', 'EVE_TWITTER');
+		$crud->required_fields('EVE_NOMBRE', 'EVE_DESCRIPCION', 'EVE_PREFIJO');
 
 		$crud->set_subject('evento');
 
