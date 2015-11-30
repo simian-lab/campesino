@@ -44,6 +44,9 @@ New constants to define the number of promotions per page.
 define('NUMERO_PROMOCIONES_PREMIUM',    36);
 define('NUMERO_PROMOCIONES_GENERALES',    36);
 
+/*Constante para el tiempo de vida de las constantes memcache*/
+define('MEMCACHED_LIVE_TIME', 300);
+
 /*Deinfe una constante para el tage line segun el evento*/
 
 require_once( BASEPATH .'database/DB'. EXT );
@@ -69,7 +72,7 @@ if(!$result_memcached_eve_result) {
   $eve_result = $query->row_array();
 
 
-  $memcached->add($key_memcached_eve_result, $eve_result, 86400);
+  $memcached->add($key_memcached_eve_result, $eve_result, MEMCACHED_LIVE_TIME);
 };
 
 define('TAG_LINE',    $result_memcached_eve_result["EVE_TAG_LINE"]);
