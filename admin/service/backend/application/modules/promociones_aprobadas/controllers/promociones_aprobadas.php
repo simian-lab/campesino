@@ -69,8 +69,8 @@ class Promociones_aprobadas extends Main {
         $crud->display_as('PRO_NOMBRE','Nombre promoción')
         	 ->display_as('PRO_DESCRIPCION','Descripción')
              ->display_as('PRO_ETIQUETA','Etiqueta')
-             ->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')
-             ->display_as('PRO_LOGO_GENERAL','Imagen General<br>Tamaño recomendado:<br>298x298px')
+             //->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')
+             //->display_as('PRO_LOGO_GENERAL','Imagen General<br>Tamaño recomendado:<br>298x298px')
              ->display_as('PRO_PRECIO_INICIAL','Precio inicial')
              ->display_as('PRO_PRECIO_FINAL','Precio final')
              ->display_as('PRO_DESCUENTO','Descuento')
@@ -104,7 +104,7 @@ class Promociones_aprobadas extends Main {
 
 		$crud->fields('PRO_NOMBRE','PRO_SRC_ID','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR', 'ID_USER_CREADOR','PRO_URL', 'VISTA_PREVIA','eventos');
         $crud->required_fields('PRO_NOMBRE','PRO_SRC_ID','PRO_DESCRIPCION','PRO_URL', 'CAT_ID','PRO_USER_CREADOR','eventos');
-        $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO', 'PRO_SRC_ID','VISIBILITY','eventos');
+        $crud->columns('PRO_NOMBRE',/*'PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL',*/'PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO', 'PRO_SRC_ID','VISIBILITY','eventos');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
