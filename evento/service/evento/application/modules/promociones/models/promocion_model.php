@@ -9,27 +9,38 @@ class promocion_model extends CI_Model {
   }
 
   function get($idtipo='2', $seed=1, $cant='0', $offset='0', $idPromosRepetido='') {
-    $this->db->select('*');
-    $this->db->from('PRO_PROMOCIONES');
-    $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
-    $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
-    //$this->db->where('PRO_SRC_ID', $idtipo);
-    $this->db->where_in('PRO_SRC_ID', $idtipo);
-    if(!empty($idPromosRepetido))
-      $this->db->where_not_in('PRO_ID', $idPromosRepetido);
-    $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
-	$this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
-    $this->db->join('EXP_EVENTOXPROMOCION', 'EXP_EVENTOXPROMOCION.EXP_PROMOCION = PRO_PROMOCIONES.PRO_ID');
-    $this->db->where('EXP_EVENTOXPROMOCION.EXP_EVENTO', ID_EVENTO);
 
-    $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
-    //$this->db->order_by("PRO_FECHA",'desc', FALSE);
-    $this->db->limit($cant,$offset);
+    $key_memcached_funcion_get = 'funcion_get_'.ID_EVENTO.'_'.$idPromosRepetido;
+    $result_memcached_funcion_get = $this->memcached_library->get($key_memcached_funcion_get);
 
-    $query = $this->db->get();
-    //print_r($this->db->last_query());die();
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+  if(!$result_memcached_funcion_get) {
+      $this->db->select('*');
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
+      $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
+      //$this->db->where('PRO_SRC_ID', $idtipo);
+      $this->db->where_in('PRO_SRC_ID', $idtipo);
+      if(!empty($idPromosRepetido))
+        $this->db->where_not_in('PRO_ID', $idPromosRepetido);
+      $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
+  	$this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
+      $this->db->join('EXP_EVENTOXPROMOCION', 'EXP_EVENTOXPROMOCION.EXP_PROMOCION = PRO_PROMOCIONES.PRO_ID');
+      $this->db->where('EXP_EVENTOXPROMOCION.EXP_EVENTO', ID_EVENTO);
+
+      $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
+      //$this->db->order_by("PRO_FECHA",'desc', FALSE);
+      $this->db->limit($cant,$offset);
+
+      $query = $this->db->get();
+      //print_r($this->db->last_query());die();
+      if ($query->num_rows() > 0){
+        $this->memcached_library->add($key_memcached_funcion_get, $query->result_array(), MEMCACHED_LIVE_TIME);
+        return $query->result_array();
+      }
+
+    }
+
+    return $result_memcached_funcion_get;
 
     return NULL;
   }
