@@ -10,7 +10,7 @@ class promocion_model extends CI_Model {
 
   function get($idtipo='2', $seed=1, $cant='0', $offset='0', $idPromosRepetido='') {
 
-    $key_memcached_funcion_get = 'funcion_get_'.ID_EVENTO.'_'.$idPromosRepetido;
+    $key_memcached_funcion_get = 'funcion_get_'.ID_EVENTO.'_'.$idPromosRepetido.'_'.$idtipo;
     $result_memcached_funcion_get = $this->memcached_library->get($key_memcached_funcion_get);
 
   if(!$result_memcached_funcion_get) {
@@ -59,6 +59,9 @@ class promocion_model extends CI_Model {
 
   function getFiltro($idtipo='2',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed=1,$cant='0',$offset='0',$idPromosRepetido='') {
 
+    $key_memcached_getFiltro = 'funcion_getFiltro_'.ID_EVENTO.'_'.$idPromosRepetido.'_'.$idtipo.'_'.$categoria.'_'.$tienda.'_'.$marca.'_'.$subcategoria;
+    $result_memcached_getFiltro = $this->memcached_library->get($key_memcached_getFiltro);
+    if(!$result_memcached_getFiltro) {
     $this->db->select('*');
     $this->db->from('PRO_PROMOCIONES');
     $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
@@ -90,8 +93,14 @@ class promocion_model extends CI_Model {
 
     $query = $this->db->get();
 
-    if ($query->num_rows() > 0)
+    if ($query->num_rows() > 0){
+      $this->memcached_library->add($key_memcached_getFiltro, $query->result_array(), MEMCACHED_LIVE_TIME);
       return $query->result_array();
+    }
+
+   }
+
+    return $result_memcached_getFiltro;
 
     return NULL;
   }
