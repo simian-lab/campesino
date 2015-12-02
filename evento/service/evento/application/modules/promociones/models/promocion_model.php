@@ -245,16 +245,26 @@ class promocion_model extends CI_Model {
   }
 
   function getByHash($hash) {
-    $this->db->select('PRO_ID,PRO_NOMBRE,PRO_HASH,PRO_URL');
-    $this->db->from('PRO_PROMOCIONES');
-    $this->db->where('PRO_HASH', $hash);
-    $this->db->limit(1);
+    $key_memcached_getByHash = 'funcion_getByHash_'.ID_EVENTO.'_'.$hash;
+    $result_memcached_getByHash = $this->memcached_library->get($key_memcached_getByHash);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getByHash) {
+      $this->db->select('PRO_ID,PRO_NOMBRE,PRO_HASH,PRO_URL');
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_HASH', $hash);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getByHash, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getByHash;
 
     return NULL;
+
   }
 }
