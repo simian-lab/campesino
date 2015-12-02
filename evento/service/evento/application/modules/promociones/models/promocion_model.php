@@ -180,15 +180,24 @@ class promocion_model extends CI_Model {
 
 
   public function get_marcas() {
-    $this->db->select('*');
-    $this->db->from('MAR_MARCAS');
-    $this->db->where('VISIBILITY', '1');
-    $this->db->order_by("MAR_NOMBRE", "asc");
+    $key_memcached_get_marcas = 'funcion_get_marcas_'.ID_EVENTO;
+    $result_memcached_get_marcas = $this->memcached_library->get($key_memcached_get_marcas);
 
-    $query = $this->db->get();
+    if(!$result_memcached_get_marcas) {
+      $this->db->select('*');
+      $this->db->from('MAR_MARCAS');
+      $this->db->where('VISIBILITY', '1');
+      $this->db->order_by("MAR_NOMBRE", "asc");
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_get_marcas, $query->result_array(), MEMCACHED_LIVE_TIME);
+       return $query->result_array();
+      }
+    }
+
+    return $result_memcached_get_marcas;
 
     return NULL;
   }
