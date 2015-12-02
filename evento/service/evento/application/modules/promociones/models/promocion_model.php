@@ -194,17 +194,27 @@ class promocion_model extends CI_Model {
   }
 
   public function get_subcategorias($slug) {
-    $this->db->select('*');
-    $this->db->from('SUB_SUBCATEGORIA');
-    $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
-    $this->db->join('CAT_CATEGORIA', 'CAT_CATEGORIA.CAT_ID = SXC_SUBCATEGORIAXCATEGORIA.CAT_ID');
-    $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1');
-    $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc");
 
-    $query = $this->db->get();
+    $key_memcached_get_subcategorias = 'funcion_get_subcategorias_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_get_subcategorias = $this->memcached_library->get($key_memcached_get_subcategorias);
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+    if(!$result_memcached_get_subcategorias) {
+      $this->db->select('*');
+      $this->db->from('SUB_SUBCATEGORIA');
+      $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
+      $this->db->join('CAT_CATEGORIA', 'CAT_CATEGORIA.CAT_ID = SXC_SUBCATEGORIAXCATEGORIA.CAT_ID');
+      $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1');
+      $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc");
+
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_get_subcategorias, $query->result_array(), MEMCACHED_LIVE_TIME);
+       return $query->result_array();
+      }
+    }
+
+    return $result_memcached_get_subcategorias;
 
     return NULL;
   }
