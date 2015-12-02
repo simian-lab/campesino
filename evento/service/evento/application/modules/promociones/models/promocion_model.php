@@ -235,7 +235,7 @@ class promocion_model extends CI_Model {
 
       $result = $query->result_array();
 
-      $this->memcached_library->add($key_memcached_marcas_hfx, $result, 86400);
+      $this->memcached_library->add($key_memcached_marcas_hfx, $result, MEMCACHED_LIVE_TIME);
       return $result;
     }
 
