@@ -165,15 +165,25 @@ class promocion_model extends CI_Model {
   }
 
   public function get_tiendas() {
-    $this->db->select('*');
-    $this->db->from('TIE_TIENDAS');
-    $this->db->where('VISIBILITY', '1');
-    $this->db->order_by("TIE_NOMBRE", "asc");
+    $key_memcached_get_tiendas = 'funcion_get_tiendas_'.ID_EVENTO;
+    $result_memcached_get_tiendas = $this->memcached_library->get($key_memcached_get_tiendas);
 
-    $query = $this->db->get();
+    if(!$result_memcached_get_tiendas) {
+      $this->db->select('*');
+      $this->db->from('TIE_TIENDAS');
+      $this->db->where('VISIBILITY', '1');
+      $this->db->order_by("TIE_NOMBRE", "asc");
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+      $query = $this->db->get();
+
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_get_tiendas, $query->result_array(), MEMCACHED_LIVE_TIME);
+       return $query->result_array();
+      }
+    }
+
+    return $result_memcached_get_tiendas;
 
     return NULL;
   }
