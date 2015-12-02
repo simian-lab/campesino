@@ -151,15 +151,24 @@ class promocion_model extends CI_Model {
   }
 
   function getMarcaSlug($slug) {
-    $this->db->select('MAR_ID ');
-    $this->db->from('MAR_MARCAS');
-    $this->db->where('MAR_SLUG', $slug);
-    $this->db->limit(1);
+    $key_memcached_getMarcaSlug = 'funcion_getMarcaSlug_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_getMarcaSlug = $this->memcached_library->get($key_memcached_getMarcaSlug);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getMarcaSlug) {
+      $this->db->select('MAR_ID ');
+      $this->db->from('MAR_MARCAS');
+      $this->db->where('MAR_SLUG', $slug);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getMarcaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getMarcaSlug;
 
     return NULL;
   }
