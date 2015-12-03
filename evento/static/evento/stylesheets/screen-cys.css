@@ -2986,10 +2986,12 @@ hr{
     }
     div#menu .container .row nav ul#menuTop li {
       float: none;
+      border-bottom: thin solid rgb(141, 141, 141);
     }
     div#menu {
       background-color: #2E7A24;
       background-repeat: repeat-x;
+      padding: 10px 0;
     }
     div#menu .container .row nav ul li:first-child {
       border-left: 0;
