@@ -132,15 +132,24 @@ class promocion_model extends CI_Model {
   }
 
   function getSubCategoriaSlug($slug) {
-    $this->db->select('SUB_ID');
-    $this->db->from('SUB_SUBCATEGORIA');
-    $this->db->where('SUB_SLUG', $slug);
-    $this->db->limit(1);
+    $key_memcached_getSubcategoriaSlug = 'funcion_getSubcategoriaSlug_'.ID_EVENTO.'_'.$hash;
+    $result_memcached_getSubcategoriaSlug = $this->memcached_library->get($key_memcached_getSubcategoriaSlug);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getSubcategoriaSlug) {
+      $this->db->select('SUB_ID');
+      $this->db->from('SUB_SUBCATEGORIA');
+      $this->db->where('SUB_SLUG', $slug);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getSubcategoriaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getSubcategoriaSlug;
 
     return NULL;
   }
