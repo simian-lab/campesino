@@ -2976,6 +2976,28 @@ hr{
     .collapsing {
       overflow: hidden!important;
     }
+    div#menu .container .row .menu-head {
+      display: block !important;
+    }
+    div#menu .container .row nav ul#menuTop li {
+      float: none;
+    }
+    div#menu {
+      background-color: #2E7A24;
+      background-repeat: repeat-x;
+    }
+    div#menu .container .row nav ul li:first-child {
+      border-left: 0;
+    }
+    div#menu .container .row nav ul li {
+      border: 0;
+    }
+    div#menu.logo_fixed_menu {
+      display: none;
+    }
+    .wrapper-filter {
+      display: none;
+    }
   }
 #menu.logo_fixed_menu {
   height: 56px;
