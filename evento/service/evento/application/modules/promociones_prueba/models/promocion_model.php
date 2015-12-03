@@ -15,6 +15,7 @@ class promocion_model extends CI_Model {
            //$this->db->where('PRO_SRC_ID', $idtipo);
            $this->db->where_in('PRO_SRC_ID', $idtipo);
            $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
+		   $this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
 
            $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
            //$this->db->order_by("PRO_FECHA",'desc', FALSE);
@@ -48,6 +49,7 @@ class promocion_model extends CI_Model {
            $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
            $this->db->where_in('PRO_SRC_ID', $idtipo);
            $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
+		   $this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
            
            if($categoria!='todos')
                 $this->db->where('CAT_ID', $categoria);

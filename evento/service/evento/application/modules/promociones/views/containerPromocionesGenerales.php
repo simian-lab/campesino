@@ -43,7 +43,7 @@
 
           <?php $promocion['PRO_LOGO_GENERAL'] = htmlentities($promocion['PRO_LOGO_GENERAL'], ENT_QUOTES); ?>
 
-          <a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo htmlentities($promocion['TIE_NOMBRE'], ENT_QUOTES); ?>')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
+          <a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['OMNITURE_ID']?>', '<?php echo EVENTO_NOMBRE;?>', 'general')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
             <img data-original="<?php echo ($base_url_img_promociones . $promocion['PRO_LOGO_GENERAL']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags(htmlentities($promocion['PRO_NOMBRE'], ENT_QUOTES)); ?>" class="lazy-load-image">
           </a>
 
