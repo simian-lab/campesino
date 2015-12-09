@@ -22,6 +22,7 @@
 
         ?>
         <li class="<?php echo $li_class; ?> post col-lg-6 col-md-6 col-sm-6 col-sx-12" data-id="<?php echo $promocion['PRO_ID'] ?>">
+		  <a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['OMNITURE_ID']?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
           <figure>
             <div style="display:none;" class="idPromo"><?php echo $promocion['PRO_ID'] ?>;</div>
             <div class="overlay">
@@ -46,9 +47,9 @@
 
             <?php $promocion['PRO_LOGO_PREMIUM'] = htmlentities($promocion['PRO_LOGO_PREMIUM'], ENT_QUOTES); ?>
 
-            <a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['OMNITURE_ID']?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
-              <img data-original="<?php echo ($base_url_img_promociones . $promocion['PRO_LOGO_PREMIUM']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags($promocion['PRO_NOMBRE']); ?>" class="lazy-load-image">
-            </a>
+            
+              <img data-original="<?php echo ($base_url_img_promociones . $promocion['PRO_LOGO_PREMIUM']); ?>" alt="<?php echo character_limiter(strip_tags($promocion['PRO_DESCRIPCION']), 50); ?>" title="<?php echo strip_tags($promocion['PRO_NOMBRE']); ?>" class="lazy-load-image imgj">
+            
           </figure>
 
           <article>
@@ -76,6 +77,7 @@
             echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 0, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
             ?>
           </article>
+		  </a>
         </li>
         <?php
         $contador++;

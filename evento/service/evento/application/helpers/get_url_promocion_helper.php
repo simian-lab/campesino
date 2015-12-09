@@ -33,20 +33,18 @@ if ( ! function_exists('get_url_promocion'))
         }
 
 
-        $atts = array('target'      => '_blank',
-                      'class'      => 'link red tagj tagf',
-                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."', '".$evento."', 'premiun')"
-                      );
+        $atts = array('class'      => 'link red tagj tagf');
+					  //'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."', '".$evento."', 'premiun')"
+					  //'target'      => '_blank',
 
         if($promo_general == 1){
-          $atts = array('target'      => '_blank',
-                      'class'      => 'link orange tagj tagf',
-                      'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."', '".$evento."', 'general')"
-                      );
+          $atts = array('class'      => 'link orange tagj tagf');
+					  //'onClick'    => "onClickOferta('".$id."', '".$posicion."', '".$creador."', '".$evento."', 'general')"
+					  //'target'      => '_blank',
         }
 
 
-        $url=site_url('redireccionamiento/externo/?url=' .$url);
+        $url="#";//site_url('redireccionamiento/externo/?url=' .$url);
 
 
         $strAnchor=anchor($url, $text, $atts);
