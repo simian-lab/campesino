@@ -236,3 +236,11 @@ function clickMenu(valor){
 	s.eVar17 = valor;
 	s.tl(true, 'o', 'clic menu');
 }
+
+jQuery(document).ready(function(){
+    jQuery('.tagj').click(function(event){
+		event.preventDefault();
+	});
+});
+
+

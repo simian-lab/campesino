@@ -3047,3 +3047,7 @@ header .container .row.head:before {
 .logo_fixed_menu .container {
     width: 1140px !important;
 }
+
+.imgj{
+	border: medium none;
+}
