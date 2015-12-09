@@ -10,7 +10,7 @@ class promocion_model extends CI_Model {
 
   function get($idtipo='2', $seed=1, $cant='0', $offset='0', $idPromosRepetido='') {
 
-    $key_memcached_funcion_get = 'funcion_get_'.ID_EVENTO.'_'.$idPromosRepetido.'_'.$idtipo;
+    $key_memcached_funcion_get = 'funcion_get_'.ID_EVENTO.'_'.md5(sort($idPromosRepetido)).'_'.$idtipo.'_'.$offset.'_'.$seed.'_'.$cant;
     $result_memcached_funcion_get = $this->memcached_library->get($key_memcached_funcion_get);
 
   if(!$result_memcached_funcion_get) {
@@ -59,7 +59,7 @@ class promocion_model extends CI_Model {
 
   function getFiltro($idtipo='2',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed=1,$cant='0',$offset='0',$idPromosRepetido='') {
 
-    $key_memcached_getFiltro = 'funcion_getFiltro_'.ID_EVENTO.'_'.$idPromosRepetido.'_'.$idtipo.'_'.$categoria.'_'.$tienda.'_'.$marca.'_'.$subcategoria;
+    $key_memcached_getFiltro = 'funcion_getFiltro_'.ID_EVENTO.'_'.md5(sort($idPromosRepetido)).'_'.$idtipo.'_'.$categoria.'_'.$tienda.'_'.$marca.'_'.$subcategoria.'_'.$offset.'_'.$seed.'_'.$cant;
     $result_memcached_getFiltro = $this->memcached_library->get($key_memcached_getFiltro);
     if(!$result_memcached_getFiltro) {
     $this->db->select('*');
