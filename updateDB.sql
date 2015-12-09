@@ -47,6 +47,12 @@ CREATE TABLE `AXP_ADMINXPAQUETE` (
 
 ALTER TABLE EVE_EVENTOS ADD EVE_PREFIJO varchar(5);
 
+/*CAMPO E INDICE ADICIONAL PARA IDENTIFICAR LOS CLIENTES EN OMNITURE, LOGOS*/
+ALTER TABLE `PAT_PATROCINADORES`
+ADD COLUMN `OMNITURE_ID` INT(11) NULL DEFAULT NULL COMMENT 'ID unico por cliente para Omniture',
+ADD COLUMN `OMNITURE_PRE` VARCHAR(10) NULL DEFAULT NULL COMMENT 'Prefijo para concatenar con OMNITURE_ID',
+ADD UNIQUE INDEX `omniture_id_unique` (`OMNITURE_ID` ASC)  COMMENT 'Evitar repetir el ID unique para lso clientes';
+
 -- ----------------------------
 --  Procedure structure for `AB_DESCONTAR_MAX`
 -- ----------------------------
@@ -197,10 +203,7 @@ delimiter ;
 /**Vista para el Reporteador**/
 
 /*Vista Paquetes*/
-CREATE
-    ALGORITHM = UNDEFINED
-    SQL SECURITY DEFINER
-VIEW `v_reporteador_paquetes` AS
+CREATE VIEW v_reporteador_paquetes AS
     SELECT
         `admin_users`.`id` AS `USER_ID`,
         `admin_users`.`username` AS `username`,
@@ -211,14 +214,11 @@ VIEW `v_reporteador_paquetes` AS
         `PAQUETES_NOMBRES`.`PAQ_MONTO_PREMIUN_CATEGORIA` AS `PAQ_MONTO_PREMIUN_CATEGORIA`
     FROM
         ((`AXP_ADMINXPAQUETE`
-        JOIN `admin_users` ON ((`admin_users`.`id` = `AXP_ADMINXPAQUETE`.`AXP_ADMIN`)))
-        JOIN `PAQUETES_NOMBRES` ON ((`PAQUETES_NOMBRES`.`PAQ_ID` = `AXP_ADMINXPAQUETE`.`AXP_PAQUETE`)))
+        INNER JOIN `admin_users` ON ((`admin_users`.`id` = `AXP_ADMINXPAQUETE`.`AXP_ADMIN`)))
+        INNER JOIN `PAQUETES_NOMBRES` ON ((`PAQUETES_NOMBRES`.`PAQ_ID` = `AXP_ADMINXPAQUETE`.`AXP_PAQUETE`)));
 
 /*vista de Promociones*/
-    CREATE
-    ALGORITHM = UNDEFINED
-    SQL SECURITY DEFINER
-VIEW `v_reporteador_promociones` AS
+    CREATE VIEW v_reporteador_promociones AS
     SELECT
         CONCAT(`PAT_PATROCINADORES`.`OMNITURE_PRE`,
                 `PRO_PROMOCIONES`.`PRO_ID`) AS `ID`,
@@ -245,20 +245,13 @@ VIEW `v_reporteador_promociones` AS
         `PRO_PROMOCIONES`.`PRO_USER_CREADOR` AS `USER_ID`
     FROM
         ((((`PRO_PROMOCIONES`
-        JOIN `MAR_MARCAS` ON ((`MAR_MARCAS`.`MAR_ID` = `PRO_PROMOCIONES`.`MAR_ID`)))
-        JOIN `CAT_CATEGORIA` ON ((`CAT_CATEGORIA`.`CAT_ID` = `PRO_PROMOCIONES`.`CAT_ID`)))
+        INNER JOIN `MAR_MARCAS` ON ((`MAR_MARCAS`.`MAR_ID` = `PRO_PROMOCIONES`.`MAR_ID`)))
+        INNER JOIN `CAT_CATEGORIA` ON ((`CAT_CATEGORIA`.`CAT_ID` = `PRO_PROMOCIONES`.`CAT_ID`)))
         LEFT JOIN `SUB_SUBCATEGORIA` ON ((`SUB_SUBCATEGORIA`.`SUB_ID` = `PRO_PROMOCIONES`.`SUB_ID`)))
-        LEFT JOIN `PAT_PATROCINADORES` ON ((`PAT_PATROCINADORES`.`PAT_ALIADO` = `PRO_PROMOCIONES`.`PRO_USER_CREADOR`))
-/*CAMPO E INDICE ADICIONAL PARA IDENTIFICAR LOS CLIENTES EN OMNITURE, LOGOS*/
-ALTER TABLE `PAT_PATROCINADORES`
-ADD COLUMN `OMNITURE_ID` INT(11) NULL DEFAULT NULL COMMENT 'ID unico por cliente para Omniture',
-ADD COLUMN `OMNITURE_PRE` VARCHAR(10) NULL DEFAULT NULL COMMENT 'Prefijo para concatenar con OMNITURE_ID',
-ADD UNIQUE INDEX `omniture_id_unique` (`OMNITURE_ID` ASC)  COMMENT 'Evitar repetir el ID unique para lso clientes';
+        LEFT JOIN `PAT_PATROCINADORES` ON ((`PAT_PATROCINADORES`.`PAT_ALIADO` = `PRO_PROMOCIONES`.`PRO_USER_CREADOR`)));
+
 /*Vista de Promciones X Eventos*/
-CREATE
-    ALGORITHM = UNDEFINED
-    SQL SECURITY DEFINER
-VIEW `v_reporteador_eventos` AS
+CREATE VIEW v_reporteador_eventos AS
     SELECT
         CONCAT(`PAT_PATROCINADORES`.`OMNITURE_PRE`,
                 `PRO_PROMOCIONES`.`PRO_ID`) AS `ID`,
@@ -267,8 +260,8 @@ VIEW `v_reporteador_eventos` AS
     FROM
         (((`PRO_PROMOCIONES`
         LEFT JOIN `PAT_PATROCINADORES` ON ((`PAT_PATROCINADORES`.`PAT_ALIADO` = `PRO_PROMOCIONES`.`PRO_USER_CREADOR`)))
-        JOIN `EXP_EVENTOXPROMOCION` ON ((`EXP_EVENTOXPROMOCION`.`EXP_PROMOCION` = `PRO_PROMOCIONES`.`PRO_ID`)))
-        JOIN `EVE_EVENTOS` ON ((`EVE_EVENTOS`.`EVE_ID` = `EXP_EVENTOXPROMOCION`.`EXP_EVENTO`)));
+        INNER JOIN `EXP_EVENTOXPROMOCION` ON ((`EXP_EVENTOXPROMOCION`.`EXP_PROMOCION` = `PRO_PROMOCIONES`.`PRO_ID`)))
+        INNER JOIN `EVE_EVENTOS` ON ((`EVE_EVENTOS`.`EVE_ID` = `EXP_EVENTOXPROMOCION`.`EXP_EVENTO`)));
 
 
 /* Vista para el reporte de promociones */
@@ -329,20 +322,21 @@ INSERT INTO `admin_process` (`id`, `process`, `method`, `process_id`, `menu`, `o
 VALUES
   (80, 'Administrar eventos', 'main/eventos', 79, 1, 106, NULL);
 
-/* Agrego los enlaces de Eventos al menú del super usuario */
-INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
-VALUES
-  (2014, 79, 4);
-INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
-VALUES
-  (2015, 80, 4);
-
-
 /**cAMPOS PARA SEO Y REDES SOCIALES **/
-ALTER TABLE `EVE_EVENTOS` 
+ALTER TABLE `EVE_EVENTOS`
 ADD COLUMN `EVE_TITLE` VARCHAR(150) NULL COMMENT '' ,
 ADD COLUMN `EVE_META_DESCRIPTION` VARCHAR(150) NULL COMMENT '' ,
 ADD COLUMN `EVE_FACEBOOK` VARCHAR(150) NULL COMMENT '' ,
 ADD COLUMN `EVE_TWITTER` VARCHAR(150) NULL COMMENT '' ,
-ADD COLUMN `EVE_TAG_LINE` VARCHAR(150) NULL COMMENT '' ;
+ADD COLUMN `EVE_TAG_LINE` VARCHAR(150) NULL COMMENT '' ,
 ADD COLUMN `EVE_LEGAL` VARCHAR(600) NULL COMMENT '';
+
+/* Agrego los enlaces de Eventos al menú del super usuario */
+
+INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
+VALUES
+  (2015, 80, 4);
+
+INSERT INTO `admin_process_groups` (`id`, `process_id`, `group_id`)
+VALUES
+  (2014, 79, 4);

@@ -330,7 +330,7 @@ div#menu {
 div#menu .container .row .menu-head {
   display: none;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   /* line 166, ../sass/screen.scss */
   div#menu .container .row .menu-head {
     display: block;
@@ -343,7 +343,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bg_menu_cys.png") repeat-x;
+    background: #2E7A24 url("../img/bg_menu_cys.png") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -380,7 +380,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bg_menu_cys.png") repeat-x;
+    background: #2E7A24 url("../img/bg_menu_cys.png") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -472,7 +472,7 @@ div#menu .container .row nav ul li.active a{
 }*/
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
-  background-color: #226D96;
+  background-color: #134B13;
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -2981,6 +2981,30 @@ hr{
     .collapsing {
       overflow: hidden!important;
     }
+    div#menu .container .row .menu-head {
+      display: block !important;
+    }
+    div#menu .container .row nav ul#menuTop li {
+      float: none;
+      border-bottom: thin solid rgb(141, 141, 141);
+    }
+    div#menu {
+      background-color: #2E7A24;
+      background-repeat: repeat-x;
+      padding: 10px 0;
+    }
+    div#menu .container .row nav ul li:first-child {
+      border-left: 0;
+    }
+    div#menu .container .row nav ul li {
+      border: 0;
+    }
+    div#menu.logo_fixed_menu {
+      display: none;
+    }
+    .wrapper-filter {
+      display: none;
+    }
   }
 #menu.logo_fixed_menu {
   height: 56px;
@@ -2989,13 +3013,13 @@ hr{
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 250px;
+  width: 300px;
   height: 56px;
   background: url("../img/fixed_menu_logo_cys.png") no-repeat;
   background-size: 100%;
   float: right;
   position: relative;
-  top: -50px;
+  top: -55px;
 }
 @media screen and (max-width: 992px) {
   .logo_fixed_menu .container:after {
@@ -3021,5 +3045,5 @@ header .container .row.head:before {
   }
 }
 .logo_fixed_menu .container {
-    width: 1200px !important;
+    width: 1140px !important;
 }

@@ -9,27 +9,38 @@ class promocion_model extends CI_Model {
   }
 
   function get($idtipo='2', $seed=1, $cant='0', $offset='0', $idPromosRepetido='') {
-    $this->db->select('*');
-    $this->db->from('PRO_PROMOCIONES');
-    $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
-    $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
-    //$this->db->where('PRO_SRC_ID', $idtipo);
-    $this->db->where_in('PRO_SRC_ID', $idtipo);
-    if(!empty($idPromosRepetido))
-      $this->db->where_not_in('PRO_ID', $idPromosRepetido);
-    $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
-	$this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
-    $this->db->join('EXP_EVENTOXPROMOCION', 'EXP_EVENTOXPROMOCION.EXP_PROMOCION = PRO_PROMOCIONES.PRO_ID');
-    $this->db->where('EXP_EVENTOXPROMOCION.EXP_EVENTO', ID_EVENTO);
 
-    $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
-    //$this->db->order_by("PRO_FECHA",'desc', FALSE);
-    $this->db->limit($cant,$offset);
+    $key_memcached_funcion_get = 'funcion_get_'.ID_EVENTO.'_'.$idPromosRepetido.'_'.$idtipo;
+    $result_memcached_funcion_get = $this->memcached_library->get($key_memcached_funcion_get);
 
-    $query = $this->db->get();
-    //print_r($this->db->last_query());die();
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+  if(!$result_memcached_funcion_get) {
+      $this->db->select('*');
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
+      $this->db->where('PRO_PROMOCIONES.AUTORIZADO', '1');
+      //$this->db->where('PRO_SRC_ID', $idtipo);
+      $this->db->where_in('PRO_SRC_ID', $idtipo);
+      if(!empty($idPromosRepetido))
+        $this->db->where_not_in('PRO_ID', $idPromosRepetido);
+      $this->db->join('TIE_TIENDAS', 'TIE_TIENDAS.TIE_ID_USER = PRO_PROMOCIONES.PRO_USER_CREADOR');
+  	$this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
+      $this->db->join('EXP_EVENTOXPROMOCION', 'EXP_EVENTOXPROMOCION.EXP_PROMOCION = PRO_PROMOCIONES.PRO_ID');
+      $this->db->where('EXP_EVENTOXPROMOCION.EXP_EVENTO', ID_EVENTO);
+
+      $this->db->order_by("PRO_SRC_ID DESC ,RAND(".$seed.")",'',FALSE);
+      //$this->db->order_by("PRO_FECHA",'desc', FALSE);
+      $this->db->limit($cant,$offset);
+
+      $query = $this->db->get();
+      //print_r($this->db->last_query());die();
+      if ($query->num_rows() > 0){
+        $this->memcached_library->add($key_memcached_funcion_get, $query->result_array(), MEMCACHED_LIVE_TIME);
+        return $query->result_array();
+      }
+
+    }
+
+    return $result_memcached_funcion_get;
 
     return NULL;
   }
@@ -48,6 +59,9 @@ class promocion_model extends CI_Model {
 
   function getFiltro($idtipo='2',$categoria='todos',$tienda='tiendas',$marca='marcas',$subcategoria='todos',$seed=1,$cant='0',$offset='0',$idPromosRepetido='') {
 
+    $key_memcached_getFiltro = 'funcion_getFiltro_'.ID_EVENTO.'_'.$idPromosRepetido.'_'.$idtipo.'_'.$categoria.'_'.$tienda.'_'.$marca.'_'.$subcategoria;
+    $result_memcached_getFiltro = $this->memcached_library->get($key_memcached_getFiltro);
+    if(!$result_memcached_getFiltro) {
     $this->db->select('*');
     $this->db->from('PRO_PROMOCIONES');
     $this->db->where('PRO_PROMOCIONES.VISIBILITY', '1');
@@ -79,8 +93,14 @@ class promocion_model extends CI_Model {
 
     $query = $this->db->get();
 
-    if ($query->num_rows() > 0)
+    if ($query->num_rows() > 0){
+      $this->memcached_library->add($key_memcached_getFiltro, $query->result_array(), MEMCACHED_LIVE_TIME);
       return $query->result_array();
+    }
+
+   }
+
+    return $result_memcached_getFiltro;
 
     return NULL;
   }
@@ -89,102 +109,167 @@ class promocion_model extends CI_Model {
   //$tienda='todos',$marca='todos',$subcategoria='todos'
 
   function getCategoriaSlug($slug) {
-    $this->db->select('CAT_ID');
-    $this->db->from('CAT_CATEGORIA');
-    $this->db->where('CAT_SLUG', $slug);
-    $this->db->limit(1);
+    $key_memcached_getCategoriaSlug = 'funcion_getCategoriaSlug_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_getCategoriaSlug = $this->memcached_library->get($key_memcached_getCategoriaSlug);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getCategoriaSlug) {
+      $this->db->select('CAT_ID');
+      $this->db->from('CAT_CATEGORIA');
+      $this->db->where('CAT_SLUG', $slug);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getCategoriaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getCategoriaSlug;
 
     return NULL;
   }
 
   function getSubCategoriaSlug($slug) {
-    $this->db->select('SUB_ID');
-    $this->db->from('SUB_SUBCATEGORIA');
-    $this->db->where('SUB_SLUG', $slug);
-    $this->db->limit(1);
+    $key_memcached_getSubcategoriaSlug = 'funcion_getSubcategoriaSlug_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_getSubcategoriaSlug = $this->memcached_library->get($key_memcached_getSubcategoriaSlug);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getSubcategoriaSlug) {
+      $this->db->select('SUB_ID');
+      $this->db->from('SUB_SUBCATEGORIA');
+      $this->db->where('SUB_SLUG', $slug);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getSubcategoriaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getSubcategoriaSlug;
 
     return NULL;
   }
 
   function getTiendaSlug($slug) {
-    $this->db->select('TIE_ID_USER');
-    $this->db->from('TIE_TIENDAS');
-    $this->db->where('TIE_SLUG', $slug);
-    $this->db->limit(1);
+    $key_memcached_getTiendaSlug = 'funcion_getTiendaSlug_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_getTiendaSlug = $this->memcached_library->get($key_memcached_getTiendaSlug);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getTiendaSlug) {
+      $this->db->select('TIE_ID_USER');
+      $this->db->from('TIE_TIENDAS');
+      $this->db->where('TIE_SLUG', $slug);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getTiendaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getTiendaSlug;
 
     return NULL;
   }
 
   function getMarcaSlug($slug) {
-    $this->db->select('MAR_ID ');
-    $this->db->from('MAR_MARCAS');
-    $this->db->where('MAR_SLUG', $slug);
-    $this->db->limit(1);
+    $key_memcached_getMarcaSlug = 'funcion_getMarcaSlug_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_getMarcaSlug = $this->memcached_library->get($key_memcached_getMarcaSlug);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getMarcaSlug) {
+      $this->db->select('MAR_ID ');
+      $this->db->from('MAR_MARCAS');
+      $this->db->where('MAR_SLUG', $slug);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getMarcaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getMarcaSlug;
 
     return NULL;
   }
 
   public function get_tiendas() {
-    $this->db->select('*');
-    $this->db->from('TIE_TIENDAS');
-    $this->db->where('VISIBILITY', '1');
-    $this->db->order_by("TIE_NOMBRE", "asc");
+    $key_memcached_get_tiendas = 'funcion_get_tiendas_'.ID_EVENTO;
+    $result_memcached_get_tiendas = $this->memcached_library->get($key_memcached_get_tiendas);
 
-    $query = $this->db->get();
+    if(!$result_memcached_get_tiendas) {
+      $this->db->select('*');
+      $this->db->from('TIE_TIENDAS');
+      $this->db->where('VISIBILITY', '1');
+      $this->db->order_by("TIE_NOMBRE", "asc");
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+      $query = $this->db->get();
+
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_get_tiendas, $query->result_array(), MEMCACHED_LIVE_TIME);
+       return $query->result_array();
+      }
+    }
+
+    return $result_memcached_get_tiendas;
 
     return NULL;
   }
 
 
   public function get_marcas() {
-    $this->db->select('*');
-    $this->db->from('MAR_MARCAS');
-    $this->db->where('VISIBILITY', '1');
-    $this->db->order_by("MAR_NOMBRE", "asc");
+    $key_memcached_get_marcas = 'funcion_get_marcas_'.ID_EVENTO;
+    $result_memcached_get_marcas = $this->memcached_library->get($key_memcached_get_marcas);
 
-    $query = $this->db->get();
+    if(!$result_memcached_get_marcas) {
+      $this->db->select('*');
+      $this->db->from('MAR_MARCAS');
+      $this->db->where('VISIBILITY', '1');
+      $this->db->order_by("MAR_NOMBRE", "asc");
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_get_marcas, $query->result_array(), MEMCACHED_LIVE_TIME);
+       return $query->result_array();
+      }
+    }
+
+    return $result_memcached_get_marcas;
 
     return NULL;
   }
 
   public function get_subcategorias($slug) {
-    $this->db->select('*');
-    $this->db->from('SUB_SUBCATEGORIA');
-    $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
-    $this->db->join('CAT_CATEGORIA', 'CAT_CATEGORIA.CAT_ID = SXC_SUBCATEGORIAXCATEGORIA.CAT_ID');
-    $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1');
-    $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc");
 
-    $query = $this->db->get();
+    $key_memcached_get_subcategorias = 'funcion_get_subcategorias_'.ID_EVENTO.'_'.$slug;
+    $result_memcached_get_subcategorias = $this->memcached_library->get($key_memcached_get_subcategorias);
 
-    if ($query->num_rows() > 0)
-      return $query->result_array();
+    if(!$result_memcached_get_subcategorias) {
+      $this->db->select('*');
+      $this->db->from('SUB_SUBCATEGORIA');
+      $this->db->join('SXC_SUBCATEGORIAXCATEGORIA', 'SXC_SUBCATEGORIAXCATEGORIA.SUB_ID = SUB_SUBCATEGORIA.SUB_ID');
+      $this->db->join('CAT_CATEGORIA', 'CAT_CATEGORIA.CAT_ID = SXC_SUBCATEGORIAXCATEGORIA.CAT_ID');
+      $this->db->where('CAT_CATEGORIA.CAT_SLUG = "'.$slug.'" AND SUB_SUBCATEGORIA.VISIBILITY = 1');
+      $this->db->order_by("SUB_SUBCATEGORIA.SUB_NOMBRE", "asc");
+
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_get_subcategorias, $query->result_array(), MEMCACHED_LIVE_TIME);
+       return $query->result_array();
+      }
+    }
+
+    return $result_memcached_get_subcategorias;
 
     return NULL;
   }
@@ -215,7 +300,7 @@ class promocion_model extends CI_Model {
 
       $result = $query->result_array();
 
-      $this->memcached_library->add($key_memcached_marcas_hfx, $result, 86400);
+      $this->memcached_library->add($key_memcached_marcas_hfx, $result, MEMCACHED_LIVE_TIME);
       return $result;
     }
 
@@ -225,16 +310,26 @@ class promocion_model extends CI_Model {
   }
 
   function getByHash($hash) {
-    $this->db->select('PRO_ID,PRO_NOMBRE,PRO_HASH,PRO_URL');
-    $this->db->from('PRO_PROMOCIONES');
-    $this->db->where('PRO_HASH', $hash);
-    $this->db->limit(1);
+    $key_memcached_getByHash = 'funcion_getByHash_'.ID_EVENTO.'_'.$hash;
+    $result_memcached_getByHash = $this->memcached_library->get($key_memcached_getByHash);
 
-    $query = $this->db->get();
+    if(!$result_memcached_getByHash) {
+      $this->db->select('PRO_ID,PRO_NOMBRE,PRO_HASH,PRO_URL');
+      $this->db->from('PRO_PROMOCIONES');
+      $this->db->where('PRO_HASH', $hash);
+      $this->db->limit(1);
 
-    if ($query->num_rows() > 0)
-      return $query->row_array();
+      $query = $this->db->get();
+
+      if ($query->num_rows() > 0){
+       $this->memcached_library->add($key_memcached_getByHash, $query->row_array(), MEMCACHED_LIVE_TIME);
+       return $query->row_array();
+      }
+    }
+
+    return $result_memcached_getByHash;
 
     return NULL;
+
   }
 }
