@@ -3057,7 +3057,8 @@ hr{
   }
 #menu.logo_fixed_menu {
   height: 56px;
-  background: transparent url("../img/bg_menu_cys.png") repeat;
+  background: transparent url("../img/bg_menu_cys_fixed.png") repeat;
+  opacity: 1 !important;
 }
 .logo_fixed_menu .container:after  {
   content: "";
