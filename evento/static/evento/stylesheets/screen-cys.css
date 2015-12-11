@@ -3039,6 +3039,21 @@ hr{
     .wrapper-filter {
       display: none;
     }
+    section.wrapp .container .row .no-destacados ul li article .info h2 {
+      font-size: 0.7em;
+    }
+    section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
+      font-size: 1.2em;
+    }
+    section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
+      height: 52px;
+      width: 53px;
+      padding: 11px 2px;
+      right: 2px;
+    }
+    section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+      font-size: 0.6em;
+    }
   }
 #menu.logo_fixed_menu {
   height: 56px;

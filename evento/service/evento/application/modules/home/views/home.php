@@ -64,7 +64,7 @@
         <div class="wrapper-box col-sm-3 col-xs-12 ">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
               <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" class="">
-                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+                <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
                 <span>Ir a la tienda</span>
               </a>
           </div>
@@ -209,7 +209,7 @@
         <div class="wrapper-box col-sm-3 col-xs-12">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
             <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" class="">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -238,7 +238,7 @@
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
             <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" class="">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -266,7 +266,7 @@
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
             <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" class="">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -294,7 +294,7 @@
         <div class="wrapper-box col-sm-2 col-xs-4">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
             <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'generales')" class="">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -322,7 +322,7 @@
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
             <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'generales')" class="">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
           </div>
@@ -347,7 +347,7 @@
         <div class="wrapper-box">
           <div class="box" data-id="<?php echo $patrocinador->OMNITURE_ID; ?>">
             <a target="_blank" href="<?php echo $url_patrocinador ?>" onClick="onClickPatrocinador('<?php echo $patrocinador->OMNITURE_ID ?>', '<?php echo $posicion ?>', '<?php echo EVENTO_NOMBRE;?>', 'generales')" class="">
-              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image tagj tagf">
+              <img data-original="<?php echo $base_url_img_aliados.$patrocinador->PAT_LOGO ?>" class="lazy-load-image">
               <span>Ir a la tienda</span>
             </a>
           </div>
