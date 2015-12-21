@@ -1671,10 +1671,10 @@ footer .sponsor .social .fb, footer .sponsor .social .tw {
   height: 35px;
 }
 footer .sponsor .social .fb {
-  background: url("../img/icon_face_cys.png") no-repeat;
+  background: url("../img/facebook-icon-bts.png") no-repeat;
 }
 footer .sponsor .social .tw {
-  background: url("../img/icon_twitter_cys.png") no-repeat;
+  background: url("../img/twitter-icon-bts.png") no-repeat;
 }
 footer .sponsor .social .fb img, footer .sponsor .social .tw img{
   display: none;
@@ -1685,18 +1685,23 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #494949;
+  background-color: #085630;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 0.938em;
   margin: 0;
   padding: 30px 0;
   padding-bottom: 50px;
   text-transform: uppercase;
+  background: url("../img/bk_footer_bts.jpg") no-repeat;
+  background-size: 100% 100%;
 }
 @media screen and (max-width: 992px) {
   /* line 1161, ../sass/screen.scss */
   footer .terminos {
     padding-bottom: 100px;
+  }
+  footer .sponsor .social .fb, footer .sponsor .social .tw {
+    margin: 70px 0 0 0;
   }
 }
 /* line 1172, ../sass/screen.scss */
@@ -1883,6 +1888,9 @@ footer .sponsor .social{
   left: inherit !important;
   position: relative !important;
   text-align: center;
+  background: url("../img/bk_footer_social.png") no-repeat 0 51px;
+  width: 140px;
+  height: 110px;
 }
 #sas_31982 {
   float: none !important;
@@ -3092,7 +3100,7 @@ hr{
   display: block;
   width: 300px;
   height: 56px;
-  background: url("../img/fixed_menu_logo_cys.png") no-repeat;
+  background: url("../img/fixed_menu_logo_bts.png") no-repeat;
   background-size: 100%;
   float: right;
   position: relative;
