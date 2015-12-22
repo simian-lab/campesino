@@ -2629,17 +2629,17 @@ hr{
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
-  background: url("../img/bg_cys_percent_big.jpg") no-repeat;
-  border: 1px solid #467e2f;
-  border-bottom: none;
-  bottom: 0;
-  color: white;
-  height: 97px;
-  padding: 14px 6px;
-  position: absolute;
-  text-align: center;
-  right: 5px;
-  width: 113px;
+    background: transparent url("../img/bg_bts_percent_big.png") no-repeat scroll 0% 0%;
+    border-bottom: medium none;
+    bottom: 0px;
+    color: #145E8C;
+    height: 97px;
+    padding: 24px 6px;
+    position: absolute;
+    text-align: center;
+    right: 5px;
+    width: 113px;
+}
 }
 .clear-box{
   padding-left:0px;
@@ -2673,6 +2673,11 @@ hr{
 /* line 878, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje span{
   vertical-align: top;
+}
+.ofertas-destacadas ul li.descuento article .porcentaje span:nth-child(4) {
+  font-size: 0.8em;
+  margin: -5px 0px 0px;
+  display: block;
 }
 @media screen and (max-width: 992px) {
   /* line 878, ../sass/screen.scss */
@@ -2754,7 +2759,7 @@ hr{
 }
 @media screen and (max-width: 480px) {
   .ancla  a{
-    background: url("../img/ancla-mov-cys.png") no-repeat;
+    background: url("../img/ancla-mov-bts.png") no-repeat;
     width: 92px;
     height: 297px;
     display: block;
