@@ -185,7 +185,7 @@ header {
   /*background: #2d66aa url("../img/lights.png") repeat;*/
   height: 69px;
   background: url("../img/bk_header_bts.jpg");
-  background-size: 100%;
+  background-size: 100% 100%;
   position: relative;
   z-index: 1;
 }
@@ -328,6 +328,9 @@ div#menu .container .row .menu-head {
 }
 @media screen and (max-width: 768px) {
   /* line 166, ../sass/screen.scss */
+  header {
+    background-size: auto;
+  }
   div#menu .container .row .menu-head {
     display: block;
     padding: 10px 0px;
@@ -339,7 +342,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #2E7A24 url("../img/bg_menu_cys.png") repeat-x;
+    background: #114667 url("../img/bg_menu_bts.jpg") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -376,7 +379,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #2E7A24 url("../img/bg_menu_cys.png") repeat-x;
+    background: #114667 url("../img/bg_menu_bts.jpg") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -1259,13 +1262,13 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 }
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
-  background: url("../img/bg_cys_percent_big.jpg") no-repeat;
-  border: solid thin #467e2f;
+  background: url("../img/bg_bts_percent_big.png") no-repeat;
+  /*border: solid thin #467e2f;*/
   border-bottom: none;
   bottom: 0;
-  color: white;
+  color: #145e8c;
   height: 97px;
-  padding: 14px 6px;
+  padding: 24px 6px;
   position: absolute;
   text-align: center;
   right: 5px;
@@ -1284,11 +1287,12 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje im
   position: absolute;
   top: -2px;
   left: -6px;
+  display: none;
 }
 /* line 871, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
   font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.9em;
+  font-size: 2.5em;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
@@ -1297,6 +1301,11 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje .n
   }
 }
 /* line 878, ../sass/screen.scss */
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje span:nth-child(4) {
+  font-size: 0.8em;
+  margin: -5px 0 0 0;
+  display: block;
+}
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje span, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
   vertical-align: top;
 }
@@ -1537,8 +1546,11 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   top: -9px;
   height: 73px;
   width: 91px;
-  background: transparent url("../img/bg_cys_percent_small.jpg") no-repeat scroll 0% 0%;
-  border: solid thin #0d431b;
+  background: transparent url("../img/bg_bts_percent_small.png") no-repeat scroll 0% 0%;
+  /*border: solid thin #0d431b;*/
+  color: #fff;
+  background-size: 100% 100%;
+  padding: 16px 6px;
 }
 @media screen and (max-width: 768px) {
   /* line 1048, ../sass/screen.scss */
@@ -1548,7 +1560,15 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
 }
 /* line 1055, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
-  font-size: 2em;
+  font-size: 1.8em;
+}
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
+  font-size: 1.2em;
+}
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span:nth-child(4) {
+  font-size: 0.9em;
+  display: block;
+  margin: -3px 0 0 0;
 }
 @media screen and (max-width: 768px) {
   /* line 1055, ../sass/screen.scss */
@@ -2338,7 +2358,7 @@ hr{
 }
 
 .menu-tabs ul li:first-child {
-  right: -426px;
+  right: -440px;
 }
 
 .menu-tabs ul li {
@@ -2359,11 +2379,11 @@ hr{
     display: block;
     width: 100%;
     font-size: 1.1em;
-    padding: 1.8em 0em 0 0.5em;
+    padding: 2.4em 0em 0 0.5em;
     color: #fff;
     text-shadow: 1px 1px 1px #838383;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .menu-tabs ul li.active {
@@ -2685,6 +2705,16 @@ hr{
     padding: 0px;
     height: auto;
   }
+  section.wrapp .container .row .destacados ul li.descuento article .porcentaje {
+    background: transparent url("../img/bg_bts_percent_big_movile.png") no-repeat scroll 0% 0%;
+    padding: 17px 6px;
+  }
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
+    background: transparent url("../img/bg_bts_percent_small_movile.png") no-repeat scroll 0% 0%;
+  }
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span:nth-child(4) {
+    font-size: 0.3em;
+  }
 }
 /* line 908, ../sass/screen.scss */
 .ofertas-destacadas ul li article {
@@ -2985,15 +3015,22 @@ hr{
           line-height: 15px;
         }
         .menu-tabs ul li{
-          background: url('../img/menu-tabs.png') 0px 12px;
-          background-size: cover;
+          background: url('../img/tab-bts-azul-movil.png') no-repeat;
+          background-size: 100% 100%;
+          width: 150px;
+          height: 54px;
         }
         .menu-tabs ul li.active{
-          background: url('../img/menu-active-movil-cys.png');
-          background-size: cover;
+          background: url('../img/tab-bts-rojo-movil.png') no-repeat;
+          background-size: 100% 100%;
+          width: 150px;
+        }
+        .menu-tabs ul li a{
+          font-size: 1em;
         }
         .menu-tabs ul li.active a{
-          font-size: 1.2em;
+          font-size: 1.3em;
+          padding: 1.7em 0em 0em 0.5em;
         }
         .menu-tabs ul{ font-size:11px;}
         .brands{padding:0px;}
