@@ -185,7 +185,7 @@ header {
   /*background: #2d66aa url("../img/lights.png") repeat;*/
   height: 69px;
   background: url("../img/bk_header_bts.jpg");
-  background-size: 100%;
+  background-size: 100% 100%;
   position: relative;
   z-index: 1;
 }
@@ -328,6 +328,9 @@ div#menu .container .row .menu-head {
 }
 @media screen and (max-width: 768px) {
   /* line 166, ../sass/screen.scss */
+  header {
+    background-size: auto;
+  }
   div#menu .container .row .menu-head {
     display: block;
     padding: 10px 0px;
@@ -339,7 +342,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #2E7A24 url("../img/bg_menu_cys.png") repeat-x;
+    background: #114667 url("../img/bg_menu_bts.jpg") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -376,7 +379,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #2E7A24 url("../img/bg_menu_cys.png") repeat-x;
+    background: #114667 url("../img/bg_menu_bts.jpg") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -2702,6 +2705,16 @@ hr{
     padding: 0px;
     height: auto;
   }
+  section.wrapp .container .row .destacados ul li.descuento article .porcentaje {
+    background: transparent url("../img/bg_bts_percent_big_movile.png") no-repeat scroll 0% 0%;
+    padding: 17px 6px;
+  }
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
+    background: transparent url("../img/bg_bts_percent_small_movile.png") no-repeat scroll 0% 0%;
+  }
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span:nth-child(4) {
+    font-size: 0.3em;
+  }
 }
 /* line 908, ../sass/screen.scss */
 .ofertas-destacadas ul li article {
@@ -3002,15 +3015,22 @@ hr{
           line-height: 15px;
         }
         .menu-tabs ul li{
-          background: url('../img/menu-tabs.png') 0px 12px;
-          background-size: cover;
+          background: url('../img/tab-bts-azul-movil.png') no-repeat;
+          background-size: 100% 100%;
+          width: 150px;
+          height: 54px;
         }
         .menu-tabs ul li.active{
-          background: url('../img/menu-active-movil-cys.png');
-          background-size: cover;
+          background: url('../img/tab-bts-rojo-movil.png') no-repeat;
+          background-size: 100% 100%;
+          width: 150px;
+        }
+        .menu-tabs ul li a{
+          font-size: 1em;
         }
         .menu-tabs ul li.active a{
-          font-size: 1.2em;
+          font-size: 1.3em;
+          padding: 1.7em 0em 0em 0.5em;
         }
         .menu-tabs ul{ font-size:11px;}
         .brands{padding:0px;}
