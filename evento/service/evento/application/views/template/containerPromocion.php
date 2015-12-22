@@ -181,7 +181,7 @@
                 <script type="text/javascript">
                   sas.call("std", {
                     siteId:  41700, //
-                    pageId:  282275, // Página : Cyberlunes/home
+                    pageId:  282275, //Página : LoEncontraste/especiales
                     formatId:  8941, // Formato : Barra Fija 960x30
                     target:  ''   // Segmentación
                   });
