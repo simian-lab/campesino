@@ -370,17 +370,14 @@
 <div class="row banner">
   <div class="col-lg-12">
     <script type="text/javascript">
-    sas.call("std", {
-                    siteId:  41700, //
-                    pageId:  282275, // Página : Cyberlunes/home
-                    formatId:  8941, // Formato : Barra Fija 960x30
-                    target:  ''   // Segmentación
-                  });
-    </script>
-    <noscript>
-      <a href="http://ads.eltiempo.com/ac?jump=1&nwid=484&siteid=41700&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]&out=nonrich" target="_blank">
-        <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" />
-      </a>
-    </noscript>
+        sas_pageid='57473/569415';      // Página : LoEncontraste/especiales
+        sas_formatid=8941;                       // Formato : Barra Fija 960x90
+        sas_target='';                                   // Segmentación
+        SmartAdServerAjaxOneCall(sas_pageid,sas_formatid,sas_target);
+        </script>
+        <noscript>
+        <a href="http://ads.eltiempo.com/call/pubjumpi/57473/569415/8941/S/[timestamp]/?" target="_blank">
+        <img src="http://ads.eltiempo.com/call/pubi/57473/569415/8941/S/[timestamp]/?" border="0" alt="" /></a>
+        </noscript>
   </div>
 </div>
