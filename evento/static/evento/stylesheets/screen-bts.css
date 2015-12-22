@@ -2658,6 +2658,7 @@ hr{
   position: absolute;
   top: -2px;
   left: -6px;
+  display: none;
 }
 /* line 871, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje .num{
@@ -2713,6 +2714,12 @@ hr{
   section.wrapp .container .row .destacados ul li.descuento article .porcentaje {
     background: transparent url("../img/bg_bts_percent_big_movile.png") no-repeat scroll 0% 0%;
     padding: 17px 6px;
+  }
+  .ofertas-destacadas ul li.descuento article .porcentaje {
+    background: transparent url("../img/bg_bts_percent_big_movile.png") no-repeat scroll 0% 0%;
+    padding: 17px 6px;
+    width: 70px;
+    height: 56px;
   }
   section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
     background: transparent url("../img/bg_bts_percent_small_movile.png") no-repeat scroll 0% 0%;
