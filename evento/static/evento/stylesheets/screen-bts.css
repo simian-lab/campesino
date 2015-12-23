@@ -445,8 +445,13 @@ div#menu .container .row nav ul li:first-child {
 }*/
 /* line 208, ../sass/screen.scss */
 div#menu .container .row nav ul li.active a{
-  color: #ead31f;
   text-decoration: underline;
+}
+div#menu .container .row nav ul li.active {
+  background-color: #134B13;
+  -webkit-box-shadow: inset 0px 11px 9px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 11px 9px -5px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 11px 9px -5px rgba(0,0,0,0.75);
 }
 /* line 213, ../sass/screen.scss */
 /*div#menu .container .row nav ul li:first-child + li.active a{
@@ -472,6 +477,9 @@ div#menu .container .row nav ul li.active a{
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
   background-color: #134B13;
+  -webkit-box-shadow: inset 0px 11px 9px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 11px 9px -5px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 11px 9px -5px rgba(0,0,0,0.75);
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -1546,9 +1554,9 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   top: -9px;
   height: 73px;
   width: 91px;
-  background: transparent url("../img/bg_bts_percent_small.png") no-repeat scroll 0% 0%;
+  background: transparent url("../img/bg_bts_percent_big.png") no-repeat scroll 0% 0%;
   /*border: solid thin #0d431b;*/
-  color: #fff;
+  color: #145E8C;
   background-size: 100% 100%;
   padding: 16px 6px;
 }
@@ -1566,7 +1574,7 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   font-size: 1.2em;
 }
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span:nth-child(4) {
-  font-size: 0.9em;
+  font-size: 0.7em;
   display: block;
   margin: -3px 0 0 0;
 }
@@ -2722,7 +2730,7 @@ hr{
     height: 56px;
   }
   section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
-    background: transparent url("../img/bg_bts_percent_small_movile.png") no-repeat scroll 0% 0%;
+    background: transparent url("../img/bg_bts_percent_big_movile.png") no-repeat scroll 0% 0%;
   }
   section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span:nth-child(4) {
     font-size: 0.3em;
