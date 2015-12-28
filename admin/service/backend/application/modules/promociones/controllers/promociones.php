@@ -166,8 +166,8 @@ class Promociones extends Main {
 
 			}
 		}
-
-		$crud->unique_fields('PRO_NOMBRE');
+		### El Campo de nombre en la edicion seria unico#####
+		### $crud->unique_fields('PRO_NOMBRE');
 
 		$crud->callback_column('PRO_SRC_ID',array($this,'tipo_promocion'));
 
