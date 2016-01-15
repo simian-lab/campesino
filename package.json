@@ -1,0 +1,9 @@
+{
+  "name": "osos-de-anteojos",
+  "version": "1.0.0",
+  "description": "osos-de-anteojos: a project for ipad",
+  "author": "Simian SAS",
+  "dependencies": {
+  	"express": "^4.12.3"
+  }
+}
