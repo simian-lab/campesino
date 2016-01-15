@@ -1,7 +1,7 @@
 {
-  "name": "osos-de-anteojos",
+  "name": "campesino",
   "version": "1.0.0",
-  "description": "osos-de-anteojos: a project for ipad",
+  "description": "campesino: a project of simian",
   "author": "Simian SAS",
   "dependencies": {
   	"express": "^4.12.3"
