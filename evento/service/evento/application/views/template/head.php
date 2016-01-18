@@ -39,7 +39,7 @@
                var base_descuentosfiltro =<?php echo $descuentosfiltro;?>;
         </script>
         <script>
-          var eventoj = <?php echo EVENTO;?>
+          var eventoj = "<?php echo EVENTO;?>";
         </script>
 
         <script type="text/javascript" src="<?php echo $base_url_static;?>js/omniture.js"></script>
