@@ -38,6 +38,9 @@
                var base_url_static ="<?php echo $base_url_static;?>";
                var base_descuentosfiltro =<?php echo $descuentosfiltro;?>;
         </script>
+        <script>
+          var eventoj = <?php echo EVENTO;?>
+        </script>
 
         <script type="text/javascript" src="<?php echo $base_url_static;?>js/omniture.js"></script>
         <script type="text/javascript" src="http://cdn1.smartadserver.com/diff/js/smartadserver.js"></script>
