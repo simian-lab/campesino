@@ -21,7 +21,7 @@ else {
     $DB_PASSWORD = 'h0h0h0';
     break;
     case 'production':
-        $DB_HOST = '172.31.42.171';
+        $DB_HOST = '172.31.19.181';
         $DB_NAME = 'loe_sss';
         $DB_USERNAME = 'loe_sss';
         $DB_PASSWORD = 'MGV8$EhL';
