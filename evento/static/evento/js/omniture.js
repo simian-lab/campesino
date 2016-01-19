@@ -110,7 +110,7 @@ function onClickOferta(id, posicion, tienda, evento, paquete){
 	s.eVar83 = "ofeloe-"+tienda;
 	s.eVar84 = 'evento-'+evento;
 	s.eVar85 = paquete;
-	s.products = ";ofenav-"+id;
+	s.products = ";ofe"+eventoj+"-"+id;
 	s.tl(true,"o","Click en Oferta");
 	
 	// pixel de google
@@ -192,7 +192,7 @@ function printOferta(array_id){
 
 	for(var i = 0; i < array_id.length; i++) {
 		if(array_id[i] != undefined) {
-			s.products += ";ofenav-" + array_id[i];
+			s.products += ";ofe"+eventoj+"-" + array_id[i];
 			if(i < array_id.length - 1){
 				s.products += ",";
 			}

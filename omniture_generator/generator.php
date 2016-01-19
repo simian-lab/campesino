@@ -21,7 +21,7 @@ else {
     $DB_PASSWORD = 'h0h0h0';
     break;
     case 'production':
-        $DB_HOST = '172.31.42.171';
+        $DB_HOST = '172.31.19.181';
         $DB_NAME = 'loe_sss';
         $DB_USERNAME = 'loe_sss';
         $DB_PASSWORD = 'MGV8$EhL';
@@ -70,7 +70,7 @@ function init($db, $ftp_credentials) {
         upload_file_ftp($ftp_credentials, $file_name);
 }
 function add_promotions_from_special($db, $file) {
-    $key_prefix = 'ofenav-';
+    $key_prefix = 'ofebts-';
     $query_promotions = $db->prepare("SELECT * FROM PRO_PROMOCIONES");
     $query_promotions->execute();
     $promotions = $query_promotions->fetchAll();

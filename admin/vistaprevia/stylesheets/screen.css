@@ -176,7 +176,7 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 body {
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
-  background: url(../img/bg-navidad.jpg) repeat-x;
+  background: #F6F0C2 url(../img/bk-bts-body.png) repeat-x;
   background-attachment: fixed;
 }
 /* line 78, ../sass/screen.scss */
@@ -1089,6 +1089,9 @@ div.wrapp.evento-cyl .container .row .destacados ul li div.article .info {
 div.wrapp.evento-cys .container .row .destacados ul li div.article .info {
   border-bottom: solid thin #e02d4f;
 }
+div.wrapp.School .container .row .destacados ul li div.article .info {
+  border-bottom: solid thin #e02d4f;
+}
 div.wrapp .container .row .destacados ul li:hover div.article .info {
   border-bottom: solid thin #fff;
 }
@@ -1165,10 +1168,16 @@ div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje im
   top: -2px;
   left: -6px;
 }
+div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje img, div.wrapp.School .container .row .no-destacados ul li.descuento div.article .porcentaje img{
+  display: none;
+}
 /* line 865, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .num, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
   font-family: "Conv_MyriadPro-Bold";
   font-size: 2.9em;
+}
+div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje .num {
+  font-size: 2.5em;
 }
 @media screen and (max-width: 992px) {
   /* line 865, ../sass/screen.scss */
@@ -1179,6 +1188,16 @@ div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .n
 /* line 872, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span {
   vertical-align: top;
+}
+div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje span:nth-child(4) {
+  font-size: 0.8em;
+  margin: -5px 0px 0px;
+  display: block;
+}
+div.wrapp.School .container .row .no-destacados ul li.descuento div.article .porcentaje span:nth-child(4) {
+  font-size: 0.7em;
+  display: block;
+  margin: -3px 0px 0px;
 }
 @media screen and (max-width: 992px) {
   /* line 872, ../sass/screen.scss */
@@ -1754,6 +1773,58 @@ div.wrapp.evento-cys .link.orange {
   background: #5d7e2b url("../img/bg_button_cs_offer.jpg") no-repeat;
 }
 
+/* previo School */
+
+div.wrapp.School .container .row .destacados ul li div.article {
+  background: #f2f2f2;
+  border: solid thin #e02d4f;
+  margin: -1px 0 0 0;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article {
+  background: #e02d4f;
+}
+div.wrapp.School .container .row .destacados ul li div.figure {
+  border: solid thin #e02d4f;
+}
+div.wrapp.School .container .row .destacados ul li.descuento div.article .info {
+  border-bottom: solid thin #e02d4f;
+}
+div.wrapp.School .container .row .destacados ul li.descuento:hover div.article .info {
+  border-bottom: solid thin #d5d5d5;
+}
+div.wrapp.School .container .row .destacados ul li div.article .info h2 {
+  color: #e02d4f;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article .info h2 {
+  color: #fff;
+}
+div.wrapp.School .container .row .destacados ul li div.article .desc .ahora {
+  color: #e02d4f;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.School .container .row .destacados ul li div.article .desc p, 
+div.wrapp.School .container .row .destacados ul li div.article .desc .antes,
+div.wrapp.School .container .row .destacados ul li div.article .desc {
+  color: #424242;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc p, 
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc .antes,
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc {
+  color: #d5d5d5;
+}
+div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje {
+  background: url("../img/bg_cs_percent_big.jpg") no-repeat;
+  border: solid thin #5d7e2b;
+  padding: 14px 6px;
+}
+div.wrapp.School .container .row .destacados ul li div.figure .overlay a {
+  background: #5d7e2b url("../img/bg_button_cs_offer.jpg") no-repeat;
+}
+div.wrapp.School .link.orange {
+  background: #5d7e2b url("../img/bg_button_cs_offer.jpg") no-repeat;
+}
 /* blac friday premium categoria */
 
 div.wrapp.evento-bfr .container .row .destacados ul li div.article,
@@ -1947,4 +2018,74 @@ div.wrapp.evento-cys .container .row .destacados ul li div.figure .overlay a {
 }
 div.wrapp.evento-cys .link.orange {
   background: #5d7e2b url("../img/bg_button_cs_offer.jpg") no-repeat;
+}
+
+/* premium School */
+
+div.wrapp.School .container .row .destacados ul li div.article,
+div.wrapp.School .container .row .no-destacados ul li div.article {
+  background: #f2f2f2;
+  border: solid thin #0D431B;
+  margin: -1px 0 0 0;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article {
+  background: #0D431B;
+}
+div.wrapp.School .container .row .destacados ul li div.figure,
+div.wrapp.School .container .row .no-destacados ul li div.figure {
+  border: solid thin #0D431B;
+}
+div.wrapp.School .container .row .destacados ul li.descuento div.article .info,
+div.wrapp.School .container .row .no-destacados ul li.descuento div.article .info {
+  border-bottom: solid thin #0D431B;
+}
+div.wrapp.School .container .row .destacados ul li.descuento:hover div.article .info {
+  border-bottom: solid thin #d5d5d5;
+}
+div.wrapp.School .container .row .destacados ul li div.article .info h2,
+div.wrapp.School .container .row .no-destacados ul li div.article .info h2 {
+  color: #0D431B;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article .info h2 {
+  color: #fff;
+}
+div.wrapp.School .container .row .destacados ul li div.article .desc .ahora,
+div.wrapp.School .container .row .no-destacados ul li div.article .desc .ahora {
+  color: #0D431B;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.School .container .row .destacados ul li div.article .desc p, 
+div.wrapp.School .container .row .destacados ul li div.article .desc .antes,
+div.wrapp.School .container .row .destacados ul li div.article .desc,
+div.wrapp.School .container .row .no-destacados ul li div.article .desc p, 
+div.wrapp.School .container .row .no-destacados ul li div.article .desc .antes,
+div.wrapp.School .container .row .no-destacados ul li div.article .desc {
+  color: #424242;
+}
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc p, 
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc .antes,
+div.wrapp.School .container .row .destacados ul li:hover div.article .desc {
+  color: #d5d5d5;
+}
+div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje {
+  background: url("../img/bg_bts_percent_big.png") no-repeat;
+  border: 0;
+  padding: 24px 6px;
+  color: #145E8C;
+}
+div.wrapp.School .container .row .no-destacados ul li.descuento div.article .porcentaje {
+  background: url("../img/bg_bts_percent_big.png") no-repeat;
+  border: 0;
+  background-size: 100%;
+  padding: 16px 6px;
+  color: #145E8C;
+}
+}
+div.wrapp.School .link.orange {
+  background: #5d7e2b url("../img/bg_button_cs_offer.jpg") no-repeat;
+}
+body hr {
+  border-color: #0D431B;
 }

@@ -36,8 +36,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
         $this->memcached_library->add($key_memcached_funcion_get, $query->result_array(), MEMCACHED_LIVE_TIME);
         return $query->result_array();
+      }else{
+        return $query->result_array();
       }
-
+      return $query->result_array();
     }
 
     return $result_memcached_funcion_get;
@@ -96,8 +98,10 @@ class promocion_model extends CI_Model {
     if ($query->num_rows() > 0){
       $this->memcached_library->add($key_memcached_getFiltro, $query->result_array(), MEMCACHED_LIVE_TIME);
       return $query->result_array();
+    }else{
+      return $query->result_array();
     }
-
+    return $query->result_array();
    }
 
     return $result_memcached_getFiltro;
@@ -123,7 +127,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_getCategoriaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
        return $query->row_array();
+      }else{
+        return $query->row_array();
       }
+      return $query->row_array();
     }
 
     return $result_memcached_getCategoriaSlug;
@@ -146,7 +153,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_getSubcategoriaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
        return $query->row_array();
+      }else{
+        return $query->row_array();
       }
+      return $query->row_array();
     }
 
     return $result_memcached_getSubcategoriaSlug;
@@ -169,7 +179,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_getTiendaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
        return $query->row_array();
+      }else{
+        return $query->row_array();
       }
+      return $query->row_array();
     }
 
     return $result_memcached_getTiendaSlug;
@@ -192,7 +205,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_getMarcaSlug, $query->row_array(), MEMCACHED_LIVE_TIME);
        return $query->row_array();
+      }else{
+        return $query->row_array();
       }
+      return $query->row_array();
     }
 
     return $result_memcached_getMarcaSlug;
@@ -216,7 +232,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_get_tiendas, $query->result_array(), MEMCACHED_LIVE_TIME);
        return $query->result_array();
+      }else{
+        return $query->result_array();
       }
+      return $query->result_array();
     }
 
     return $result_memcached_get_tiendas;
@@ -240,7 +259,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_get_marcas, $query->result_array(), MEMCACHED_LIVE_TIME);
        return $query->result_array();
+      }else{
+        return $query->result_array();
       }
+      return $query->result_array();
     }
 
     return $result_memcached_get_marcas;
@@ -266,7 +288,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_get_subcategorias, $query->result_array(), MEMCACHED_LIVE_TIME);
        return $query->result_array();
+      }else{
+        return $query->result_array();
       }
+      return $query->result_array();
     }
 
     return $result_memcached_get_subcategorias;
@@ -324,7 +349,10 @@ class promocion_model extends CI_Model {
       if ($query->num_rows() > 0){
        $this->memcached_library->add($key_memcached_getByHash, $query->row_array(), MEMCACHED_LIVE_TIME);
        return $query->row_array();
+      }else{
+        return $query->row_array();
       }
+      return $query->row_array();
     }
 
     return $result_memcached_getByHash;
