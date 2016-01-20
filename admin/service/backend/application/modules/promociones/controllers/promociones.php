@@ -90,6 +90,8 @@ class Promociones extends Main {
              ->display_as('eventos','Eventos')
              ->display_as('MAR_ID','Marca')
              ->display_as('Paquete')
+             ->display_as('PRO_CONTENIDO', 'CONTENIDO')
+    		 ->display_as('PRO_MERCADEO', 'MERCADEO')
              ->display_as('PRO_TIPO_MONEDA', 'Moneda')
              ->display_as('PRO_USER_CREADOR', 'Usuario')
              ->display_as('VISTA_PREVIA', 'Vista previa')
@@ -117,7 +119,7 @@ class Promociones extends Main {
         	$crud->fields('PRO_SRC_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL','PRO_DESCRIPCION','MAR_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','eventos', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         }
         $crud->required_fields('PRO_NOMBRE','PRO_DESCRIPCION','PRO_URL', 'CAT_ID', 'PRO_SRC_ID','PRO_USER_CREADOR','MAR_ID','eventos');
-        $crud->columns('PRO_ID',/*'PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL',*/ 'PRO_NOMBRE','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID');
+        $crud->columns('PRO_ID',/*'PRO_LOGO_PREMIUM', 'PRO_LOGO_GENERAL',*/ 'PRO_NOMBRE','PRO_AUTOR','eventos','CAT_ID','SUB_ID','AUTORIZADO','VISIBILITY', 'PRO_SRC_ID','PRO_MERCADEO','PRO_CONTENIDO');
 
 
 		$crud->set_field_upload('PRO_LOGO_PREMIUM','multimedia/promociones/');
@@ -131,6 +133,8 @@ class Promociones extends Main {
 		$crud->callback_before_update(array($this,'before_update'));
 		$crud->callback_before_upload(array($this,'change_name_image'));
 		$crud->callback_column('Paquete', array($this, 'columna_paquete'));
+		$crud->callback_column('PRO_CONTENIDO', array($this,'callback_contenido_column'));
+    	$crud->callback_column('PRO_MERCADEO', array($this,'callback_mercadeo_column'));
 		$crud->callback_field('PRO_TIPO_MONEDA',array($this,'tipo_moneda'));
 		$crud->callback_field('VISTA_PREVIA',array($this,'link_vista_previa'));
 
@@ -253,6 +257,21 @@ class Promociones extends Main {
  * @param  String $file_name The image file name
  * @return boolean           True if it's valid. False otherwise.
  */
+
+function callback_contenido_column($value, $row) {
+	$pro_id = $row->PRO_ID;
+	$arrOmniture = $this->promociones_model->get_tag_omniture_producto($pro_id);
+	return $arrOmniture['CONTENIDO'];
+
+}
+
+function callback_mercadeo_column($value, $row) {
+	$pro_id = $row->PRO_ID;
+	$arrOmniture = $this->promociones_model->get_tag_omniture_producto($pro_id);
+	return $arrOmniture['MERCADEO'];
+
+}
+
 function image_is_valid($file_name) {
 	$file_format = explode('.', $file_name)[1];
 	$accepted_image_formats = array('jpg', 'png', 'jpeg');
