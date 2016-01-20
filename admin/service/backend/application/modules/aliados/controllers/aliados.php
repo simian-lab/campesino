@@ -101,8 +101,8 @@ class Aliados extends Main {
 			->display_as('PAT_URL_EVENT','Url evento')
 			->display_as('VISIBILITY','Visibilidad')
 			->display_as('PAT_PAQUETE', 'Paquete')
-			->display_as('PRO_CONTENIDO', 'CONTENIDO')
-    		->display_as('PRO_MERCADEO', 'MERCADEO')
+			->display_as('PAT_CONTENIDO', 'CONTENIDO')
+    		->display_as('PAT_MERCADEO', 'MERCADEO')
 			->display_as('PAT_ALIADO', 'Usuario')
 			->display_as('OMNITURE_ID', 'Omniture ID ');
 			$crud->unset_read();
@@ -110,11 +110,11 @@ class Aliados extends Main {
 
 			$crud->fields('PAT_ID','PAT_NOMBRE','PAT_LOGO','PAT_URL', 'PAT_URL_EVENT', 'PAT_FECHA','VISIBILITY','PAT_USER_CREADOR','PAT_USER_ULTIMO', 'PAT_PAQUETE', 'PAT_ALIADO', 'PAT_HASH_URL_EVENT','OMNITURE_ID');
 			$crud->required_fields('PAT_NOMBRE','PAT_LOGO','PAT_FECHA','VISIBILITY');
-			$crud->columns('OMNITURE_ID','PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO','PAT_URL_EVENT','PRO_MERCADEO','PRO_CONTENIDO');
+			$crud->columns('OMNITURE_ID','PAT_NOMBRE','PAT_FECHA','VISIBILITY', 'PAT_PAQUETE', 'PAT_ALIADO','PAT_URL_EVENT','PAT_MERCADEO','PAT_CONTENIDO');
 
 			$crud->callback_before_update(array($this,'encrypt_password_callback'));
-			$crud->callback_column('PRO_CONTENIDO', array($this,'callback_contenido_column'));
-    		$crud->callback_column('PRO_MERCADEO', array($this,'callback_mercadeo_column'));
+			$crud->callback_column('PAT_CONTENIDO', array($this,'callback_contenido_column'));
+    		$crud->callback_column('PAT_MERCADEO', array($this,'callback_mercadeo_column'));
 
 			$crud->set_field_upload('PAT_LOGO','multimedia/aliados/');
 			$crud->callback_after_upload(array($this,'mover_imagen'));
@@ -218,15 +218,15 @@ class Aliados extends Main {
 		}
 
 		function callback_contenido_column($value, $row) {
-			$pro_id = $row->PRO_ID;
-			$arrOmniture = $this->promociones_model->get_tag_omniture_logo($pro_id);
+			$PAT_ID = $row->PAT_ID;
+			$arrOmniture = $this->promociones_model->get_tag_omniture_logo($PAT_ID);
 			return $arrOmniture['CONTENIDO'];
 
 		}
 
 		function callback_mercadeo_column($value, $row) {
-			$pro_id = $row->PRO_ID;
-			$arrOmniture = $this->promociones_model->get_tag_omniture_logo($pro_id);
+			$PAT_ID = $row->PAT_ID;
+			$arrOmniture = $this->promociones_model->get_tag_omniture_logo($PAT_ID);
 			return $arrOmniture['MERCADEO'];
 
 		}
