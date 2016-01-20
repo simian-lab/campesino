@@ -21,7 +21,7 @@ class Aliados_model extends CI_Model {
   function get_tag_omniture_logo($id){
         $this->db->select('*');
         $this->db->from('V_TAG_REDIRECCION_OMNITURE_LOGO');
-        $this->db->where('ID', $id);
+        $this->db->where('TIENDA_ID', $id);
 
         $results = $this->db->get();
         
