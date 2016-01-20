@@ -218,14 +218,14 @@ class Aliados extends Main {
 		}
 
 		function callback_contenido_column($value, $row) {
-			$PAT_ID = $row->PAT_ID;
+			$PAT_ID = $row->OMNITURE_ID;
 			$arrOmniture = $this->aliados_model->get_tag_omniture_logo($PAT_ID);
 			return $arrOmniture['CONTENIDO'];
 
 		}
 
 		function callback_mercadeo_column($value, $row) {
-			$PAT_ID = $row->PAT_ID;
+			$PAT_ID = $row->OMNITURE_ID;
 			$arrOmniture = $this->aliados_model->get_tag_omniture_logo($PAT_ID);
 			return $arrOmniture['MERCADEO'];
 
