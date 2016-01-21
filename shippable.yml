@@ -11,9 +11,13 @@ script:
   - mocha
 
 after_success:
-  - git push -f git@heroku.com:$APP_NAME.git $BRANCH:master
+  - if [ $BRANCH == "develop" ]; then git push -f git@heroku.com:campesino.git $BRANCH:master; fi
+  - if [ $BRANCH == "master" ]; then git push -f git@heroku.com:campesino-produccion.git $BRANCH:master; fi
 
 # include
 branches:
   only:
+    - master
     - develop
+
+cache: true
