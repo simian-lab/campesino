@@ -5,7 +5,8 @@ node_js:
 
 env:
   global:
-    - APP_NAME=campesino
+    - if [ $BRANCH == "develop" ]; then APP_NAME=campesino; fi
+    - if [ $BRANCH == "master" ]; then APP_NAME=campesino-produccion; fi
 
 script:
   - mocha
@@ -16,4 +17,5 @@ after_success:
 # include
 branches:
   only:
+    - master
     - develop
