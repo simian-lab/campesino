@@ -47,9 +47,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '172.31.19.181';
-$db['default']['username'] = 'loe_sss';
-$db['default']['password'] = 'MGV8$EhL';
+$db['default']['hostname'] = '10.125.214.42';
+$db['default']['username'] = 'clcdb-user';
+$db['default']['password'] = 'clcddidb';
 $db['default']['database'] = 'loe_sss';
 
 $db['default']['dbdriver'] = 'mysqli';
