@@ -15,7 +15,7 @@ $memcached['servers'] = array(
 // Configuration
 // --------------------------------------------------------------------------
 $memcached['config'] = array(
-	'engine'                => 'Memcache',				// Set which caching engine you are using. Acceptable values: Memcached or Memcache
+	'engine'                => 'Memcached',				// Set which caching engine you are using. Acceptable values: Memcached or Memcache
 	'prefix' 				=> 'stage',						// Prefixes every key value (useful for multi environment setups)
 	'compression'			=> 0,					// Default: FALSE or MEMCACHE_COMPRESSED Compression Method (Memcache only).
 	// Not necessary if you already are using 'compression'
