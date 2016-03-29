@@ -48,10 +48,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 
-$db['default']['hostname'] = '54.83.30.83';
-$db['default']['username'] = 'seasons';
-$db['default']['password'] = 'h0h0h0';
-$db['default']['database'] = 'sss_stg';
+$db['default']['hostname'] = '10.125.214.42';
+$db['default']['username'] = 'clcdb-user';
+$db['default']['password'] = 'clcddidb';
+$db['default']['database'] = 'loe_sss_stage';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
