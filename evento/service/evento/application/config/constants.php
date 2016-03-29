@@ -52,7 +52,7 @@ define('MEMCACHED_LIVE_TIME', 300);
 require_once( BASEPATH .'database/DB'. EXT );
 
 /*conecta a memcached*/
-$memcached  = new Memcached();
+$memcached  = new Memcache();
 $memcached->addServer('127.0.0.1',11211);
 
 /*Revisa en memcached*/
