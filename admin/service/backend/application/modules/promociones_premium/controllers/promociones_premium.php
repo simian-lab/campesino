@@ -64,6 +64,7 @@ class Promociones_premium extends Main {
 		$crud->unset_read();
 
         $crud->display_as('PRO_NOMBRE','Nombre promoción')
+        	 ->display_as('PRO_ID','ID')
         	 ->display_as('PRO_DESCRIPCION','Descripción')
              ->display_as('PRO_ETIQUETA','Etiqueta')
              ->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')

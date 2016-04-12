@@ -62,6 +62,7 @@ class Promociones_premium_home extends Main {
 		$crud->unset_read();
 
         $crud->display_as('PRO_NOMBRE','Nombre promoción')
+        	 ->display_as('PRO_ID','ID')
 	 	     ->display_as('PRO_DESCRIPCION','Descripción')
 	         ->display_as('PRO_ETIQUETA','Etiqueta')
 	         ->display_as('PRO_LOGO_PREMIUM','Imagen Premium<br>Tamaño recomendado:<br>458x347px')
@@ -96,7 +97,7 @@ class Promociones_premium_home extends Main {
 
 		$crud->fields('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_DESCRIPCION','MAR_ID','PRO_SRC_ID','CAT_ID','SUB_ID','PRO_PRECIO_INICIAL','PRO_PRECIO_FINAL','PRO_TIPO_MONEDA','PRO_DESCUENTO','VISIBILITY','PRO_USER_CREADOR','PRO_USER_ULTIMO','PRO_URL','PRO_AUTOR','PRO_FECHA','AUTORIZADO','PRO_LOGO_VISA','PRO_LOGO_GENERAL','eventos', 'VISTA_PREVIA','PRO_HASH','PRO_ACTIVA');
         $crud->required_fields('PRO_NOMBRE','PRO_DESTINO','PRO_LOGO_PREMIUM','PRO_DESCRIPCION','PRO_URL','CAT_ID','MAR_ID','eventos');
-        $crud->columns('PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','eventos');
+        $crud->columns('PRO_ID','PRO_NOMBRE','PRO_LOGO_PREMIUM','PRO_AUTOR','CAT_ID','SUB_ID','AUTORIZADO','eventos');
 
         $crud->callback_after_insert(array($this,'fnc_after_insert')); // despues de insertar
         $crud->callback_after_update(array($this,'fnc_after_update'));
