@@ -72,7 +72,7 @@ if(!$result_memcached_eve_result) {
   $eve_result = $query->row_array();
 
 
-  $memcached->add($key_memcached_eve_result, $eve_result, MEMCACHED_LIVE_TIME);
+  $memcached->add($key_memcached_eve_result, $eve_result, false, MEMCACHED_LIVE_TIME);
 };
 
 define('TAG_LINE',    $result_memcached_eve_result["EVE_TAG_LINE"]);
