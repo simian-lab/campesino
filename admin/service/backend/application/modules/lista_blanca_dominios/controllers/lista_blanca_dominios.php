@@ -52,7 +52,7 @@ class lista_blanca_dominios extends Main {
 	function vaciar_lista_blanca($post_array){
 	      $this->load->library('memcached_library');
 	      $key_memcached='lista_blanca_dominio';
-	      $this->memcached_library->delete($key_memcached);
+	      //$this->memcached_library->delete($key_memcached);
 
 
 		return true;
