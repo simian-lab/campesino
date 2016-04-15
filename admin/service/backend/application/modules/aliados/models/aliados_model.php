@@ -18,6 +18,19 @@ class Aliados_model extends CI_Model {
     return $query->result_array();
   }
 
+  function get_tag_omniture_logo($id){
+        $this->db->select('*');
+        $this->db->from('V_TAG_REDIRECCION_OMNITURE_LOGO');
+        $this->db->where('TIENDA_ID', $id);
+
+        $results = $this->db->get();
+        
+        $row = $results->row_array();
+        
+        return  $row;
+
+    }
+
   /**
    * Get the ID and username of all the allies.
    * @return array All the allies.

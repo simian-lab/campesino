@@ -127,25 +127,20 @@
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MPFWLN');</script>
       <!-- End Google Tag Manager -->
-      <!-- Facebook Conversion Code for LO ENCONTRASTE - Checkouts -->
-      <script>
-      (function() {
-        var _fbq = window._fbq || (window._fbq = []);
-        if (!_fbq.loaded) {
-          var fbds = document.createElement('script');
-          fbds.async = true;
-          fbds.src = '//connect.facebook.net/en_US/fbds.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(fbds, s);
-          _fbq.loaded = true;
-        }
-      })();
-      window._fbq = window._fbq || [];
-      window._fbq.push(['track', '6031250315599', {'value':'0.01','currency':'EUR'}]);
-      </script>
-      <noscript>
-        <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6031250315599&amp;cd[value]=0.01&amp;cd[currency]=EUR&amp;noscript=1" />
-      </noscript>
+         <!-- Facebook Pixel Code -->
+            <script>
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', '1470616153169290');
+            fbq('track', "PageView");
+
+                fbq('track','Purchase',{value:'0.00',currency:'USD'});
+            </script>
+            <!-- End Facebook Pixel Code -->
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -163,8 +158,6 @@
         </script>
         <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
         </script>
-        <noscript>
-        
   
     </body>
 </html>

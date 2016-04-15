@@ -64,6 +64,19 @@ class Promociones_model extends CI_Model
         return $salida;
     }
 
+    function get_tag_omniture_producto($id){
+        $this->db->select('*');
+        $this->db->from('V_TAG_REDIRECCION_OMNITURE_PRODUCTO');
+        $this->db->where('ID', $id);
+
+        $results = $this->db->get();
+        
+        $row = $results->row_array();
+        
+        return  $row;
+
+    }
+
 
 	public function get_grupo($id){
 
