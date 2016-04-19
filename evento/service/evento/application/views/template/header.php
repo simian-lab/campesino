@@ -6,16 +6,16 @@
     <div class="row">
     <script type="text/javascript">
 
-    if(document.body.clientWidth >= 930){
-      sas_pageid='57473/592107'; // Página : LoEncontraste/especiales
-          sas_formatid='21675';  // Formato : Push Down Top 960x90
-          sas_target='';   // Segmentación
-    }else{
-      sas_pageid=' 57473/592107'; // Página : LoEncontraste/especiales
-          sas_formatid='8941';  // Formato : Push Down Top 960x90
-          sas_target='';   // Segmentación
-    }
-    SmartAdServerAjax(sas_pageid,sas_formatid,sas_target);
+    if (document.body.clientWidth >= 930) {
+            sas_pageid = '57473/592107'; // Página : LoEncontraste/especiales
+            sas_formatid = '21675';  // Formato : Push Down Top 960x90
+            sas_target = '';   // Segmentación
+        } else {
+            sas_pageid = ' 57473/592107'; // Página : LoEncontraste/especiales
+            sas_formatid = '8941';  // Formato : Push Down Top 960x90
+            sas_target = '';   // Segmentación
+        }
+        SmartAdServerAjax(sas_pageid, sas_formatid, sas_target);
     </script>
     </div>
   </div>
