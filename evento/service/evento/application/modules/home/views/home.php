@@ -367,7 +367,7 @@
   </div>
 </section>
 
-<div class="row banner">
+<!--<div class="row banner">
   <div class="col-lg-12">
     <script type="text/javascript">
         sas_pageid='57473/569415';      // Página : LoEncontraste/especiales
@@ -380,4 +380,4 @@
         <img src="http://ads.eltiempo.com/call/pubi/57473/569415/8941/S/[timestamp]/?" border="0" alt="" /></a>
         </noscript>
   </div>
-</div>
+</div>-->
