@@ -176,7 +176,7 @@
               </div>
             </div>
 
-            <div class="row banner">
+<!--            <div class="row banner">
               <div class="col-lg-12">
                 <script type="text/javascript">
                   sas.call("std", {
@@ -191,7 +191,7 @@
                     <img src="http://ads.eltiempo.com/ac?out=nonrich&nwid=484&siteid=41700&pgname=home&fmtid=8941&visit=m&tmstp=[timestamp]" border="0" alt="" /></a>
                 </noscript>
               </div>
-            </div>
+            </div>-->
 
           </div>
         </section>
