@@ -73,7 +73,7 @@ class promocion_model extends CI_Model {
 	$this->db->join('PAT_PATROCINADORES', 'PAT_PATROCINADORES.PAT_ALIADO = PRO_PROMOCIONES.PRO_USER_CREADOR');
     $this->db->join('EXP_EVENTOXPROMOCION', 'EXP_EVENTOXPROMOCION.EXP_PROMOCION = PRO_PROMOCIONES.PRO_ID');
     $this->db->where('EXP_EVENTOXPROMOCION.EXP_EVENTO', ID_EVENTO);
-
+    
     if($categoria!='todos')
       $this->db->where('CAT_ID', $categoria);
 
