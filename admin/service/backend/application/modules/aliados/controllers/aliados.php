@@ -138,7 +138,7 @@ class Aliados extends Main {
 			$crud->field_type('VISIBILITY','true_false');
 			$crud->field_type('PAT_USER_CREADOR','invisible');
 			$crud->field_type('PAT_USER_ULTIMO','invisible');
-			$packages = array('Sin paquete', 'Bolsa 30.000 Clics', 'Bolsa 27.000 Clics', 'Bolsa 18.000 Clics', 'Bolsa 11.000 Clics', 'Bolsa  6.000 Clics', 'Bolsa  3.000 Clics', 'Bolsa  1.500 Clics');
+			$packages = array('Sin paquete', '45 K', '30 K', '27 K', '22 K', '18 K', '15 K', 'Básico');
 			$crud->field_type('PAT_PAQUETE', 'dropdown', $packages);
 			$crud->field_type('PAT_ALIADO', 'dropdown', $allies);
 			$crud->field_type('PAT_HASH_URL_EVENT','invisible');
