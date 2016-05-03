@@ -30,6 +30,7 @@ class Vista_previa extends MX_Controller {
 		$data['seccion'] = $this->input->post('seccion');
 		$data['tipo_moneda_promocion'] = filter_var($this->input->post('tipo_moneda'),FILTER_SANITIZE_SPECIAL_CHARS);
     $data['eventos'] = $this->input->post('eventos');
+    $data['eventos2'] = $this->vista_previa_model->get_eventos();
 //print_r($this->input->post('url',true));die();
 
 		$result = $this->vista_previa_model->get_tienda_by_id($data['id_user']);
