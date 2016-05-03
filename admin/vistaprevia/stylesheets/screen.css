@@ -136,15 +136,15 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 /* line 45, ../sass/screen.scss */
 .link.red, .link.orange {
-  /*border: 1px solid white;
-  color: white;*/
+  border: 1px solid white;
+  color: white;
   display: block;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 0.938em;
   margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
-  width: 180px;
+  width: 175px;
 }
 @media screen and (max-width: 768px) {
   /* line 45, ../sass/screen.scss */
@@ -155,8 +155,7 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 /* line 60, ../sass/screen.scss */
 .link.red {
-  /*background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;*/
-  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
@@ -992,9 +991,8 @@ div.wrapp .container .row .destacados ul li:active div.figure .overlay, div.wrap
   display: block;
 }
 /* line 733, ../sass/screen.scss */
-/*esto edita cybermayo y cyberweek*/
 div.wrapp .container .row .destacados ul li div.figure, div.wrapp .container .row .no-destacados ul li div.figure {
-  border: 1px solid #683A8C;
+  border: 1px solid #00b6c9;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1026,7 +1024,7 @@ div.wrapp .container .row .destacados ul li div.figure .overlay p, div.wrapp .co
 div.wrapp .container .row .destacados ul li div.figure .overlay a, div.wrapp .container .row .no-destacados ul li div.figure .overlay a {
   color: white;
   font-family: "Conv_MyriadPro-Regular";
-  font-size: 1.1em;
+  font-size: 0.1em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1058,10 +1056,9 @@ div.wrapp .container .row .destacados ul li div.figure img, div.wrapp .container
   width: 100%;
 }
 /* line 789, ../sass/screen.scss */
-/*esto edita cybermayo y cyberweek*/
 div.wrapp .container .row .destacados ul li div.article, div.wrapp .container .row .no-destacados ul li div.article {
-  background-color: #f2f2f2;
-  border: 1px solid #000;
+  background-color: #454646;
+  border: 1px solid #00b6c9;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -1081,10 +1078,8 @@ div.wrapp .container .row .destacados ul li div.article .info, div.wrapp .contai
   width: 100%;
 }
 /* line 804, ../sass/screen.scss */
-/*esto edita cybermayo y cyberweek*/
 div.wrapp .container .row .destacados ul li div.article .info, div.wrapp .container .row .no-destacados ul li div.article .info {
-  border-bottom: 1px solid #000;
-  background: #000;
+  border-bottom: 1px solid #00b6c9;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .info {
   border-bottom: solid thin #683a8c;
@@ -1103,7 +1098,7 @@ div.wrapp .container .row .destacados ul li:hover div.article .info {
 }
 /* line 806, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .info h2, div.wrapp .container .row .no-destacados ul li div.article .info h2 {
-  color: #fff;
+  color: #00b6c9;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 1.2em;
   text-transform: uppercase;
@@ -1118,7 +1113,6 @@ div.wrapp .container .row .destacados ul li div.article .desc, div.wrapp .contai
 /* line 818, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .container .row .no-destacados ul li div.article .desc p {
   height: 19px;
-  color: #868484;
 }
 @media screen and (max-width: 992px) {
   /* line 818, ../sass/screen.scss */
@@ -1128,14 +1122,13 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 }
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora, div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
-  color: #683a8c;
+  color: #00b6c9;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 2.4em;
 }
 /* line 829, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .antes, div.wrapp .container .row .no-destacados ul li div.article .desc .antes {
   font-size: 0.938em;
-  color: #868484;
   text-decoration: line-through;
 }
 /* line 837, ../sass/screen.scss */
@@ -1149,16 +1142,14 @@ div.wrapp .container .row .destacados ul li.descuento div.article .info, div.wra
   }
 }
 /* line 843, ../sass/screen.scss */
-/*esto edita cybermayo y cyberweek*/
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje {
   /*background: url(../img/bg-percent.jpg) no-repeat;*/
-  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: 1px solid #5ea000;
+  border: 1px solid #00b6c9;
   border-bottom: none;
   bottom: 0;
   color: white;
   height: 100px;
-  padding: 14px 6px;
+  padding: 7px 6px;
   position: absolute;
   text-align: center;
   top: -11px;
@@ -1186,8 +1177,7 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .num, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
   font-family: "Conv_MyriadPro-Bold";
   font-size: 2.9em;
-  letter-spacing: -0.05em;
-  text-shadow: 0px 0px 7px #253C03;
+  text-shadow: 0px, 0px, 7px #253C03;
 }
 div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje .num {
   font-size: 2.5em;
@@ -1223,8 +1213,6 @@ div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje sp
   display: inline-block;
   font-size: 1.9em;
   margin-top: 8px;
-  margin-left: 3px;
-  text-shadow: 0px 0px 7px #253c03;
 }
 @media screen and (max-width: 992px) {
   /* line 877, ../sass/screen.scss */
@@ -1672,7 +1660,7 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc {
 }
 div.wrapp.evento-bfr .container .row .destacados ul li.descuento div.article .porcentaje {
   /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  border: solid thin #569200;
+  border: solid thin #683a8c;
   padding: 14px 6px;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.figure .overlay a {
@@ -1894,7 +1882,7 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc {
 }
 div.wrapp.evento-bfr .container .row .destacados ul li.descuento div.article .porcentaje {
   /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400))
   border: solid thin #77C157;
   padding: 14px 6px;
 }
@@ -1904,11 +1892,11 @@ div.wrapp.evento-bfr .container .row .no-destacados ul li.descuento div.article 
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.figure .overlay a {
   /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400))
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 div.wrapp.evento-bfr .link.orange {
   /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400))
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 
 /* evento-cyl premium categoria */
