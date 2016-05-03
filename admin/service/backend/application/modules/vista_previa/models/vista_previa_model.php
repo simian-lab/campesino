@@ -65,14 +65,14 @@ class vista_previa_model extends CI_Model {
         return $query->row_array();
     }
 
-    function get_eventos() {
+     function get_eventos() {
 
         $this->db->select();
         $this->db->from('EVE_EVENTOS');
 
         $query = $this->db->get();
 
-        return $query->row_array();
+        return $query->result_array();
     }
 
 }
