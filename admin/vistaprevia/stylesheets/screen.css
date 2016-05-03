@@ -136,15 +136,15 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 /* line 45, ../sass/screen.scss */
 .link.red, .link.orange {
-  border: 1px solid white;
-  color: white;
+  /*border: 1px solid white;
+  color: white;*/
   display: block;
   font-family: "Conv_MyriadPro-Bold";
   font-size: 0.938em;
   margin: 0 auto;
   text-align: center;
   text-transform: uppercase;
-  width: 175px;
+  width: 180px;
 }
 @media screen and (max-width: 768px) {
   /* line 45, ../sass/screen.scss */
@@ -1024,7 +1024,7 @@ div.wrapp .container .row .destacados ul li div.figure .overlay p, div.wrapp .co
 div.wrapp .container .row .destacados ul li div.figure .overlay a, div.wrapp .container .row .no-destacados ul li div.figure .overlay a {
   color: white;
   font-family: "Conv_MyriadPro-Regular";
-  font-size: 0.1em;
+  font-size: 1.1em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1177,7 +1177,7 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .num, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
   font-family: "Conv_MyriadPro-Bold";
   font-size: 2.9em;
-  text-shadow: 0px, 0px, 7px #253C03;
+  text-shadow: 0px 0px 7px #253C03;
 }
 div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje .num {
   font-size: 2.5em;
@@ -1218,7 +1218,8 @@ div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje sp
   /* line 877, ../sass/screen.scss */
   div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span.signo, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span.signo {
     font-size: 0.875em;
-    margin-top: 3px;
+    margin-top: 0px;
+    text-shadow: 0px 0px 7px #253C03;
   }
 }
 /* line 896, ../sass/screen.scss */
@@ -1882,13 +1883,14 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc {
 }
 div.wrapp.evento-bfr .container .row .destacados ul li.descuento div.article .porcentaje {
   /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400))
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
   border: solid thin #77C157;
   padding: 14px 6px;
 }
 div.wrapp.evento-bfr .container .row .no-destacados ul li.descuento div.article .porcentaje {
-  background: url("../img/bg_bf_percent_big.jpg") no-repeat;
-  border: solid thin #683a8c;
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.figure .overlay a {
   /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
