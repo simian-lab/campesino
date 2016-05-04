@@ -35,7 +35,7 @@
         $arrEventos = explode(',', $eventos);
         foreach ($arrEventos as $evento) {
             foreach ($eventos2 as $value) {
-                if ($value['EVE_NOMBRE'] == $evento) {
+                if (trim($value['EVE_NOMBRE']) == trim($evento)) {
                     $prefijo_evento = 'evento-' . $value['EVE_PREFIJO'];
                 }
             }
