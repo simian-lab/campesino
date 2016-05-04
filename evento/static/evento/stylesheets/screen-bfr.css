@@ -174,7 +174,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bg-navidad.jpg) repeat;
+  background: url(../img/bfr-back.png) repeat-x;
+  background-color: #f3f2ea;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
@@ -304,7 +305,7 @@ header .container .head .marcas figure {
 
 /* line 161, ../sass/screen.scss */
 div#menu {
-  background: url("../img/bg_menu_bf.png") repeat;
+  background: url("../img/bfr-menu-back.png") repeat;
   border-bottom: 1px solid #96a98f;
 }
 /* line 166, ../sass/screen.scss */
