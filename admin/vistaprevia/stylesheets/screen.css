@@ -155,13 +155,11 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 /* line 60, ../sass/screen.scss */
 .link.red {
-  /*background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;*/
-  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  /*background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;*/
-  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -1151,9 +1149,8 @@ div.wrapp .container .row .destacados ul li.descuento div.article .info, div.wra
 }
 /* line 843, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje {
-  /*background: url(../img/bg-percent.jpg) no-repeat;*/
-  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: 1px solid #5FA003;
+  background: url(../img/bg-percent.jpg) no-repeat;
+  border: 1px solid #00b6c9;
   border-bottom: none;
   bottom: 0;
   color: white;
@@ -1265,7 +1262,8 @@ div.wrapp .container .row .no-destacados ul li {
 }
 /* line 920, ../sass/screen.scss */
 div.wrapp .container .row .no-destacados ul li:hover div.article {
-  background-image: none;
+  /*background-image: none;*/
+  background-color: #000;
 }
 @media screen and (max-width: 768px) {
   /* line 924, ../sass/screen.scss */
