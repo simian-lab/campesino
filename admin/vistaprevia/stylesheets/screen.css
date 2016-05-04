@@ -1092,6 +1092,12 @@ div.wrapp.evento-cyl .container .row .destacados ul li div.article .info {
 div.wrapp.evento-cys .container .row .destacados ul li div.article .info {
   border-bottom: solid thin #e02d4f;
 }
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .info {
+  border-bottom: solid thin #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .info {
+  border-bottom: solid thin #683a8c;
+}
 div.wrapp.School .container .row .destacados ul li div.article .info {
   border-bottom: solid thin #e02d4f;
 }
@@ -1623,7 +1629,9 @@ footer .terminos span a {
   color: #888888;
   font-size: 1.125em;
 }
+
 /* previo evento-bfr friday */
+
 div.wrapp.evento-bfr .container .row .destacados ul li div.article {
   background: #f2f2f2;
   border: solid thin #683a8c;
@@ -1673,6 +1681,116 @@ div.wrapp.evento-bfr .container .row .destacados ul li div.figure .overlay a {
   background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 div.wrapp.evento-bfr .link.orange {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+
+/* previo evento-cwm Black days Mayo */
+
+div.wrapp.evento-cwm .container .row .destacados ul li div.article {
+  background: #f2f2f2;
+  border: solid thin #683a8c;
+  margin: -1px 0 0 0;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article {
+  background: #000;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.figure {
+  border: solid thin #683a8c;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li.descuento div.article .info {
+  border-bottom: solid thin #683a8c;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li.descuento:hover div.article .info {
+  border-bottom: solid thin #d5d5d5;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .info h2 {
+  color: #683a8c;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .info h2 {
+  color: #fff;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc .ahora {
+  color: #683a8c;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc p, 
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc .antes,
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc {
+  color: #424242;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc p, 
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc .antes,
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc {
+  color: #d5d5d5;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li.descuento div.article .porcentaje {
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  border: solid thin #683a8c;
+  padding: 14px 6px;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.figure .overlay a {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+div.wrapp.evento-cwm .link.orange {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+
+/* previo evento-cwj Black days Junio */
+
+div.wrapp.evento-cwj .container .row .destacados ul li div.article {
+  background: #f2f2f2;
+  border: solid thin #683a8c;
+  margin: -1px 0 0 0;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article {
+  background: #000;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.figure {
+  border: solid thin #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li.descuento div.article .info {
+  border-bottom: solid thin #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li.descuento:hover div.article .info {
+  border-bottom: solid thin #d5d5d5;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .info h2 {
+  color: #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .info h2 {
+  color: #fff;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc .ahora {
+  color: #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc p, 
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc .antes,
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc {
+  color: #424242;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc p, 
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc .antes,
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc {
+  color: #d5d5d5;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li.descuento div.article .porcentaje {
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  border: solid thin #683a8c;
+  padding: 14px 6px;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.figure .overlay a {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+div.wrapp.evento-cwj .link.orange {
   /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
   background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
@@ -1839,8 +1957,8 @@ div.wrapp.School .link.orange {
 
 div.wrapp.evento-bfr .container .row .destacados ul li div.article,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article {
-  background: #f2f2f2;
-  border: solid thin #000;
+  /*background: #f2f2f2;*/
+  border: solid thin #683a8c;
   margin: -1px 0 0 0;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article {
@@ -1901,6 +2019,146 @@ div.wrapp.evento-bfr .container .row .destacados ul li div.figure .overlay a {
   background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 div.wrapp.evento-bfr .link.orange {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+
+/* Black days Mayo premium categoria */
+
+div.wrapp.evento-cwm .container .row .destacados ul li div.article,
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.article {
+  /*background: #f2f2f2;*/
+  border: solid thin #683a8c;
+  margin: -1px 0 0 0;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article {
+  background: #000;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.figure,
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.figure {
+  border: solid thin #683a8c;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li.descuento div.article .info,
+div.wrapp.evento-cwm .container .row .no-destacados ul li.descuento div.article .info {
+  border-bottom: solid thin #683a8c;
+  background-color: #000;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li.descuento:hover div.article .info {
+  border-bottom: solid thin #504E4E;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .info h2,
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .info h2 {
+  color: #ffffff;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .info h2 {
+  color: #fff;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc .ahora,
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .desc .ahora {
+  color: #683a8c;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc p, 
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc .antes,
+div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc,
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .desc p, 
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .desc .antes,
+div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .desc  {
+  color: #868484;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc p, 
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc .antes,
+div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc {
+  color: #d5d5d5;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li.descuento div.article .porcentaje {
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
+  padding: 14px 6px;
+}
+div.wrapp.evento-cwm .container .row .no-destacados ul li.descuento div.article .porcentaje {
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
+}
+div.wrapp.evento-cwm .container .row .destacados ul li div.figure .overlay a {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+div.wrapp.evento-cwm .link.orange {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+
+/* Black days Junio premium categoria */
+
+div.wrapp.evento-cwj .container .row .destacados ul li div.article,
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.article {
+  /*background: #f2f2f2;*/
+  border: solid thin #683a8c;
+  margin: -1px 0 0 0;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article {
+  background: #000;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.figure,
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.figure {
+  border: solid thin #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li.descuento div.article .info,
+div.wrapp.evento-cwj .container .row .no-destacados ul li.descuento div.article .info {
+  border-bottom: solid thin #683a8c;
+  background-color: #000;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li.descuento:hover div.article .info {
+  border-bottom: solid thin #504E4E;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .info h2,
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .info h2 {
+  color: #ffffff;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .info h2 {
+  color: #fff;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc .ahora,
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .desc .ahora {
+  color: #683a8c;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc p, 
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc .antes,
+div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc,
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .desc p, 
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .desc .antes,
+div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .desc  {
+  color: #868484;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc p, 
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc .antes,
+div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc {
+  color: #d5d5d5;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li.descuento div.article .porcentaje {
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
+  padding: 14px 6px;
+}
+div.wrapp.evento-cwj .container .row .no-destacados ul li.descuento div.article .porcentaje {
+  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
+}
+div.wrapp.evento-cwj .container .row .destacados ul li div.figure .overlay a {
+  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
+  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+}
+div.wrapp.evento-cwj .link.orange {
   /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
   background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
