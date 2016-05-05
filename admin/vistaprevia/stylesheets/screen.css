@@ -155,11 +155,13 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 /* line 60, ../sass/screen.scss */
 .link.red {
-  background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;
+  /*background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;*/
+  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;
+  /*background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;*/
+  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 
 /* line 67, ../sass/screen.scss */
@@ -1128,7 +1130,7 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 }
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora, div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
-  color: #00b6c9;
+  color: #683A8C;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 2.4em;
 }
@@ -1149,8 +1151,9 @@ div.wrapp .container .row .destacados ul li.descuento div.article .info, div.wra
 }
 /* line 843, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje {
-  background: url(../img/bg-percent.jpg) no-repeat;
-  border: 1px solid #00b6c9;
+  /*background: url(../img/bg-percent.jpg) no-repeat;*/
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: 1px solid #5FA003;
   border-bottom: none;
   bottom: 0;
   color: white;
@@ -1262,8 +1265,7 @@ div.wrapp .container .row .no-destacados ul li {
 }
 /* line 920, ../sass/screen.scss */
 div.wrapp .container .row .no-destacados ul li:hover div.article {
-  /*background-image: none;*/
-  background-color: #000;
+  background-image: none;
 }
 @media screen and (max-width: 768px) {
   /* line 924, ../sass/screen.scss */
@@ -1981,9 +1983,11 @@ div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .info h2 {
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .info h2 {
   color: #fff;
 }
-div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .ahora,
-div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc .ahora {
+div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .ahora {
   color: #683a8c;
+}
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .ahora {
   color: #fff;
@@ -2051,11 +2055,13 @@ div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .info h2 {
 div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .info h2 {
   color: #fff;
 }
-div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc .ahora,
-div.wrapp.evento-cwm .container .row .no-destacados ul li div.article .desc .ahora {
+div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .ahora {
   color: #683a8c;
 }
-div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc .ahora {
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .ahora {
   color: #fff;
 }
 div.wrapp.evento-cwm .container .row .destacados ul li div.article .desc p, 
@@ -2072,23 +2078,19 @@ div.wrapp.evento-cwm .container .row .destacados ul li:hover div.article .desc {
   color: #d5d5d5;
 }
 div.wrapp.evento-cwm .container .row .destacados ul li.descuento div.article .porcentaje {
-  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: solid thin #77C157;
+  background: url("../img/bg_bf_percent_big.jpg") no-repeat;
+  border: solid thin #614791;
   padding: 14px 6px;
 }
 div.wrapp.evento-cwm .container .row .no-destacados ul li.descuento div.article .porcentaje {
-  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: solid thin #77C157;
+  background: url("../img/bg_bf_percent_big.jpg") no-repeat;
+  border: solid thin #614791;
 }
 div.wrapp.evento-cwm .container .row .destacados ul li div.figure .overlay a {
-  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;
 }
 div.wrapp.evento-cwm .link.orange {
-  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;
 }
 
 /* Black days Junio premium categoria */
@@ -2121,11 +2123,13 @@ div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .info h2 {
 div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .info h2 {
   color: #fff;
 }
-div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc .ahora,
-div.wrapp.evento-cwj .container .row .no-destacados ul li div.article .desc .ahora {
+div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .ahora {
   color: #683a8c;
 }
-div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc .ahora {
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article .desc .ahora {
+  color: #fff;
+}
+div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .ahora {
   color: #fff;
 }
 div.wrapp.evento-cwj .container .row .destacados ul li div.article .desc p, 
@@ -2142,23 +2146,19 @@ div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc {
   color: #d5d5d5;
 }
 div.wrapp.evento-cwj .container .row .destacados ul li.descuento div.article .porcentaje {
-  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: solid thin #77C157;
+  background: url("../img/bg_bf_percent_big.jpg") no-repeat;
+  border: solid thin #21A4C1;
   padding: 14px 6px;
 }
 div.wrapp.evento-cwj .container .row .no-destacados ul li.descuento div.article .porcentaje {
-  /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
-  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: solid thin #77C157;
+  background: url("../img/bg_bf_percent_big.jpg") no-repeat;
+  border: solid thin #665291;
 }
 div.wrapp.evento-cwj .container .row .destacados ul li div.figure .overlay a {
-  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;
 }
 div.wrapp.evento-cwj .link.orange {
-  /*background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;*/
-  background:-webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: #683a8c url("../img/bg_button_bf_offer.jpg") no-repeat;
 }
 
 /* evento-cyl premium categoria */
