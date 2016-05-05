@@ -155,13 +155,11 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 /* line 60, ../sass/screen.scss */
 .link.red {
-  /*background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;*/
-  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: url(../img/bg-button-red.jpg) left top no-repeat #b9363c;
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  /*background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;*/
-  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background: url(../img/bg-button-orange.jpg) left top no-repeat #ea432c;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -1130,7 +1128,7 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 }
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora, div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
-  color: #683A8C;
+  color: #2CB6CE;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 2.4em;
 }
@@ -1151,9 +1149,8 @@ div.wrapp .container .row .destacados ul li.descuento div.article .info, div.wra
 }
 /* line 843, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje {
-  /*background: url(../img/bg-percent.jpg) no-repeat;*/
-  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
-  border: 1px solid #5FA003;
+  background: url(../img/bg-percent.jpg) no-repeat;
+  border: 1px solid #1E899B;
   border-bottom: none;
   bottom: 0;
   color: white;
@@ -1961,7 +1958,9 @@ div.wrapp.evento-bfr .container .row .no-destacados ul li div.article {
   border: solid thin #683a8c;
   margin: -1px 0 0 0;
 }
-div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article {
+div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article,
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article
+ {
   background: #000;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.figure,
@@ -2002,7 +2001,9 @@ div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc  {
 }
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .antes,
-div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc {
+div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc,
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article .desc p,
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article .desc .antes, {
   color: #d5d5d5;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li.descuento div.article .porcentaje {
@@ -2147,7 +2148,7 @@ div.wrapp.evento-cwj .container .row .destacados ul li:hover div.article .desc {
 }
 div.wrapp.evento-cwj .container .row .destacados ul li.descuento div.article .porcentaje {
   background: url("../img/bg_bf_percent_big.jpg") no-repeat;
-  border: solid thin #21A4C1;
+  border: solid thin #0F191B;
   padding: 14px 6px;
 }
 div.wrapp.evento-cwj .container .row .no-destacados ul li.descuento div.article .porcentaje {
