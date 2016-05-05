@@ -1127,8 +1127,13 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
   }
 }
 /* line 824, ../sass/screen.scss */
-div.wrapp .container .row .destacados ul li div.article .desc .ahora, div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
+div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
+  font-family: "Conv_MyriadPro-Cond";
+  font-size: 2.4em;
+}
+div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
+  color: #683A8C;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 2.4em;
 }
@@ -1997,7 +2002,7 @@ div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc p, 
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc .antes,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc  {
-  color: #868484;
+  color: #9C9B9B;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .antes,
