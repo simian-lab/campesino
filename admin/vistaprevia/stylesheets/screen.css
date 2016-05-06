@@ -69,6 +69,26 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 
 @font-face {
+  font-family: 'OpenSans-CondensedBold';
+    src: url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.woff') format('woff'),
+         url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.ttf') format('truetype'),
+         url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-CondensedLight';
+    src: url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.woff') format('woff'),
+         url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.ttf') format('truetype'),
+         url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Conv_MyriadPro-Bold';
   src: url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.eot");
   src: local("☺"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.woff") format("woff"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.ttf") format("truetype"), url("../fonts/Myriad/Pro/Bold/ MyriadPro-Bold.svg") format("svg");
@@ -1129,7 +1149,7 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
-  font-family: "Conv_MyriadPro-Cond";
+  font-family: "OpenSans-CondensedLight";
   font-size: 2.4em;
 }
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
@@ -1186,7 +1206,7 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
 }
 /* line 865, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .num, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
-  font-family: "Conv_MyriadPro-Bold";
+  font-family: "OpenSans-CondensedBold";
   font-size: 2.9em;
   text-shadow: 0px 0px 7px #253C03;
 }
@@ -1974,7 +1994,7 @@ div.wrapp.evento-bfr .container .row .no-destacados ul li div.figure {
 }
 div.wrapp.evento-bfr .container .row .destacados ul li.descuento div.article .info,
 div.wrapp.evento-bfr .container .row .no-destacados ul li.descuento div.article .info {
-  border-bottom: solid thin #683a8c;
+  border-bottom: solid thin #504E4E;
   background-color: #000;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li.descuento:hover div.article .info {
