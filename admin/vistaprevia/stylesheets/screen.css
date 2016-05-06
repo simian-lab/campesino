@@ -89,6 +89,19 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 
 @font-face {
+    font-family: 'webfontregular';
+    src: url('../fonts/Roboto/Cond/dinpro-cond-webfont.eot');
+    src: url('../fonts/Roboto/Cond/dinpro-cond-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.woff2') format('woff2'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.woff') format('woff'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
   font-family: 'Conv_MyriadPro-Bold';
   src: url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.eot");
   src: local("☺"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.woff") format("woff"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.ttf") format("truetype"), url("../fonts/Myriad/Pro/Bold/ MyriadPro-Bold.svg") format("svg");
@@ -1125,7 +1138,7 @@ div.wrapp .container .row .destacados ul li:hover div.article .info {
 /* line 806, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .info h2, div.wrapp .container .row .no-destacados ul li div.article .info h2 {
   color: #00b6c9;
-  font-family: "Conv_MyriadPro-Cond";
+  font-family: "OpenSans-CondensedBold";
   font-size: 1.2em;
   text-transform: uppercase;
 }
@@ -1149,7 +1162,7 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
-  font-family: "OpenSans-CondensedLight";
+  font-family: "webfontregular";
   font-size: 2.4em;
 }
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
