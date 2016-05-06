@@ -1139,8 +1139,9 @@ div.wrapp .container .row .destacados ul li:hover div.article .info {
 div.wrapp .container .row .destacados ul li div.article .info h2, div.wrapp .container .row .no-destacados ul li div.article .info h2 {
   color: #00b6c9;
   font-family: "OpenSans-CondensedBold";
-  font-size: 1.2em;
+  font-size: 1em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 /* line 813, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc, div.wrapp .container .row .no-destacados ul li div.article .desc {
@@ -1151,7 +1152,7 @@ div.wrapp .container .row .destacados ul li div.article .desc, div.wrapp .contai
 }
 /* line 818, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .container .row .no-destacados ul li div.article .desc p {
-  height: 19px;
+  height: 16px;
 }
 @media screen and (max-width: 992px) {
   /* line 818, ../sass/screen.scss */
@@ -1163,7 +1164,8 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
   font-family: "webfontregular";
-  font-size: 2.4em;
+  font-size: 2.3em;
+  font-weight: 600;
 }
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
   color: #683A8C;
@@ -1172,7 +1174,7 @@ div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
 }
 /* line 829, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .antes, div.wrapp .container .row .no-destacados ul li div.article .desc .antes {
-  font-size: 0.938em;
+  font-size: 1.1em;
   text-decoration: line-through;
 }
 /* line 837, ../sass/screen.scss */
@@ -1192,7 +1194,7 @@ div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje, d
   border-bottom: none;
   bottom: 0;
   color: white;
-  height: 100px;
+  height: 102px;
   padding: 14px 6px;
   position: absolute;
   text-align: center;
@@ -1233,9 +1235,18 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
   }
 }
 /* line 872, ../sass/screen.scss */
-div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span {
+div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span {
+  font-family: "webfontregular";
+  font-size: 1.3em;
   vertical-align: top;
 }
+
+div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span {
+  font-family: "webfontregular";
+  font-size: 1em;
+  vertical-align: top;
+}
+
 div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje span:nth-child(4) {
   font-size: 0.8em;
   margin: -5px 0px 0px;
@@ -1253,12 +1264,24 @@ div.wrapp.School .container .row .no-destacados ul li.descuento div.article .por
   }
 }
 /* line 877, ../sass/screen.scss */
-div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span.signo, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span.signo {
+div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span.signo {
+  display: inline-block;
+  font-family: "Conv_MyriadPro-Cond";
+  font-size: 2.9em;
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span.signo {
   display: inline-block;
   font-size: 1.9em;
+  font-family: "Conv_MyriadPro-Cond";
   text-shadow: 0px 0px 7px #253C03;
-  margin-top: 2px;
+  font-weight: 500;
+  margin-top: 5px;
 }
+
 @media screen and (max-width: 992px) {
   /* line 877, ../sass/screen.scss */
   div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span.signo, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span.signo {
@@ -1417,7 +1440,7 @@ div.wrapp .container .row .no-destacados ul li.descuento div.article .info, div.
 /* line 1008, ../sass/screen.scss */
 div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje {
   top: -9px;
-  height: 73px;
+  height: 85px;
   width: 91px;
 }
 @media screen and (max-width: 768px) {
@@ -1428,7 +1451,7 @@ div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje
 }
 /* line 1015, ../sass/screen.scss */
 div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
-  font-size: 2em;
+  font-size: 2.2em;
 }
 @media screen and (max-width: 768px) {
   /* line 1015, ../sass/screen.scss */
@@ -2030,13 +2053,20 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .
   color: #fff;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc p, 
-div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .antes,
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc p, 
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc .antes,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc  {
-  color: #9C9B9B;
+  color: #828181;
 }
+
+div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .antes,
+{
+  font-family: "webfontregular";
+  font-size: 1.1em;
+  color: #828181;
+}
+
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .antes,
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc,
