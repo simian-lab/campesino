@@ -25,6 +25,8 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
 /* line 22, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
@@ -1163,7 +1165,7 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
-  font-family: "webfontregular";
+  font-family: 'Oswald', sans-serif;
   font-size: 2.3em;
   font-weight: 600;
 }
