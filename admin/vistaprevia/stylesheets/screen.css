@@ -71,6 +71,30 @@ div.article, aside, details, figcaption, div.figure, footer, header, hgroup, men
 }
 
 @font-face {
+    font-family: 'oswaldregular';
+    src: url('../fonts/Oswald/Regular/oswald-regular-webfont.eot');
+    src: url('../fonts/Oswald/Regular/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.woff2') format('woff2'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.woff') format('woff'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.ttf') format('truetype'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.svg#oswaldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldbold';
+    src: url('../fonts/Oswald/Bold/oswald-bold-webfont.eot');
+    src: url('../fonts/Oswald/Bold/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.woff2') format('woff2'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.woff') format('woff'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.ttf') format('truetype'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'OpenSans-CondensedBold';
     src: url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.eot?#iefix') format('embedded-opentype'), 
          url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.woff') format('woff'),
@@ -1165,13 +1189,13 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 /* line 824, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'oswaldregular';
   font-size: 2.3em;
   font-weight: 600;
 }
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
   color: #683A8C;
-  font-family: "Conv_MyriadPro-Cond";
+  font-family: "oswaldregular";
   font-size: 2.4em;
 }
 /* line 829, ../sass/screen.scss */
@@ -1223,7 +1247,7 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
 }
 /* line 865, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .num, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
-  font-family: "OpenSans-CondensedBold";
+  font-family: "oswaldbold";
   font-size: 2.9em;
   text-shadow: 0px 0px 7px #253C03;
 }
