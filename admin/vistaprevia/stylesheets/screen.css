@@ -25,8 +25,6 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
-
 /* line 22, ../../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
@@ -1177,8 +1175,12 @@ div.wrapp .container .row .destacados ul li div.article .desc, div.wrapp .contai
   font-size: 0.875em;
 }
 /* line 818, ../sass/screen.scss */
-div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .container .row .no-destacados ul li div.article .desc p {
-  height: 16px;
+div.wrapp .container .row .destacados ul li div.article .desc p {
+  height: 19px;
+}
+
+div.wrapp .container .row .no-destacados ul li div.article .desc p {
+  height: 15px;
 }
 @media screen and (max-width: 992px) {
   /* line 818, ../sass/screen.scss */
@@ -1190,13 +1192,12 @@ div.wrapp .container .row .destacados ul li div.article .desc p, div.wrapp .cont
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
   font-family: 'oswaldregular';
-  font-size: 2.3em;
-  font-weight: 600;
+  font-size: 2em;
 }
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
   color: #683A8C;
   font-family: "oswaldregular";
-  font-size: 2.4em;
+  font-size: 1.7em;
 }
 /* line 829, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .antes, div.wrapp .container .row .no-destacados ul li div.article .desc .antes {
@@ -1248,7 +1249,7 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
 /* line 865, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje .num, div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje .num {
   font-family: "oswaldbold";
-  font-size: 2.9em;
+  font-size: 2.7em;
   text-shadow: 0px 0px 7px #253C03;
 }
 div.wrapp.School .container .row .destacados ul li.descuento div.article .porcentaje .num {
@@ -1262,14 +1263,14 @@ div.wrapp.School .container .row .destacados ul li.descuento div.article .porcen
 }
 /* line 872, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje span {
-  font-family: "webfontregular";
-  font-size: 1.3em;
+  font-family: "oswaldregular";
+  font-size: 1.1em;
   vertical-align: top;
 }
 
 div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span {
   font-family: "webfontregular";
-  font-size: 1em;
+  font-size: 1.1em;
   vertical-align: top;
 }
 
@@ -1301,11 +1302,11 @@ div.wrapp .container .row .destacados ul li.descuento div.article .porcentaje sp
 
 div.wrapp .container .row .no-destacados ul li.descuento div.article .porcentaje span.signo {
   display: inline-block;
-  font-size: 1.9em;
+  font-size: 2.1em;
   font-family: "Conv_MyriadPro-Cond";
   text-shadow: 0px 0px 7px #253C03;
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 @media screen and (max-width: 992px) {
@@ -1432,6 +1433,7 @@ div.wrapp .container .row .no-destacados ul li div.article .desc {
 /* line 983, ../sass/screen.scss */
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora, div.wrapp .container .row .no-destacados ul li div.article .desc .antes {
   display: block;
+  margin-top: 7px;
 }
 /* line 986, ../sass/screen.scss */
 div.wrapp .container .row .no-destacados ul li div.article .desc p {
@@ -1747,8 +1749,9 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .antes,
-div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc {
-  color: #424242;
+div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc, 
+div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc .antes {
+  color: #7d7b7b;
 }
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .antes,
@@ -2081,9 +2084,9 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc p, 
-div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc .antes,
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc  {
   color: #828181;
+  font-family: sans-serif;
 }
 
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc .antes,
