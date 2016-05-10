@@ -2083,9 +2083,18 @@ div.wrapp.evento-bfr .container .row .destacados ul li:hover div.article .desc .
 }
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc p, 
 div.wrapp.evento-bfr .container .row .destacados ul li div.article .desc,
-div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc p, 
 div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc  {
   color: #828181;
+  font-family: sans-serif;
+}
+
+div.wrapp.evento-bfr .container .row .no-destacados ul li div.article .desc p {
+  color: #3A3A3A;
+  font-family: sans-serif;
+}
+
+div.wrapp.evento-bfr .container .row .no-destacados ul li:hover div.article .desc p {
+  color: #fff;
   font-family: sans-serif;
 }
 
