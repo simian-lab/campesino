@@ -192,9 +192,9 @@ header .container .head {
 }
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
-  border-right: 1px solid white;
-  margin: 10px 0px 0px;
-  width: 245px;
+  /*border-right: 1px solid white;*/
+  margin: 13px -5px 0px;
+  width: 260px;
 }
 @media screen and (max-width: 768px) {
   /* line 83, ../sass/screen.scss */
@@ -212,11 +212,14 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/bfr-logo-bf.png") no-repeat;
-  width: 245px;
-  height: 65px;
+  background: url("../img/bfr-logo-bf.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 240px;
+  height: 76px;
   margin: 0;
   padding: 0;
+  box-shadow: -10px 0px 16px #3c1956;
 }
 @media screen and (max-width: 992px) {
   /* line 95, ../sass/screen.scss */
@@ -454,7 +457,7 @@ div#menu .container .row nav ul li.active a{
 }*/
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
-  background-color: #401f5a;
+background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#72C400), to(#3C6400));
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -1541,7 +1544,8 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
 
 /* line 1093, ../sass/screen.scss */
 footer {
-  background-color: #f4f4f4;
+  background: url(../img/bfr-back.png) repeat-x;
+  background-color: #8A4EC3;
 }
 /* line 1095, ../sass/screen.scss */
 footer .sponsor {
@@ -1585,9 +1589,9 @@ footer .sponsor .invita .texto {
 }
 /* line 1127, ../sass/screen.scss */
 footer .sponsor .invita .texto span {
-  color: #7a7a7a;
+  color: #ffffff;
   display: inline-block;
-  font-size: 0.625em;
+  font-size: 0.7em;
   text-align: center;
   text-transform: uppercase;
   width: 50%;
@@ -1633,9 +1637,10 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #494949;
-  font-family: "Conv_MyriadPro-Cond";
-  font-size: 0.938em;
+  background-color: #5A3179;
+  font-family: sans-serif;
+  font-size: 0.7em;
+  line-height: 1.5em;
   margin: 0;
   padding: 30px 0;
   padding-bottom: 50px;
@@ -2627,8 +2632,8 @@ hr{
 }
 .ancla  a{
   background: url("../img/bfr-ancla.png") no-repeat;
-  width: 92px;
-  height: 53px;
+  width: 118px;
+  height: 112px;
   display: block;
 }
 @media screen and (max-width: 480px) {
