@@ -1192,12 +1192,12 @@ div.wrapp .container .row .no-destacados ul li div.article .desc p {
 div.wrapp .container .row .destacados ul li div.article .desc .ahora {
   color: #2CB6CE;
   font-family: 'oswaldregular';
-  font-size: 1.85em;
+  font-size: 1.8em;
 }
 div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
   color: #683A8C;
   font-family: "oswaldregular";
-  font-size: 1.7em;
+  font-size: 1.6em;
 }
 /* line 829, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .antes, 
