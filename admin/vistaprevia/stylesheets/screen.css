@@ -1202,7 +1202,7 @@ div.wrapp .container .row .no-destacados ul li div.article .desc .ahora {
 /* line 829, ../sass/screen.scss */
 div.wrapp .container .row .destacados ul li div.article .desc .antes, 
 div.wrapp .container .row .no-destacados ul li div.article .desc .antes {
-  font-size: 1em;
+  font-size: 0.95em;
   text-decoration: line-through;
 }
 /* line 837, ../sass/screen.scss */
