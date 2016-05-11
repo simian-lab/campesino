@@ -21,7 +21,7 @@
             <span>evento de:</span><!-- -->
           </div>
           <div class="logos">
-            <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>
+            <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/bfr-logofooter-eltiempo.png" alt=""></a>
           </div>
         </div>
       </div>
