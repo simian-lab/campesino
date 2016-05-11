@@ -1129,7 +1129,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
       (startColorStr='$from-color', EndColorStr='$to-color')";
   }
   section.wrapp .container .row .destacados ul li:hover article {
-    background: #5e5773;
+    background: #000000;
   }
   /* line 729, ../sass/screen.scss */
   section.wrapp .container .row .destacados ul li:hover article .desc, section.wrapp .container .row .no-destacados ul li:hover article .desc {
@@ -1228,17 +1228,19 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: solid thin #683a8c;
+  border-bottom: solid thin #504E4E;
+  background-color: #000;
 }
 section.wrapp .container .row .destacados ul li:hover article .info {
-  border-bottom: solid thin #d5d5d5;
+  /*border-bottom: solid thin #d5d5d5;*/
 }
 /* line 815, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info h2, section.wrapp .container .row .no-destacados ul li article .info h2 {
-  color: #683a8c;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 0.813em;
+  font-family: "OpenSans-CondensedBold";
+  color: #fff;
+  font-size: 1em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 section.wrapp .container .row .destacados ul li:hover article .info h2 {
   color: #fff;
@@ -1252,7 +1254,9 @@ section.wrapp .container .row .destacados ul li article .desc, section.wrapp .co
 }
 /* line 827, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc p, section.wrapp .container .row .no-destacados ul li article .desc p {
-  height: 33px;
+  height: 22px;
+  color: #000000;
+  font-family: sans-serif;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc p {
   color: #d5d5d5;
@@ -1265,9 +1269,9 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora, section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-  color: #683a8c;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 1.313em;
+    color: #683a8c;
+    font-family: "oswaldregular";
+    font-size: 1.8em;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
   color: #fff;
@@ -1286,12 +1290,13 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 }
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
-  background: url(../img/bg_bf_percent_big.jpg) no-repeat;
-  border: solid thin #683a8c;
   border-bottom: none;
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
   bottom: 0;
   color: white;
-  height: 97px;
+  height: 102px;
+  top: -11px;
   padding: 14px 6px;
   position: absolute;
   text-align: center;
@@ -1309,22 +1314,28 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje, s
 /* line 866, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje img, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje img {
   position: absolute;
-  top: -2px;
+  top: -1px;
   left: -6px;
 }
 /* line 871, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.9em;
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, 
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
+  font-family: "oswaldbold";
+  font-size: 2.7em;
+  text-shadow: 0px 0px 7px #253C03;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
-  section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
+  section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, 
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
     font-size: 1.4em;
   }
 }
 /* line 878, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje span, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje span, 
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+  font-family: "oswaldregular";
+  font-size: 1.1em;
   vertical-align: top;
 }
 @media screen and (max-width: 992px) {
@@ -1336,8 +1347,11 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje sp
 /* line 883, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
   display: inline-block;
-  font-size: 1.5em;
-  margin-top: 8px;
+  font-family: "Conv_MyriadPro-Cond";
+  font-size: 2.9em;
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  margin-top: 4px;
 }
 @media screen and (max-width: 992px) {
   /* line 883, ../sass/screen.scss */
