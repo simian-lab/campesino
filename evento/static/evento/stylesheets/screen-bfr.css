@@ -384,7 +384,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bg_menu_bf.png") repeat-x;
+    background: #000000 url("../img/bfr-menu-back.png") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -421,7 +421,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bg_menu_bf.png") repeat-x;
+    background: #5e5773 url("../img/bfr-menu-back.png") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -513,7 +513,7 @@ div#menu .container .row nav ul li.active a{
 }*/
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
-background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -1253,7 +1253,8 @@ section.wrapp .container .row .destacados ul li article .desc, section.wrapp .co
   font-size: 0.875em;
 }
 /* line 827, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li article .desc p, section.wrapp .container .row .no-destacados ul li article .desc p {
+section.wrapp .container .row .destacados ul li article .desc p, 
+section.wrapp .container .row .no-destacados ul li article .desc p, {
   height: 22px;
   color: #000000;
   font-family: sans-serif;
@@ -1332,9 +1333,14 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   }
 }
 /* line 878, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje span, 
-section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje span {
   font-family: "oswaldregular";
+  font-size: 1.1em;
+  vertical-align: top;
+}
+
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+  font-family: "webfontregular";
   font-size: 1.1em;
   vertical-align: top;
 }
@@ -1345,7 +1351,7 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   }
 }
 /* line 883, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo {
   display: inline-block;
   font-family: "Conv_MyriadPro-Cond";
   font-size: 2.9em;
@@ -1353,6 +1359,16 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje sp
   font-weight: 500;
   margin-top: 4px;
 }
+
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
+  display: inline-block;
+  font-size: 2.1em;
+  font-family: "Conv_MyriadPro-Cond";
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
 @media screen and (max-width: 992px) {
   /* line 883, ../sass/screen.scss */
   section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
@@ -1558,7 +1574,7 @@ section.wrapp .container .row .no-destacados ul li.descuento article .info, sect
 /* line 1048, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   top: -9px;
-  height: 73px;
+  height: 85px;
   width: 91px;
 }
 @media screen and (max-width: 768px) {
@@ -1619,7 +1635,7 @@ footer {
 }
 /* line 1095, ../sass/screen.scss */
 footer .sponsor {
-  padding-bottom: 25px;
+  padding-bottom: 110px;
   position: relative;
   height: 11px;
 }
@@ -2102,9 +2118,9 @@ hr{
     color: #636363;
 
     font-size: 10px;
-    border-right: 1px solid #00b6c9;
-    border-top: 1px solid #00b6c9;
-    border-left: 1px solid #00b6c9;
+    border-right: 1px solid #6B3E8F;
+    border-top: 1px solid #6B3E8F;
+    border-left: 1px solid #6B3E8F;
     padding: 0.5em 0em 0.4em 0.5em;
     text-transform: uppercase;
 }
@@ -2113,7 +2129,7 @@ hr{
     max-width: 297px;
     width: 100%;
     max-height: 100px;
-    border: 1px solid #00b6c9;
+    border: 1px solid #6B3E8F;
 }
 /*Comercios Destacados*/
 .comercios{
@@ -2567,11 +2583,14 @@ hr{
 }
 /* line 827, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc p{
-  height: 33px;
-  color: #424242;
+  height: 25px;
+  color: #000000;
+  font-family: sans-serif;
 }
 .ofertas-destacadas ul li:hover article .desc p {
-  color: #D5D5D5;
+  height: 25px;
+  color: #ffffff;
+  font-family: sans-serif;
 }
 @media screen and (max-width: 992px) {
   /* line 827, ../sass/screen.scss */
@@ -2604,14 +2623,13 @@ hr{
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
- /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
- background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border-bottom: none;
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
   border: solid thin #77C157;
-  /*border: 1px solid #683A8C;
-  border-bottom: none;*/
   bottom: 0;
   color: white;
-  height: 97px;
+  height: 102px;
+  top: -11px;
   padding: 14px 6px;
   position: absolute;
   text-align: center;
@@ -2633,7 +2651,7 @@ hr{
 /* line 866, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje img{
   position: absolute;
-  top: -2px;
+  top: -1px;
   left: -6px;
 }
 /* line 871, ../sass/screen.scss */
@@ -2699,7 +2717,7 @@ hr{
   padding-bottom: 10px;
 }
 .ofertas-destacadas ul li:hover article {
-  background: #5E5773;
+  background: #000000;
 }
 /* line 910, ../sass/screen.scss */
 .ofertas-destacadas ul li article .link {
@@ -2732,7 +2750,7 @@ hr{
 }
 @media screen and (max-width: 480px) {
   .ancla  a{
-    background: url("../img/ancla-mov-bf.png") no-repeat;
+    background: url("../img/bfr-ancla-movil.png") no-repeat;
     width: 92px;
     height: 297px;
     display: block;
@@ -2988,11 +3006,11 @@ hr{
           line-height: 15px;
         }
         .menu-tabs ul li{
-          background: url('../img/menu-tabs.png') 0px 12px;
+          background: url('../img/bfr-taboff-movil.png') 0px 12px;
           background-size: cover;
         }
         .menu-tabs ul li.active{
-          background: url('../img/menu-active-movil-bf.png');
+          background: url('../img/bfr-tabactive-movil.png');
           background-size: cover;
         }
         .menu-tabs ul li.active a{
@@ -3059,12 +3077,13 @@ hr{
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 250px;
+  width: 270px;
   height: 56px;
-  background: url("../img/fixed_menu_logo.png") no-repeat;
+  background: url("../img/bfr-logo-fixedmenu.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
+  right: 5px;
 }
 @media screen and (max-width: 992px) {
   .logo_fixed_menu .container:after {
