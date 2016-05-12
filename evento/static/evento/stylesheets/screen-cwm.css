@@ -69,6 +69,62 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
+    font-family: 'oswaldregular';
+    src: url('../fonts/Oswald/Regular/oswald-regular-webfont.eot');
+    src: url('../fonts/Oswald/Regular/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.woff2') format('woff2'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.woff') format('woff'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.ttf') format('truetype'),
+         url('../fonts/Oswald/Regular/oswald-regular-webfont.svg#oswaldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'oswaldbold';
+    src: url('../fonts/Oswald/Bold/oswald-bold-webfont.eot');
+    src: url('../fonts/Oswald/Bold/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.woff2') format('woff2'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.woff') format('woff'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.ttf') format('truetype'),
+         url('../fonts/Oswald/Bold/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-CondensedBold';
+    src: url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.woff') format('woff'),
+         url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.ttf') format('truetype'),
+         url('../fonts/OpenSans/CondBold/original_OpenSans-CondBold.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-CondensedLight';
+    src: url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.eot?#iefix') format('embedded-opentype'), 
+         url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.woff') format('woff'),
+         url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.ttf') format('truetype'),
+         url('../fonts/OpenSans/CondLight/original_OpenSans-CondLight.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'webfontregular';
+    src: url('../fonts/Roboto/Cond/dinpro-cond-webfont.eot');
+    src: url('../fonts/Roboto/Cond/dinpro-cond-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.woff2') format('woff2'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.woff') format('woff'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto/Cond/dinpro-cond-webfont.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'Conv_MyriadPro-Bold';
   src: url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.eot");
   src: local("☺"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.woff") format("woff"), url("../fonts/Myriad/Pro/Bold/MyriadPro-Bold.ttf") format("truetype"), url("../fonts/Myriad/Pro/Bold/ MyriadPro-Bold.svg") format("svg");
@@ -174,7 +230,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bg-navidad.jpg) repeat;
+  background: url(../img/bfr-back.png) repeat-x;
+  background-color: #f3f2ea;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
@@ -182,8 +239,8 @@ body {
 
 /* line 78, ../sass/screen.scss */
 header {
-  background: #683a8c url("../img/lights.png") repeat;
-  height: 69px;
+  background: #683a8c url("../img/bfr-header-back.png") repeat;
+  height: 75px;
 }
 /* line 81, ../sass/screen.scss */
 header .container .head {
@@ -191,9 +248,9 @@ header .container .head {
 }
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
-  border-right: 1px solid white;
-  margin: 10px 0px 0px;
-  width: 245px;
+  /*border-right: 1px solid white;*/
+  margin: 13px -5px 0px;
+  width: 260px;
 }
 @media screen and (max-width: 768px) {
   /* line 83, ../sass/screen.scss */
@@ -211,11 +268,14 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/bf_logo.png") no-repeat;
-  width: 245px;
-  height: 65px;
+  background: url("../img/bfr-logo-bf.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 240px;
+  height: 76px;
   margin: 0;
   padding: 0;
+  box-shadow: -10px 0px 16px #3c1956;
 }
 @media screen and (max-width: 992px) {
   /* line 95, ../sass/screen.scss */
@@ -298,13 +358,13 @@ header .container .head .marcas figure {
 /* line 155, ../sass/screen.scss */
 .share a {
   display: block;
-  height: 41px;
-  width: 34px;
+  height: 50px;
+  width: 46px;
 }
 
 /* line 161, ../sass/screen.scss */
 div#menu {
-  background: url("../img/bg_menu_bf.png") repeat;
+  background: url("../img/bfr-menu-back.png") repeat;
   border-bottom: 1px solid #96a98f;
 }
 /* line 166, ../sass/screen.scss */
@@ -324,7 +384,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bg_menu_bf.png") repeat-x;
+    background: #000000 url("../img/bfr-menu-back.png") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -361,7 +421,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bg_menu_bf.png") repeat-x;
+    background: #5e5773 url("../img/bfr-menu-back.png") repeat-x;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -453,7 +513,7 @@ div#menu .container .row nav ul li.active a{
 }*/
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
-  background-color: #401f5a;
+background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -947,7 +1007,7 @@ section.wrapp .container .row .breadcrumb li a {
 }
 /* line 636, ../sass/screen.scss */
 section.wrapp .container .row .breadcrumb li.active {
-  color: #008a98;
+  color: #8034AD;
 }
 /* line 642, ../sass/screen.scss */
 section.wrapp .container .row .loader {
@@ -1069,7 +1129,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
       (startColorStr='$from-color', EndColorStr='$to-color')";
   }
   section.wrapp .container .row .destacados ul li:hover article {
-    background: #5e5773;
+    background: #000000;
   }
   /* line 729, ../sass/screen.scss */
   section.wrapp .container .row .destacados ul li:hover article .desc, section.wrapp .container .row .no-destacados ul li:hover article .desc {
@@ -1168,17 +1228,19 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: solid thin #683a8c;
+  border-bottom: solid thin #504E4E;
+  background-color: #000;
 }
 section.wrapp .container .row .destacados ul li:hover article .info {
-  border-bottom: solid thin #d5d5d5;
+  /*border-bottom: solid thin #d5d5d5;*/
 }
 /* line 815, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info h2, section.wrapp .container .row .no-destacados ul li article .info h2 {
-  color: #683a8c;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 0.813em;
+  font-family: "OpenSans-CondensedBold";
+  color: #fff;
+  font-size: 1em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 section.wrapp .container .row .destacados ul li:hover article .info h2 {
   color: #fff;
@@ -1191,8 +1253,11 @@ section.wrapp .container .row .destacados ul li article .desc, section.wrapp .co
   font-size: 0.875em;
 }
 /* line 827, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li article .desc p, section.wrapp .container .row .no-destacados ul li article .desc p {
-  height: 33px;
+section.wrapp .container .row .destacados ul li article .desc p, 
+section.wrapp .container .row .no-destacados ul li article .desc p, {
+  height: 22px;
+  color: #000000;
+  font-family: sans-serif;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc p {
   color: #d5d5d5;
@@ -1204,19 +1269,33 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
   }
 }
 /* line 833, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li article .desc .ahora, section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-  color: #683a8c;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 1.313em;
+section.wrapp .container .row .destacados ul li article .desc .ahora {
+    color: #683a8c;
+    font-family: "oswaldregular";
+    font-size: 1.8em;
+}
+
+section.wrapp .container .row .no-destacados ul li article .desc .ahora {
+    color: #683a8c;
+    font-family: "oswaldregular";
+    font-size: 1.6em;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
   color: #fff;
 }
 /* line 838, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li article .desc .antes, section.wrapp .container .row .no-destacados ul li article .desc .antes {
+section.wrapp .container .row .destacados ul li article .desc .antes {
   font-size: 0.938em;
   text-decoration: line-through;
 }
+
+section.wrapp .container .row .no-destacados ul li article .desc .antes {
+  font-size: 0.95em;
+  font-family: sans-serif;
+  text-decoration: line-through;
+  margin-top: 7px;
+}
+
 section.wrapp .container .row .destacados ul li:hover article .desc .antes {
   color: #d5d5d5;
 }
@@ -1226,12 +1305,13 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 }
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
-  background: url(../img/bg_bf_percent_big.jpg) no-repeat;
-  border: solid thin #683a8c;
   border-bottom: none;
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
   bottom: 0;
   color: white;
-  height: 97px;
+  height: 102px;
+  top: -11px;
   padding: 14px 6px;
   position: absolute;
   text-align: center;
@@ -1249,22 +1329,33 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje, s
 /* line 866, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje img, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje img {
   position: absolute;
-  top: -2px;
+  top: -1px;
   left: -6px;
 }
 /* line 871, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.9em;
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, 
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
+  font-family: "oswaldbold";
+  font-size: 2.7em;
+  text-shadow: 0px 0px 7px #253C03;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
-  section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
+  section.wrapp .container .row .destacados ul li.descuento article .porcentaje .num, 
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
     font-size: 1.4em;
   }
 }
 /* line 878, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje span, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje span {
+  font-family: "oswaldregular";
+  font-size: 1.1em;
+  vertical-align: top;
+}
+
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span {
+  font-family: "webfontregular";
+  font-size: 1.1em;
   vertical-align: top;
 }
 @media screen and (max-width: 992px) {
@@ -1274,11 +1365,24 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje sp
   }
 }
 /* line 883, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
+section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo {
   display: inline-block;
-  font-size: 1.5em;
-  margin-top: 8px;
+  font-family: "Conv_MyriadPro-Cond";
+  font-size: 2.9em;
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  margin-top: 4px;
 }
+
+section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
+  display: inline-block;
+  font-size: 2.1em;
+  font-family: "Conv_MyriadPro-Cond";
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
 @media screen and (max-width: 992px) {
   /* line 883, ../sass/screen.scss */
   section.wrapp .container .row .destacados ul li.descuento article .porcentaje span.signo, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje span.signo {
@@ -1392,7 +1496,7 @@ section.wrapp .container .row .no-destacados ul li figure .overlay .marca .isolo
 /* line 983, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article {
   background-color: #f8f8f8;
-  height: 100px;
+  height: 105px;
 }
 @media screen and (max-width: 1007px) {
   /* line 983, ../sass/screen.scss */
@@ -1448,6 +1552,9 @@ section.wrapp .container .row .no-destacados ul li article .desc .ahora, section
 /* line 1019, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article .desc p {
   overflow: hidden;
+  color: #000000;
+  font-family: sans-serif;
+  height: 22px;
 }
 @media screen and (max-width: 992px) {
   /* line 1019, ../sass/screen.scss */
@@ -1484,7 +1591,7 @@ section.wrapp .container .row .no-destacados ul li.descuento article .info, sect
 /* line 1048, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   top: -9px;
-  height: 73px;
+  height: 85px;
   width: 91px;
 }
 @media screen and (max-width: 768px) {
@@ -1503,6 +1610,24 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
     font-size: 1.5em !important;
   }
 }
+
+/*boton ir ofertas visibilidad solo en moviles
+section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  font-family: sans-serif;
+  color: #3A8819;
+}
+@media screen and (max-width: 768px) {
+  section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  display: none;
+}
+section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
+  font-family: sans-serif;
+  color: #3A8819;
+}
+@media screen and (max-width: 768px) {
+  section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
+  display: none;
+}*/
 
 /* line 1070, ../sass/screen.scss */
 .publi {
@@ -1540,12 +1665,14 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
 
 /* line 1093, ../sass/screen.scss */
 footer {
-  background-color: #f4f4f4;
+  background: url(../img/bfr-backfooter.png) repeat-x;
+  background-color: #8A4EC3;
 }
 /* line 1095, ../sass/screen.scss */
 footer .sponsor {
-  padding-bottom: 25px;
+  padding-bottom: 110px;
   position: relative;
+  height: 11px;
 }
 /* line 1098, ../sass/screen.scss */
 footer .sponsor .marcas-mobile {
@@ -1584,9 +1711,9 @@ footer .sponsor .invita .texto {
 }
 /* line 1127, ../sass/screen.scss */
 footer .sponsor .invita .texto span {
-  color: #7a7a7a;
+  color: #ffffff;
   display: inline-block;
-  font-size: 0.625em;
+  font-size: 0.7em;
   text-align: center;
   text-transform: uppercase;
   width: 50%;
@@ -1614,14 +1741,14 @@ footer .sponsor .social {
 /* line 1152, ../sass/screen.scss */
 footer .sponsor .social .fb, footer .sponsor .social .tw {
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 58px;
+  height: 54px;
 }
 footer .sponsor .social .fb {
-  background: url("../img/icon_face_bf.png") no-repeat;
+  background: url("../img/bfr-logoredes-fb1.png") no-repeat;
 }
 footer .sponsor .social .tw {
-  background: url("../img/icon_twitter_bf.png") no-repeat;
+  background: url("../img/bfr-logoredes-tw1.png") no-repeat;
 }
 footer .sponsor .social .fb img, footer .sponsor .social .tw img{
   display: none;
@@ -1632,11 +1759,12 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #494949;
-  font-family: "Conv_MyriadPro-Cond";
-  font-size: 0.938em;
+  background-color: #5A3179;
+  font-family: sans-serif;
+  font-size: 0.7em;
+  line-height: 1.9em;
   margin: 0;
-  padding: 30px 0;
+  padding: 45px 0;
   padding-bottom: 50px;
   text-transform: uppercase;
 }
@@ -1826,7 +1954,7 @@ footer .terminos span a {
     clear: both;
 }
 footer .sponsor .social{
-  bottom: -45px !important;
+  bottom: -21px !important;
   left: inherit !important;
   position: relative !important;
   text-align: center;
@@ -1934,8 +2062,8 @@ div#menu .box-right{
     color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #5e5773;
-    border-bottom: solid 1px #5e5773;
+    border-top: solid 1px #6b3e8f;
+    /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
     padding: 0.3em 0em;
@@ -1983,7 +2111,7 @@ div#menu .box-right{
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #666666 url('../img/cart.png') no-repeat 96% center;
+    background: #550288 url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -2025,9 +2153,9 @@ hr{
     color: #636363;
 
     font-size: 10px;
-    border-right: 1px solid #00b6c9;
-    border-top: 1px solid #00b6c9;
-    border-left: 1px solid #00b6c9;
+    border-right: 1px solid #6B3E8F;
+    border-top: 1px solid #6B3E8F;
+    border-left: 1px solid #6B3E8F;
     padding: 0.5em 0em 0.4em 0.5em;
     text-transform: uppercase;
 }
@@ -2036,7 +2164,7 @@ hr{
     max-width: 297px;
     width: 100%;
     max-height: 100px;
-    border: 1px solid #00b6c9;
+    border: 1px solid #6B3E8F;
 }
 /*Comercios Destacados*/
 .comercios{
@@ -2046,8 +2174,8 @@ hr{
     color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #5e5773;
-    border-bottom: solid 1px #5e5773;
+    border-top: solid 1px #6b3e8f;
+    /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
     padding: 0.3em 0em;
@@ -2094,7 +2222,7 @@ hr{
     left: 0%;
 }
 .comercios .wrapper-box a span{
-    background: #666666 url('../img/cart.png') no-repeat 96% center;
+    background: #550288 url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2241,7 +2369,7 @@ hr{
   left: 0%;
 }
 .mini .wrapper-box a span{
-    background: #666666 url('../img/cart.png') no-repeat 95% center;
+    background: #550288 url('../img/cart.png') no-repeat 95% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2280,36 +2408,42 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('../img/tabiv_bf.png') no-repeat 0px top;
+    background: url('../img/bfr-tab-off.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
 }
 .menu-tabs ul li a {
     display: block;
+    font-family: sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
     width: 100%;
-    font-size: 1.1em;
-    padding: 2.3em 0em 1.1em;
-    color: #6b3e8f;
+    font-size: 0.9em;
+    padding: 2.7em 0em 1.1em;
+    color: #FFFFFF;
     text-shadow: 1px 1px 1px #838383;
 }
 
 .menu-tabs ul li.active {
-    background: url('../img/tab-activeiv_bf.png') center 0px no-repeat;
+    background: url('../img/bfr-tab-active.png') center 0px no-repeat;
 }
 .menu-tabs ul li.active a{
-    font-size: 23px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
     text-shadow: 1px 1px 2px #444;
-    color: #94f768;
-    padding: 1.7em 0em 0.7em;
+    color: #FFFFFF;
+    padding: 1.9em 0em 0.7em;
 }
 /**/
 .ofertas-destacadas h3{
     color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #5e5773;
-    border-bottom: solid 1px #5e5773;
+    border-top: solid 1px #6b3e8f;
+    /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
     padding: 0.3em 0em;
@@ -2451,7 +2585,7 @@ hr{
 }
 /* line 807, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info, .ofertas-destacadas ul li article .desc{
-  padding: 5px 10px;
+  padding: 3px 10px;
 }
 /* line 810, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info, .ofertas-destacadas ul li article .desc{
@@ -2459,14 +2593,17 @@ hr{
 }
 /* line 813, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info{
-  border-bottom: 1px solid #00b6c9;
+  /*border-bottom: 1px solid #00b6c9;*/
+  border-bottom: solid thin #504E4E;
+  background-color: #000;
 }
 /* line 815, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info h2{
-  color: #683A8C;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 0.813em;
+  color: #fff;
+  font-family: "OpenSans-CondensedBold";
+  font-size: 1em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .ofertas-destacadas ul li:hover article .info h2 {
   color: #FFF;
@@ -2475,16 +2612,20 @@ hr{
 .ofertas-destacadas ul li article .desc{
   border-right: none;
   border-top: none;
-  color: white;
+  color: #000000;
   font-size: 0.875em;
+  font-family: sans-serif;
 }
 /* line 827, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc p{
-  height: 33px;
-  color: #424242;
+  height: 25px;
+  color: #000000;
+  font-family: sans-serif;
 }
 .ofertas-destacadas ul li:hover article .desc p {
-  color: #D5D5D5;
+  height: 25px;
+  color: #ffffff;
+  font-family: sans-serif;
 }
 @media screen and (max-width: 992px) {
   /* line 827, ../sass/screen.scss */
@@ -2495,8 +2636,8 @@ hr{
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
   color: #683A8C;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 1.313em;
+  font-family: 'oswaldregular';
+  font-size: 1.8em;
 }
 .ofertas-destacadas ul li:hover article .desc .ahora {
   color: #fff;
@@ -2513,17 +2654,18 @@ hr{
 /* line 846, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .info,
 .ofertas-destacadas ul li.descuento article .desc{
-  max-width: 335px;
+  max-width: 400px;
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
- background: url("../img/bg_bf_percent_big.jpg") no-repeat;
-  border: 1px solid #683A8C;
   border-bottom: none;
+  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
   bottom: 0;
   color: white;
-  height: 97px;
-  padding: 14px 6px;
+  height: 102px;
+  top: -11px;
+  padding: 16px 6px;
   position: absolute;
   text-align: center;
   right: 5px;
@@ -2544,13 +2686,14 @@ hr{
 /* line 866, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje img{
   position: absolute;
-  top: -2px;
+  top: -1px;
   left: -6px;
 }
 /* line 871, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje .num{
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.9em;
+  font-family: "oswaldbold";
+  font-size: 2.7em;
+  text-shadow: 0px 0px 7px #253C03;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
@@ -2560,6 +2703,8 @@ hr{
 }
 /* line 878, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje span{
+  font-family: "oswaldregular";
+  font-size: 1.1em;
   vertical-align: top;
 }
 @media screen and (max-width: 992px) {
@@ -2571,8 +2716,12 @@ hr{
 /* line 883, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje span.signo{
   display: inline-block;
-  font-size: 1.5em;
-  margin-top: 8px;
+  font-family: "Conv_MyriadPro-Cond";
+  font-size: 2.9em;
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  /*margin-top: 8px;*/
+
 }
 @media screen and (max-width: 992px) {
   /* line 883, ../sass/screen.scss */
@@ -2594,12 +2743,16 @@ hr{
     height: auto;
   }
 }
+
+.ofertas-destacadas ul li:hover article {
+  background: #000;
+}
 /* line 908, ../sass/screen.scss */
 .ofertas-destacadas ul li article {
   padding-bottom: 10px;
 }
 .ofertas-destacadas ul li:hover article {
-  background: #5E5773;
+  background: #000000;
 }
 /* line 910, ../sass/screen.scss */
 .ofertas-destacadas ul li article .link {
@@ -2625,14 +2778,14 @@ hr{
     z-index: 100;
 }
 .ancla  a{
-  background: url("../img/ancla_bf.png") no-repeat;
-  width: 92px;
-  height: 53px;
+  background: url("../img/bfr-ancla.png") no-repeat;
+  width: 118px;
+  height: 112px;
   display: block;
 }
 @media screen and (max-width: 480px) {
   .ancla  a{
-    background: url("../img/ancla-mov-bf.png") no-repeat;
+    background: url("../img/bfr-ancla-movil.png") no-repeat;
     width: 92px;
     height: 297px;
     display: block;
@@ -2662,10 +2815,10 @@ hr{
   display: none;
 }
 .share .button_facebook_top {
-  background: url("../img/icon_face_bf.png") no-repeat;
+  background: url("../img/bfr-logoredes-fb2.png") no-repeat;
 }
 .share .button_twitter_top {
-  background: url("../img/icon_twitter_bf.png") no-repeat;
+  background: url("../img/bfr-logoredes-tw2.png") no-repeat;
 }
 /*Botones pautas*/
 #botones_pautas{
@@ -2888,11 +3041,11 @@ hr{
           line-height: 15px;
         }
         .menu-tabs ul li{
-          background: url('../img/menu-tabs.png') 0px 12px;
+          background: url('../img/bfr-taboff-movil.png') 0px 12px;
           background-size: cover;
         }
         .menu-tabs ul li.active{
-          background: url('../img/menu-active-movil-bf.png');
+          background: url('../img/bfr-tabactive-movil.png');
           background-size: cover;
         }
         .menu-tabs ul li.active a{
@@ -2959,12 +3112,13 @@ hr{
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 250px;
+  width: 270px;
   height: 56px;
-  background: url("../img/fixed_menu_logo.png") no-repeat;
+  background: url("../img/bfr-logo-fixedmenu.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
+  right: 5px;
 }
 @media screen and (max-width: 992px) {
   .logo_fixed_menu .container:after {
@@ -2978,9 +3132,9 @@ body > div:nth-child(1), body > div:nth-child(2) {
 header .container .row.head:before {
   content: "";
   display: block;
-  width: 272px;
-  height: 67px;
-  background: url("../img/banner_header_bf.png") no-repeat;
+  width: 311px;
+  height: 75px;
+  background: url("../img/bfr-header-banner.png") no-repeat;
   float: right;
   position: relative;
 }
