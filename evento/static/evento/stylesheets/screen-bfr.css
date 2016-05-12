@@ -1007,7 +1007,7 @@ section.wrapp .container .row .breadcrumb li a {
 }
 /* line 636, ../sass/screen.scss */
 section.wrapp .container .row .breadcrumb li.active {
-  color: #008a98;
+  color: #8034AD;
 }
 /* line 642, ../sass/screen.scss */
 section.wrapp .container .row .loader {
@@ -1269,19 +1269,33 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
   }
 }
 /* line 833, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li article .desc .ahora, section.wrapp .container .row .no-destacados ul li article .desc .ahora {
+section.wrapp .container .row .destacados ul li article .desc .ahora {
     color: #683a8c;
     font-family: "oswaldregular";
     font-size: 1.8em;
+}
+
+section.wrapp .container .row .no-destacados ul li article .desc .ahora {
+    color: #683a8c;
+    font-family: "oswaldregular";
+    font-size: 1.6em;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
   color: #fff;
 }
 /* line 838, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li article .desc .antes, section.wrapp .container .row .no-destacados ul li article .desc .antes {
+section.wrapp .container .row .destacados ul li article .desc .antes {
   font-size: 0.938em;
   text-decoration: line-through;
 }
+
+section.wrapp .container .row .no-destacados ul li article .desc .antes {
+  font-size: 0.95em;
+  font-family: sans-serif;
+  text-decoration: line-through;
+  margin-top: 7px;
+}
+
 section.wrapp .container .row .destacados ul li:hover article .desc .antes {
   color: #d5d5d5;
 }
@@ -1482,7 +1496,7 @@ section.wrapp .container .row .no-destacados ul li figure .overlay .marca .isolo
 /* line 983, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article {
   background-color: #f8f8f8;
-  height: 100px;
+  height: 105px;
 }
 @media screen and (max-width: 1007px) {
   /* line 983, ../sass/screen.scss */
@@ -1538,6 +1552,9 @@ section.wrapp .container .row .no-destacados ul li article .desc .ahora, section
 /* line 1019, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article .desc p {
   overflow: hidden;
+  color: #000000;
+  font-family: sans-serif;
+  height: 22px;
 }
 @media screen and (max-width: 992px) {
   /* line 1019, ../sass/screen.scss */
@@ -1592,6 +1609,24 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
     font-size: 1.5em !important;
   }
+}
+
+/*boton ir ofertas visibilidad solo en moviles*/
+section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  font-family: sans-serif;
+  color: #3A8819;
+}
+@media screen and (max-width: 768px) {
+  section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  display: none;
+}
+section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
+  font-family: sans-serif;
+  color: #3A8819;
+}
+@media screen and (max-width: 768px) {
+  section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
+  display: none;
 }
 
 /* line 1070, ../sass/screen.scss */
@@ -2630,7 +2665,7 @@ hr{
   color: white;
   height: 102px;
   top: -11px;
-  padding: 14px 6px;
+  padding: 16px 6px;
   position: absolute;
   text-align: center;
   right: 5px;
