@@ -1611,7 +1611,7 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   }
 }
 
-/*boton ir ofertas visibilidad solo en moviles*/
+/*boton ir ofertas visibilidad solo en moviles
 section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
   font-family: sans-serif;
   color: #3A8819;
@@ -1627,7 +1627,7 @@ section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile 
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
   display: none;
-}
+}*/
 
 /* line 1070, ../sass/screen.scss */
 .publi {
