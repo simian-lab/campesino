@@ -513,7 +513,7 @@ div#menu .container .row nav ul li.active a{
 }*/
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
-background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#72C400), to(#3C6400));
+background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -2534,7 +2534,7 @@ hr{
 }
 /* line 807, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info, .ofertas-destacadas ul li article .desc{
-  padding: 5px 10px;
+  padding: 3px 10px;
 }
 /* line 810, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info, .ofertas-destacadas ul li article .desc{
@@ -2542,14 +2542,17 @@ hr{
 }
 /* line 813, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info{
-  border-bottom: 1px solid #00b6c9;
+  /*border-bottom: 1px solid #00b6c9;*/
+  border-bottom: solid thin #504E4E;
+  background-color: #000;
 }
 /* line 815, ../sass/screen.scss */
 .ofertas-destacadas ul li article .info h2{
-  color: #683A8C;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 0.813em;
+  color: #fff;
+  font-family: "OpenSans-CondensedBold";
+  font-size: 1em;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .ofertas-destacadas ul li:hover article .info h2 {
   color: #FFF;
@@ -2558,8 +2561,9 @@ hr{
 .ofertas-destacadas ul li article .desc{
   border-right: none;
   border-top: none;
-  color: white;
+  color: #000000;
   font-size: 0.875em;
+  font-family: sans-serif;
 }
 /* line 827, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc p{
@@ -2578,8 +2582,8 @@ hr{
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
   color: #683A8C;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 1.313em;
+  font-family: 'oswaldregular';
+  font-size: 1.8em;
 }
 .ofertas-destacadas ul li:hover article .desc .ahora {
   color: #fff;
@@ -2596,13 +2600,15 @@ hr{
 /* line 846, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .info,
 .ofertas-destacadas ul li.descuento article .desc{
-  max-width: 335px;
+  max-width: 400px;
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
- background: url("../img/bg_bf_percent_big.jpg") no-repeat;
-  border: 1px solid #683A8C;
-  border-bottom: none;
+ /*background: url("../img/bg_bf_percent_big.jpg") no-repeat;*/
+ background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  border: solid thin #77C157;
+  /*border: 1px solid #683A8C;
+  border-bottom: none;*/
   bottom: 0;
   color: white;
   height: 97px;
@@ -2632,8 +2638,9 @@ hr{
 }
 /* line 871, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje .num{
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 2.9em;
+  font-family: "oswaldbold";
+  font-size: 2.7em;
+  text-shadow: 0px 0px 7px #253C03;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
@@ -2643,6 +2650,8 @@ hr{
 }
 /* line 878, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje span{
+  font-family: "oswaldregular";
+  font-size: 1.1em;
   vertical-align: top;
 }
 @media screen and (max-width: 992px) {
@@ -2654,8 +2663,12 @@ hr{
 /* line 883, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje span.signo{
   display: inline-block;
-  font-size: 1.5em;
-  margin-top: 8px;
+  font-family: "Conv_MyriadPro-Cond";
+  font-size: 2.9em;
+  text-shadow: 0px 0px 7px #253C03;
+  font-weight: 500;
+  /*margin-top: 8px;*/
+
 }
 @media screen and (max-width: 992px) {
   /* line 883, ../sass/screen.scss */
@@ -2676,6 +2689,10 @@ hr{
     padding: 0px;
     height: auto;
   }
+}
+
+.ofertas-destacadas ul li:hover article {
+	background: #000;
 }
 /* line 908, ../sass/screen.scss */
 .ofertas-destacadas ul li article {
