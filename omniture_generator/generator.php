@@ -1,4 +1,5 @@
 <?php
+
 // TODO: Unify this database configuration with the xml_parser.php
 if(!$argv) {
   error("Este script solo se debe ejecutar por consola.");
