@@ -1174,8 +1174,9 @@ section.wrapp .container .row .destacados ul li figure .overlay p, section.wrapp
 section.wrapp .container .row .destacados ul li figure .overlay a, section.wrapp .container .row .no-destacados ul li figure .overlay a {
   color: white;
   font-family: "Conv_MyriadPro-Bold";
-  font-size: 0.938em;
+  font-size: 1.1em;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 /* line 773, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure .overlay .marca, section.wrapp .container .row .no-destacados ul li figure .overlay .marca {
@@ -1279,6 +1280,10 @@ section.wrapp .container .row .no-destacados ul li article .desc .ahora {
     color: #683a8c;
     font-family: "oswaldregular";
     font-size: 1.6em;
+}
+
+section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
+	color: #fff;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
   color: #fff;
@@ -1498,6 +1503,10 @@ section.wrapp .container .row .no-destacados ul li article {
   background-color: #f8f8f8;
   height: 105px;
 }
+
+section.wrapp .container .row .no-destacados ul li:hover article {
+	background-color: #000;
+}
 @media screen and (max-width: 1007px) {
   /* line 983, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article {
@@ -1533,6 +1542,9 @@ section.wrapp .container .row .no-destacados ul li article {
 section.wrapp .container .row .no-destacados ul li article .desc {
   color: #888888;
 }
+section.wrapp .container .row .no-destacados ul li:hover article .desc {
+	color: #d5d5d5;
+}
 @media screen and (max-width: 992px) {
   /* line 1008, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article .desc {
@@ -1555,6 +1567,9 @@ section.wrapp .container .row .no-destacados ul li article .desc p {
   color: #000000;
   font-family: sans-serif;
   height: 22px;
+}
+section.wrapp .container .row .no-destacados ul li:hover article .desc p {
+	color: #d5d5d5;
 }
 @media screen and (max-width: 992px) {
   /* line 1019, ../sass/screen.scss */
@@ -1611,7 +1626,7 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   }
 }
 
-/*boton ir ofertas visibilidad solo en moviles
+/*boton ir ofertas visibilidad solo en moviles*/
 section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
   font-family: sans-serif;
   color: #3A8819;
@@ -1627,7 +1642,7 @@ section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile 
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
   display: none;
-}*/
+}
 
 /* line 1070, ../sass/screen.scss */
 .publi {
@@ -1759,7 +1774,7 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #5A3179;
+  background-color: #3A0354;
   font-family: sans-serif;
   font-size: 0.7em;
   line-height: 1.9em;
@@ -3145,4 +3160,22 @@ header .container .row.head:before {
 }
 .logo_fixed_menu .container {
     width: 1200px !important;
+}
+
+.ofertaDesktop {
+	background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+	text-align: center;
+	width: 180px;
+	padding: 9px 32px;
+}
+
+.Footer_last {
+	background-color: #3A0354;
+	font-family: sans-serif;
+	line-height: 1.9em;
+	font-size: 0.7em;
+	margin: 0;
+	text-transform: uppercase;
+	color: #FFF;
+	text-align: center;
 }
