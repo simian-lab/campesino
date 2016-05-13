@@ -1,4 +1,5 @@
 <?php
+
 // TODO: Unify this database configuration with the xml_parser.php
 if(!$argv) {
   error("Este script solo se debe ejecutar por consola.");
@@ -15,16 +16,16 @@ else {
     $DB_PASSWORD = 'root';
     break;
     case 'stage':
-    $DB_HOST = '54.83.30.83';
-    $DB_NAME = 'sss_stg';
-    $DB_USERNAME = 'seasons';
-    $DB_PASSWORD = 'h0h0h0';
+    $DB_HOST = '10.125.214.42';
+    $DB_NAME = 'loe_sss_stage';
+    $DB_USERNAME = 'clcdb-user';
+    $DB_PASSWORD = 'clcddidb';
     break;
     case 'production':
-        $DB_HOST = '172.31.19.181';
+        $DB_HOST = '10.125.214.42';
         $DB_NAME = 'loe_sss';
-        $DB_USERNAME = 'loe_sss';
-        $DB_PASSWORD = 'MGV8$EhL';
+        $DB_USERNAME = 'clcdb-user';
+        $DB_PASSWORD = 'clcddidb';
     break;
     case 'origin':
       // TODO: Define this
