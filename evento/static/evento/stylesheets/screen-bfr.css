@@ -1630,19 +1630,21 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
 section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
   font-family: sans-serif;
   color: #3A8819;
+  display: none;
 }
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
-  display: none;
+  display: block;
   }
 }
 section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
   font-family: sans-serif;
   color: #3A8819;
-  }
+  display: none;
+}
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
-  display: none;
+  display: block;
   }
 }
 
@@ -3177,6 +3179,10 @@ header .container .row.head:before {
   margin: 0 auto;
   width: 180px;
   padding: 9px 32px;
+}
+
+.ofertaMobile {
+  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
 }
 
 .Footer_last {
