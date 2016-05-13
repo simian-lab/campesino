@@ -50,7 +50,7 @@ $active_record = TRUE;
 $db['default']['hostname'] = '10.125.214.42';
 $db['default']['username'] = 'clcdb-user';
 $db['default']['password'] = 'clcddidb';
-$db['default']['database'] = 'loe_sss_ofertas';
+$db['default']['database'] = 'loe_sss';
 
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
