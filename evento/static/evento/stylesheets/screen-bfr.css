@@ -1633,8 +1633,8 @@ section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobi
 }
 /*@media screen and (max-width: 768px) {
   section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
-  display: none;*/
-}
+  display: none;
+}*/
 @media screen and (max-width: 992px) {
   section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
   display: block;
@@ -1645,8 +1645,8 @@ section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile 
 }
 /*@media screen and (max-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
-  display: none;*/
-}
+  display: none;
+}*/
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
   display: block;
