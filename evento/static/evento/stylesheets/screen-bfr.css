@@ -3166,7 +3166,7 @@ header .container .row.head:before {
 }
 
 .ofertaDesktop {
-	background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+	background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
 	text-align: center;
 	width: 180px;
 	padding: 9px 32px;
