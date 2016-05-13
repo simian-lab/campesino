@@ -21,7 +21,7 @@
             <span>evento de:</span><!-- -->
           </div>
           <div class="logos">
-            <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/eltiempo.png" alt=""></a>
+            <a href="http://www.eltiempo.com/" target="_blank" onclick="onClickPublicidad('El Tiempo', 'Footer')"><img src="<?php echo $base_url_static;?>img/bfr-logofooter-eltiempo.png" alt=""></a>
           </div>
         </div>
       </div>
@@ -38,10 +38,12 @@
         <span>Loencontraste.com es una marca registrada de El Tiempo Casa Editorial. Prohibido su uso sin autorización.</span>
         <span>© 2015 - Loencontraste.com Todos los derechos reservados .</span>
         <span>Entidad de protección al consumidor <a href="http://www.sic.gov.co" target="_blank">www.sic.gov.co</a></span>
-        <span><?php echo EVE_LEGAL;?></span>
       </div>
     </div>
   </div>
+<div class="row Footer_last">
+   <span><?php echo EVE_LEGAL;?></span>
+</div>
 </footer>
 
 <div class="modal fade" id="terminos" style="z-index:2000">
