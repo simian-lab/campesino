@@ -3166,10 +3166,16 @@ header .container .row.head:before {
 }
 
 .ofertaDesktop {
-	background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
-	text-align: center;
-	width: 180px;
-	padding: 9px 32px;
+  background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  text-align: center;
+  color: white;
+  font-family: "Conv_MyriadPro-Regular";
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 180px;
+  padding: 9px 32px;
 }
 
 .Footer_last {
