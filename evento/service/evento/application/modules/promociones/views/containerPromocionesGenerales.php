@@ -20,13 +20,13 @@
         $li_class .= 'nm ';
       }
       ?>
-		<li class="<?php echo $li_class; ?> post-no-destacados col-lg-4 col-md-4 col-sm-6" data-id="<?php echo $promocion['PRO_ID'] ?>">
+		<li class="<?php echo $li_class; ?> descuento post-no-destacados col-lg-4 col-md-4 col-sm-6" data-id="<?php echo $promocion['PRO_ID'] ?>">
 			<a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['OMNITURE_ID']?>', '<?php echo EVENTO_NOMBRE;?>', 'general')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
 				<div style="display:none;" class="idPromo"><?php echo $promocion['PRO_ID'] ?>;</div>
 				<figure>
 					<div class="overlay">
 						<p><?php echo $promocion['PRO_DESCRIPCION']; ?></p>
-						<div class="ofertaDesktop">ir a oferta</div>
+						<a class="ofertaDesktop">ir a oferta</a>
 						<?php
 							//echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 1, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
 							if($promocion['TIE_LOGO_VISA'] == 1): 
