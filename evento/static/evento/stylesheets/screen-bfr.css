@@ -1425,6 +1425,10 @@ section.wrapp .container .row .destacados ul li article .link {
 section.wrapp .container .row .destacados ul li.descuento article .desc {
   max-width: 75%;
 }
+section.wrapp .container .row .destacados ul li.descuento article .desc p {
+  height: 22px;
+}
+
 /* line 929, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li {
   background-color: #f8f8f8;
@@ -1439,7 +1443,7 @@ section.wrapp .container .row .no-destacados ul li {
 @media screen and (max-width: 768px) {
   /* line 929, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li {
-    border: 1px solid #00b6c9;
+    border: 1px solid #6a3c8d;
     padding: 0;
   }
 }
