@@ -1268,6 +1268,13 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
   section.wrapp .container .row .destacados ul li article .desc p, section.wrapp .container .row .no-destacados ul li article .desc p {
     height: auto;
   }
+
+@media screen and (max-width: 320px) {
+  /* line 827, ../sass/screen.scss */
+  section.wrapp .container .row .destacados ul li article .desc p, section.wrapp .container .row .no-destacados ul li article .desc p {
+    height: auto;
+    width: 90%;
+  }
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora {
@@ -1584,6 +1591,14 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc p {
   /* line 1019, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article .desc p {
     margin-bottom: 10px;
+  }
+
+}
+@media screen and (max-width: 320px) {
+  /* line 1019, ../sass/screen.scss */
+  section.wrapp .container .row .no-destacados ul li article .desc p {
+    margin-bottom: 10px;
+    height: inherit;
   }
 }
 /* line 1026, ../sass/screen.scss */
