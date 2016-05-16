@@ -36,7 +36,7 @@
                                 <p><?php echo $promocion['PRO_DESCRIPCION']; ?></p>
                                 <?php                                    
 
-                                   echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta',0, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
+                                   echo get_url_promocion($promocion['PRO_HASH'], 'Ir a oferta',0, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
                                 ?>
                                 <!--<a data-keyboard="false" data-backdrop="static" data-toggle="modal" data-target="#redirect_oferta" href="#" class="link red" onClick="s.linkTrackVars='events,eVar38,eVar39,products';s.linkTrackEvents='event36';s.events='event36';s.eVar38='<?php echo $posicion?>';s.eVar39='<?php echo $promocion['PRO_USER_CREADOR']?>';s.products=';<?php echo $promocion['PRO_ID']?>';s.tl(true,'o','Clic en Promoción');tagManager(window,document,'script','dataLayer','GTM-NGBVTZ');facebookPixel();redirectPromocion('<?php echo $promocion['PRO_URL']; ?>');">ir a oferta</a>-->
                                 <!--<div class="marca">
@@ -83,7 +83,7 @@
                             </div>   
                             <?php endif; ?>
                               <?php                                    
-                                   echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta');
+                                   echo get_url_promocion($promocion['PRO_HASH'], 'Ir a oferta');
                               ?>
 
                         </article>                                    
