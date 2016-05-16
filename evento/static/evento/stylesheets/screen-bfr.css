@@ -1433,6 +1433,11 @@ section.wrapp .container .row .destacados ul li.descuento article .desc p {
 section.wrapp .container .row .no-destacados ul li {
   background-color: #f8f8f8;
 }
+@media screen and (max-width: 320px) {
+section.wrapp .container .row .destacados ul li.descuento article .desc {
+    max-width: 200px;
+  }
+}
 @media screen and (max-width: 1007px) {
   /* line 929, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li {
