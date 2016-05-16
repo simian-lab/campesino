@@ -1306,7 +1306,7 @@ section.wrapp .container .row .destacados ul li:hover article .desc .antes {
 }
 /* line 846, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .info, section.wrapp .container .row .destacados ul li.descuento article .desc, section.wrapp .container .row .no-destacados ul li.descuento article .info, section.wrapp .container .row .no-destacados ul li.descuento article .desc {
-  max-width: 335px;
+  max-width: 100%;
 }
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
@@ -2680,7 +2680,7 @@ hr{
 /* line 846, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .info,
 .ofertas-destacadas ul li.descuento article .desc{
-  max-width: 400px;
+  max-width: 100%;
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
