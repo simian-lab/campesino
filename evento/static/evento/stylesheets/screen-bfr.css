@@ -1423,7 +1423,7 @@ section.wrapp .container .row .destacados ul li article .link {
 }
 /* line 919, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .desc {
-  max-width: 75%;
+  max-width: 100%;
 }
 section.wrapp .container .row .destacados ul li.descuento article .desc p {
   height: 22px;
