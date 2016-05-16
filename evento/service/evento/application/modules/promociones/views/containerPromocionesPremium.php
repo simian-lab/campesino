@@ -1,4 +1,6 @@
-<div id="contentPromocionesdestacados">
+<div class="row">
+ <div class="col-lg-12">
+  <div id="contentPromocionesdestacados">
   <div class="destacados">
     <ul>
       <?php
@@ -21,13 +23,13 @@
         }
 
         ?>
-        <li class="<?php echo $li_class; ?> post col-lg-6 col-md-6 col-sm-6 col-sx-12" data-id="<?php echo $promocion['PRO_ID'] ?>">
+        <li class="<?php echo $li_class; ?> descuento post col-lg-6 col-md-6 col-sm-6 col-sx-12" data-id="<?php echo $promocion['PRO_ID'] ?>">
 			<a onClick="onClickOferta('<?php echo $promocion['PRO_ID'] ?>', '<?php echo $posicion ?>','<?php echo $promocion['OMNITURE_ID']?>', '<?php echo EVENTO_NOMBRE;?>', 'premiun')" style="display: block;" target="_blank" href="<?php echo $base_url ?>redireccionamiento/externo/?url=<?php echo $promocion['PRO_HASH'] ?>">
 				<figure>
 					<div style="display:none;" class="idPromo"><?php echo $promocion['PRO_ID'] ?>;</div>
 					<div class="overlay">
 						<p><?php echo $promocion['PRO_DESCRIPCION']; ?></p>
-						<div class="ofertaDesktop">ir a oferta</div>
+						<div class="ofertaDesktop">Ir a oferta</div>
 						<?php
 							//echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 0, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));
 							
@@ -76,7 +78,7 @@
 						</div>
 					<?php endif; ?>
 					<?php //echo get_url_promocion($promocion['PRO_HASH'], 'ir a oferta', 0, array($posicion, $promocion['OMNITURE_ID'], $promocion['PRO_ID'], EVENTO_NOMBRE));?>
-					<div class="ofertaMobile">ir a oferta</div>
+					<div class="ofertaMobile">Ir a oferta</div>
 				</article>
 			</a>
         </li>
@@ -96,3 +98,5 @@
       </ul>
     </div>
   </div>
+ </div>
+</div>
