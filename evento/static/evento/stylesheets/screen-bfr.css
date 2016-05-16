@@ -1173,7 +1173,7 @@ section.wrapp .container .row .destacados ul li figure .overlay p, section.wrapp
 /* line 767, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure .overlay a, section.wrapp .container .row .no-destacados ul li figure .overlay a {
   color: white;
-  font-family: "Conv_MyriadPro-Bold";
+  font-family: "Conv_MyriadPro-Regular";
   font-size: 1.1em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
