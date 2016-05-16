@@ -1212,9 +1212,14 @@ section.wrapp .container .row .destacados ul li figure .overlay .marca .visa_log
   float: right;
 }
 /* line 793, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li figure img, section.wrapp .container .row .no-destacados ul li figure img {
+section.wrapp .container .row .destacados ul li figure img {
   vertical-align: top;
   width: 100%;
+}
+section.wrapp .container .row .no-destacados ul li figure img {
+  vertical-align: top;
+  width: 100%;
+  height: 298px;
 }
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
