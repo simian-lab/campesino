@@ -1423,7 +1423,7 @@ section.wrapp .container .row .destacados ul li article .link {
 }
 /* line 919, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .desc {
-  max-width: 75%;
+  max-width: 100%;
 }
 section.wrapp .container .row .destacados ul li.descuento article .desc p {
   height: 22px;
@@ -1605,7 +1605,7 @@ section.wrapp .container .row .no-destacados ul li article .link {
 }
 /* line 1045, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .info, section.wrapp .container .row .no-destacados ul li.descuento article .desc {
-  max-width: 200px;
+  max-width: 100%;
 }
 /* line 1048, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
@@ -2433,7 +2433,7 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('../img/bfr-tab-off.png') no-repeat 0px top;
+    background: url('../img/bfr-tabicon-off-tiendas.png') 100px 25px no-repeat, url('../img/bfr-tab-off.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
@@ -2451,8 +2451,9 @@ hr{
 }
 
 .menu-tabs ul li.active {
-    background: url('../img/bfr-tab-active.png') center 0px no-repeat;
+    background: url('../img/bfr-tabicon-active-tiendas.png') 70px 16px no-repeat, url('../img/bfr-tab-active.png') center 0px no-repeat;
 }
+
 .menu-tabs ul li.active a{
     font-size: 20px;
     font-family: sans-serif;
