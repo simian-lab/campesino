@@ -1605,7 +1605,7 @@ section.wrapp .container .row .no-destacados ul li article .link {
 }
 /* line 1045, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .info, section.wrapp .container .row .no-destacados ul li.descuento article .desc {
-  max-width: 200px;
+  max-width: 100%;
 }
 /* line 1048, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
