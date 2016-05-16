@@ -1348,7 +1348,8 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 @media screen and (max-width: 992px) {
   /* line 849, ../sass/screen.scss */
-  section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
+  section.wrapp .container .row .destacados ul li.descuento article .porcentaje, 
+  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
     height: 56px;
     top: -10px;
     width: 70px;
@@ -1644,10 +1645,10 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
 }
 @media screen and (max-width: 768px) {
   /* line 1048, ../sass/screen.scss */
-  section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
+  /*section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
     right: 0px;
   }
-}
+}*/
 /* line 1055, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
   font-size: 2em;
