@@ -1663,8 +1663,22 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc p {
   section.wrapp .container .row .no-destacados ul li article .desc p {
     margin-bottom: 10px;
   }
-
 }
+/*@media screen and (max-width: 480px) {
+  section.wrapp .container .row .no-destacados ul li article .desc p {
+    margin-bottom: 10px;
+    overflow: visible;
+  }
+}*/
+/*@media screen and (max-width: 400px) {
+section.wrapp .container .row .destacados ul li article .desc p, 
+section.wrapp .container .row .no-destacados ul li article .desc p {
+    padding-top: 15px;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+  }
+}
+
 /* line 1026, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article .link {
   display: none;
@@ -1735,7 +1749,24 @@ section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile 
   display: block;
   }
 }
-
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
+display: block;
+margin: 0 auto;
+}
+  }
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
+height: 138px;
+  }
+}
+/*ajuste para solo ipad visibilidad promociones pequeñas*/
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  display: block;
+  margin: 0 auto;
+  }
+}
 
 /* line 1070, ../sass/screen.scss */
 .publi {
@@ -1840,7 +1871,7 @@ footer .sponsor .invita .logos a:first-child + a {
   float: right;
 }
 /* line 1147, ../sass/screen.scss */
-footer .sponsor .social {
+/*footer .sponsor .social {
   bottom: -19px;
   left: 45%;
   margin: 0 auto;
@@ -2063,10 +2094,16 @@ footer .terminos span a {
     clear: both;
 }
 footer .sponsor .social{
-  bottom: -21px !important;
+  width: 140px;
+  height:50px;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -70px;
+  position: absolute;
+  /*bottom: -21px !important;
   left: inherit !important;
   position: relative !important;
-  text-align: center;
+  text-align: center;*/
 }
 #sas_31982 {
   float: none !important;
@@ -2741,6 +2778,15 @@ hr{
   /* line 827, ../sass/screen.scss */
   .ofertas-destacadas ul li article .desc p{
     height: auto;
+  }
+}
+
+/*devolver en dado caso
+@media screen and (max-width: 400px) {
+  .ofertas-destacadas ul li article .desc p{
+    width: 100%;
+    padding-top: 5px;
+    margin-bottom: 5px;
   }
 }
 /* line 833, ../sass/screen.scss */

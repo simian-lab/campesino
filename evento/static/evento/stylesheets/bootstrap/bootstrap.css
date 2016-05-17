@@ -737,6 +737,11 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+/*@media (min-width: 480px) {
+   .container {
+      width: 460px;
+  }
+}*/
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -5801,6 +5806,7 @@ td.visible-lg {
     display: none !important;
   }
 }
+
 .visible-print,
 tr.visible-print,
 th.visible-print,
