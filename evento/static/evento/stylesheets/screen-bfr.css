@@ -1489,6 +1489,12 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
 section.wrapp .container .row .destacados ul li article {
   padding-bottom: 10px;
 }
+/*ajustar alto de contenedores solo en dispositivos moviles*/
+@media screen and (max-device-width: 1024px) and (min-device-width: 768px) {
+section.wrapp .container .row .destacados ul li article {
+  height: auto;
+  }
+}
 /* line 910, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .link {
   display: none;
@@ -1593,6 +1599,12 @@ section.wrapp .container .row .no-destacados ul li article {
 
 section.wrapp .container .row .no-destacados ul li:hover article {
   background-color: #000;
+}
+/*ajustar alto solo en ipad para mostra boton ir a ofertas*/
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  section.wrapp .container .row .no-destacados ul li article {
+    height: auto;
+  }
 }
 @media screen and (max-width: 1007px) {
   /* line 983, ../sass/screen.scss */
@@ -1734,7 +1746,8 @@ section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobi
   color: #fff;
   display: none;
 }
-@media screen and (max-width: 768px) {
+/*mostra boton ir a ofertas en promociones no destacadas en dispositivos moviles*/
+@media screen and (max-device-width: 1024px) and (min-device-width: 768px) {
   section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
   display: block;
   }
@@ -1744,7 +1757,7 @@ section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile 
   color: #fff;
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-device-width: 1024px) and (min-device-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
   display: block;
   }
