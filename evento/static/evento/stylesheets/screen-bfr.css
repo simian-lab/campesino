@@ -1222,7 +1222,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
   height: 296px;
 }
 /*aplicacion de estilo para que no afecte dispositivos moviles*/
-@media screen and (min-width: 1007px) {
+/*@media screen and (min-width: 1007px) {
   section.wrapp .container .row .no-destacados ul li figure img {
     height: 100%;
   }
@@ -1243,7 +1243,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
     max-height: 100%;
     width: 100% !important;
   }
-}
+}*/
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
