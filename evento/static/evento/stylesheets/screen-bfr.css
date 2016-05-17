@@ -1265,6 +1265,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
  section.wrapp .container .row .destacados ul li figure {
   max-height: 246px;
  }
+}
 @media screen and (max-width: 380px) {
  section.wrapp .container .row .destacados ul li figure {
   max-height: 175px;
