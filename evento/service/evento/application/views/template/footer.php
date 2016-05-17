@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="social">
-        <a href="https://www.facebook.com/LoEncontraste" class="fb" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
+        <a href="#" class="fb" onClick='shareFacebook();'><img src="<?php echo $base_url_static;?>img/f.png" alt=""></a>
         <a href="#" class="tw" onClick='shareTwitter();'><img src="<?php echo $base_url_static;?>img/t.png" alt=""></a>
       </div>
     </div>
