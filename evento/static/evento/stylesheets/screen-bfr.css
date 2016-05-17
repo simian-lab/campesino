@@ -1212,11 +1212,11 @@ section.wrapp .container .row .destacados ul li figure .overlay .marca .visa_log
   float: right;
 }
 /* line 793, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li figure img, section.wrapp .container .row .no-destacados ul li figure img {
-  vertical-align: top;
-  width: 100%;
-  height: 296px;
+section.wrapp .container .row .no-destacados ul li figure {
+ width: 100%;
+ height: 285px;
 }
+
 @media screen and (min-width: 1007px) {
  section.wrapp .container .row .no-destacados ul li figure img {
   height: 100%;
@@ -1230,7 +1230,7 @@ section.wrapp .container .row .destacados ul li figure img, section.wrapp .conta
   margin-right: 1%;
  }
  section.wrapp .container .row .no-destacados ul li figure {
-  height: 169px;
+  height: 285px !important;
  }
 }
 @media screen and (max-width: 768px) {
@@ -1238,8 +1238,10 @@ section.wrapp .container .row .destacados ul li figure img, section.wrapp .conta
   max-height: 100%;
   width: 100% !important;
  }
-}
-/* line 798, ../sass/screen.scss */
+ section.wrapp .container .row .no-destacados ul li figure img {
+  height: 100%;
+ }
+}/* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
   border: solid thin #683a8c;
