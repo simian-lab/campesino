@@ -1513,7 +1513,7 @@ section.wrapp .container .row .no-destacados ul li {
 }
 @media screen and (max-width: 320px) {
 section.wrapp .container .row .destacados ul li.descuento article .desc {
-    max-width: 200px;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 1007px) {
@@ -1663,8 +1663,21 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc p {
   section.wrapp .container .row .no-destacados ul li article .desc p {
     margin-bottom: 10px;
   }
-
 }
+@media screen and (max-width: 480px) {
+  section.wrapp .container .row .no-destacados ul li article .desc p {
+    margin-bottom: 10px;
+    overflow: visible;
+  }
+}
+@media screen and (max-width: 400px) {
+section.wrapp .container .row .destacados ul li article .desc p, 
+section.wrapp .container .row .no-destacados ul li article .desc p {
+    padding-top: 15px;
+    margin-bottom: 5px;
+  }
+}
+
 /* line 1026, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article .link {
   display: none;
@@ -2741,6 +2754,15 @@ hr{
   /* line 827, ../sass/screen.scss */
   .ofertas-destacadas ul li article .desc p{
     height: auto;
+  }
+}
+
+/*devolver en dado caso*/
+@media screen and (max-width: 400px) {
+  .ofertas-destacadas ul li article .desc p{
+    width: 100%;
+    padding-top: 5px;
+    margin-bottom: 5px;
   }
 }
 /* line 833, ../sass/screen.scss */
