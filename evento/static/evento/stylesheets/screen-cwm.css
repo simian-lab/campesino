@@ -268,7 +268,7 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/cwm-logo-bd.png");
+  background: url("../img/bfr-logo-bf.png");
   background-position: center;
   background-repeat: no-repeat;
   width: 240px;
@@ -513,7 +513,18 @@ div#menu .container .row nav ul li.active a{
 }*/
 /* line 237, ../sass/screen.scss */
 div#menu .container .row nav ul li:hover {
-background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));
+background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 div#menu .container .row nav ul li:hover a {
   color: #fff !important;
@@ -1173,9 +1184,10 @@ section.wrapp .container .row .destacados ul li figure .overlay p, section.wrapp
 /* line 767, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure .overlay a, section.wrapp .container .row .no-destacados ul li figure .overlay a {
   color: white;
-  font-family: "Conv_MyriadPro-Bold";
-  font-size: 0.938em;
+  font-family: "Conv_MyriadPro-Regular";
+  font-size: 1.1em;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 /* line 773, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure .overlay .marca, section.wrapp .container .row .no-destacados ul li figure .overlay .marca {
@@ -1200,9 +1212,64 @@ section.wrapp .container .row .destacados ul li figure .overlay .marca .visa_log
   float: right;
 }
 /* line 793, ../sass/screen.scss */
-section.wrapp .container .row .destacados ul li figure img, section.wrapp .container .row .no-destacados ul li figure img {
-  vertical-align: top;
+section.wrapp .container .row .no-destacados ul li figure {
+ width: 100%;
+ height: 285px;
+}
+
+section.wrapp .container .row .no-destacados ul li figure img {
+ height: 100%;
+ width: 100%;
+}
+
+@media screen and (min-width: 1007px) {
+ section.wrapp .container .row .no-destacados ul li figure img {
+  height: 100%;
+ }
+}
+
+@media screen and (max-width: 1007px) {
+ section.wrapp .container .row .no-destacados ul li {
+  max-height: 177px;
+  width: 48%;
+  margin-right: 1%;
+ }
+ section.wrapp .container .row .no-destacados ul li figure {
+  height: 285px !important;
+ }
+}
+@media screen and (max-width: 768px) {
+ section.wrapp .container .row .no-destacados ul li {
+  max-height: 100%;
+  width: 100% !important;
+ }
+ section.wrapp .container .row .no-destacados ul li figure {
+  height: auto !important;
+ }
+ section.wrapp .container .row .no-destacados ul li figure img {
+  height: 100%;
   width: 100%;
+ }
+ section.wrapp .container .row .destacados ul li figure img {
+  width: 100%;
+ }
+}
+@media screen and (max-width: 420px) {
+ section.wrapp .container .row .no-destacados ul li figure img {
+  height: 168px ;
+  width: 100%;
+ }
+ section.wrapp .container .row .no-destacados ul li figure {
+  height: 168px !important;
+ }
+ section.wrapp .container .row .destacados ul li figure {
+  max-height: 246px;
+ }
+}
+@media screen and (max-width: 360px) {
+ section.wrapp .container .row .destacados ul li figure {
+  max-height: 175px;
+ }
 }
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
@@ -1280,6 +1347,10 @@ section.wrapp .container .row .no-destacados ul li article .desc .ahora {
     font-family: "oswaldregular";
     font-size: 1.6em;
 }
+
+section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
+  color: #fff;
+}
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
   color: #fff;
 }
@@ -1301,12 +1372,24 @@ section.wrapp .container .row .destacados ul li:hover article .desc .antes {
 }
 /* line 846, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .info, section.wrapp .container .row .destacados ul li.descuento article .desc, section.wrapp .container .row .no-destacados ul li.descuento article .info, section.wrapp .container .row .no-destacados ul li.descuento article .desc {
-  max-width: 335px;
+  max-width: 100%;
 }
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
-  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   border: solid thin #77C157;
   bottom: 0;
   color: white;
@@ -1418,11 +1501,20 @@ section.wrapp .container .row .destacados ul li article .link {
 }
 /* line 919, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .desc {
-  max-width: 75%;
+  max-width: 100%;
 }
+section.wrapp .container .row .destacados ul li.descuento article .desc p {
+  height: 22px;
+}
+
 /* line 929, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li {
   background-color: #f8f8f8;
+}
+@media screen and (max-width: 320px) {
+section.wrapp .container .row .destacados ul li.descuento article .desc {
+    max-width: 200px;
+  }
 }
 @media screen and (max-width: 1007px) {
   /* line 929, ../sass/screen.scss */
@@ -1434,7 +1526,7 @@ section.wrapp .container .row .no-destacados ul li {
 @media screen and (max-width: 768px) {
   /* line 929, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li {
-    border: 1px solid #00b6c9;
+    border: 1px solid #6a3c8d;
     padding: 0;
   }
 }
@@ -1498,6 +1590,10 @@ section.wrapp .container .row .no-destacados ul li article {
   background-color: #f8f8f8;
   height: 105px;
 }
+
+section.wrapp .container .row .no-destacados ul li:hover article {
+  background-color: #000;
+}
 @media screen and (max-width: 1007px) {
   /* line 983, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article {
@@ -1533,6 +1629,9 @@ section.wrapp .container .row .no-destacados ul li article {
 section.wrapp .container .row .no-destacados ul li article .desc {
   color: #888888;
 }
+section.wrapp .container .row .no-destacados ul li:hover article .desc {
+  color: #d5d5d5;
+}
 @media screen and (max-width: 992px) {
   /* line 1008, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article .desc {
@@ -1556,12 +1655,30 @@ section.wrapp .container .row .no-destacados ul li article .desc p {
   font-family: sans-serif;
   height: 22px;
 }
+section.wrapp .container .row .no-destacados ul li:hover article .desc p {
+  color: #d5d5d5;
+}
 @media screen and (max-width: 992px) {
   /* line 1019, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article .desc p {
     margin-bottom: 10px;
   }
 }
+/*@media screen and (max-width: 480px) {
+  section.wrapp .container .row .no-destacados ul li article .desc p {
+    margin-bottom: 10px;
+    overflow: visible;
+  }
+}*/
+/*@media screen and (max-width: 400px) {
+section.wrapp .container .row .destacados ul li article .desc p, 
+section.wrapp .container .row .no-destacados ul li article .desc p {
+    padding-top: 15px;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+  }
+}
+
 /* line 1026, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li article .link {
   display: none;
@@ -1586,7 +1703,7 @@ section.wrapp .container .row .no-destacados ul li article .link {
 }
 /* line 1045, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .info, section.wrapp .container .row .no-destacados ul li.descuento article .desc {
-  max-width: 200px;
+  max-width: 100%;
 }
 /* line 1048, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
@@ -1611,23 +1728,45 @@ section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje
   }
 }
 
-/*boton ir ofertas visibilidad solo en moviles
+/*boton ir ofertas visibilidad solo en moviles*/
 section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
   font-family: sans-serif;
-  color: #3A8819;
+  color: #fff;
+  display: none;
 }
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
-  display: none;
+  display: block;
+  }
 }
 section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
   font-family: sans-serif;
-  color: #3A8819;
+  color: #fff;
+  display: none;
 }
 @media screen and (max-width: 768px) {
   section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
-  display: none;
-}*/
+  display: block;
+  }
+}
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile {
+display: block;
+margin: 0 auto;
+}
+  }
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
+height: 138px;
+  }
+}
+/*ajuste para solo ipad visibilidad promociones pequeñas*/
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  display: block;
+  margin: 0 auto;
+  }
+}
 
 /* line 1070, ../sass/screen.scss */
 .publi {
@@ -1732,7 +1871,7 @@ footer .sponsor .invita .logos a:first-child + a {
   float: right;
 }
 /* line 1147, ../sass/screen.scss */
-footer .sponsor .social {
+/*footer .sponsor .social {
   bottom: -19px;
   left: 45%;
   margin: 0 auto;
@@ -1759,19 +1898,20 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #5A3179;
+  background-color: #470467;
   font-family: sans-serif;
   font-size: 0.7em;
+  font-weight: 100;
   line-height: 1.9em;
   margin: 0;
   padding: 45px 0;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
   text-transform: uppercase;
 }
 @media screen and (max-width: 992px) {
   /* line 1161, ../sass/screen.scss */
   footer .terminos {
-    padding-bottom: 100px;
+    padding-bottom: 20px;
   }
 }
 /* line 1172, ../sass/screen.scss */
@@ -1954,10 +2094,16 @@ footer .terminos span a {
     clear: both;
 }
 footer .sponsor .social{
-  bottom: -21px !important;
+  width: 140px;
+  height:50px;
+  bottom: -30px;
+  left: 50%;
+  margin-left: -70px;
+  position: absolute;
+  /*bottom: -21px !important;
   left: inherit !important;
   position: relative !important;
-  text-align: center;
+  text-align: center;*/
 }
 #sas_31982 {
   float: none !important;
@@ -2408,7 +2554,7 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('../img/bfr-tab-off.png') no-repeat 0px top;
+    background: url('../img/bfr-tabicon-off-tiendas.png') 100px 25px no-repeat, url('../img/bfr-tab-off.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
@@ -2426,8 +2572,9 @@ hr{
 }
 
 .menu-tabs ul li.active {
-    background: url('../img/bfr-tab-active.png') center 0px no-repeat;
+    background: url('../img/bfr-tabicon-active-tiendas.png') 70px 16px no-repeat, url('../img/bfr-tab-active.png') center 0px no-repeat;
 }
+
 .menu-tabs ul li.active a{
     font-size: 20px;
     font-family: sans-serif;
@@ -2633,6 +2780,15 @@ hr{
     height: auto;
   }
 }
+
+/*devolver en dado caso
+@media screen and (max-width: 400px) {
+  .ofertas-destacadas ul li article .desc p{
+    width: 100%;
+    padding-top: 5px;
+    margin-bottom: 5px;
+  }
+}
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
   color: #683A8C;
@@ -2654,12 +2810,23 @@ hr{
 /* line 846, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .info,
 .ofertas-destacadas ul li.descuento article .desc{
-  max-width: 400px;
+  max-width: 100%;
 }
 /* line 849, ../sass/screen.scss */
 .ofertas-destacadas ul li.descuento article .porcentaje{
   border-bottom: none;
-  background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   border: solid thin #77C157;
   bottom: 0;
   color: white;
@@ -3145,4 +3312,62 @@ header .container .row.head:before {
 }
 .logo_fixed_menu .container {
     width: 1200px !important;
+}
+
+.ofertaDesktop {
+  /*background: -webkit-gradient(linear, 10% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
+  text-align: center;
+  color: white;
+  font-family: "Conv_MyriadPro-Regular";
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 auto;
+  width: 180px;
+  padding: 9px 32px;
+}
+
+.ofertaMobile {
+  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
+  text-align: center; 
+  width: 135px;
+  margin: 0 auto;
+  padding: 9px 32px;
+}
+
+.Footer_last {
+  background-color: #2B023E;
+  height: 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 3.2em;
+  font-size: 0.7em;
+  margin: 0;
+  text-transform: uppercase;
+  color: #FFF;
+  text-align: center;
 }
