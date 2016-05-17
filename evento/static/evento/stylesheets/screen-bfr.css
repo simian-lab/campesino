@@ -1262,8 +1262,14 @@ section.wrapp .container .row .no-destacados ul li figure img {
  section.wrapp .container .row .no-destacados ul li figure {
   height: 168px !important;
  }
+ section.wrapp .container .row .destacados ul li figure {
+  max-height: 246px;
+ }
+@media screen and (max-width: 380px) {
+ section.wrapp .container .row .destacados ul li figure {
+  max-height: 175px;
+ }
 }
-
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
