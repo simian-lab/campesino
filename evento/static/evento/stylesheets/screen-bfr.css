@@ -1513,7 +1513,7 @@ section.wrapp .container .row .no-destacados ul li {
 }
 @media screen and (max-width: 320px) {
 section.wrapp .container .row .destacados ul li.descuento article .desc {
-    max-width: 100%;
+    max-width: 200px;
   }
 }
 @media screen and (max-width: 1007px) {
@@ -1664,16 +1664,17 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc p {
     margin-bottom: 10px;
   }
 }
-@media screen and (max-width: 480px) {
+/*@media screen and (max-width: 480px) {
   section.wrapp .container .row .no-destacados ul li article .desc p {
     margin-bottom: 10px;
     overflow: visible;
   }
-}
-@media screen and (max-width: 400px) {
+}*/
+/*@media screen and (max-width: 400px) {
 section.wrapp .container .row .destacados ul li article .desc p, 
 section.wrapp .container .row .no-destacados ul li article .desc p {
     padding-top: 15px;
+    font-size: 0.9em;
     margin-bottom: 5px;
   }
 }
@@ -1853,7 +1854,7 @@ footer .sponsor .invita .logos a:first-child + a {
   float: right;
 }
 /* line 1147, ../sass/screen.scss */
-footer .sponsor .social {
+/*footer .sponsor .social {
   bottom: -19px;
   left: 45%;
   margin: 0 auto;
@@ -2076,10 +2077,16 @@ footer .terminos span a {
     clear: both;
 }
 footer .sponsor .social{
-  bottom: -21px !important;
+  width: 140px;
+  height:50px;
+  bottom: -30px;
+  left: 50%;
+  margin-left: 70px;
+  position: absolute;
+  /*bottom: -21px !important;
   left: inherit !important;
   position: relative !important;
-  text-align: center;
+  text-align: center;*/
 }
 #sas_31982 {
   float: none !important;
@@ -2757,7 +2764,7 @@ hr{
   }
 }
 
-/*devolver en dado caso*/
+/*devolver en dado caso
 @media screen and (max-width: 400px) {
   .ofertas-destacadas ul li article .desc p{
     width: 100%;
