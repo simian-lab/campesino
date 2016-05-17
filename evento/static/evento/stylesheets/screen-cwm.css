@@ -271,9 +271,9 @@ header .container .head .title {
   background: url("../img/cwm-logo-bd.png");
   background-position: center;
   background-repeat: no-repeat;
-  width: 240px;
+  width: 267px;
   height: 76px;
-  margin: 0;
+  margin-left: -12px;
   padding: 0;
   /*box-shadow: -10px 0px 16px #3c1956;*/
 }
