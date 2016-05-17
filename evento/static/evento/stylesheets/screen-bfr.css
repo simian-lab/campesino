@@ -2098,7 +2098,7 @@ footer .sponsor .social{
   height:50px;
   bottom: -30px;
   left: 50%;
-  margin-left: 70px;
+  margin-left: -70px;
   position: absolute;
   /*bottom: -21px !important;
   left: inherit !important;
