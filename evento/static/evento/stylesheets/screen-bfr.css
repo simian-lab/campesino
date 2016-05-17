@@ -1217,6 +1217,28 @@ section.wrapp .container .row .destacados ul li figure img, section.wrapp .conta
   width: 100%;
   height: 296px;
 }
+@media screen and (min-width: 1007px) {
+ section.wrapp .container .row .no-destacados ul li figure img {
+  height: 100%;
+ }
+}
+
+@media screen and (max-width: 1007px) {
+ section.wrapp .container .row .no-destacados ul li {
+  max-height: 177px;
+  width: 48%;
+  margin-right: 1%;
+ }
+ section.wrapp .container .row .no-destacados ul li figure {
+  height: 169px;
+ }
+}
+@media screen and (max-width: 768px) {
+ section.wrapp .container .row .no-destacados ul li {
+  max-height: 100%;
+  width: 100% !important;
+ }
+}
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
