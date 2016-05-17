@@ -57,7 +57,7 @@
 <!-- FIN MENU -->
 
 <div class="share">
-  <a onClick='shareFacebook();' href="#" class="button_facebook_top"><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
+  <a onClick='shareFacebook();' href="https://www.facebook.com/LoEncontraste" class="button_facebook_top"><img src="<?php echo $base_url_static ?>img/social_fb.png" alt=""></a>
   <a onClick='shareTwitter();'  href="#" class="button_twitter_top"><img src="<?php echo $base_url_static ?>img/social_tw.png" alt=""></a>
 </div>
 
