@@ -1754,11 +1754,18 @@ section.wrapp .container .row .destacados ul li.descuento article .ofertaMobile 
 display: block;
 margin: 0 auto;
 }
-}
+  }
 @media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
-height: 123px;
+height: 138px;
+  }
 }
+/*ajuste para solo ipad visibilidad promociones pequeñas*/
+@media only screen and (min-device-width: 768px)  and (max-device-width: 1024px) and (orientation: landscape)  {
+section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobile {
+  display: block;
+  margin: 0 auto;
+  }
 }
 
 /* line 1070, ../sass/screen.scss */
