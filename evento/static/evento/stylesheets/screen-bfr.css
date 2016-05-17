@@ -1215,6 +1215,7 @@ section.wrapp .container .row .destacados ul li figure .overlay .marca .visa_log
 section.wrapp .container .row .destacados ul li figure img, section.wrapp .container .row .no-destacados ul li figure img {
   vertical-align: top;
   width: 100%;
+  height: 296px;
 }
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
@@ -1294,7 +1295,7 @@ section.wrapp .container .row .no-destacados ul li article .desc .ahora {
 }
 
 section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
-	color: #fff;
+  color: #fff;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
   color: #fff;
@@ -1537,7 +1538,7 @@ section.wrapp .container .row .no-destacados ul li article {
 }
 
 section.wrapp .container .row .no-destacados ul li:hover article {
-	background-color: #000;
+  background-color: #000;
 }
 @media screen and (max-width: 1007px) {
   /* line 983, ../sass/screen.scss */
@@ -1575,7 +1576,7 @@ section.wrapp .container .row .no-destacados ul li article .desc {
   color: #888888;
 }
 section.wrapp .container .row .no-destacados ul li:hover article .desc {
-	color: #d5d5d5;
+  color: #d5d5d5;
 }
 @media screen and (max-width: 992px) {
   /* line 1008, ../sass/screen.scss */
@@ -1601,7 +1602,7 @@ section.wrapp .container .row .no-destacados ul li article .desc p {
   height: 22px;
 }
 section.wrapp .container .row .no-destacados ul li:hover article .desc p {
-	color: #d5d5d5;
+  color: #d5d5d5;
 }
 @media screen and (max-width: 992px) {
   /* line 1019, ../sass/screen.scss */
@@ -2811,7 +2812,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 
 .ofertas-destacadas ul li:hover article {
-	background: #000;
+  background: #000;
 }
 /* line 908, ../sass/screen.scss */
 .ofertas-destacadas ul li article {
