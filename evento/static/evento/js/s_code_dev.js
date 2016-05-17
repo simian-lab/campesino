@@ -84,7 +84,7 @@ function s_doPlugins(s){
   s.prop3=[s.getTimeParting('d','-5'),s.getTimeParting('h','-5')].join("|"); if (s.prop3) s.eVar2="D=c3";// Set TimeParting Variable
 
   /* External Campaign */
-  /* if (!s.campaign) s.campaign=s.getValOnce(s.getQueryParam('cid,s_cid',':'),'s_campaign',0); */
+  if (!s.campaign) s.campaign=s.getValOnce(s.getQueryParam('cid,s_cid',':'),'s_campaign',0); 
 
   /* Internal Campaign */
   if (!s.eVar1) s.eVar1=s.getValOnce(s.getQueryParam('icid'),'s_v1',0);
