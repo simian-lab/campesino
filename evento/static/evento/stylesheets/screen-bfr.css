@@ -1259,7 +1259,12 @@ section.wrapp .container .row .no-destacados ul li figure img {
   height: 168px ;
   width: 100%;
  }
-}/* line 798, ../sass/screen.scss */
+ section.wrapp .container .row .no-destacados ul li figure {
+  height: 168px !important;
+ }
+}
+
+/* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
   border: solid thin #683a8c;
