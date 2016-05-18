@@ -239,7 +239,7 @@ body {
 
 /* line 78, ../sass/screen.scss */
 header {
-  background: #683a8c url("../img/bfr-header-back.png") repeat;
+  background: #683a8c url("../img/cwm-header-back.png") repeat;
   height: 75px;
 }
 /* line 81, ../sass/screen.scss */
@@ -268,14 +268,14 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/bfr-logo-bf.png");
+  background: url("../img/cwm-logo-bd.png");
   background-position: center;
   background-repeat: no-repeat;
-  width: 240px;
+  width: 267px;
   height: 76px;
-  margin: 0;
+  margin-left: -12px;
   padding: 0;
-  box-shadow: -10px 0px 16px #3c1956;
+  /*box-shadow: -10px 0px 16px #3c1956;*/
 }
 @media screen and (max-width: 992px) {
   /* line 95, ../sass/screen.scss */
@@ -3279,9 +3279,9 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 270px;
+  width: 300px;
   height: 56px;
-  background: url("../img/bfr-logo-fixedmenu.png") no-repeat;
+  background: url("../img/cwm-logo-fixedmenu.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
@@ -3299,11 +3299,12 @@ body > div:nth-child(1), body > div:nth-child(2) {
 header .container .row.head:before {
   content: "";
   display: block;
-  width: 311px;
+  width: 350px;
   height: 75px;
-  background: url("../img/bfr-header-banner.png") no-repeat;
+  background: url("../img/cwm-header-banner.png") no-repeat;
   float: right;
   position: relative;
+  margin-top: -5px;
 }
 @media screen and (max-width: 1024px) {
   header .container .row.head:before {
