@@ -3371,7 +3371,8 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   color: #FFF;
   text-align: center;
 }
-
-li.descuento a figure img {
-  width: 100%;
-}
+@media screen and (min-width : 1007px) {
+    li.descuento a figure img {
+      width: 100%;
+    }      
+  }
