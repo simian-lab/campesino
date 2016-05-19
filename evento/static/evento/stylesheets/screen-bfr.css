@@ -1153,7 +1153,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 }
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
-  border: solid thin #683a8c;
+  border: solid thin #000000;
   background: #000000;
   max-height: 343px;
   overflow: hidden;
