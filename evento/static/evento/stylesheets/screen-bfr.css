@@ -1154,6 +1154,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
   border: solid thin #683a8c;
+  background: #000000;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1268,7 +1269,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
 }
 @media screen and (max-width: 320px) {
  section.wrapp .container .row .destacados ul li figure {
-  max-height: 175px;
+  max-height: 150px;
  }
 }
 @media screen and (max-width: 360px) {
@@ -1667,6 +1668,7 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc p {
   /* line 1019, ../sass/screen.scss */
   section.wrapp .container .row .no-destacados ul li article .desc p {
     margin-bottom: 10px;
+    height: 29px;
   }
 }
 /*@media screen and (max-width: 480px) {
@@ -3376,10 +3378,10 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   color: #FFF;
   text-align: center;
 }
-@media screen and (min-width : 1007px) {
+/*@media screen and (min-width : 1007px) {
     li.descuento a figure {
       height: 326px !important;
-    }      
+    }*/
     li.descuento a figure img {
       width: 100%;
     }      
