@@ -230,8 +230,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bfr-back.png) repeat-x;
-  background-color: #f3f2ea;
+  background: url(../img/cwj-back.jpg) top center no-repeat;
+  background-color: #efefef;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
@@ -239,7 +239,7 @@ body {
 
 /* line 78, ../sass/screen.scss */
 header {
-  background: #683a8c url("../img/cwm-header-back.png") repeat;
+  background: #683a8c url("../img/cwj-header-back.png") repeat;
   height: 75px;
 }
 /* line 81, ../sass/screen.scss */
@@ -249,7 +249,7 @@ header .container .head {
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
   /*border-right: 1px solid white;*/
-  margin: 13px -5px 0px;
+  margin: 25px -5px 0px;
   width: 260px;
 }
 @media screen and (max-width: 768px) {
@@ -268,12 +268,13 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/cwm-logo-bd.png");
+  background: url("../img/cwj-logo-cl.png");
   background-position: center;
   background-repeat: no-repeat;
   width: 267px;
   height: 76px;
   margin-left: -12px;
+  margin-top: 12px;
   padding: 0;
   /*box-shadow: -10px 0px 16px #3c1956;*/
 }
@@ -364,8 +365,9 @@ header .container .head .marcas figure {
 
 /* line 161, ../sass/screen.scss */
 div#menu {
-  background: url("../img/bfr-menu-back.png") repeat;
-  border-bottom: 1px solid #96a98f;
+  background: #011f56;
+  border-bottom: 2px solid #ffffff;
+  border.top: 2px solid #ffffff ;
 }
 /* line 166, ../sass/screen.scss */
 div#menu .container .row .menu-head {
@@ -603,7 +605,7 @@ div#menu .container .row .sponsor span {
 section.wrapp .container {
   background-color: white;
   box-shadow: 0px 3px 3px #888888;
-  padding-top: 10px;
+  /*padding-top: 10px;*/
 }
 /* line 302, ../sass/screen.scss */
 section.wrapp .container .row .detalle article {
@@ -2195,13 +2197,13 @@ div#menu .box-right{
     outline: none;
 }
 .wrapper-filter img.extra-left {
-    display: block;
+    display: none;
     position: absolute;
     left: -12px;
     top: -1px;
 }
 .wrapper-filter img.extra-right {
-    display: block;
+    display: none;
     position: absolute;
     right: -12px;
     top: -1px;
@@ -3304,12 +3306,12 @@ body > div:nth-child(1), body > div:nth-child(2) {
 header .container .row.head:before {
   content: "";
   display: block;
-  width: 350px;
-  height: 75px;
-  background: url("../img/cwm-header-banner.png") no-repeat;
+  width: 268px;
+  height: 93px;
+  background: url("../img/cwj-header-banner.png") no-repeat;
   float: right;
   position: relative;
-  margin-top: -5px;
+  margin-top: 0px;
 }
 @media screen and (max-width: 1024px) {
   header .container .row.head:before {
