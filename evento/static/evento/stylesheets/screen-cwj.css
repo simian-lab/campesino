@@ -367,7 +367,7 @@ header .container .head .marcas figure {
 div#menu {
   background: #011f56;
   border-bottom: 2px solid #ffffff;
-  border.top: 2px solid #ffffff ;
+  border-top: 2px solid #ffffff;
 }
 /* line 166, ../sass/screen.scss */
 div#menu .container .row .menu-head {
@@ -2150,7 +2150,7 @@ div#menu .box-right{
 }
 .wrapper-filter {
     display: inline-block;
-    background: #f4f4f4;
+    background: #70b9d8;
     width: 100%;
     padding: 17px 0px 16px 0px;
     position: relative;
