@@ -239,8 +239,8 @@ body {
 
 /* line 78, ../sass/screen.scss */
 header {
-  background: #683a8c url("../img/cwj-header-back.png") repeat;
-  height: 75px;
+  background: #05348d url("../img/cwj-header-back.png") repeat;
+  height: 93px;
 }
 /* line 81, ../sass/screen.scss */
 header .container .head {
@@ -604,7 +604,7 @@ div#menu .container .row .sponsor span {
 /* line 296, ../sass/screen.scss */
 section.wrapp .container {
   background-color: white;
-  box-shadow: 0px 3px 3px #888888;
+  box-shadow: 0px 3px 35px #888888;
   /*padding-top: 10px;*/
 }
 /* line 302, ../sass/screen.scss */
@@ -1155,7 +1155,7 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 }
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
-  border: solid thin #683a8c;
+  border: solid thin #000;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1281,7 +1281,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
-  border: solid thin #683a8c;
+  border: solid thin #054077;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -1302,8 +1302,8 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: solid thin #504E4E;
-  background-color: #000;
+  border-bottom: solid thin #054077;
+  background-color: #054077;
 }
 section.wrapp .container .row .destacados ul li:hover article .info {
   /*border-bottom: solid thin #d5d5d5;*/
@@ -1344,22 +1344,22 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora {
-    color: #683a8c;
+    color: #0d62b1;
     font-family: "oswaldregular";
     font-size: 1.8em;
 }
 
 section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-    color: #683a8c;
+    color: #0d62b1;
     font-family: "oswaldregular";
     font-size: 1.6em;
 }
 
 section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
-  color: #fff;
+  color: #6bcf0a;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
-  color: #fff;
+  color: #6bcf0a;
 }
 /* line 838, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .antes {
@@ -1384,7 +1384,8 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
-  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
+  background: #0d62b1;
+  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -1396,8 +1397,8 @@ background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
 background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
 background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
 background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
-background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
-  border: solid thin #77C157;
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);*/
+  border: solid thin #6aa5dc;
   bottom: 0;
   color: white;
   height: 102px;
@@ -1811,8 +1812,8 @@ section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobi
 
 /* line 1093, ../sass/screen.scss */
 footer {
-  background: url(../img/bfr-backfooter.png) repeat-x;
-  background-color: #8A4EC3;
+  background: url(../img/cwj-backfooter.png) repeat-x;
+  background-color: #838488;
 }
 /* line 1095, ../sass/screen.scss */
 footer .sponsor {
@@ -1905,7 +1906,7 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #470467;
+  background-color: #06296b;
   font-family: sans-serif;
   font-size: 0.7em;
   font-weight: 100;
@@ -2150,13 +2151,13 @@ div#menu .box-right{
 .wrapper-filter {
     display: inline-block;
     background: #f4f4f4;
-    border-top: solid 1px #ADADAD;
     width: 100%;
     padding: 17px 0px 16px 0px;
     position: relative;
+    /*border-top: solid 1px #ADADAD;
     border-bottom: solid 1px #ADADAD;
     border-left: #f4f4f4 solid 1px;
-    border-right: solid 1px #f4f4f4;
+    border-right: solid 1px #f4f4f4;*/
 }
 .wrapper-filter .filter{
   margin: 0px auto;
@@ -2164,7 +2165,8 @@ div#menu .box-right{
 .wrapper-filter .item-filter label{
   display:block;
   width:100%;
-  color:#6b3e8f;
+  color:#ffffff;
+  font-family: "oswald-regular";
   font-size: 15px;
   margin: 0px 0px 0px 6px;
 }
@@ -2187,9 +2189,10 @@ div#menu .box-right{
 .wrapper-filter input[type="submit"]{
     width: 100%;
     height: 30px;
-    font-size: 15px;
-    background: #6b3e8f;
-    margin: 15px 0px 0px 0px;
+    font-size: 17px;
+    font-family: "oswald-regular";
+    background: #1981ad;
+    margin: 20px 0px 0px 0px;
     text-transform: uppercase;
     -webkit-appearance: none;
     color: #FFF;
@@ -2264,7 +2267,7 @@ div#menu .box-right{
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #550288 url('../img/cart.png') no-repeat 96% center;
+    background: #1981ad url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -2561,30 +2564,33 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('../img/bfr-tabicon-off-tiendas.png') 100px 25px no-repeat, url('../img/bfr-tab-off.png') no-repeat 0px top;
+    /*background: url('../img/bfr-tabicon-off-tiendas.png') 100px 25px no-repeat, url('../img/bfr-tab-off.png') no-repeat 0px top;*/
+    background: url('../img/cwj-tab-off.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
 }
 .menu-tabs ul li a {
     display: block;
-    font-family: sans-serif;
+    font-family: "oswald-regular";
     font-weight: 100;
     letter-spacing: 1px;
     width: 100%;
-    font-size: 0.9em;
-    padding: 2.7em 0em 1.1em;
+    font-size: 1.1em;
+    padding: 2.0em 0em 1.1em;
     color: #FFFFFF;
     text-shadow: 1px 1px 1px #838383;
 }
 
 .menu-tabs ul li.active {
-    background: url('../img/bfr-tabicon-active-tiendas.png') 70px 16px no-repeat, url('../img/bfr-tab-active.png') center 0px no-repeat;
+    /*background: url('../img/bfr-tabicon-active-tiendas.png') 70px 16px no-repeat,  url('../img/bfr-tab-active.png') center 0px no-repeat;*/
+    background: url('../img/cwj-tab-active.png') center 0px no-repeat;
+
 }
 
 .menu-tabs ul li.active a{
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: "oswald-regular";
     font-weight: 100;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px #444;
@@ -2952,9 +2958,9 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
     z-index: 100;
 }
 .ancla  a{
-  background: url("../img/bfr-ancla.png") no-repeat;
-  width: 118px;
-  height: 112px;
+  background: url("../img/cwj-ancla.png") no-repeat;
+  width: 130px;
+  height: 205px;
   display: block;
 }
 @media screen and (max-width: 480px) {
@@ -2989,10 +2995,10 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: none;
 }
 .share .button_facebook_top {
-  background: url("../img/bfr-logoredes-fb2.png") no-repeat;
+  background: url("../img/cwj-logoredes-fb2.png") no-repeat;
 }
 .share .button_twitter_top {
-  background: url("../img/bfr-logoredes-tw2.png") no-repeat;
+  background: url("../img/cwj-logoredes-tw2.png") no-repeat;
 }
 /*Botones pautas*/
 #botones_pautas{
@@ -3368,7 +3374,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 
 .Footer_last {
-  background-color: #2B023E;
+  background-color: #011a4a;
   height: 40px;
   font-family: sans-serif;
   font-weight: bold;
