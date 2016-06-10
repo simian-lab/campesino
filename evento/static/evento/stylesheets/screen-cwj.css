@@ -249,7 +249,7 @@ header .container .head {
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
   /*border-right: 1px solid white;*/
-  margin: 13px -5px 0px;
+  margin: 23px -5px 0px;
   width: 260px;
 }
 @media screen and (max-width: 768px) {
@@ -1155,8 +1155,8 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 }
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
-  border: solid thin #000000;
-  background: #000000;
+  border: solid thin #054077;
+  background: #054077;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1360,7 +1360,7 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
   color: #fff;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
-  color: #fff;
+  color: #6dbb00;
 }
 /* line 838, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .antes {
@@ -2151,7 +2151,7 @@ div#menu .box-right{
   display:block;
   width:100%;
   color:#fff;
-  font-family: "oswaldregula";
+  font-family: "oswaldregular";
   font-size: 15px;
   margin: 0px 0px 5px 6px;
 }
@@ -2200,10 +2200,10 @@ div#menu .box-right{
 
 }
 .important-brand h2{
-    color: #6b3e8f;
+    color: #1981ad;
     display: block;
     width: 100%;
-    border-top: solid 1px #6b3e8f;
+    border-top: solid 1px #1981ad;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2212,7 +2212,7 @@ div#menu .box-right{
     margin: 0em 0em 1em 0em;
 }
 .important-brand h2 small{
-    color: #6b3e8f;
+    color: #1981ad;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2252,7 +2252,7 @@ div#menu .box-right{
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #550288 url('../img/cart.png') no-repeat 96% center;
+    background: #1981ad url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -2312,10 +2312,10 @@ hr{
 
 }
 .comercios h2{
-    color: #6b3e8f;
+    color: #1981ad;
     display: block;
     width: 100%;
-    border-top: solid 1px #6b3e8f;
+    border-top: solid 1px #1981ad;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2324,7 +2324,7 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .comercios h2 small{
-    color: #6b3e8f;
+    color: #1981ad;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2363,7 +2363,7 @@ hr{
     left: 0%;
 }
 .comercios .wrapper-box a span{
-    background: #550288 url('../img/cart.png') no-repeat 96% center;
+    background: #1981ad url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2556,14 +2556,14 @@ hr{
 }
 .menu-tabs ul li a {
     display: block;
-    font-family: sans-serif;
+    font-family: "oswaldregular";
     font-weight: 100;
     letter-spacing: 1px;
     width: 100%;
     font-size: 0.9em;
-    padding: 2.7em 0em 1.1em;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 1px #838383;
+    padding: 2.3em 0em 1.1em;
+    color: #484648;
+    /*text-shadow: 1px 1px 1px #838383;*/
 }
 
 .menu-tabs ul li.active {
@@ -2572,19 +2572,19 @@ hr{
 
 .menu-tabs ul li.active a{
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: "oswaldregular";
     font-weight: 100;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px #444;
     color: #FFFFFF;
-    padding: 1.9em 0em 0.7em;
+    padding: 1.7em 0em 0.7em;
 }
 /**/
 .ofertas-destacadas h3{
-    color: #6b3e8f;
+    color: #1981ad;
     display: block;
     width: 100%;
-    border-top: solid 1px #6b3e8f;
+    border-top: solid 1px #1981ad;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2593,7 +2593,7 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .ofertas-destacadas h3 small{
-    color: #6b3e8f;
+    color: #1981ad;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2941,8 +2941,8 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 .ancla  a{
   background: url("../img/cwj-ancla.png") no-repeat;
-  width: 118px;
-  height: 112px;
+  width: 130px;
+  height: 205px;
   display: block;
 }
 @media screen and (max-width: 480px) {
@@ -3276,7 +3276,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: block;
   width: 270px;
   height: 56px;
-  background: url("../img/cwj-logo-fixedmenu.png") no-repeat;
+  background: url("../img/cwj-logo-fixedmenu-cl.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
