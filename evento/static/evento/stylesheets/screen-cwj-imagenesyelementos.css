@@ -215,7 +215,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #0d62b1;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -1282,7 +1282,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
-  border: solid thin #054077;
+  border: solid thin #683a8c;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -1345,13 +1345,13 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora {
-    color: #0d62b1;
+    color: #683a8c;
     font-family: "oswaldregular";
     font-size: 1.8em;
 }
 
 section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-    color: #0d62b1;
+    color: #683a8c;
     font-family: "oswaldregular";
     font-size: 1.6em;
 }
@@ -1385,8 +1385,20 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
-  background: #0d62b1;
-  border: solid thin #6aa5dc;
+  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
+  border: solid thin #77C157;
   bottom: 0;
   color: white;
   height: 102px;
@@ -2598,7 +2610,7 @@ hr{
     font-weight: normal;
 }
 .link.red {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #0d62b1;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 .link.red, .link.orange {
   border: 1px solid white;
@@ -2649,7 +2661,7 @@ hr{
 }
 /* line 742, ../sass/screen.scss */
 .ofertas-destacadas ul li figure{
-  border: thin solid #0d62b1;
+  border: thin solid #683A8C;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -2714,7 +2726,7 @@ hr{
 /* line 798, ../sass/screen.scss */
 .ofertas-destacadas ul li article{
   background: #F2F2F2;
-  border: 1px solid #0d62b1;
+  border: 1px solid #683A8C;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -2786,7 +2798,7 @@ hr{
 }
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
-  color: #0d62b1;
+  color: #683A8C;
   font-family: 'oswaldregular';
   font-size: 1.8em;
 }
