@@ -359,8 +359,8 @@ header .container .head .marcas figure {
 /* line 155, ../sass/screen.scss */
 .share a {
   display: block;
-  height: 50px;
-  width: 46px;
+  height: 58px;
+  width: 54px;
 }
 
 /* line 161, ../sass/screen.scss */
@@ -2977,10 +2977,10 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: none;
 }
 .share .button_facebook_top {
-  background: url("../img/cwj-logoredes-fb2.png") no-repeat;
+  background: url("../img/cwj-logoredes-fb1.png") no-repeat;
 }
 .share .button_twitter_top {
-  background: url("../img/cwj-logoredes-tw2.png") no-repeat;
+  background: url("../img/cwj-logoredes-tw1.png") no-repeat;
 }
 /*Botones pautas*/
 #botones_pautas{
@@ -3274,7 +3274,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 270px;
+  width: 300px;
   height: 56px;
   background: url("../img/cwj-logo-fixedmenu-cl.png") no-repeat;
   float: right;
