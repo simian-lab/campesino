@@ -230,7 +230,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/cwj-back.png) top center no-rebapeat;
+  background: url(../img/cwj-back.png) top center no-repeat;
   background-color: #f3f2ea;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
@@ -1303,7 +1303,7 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: solid thin #504E4E;
+  border-bottom: solid thin #000;
   background-color: #000;
 }
 section.wrapp .container .row .destacados ul li:hover article .info {
@@ -1385,6 +1385,14 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
+  background: rgba(73,155,234,1);
+  background: -moz-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(20,80,143,1)));
+  background: -webkit-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: -o-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: -ms-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#14508f', GradientType=0 );
   background: #0d62b1;
   border: solid thin #6aa5dc;
   bottom: 0;
@@ -1416,7 +1424,7 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje .n
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
   font-family: "oswaldbold";
   font-size: 2.7em;
-  text-shadow: 0px 0px 7px #253C03;
+  text-shadow: 1px 1px 10px #031A31;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
@@ -2139,7 +2147,7 @@ div#menu .box-right{
 }
 .wrapper-filter {
     display: inline-block;
-    background: #70b9d8;
+    background: rgba(206, 214, 218, 0.89);
     width: 100%;
     padding: 17px 0px 16px 0px;
     position: relative;
@@ -2159,7 +2167,7 @@ div#menu .box-right{
     display: block;
     width: 100%;
     font-size: 13px;
-    color: #696969;
+    color: #5F7884;
     -webkit-appearance: none;
     height: 30px;
     margin: 0px;
@@ -2176,7 +2184,7 @@ div#menu .box-right{
     height: 30px;
     font-size: 17px;
     font-family: "oswaldregular";
-    background: #1981ad;
+    background: #8096A0;
     margin: 20px 0px 0px 0px;
     text-transform: uppercase;
     -webkit-appearance: none;
