@@ -215,7 +215,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #0d62b1;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -230,7 +230,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/bfr-back.png) repeat-x;
+  background: url(../img/cwj-back.jpg) top center no-repeat;
   background-color: #f3f2ea;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
@@ -239,8 +239,8 @@ body {
 
 /* line 78, ../sass/screen.scss */
 header {
-  background: #683a8c url("../img/cwm-header-back.png") repeat;
-  height: 75px;
+  background: #05348d url("../img/cwj-header-back.png") repeat;
+  height: 93px;
 }
 /* line 81, ../sass/screen.scss */
 header .container .head {
@@ -249,7 +249,7 @@ header .container .head {
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
   /*border-right: 1px solid white;*/
-  margin: 13px -5px 0px;
+  margin: 23px -5px 0px;
   width: 260px;
 }
 @media screen and (max-width: 768px) {
@@ -268,12 +268,13 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/cwm-logo-bd.png");
+  background: url("../img/cwj-logo-bd.png");
   background-position: center;
   background-repeat: no-repeat;
   width: 267px;
   height: 76px;
   margin-left: -12px;
+  margin-top: 12px;
   padding: 0;
   /*box-shadow: -10px 0px 16px #3c1956;*/
 }
@@ -358,14 +359,15 @@ header .container .head .marcas figure {
 /* line 155, ../sass/screen.scss */
 .share a {
   display: block;
-  height: 50px;
-  width: 46px;
+  height: 58px;
+  width: 54px;
 }
 
 /* line 161, ../sass/screen.scss */
 div#menu {
-  background: url("../img/bfr-menu-back.png") repeat;
-  border-bottom: 1px solid #96a98f;
+  background: #011f56;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
 }
 /* line 166, ../sass/screen.scss */
 div#menu .container .row .menu-head {
@@ -384,7 +386,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #000000 url("../img/bfr-menu-back.png") repeat-x;
+    background: #011f56;
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -421,7 +423,7 @@ div#menu .container .row .menu-head {
   }
   div#menu {
     background-repeat: repeat-x;
-    background: #5e5773 url("../img/bfr-menu-back.png") repeat-x;
+    /*background: #5e5773 url("../img/bfr-menu-back.png") repeat-x;*/
   }
   nav ul#menuTop li {
     border-top: 0 !important;
@@ -602,8 +604,8 @@ div#menu .container .row .sponsor span {
 /* line 296, ../sass/screen.scss */
 section.wrapp .container {
   background-color: white;
-  box-shadow: 0px 3px 3px #888888;
-  padding-top: 10px;
+  box-shadow: 0px 3px 35px #888888;
+  /*padding-top: 10px;*/
 }
 /* line 302, ../sass/screen.scss */
 section.wrapp .container .row .detalle article {
@@ -1153,8 +1155,8 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 }
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
-  border: solid thin #000000;
-  background: #000000;
+  border: solid thin #000;
+  background: #000;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1280,7 +1282,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
-  border: solid thin #683a8c;
+  border: solid thin #054077;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -1301,7 +1303,7 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: solid thin #504E4E;
+  border-bottom: solid thin #000;
   background-color: #000;
 }
 section.wrapp .container .row .destacados ul li:hover article .info {
@@ -1343,13 +1345,13 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora {
-    color: #683a8c;
+    color: #0d62b1;
     font-family: "oswaldregular";
     font-size: 1.8em;
 }
 
 section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-    color: #683a8c;
+    color: #0d62b1;
     font-family: "oswaldregular";
     font-size: 1.6em;
 }
@@ -1358,7 +1360,7 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
   color: #fff;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
-  color: #fff;
+  color: #6dbb00;
 }
 /* line 838, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .antes {
@@ -1383,7 +1385,6 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
-  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
   background-image: -webkit-gradient(
   linear,
   left bottom,
@@ -1426,7 +1427,7 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje .n
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
   font-family: "oswaldbold";
   font-size: 2.7em;
-  text-shadow: 0px 0px 7px #253C03;
+  text-shadow: 1px 1px 10px #031A31;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
@@ -1811,8 +1812,8 @@ section.wrapp .container .row .no-destacados ul li.descuento article .ofertaMobi
 
 /* line 1093, ../sass/screen.scss */
 footer {
-  background: url(../img/bfr-backfooter.png) repeat-x;
-  background-color: #8A4EC3;
+  background: url(../img/cwj-backfooter.png) repeat-x;
+  background-color: #838488;
 }
 /* line 1095, ../sass/screen.scss */
 footer .sponsor {
@@ -1891,10 +1892,10 @@ footer .sponsor .social .fb, footer .sponsor .social .tw {
   height: 54px;
 }
 footer .sponsor .social .fb {
-  background: url("../img/bfr-logoredes-fb1.png") no-repeat;
+  background: url("../img/cwj-logoredes-fb1.png") no-repeat;
 }
 footer .sponsor .social .tw {
-  background: url("../img/bfr-logoredes-tw1.png") no-repeat;
+  background: url("../img/cwj-logoredes-tw1.png") no-repeat;
 }
 footer .sponsor .social .fb img, footer .sponsor .social .tw img{
   display: none;
@@ -1905,7 +1906,7 @@ footer .sponsor .social .tw {
 }
 /* line 1161, ../sass/screen.scss */
 footer .terminos {
-  background-color: #470467;
+  background-color: #06296b;
   font-family: sans-serif;
   font-size: 0.7em;
   font-weight: 100;
@@ -2149,14 +2150,10 @@ div#menu .box-right{
 }
 .wrapper-filter {
     display: inline-block;
-    background: #f4f4f4;
-    border-top: solid 1px #ADADAD;
+    background: rgba(206, 214, 218, 0.89);
     width: 100%;
     padding: 17px 0px 16px 0px;
     position: relative;
-    border-bottom: solid 1px #ADADAD;
-    border-left: #f4f4f4 solid 1px;
-    border-right: solid 1px #f4f4f4;
 }
 .wrapper-filter .filter{
   margin: 0px auto;
@@ -2164,15 +2161,16 @@ div#menu .box-right{
 .wrapper-filter .item-filter label{
   display:block;
   width:100%;
-  color:#6b3e8f;
+  color:#8094a0;
+  font-family: "oswaldregular";
   font-size: 15px;
-  margin: 0px 0px 0px 6px;
+  margin: 0px 0px 5px 6px;
 }
 .wrapper-filter .item-filter select{
     display: block;
     width: 100%;
     font-size: 13px;
-    color: #696969;
+    color: #5F7884;
     -webkit-appearance: none;
     height: 30px;
     margin: 0px;
@@ -2187,9 +2185,10 @@ div#menu .box-right{
 .wrapper-filter input[type="submit"]{
     width: 100%;
     height: 30px;
-    font-size: 15px;
-    background: #6b3e8f;
-    margin: 15px 0px 0px 0px;
+    font-size: 17px;
+    font-family: "oswaldregular";
+    background: #8096A0;
+    margin: 20px 0px 0px 0px;
     text-transform: uppercase;
     -webkit-appearance: none;
     color: #FFF;
@@ -2197,13 +2196,13 @@ div#menu .box-right{
     outline: none;
 }
 .wrapper-filter img.extra-left {
-    display: block;
+    display: none;
     position: absolute;
     left: -12px;
     top: -1px;
 }
 .wrapper-filter img.extra-right {
-    display: block;
+    display: none;
     position: absolute;
     right: -12px;
     top: -1px;
@@ -2212,10 +2211,10 @@ div#menu .box-right{
 
 }
 .important-brand h2{
-    color: #6b3e8f;
+    color: #1981ad;
     display: block;
     width: 100%;
-    border-top: solid 1px #6b3e8f;
+    border-top: solid 1px #1981ad;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2224,7 +2223,7 @@ div#menu .box-right{
     margin: 0em 0em 1em 0em;
 }
 .important-brand h2 small{
-    color: #6b3e8f;
+    color: #1981ad;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2264,7 +2263,7 @@ div#menu .box-right{
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #550288 url('../img/cart.png') no-repeat 96% center;
+    background: #1981ad url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -2324,10 +2323,10 @@ hr{
 
 }
 .comercios h2{
-    color: #6b3e8f;
+    color: #1981ad;
     display: block;
     width: 100%;
-    border-top: solid 1px #6b3e8f;
+    border-top: solid 1px #1981ad;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2336,7 +2335,7 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .comercios h2 small{
-    color: #6b3e8f;
+    color: #1981ad;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2375,7 +2374,7 @@ hr{
     left: 0%;
 }
 .comercios .wrapper-box a span{
-    background: #550288 url('../img/cart.png') no-repeat 96% center;
+    background: #1981ad url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2561,42 +2560,42 @@ hr{
     width: 50%;
     height: 80px;
     text-align: center;
-    background: url('../img/bfr-tabicon-off-tiendas.png') 100px 25px no-repeat, url('../img/bfr-tab-off.png') no-repeat 0px top;
+    background: url('../img/cwj-tab-off.png') no-repeat 0px top;
 }
 .menu-tabs ul li a:hover{
   text-decoration:none;
 }
 .menu-tabs ul li a {
     display: block;
-    font-family: sans-serif;
+    font-family: "oswaldregular";
     font-weight: 100;
     letter-spacing: 1px;
     width: 100%;
     font-size: 0.9em;
-    padding: 2.7em 0em 1.1em;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 1px #838383;
+    padding: 2.3em 0em 1.1em;
+    color: #484648;
+    /*text-shadow: 1px 1px 1px #838383;*/
 }
 
 .menu-tabs ul li.active {
-    background: url('../img/bfr-tabicon-active-tiendas.png') 70px 16px no-repeat, url('../img/bfr-tab-active.png') center 0px no-repeat;
+    background: url('../img/cwj-tab-active.png') center 0px no-repeat;
 }
 
 .menu-tabs ul li.active a{
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: "oswaldregular";
     font-weight: 100;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px #444;
     color: #FFFFFF;
-    padding: 1.9em 0em 0.7em;
+    padding: 1.7em 0em 0.7em;
 }
 /**/
 .ofertas-destacadas h3{
-    color: #6b3e8f;
+    color: #1981ad;
     display: block;
     width: 100%;
-    border-top: solid 1px #6b3e8f;
+    border-top: solid 1px #1981ad;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2605,12 +2604,12 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .ofertas-destacadas h3 small{
-    color: #6b3e8f;
+    color: #1981ad;
     font-size: 24px;
     font-weight: normal;
 }
 .link.red {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #0d62b1;
 }
 .link.red, .link.orange {
   border: 1px solid white;
@@ -2661,7 +2660,7 @@ hr{
 }
 /* line 742, ../sass/screen.scss */
 .ofertas-destacadas ul li figure{
-  border: thin solid #683A8C;
+  border: thin solid #0d62b1;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -2726,7 +2725,7 @@ hr{
 /* line 798, ../sass/screen.scss */
 .ofertas-destacadas ul li article{
   background: #F2F2F2;
-  border: 1px solid #683A8C;
+  border: 1px solid #0d62b1;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -2798,7 +2797,7 @@ hr{
 }
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
-  color: #683A8C;
+  color: #0d62b1;
   font-family: 'oswaldregular';
   font-size: 1.8em;
 }
@@ -2952,14 +2951,14 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
     z-index: 100;
 }
 .ancla  a{
-  background: url("../img/bfr-ancla.png") no-repeat;
-  width: 118px;
-  height: 112px;
+  background: url("../img/cwj-ancla.png") no-repeat;
+  width: 130px;
+  height: 205px;
   display: block;
 }
 @media screen and (max-width: 480px) {
   .ancla  a{
-    background: url("../img/bfr-ancla-movil.png") no-repeat;
+    background: url("../img/ancla-mov-cyl.png") no-repeat;
     width: 92px;
     height: 297px;
     display: block;
@@ -2989,10 +2988,10 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: none;
 }
 .share .button_facebook_top {
-  background: url("../img/bfr-logoredes-fb2.png") no-repeat;
+  background: url("../img/cwj-logoredes-fb1.png") no-repeat;
 }
 .share .button_twitter_top {
-  background: url("../img/bfr-logoredes-tw2.png") no-repeat;
+  background: url("../img/cwj-logoredes-tw1.png") no-repeat;
 }
 /*Botones pautas*/
 #botones_pautas{
@@ -3215,11 +3214,11 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
           line-height: 15px;
         }
         .menu-tabs ul li{
-          background: url('../img/bfr-taboff-movil.png') 0px 12px;
+          background: url('../img/cwj-taboff-movil.png') 0px 12px;
           background-size: cover;
         }
         .menu-tabs ul li.active{
-          background: url('../img/bfr-tabactive-movil.png');
+          background: url('../img/cwj-tabactive-movil.png');
           background-size: cover;
         }
         .menu-tabs ul li.active a{
@@ -3288,7 +3287,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: block;
   width: 300px;
   height: 56px;
-  background: url("../img/cwm-logo-fixedmenu.png") no-repeat;
+  background: url("../img/cwj-logo-fixedmenu-bd.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
@@ -3306,12 +3305,12 @@ body > div:nth-child(1), body > div:nth-child(2) {
 header .container .row.head:before {
   content: "";
   display: block;
-  width: 350px;
-  height: 75px;
-  background: url("../img/cwm-header-banner.png") no-repeat;
+  width: 268px;
+  height: 93px;
+  background: url("../img/cwj-header-banner.png") no-repeat;
   float: right;
   position: relative;
-  margin-top: -5px;
+  margin-top:0px;
 }
 @media screen and (max-width: 1024px) {
   header .container .row.head:before {
@@ -3368,7 +3367,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 
 .Footer_last {
-  background-color: #2B023E;
+  background-color: #011a4a;
   height: 40px;
   font-family: sans-serif;
   font-weight: bold;

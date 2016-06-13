@@ -215,7 +215,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 /* line 63, ../sass/screen.scss */
 .link.orange {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #0d62b1;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 
 /* line 67, ../sass/screen.scss */
@@ -230,7 +230,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 73, ../sass/screen.scss */
 body {
-  background: url(../img/cwj-back.jpg) top center no-repeat;
+  background: url(../img/cwj-back.png) top center no-rebapeat;
   background-color: #f3f2ea;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
@@ -249,7 +249,7 @@ header .container .head {
 /* line 83, ../sass/screen.scss */
 header .container .head .logo {
   /*border-right: 1px solid white;*/
-  margin: 23px -5px 0px;
+  margin: 13px -5px 0px;
   width: 260px;
 }
 @media screen and (max-width: 768px) {
@@ -359,8 +359,8 @@ header .container .head .marcas figure {
 /* line 155, ../sass/screen.scss */
 .share a {
   display: block;
-  height: 58px;
-  width: 54px;
+  height: 50px;
+  width: 46px;
 }
 
 /* line 161, ../sass/screen.scss */
@@ -1155,8 +1155,8 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 }
 /* line 742, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
-  border: solid thin #000;
-  background: #000;
+  border: solid thin #000000;
+  background: #000000;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -1282,7 +1282,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
 /* line 798, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article, section.wrapp .container .row .no-destacados ul li article {
   background: #f2f2f2;
-  border: solid thin #054077;
+  border: solid thin #683a8c;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -1303,7 +1303,7 @@ section.wrapp .container .row .destacados ul li article .info, section.wrapp .co
 }
 /* line 813, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .info, section.wrapp .container .row .no-destacados ul li article .info {
-  border-bottom: solid thin #000;
+  border-bottom: solid thin #504E4E;
   background-color: #000;
 }
 section.wrapp .container .row .destacados ul li:hover article .info {
@@ -1345,13 +1345,13 @@ section.wrapp .container .row .destacados ul li:hover article .desc p {
 }
 /* line 833, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .ahora {
-    color: #0d62b1;
+    color: #683a8c;
     font-family: "oswaldregular";
     font-size: 1.8em;
 }
 
 section.wrapp .container .row .no-destacados ul li article .desc .ahora {
-    color: #0d62b1;
+    color: #683a8c;
     font-family: "oswaldregular";
     font-size: 1.6em;
 }
@@ -1360,7 +1360,7 @@ section.wrapp .container .row .no-destacados ul li:hover article .desc .ahora {
   color: #fff;
 }
 section.wrapp .container .row .destacados ul li:hover article .desc .ahora {
-  color: #6dbb00;
+  color: #fff;
 }
 /* line 838, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li article .desc .antes {
@@ -1385,16 +1385,20 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
-  background: rgba(73,155,234,1);
-  background: -moz-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(20,80,143,1)));
-  background: -webkit-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
-  background: -o-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
-  background: -ms-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
-  background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#14508f', GradientType=0 );
-  /*background: #0d62b1;*/
-  border: solid thin #6aa5dc;
+  /*background: -webkit-gradient(linear, 11% 100%, 10% 21%, from(#3C6400), to(#72C400));*/
+  background-image: -webkit-gradient(
+  linear,
+  left bottom,
+  left top,
+  color-stop(0, #3C6400),
+  color-stop(1, #72C400)
+);
+background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
+background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
+  border: solid thin #77C157;
   bottom: 0;
   color: white;
   height: 102px;
@@ -1424,7 +1428,7 @@ section.wrapp .container .row .destacados ul li.descuento article .porcentaje .n
 section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje .num {
   font-family: "oswaldbold";
   font-size: 2.7em;
-  text-shadow: 1px 1px 10px #031A31;
+  text-shadow: 0px 0px 7px #253C03;
 }
 @media screen and (max-width: 992px) {
   /* line 871, ../sass/screen.scss */
@@ -2147,7 +2151,7 @@ div#menu .box-right{
 }
 .wrapper-filter {
     display: inline-block;
-    background: rgba(206, 214, 218, 0.89);
+    background: #70b9d8;
     width: 100%;
     padding: 17px 0px 16px 0px;
     position: relative;
@@ -2158,8 +2162,8 @@ div#menu .box-right{
 .wrapper-filter .item-filter label{
   display:block;
   width:100%;
-  color:#8094a0;
-  font-family: "oswaldregular";
+  color:#fff;
+  font-family: "oswaldregula";
   font-size: 15px;
   margin: 0px 0px 5px 6px;
 }
@@ -2167,7 +2171,7 @@ div#menu .box-right{
     display: block;
     width: 100%;
     font-size: 13px;
-    color: #5F7884;
+    color: #696969;
     -webkit-appearance: none;
     height: 30px;
     margin: 0px;
@@ -2184,7 +2188,7 @@ div#menu .box-right{
     height: 30px;
     font-size: 17px;
     font-family: "oswaldregular";
-    background: #8096A0;
+    background: #1981ad;
     margin: 20px 0px 0px 0px;
     text-transform: uppercase;
     -webkit-appearance: none;
@@ -2208,10 +2212,10 @@ div#menu .box-right{
 
 }
 .important-brand h2{
-    color: #1981ad;
+    color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #1981ad;
+    border-top: solid 1px #6b3e8f;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2220,7 +2224,7 @@ div#menu .box-right{
     margin: 0em 0em 1em 0em;
 }
 .important-brand h2 small{
-    color: #1981ad;
+    color: #6b3e8f;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2260,7 +2264,7 @@ div#menu .box-right{
   left: -0.3%;
 }
 .important-brand .wrapper-box a span{
-    background: #1981ad url('../img/cart.png') no-repeat 96% center;
+    background: #550288 url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     width: 101%;
@@ -2320,10 +2324,10 @@ hr{
 
 }
 .comercios h2{
-    color: #1981ad;
+    color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #1981ad;
+    border-top: solid 1px #6b3e8f;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2332,7 +2336,7 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .comercios h2 small{
-    color: #1981ad;
+    color: #6b3e8f;
     font-size: 24px;
     font-weight: normal;
 }
@@ -2371,7 +2375,7 @@ hr{
     left: 0%;
 }
 .comercios .wrapper-box a span{
-    background: #1981ad url('../img/cart.png') no-repeat 96% center;
+    background: #550288 url('../img/cart.png') no-repeat 96% center;
     color: #FFF;
     font-size: 15px;
     line-height: 23px;
@@ -2564,14 +2568,14 @@ hr{
 }
 .menu-tabs ul li a {
     display: block;
-    font-family: "oswaldregular";
+    font-family: sans-serif;
     font-weight: 100;
     letter-spacing: 1px;
     width: 100%;
     font-size: 0.9em;
-    padding: 2.3em 0em 1.1em;
-    color: #484648;
-    /*text-shadow: 1px 1px 1px #838383;*/
+    padding: 2.7em 0em 1.1em;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 1px #838383;
 }
 
 .menu-tabs ul li.active {
@@ -2580,19 +2584,19 @@ hr{
 
 .menu-tabs ul li.active a{
     font-size: 20px;
-    font-family: "oswaldregular";
+    font-family: sans-serif;
     font-weight: 100;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px #444;
     color: #FFFFFF;
-    padding: 1.7em 0em 0.7em;
+    padding: 1.9em 0em 0.7em;
 }
 /**/
 .ofertas-destacadas h3{
-    color: #1981ad;
+    color: #6b3e8f;
     display: block;
     width: 100%;
-    border-top: solid 1px #1981ad;
+    border-top: solid 1px #6b3e8f;
     /*border-bottom: solid 1px #5e5773;*/
     font-size: 24px;
     font-weight: bold;
@@ -2601,12 +2605,12 @@ hr{
     margin: 0em 0em 1em 0em;
 }
 .ofertas-destacadas h3 small{
-    color: #1981ad;
+    color: #6b3e8f;
     font-size: 24px;
     font-weight: normal;
 }
 .link.red {
-  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #0d62b1;
+  background: url('../img/bg_button_bf_offer.jpg') left top no-repeat #683a8c;
 }
 .link.red, .link.orange {
   border: 1px solid white;
@@ -2657,7 +2661,7 @@ hr{
 }
 /* line 742, ../sass/screen.scss */
 .ofertas-destacadas ul li figure{
-  border: thin solid #0d62b1;
+  border: thin solid #683A8C;
   max-height: 343px;
   overflow: hidden;
   position: relative;
@@ -2722,7 +2726,7 @@ hr{
 /* line 798, ../sass/screen.scss */
 .ofertas-destacadas ul li article{
   background: #F2F2F2;
-  border: 1px solid #0d62b1;
+  border: 1px solid #683A8C;
   border-top: 0;
   height: 88px;
   position: relative;
@@ -2794,7 +2798,7 @@ hr{
 }
 /* line 833, ../sass/screen.scss */
 .ofertas-destacadas ul li article .desc .ahora{
-  color: #0d62b1;
+  color: #683A8C;
   font-family: 'oswaldregular';
   font-size: 1.8em;
 }
@@ -2949,8 +2953,8 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 .ancla  a{
   background: url("../img/cwj-ancla.png") no-repeat;
-  width: 130px;
-  height: 205px;
+  width: 118px;
+  height: 112px;
   display: block;
 }
 @media screen and (max-width: 480px) {
@@ -2985,10 +2989,10 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: none;
 }
 .share .button_facebook_top {
-  background: url("../img/cwj-logoredes-fb1.png") no-repeat;
+  background: url("../img/cwj-logoredes-fb2.png") no-repeat;
 }
 .share .button_twitter_top {
-  background: url("../img/cwj-logoredes-tw1.png") no-repeat;
+  background: url("../img/cwj-logoredes-tw2.png") no-repeat;
 }
 /*Botones pautas*/
 #botones_pautas{
@@ -3282,9 +3286,9 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 .logo_fixed_menu .container:after  {
   content: "";
   display: block;
-  width: 300px;
+  width: 270px;
   height: 56px;
-  background: url("../img/cwj-logo-fixedmenu-cl.png") no-repeat;
+  background: url("../img/cwj-logo-fixedmenu.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
