@@ -140,9 +140,6 @@
 
         fbq('track','Purchase',{value:'0.00',currency:'USD'});
       </script>
-      <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1470616153169290&ev=PageView,Purchase&noscript=1"
-      /></noscript>
       <!-- End Facebook Pixel Code -->
 
         <!--[if lt IE 7]>
