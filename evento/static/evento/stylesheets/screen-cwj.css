@@ -231,7 +231,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 73, ../sass/screen.scss */
 body {
   background: url(../img/cwj-back.jpg) top center no-repeat;
-  background-color: #f3f2ea;
+  background-color: #efefef;
   background-attachment: fixed;
   font-family: "Conv_MyriadPro-Regular";
   overflow-x: hidden;
@@ -604,7 +604,7 @@ div#menu .container .row .sponsor span {
 /* line 296, ../sass/screen.scss */
 section.wrapp .container {
   background-color: white;
-  box-shadow: 0px 3px 35px #888888;
+  box-shadow: 0px 20px 35px #888888;
   /*padding-top: 10px;*/
 }
 /* line 302, ../sass/screen.scss */
@@ -1513,7 +1513,7 @@ section.wrapp .container .row .destacados ul li.descuento article .desc p {
 
 /* line 929, ../sass/screen.scss */
 section.wrapp .container .row .no-destacados ul li {
-  background-color: #f8f8f8;
+/*  background-color: #f8f8f8;*/
 }
 @media screen and (max-width: 320px) {
 section.wrapp .container .row .destacados ul li.descuento article .desc {
