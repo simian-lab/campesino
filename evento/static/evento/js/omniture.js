@@ -34,10 +34,11 @@ function onClickCerrarLightbox(nombre){
 }
 
 function onClickSocialMedia(canal){
-	s.linkTrackVars = "events,eVar13";
+	s.linkTrackVars = "events,eVar13,eVar14";
 	s.linkTrackEvents = "event22";
 	s.events = "event22";
 	s.eVar13 = canal;
+	s.eVar14 = "evento";
 	s.tl(true,"o","Click Redes Sociales");
 }
 
@@ -51,10 +52,11 @@ function onClickArticulo(nombre, posicion){
 }
 
 function onClickShare(canal, nombre){
-	s.linkTrackVars = "events,eVar13";
+	s.linkTrackVars = "events,eVar13,eVar14";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
 	s.eVar13 = canal;
+	s.eVar14 = "evento";
 	s.tl(true,"o","Compartir");
 }
 
@@ -169,18 +171,20 @@ function onClickTabTodasLasOfertas() {
 }
 
 function onClickFacebook() {
-	s.linkTrackVars = "events,eVar13";
+	s.linkTrackVars = "events,eVar13,eVar14";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
 	s.eVar13 = "Facebook";
+	s.eVar14 = "evento";
 	s.tl(true, "o", "redes sociales");
 }
 
 function onClickTwitter() {
-	s.linkTrackVars = "events,eVar13";
+	s.linkTrackVars = "events,eVar13,eVar14";
 	s.linkTrackEvents = "event6";
 	s.events = "event6";
 	s.eVar13 = "Twitter";
+	s.eVar14 = "evento";
 	s.tl(true, "o", "redes sociales");
 }
 
