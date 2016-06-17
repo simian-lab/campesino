@@ -1288,7 +1288,7 @@ section.wrapp .container .row .no-destacados ul li figure img {
 }
 @media screen and (max-width: 360px) {
  section.wrapp .container .row .destacados ul li figure {
-  max-height: 205px;
+  max-height: 210px;
  }
 }
 /* line 798, ../sass/screen.scss */
