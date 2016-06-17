@@ -1157,10 +1157,15 @@ section.wrapp .container .row .destacados ul li, section.wrapp .container .row .
 section.wrapp .container .row .destacados ul li figure, section.wrapp .container .row .no-destacados ul li figure {
   border: solid thin #000;
   background: #000;
-  height: 330px;
   overflow: hidden;
   position: relative;
   text-align: center;
+}
+
+@media only screen and (min-width : 1024px) {
+section.wrapp .container .row .destacados ul li figure {
+  height: 330px;
+ }
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
