@@ -268,7 +268,7 @@ header .container .head .logo a {
 /* line 95, ../sass/screen.scss */
 header .container .head .title {
   text-align: left;
-  background: url("../img/cwj-logo-bd.png");
+  background: url("../img/cwj-logo-cl.png");
   background-position: center;
   background-repeat: no-repeat;
   width: 267px;
@@ -1397,19 +1397,16 @@ section.wrapp .container .row .destacados ul li.descuento article .info, section
 /* line 849, ../sass/screen.scss */
 section.wrapp .container .row .destacados ul li.descuento article .porcentaje, section.wrapp .container .row .no-destacados ul li.descuento article .porcentaje {
   border-bottom: none;
-  background-image: -webkit-gradient(
-  linear,
-  left bottom,
-  left top,
-  color-stop(0, #3C6400),
-  color-stop(1, #72C400)
-);
-background-image: -o-linear-gradient(top, #3C6400 0%, #72C400 100%);
-background-image: -moz-linear-gradient(top, #3C6400 0%, #72C400 100%);
-background-image: -webkit-linear-gradient(top, #3C6400 0%, #72C400 100%);
-background-image: -ms-linear-gradient(top, #3C6400 0%, #72C400 100%);
-background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
-  border: solid thin #77C157;
+  background: rgba(73,155,234,1);
+  background: -moz-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(20,80,143,1)));
+  background: -webkit-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: -o-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: -ms-linear-gradient(top, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  background: linear-gradient(to bottom, rgba(73,155,234,1) 0%, rgba(20,80,143,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#14508f', GradientType=0 );
+  /*background: #0d62b1;*/
+  border: solid thin #6aa5dc;
   bottom: 0;
   color: white;
   height: 102px;
@@ -2970,7 +2967,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
 }
 @media screen and (max-width: 480px) {
   .ancla  a{
-    background: url("../img/ancla-mov-cd.png") no-repeat;
+    background: url("../img/ancla-mov-cyl.png") no-repeat;
     width: 92px;
     height: 297px;
     display: block;
@@ -3299,7 +3296,7 @@ background-image: linear-gradient(to top, #3C6400 0%, #72C400 100%);
   display: block;
   width: 300px;
   height: 56px;
-  background: url("../img/cwj-logo-fixedmenu-bd.png") no-repeat;
+  background: url("../img/cwj-logo-fixedmenu-cl.png") no-repeat;
   float: right;
   position: relative;
   top: -54px;
