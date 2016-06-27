@@ -160,8 +160,6 @@
       </div>
     </div>
   </div>
-      <!-- DTM Code-->
-    <script type="text/javascript">_satellite.pageBottom();</script>
 </div>
 
 <script language="JavaScript" type="text/javascript"><!--
