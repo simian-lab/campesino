@@ -160,6 +160,8 @@
       </div>
     </div>
   </div>
+      <!-- DTM Code-->
+    <script type="text/javascript">_satellite.pageBottom();</script>
 </div>
 
 <script language="JavaScript" type="text/javascript"><!--
@@ -171,6 +173,3 @@ s.channel ="<?php echo $s_channel; ?>";
 /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/
 var s_code=s.t();if(s_code)document.write(s_code)//--></script>
 <!--  End SiteCatalyst  code  -->
-    
-    <!-- DTM Code-->
-    <script type="text/javascript">_satellite.pageBottom();</script>
