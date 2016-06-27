@@ -171,6 +171,6 @@ s.channel ="<?php echo $s_channel; ?>";
 /*************  DO  NOT ALTER ANYTHING  BELOW THIS  LINE  ! **************/
 var s_code=s.t();if(s_code)document.write(s_code)//--></script>
 <!--  End SiteCatalyst  code  -->
-
-//Codigo DTM
-<script type="text/javascript">_satellite.pageBottom();</script>
+    
+    <!-- DTM Code-->
+    <script type="text/javascript">_satellite.pageBottom();</script>
