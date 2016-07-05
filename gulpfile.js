@@ -9,6 +9,7 @@ var gulp = require('gulp'),
 //Task for reloading the page
 gulp.task('reload', function() {
   browserSync.reload();
+  
 });
 
 //Static server + watching scss/html files
@@ -32,11 +33,10 @@ gulp.task('sass', function () {
 
 //Task for watching scss/html/js files changes
 gulp.task('watch', function(){
-	gulp.watch('dev/**/*.scss', { interval: 500 }, ['sass']);
-	gulp.watch("dev/**/*.html", { interval: 500 }, ['reload']);
-	gulp.watch("dev/**/*.js", { interval: 500 }, ['reload']);
+	gulp.watch('dev/**/*.scss', ['sass']);
+	gulp.watch("dev/**/*.html", ['reload']);
+	gulp.watch("dev/**/*.js", ['reload']);
 });
-
 
 //Task by default
 gulp.task('default', ['sass', 'serve', 'watch']);

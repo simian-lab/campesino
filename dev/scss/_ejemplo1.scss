@@ -1,0 +1,13 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #FF0000;
+$second-color: #000000;
+
+h1 {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+article {
+	font: 100% $font-stack;
+  color: $second-color;
+}
