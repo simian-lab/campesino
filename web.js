@@ -6,5 +6,5 @@ app.use('/', function(req, res, next) {
   next();
 });
 
-app.use('/', express.static(__dirname + '/www'));
+app.use('/', express.static(__dirname + '/dev'));
 app.listen(process.env.PORT || 5000);
