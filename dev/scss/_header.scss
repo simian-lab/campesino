@@ -1,91 +1,173 @@
-header{
-	width: 1366px;
-	  height: 1262px;
-	  object-fit: contain;
-	  background-image: radial-gradient(circle at 50% 50%, $white, $macaroni-and-cheese);
-#menu {
-	  text-align:center;
-	  
-	.icon{
-		margin-top: 2.688em;
-	}
-
-	.logo{
-	  	display: block;
-    	margin: 0 auto;
-	  	width: 199px;
-  		height: 115px;
-  		padding-top: 1.375em;
- 	}
-
- 	a{
- 		border-style: dotted;
- 		text-decoration:none;
- 		figure {
- 		figcaption{
-		  
-		  font-family: AcuminPro;
-		  font-size: 18px;
-		  font-weight: normal;
-		  color: #553408;
-		  }
-		  }
-	}
-
+html{
+	background-image: url(/images/background/fondo-hero.png);	
 }
-
-	.left {
-		float: left;
-		margin-left: 10.000em;
+#head{
+	/*position: absolute;
+	z-index: 1;
+	  */
+	background-image: url(/images/background/fondo-hero.png);
+	width: 100%;
+	height: 31.25rem;
+	position: relative;
+	margin-bottom: -5%;
+	#menu {
+		text-align:center;
+		margin-left: auto;
+		margin-right: auto; 
+		.icon{
+			margin-top: 46px;
+			/*margin-left: 8.750em;
+			float: left;*/
+		}
+	 	a{
+	 		text-decoration:none;
+	 		figcaption{
+			  font-family: AcuminPro;
+			  font-size: 1.125em;
+			  font-weight: normal;
+			  color: #553408;
+			}
+			
+		}
+		#logo{
+			margin-top: 22px;
+			max-width: 27rem;
+			width: 199px;
+	  	}
+	  	.left{
+	  		float: left;
+	  	}
+	  	.right{
+	  		float: right;
+	  	}
+	  	#milk{
+			margin-left: 209px;
+	  	}
+	  	#contact{
+			margin-right: 209px;
+	  	}
 	}
-	.right {
-		float: right;
-		margin-right: 11.700em;
+	#title {
+		position: relative;
+		z-index: 2;
+		width: 50%;
+		margin: 0 auto;
+		.figura {
+			position: absolute;
+			margin-top: 8%;
+			width: 52%;
+		}
+		div {
+			position: absolute;
+			margin-top: 38%;
+			right: 7%;
+			left: 47%;
+			//margin-right: 200%;
+			float: right;
+			#first {
+				  width: 290px;
+				  //width: 290%;
+				  font-family: AcuminPro;
+				  font-size: 3.4375rem;
+				  font-weight: bold;
+				  line-height: 0.95;
+				  color: $camo-green;
+			}
+			#second {
+				  width: 15.0625rem;
+  				  font-family: Pacifico;
+				  font-size: 4.6875rem;
+				  font-weight: normal;
+				  color: $dark-green-blue;
+			}
+			#last {
+				  width: 20.1875rem;
+  				  font-family: AcuminPro;
+				  font-size: 1.5625rem;
+				  font-weight: bold;
+				  line-height: 2.08;
+				  color: $camo-green;
+			}
+		}
 	}
 }
-.figura {
+//Hojas primera sección
+#topflow {
 	position: absolute;
-    //left: 346px;
-    right: 470px;
-    top: 130px;
-    left: 19em;
-   	width: 430px;
-	height: 627px;
-	margin-top: 2.938em;
-}
-div {
-	position: absolute;
-    right: 300px;
-    top: 400px;
+	top: 0rem;
+	right: 0rem;
+	width: 9%;
 }
 
-body {
-	div{
-		#first {
-	  width: 290px;
-	  height: 104px;
-	  font-family: AcuminPro;
-	  font-size: 55px;
-	  font-weight: bold;
-	  line-height: 0.95;
-	  color: $camo-green;
-	}
-	#second {
-		  width: 241px;
-		  
-		  font-family: Pacifico;
-		  font-size: 75px;
-		  font-weight: normal;
-		  color: $dark-green-blue;
-	}
-	#last {
-		  
-		  font-family: AcuminPro;
-		  font-size: 25px;
-		  font-weight: bold;
-		  line-height: 2.08;
-		  color: $camo-green;
-	}
-	}
+#topsecflow {
+	position: absolute;
+	right: 0rem;
+	top: 8.75rem;
+	width: 14.7%;
 }
+
+#botomflow {
+	z-index: 3;
+	position: absolute;
+	top: 42.5rem;
+	width: 19%;
+}
+
+#fill-1 {
+	position: absolute;
+	top: -1%;
+	left: 16%;
+	width: 1.300em;
+	height: 2.281em;
+	object-fit: contain;
+	margin-top: 306.1px;
+}
+
+#fill-2 {
+	position: absolute;
+	width: 3.5375rem;
+  	height: 6.3875rem;
+  	object-fit: contain;
+  	top: 44%;
+  	left: 10%;
+}
+
+#fill-3 {
+	position: absolute;
+	width: 4.15625rem;
+	height: 3.8625rem;
+	object-fit: contain;
+	-webkit-transform: rotate(-20deg);
+	transform: rotate(-20deg);
+	top: 60%;
+  	left: 20%;
+}
+
+#fill-4 {
+	position: absolute;
+	width: 1.70625rem;
+ 	height: 2.5875rem;
+  	object-fit: contain;
+  	right: 38%;
+  	top: 40%;
+}
+
+#fill-5 {
+	position: absolute;
+	width: 7.08125rem;
+	height: 2.95625rem;
+	object-fit: contain;
+	right: 12%;
+  	top: 25%;
+}
+
+#fill-6{
+	position: absolute;
+	width: 5.9625rem;
+  	height: 5.53125rem;
+  	object-fit: contain;
+  	right: 31%;
+	top: 100%;
+}
+
 

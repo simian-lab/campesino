@@ -1,0 +1,112 @@
+#sec4{
+    z-index: 1;
+	border: 0;
+	margin: 0;
+	position: relative;
+	width: 100%;
+	height: 1201px;
+	//object-fit: contain;
+	background-image: url(/images/background/fondo-quesos.png);
+    background-repeat: no-repeat;
+	margin-bottom: -14.5%;
+	
+	#holes {
+		position: absolute;
+		top: 13%;
+		width: 98%;
+		//width: 50%;
+  		height: 838px;
+		background-image: url(/images/background/huecos-queso.png);
+		background-repeat: no-repeat;
+		object-fit: contain;
+		background-size: 100%;
+	}
+
+    #campesino-cheese {
+    	width: 42.3%;
+		position: absolute;
+		top: 13%;
+		left: 4%;
+    }
+
+    #tajadas-queso {
+    	width: 26%;
+    	position: absolute;
+    	left: 0;
+    	top: 38%;
+    }
+
+    #trozo-queso {
+    	width: 12%;
+    	position: absolute;
+    	right: 0;
+    	bottom: 30%;
+    }
+    #trozo-queso2 {
+    	width: 5.5%;
+    	position: absolute;
+    	right: 0;
+    	bottom: 22%;
+    }
+    h1 {
+    	position: absolute;
+    	right: 13%;
+    	left: 49%;
+    	top: 24%;
+    	//width: 36.6%;
+    	//margin: 0 auto;
+    	font-family: Pacifico;
+		font-size: 72px;
+		font-weight: normal;
+		text-align: right;
+		color: $faded-orange;
+    }
+    #desc {
+    	position: absolute;
+    	//right: %;
+    	left: 50.5%;
+		margin-top: 30%;
+		width: 516px;
+		height: 116px;
+		font-family: AcuminPro;
+		font-size: 22px;
+		font-weight: normal;
+		line-height: 1.32;
+		color: $mud-brown;
+    }
+    #desc2 {
+    	  position: absolute;
+    	  //right: %;
+    	  left: 48%;
+    	  width: 461px;
+		  height: 29px;
+		  bottom: 42%;
+		  font-family: AcuminPro;
+		  font-size: 25px;
+		  font-weight: bold;
+		  line-height: 1.16;
+		  color: $mud-brown;
+    }
+    figure {
+		display: inline-block;
+		height: 11.25rem;
+		margin-left: 60px;
+		margin-top: 56%;
+		figcaption{
+    		  text-align: center;
+			  font-family: AcuminPro;
+			  font-size: 1.125em;
+			  font-weight: normal;
+			  color: #553408;
+		}
+    }
+    .left {
+    	//position: absolute;
+    	//width: 100px;
+    	//margin: 0 auto;
+   		bottom: 0;
+    }
+    #ref {
+    	padding-left: 26%;
+    }
+}

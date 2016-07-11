@@ -1,0 +1,77 @@
+#sec2 {
+	//z-index: 1;
+	/*top: 800px;
+	position: absolute;*/
+	position: relative;
+	border: 0;
+	margin: 0;
+	width: 100%;
+    height: 64.5938rem;
+    background-image: url(/images/background/fondo-veige-prodcutos-naturales@2x.png);
+    background-repeat: no-repeat;
+    margin-bottom: -30%;
+
+    h1{
+		padding-top: 25rem;
+		text-align: center;
+		font-family: Pacifico;
+		font-size: 3.375rem;
+		font-weight: normal;
+		color: $mud-brown;
+	}
+	.firsttitle{
+		margin-top: 2px;
+		font-family: AcuminPro;
+		font-size: 1.375rem;
+		font-weight: normal;
+		text-align: center;
+		color: $mud-brown;
+	}
+	#desc {
+		margin: auto;
+		width: 38.6125rem;
+	  	height: auto;
+
+	  	#industry {
+	  		display: block;
+			padding-top: 7%;
+			width: 7.5rem;
+			margin: auto;
+		}
+	}
+	#land {
+		position: absolute;
+		top: 12%;
+		right: 0;
+		width: 22%;
+	}
+
+}
+
+//Flowers
+#fill-7 {
+	position: absolute;
+	top: 25%;
+	//right: 313.2px;
+	right: 21%;
+}
+
+#fill-8 {
+	position: absolute;
+	//bottom: 250px;
+	bottom: 30%;
+	//right: 205px;
+	right: 15%;
+}
+
+#fill-9 {
+	position: absolute;
+	//bottom: 340px;
+	bottom: 31%;
+	//left: 281.5px;
+	left: 21%;
+}
+
+
+
+

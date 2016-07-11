@@ -1,0 +1,38 @@
+#sec6 {
+	position: relative;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	background-image: url(/images/background/fondo-yogurt-maracuy.png);
+  	background-repeat: no-repeat;
+  	margin-bottom: -20%;
+	
+	img {
+		margin: 0;
+		display: block;
+		position: relative;
+	}
+
+  	#yogurt-gulupa {
+  		//position: absolute;
+  		//right: 0;
+  		//margin-left: 55%;
+  		margin-top: 15%;
+  		float: right;
+  		width: 45.6%;
+  	}
+  	#yogurt-mora {
+  		z-index: 1;
+  		padding-top: 30%;
+  		margin-left: 7%;
+  		width: 45.6%;
+  		margin-bottom: -5%;
+  	}
+  	#yogurt-maracuy {
+  		z-index: 1;
+  		position: relative;
+		width: 45.6%;
+		margin-left: 40%;
+		margin-right: 14.4%;
+	}
+}
