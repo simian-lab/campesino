@@ -2,11 +2,11 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 1317px;
+	height: 1898.5px;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-veige-contacto.png);
   	background-repeat: no-repeat;
-
+	background-size: 100%;
   	#contact {
   		position: relative;
 		width: 100%;
@@ -55,10 +55,21 @@
   	#right-flow {
   		position: absolute;
   		right: 0;
-  		top: 20%;
+  		top: 22%;
   	}
+	
+	#left-flow {
+		position: absolute;
+		margin-top: 24%;
+	}
+	
+	#left-flow-1 {
+		position: absolute;
+		margin-top: 5%;
+	}
 
   	#contact-form {
+  		position: relative;
   		width:  50%;
   		margin: 0 auto;
 		form {
@@ -87,23 +98,156 @@
 			    	margin: 0 auto;
 			    }
 			}
+			
+			.input-info {
+				background: transparent;
+			    border: none;
+			}
 
 			input {
 				height:20px; 
 			    width: 80%; 
 			    padding:5px 8px;
-			    background: transparent;
-			    border: none;
 			}
 			textarea {
 				margin-left: 7px;
 				width: 82.1%; 
 				height: 200px;
-				background: transparent;
-				border: none;
+			}
+
+			#btn {
+				position: relative;
+				//float: right;
+				float: right;
+				width: 164px;
+			    height: 29px;
+				font-family: AcuminPro;
+				font-size: 22px;
+				font-weight: normal;
+				line-height: 1.32;
+				text-align: center;
+				background-color: $beige-three;
+				margin-right: 20px;
+				margin-top: 40px;
+				img {
+					position: absolute;
+					top: -80%;
+					right: -35%;
+				}
 			}
 		}
 		
+  	}
+
+  	#found {
+
+  		width: 47.5%;
+  		margin-left: 26.25%;
+  		margin-right: 26.25%;
+  		margin-top: 10%;
+  		text-align: center;
+
+  		h1 {
+  			font-family: Pacifico;
+			font-size: 64px;
+			font-weight: normal;
+			text-align: center;
+			color: $camo-green;
+  		}
+
+  		p {
+  			margin-top: 2%;
+  			font-family: AcuminPro;
+			font-size: 24px;
+			font-weight: normal;
+			line-height: 1.58;
+			text-align: center;
+			color: $mud-brown;
+			img {
+				padding-right: 5px;
+			}
+  		}
+
+  		#logo {
+  			margin-top: 5%;
+  			width: 199px
+  		}
+
+  		#tel {
+  			font-family: AcuminPro;
+			font-size: 48px;
+			font-weight: bold;
+			text-align: center;
+			color: $desert;
+  		}
+
+  		#address {
+  			font-family: AcuminPro;
+			font-size: 20px;
+			font-weight: normal;
+			text-align: center;
+			color: $camo-green;
+  		}
+  		#nav {
+  			list-style-type: none;
+  			padding: 0;
+
+  			li {
+				width: 8%;
+				margin-left: 2%;
+				float: left;
+			}
+
+  			a {
+				display: block;
+				padding: 0.5em 0.3125rem;
+				text-decoration:none;
+		  	}
+
+		  	#left-li {
+				margin-left: 34%;
+		  	}
+
+		  	#right-li {
+				margin-right: 26%;
+		  	}
+  		}
+				  		
+  	}
+
+  	#land {
+  		position: absolute;
+		right: 8.4%;
+		left: 8.4;
+		bottom: -6%;
+		width: 83.2%;
+
+  	}
+  	
+  	#fill-15 {
+  		position: absolute;
+  		left: 10%;
+  		top: 56%;
+  		width: 3.5375rem;
+  		height: 6.3875rem;
+  	}
+
+  	#fill-16 {
+  		position: absolute;
+  		left: 22%;
+  		bottom: 0;
+  		width: 66.5px;
+  		height: 61.8px;
+  		-ms-transform: rotate(270deg); /* IE 9 */
+    	-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
+    	transform: rotate(270deg);
+  	}
+
+  	#fill-17 {
+  		position: absolute;
+  		width: 27.3px;
+  		height: 41.4px;
+		right: 0;
   	}
   	
 }

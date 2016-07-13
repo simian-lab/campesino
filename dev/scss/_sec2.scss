@@ -9,68 +9,121 @@
     height: 64.5938rem;
     background-image: url(/images/background/fondo-veige-prodcutos-naturales@2x.png);
     background-repeat: no-repeat;
-    margin-bottom: -30%;
-
+    margin-bottom: -18.75rem;
+    text-align: center;
+	@media screen and (max-width: $change) {
+		height: 1200px;
+		margin-bottom: -450px;
+	}
     h1{
+    	width: 38.6125rem;
+  		height: 6.3125rem;
+  		margin: 0 auto;
 		padding-top: 25rem;
-		text-align: center;
 		font-family: Pacifico;
 		font-size: 3.375rem;
 		font-weight: normal;
 		color: $mud-brown;
+		@media screen and (max-width: $change) {
+			width: 289px;
+  			height: 128px;
+  		}
 	}
-	.firsttitle{
-		margin-top: 2px;
+	#firsttitle{
+		width: 38.6125rem;
+  		height: 1.375rem;
+  		margin: 0 auto;
 		font-family: AcuminPro;
 		font-size: 1.375rem;
 		font-weight: normal;
 		text-align: center;
 		color: $mud-brown;
+		@media screen and (max-width: $change) {
+			width: 14.1875rem;
+			height: 5.25rem;
+		}
 	}
-	#desc {
-		margin: auto;
-		width: 38.6125rem;
-	  	height: auto;
+	#secondtitle {
+		width: 34.375rem;
+		height: 11.25rem;
+		margin: 0 auto;
+		font-family: AcuminPro;
+		font-size: 22px;
+		font-weight: normal;
+		line-height: 1.32;
+		text-align: center;
+		color: $mud-brown;
+		@media screen and (max-width: $change) {
+			width: 18.0625rem;
+  			height: 17.5rem;
+		}
+	}
 
-	  	#industry {
+	#desc {
+		#industry {
 	  		display: block;
-			padding-top: 7%;
+			padding-top: 0;
 			width: 7.5rem;
 			margin: auto;
+			/*@media screen and (max-width: 1079px) {
+			top: 18.75rem;
+			left: -40px;
+		}*/
 		}
 	}
 	#land {
 		position: absolute;
-		top: 12%;
+		top: 11%;
 		right: 0;
-		width: 22%;
+		width: 25%;
+		min-width: 7.375rem;
+  		min-height: 16.875rem;
+  		@media screen and (max-width: $change) {
+			top: 400px;
+		}
 	}
 
+	#topflow {
+		z-index: 3;
+		position: absolute;
+		//top: 42.5rem;
+		left: 0;
+		top: 18%;
+		width: 19%;
+		min-width: 5.6875rem;
+  		min-height: 16.5625rem;
+  		@media screen and (max-width: $change) {
+			top: 18.75rem;
+			left: -40px;
+		}
+	}
+
+	//Flowers
+	#fill-7 {
+		position: absolute;
+		top: 25%;
+		//right: 313.2px;
+		right: 21%;
+	}
+
+	#fill-8 {
+		position: absolute;
+		//bottom: 250px;
+		bottom: 30%;
+		//right: 205px;
+		right: 15%;
+	}
+
+	#fill-9 {
+		position: absolute;
+		//bottom: 340px;
+		bottom: 31%;
+		//left: 281.5px;
+		left: 21%;
+	}
 }
 
-//Flowers
-#fill-7 {
-	position: absolute;
-	top: 25%;
-	//right: 313.2px;
-	right: 21%;
-}
 
-#fill-8 {
-	position: absolute;
-	//bottom: 250px;
-	bottom: 30%;
-	//right: 205px;
-	right: 15%;
-}
-
-#fill-9 {
-	position: absolute;
-	//bottom: 340px;
-	bottom: 31%;
-	//left: 281.5px;
-	left: 21%;
-}
 
 
 

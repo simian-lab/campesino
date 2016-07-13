@@ -4,6 +4,7 @@
 	height: auto;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-yogurt-maracuy.png);
+  background-size: 100%;
   	background-repeat: no-repeat;
   	margin-bottom: -20%;
 	
@@ -17,22 +18,23 @@
   		//position: absolute;
   		//right: 0;
   		//margin-left: 55%;
-  		margin-top: 15%;
+  		margin-top: 12%;
+      margin-right: 10%;
   		float: right;
-  		width: 45.6%;
+  		width: 41%;
   	}
   	#yogurt-mora {
   		z-index: 1;
-  		padding-top: 30%;
+  		padding-top: 26%;
   		margin-left: 7%;
-  		width: 45.6%;
+  		width: 41.7%;
   		margin-bottom: -5%;
   	}
   	#yogurt-maracuy {
   		z-index: 1;
   		position: relative;
 		width: 45.6%;
-		margin-left: 40%;
-		margin-right: 14.4%;
+		margin-left: 35%;
+		margin-right: 19.4%;
 	}
 }
