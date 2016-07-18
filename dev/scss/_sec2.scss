@@ -1,7 +1,5 @@
 #sec2 {
-	//z-index: 1;
-	/*top: 800px;
-	position: absolute;*/
+	
 	position: relative;
 	border: 0;
 	margin: 0;
@@ -9,12 +7,17 @@
     height: 64.5938rem;
     background-image: url(/images/background/fondo-veige-prodcutos-naturales@2x.png);
     background-repeat: no-repeat;
-    margin-bottom: -18.75rem;
+    margin-bottom: -200px;
     text-align: center;
-	@media screen and (max-width: $change) {
+    @media screen and (max-width: $change) {
 		height: 1200px;
-		margin-bottom: -450px;
+		margin-bottom: -150px;
 	}
+
+	@media screen and (max-width: 589px) {
+		margin-bottom: -150px;
+	}
+
     h1{
     	width: 38.6125rem;
   		height: 6.3125rem;
@@ -72,14 +75,15 @@
 		}
 	}
 	#land {
+		z-index: 2;
 		position: absolute;
-		top: 11%;
+		top: 140px;
 		right: 0;
 		width: 25%;
 		min-width: 7.375rem;
   		min-height: 16.875rem;
   		@media screen and (max-width: $change) {
-			top: 400px;
+			top: 26.875rem;
 		}
 	}
 
@@ -88,7 +92,7 @@
 		position: absolute;
 		//top: 42.5rem;
 		left: 0;
-		top: 18%;
+		top: 210px;
 		width: 19%;
 		min-width: 5.6875rem;
   		min-height: 16.5625rem;
@@ -104,6 +108,9 @@
 		top: 25%;
 		//right: 313.2px;
 		right: 21%;
+		@media screen and (max-width: $change) {
+			display: none;
+		}
 	}
 
 	#fill-8 {
@@ -112,6 +119,10 @@
 		bottom: 30%;
 		//right: 205px;
 		right: 15%;
+		@media screen and (max-width: $change) {
+			right: 12px;
+			top: 350px;
+		}
 	}
 
 	#fill-9 {
@@ -120,6 +131,9 @@
 		bottom: 31%;
 		//left: 281.5px;
 		left: 21%;
+		@media screen and (max-width: $change) {
+			display: none;
+		}
 	}
 }
 

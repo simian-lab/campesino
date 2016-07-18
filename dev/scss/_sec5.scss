@@ -1,85 +1,140 @@
+$change-sec5: 1169px;
 #sec5 {
-	position: relative;
-	width: 100%;
+	  position: relative;
+	  width: 100%;
   	height: 1089.5px;
   	object-fit: contain;
   	background-image: radial-gradient(circle at 50% 0, $purplish-grey, $dirty-purple);
   	background-repeat: no-repeat;
+    margin-bottom: -40px;
+    @media screen and (max-width: 800px) {
+      height:700px;
+    }
 
   	#fill-13 {
 		float: right;
 		margin-top: 16%;
+    @media screen and (max-width: $change-sec5) {
+      display: none;
+    }
   	}
 
   	#fill-14 {
 		float: left;
 		margin-top: 11%;
+    @media screen and (max-width: $change-sec5) {
+      display: none;
+    }
   	}
-
+    
   	#yogures {
       z-index: 1;
-  		width: 69%;
+  		width: 77.2%;
+      //height: 1169px;
   		position: absolute;
+      display: block;
   		left: 0;
-  		margin-top: 22%;
+      bottom: -28%;
+  		min-width: 360px;
+      min-height: 506px;
+      @media screen and (max-width: $change-sec5) {
+        bottom: -20%;
+        margin-right: -20%;
+      }
+      @media screen and (max-width: 722px) {
+        bottom: -20%;
+      }
+      @media screen and (max-width: 378px) {
+        content: url(/images/background/montaje-yogures-movil.png);
+      }
+      @media screen and (max-width: 373px) {
+        margin-left: -18px;
+      }
+      /*@media screen and (max-width: 1157px) {
+        margin-right: 
+      }*/
   	}
 	
   	h1 {
-  		margin-left: 34%;
+  		/*margin-left: 34%;
   		margin-right: 32%;
   		margin-top: 12%;
-  		position: absolute;
+  		position: absolute;*/
+      width: 500px;
+      padding-top: 200px;
   		min-width: 34%;
+      margin: 0 auto;
 	    //height: 119px;
 	    font-family: Pacifico;
-		font-size: 64px;
-		font-weight: normal;
-		text-align: center;
-		color: $beige-three;
+  		font-size: 64px;
+  		font-weight: normal;
+  		text-align: center;
+  		color: $beige-three;
+      @media screen and (max-width: 722px) {
+        padding-top: 100px;
+        width: 300px;
+        height: 134px;
+      }
   	}
+
   	p {
-  		  margin-top: 20%;
-  		  margin-left:  35%;
-  		  position: absolute;
+  		  //margin-top: 20%;
+  		  //margin-left:  35%;
+  		  position: relative;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding-left: 100px;
   		  width: 560px;
-		  height: 232px;
-		  font-family: AcuminPro;
-		  font-size: 22px;
-		  font-weight: normal;
-		  line-height: 1.32;
-		  color: $beige-two;
+  		  height: 232px;
+  		  font-family: AcuminPro;
+  		  font-size: 22px;
+  		  font-weight: normal;
+  		  line-height: 1.32;
+  		  color: $beige-two;
+        @media screen and (max-width: $change-sec5) {
+          display: none;
+        }
   	}
 
   	#vector-desc {
-		position: absolute;
-		bottom: 38%;
-		right: 10%;
-		width: 22.8%;
+  		position: absolute;
+  		bottom: 38%;
+  		right: 10%;
+  		width: 22.8%;
+      @media screen and (max-width: $change-sec5) {
+      display: none;
+      }
   	}
 
   	#fill-15 {
-		position: absolute;
-		bottom: 32%;
-		right: 28%;
-		width: 3.7%;
+  		position: absolute;
+  		bottom: 32%;
+  		right: 28%;
+  		width: 3.7%;
+      @media screen and (max-width: $change-sec5) {
+      display: none;
+      }
   	}
   	#bottles {
-  		position: absolute;
-      z-index: 1;
-  		width: 191px + 124px;
-  		height: 300px;
-  		right: 2%;
-  		bottom: -4%;
-  		#big {
-			float: left;
-			#bottle-1800{
-				width: 50%;
-			}
+    		position: absolute;
+        z-index: 1;
+    		width: 191px + 124px;
+    		height: 300px;
+    		right: 2%;
+    		bottom: -4%;
+    		#big {
+  			  float: left;
+  			#bottle-1800{
+  				width: 50%;
+  			}
   		}
 
   		#small {
-			float: right;
-			margin-top: 51.2%;
+  			float: right;
+  			margin-top: 51.2%;
   		}
+      @media screen and (max-width: $change-sec5) {
+        display: none;
+      }
   	}	
 }

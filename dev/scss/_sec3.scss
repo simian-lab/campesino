@@ -1,5 +1,5 @@
 #sec3 {
-	//z-index: 2;
+	
 	border: 0;
 	margin: 0;
 	width: 100%;
@@ -8,28 +8,33 @@
     background-repeat: no-repeat;
 	position: relative;
 	margin-bottom: -9%;
-	background-size: cover;
-	/*border: 0;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-  	height: 700px;
-  	background-image: url(/images/background/fondo-leche@3x.png);
-    background-repeat: no-repeat;*/
-	@media screen and (max-width: $change) {
-		height: 162.5rem;
+	background-size: 100% 100%;
+	
+	@media screen and (max-width: 1111px) {
+		background-image: url(/images/background/fondo-veige-prodcutos-naturales-movil.png);
+		height: 1400px;
+		margin-bottom: -200px;
 	}
-    #lef-land {
+	
+	@media screen and (max-width: 783px) {
+		height: 1400px;
+		margin-bottom: -150px;
+	}
+	
+	@media screen and (max-width: 660px) {
+		height: 2200px;
+		margin-bottom: -200px;
+	}
+	#lef-land {
 	//position: absolute;
 		width: 26.5%;
   		height: 49%;
-		margin-top: 0.25rem;
-		@media screen and (max-width: $change) {
+		margin-top: -150px;
+		@media screen and (max-width: 1111px) {
 		-webkit-transition: width 1s, height 1s, margin-top 1s; // For Safari 3.1 to 
-			width: 180px;
-	  		height: 300px;
-	  		margin-top: 200px;
-	}
+			height: 400px;
+	  		margin-top: -120px;
+		}
 	}
 
 	#milk {
@@ -43,6 +48,9 @@
 		top: 200px;
 		min-width: 20.3562rem;
   		min-height: 43.5625rem;
+  		@media screen and (max-width: 1111px) {
+			top: 200px;
+  		}
 		@media screen and (max-width: $change) {
 			-webkit-transition: position 1s; // For Safari 3.1 to 
 			position: relative;
@@ -76,14 +84,13 @@
 			-webkit-transition: width 1s, height 1s, margin-top 1s; // For Safari 3.1 to 
 			width: 288px;
   			height: 138px;
-  			margin-top: -220px;
+  			margin-top: -100px;
   		}
 
 		@media screen and (max-width: $change) {
 	    	margin: 0 auto;
 	    	margin-top: -100px;
-	    	margin-bottom: 0;
-  		}
+	    }
 	}
 	#text {
 		
@@ -106,53 +113,126 @@
 		@media screen and (max-width: $change) {
 			-webkit-transition: width 1s, position 1s, margin-left 1s; // For Safari 3.1 to 
 			position: absolute;
-			top: 32.5rem;
-  			margin-left: 5%;
+			top: 300px;
+  			margin-left: 18%;
 		}
-		@media screen and (max-width: 589px) {
+		@media screen and (max-width: 660px) {
 			position: relative;
 			p {
 				position: absolute;
 			}
 			margin: 0 auto;
-			margin-top: 13.75rem;
+			margin-top: 400px;
 		}
 	}
-	#deslac {
-		position: absolute;
-		bottom: 18%;
-		right: 34%;
-	}
+	
 	#left-milk{
 		z-index: 2;
 		position: absolute;
 		left: 0;
 		width: 13.7%;
 		bottom: 0px;
+		min-width: 115.9px;
+  		min-height: 230.8px;
+  		@media screen and (max-width: 660px) {
+			bottom: 100px;
+  		}
 	}
+	
+	#deslac {
+		position: absolute;
+		bottom: 18%;
+		right: 34%;
+		width: 21.3%;
+		min-height: 47.2px;
+		min-width: 209.4px;
+		@media screen and (max-width: 1111px) {
+			bottom: 200px;
+			left: 36%;
+		}
+
+		@media screen and (max-width: $change) {
+			bottom: 250px;
+			left: 45%;
+		}
+
+		@media screen and (max-width: 660px) {
+			z-index: 2;
+			bottom: 200px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+
 	#bottle-1000 {
 		position: absolute;
 		bottom: 8%;
 		left: 30%;
+		width: 6.38%;
+		min-width: 69.7px;
+  		min-height: 221.9px;
+		@media screen and (max-width: 1111px) {
+			bottom: 170px;
+			left: 27%;
+		}
+
+		@media screen and (max-width: $change) {
+			bottom: 200px;
+		}
+
+		@media screen and (max-width: 660px) {
+			bottom: 350px;
+			left: 0;
+			margin-left: 50%;
+			margin-right: 35%; 
+		}
 	}
 	#bottle-2000 {
 		position: absolute;
 		left: 20%;
 		bottom: 8%;
+		width: 6.83%;
+		min-width: 85.1px;
+  		min-height: 271.8px;
+		@media screen and (max-width: 1111px) {
+			bottom: 170px;
+			left: 15%;
+		}
+
+		@media screen and (max-width: $change) {
+			bottom: 200px;
+		}
+
+		@media screen and (max-width: 660px) {
+			bottom: 350px;
+			left: 0;
+			margin-left: 26.5%;
+			margin-right: 55%; 
+		}
 	}
 	#fill-10 {
 		position: absolute;
 		bottom: 15%;
 		right: 42%;
+		@media screen and (max-width: 660px) {
+			display: none;
+		}
 	}
 	#fill-11{
 		position: absolute;
 		left: 5%;
-		bottom: 45%;		
+		bottom: 45%;
+		@media screen and (max-width: 660px) {
+			display: none;
+		}		
 	}
 	#fill-12{
 		position: absolute;
 		right: 0;
 		top: 25%;
+		@media screen and (max-width: 660px) {
+			display: none;
+		}
 	}
 }

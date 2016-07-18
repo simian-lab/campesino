@@ -1,43 +1,142 @@
 #sec7 {
+  
 	position: relative;
 	width: 100%;
-	height: 1317px;
+	height: 1600px;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-yogurt-maracuy-sec7.png);
-  	background-repeat: no-repeat;
-    background-size: 100%;
-	margin-bottom: -24%;	
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+	margin-bottom: -30%;	
+ @media screen and (max-width: $change-sec5) {
+   
+      background-image: url(/images/background/fondo-yogurt-maracuy-movil-sec7.png)
+  }
+  @media screen and (max-width: 660px) {
+    height: 1100px;
+    //margin-bottom: -30%;
+  }
+  
+  /*@media screen and (max-width: 1111px) {
+      height: 1700px;
+  }*/
+
+  /*@media screen and (max-width: 980px) {
+      height: 2800px;
+  }
+*/
+/*
+  @media screen and (max-width: 1078px) {
+    height: 1300px;
+  }*/
+
   	#yogurt-melocoton {
-  		width: 40.5%;
-  		margin-top: 265.5px;
+  		//width: 40.5%;
+
+  		margin-top: 400px;
   		margin-left: 81px;
   		margin-bottom: -20%;
+      min-width: 342px;
+      min-height: 269px;
+      
+      @media screen and (max-width: $change-sec5) {
+        margin-top: 250px;
+      }
+      @media screen and (max-width: 660px) {
+        content: url(/images/background/yogurt-melocoton-movil.png);
+        margin: 0;
+        margin-top: 70px;
+        margin-left: -30px;
+        float: left;
+      }
+      @media screen and (max-width: 367px) {
+          width: 357px;
+      } 
+      /*
+      @media screen and (max-width: $change) {
+        margin-top: 200px;
+      }
+
+      @media screen and (max-width: 548px) {
+        margin-top: 100px;
+      }
+
+      @media screen and (max-width: 660px) {
+        margin-bottom: 0;
+        margin-left: 0;
+        float: left;
+      }
+      */
   	}
 
   	#yogurt-feijoa {
-  		width: 43.3%;
+  		//width: 43.3%;
   		position: absolute;
   		right: 0;
   		margin-right: 9%;
   		bottom: 26%;
+      min-width: 292px;
+      min-height: 272px;
+      @media screen and (max-width: 1111px) {
+          bottom: 20%;
+      }
+      @media screen and (max-width: 660px) {
+          position: relative;
+          content: url(/images/background/yogurt-feijoa-movil.png);
+          margin: 0;
+          margin-top: 320px;
+          //margin-right: 20px;
+          float: left;;
+      }
+      /*
+      @media screen and (max-width: $change-sec5) {
+        margin-right: 4%;
+        bottom: 22%;
+
+      }*/
+      /*
+      @media screen and (max-width: $change) {
+        bottom: 400px;
+      }
+
+      @media screen and (max-width: 548px) {
+        
+      }
+
+      @media screen and (max-width: 660px) {
+        margin-bottom: 0;
+        margin-left: 0;
+        float: left;
+      }
+      /*
+      @media screen and (max-width: 980px) {
+        bottom: 30%x;
+      }*/
   	}
 	
-	.mancha {
-		position: absolute;
-	}
+  	.mancha {
+  		position: absolute;
+      @media screen and (max-width: $change-sec5) {
+        display: none;
+      }
+
+  	}
 
   	#mancha-lateral {
-		left: 0;
-		margin-top: -13%;
+      width: 32.3%;
+		  left: 0;
+		  margin-top: -13%;
   	}
 
   	#mancha-lateral2 {
-		right: 0;
-		top: -15%;
+      width: 23%;
+  		right: 0;
+  		top: -15%;
   	}
 
   	#mancha-lateral3 {
-		right: 0;
-		bottom: 30%;
+  		width: 18.5%;
+      right: 0;
+  		bottom: 30%;
   	}
 }

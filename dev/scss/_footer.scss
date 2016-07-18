@@ -1,20 +1,21 @@
 footer {
-
+	@media screen and (max-width: 530px) {
+		display: none;
+	}
+	margin-top: 200px;
 	#foot {
-		position: relative;
-		width: 100%;
-		height: 8.8125rem;
-		img {
-			position: absolute;
-			//float: right;
-			right: 1.8125rem;
-			margin-top: 6.875rem;
-			
-		}
-
+		position: absolute;
+		right: 0;
+		//bottom: 0;
+		height: 70px;
 	}
 	p {
+		font-family: AcuminPro;
+		font-size: 18px;
+		font-weight: normal;
+		line-height: 1.61;
 		text-align: center;
+		color: #4d2b24;
 		margin-bottom: 1.875rem;
 	}
 }

@@ -2,50 +2,123 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 1898.5px;
+	height: 1850px;
+	margin-bottom: -80px;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-veige-contacto.png);
   	background-repeat: no-repeat;
-	background-size: 100%;
-  	#contact {
+	background-size: 100% 100%;
+	@media screen and (max-width: 881px) {
+		background-image: url(/images/background/fondo-veige-contacto-movil.png);		
+		height: 2000px;
+	}
+	
+	@media screen and (max-width: 881px) {
+		height: 2050px;
+	}
+	
+	@media screen and (max-width: 720px) {
+		height: 1850px;
+	}
+
+	@media screen and (max-width: 630px) {
+		height: 1750px;
+	}
+	#contact {
   		position: relative;
 		width: 100%;
-  		#contact-img {
+		
+		#contact-img {
+			margin-top: -25px;
 			width: 100%;
-  		}
-
-  		#img-somb {
-  			position: absolute;
-  			width: 41%;
-			top: 0;
-			margin-top: 18%;
-			margin-left: 30%;
-			margin-right: 30%;
-			
+			@media screen and (max-width: 1080px) {
+      			margin-top: 0px;
+  			}
+  			@media screen and (max-width: 962px) {
+				margin-top: 20px;
+  			}
+  			@media screen and (max-width: 881px) {
+				margin-top: -60px;
+  			}
+  			@media screen and (max-width: 881px) {
+  				content: url(/images/background/mancha-contacto@2x-movil.png);
+  				margin-top: -100px;
+  			}
+  			@media screen and (max-width: 659px) {
+				margin-top: -200px;
+  			}
+  			@media screen and (max-width: 548px) {
+				margin-top: -300px;
+			}
+			@media screen and (max-width: 495px) {
+				margin-top: -250px;
+			}
+			@media screen and (max-width: 428px) {
+				margin-top: -200px;
+			}
+			@media screen and (max-width: 428px) {
+				content: url(/images/background/mancha-contacto-movil.png);
+				margin-top: -150px;
+			}
+		}
+		#img-somb {
+			min-width: 18.1875rem;
+  			//position: absolute;
+  			width: 46.51%;
+			//top: 0;
+			margin: 0 auto;
+			margin-top: -30%;
+			@media screen and (max-width: 881px) {
+				margin-top: -60%;
+			}
+			@media screen and (max-width: 428px) {
+				margin-top: -400px;
+			}			
 			div {
 				position: relative;
 				text-align: center;
+				img {
+					@media screen and (max-width: $change) {
+						width: 205.3px;
+		 				height: 95.9px;
+					}
+				}
 			}
 			
 			.intro {
+				margin-top: 3.125rem;
   				text-align: center;
+  				min-width: 18.1875rem;
   			}
 
 			h1 {
+				width: 100%;
 				font-family: Pacifico;
-				font-size: 64px;
+				font-size: 4rem;
 				font-weight: normal;
 				text-align: center;
 				color: $camo-green;
+				/*@media screen and (max-width: $change) {
+					width: 291px;
+  					height: 134px;
+  					margin: 0 auto;
+				}*/
 			}
 
 			p {
+				width: 100%;
 				font-family: AcuminPro;
 				font-size: 22px;
 				font-weight: normal;
 				line-height: 1.32;
 				text-align: center;
 				color: $mud-brown;
+				/*
+				@media screen and (max-width: $change) {
+					width: 291px;
+	  				height: 174px;
+	  				margin: 0 auto;
+	  			}*/
 			}
 
   		}
@@ -56,21 +129,31 @@
   		position: absolute;
   		right: 0;
   		top: 22%;
+  		@media screen and (max-width: 630px) {
+			display: none;
+  		}
   	}
 	
 	#left-flow {
 		position: absolute;
 		margin-top: 24%;
+		@media screen and (max-width: 630px) {
+			display: none;
+  		}
 	}
 	
 	#left-flow-1 {
 		position: absolute;
 		margin-top: 5%;
+		@media screen and (max-width: 630px) {
+			display: none;
+  		}
 	}
 
   	#contact-form {
   		position: relative;
   		width:  50%;
+  		height: auto;
   		margin: 0 auto;
 		form {
 			li {
@@ -80,7 +163,7 @@
 			}
 
 			ul {
-				width: 700px;
+				width: 100%;
 			    //list-style-type:none;
 			    //list-style-position:outside;
 			    margin: 0px;
@@ -88,12 +171,13 @@
 			}
 
 			label {
-				width:36px;
-			    padding-bottom: 9px;
+				width: 36px;
+				padding-bottom: 9px;
 			    padding-right: 10px;
 			    display:inline-block;
 			    float:left;
 			    img {
+			    	//width: 100%;
 			    	display: block;
 			    	margin: 0 auto;
 			    }
@@ -106,13 +190,26 @@
 
 			input {
 				height:20px; 
-			    width: 80%; 
+			    width: 84.1%; 
 			    padding:5px 8px;
+			    @media screen and (max-width: 834px) {
+					width: 70%; 
+			    }
+			    @media screen and (max-width: 470px) {
+					width: 50%; 
+			    }
+
 			}
 			textarea {
 				margin-left: 7px;
-				width: 82.1%; 
+				width: 84.1%; 
 				height: 200px;
+				@media screen and (max-width: 834px) {
+					width: 70%; 
+			    }
+			    @media screen and (max-width: 470px) {
+					width: 50%; 
+			    }
 			}
 
 			#btn {
@@ -139,97 +236,131 @@
 		
   	}
 
-  	#found {
-
-  		width: 47.5%;
-  		margin-left: 26.25%;
-  		margin-right: 26.25%;
-  		margin-top: 10%;
-  		text-align: center;
-
-  		h1 {
-  			font-family: Pacifico;
-			font-size: 64px;
-			font-weight: normal;
-			text-align: center;
-			color: $camo-green;
-  		}
-
-  		p {
-  			margin-top: 2%;
-  			font-family: AcuminPro;
-			font-size: 24px;
-			font-weight: normal;
-			line-height: 1.58;
-			text-align: center;
-			color: $mud-brown;
-			img {
-				padding-right: 5px;
-			}
-  		}
-
-  		#logo {
-  			margin-top: 5%;
-  			width: 199px
-  		}
-
-  		#tel {
-  			font-family: AcuminPro;
-			font-size: 48px;
-			font-weight: bold;
-			text-align: center;
-			color: $desert;
-  		}
-
-  		#address {
-  			font-family: AcuminPro;
-			font-size: 20px;
-			font-weight: normal;
-			text-align: center;
-			color: $camo-green;
-  		}
-  		#nav {
-  			list-style-type: none;
-  			padding: 0;
-
-  			li {
-				width: 8%;
-				margin-left: 2%;
-				float: left;
-			}
-
-  			a {
-				display: block;
-				padding: 0.5em 0.3125rem;
-				text-decoration:none;
-		  	}
-
-		  	#left-li {
-				margin-left: 34%;
-		  	}
-
-		  	#right-li {
-				margin-right: 26%;
-		  	}
-  		}
-				  		
+  	h1 {
+  		width: 410px;
+  		margin: 0 auto;
+  		margin-top: 120px;
+  		font-family: Pacifico;
+		font-size: 64px;
+		font-weight: normal;
+		text-align: center;
+		color: $camo-green;
+		@media screen and (max-width: 878px) {
+			font-size: 40px;
+			width: 275px;
+		}
   	}
 
-  	#land {
-  		position: absolute;
-		right: 8.4%;
-		left: 8.4;
-		bottom: -6%;
-		width: 83.2%;
-
-  	}
+  	p {
+  		margin-top: 2%;
+  		font-family: AcuminPro;
+		font-size: 24px;
+		font-weight: normal;
+		line-height: 1.58;
+		text-align: center;
+		color: $mud-brown;
+		img {
+			padding-right: 5px;
+		}
   	
-  	#fill-15 {
+  	}
+	
+	#log {
+		width: 199px;
+		margin: 0 auto;
+		#logo {
+  			margin-top: 5%;
+  			width: 100%;
+  			width: 199px
+  		}	
+	}
+  		
+	#tel {
+  		font-family: AcuminPro;
+		font-size: 48px;
+		font-weight: bold;
+		text-align: center;
+		color: $desert;
+		@media screen and (max-width: 878px) {
+			font-size: 43.9px;
+		}
+  	}
+
+	#mail {
+		font-family: AcuminPro;
+		font-size: 24px;
+		font-weight: normal;
+		text-align: center;
+	    font-weight: bold;
+		color: #4d2b24;
+		@media screen and (max-width: 878px) {
+			font-size: 18.3px;
+		}
+	}
+
+	#address {
+		font-family: AcuminPro;
+		font-size: 20px;
+		font-weight: normal;
+		text-align: center;
+		color: $camo-green;
+		@media screen and (max-width: 878px) {
+			font-size: 18.3px;
+		}
+	}
+
+	#nav {
+		width: 220px;
+		height: 58px;
+		margin: 0 auto;
+		list-style-type: none;
+		padding: 0;
+
+		li {
+				width: 58px;
+				height: 58px;
+				float: left;
+		}
+
+		.margin-left {
+			margin-left: 1.4375rem;
+		}
+
+		a {
+			display: block;
+			padding-top: 0.625rem;
+			text-decoration:none;
+	  	}
+
+	}
+	
+	#land {
+  			position: absolute;
+  			bottom: -120px;
+  			left: 0;
+  			z-index: 2;
+  			width: 100%;
+  			
+			@media screen and (max-width: 881px) {
+				bottom: -70px;
+  			}
+
+  			@media screen and (max-width: 530px) {
+  				margin-bottom: -200px;
+  				min-height: 360px;
+  				content: url(/images/background/f-o-o-t-e-r@3x.png);
+  			}
+	}	
+
+	#fill-15 {
   		position: absolute;
   		left: 10%;
-  		top: 56%;
+  	    bottom: 26%;
   		width: 3.5375rem;
   		height: 6.3875rem;
+  		@media screen and (max-width: 630px) {
+			display: none;
+  		}
   	}
 
   	#fill-16 {
@@ -241,13 +372,38 @@
   		-ms-transform: rotate(270deg); /* IE 9 */
     	-webkit-transform: rotate(270deg); /* Chrome, Safari, Opera */
     	transform: rotate(270deg);
+    	@media screen and (max-width: 630px) {
+			display: none;
+  		}
   	}
 
   	#fill-17 {
   		position: absolute;
   		width: 27.3px;
   		height: 41.4px;
-		right: 0;
+		right: 300px;
+		bottom: 600px;
+		@media screen and (max-width: 630px) {
+			display: none;
+  		}
+  	}
+
+  	#fill-18 {
+  		position: absolute;
+  		right: 140px;
+  		bottom: 350px;
+  		@media screen and (max-width: 630px) {
+			display: none;
+  		}
+  	}
+
+  	#fill-19 {
+		position: absolute;
+  		left: 300px;
+  		bottom: 700px;
+		@media screen and (max-width: 630px) {
+			display: none;
+  		}
   	}
   	
 }
