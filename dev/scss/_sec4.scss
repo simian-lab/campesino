@@ -4,30 +4,33 @@
 	margin: 0;
 	position: relative;
 	width: 100%;
-	height: 1350px;
-	//object-fit: contain;
+	height: 84.375rem;
 	background-image: url(/images/background/fondo-quesos.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-	margin-bottom: -250px;
+	margin-bottom: -15.625rem;
     
     @media screen and (max-width: $change-sec4) {  
-        height: 1400px;
+        height: 87.5rem;
         margin-bottom: -30%;
     }
     
-    @media screen and (max-width: 783px) {
+    @media screen and (max-width: 48.9375rem) {
         background-image: url(/images/background/fondo-quesos-movil.png);
-        height: 1600px;
+        height: 100rem;
         margin-bottom: -10%;   
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 37.5rem) {
         
-        height: 1900px;
+        height: 118.75rem;
     }
 
-    @media screen and (max-width: 722px) {
+    @media screen and (max-width: 45.125rem) {
         margin-bottom: -12%;
+    }
+
+    @media screen and (max-width: 21.875rem) {
+        margin-bottom: -15%;
     }
 
     #holes {
@@ -35,66 +38,51 @@
 		top: 13%;
 		width: 98%;
 		//width: 50%;
-  		height: 838px;
+  		height: 52.375rem;
 		background-image: url(/images/background/huecos-queso.png);
 		background-repeat: no-repeat;
 		object-fit: contain;
 		background-size: 100%;
 	}
 
-    #campesino-cheese {
-    	width: 42.3%;
-		position: absolute;
-		top: 13%;
-		left: 4%;
-        min-width: 315.7px;
-        min-height: 304.5px;
+    #cheese-div {
+        width: 544px;
+        height: 515px;
+        float: left;
+        margin-top: 170px;
+        margin-left: 10px;
         @media screen and (max-width: $change-sec4) {
-            position: relative;
+            float: none;
             display: block;
-            top: 0;
-            left: 0;
+            position: relative;
+            width: 36%;
+            height: auto;
             margin: 0 auto;
-            margin-top: 70px;
+            margin-top: 4.375rem;
+
+        }
+        @media screen and (max-width: 37.5rem) {
+            width: 70%;
+        }
+        #campesino-cheese {
+            width: 100%;
+        }
+        #tajadas-queso { 
+            margin-top: -180px;
+            margin-left: -70px;
+            width: 60%;
+            height: auto;
         }
     }
-
-    #tajadas-queso {
-    	width: 26%;
-    	position: absolute;
-    	left: 0;
-    	top: 38%;
-        min-width: 271px;
-        min-height: 244px;
-        @media screen and (min-width: $change-sec4) {
-            content: url(/images/background/tajadas-queso-imagen.png);
-        }
-        @media screen and (max-width: $change-sec4) {
-            content: url(/images/background/tajadas_queso_imagen.svg);
-            top: 500px;
-            left: 20%;
-            margin: 0 auto;        
-        }
-
-        @media screen and (max-width: 600px) {
-            top: 540px;
-            left:13%;
-            
-        }
-        @media screen and (max-width: 600px) {
-            left: 0%;
-        }
-    }
-
+    
     #trozo-queso {
     	width: 12%;
     	position: absolute;
     	right: 0;
     	bottom: 25%;
-        min-width: 139px;
-        min-height: 216.6px;
-        @media screen and (max-width: 783px) {
-            bottom: 8%;
+        min-width: 5rem;
+        @media screen and (max-width: 48.9375rem) {
+            bottom: 9.375rem;
         }
     }
     #trozo-queso2 {
@@ -102,19 +90,18 @@
     	position: absolute;
     	right: 0;
     	bottom: 16%;
-        min-width: 51.4px;
-        min-height: 117px;
-        @media screen and (max-width: 783px) {
-            bottom: 4%;
+        min-width: 2.5rem;
+        @media screen and (max-width: 48.9375rem) {
+            bottom: 6.25rem;
         }
     }
     h1 {
     	position: absolute;
     	left: 48%;
-    	top: 320px;
-    	width: 480px;
+    	top: 20rem;
+    	width: 30rem;
     	font-family: Pacifico;
-		font-size: 72px;
+		font-size: 4.5rem;
 		font-weight: normal;
         text-align: center;
 		color: $faded-orange;
@@ -122,23 +109,24 @@
             position: initial;
             //display: block;
             left: 0;
-            font-size: 68px;
+            font-size: 4.25rem;
             margin: 0 auto;
             padding-top: 170px;
         }
-        @media screen and (max-width: 600px) {
-            width: 263.5px;
+        @media screen and (max-width: 37.5rem) {
+            width: 16.4688rem;
+            padding-top: 5rem;
         }
     }
     #desc {
     	position: absolute;
     	//right: %;
     	left: 48.5%;
-		top: 450px;
-		width: 516px;
-		height: 116px;
+		top: 28.125rem;
+		width: 32.25rem;
+		height: 7.25rem;
 		font-family: AcuminPro;
-		font-size: 22px;
+		font-size: 1.375rem;
 		font-weight: normal;
 		line-height: 1.32;
 		color: $mud-brown;
@@ -147,23 +135,23 @@
             left: 0;
             top: 0;
             margin: 0 auto;
-            margin-top: 100px;
-            font-size: 22px;
+            margin-top: 30px;
+            font-size: 1.375rem;
         }
-        @media screen and (max-width: 600px) {
-            width: 250px;
-            height: 232px;
-            margin-top: 130px;
+        @media screen and (max-width: 37.5rem) {
+            width: 15.625rem;
+            height: 14.5rem;
+            margin-top: 3.125rem;
         }
     }
     #desc2 {
     	  position: absolute;
     	  left: 50%;
-    	  width: 461px;
-		  height: 29px;
-		  bottom: 700px;
+    	  width: 28.8125rem;
+		  height: 1.8125rem;
+		  bottom: 43.75rem;
 		  font-family: AcuminPro;
-		  font-size: 25px;
+		  font-size: 1.5625rem;
 		  font-weight: bold;
 		  line-height: 1.16;
 		  color: $mud-brown;
@@ -174,23 +162,23 @@
             top: 0;
             bottom: 0;
             margin: 0 auto;
-            margin-top: 30px;
-            font-size: 22px;
+            margin-top: 1.875rem;
+            font-size: 1.375rem;
         }
-        @media screen and (max-width: 600px) {
-            width: 250px;
-            height: 58px;
+        @media screen and (max-width: 37.5rem) {
+            width: 15.625rem;
+            height: 3.625rem;
         }
     }
     #nav {
         list-style-type: none;
-        margin: 15px 0 0 0;
+        margin: 0.9375rem 0 0 0;
         padding: 0;
         width: 41.875rem;
         height: auto;
         position: absolute;
         left: 32%;
-        bottom: 500px;
+        bottom: 31.25rem;
         @media screen and (max-width: $change-sec4) {
             position: relative;
             margin: 0 auto;
@@ -198,13 +186,13 @@
             left: 0;
         }
         
-        @media screen and (max-width: 783px) {
-            width: 170px;
+        @media screen and (max-width: 48.9375rem) {
+            width: 10.625rem;
             
         }
 
         li {
-            width: 160px;
+            width: 10rem;
             margin-left: 1%;
             float: left;
             text-align: center;
@@ -222,10 +210,35 @@
                 margin-left: 0.5%;
             }
 
-            @media screen and (max-width: 783px) {
+            @media screen and (max-width: 48.9375rem) {
+                padding: 0;
                 clear: left;
+                margin-top: 1.25rem;
             }
             
+        }
+
+        #double {
+            padding-top: 1.125rem;
+            @media screen and (max-width: 48.9375rem) {
+                padding: 0;
+            }
+        }
+
+        #double-taj {
+            padding-top: 2.0625rem;
+
+            @media screen and (max-width: 48.9375rem) {
+                padding: 0;
+            }
+        }
+
+        #per {
+            padding-top: 3.8125rem;
+
+            @media screen and (max-width: 48.9375rem) {
+                padding: 0;
+            }
         }
 
     }

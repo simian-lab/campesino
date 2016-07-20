@@ -19,7 +19,7 @@
 		<img id="logo" src="images/assets/logo-campesino@2x.png" alt="Logo"/>
 		<ul id="nav-left">
 				<li id="left-li">
-					<a id="milk" href="/#milk" target="blank">
+					<a id="milk" href="/#milksection">
 				        <figure>
 				          <img src="images/assets/icono-leche.png" alt="Milk" />
 				          <figcaption>Leche</figcaption>
@@ -27,7 +27,7 @@
 			        </a>
 			    </li>
 				<li id="left-li">
-			     	<a id="cheese" href="/#cheese" target="blank">
+			     	<a id="cheese" href="/#sec4">
 				        <figure>
 				          <img src="images/assets/icono-quesos.png" alt="Cheese" />
 				          <figcaption>Quesos</figcaption>
@@ -37,7 +37,7 @@
 	    </ul>
 	    <ul id="nav-right">
 	    	<li id="right-li">
-				<a id="contact" href="/#contact" target="blank">
+				<a id="contact" href="/#sec8">
 				        <figure>
 				          <img src="images/assets/fill-1.png" alt="Contact" />
 				          <figcaption>Contacto</figcaption>
@@ -45,7 +45,7 @@
 		        </a>
 	        </li>
 	        <li id="right-li">
-		     	<a id="yogurt" href="/#yogurts" target="blank">
+		     	<a id="yogurt" href="/#sec5">
 			        <figure>
 			          <img src="images/assets/icono-yogurt.png" alt="Yogurts" />
 			          <figcaption>Yogures</figcaption>
@@ -93,7 +93,7 @@
 				
 	</div>
 	<!--Third section-->
-	<div id="sec3">
+	<div id="milksection">
 		<img id="lef-land" src="/images/background/tierra-izquierda.png">
 		<img id="left-milk" src="/images/background/mancha-leche-izquierda.png">
 		<img id="fill-10" src="/images/background/fill-10.png">
@@ -116,8 +116,10 @@
 	<div id="sec4">
 		<div id="holes"></div>
 		<h1>Nuestros quesos</h1>
-		<img id="campesino-cheese" src="/images/background/queso-campesino-grande.png">
-		<img id="tajadas-queso" src="/images/background/tajadas-queso-imagen.png">
+		<div id="cheese-div">
+			<img id="campesino-cheese" src="/images/background/queso-campesino-grande.png">
+			<img id="tajadas-queso" src="/images/background/queso_tajado_movil.png">
+		</div>
 		<p id="desc">Tenemos para ti quesos frescos sin conservantes, estabilizantes ni antioxidantes. Nuestros quesos están hechos solo con leche y sal, logrando de esta manera, ser naturales y saludables. </p>
 		<p id="desc2">Disfruta de nuestras 4 presentaciones</p>
 		<img id="trozo-queso" src="/images/background/trozo-queso.png">
@@ -129,19 +131,19 @@
 		          <figcaption>Campesino 500g</figcaption>
 		        </figure>
 	        </li>
-	        <li>
+	        <li id="double">
 		        <figure>
 		          <img src="images/assets/icono-queso-doble-crema.png" alt="Doble crema" />
 		          <figcaption>Doble crema 450g</figcaption>
 		        </figure>
 	        </li>
-	        <li>
+	        <li id="double-taj">
 		        <figure>
 		          <img src="images/assets/icono-queso-doble-crema-tajado.png" alt="Tajado" />
 		          <figcaption>Doble crema tajado 450g</figcaption>
 		        </figure>
 	        </li>
-	        <li>
+	        <li id="per">
 		        <figure>
 		          <img src="images/assets/icono-queso-pera.png" alt="Pera" />
 		          <figcaption>Pera 450g</figcaption>
@@ -203,27 +205,26 @@ Disfruta de sabores innovadores, que combinados con la leche, dieron como result
 	
 	<div id="sec8">
 		<div id="contact">
-			<img id="contact-img" src="/images/background/mancha-contacto.png">
 			<div id="img-somb">
 				<div>
 					<img  src="/images/assets/sombrero.png">
 				</div>
-				
-					<h1 class="intro">Habla con nosotros</h1>
+			
+				<h1 class="intro">Habla con nosotros</h1>
 				<p class="intro">Puedes ponerte en contacto con nosotros cuando lo desees.<br/>
-				¡Escríbenos sí quieres obtener nuestros productos!.</p>
+					¡Escríbenos sí quieres obtener nuestros productos!.</p>
 			</div>
 		</div>
-		
+				
 		<img id="right-flow" src="/images/background/hojas-contacto-derecha.png">
 		<img id="left-flow" src="/images/assets/hojas-contacto-izquierda.png">
 		<img id="left-flow-1" src="/images/assets/hoja-sola-1.png">
 
 		<img id="fill-15" src="/images/background/fill-2.png">
-		<img id="fill-16" src="/images/background/fill-6-copy.png">
+		
 		
 		<div id="contact-form">
-			<form name="contact-form-data" method="post">
+			<form action="https://formspree.io/dev@simian.co" name="contact-form-data" method="POST">
 			<ul>
 				<li>
 				<label for="name"><img id="icon-name" src="/images/assets/icono-nombre.png"></label>
@@ -247,14 +248,14 @@ Disfruta de sabores innovadores, que combinados con la leche, dieron como result
 		</div>
 		
 		<h1>Encuentranos en</h1>
-		<p><img src="images/assets/shop.png" >Tiendas Bxisqua y Distriuida El Chispazo</p>
+		<p><img src="images/assets/shop.png" >Tiendas Bxisqua y Distribuidora El Chispazo</p>
 		<div id="log">
 			<img id="logo" src="images/assets/logo-campesino.png" alt="Logo">
 		</div>
 			
-		<p id="mail">contacto@lacteoscampesino.com</p>
+		<p id="mail"> contacto@lacteoscampesino.com</p>
 		<p id="tel">314 4463258</p>
-		<p id="address">Km 7 vía Tunja, San Pedro de Iguaque, Sora Boyacá <br/><br/>
+		<p id="address"><img src="images/assets/icono-lugar.png" >Km 7 vía Tunja, San Pedro de Iguaque, Sora Boyacá <br/><br/>
 		Encuéntranos en:</p>
 			
 		<ul id="nav">
@@ -280,19 +281,20 @@ Disfruta de sabores innovadores, que combinados con la leche, dieron como result
 				</a>
 			</li>		
 		</ul>
-		<img id="land" src="/images/assets/tierra-footer@3x.png">
-		
+		<div id="land-div">
+			
+		</div>
 		<img id="fill-17" src="/images/background/fill-4.png">
 		<img id="fill-18" src="/images/background/fill-18.png">
 		<img id="fill-19" src="/images/background/fill-19.png">
-	</div>
+	</div>	
 	</body>
-	
+
 	<footer>
+		<p>©2016</p>
 		<div id="foot">
 			<img src="images/assets/credito-simian.png">
 		</div>
-		<p>©2016</p>
 	</footer>
 	
 </html>

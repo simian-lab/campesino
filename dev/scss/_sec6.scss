@@ -7,13 +7,19 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin-bottom: -24%;
-	@media screen and (max-width: $change-sec5) {
+	
+  @media screen and (max-width: 76.6875rem) {
+    height: 1800px;
+    margin-bottom: -22%;
+  }
+
+  @media screen and (max-width: $change-sec5) {
     background-image: url(/images/background/fondo-yogurt-maracuy-movil.png);
     height: 3000px;
   }
   
-  @media screen and (max-width: 660px) {
-      height: 2800px;
+  @media screen and (max-width: 41.25rem) {
+      height: 2500px;
       margin-bottom: -30%;
   }
   p {
@@ -22,11 +28,11 @@
         display: none;
         position: relative;
         margin: 0 auto;
-        padding-top: 250px;
-        width: 560px;
-        height: 232px;
+        padding-top: 15.625rem;
+        width: 35rem;
+        height: 14.5rem;
         font-family: AcuminPro;
-        font-size: 22px;
+        font-size: 1.375rem;
         font-weight: normal;
         line-height: 1.32;
         color: #4d2b24;
@@ -35,66 +41,68 @@
           display: block;
         }
 
-        @media screen and (max-width: 793px) {
-          padding-top: 200px;
+        @media screen and (max-width: 49.5625rem) {
+          padding-top: 12.5rem;
         }
         
-        @media screen and (max-width: 660px) {
-          width: 287px;
-          height: 400px;
+        @media screen and (max-width: 41.25rem) {
+          width: 17.9375rem;
+          height: 25rem;
         }     
     }
     
     #bottles {
         //position: relative;
         display: none;
-        width: 400px;
-        height: 324px;
+        width: 25rem;
+        height: 20.25rem;
         margin: 0 auto;
-        margin-top: 30px;
+        margin-top: 5rem;
         img {
           float: left;
-          margin-left: 20px;
+          margin-left: 1.25rem;
           vertical-align: bottom;
         }
 
         #bottle-1000 {
-          margin-top: 75px;
+          margin-top: 4.6875rem;
         }
         
         #small-bottle {
-          margin-top: 165px;
-          @media screen and (max-width: 548px) {
-            margin-left: 55px;
-            margin-top: 30px;
+          margin-top: 10.3125rem;
+          @media screen and (max-width: 34.25rem) {
+            margin-left: 3.4375rem;
+            margin-top: 1.875rem;
           }
         }
         
         #little-bottle {
-          margin-top: 217px;
-          @media screen and (max-width: 548px) {
-            margin-top: 82px;
-            margin-left: 30px;
+          margin-top: 13.5625rem;
+          @media screen and (max-width: 34.25rem) {
+            margin-top: 5.125rem;
+            margin-left: 1.875rem;
           }
         }
         @media screen and (max-width: $change-sec5) {
           display: block;
         }
-        @media screen and (max-width: 548px) {
-          width: 227px;
-          height: 483px;
+        @media screen and (max-width: 34.25rem) {
+          width: 14.1875rem;
+          height: 30.1875rem;
         }
     }
 
     #vector-desc {
+      
       display: none;
-      width: 294px;
-      height: 164px;
+      width: 47%;
+      min-width: 16.9375rem;
+      height: auto;
+      margin: 0 auto;
+      padding-top: 4.375rem;
       @media screen and (max-width: $change-sec5) {
           display: block;
       }
-      margin: 0 auto;
-      padding-top: 37px;
     }
 
   	img {
@@ -104,96 +112,76 @@
   	}
 
   	#yogurt-gulupa {
-  		//position: absolute;
-  		//right: 0;
-  		//margin-left: 55%;
   		margin-top: 12%;
       margin-right: 10%;
   		float: right;
-  		//width: 41%;
-      width: 541px;
-      height: 618px;
-      min-width: 340px;
-      min-height: 467px;
+  		width: 33.8125rem;
       @media screen and (max-width: $change-sec5) {
-          margin-top: 60px;
+          margin-top: 3.75rem;
       }
-      @media screen and (max-width: 660px) {
-        float: left;
-        content: url(/images/background/yogurt-gulupa-movil.png);
-        width: 340px;
-        height: 467px;
+      @media screen and (max-width: 41.25rem) {
+        float: none;
+        //content: url(/images/background/yogurt-gulupa-movil.png);
+        width: 21.25rem;
+        margin: 0 auto;
+        margin-top: 2.5rem;
       }
+
+      @media screen and (max-width: 22.9375rem) {
+          width: 300px;
+      }
+      
   	}
   	#yogurt-mora {
   		z-index: 1;
   		padding-top: 26%;
   		margin-left: 7%;
-  		//width: 41.7%;
-      width: 550px;
-      height: 588px;
-  		margin-bottom: -5%;
-      min-width: 340px;
-      min-height: 437px;
-      
+  		width: 34.375rem;
+      margin-bottom: -5%;
       @media screen and (max-width: $change-sec5) {
-        padding-top: 10px;
+        padding-top: 0.625rem;
       }
       
-      @media screen and (max-width: 1227px) {
+      @media screen and (max-width: 76.6875rem) {
         margin-right: 10%;
         margin-left: 0;
-        padding-top: 0px;
+        padding-top: 0rem;
         margin-bottom: 0;
       }
       
-      @media screen and (max-width: 659px) {
-        margin-left: 0;
-        margin-top: 12%;
-        margin-right: 10%;
-        float: right;
-      }      
-
-      @media screen and (max-width: 660px) {
-          content: url(/images/background/yogurt-mora-movil.png);
-          margin-bottom: 0;
-          margin-left: 0;
-          float: left;
-          width: 340px;
-          height: 437px;
+      @media screen and (max-width: 41.25rem) {
+          //content: url(/images/background/yogurt-mora-movil.png);
+          float: none;
+          width: 21.25rem;
+          margin: 0 auto;
+          margin-top: 3rem;
+      }
+      @media screen and (max-width: 22.9375rem) {
+          width: 18.75rem;
       }
   	}
   	#yogurt-maracuy {
   		z-index: 1;
   		position: relative;
-  		//width: 45.6%;
-      width: 561px;
-      height: 621px;
-  		margin-left: 35%;
+  		width: 35.0625rem;
+      margin-left: 35%;
   		margin-right: 19.4%;
-      //min-width: 340px;
-      //min-height: 437px;
-      @media screen and (max-width: 1227px) {
+      @media screen and (max-width: 76.6875rem) {
           margin: 0 auto;
-          padding-left: 100px;
-          margin-top: 57px;
+          float: right;
+          margin-right: 6.25rem;
+          margin-top: 3.5625rem;
       }
       
-      @media screen and (max-width: 659px) {
-        padding: 0;
-        margin-left: 0;
-        margin-top: 12%;
-        margin-right: 10%;
-        float: right;
-      }    
-
-      @media screen and (max-width: 660px) {
-        content: url(/images/background/yogurt-maracuy-movil.png);
-        width: 340px;
-        height: 437px;
-        margin-left: 0;
-        margin-right: 0;
-        float: left;
+      @media screen and (max-width: 41.25rem) {
+        //content: url(/images/background/yogurt-maracuy-movil.png);
+        width: 21.25rem;
+        float: none;
+        margin: 0 auto;
+        margin-top: 3rem;
+      }
+      @media screen and (max-width: 22.9375rem) {
+          width: 18.75rem;
       }
 	}
 }

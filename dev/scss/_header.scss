@@ -1,246 +1,46 @@
 #head{
 	background-image: url(/images/background/fondo-hero.png);
-	width: 100%;
-	height: 900px;
-	position: relative;
-	margin-top: -16px;
+	height: 56.25rem;
+	margin-top: -1rem;
 	margin-bottom: -31.25rem;
+	position: relative;
+	width: 100%;
 	@media screen and (max-width: $change) {
-		margin-top: -116px;
-		height: 1200px;
-		margin-bottom: -500px;
+		margin-bottom: -31.25rem;
+		margin-top: -7.25rem;
+		height: 75rem;
 	}
 	
-	#logo{
-		position: relative;
-		display: block;
-		//width: 199px;;
-		width: 14%;
-		margin: 0 auto;
-		padding-top: 22px;
-		min-width: 9.5rem;
-  		min-height: 5.5rem;
-  		@media screen and (max-width: $change) {
-			margin-top: 100px;
-			padding-top: 70px;
-  		}
-	}
-	
-	#nav-left {
-		list-style-type: none;
-		margin: 15px 0 0 0;
-		padding: 0;
-		width: 43%;
-		position: absolute;
-		left: 0;
-		top: 43px;
-		li {
-			width: 84.97px;
-			margin-left: 25%;
-			float: left;
-			text-align: center;
-			@media screen and (max-width: $change) {
-				display: none;
-  			}
-			a{
-				display: block;
-				padding: 0.5em 5px;
-				text-decoration:none;
-				figcaption{
-				    font-family: AcuminPro;
-				    font-size: 1.125em;
-				    font-weight: normal;
-				    color: #553408;
-				}
-			}
-		}
-	}
-
-	#nav-right {
-		list-style-type: none;
-		margin: 15px 0 0 0;
-		padding: 0;
-		width: 43%;
-		position: absolute;
-		top: 43px;
-		right: 0;
-		@media screen and (max-width: $change) {
-			top: 0;
-		}
-		li {
-			width: 84.97px;
-			margin-right: 25%;
-			float: right;
-			text-align: center;
-			a{
-				display: block;
-				padding: 0.5em 5px;
-				text-decoration:none;
-				figcaption{
-				    font-family: AcuminPro;
-				    font-size: 1.125em;
-				    font-weight: normal;
-				    color: #553408;
-				}
-			}
-
-			@media screen and (max-width: $change) {
-				margin-right: 10%;
-			}
-		}
-
-		#yogurt {
-			@media screen and (max-width: $change) {
-				display: none;
-  			}
-		}
-	}
-
-	#title {
-		position: relative;
-		z-index: 2;
-		width: 50%;
-		height: 38.6575rem;
-		margin: 0 auto;
-		/*@media screen and (max-width: 822px) {
-				margin-left: 20%;
-				//margin-top: 4%;
-		}
-		@media screen and (max-width: $change) {
-				margin-left: 4%;
-
-		}*/
-		.figura {
-			//position: absolute;
-			float: left;
-			margin-top: 6%;
-			width: 26.5%;
-			min-width: 300px;
-  			min-height: 580.7px;
-  			@media screen and (max-width: $change) {
-				position: relative;
-				margin-left: -40px;
-			}
-			@media screen and (max-width: 560px) {
-				margin-left: -120px;
-			}
-		}
-		div {
-			width: 270px;
-			position: absolute;
-			margin-top: 15rem;
-			right: 7%;
-			left: 17.1875rem;
-			@media screen and (max-width: $change) {
-				//margin-left: 4%;
-				margin-top: 0;
-				bottom: -200px;
-				left: 10%;
-			}
-			@media screen and (max-width: 560px) {
-				left: -60px;
-			}
-			#first {
-				  width: 270px;
-				  //width: 290%;
-				  font-family: AcuminPro;
-				  font-size: 3.4375rem;
-				  font-weight: bold;
-				  line-height: 0.95;
-				  color: $camo-green;
-				  @media screen and (max-width: 1079px) {
-					font-size: 3.0625rem;
-				  }
-			}
-			#second {
-				  width: 15.0625rem;
-  				  font-family: Pacifico;
-				  font-size: 4.6875rem;
-				  font-weight: normal;
-				  color: $dark-green-blue;
-				  @media screen and (max-width: 1079px) {
-					font-size: 4.18125rem;
-				  }
-			}
-			#last {
-				  width: 290px;
-  				  font-family: AcuminPro;
-				  font-size: 1.5625rem;
-				  font-weight: bold;
-				  line-height: 2.08;
-				  color: $camo-green;
-				  @media screen and (max-width: 1079px) {
-					font-size: 1.39375rem;
-				  }
-			}
-		}
-	}
-	//Hojas primera sección
-	#topflow {
-		position: absolute;
-		top: 0;
-		right: 0rem;
-		width: 9%;
-		min-width: 103px;
-	 	min-height: 112px;
-	 	
-	 }
-	
-	#topsecflow {
-		position: absolute;
-		right: 0rem;
-		//top: 8.75rem;
-		top: 7.5rem;
-		width: 14.7%;
-		min-width: 5.3125rem;
-		min-height: 6.4375rem;
-		@media screen and (max-width: $change) {
-			top: 4rem;
-		}
-	}
-	
-	.change-first {
-		@media screen and (max-width: $change) {
-	    	left: 0rem;
-	    	-moz-transform: scaleX(-1);
-			-o-transform: scaleX(-1);
-			-webkit-transform: scaleX(-1);
-			transform: scaleX(-1);
-			-ms-filter: "FlipH";
-			filter: FlipH;
-	    }
-	}
-
 	#fill-1 {
-		position: absolute;
-		top: 30%;
-		left: 16%;
-		width: 1.300em;
 		height: 2.281em;
+		left: 16%;
+		position: absolute;
 		object-fit: contain;
+		top: 30%;
+		width: 1.300em;
 	}
 
 	#fill-2 {
+		height: 6.3875rem;
 		position: absolute;
+		left: 12%;
+		object-fit: contain;
+		top: 35%;
 		width: 3.5375rem;
-	  	height: 6.3875rem;
-	  	object-fit: contain;
-	  	top: 35%;
-	  	left: 12%;
 	  	@media screen and (max-width: $change) {
-			top: 200px;
+			top: 12.5rem;
 	  	}
 	}
 
 	#fill-3 {
-		position: absolute;
-		width: 4.15625rem;
+		left: 20%;
 		height: 3.8625rem;
+		position: absolute;
 		object-fit: contain;
-		-webkit-transform: rotate(-20deg);
-		transform: rotate(-20deg);
 		top: 53%;
-	  	left: 20%;
+		transform: rotate(-20deg);
+		width: 4.15625rem;
+		-webkit-transform: rotate(-20deg);
 	  	@media screen and (max-width: $change) {
 			display: none;
 	  	}
@@ -275,11 +75,11 @@
 		width: 21%;
 	  	height: auto;
 	  	object-fit: contain;
-	  	bottom: 100px;
-	  	right: -20px;
-	  	@media screen and (max-width: 1079px) {
+	  	bottom: 3.75rem;
+	  	right: -1.25rem;
+	  	@media screen and (max-width: 67.4375rem) {
 			bottom: 3.125rem;
-			right: 7px;
+			right: 0.3125rem;
 	  	}
 	 }
 
@@ -293,6 +93,193 @@
 	  	}
 	}
 
+	#logo{
+		position: relative;
+		display: block;
+		//width: 199px;;
+		width: 14%;
+		margin: 0 auto;
+		padding-top: 1.375rem;
+		min-width: 9.5rem;
+  		min-height: 5.5rem;
+  		@media screen and (max-width: $change) {
+			margin-top: 6.25rem;
+			padding-top: 4.375rem;
+  		}
+	}
+	
+	#nav-left {
+		list-style-type: none;
+		margin: 0.9375rem 0 0 0;
+		padding: 0;
+		width: 43%;
+		position: absolute;
+		left: 0;
+		top: 2.6875rem;
+		li {
+			width: 5.31062rem;
+			margin-left: 25%;
+			float: left;
+			text-align: center;
+			@media screen and (max-width: $change) {
+				display: none;
+  			}
+			a{
+				display: block;
+				padding: 0.5em 0.3125rem;
+				text-decoration:none;
+				figcaption{
+				    font-family: AcuminPro;
+				    font-size: 1.125em;
+				    font-weight: normal;
+				    color: #553408;
+				}
+			}
+		}
+	}
+
+	#nav-right {
+		list-style-type: none;
+		margin: 0.9375rem 0 0 0;
+		padding: 0;
+		width: 43%;
+		position: absolute;
+		top: 2.6875rem;
+		right: 0;
+		@media screen and (max-width: $change) {
+			top: 0;
+		}
+		li {
+			width: 5.31062rem;
+			margin-right: 25%;
+			float: right;
+			text-align: center;
+			a{
+				display: block;
+				padding: 0.5em 0.3125rem;
+				text-decoration:none;
+				figcaption{
+				    font-family: AcuminPro;
+				    font-size: 1.125em;
+				    font-weight: normal;
+				    color: #553408;
+				}
+			}
+
+			@media screen and (max-width: $change) {
+				margin-right: 10%;
+			}
+		}
+
+		#yogurt {
+			@media screen and (max-width: $change) {
+				display: none;
+  			}
+		}
+	}
+
+	#title {
+		position: relative;
+		z-index: 2;
+		width: 50%;
+		height: 38.6575rem;
+		margin: 0 auto;
+		.figura {
+			float: left;
+			margin-top: 2.5rem;
+			width: 26.5%;
+			min-width: 18.75rem;
+  			@media screen and (max-width: $change) {
+				position: relative;
+				margin-left: -2.5rem;
+			}
+			@media screen and (max-width: 35rem) {
+				margin-left: -7.5rem;
+			}
+		}
+		div {
+			width: 270px;
+			position: absolute;
+			margin-top: 13.125rem;
+			right: 7%;
+			left: 17.5rem;
+			@media screen and (max-width: $change) {
+				width: 16.375rem;
+				margin-top: 0;
+				bottom: -12.5rem;
+				left: 10%;
+			}
+			@media screen and (max-width: 35rem) {
+				left: -3.75rem;
+			}
+			#first {
+				  width: 270px;
+				  //width: 290%;
+				  font-family: AcuminPro;
+				  font-size: 3.4375rem;
+				  font-weight: bold;
+				  line-height: 0.95;
+				  color: $camo-green;
+				  @media screen and (max-width: 67.4375rem) {
+					width: 16.375rem;
+					font-size: 3.0625rem;
+				  }
+			}
+			#second {
+				  width: 15.0625rem;
+  				  font-family: Pacifico;
+				  font-size: 4.6875rem;
+				  font-weight: normal;
+				  color: $dark-green-blue;
+				  @media screen and (max-width: 67.4375rem) {
+					font-size: 4.18125rem;
+				  }
+			}
+			#last {
+				  width: 18rem;
+  				  font-family: AcuminPro;
+				  font-size: 1.5625rem;
+				  font-weight: bold;
+				  line-height: 2.08;
+				  color: $camo-green;
+				  @media screen and (max-width: 67.4375rem) {
+					font-size: 1.39375rem;
+					width: 16.375rem;
+				  }
+			}
+		}
+	}
+	
+	#topflow {
+		position: absolute;
+		top: 0;
+		right: 0rem;
+		width: 9%;
+		min-width: 6.4375rem;
+	 }
+	
+	#topsecflow {
+		position: absolute;
+		right: 0rem;
+		top: 7.5rem;
+		width: 14.7%;
+		min-width: 5.3125rem;
+		@media screen and (max-width: $change) {
+			top: 4rem;
+		}
+	}
+	
+	.change-first {
+		@media screen and (max-width: $change) {
+	    	left: 0rem;
+	    	-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			-ms-filter: "FlipH";
+			filter: FlipH;
+	    }
+	}
 }
 
 

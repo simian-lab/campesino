@@ -1,14 +1,24 @@
-$change-sec5: 1169px;
 #sec5 {
 	  position: relative;
 	  width: 100%;
-  	height: 1089.5px;
+  	height: 68.0938rem;
   	object-fit: contain;
   	background-image: radial-gradient(circle at 50% 0, $purplish-grey, $dirty-purple);
   	background-repeat: no-repeat;
-    margin-bottom: -40px;
-    @media screen and (max-width: 800px) {
-      height:700px;
+    margin-bottom: -2.5rem;
+    @media screen and (max-width: 61.0625rem) {
+      height: 1000px;
+    }
+    @media screen and (max-width: 49rem) {
+      height: 800px;
+    }
+
+    @media screen and (max-width: 39.875rem) {
+      height: 600px;
+    }
+
+    @media screen and (max-width: 29.375rem) {
+      height: 500px;
     }
 
   	#fill-13 {
@@ -35,24 +45,26 @@ $change-sec5: 1169px;
       display: block;
   		left: 0;
       bottom: -28%;
-  		min-width: 360px;
-      min-height: 506px;
+  		min-width: 19.5rem;
+      //min-height: 506px;
       @media screen and (max-width: $change-sec5) {
         bottom: -20%;
         margin-right: -20%;
       }
-      @media screen and (max-width: 722px) {
-        bottom: -20%;
+      @media screen and (max-width: 45.125rem) {
+        bottom: -16%;
       }
-      @media screen and (max-width: 378px) {
-        content: url(/images/background/montaje-yogures-movil.png);
+      @media screen and (max-width: 25rem) {
+        margin-left: -1.125rem;
+        bottom: -17%;
       }
-      @media screen and (max-width: 373px) {
-        margin-left: -18px;
+      @media screen and (max-width: 22.9375rem) {
+          bottom: -14%;
       }
-      /*@media screen and (max-width: 1157px) {
-        margin-right: 
-      }*/
+      @media screen and (min-width: 80rem) {
+        width: 61.0838rem;
+        bottom: -26%;
+      }
   	}
 	
   	h1 {
@@ -60,20 +72,26 @@ $change-sec5: 1169px;
   		margin-right: 32%;
   		margin-top: 12%;
   		position: absolute;*/
-      width: 500px;
-      padding-top: 200px;
+      width: 31.25rem;
+      padding-top: 12.5rem;
   		min-width: 34%;
       margin: 0 auto;
 	    //height: 119px;
 	    font-family: Pacifico;
-  		font-size: 64px;
+  		font-size: 4rem;
   		font-weight: normal;
   		text-align: center;
   		color: $beige-three;
-      @media screen and (max-width: 722px) {
-        padding-top: 100px;
-        width: 300px;
-        height: 134px;
+      @media screen and (max-width: 1142px) {
+        padding-top: 18.75rem;
+      }
+      @media screen and (max-width: 784px) {
+        padding-top: 12.5rem; 
+      }
+      @media screen and (max-width: 45.125rem) {
+        padding-top: 5rem;
+        width: 18.75rem;
+        height: 8.375rem;
       }
   	}
 
@@ -82,12 +100,12 @@ $change-sec5: 1169px;
   		  //margin-left:  35%;
   		  position: relative;
         margin: 0 auto;
-        margin-top: 30px;
-        padding-left: 100px;
-  		  width: 560px;
-  		  height: 232px;
+        margin-top: 1.875rem;
+        padding-left: 6.25rem;
+  		  width: 35rem;
+  		  height: 14.5rem;
   		  font-family: AcuminPro;
-  		  font-size: 22px;
+  		  font-size: 1.375rem;
   		  font-weight: normal;
   		  line-height: 1.32;
   		  color: $beige-two;
@@ -118,8 +136,8 @@ $change-sec5: 1169px;
   	#bottles {
     		position: absolute;
         z-index: 1;
-    		width: 191px + 124px;
-    		height: 300px;
+    		width: 11.9375rem + 7.75rem;
+    		height: 18.75rem;
     		right: 2%;
     		bottom: -4%;
     		#big {

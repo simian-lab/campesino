@@ -9,110 +9,87 @@
   background-size: 100% 100%;
 	margin-bottom: -30%;	
  @media screen and (max-width: $change-sec5) {
-   
       background-image: url(/images/background/fondo-yogurt-maracuy-movil-sec7.png)
   }
-  @media screen and (max-width: 660px) {
+  @media screen and (max-width: 76.6875rem) {
+      height: 1800px;
+      margin-bottom: -40%;
+  }
+  @media screen and (max-width: 69.4375rem) {
+      margin-bottom: -30%;
+  }
+  @media screen and (max-width: 55.0625rem) {
+      margin-bottom: 25%;
+  }
+  @media screen and (max-width: 41.25rem) {
+    height: 1000px;
+  }
+  @media screen and (max-width: 34.25rem) {
     height: 1100px;
-    //margin-bottom: -30%;
+    margin-bottom: 25%;
   }
-  
-  /*@media screen and (max-width: 1111px) {
-      height: 1700px;
-  }*/
-
-  /*@media screen and (max-width: 980px) {
-      height: 2800px;
+  @media screen and (max-width: 22.9375rem) {
+    height: 900px;
+    margin-bottom: 10%;
   }
-*/
-/*
-  @media screen and (max-width: 1078px) {
-    height: 1300px;
-  }*/
-
-  	#yogurt-melocoton {
-  		//width: 40.5%;
-
-  		margin-top: 400px;
-  		margin-left: 81px;
+  #yogurt-melocoton {
+  		width: 35rem;
+      margin-top: 25rem;
+  		margin-left: 5.0625rem;
   		margin-bottom: -20%;
-      min-width: 342px;
-      min-height: 269px;
-      
       @media screen and (max-width: $change-sec5) {
-        margin-top: 250px;
+        margin-top: 12.5rem;
       }
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 76.6875rem) {
+        margin-top: 5rem;
+      }
+      @media screen and (max-width: 41.25rem) {
         content: url(/images/background/yogurt-melocoton-movil.png);
-        margin: 0;
-        margin-top: 70px;
-        margin-left: -30px;
-        float: left;
+        display: block;
+        margin: 0 auto;        
+        padding-top: 9.375rem;
+        width: 21.875rem;
+        height: auto;
       }
-      @media screen and (max-width: 367px) {
-          width: 357px;
-      } 
-      /*
-      @media screen and (max-width: $change) {
-        margin-top: 200px;
+      @media screen and (max-width: 34.25rem) {
+        padding-top: 300px;
       }
-
-      @media screen and (max-width: 548px) {
-        margin-top: 100px;
+      @media screen and (max-width: 22.9375rem) {
+        width: 18.75rem;
+        padding-top: 9.375rem;
       }
 
-      @media screen and (max-width: 660px) {
-        margin-bottom: 0;
-        margin-left: 0;
-        float: left;
-      }
-      */
-  	}
+    }
 
   	#yogurt-feijoa {
-  		//width: 43.3%;
   		position: absolute;
   		right: 0;
   		margin-right: 9%;
-  		bottom: 26%;
-      min-width: 292px;
-      min-height: 272px;
-      @media screen and (max-width: 1111px) {
-          bottom: 20%;
+  		bottom: 30%;
+      min-width: 18.25rem;
+      @media screen and (max-width: 76.6875rem) {
+        bottom: 28.125rem;
       }
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 66.5625rem) {
+        bottom: 31.25rem;
+      } 
+      @media screen and (max-width: 41.25rem) {
           position: relative;
+          display: block;
+          float: none;
           content: url(/images/background/yogurt-feijoa-movil.png);
-          margin: 0;
-          margin-top: 320px;
-          //margin-right: 20px;
-          float: left;;
-      }
-      /*
-      @media screen and (max-width: $change-sec5) {
-        margin-right: 4%;
-        bottom: 22%;
+          width: 20.9375rem;
+          height: auto;
+          margin: 0 auto;
+          padding-top: 9.375rem;
+          margin-top: 25rem;
 
-      }*/
-      /*
-      @media screen and (max-width: $change) {
-        bottom: 400px;
       }
-
-      @media screen and (max-width: 548px) {
-        
+      @media screen and (max-width: 22.9375rem) {
+          width: 18.75rem;
+          padding-top: 12.5rem;
       }
-
-      @media screen and (max-width: 660px) {
-        margin-bottom: 0;
-        margin-left: 0;
-        float: left;
-      }
-      /*
-      @media screen and (max-width: 980px) {
-        bottom: 30%x;
-      }*/
-  	}
+    }
 	
   	.mancha {
   		position: absolute;
@@ -125,7 +102,10 @@
   	#mancha-lateral {
       width: 32.3%;
 		  left: 0;
-		  margin-top: -13%;
+		  margin-top: -10%;
+      @media screen and (max-width: 76.6875rem) {
+        margin-top: -40%;
+      }
   	}
 
   	#mancha-lateral2 {
@@ -137,6 +117,9 @@
   	#mancha-lateral3 {
   		width: 18.5%;
       right: 0;
-  		bottom: 30%;
+  		bottom: 35%;
+      @media screen and (max-width: 76.6875rem) {
+        bottom: 15%;
+      }
   	}
 }

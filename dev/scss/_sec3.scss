@@ -1,75 +1,64 @@
-#sec3 {
+#milksection {
 	
 	border: 0;
 	margin: 0;
 	width: 100%;
-    height: 1200px;
+    height: 75rem;
     background-image: url(/images/background/fondo-leche@2x.png);
     background-repeat: no-repeat;
 	position: relative;
 	margin-bottom: -9%;
 	background-size: 100% 100%;
 	
-	@media screen and (max-width: 1111px) {
+	@media screen and (max-width: 69.4375rem) {
 		background-image: url(/images/background/fondo-veige-prodcutos-naturales-movil.png);
-		height: 1400px;
-		margin-bottom: -200px;
+		height: 87.5rem;
+		margin-bottom: -12.5rem;
 	}
 	
-	@media screen and (max-width: 783px) {
-		height: 1400px;
-		margin-bottom: -150px;
+	@media screen and (max-width: 48.9375rem) {
+		height: 87.5rem;
+		margin-bottom: -9.375rem;
 	}
 	
-	@media screen and (max-width: 660px) {
-		height: 2200px;
-		margin-bottom: -200px;
+	@media screen and (max-width: 41.25rem) {
+		height: 137.5rem;
+		margin-bottom: -12.5rem;
 	}
+
 	#lef-land {
-	//position: absolute;
 		width: 26.5%;
-  		height: 49%;
-		margin-top: -150px;
-		@media screen and (max-width: 1111px) {
+  		height: auto;
+		margin-top: -9.375rem;
+		@media screen and (max-width: 69.4375rem) {
 		-webkit-transition: width 1s, height 1s, margin-top 1s; // For Safari 3.1 to 
-			height: 400px;
-	  		margin-top: -120px;
+			
+	  		margin-top: 1.25rem;
 		}
 	}
 
 	#milk {
-		//float: right;
 		position: absolute;
 		z-index: 2;
-		//width: 47.6%;
 		width: 47.6%;
-		height: 1060px;
 		right: 0;
-		top: 200px;
+		top: 12.5rem;
 		min-width: 20.3562rem;
-  		min-height: 43.5625rem;
-  		@media screen and (max-width: 1111px) {
-			top: 200px;
+  		@media screen and (max-width: 69.4375rem) {
+			top: 12.5rem;
   		}
 		@media screen and (max-width: $change) {
 			-webkit-transition: position 1s; // For Safari 3.1 to 
 			position: relative;
-			//z-index: auto; 
-			width: 325.7px;
-  			height: 697px;
-			float: right;
-			top: 0px;
+			width: 20.3562rem;
+  			float: right;
+			top: 1.875rem;
 		}
 
-		/*
-		@media screen and (max-width: 1017px) {
-			-webkit-transition: width 1s; // For Safari 3.1 to 
-			width: 40%;
-		}*/
 	}
 	h1 {
 		
-		margin-top: -200px;
+		margin-top: -150px;
 		margin-left: 18%;
 		margin-bottom: -1.875rem;
 		width: 25.25rem;
@@ -80,17 +69,22 @@
 	    text-align: center;
 	    color: $dark-green-blue;
 		
-		@media screen and (max-width: 1111px) {
+		@media screen and (max-width: 69.4375rem) {
 			-webkit-transition: width 1s, height 1s, margin-top 1s; // For Safari 3.1 to 
 			width: 288px;
-  			height: 138px;
-  			margin-top: -100px;
+  			height: 8.625rem;
+  			margin-top: -8.75rem;
   		}
 
 		@media screen and (max-width: $change) {
 	    	margin: 0 auto;
-	    	margin-top: -100px;
+	    	margin-top: -120px;
 	    }
+		
+		@media screen and (max-width: 28.3125rem) {
+			margin-top: -4.375rem;
+		}
+
 	}
 	#text {
 		
@@ -102,27 +96,27 @@
 		font-weight: normal;
 		line-height: 1.32;
 		color: $mud-brown;
-		@media screen and (max-width: 1111px) {
+		@media screen and (max-width: 69.4375rem) {
 			margin-top: 3.125rem;
 			position: absolute;
 			width: 16.25rem;
-  			height: 600.299px;
+  			height: 37.5187rem;
   			margin-left: 22%;
 		}
 		
 		@media screen and (max-width: $change) {
 			-webkit-transition: width 1s, position 1s, margin-left 1s; // For Safari 3.1 to 
 			position: absolute;
-			top: 300px;
+			top: 18.75rem;
   			margin-left: 18%;
 		}
-		@media screen and (max-width: 660px) {
+		@media screen and (max-width: 41.25rem) {
 			position: relative;
 			p {
 				position: absolute;
 			}
 			margin: 0 auto;
-			margin-top: 400px;
+			margin-top: 15.625rem;
 		}
 	}
 	
@@ -131,11 +125,10 @@
 		position: absolute;
 		left: 0;
 		width: 13.7%;
-		bottom: 0px;
-		min-width: 115.9px;
-  		min-height: 230.8px;
-  		@media screen and (max-width: 660px) {
-			bottom: 100px;
+		bottom: 0rem;
+		min-width: 7.24375rem;
+  		@media screen and (max-width: 41.25rem) {
+			bottom: 6.25rem;
   		}
 	}
 	
@@ -144,21 +137,21 @@
 		bottom: 18%;
 		right: 34%;
 		width: 21.3%;
-		min-height: 47.2px;
-		min-width: 209.4px;
-		@media screen and (max-width: 1111px) {
-			bottom: 200px;
+		min-width: 13.0875rem;
+		z-index: 2;
+		@media screen and (max-width: 69.4375rem) {
+			bottom: 12.5rem;
 			left: 36%;
 		}
 
 		@media screen and (max-width: $change) {
-			bottom: 250px;
+			bottom: 15.625rem;
 			left: 45%;
 		}
 
-		@media screen and (max-width: 660px) {
+		@media screen and (max-width: 41.25rem) {
 			z-index: 2;
-			bottom: 200px;
+			bottom: 18.75rem;
 			left: 0;
 			right: 0;
 			margin: 0 auto;
@@ -170,19 +163,19 @@
 		bottom: 8%;
 		left: 30%;
 		width: 6.38%;
-		min-width: 69.7px;
-  		min-height: 221.9px;
-		@media screen and (max-width: 1111px) {
-			bottom: 170px;
+		min-width: 4.35625rem;
+  		min-height: 13.8688rem;
+		@media screen and (max-width: 69.4375rem) {
+			bottom: 10.625rem;
 			left: 27%;
 		}
 
 		@media screen and (max-width: $change) {
-			bottom: 200px;
+			bottom: 12.5rem;
 		}
 
-		@media screen and (max-width: 660px) {
-			bottom: 350px;
+		@media screen and (max-width: 41.25rem) {
+			bottom: 31.25rem;
 			left: 0;
 			margin-left: 50%;
 			margin-right: 35%; 
@@ -193,21 +186,21 @@
 		left: 20%;
 		bottom: 8%;
 		width: 6.83%;
-		min-width: 85.1px;
-  		min-height: 271.8px;
-		@media screen and (max-width: 1111px) {
-			bottom: 170px;
+		min-width: 5.31875rem;
+  		min-height: 16.9875rem;
+		@media screen and (max-width: 69.4375rem) {
+			bottom: 10.625rem;
 			left: 15%;
 		}
 
 		@media screen and (max-width: $change) {
-			bottom: 200px;
+			bottom: 12.5rem;
 		}
 
-		@media screen and (max-width: 660px) {
-			bottom: 350px;
+		@media screen and (max-width: 41.25rem) {
+			bottom: 31.25rem;
 			left: 0;
-			margin-left: 26.5%;
+			margin-left: 27%;
 			margin-right: 55%; 
 		}
 	}
@@ -215,7 +208,7 @@
 		position: absolute;
 		bottom: 15%;
 		right: 42%;
-		@media screen and (max-width: 660px) {
+		@media screen and (max-width: 41.25rem) {
 			display: none;
 		}
 	}
@@ -223,7 +216,7 @@
 		position: absolute;
 		left: 5%;
 		bottom: 45%;
-		@media screen and (max-width: 660px) {
+		@media screen and (max-width: 41.25rem) {
 			display: none;
 		}		
 	}
@@ -231,7 +224,7 @@
 		position: absolute;
 		right: 0;
 		top: 25%;
-		@media screen and (max-width: 660px) {
+		@media screen and (max-width: 41.25rem) {
 			display: none;
 		}
 	}
