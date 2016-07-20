@@ -6,7 +6,7 @@
 	background-image: url(/images/background/fondo-yogurt-maracuy.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  margin-bottom: -24%;
+  margin-bottom: -26%;
 	
   @media screen and (max-width: 76.6875rem) {
     height: 1800px;
@@ -17,7 +17,9 @@
     background-image: url(/images/background/fondo-yogurt-maracuy-movil.png);
     height: 3000px;
   }
-  
+  @media screen and (max-width: 124.688rem) {
+    margin-bottom: -28%;
+  }
   @media screen and (max-width: 41.25rem) {
       height: 2500px;
       margin-bottom: -30%;
@@ -95,7 +97,7 @@
     #vector-desc {
       
       display: none;
-      width: 47%;
+      width: 26.4%;
       min-width: 16.9375rem;
       height: auto;
       margin: 0 auto;

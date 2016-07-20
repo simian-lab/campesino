@@ -2,7 +2,7 @@
   
 	position: relative;
 	width: 100%;
-	height: 1600px;
+	height: 100rem;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-yogurt-maracuy-sec7.png);
   background-repeat: no-repeat;
@@ -12,24 +12,29 @@
       background-image: url(/images/background/fondo-yogurt-maracuy-movil-sec7.png)
   }
   @media screen and (max-width: 76.6875rem) {
-      height: 1800px;
+      height: 112.5rem;
       margin-bottom: -40%;
   }
   @media screen and (max-width: 69.4375rem) {
-      margin-bottom: -30%;
+      margin-bottom: -40%;
   }
   @media screen and (max-width: 55.0625rem) {
       margin-bottom: 25%;
   }
+  @media screen and (max-width: $change) {
+      height: 106.25rem;
+      margin-bottom: -30%;
+  }
   @media screen and (max-width: 41.25rem) {
-    height: 1000px;
+    height: 1100px;
+    margin-bottom: 20%;
   }
   @media screen and (max-width: 34.25rem) {
     height: 1100px;
     margin-bottom: 25%;
   }
   @media screen and (max-width: 22.9375rem) {
-    height: 900px;
+    height: 56.25rem;
     margin-bottom: 10%;
   }
   #yogurt-melocoton {
@@ -81,7 +86,7 @@
           width: 20.9375rem;
           height: auto;
           margin: 0 auto;
-          padding-top: 9.375rem;
+          padding-top: 12.5rem;
           margin-top: 25rem;
 
       }
@@ -119,7 +124,7 @@
       right: 0;
   		bottom: 35%;
       @media screen and (max-width: 76.6875rem) {
-        bottom: 15%;
+        bottom: 30%;
       }
   	}
 }

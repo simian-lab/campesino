@@ -75,7 +75,7 @@
 		width: 21%;
 	  	height: auto;
 	  	object-fit: contain;
-	  	bottom: 3.75rem;
+	  	bottom: 3.125rem;
 	  	right: -1.25rem;
 	  	@media screen and (max-width: 67.4375rem) {
 			bottom: 3.125rem;
@@ -121,6 +121,9 @@
 			margin-left: 25%;
 			float: left;
 			text-align: center;
+			@media screen and (max-width: 50.3125rem) {
+				margin-left: 15%;
+			}
 			@media screen and (max-width: $change) {
 				display: none;
   			}
@@ -129,7 +132,7 @@
 				padding: 0.5em 0.3125rem;
 				text-decoration:none;
 				figcaption{
-				    font-family: AcuminPro;
+				    font-family: AcuminPro, Sans-serif;
 				    font-size: 1.125em;
 				    font-weight: normal;
 				    color: #553408;
@@ -159,13 +162,15 @@
 				padding: 0.5em 0.3125rem;
 				text-decoration:none;
 				figcaption{
-				    font-family: AcuminPro;
+				    font-family: AcuminPro, Sans-serif;
 				    font-size: 1.125em;
 				    font-weight: normal;
 				    color: #553408;
 				}
 			}
-
+			@media screen and (max-width: 50.3125rem) {
+				margin-right: 15%;
+			}
 			@media screen and (max-width: $change) {
 				margin-right: 10%;
 			}
@@ -198,11 +203,11 @@
 			}
 		}
 		div {
-			width: 270px;
+			width: 17rem;
 			position: absolute;
 			margin-top: 13.125rem;
 			right: 7%;
-			left: 17.5rem;
+			left: 17.2125rem;
 			@media screen and (max-width: $change) {
 				width: 16.375rem;
 				margin-top: 0;
@@ -213,10 +218,10 @@
 				left: -3.75rem;
 			}
 			#first {
-				  width: 270px;
+				  width: 17rem;
 				  //width: 290%;
-				  font-family: AcuminPro;
-				  font-size: 3.4375rem;
+				  font-family: AcuminPro, Sans-serif;
+				  font-size: 3.25rem;
 				  font-weight: bold;
 				  line-height: 0.95;
 				  color: $camo-green;
@@ -226,7 +231,7 @@
 				  }
 			}
 			#second {
-				  width: 15.0625rem;
+				  width: 15.625rem;
   				  font-family: Pacifico;
 				  font-size: 4.6875rem;
 				  font-weight: normal;
@@ -236,15 +241,15 @@
 				  }
 			}
 			#last {
-				  width: 18rem;
-  				  font-family: AcuminPro;
-				  font-size: 1.5625rem;
+				  width: 285px;
+  				  font-family: AcuminPro, Sans-serif;
+				  font-size: 1.375rem;
 				  font-weight: bold;
 				  line-height: 2.08;
 				  color: $camo-green;
 				  @media screen and (max-width: 67.4375rem) {
 					font-size: 1.39375rem;
-					width: 16.375rem;
+					width: 18.0625rem;
 				  }
 			}
 		}

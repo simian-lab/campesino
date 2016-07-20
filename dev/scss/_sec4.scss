@@ -4,7 +4,7 @@
 	margin: 0;
 	position: relative;
 	width: 100%;
-	height: 84.375rem;
+	height: 68.75rem;
 	background-image: url(/images/background/fondo-quesos.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -32,6 +32,9 @@
     @media screen and (max-width: 21.875rem) {
         margin-bottom: -15%;
     }
+    @media screen and (max-width: 28.375rem) {
+        height: 112.5rem;
+    }
 
     #holes {
 		position: absolute;
@@ -46,11 +49,11 @@
 	}
 
     #cheese-div {
-        width: 544px;
-        height: 515px;
+        width: 34rem;
+        height: 32.1875rem;
         float: left;
-        margin-top: 170px;
-        margin-left: 10px;
+        margin-top: 10.625rem;
+        margin-left: 0.625rem;
         @media screen and (max-width: $change-sec4) {
             float: none;
             display: block;
@@ -59,19 +62,24 @@
             height: auto;
             margin: 0 auto;
             margin-top: 4.375rem;
-
+            min-width: 16.875rem;
         }
         @media screen and (max-width: 37.5rem) {
             width: 70%;
         }
         #campesino-cheese {
+            //min-width: 21.7431rem;
             width: 100%;
         }
         #tajadas-queso { 
-            margin-top: -180px;
-            margin-left: -70px;
-            width: 60%;
+            margin-top: -10rem;
+            margin-left: -1.875rem;
+            width: 70%;
+            min-width: 60%;
             height: auto;
+            @media screen and (max-width: 31.9375rem) {
+                margin-top: -8.75rem;
+            }
         }
     }
     
@@ -125,8 +133,8 @@
 		top: 28.125rem;
 		width: 32.25rem;
 		height: 7.25rem;
-		font-family: AcuminPro;
-		font-size: 1.375rem;
+		font-family: AcuminPro, Sans-serif;
+		font-size: 1.25rem;
 		font-weight: normal;
 		line-height: 1.32;
 		color: $mud-brown;
@@ -149,9 +157,9 @@
     	  left: 50%;
     	  width: 28.8125rem;
 		  height: 1.8125rem;
-		  bottom: 43.75rem;
-		  font-family: AcuminPro;
-		  font-size: 1.5625rem;
+		  top: 37.5rem;
+		  font-family: AcuminPro, Sans-serif;
+		  font-size: 1.4375rem;
 		  font-weight: bold;
 		  line-height: 1.16;
 		  color: $mud-brown;
@@ -166,6 +174,7 @@
             font-size: 1.375rem;
         }
         @media screen and (max-width: 37.5rem) {
+            margin-top: 3.125rem;
             width: 15.625rem;
             height: 3.625rem;
         }
@@ -178,7 +187,7 @@
         height: auto;
         position: absolute;
         left: 32%;
-        bottom: 31.25rem;
+        top: 39.375rem;
         @media screen and (max-width: $change-sec4) {
             position: relative;
             margin: 0 auto;
@@ -199,8 +208,8 @@
             figure {
                 
                 figcaption{
-           			font-family: AcuminPro;
-        			font-size: 1.125em;
+           			font-family: AcuminPro, Sans-serif;
+        			font-size: 1.125rem;
         			font-weight: normal;
         			color: #553408;
         		}

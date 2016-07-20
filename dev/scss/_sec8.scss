@@ -2,18 +2,32 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 114.375rem;
-	margin-bottom: -5rem;
+	height: 123.75rem;
+	margin-bottom: -10rem;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-veige-contacto.png);
   	background-repeat: no-repeat;
 	background-size: 100% 100%;
+	
+	@media screen and (max-width: 68.3125rem) {
+		height: 125rem;
+	}
 	@media screen and (max-width: 54.875rem) {
-		height: 109.375rem;
+		height: 120rem;
+	}
+	@media screen and (max-width: $change) {
+		background-image: url(/images/background/fondo-veige-contacto-movil.png);
+		height: 121.25rem;
+		background-size: 100% 90%; 
+		background-position: 100% 100%;
 	}
 	@media screen and (max-width: 37.5rem) {
-		height: 107.5rem;
+		height: 118.75rem;
 	}
+	@media screen and (max-width: 29.125rem) {
+		height: 121.875rem;
+	}
+	
 	#contact {
 		width: 100%;
 		background-image: url(/images/background/mancha-contacto.png);
@@ -29,9 +43,9 @@
 			background-size: 100% 80%;
 			background-repeat: no-repeat;
 		}
-		@media screen and (max-width: 390px) {
-			background-size: 100% 60%;
-			background-position: 100% 20%;
+		@media screen and (max-width: 24.375rem) {
+			background-size: 100% 70%;
+			background-position: 100% 27%;
 		}
 		#img-somb {
 			position: relative;
@@ -41,7 +55,7 @@
 			//top: 0;
 			margin: 0 auto;
 			padding-top: 16%;
-			@media screen and (max-width: 881px) {
+			@media screen and (max-width: 55.0625rem) {
 				margin-top: -70%;
 			}		
 			div {
@@ -78,8 +92,8 @@
 
 		p {
 			width: 100%;
-			font-family: AcuminPro;
-			font-size: 1.375rem;
+			font-family: AcuminPro, Sans-serif;
+			font-size: 1.2375rem;
 			font-weight: normal;
 			line-height: 1.32;
 			text-align: center;
@@ -186,10 +200,10 @@
 				position: relative;
 				color: #553408;
 				float: right;
-				width: 10.25rem;
+				width: 9.375rem;
 			    height: 1.8125rem;
-				font-family: AcuminPro;
-				font-size: 1.375rem;
+			    font-family: AcuminPro, Sans-serif;
+				font-size: 19.5px;
 				font-weight: normal;
 				line-height: 1.32;
 				text-align: center;
@@ -201,10 +215,54 @@
 					top: -80%;
 					right: -35%;
 				}
+				
 			}
 		}
 		
   	}
+	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        font-family: AcuminPro, Sans-serif;
+		font-size: 1.375rem;
+		font-weight: normal;
+		line-height: 1.32;
+		color: $mud-brown;
+		@media screen and (max-width: 27.6875rem) {
+			font-size: 1.0625rem;
+		}
+	}
+
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	   	font-family: AcuminPro, Sans-serif;
+		font-size: 1.375rem;
+		font-weight: normal;
+		line-height: 1.32;
+		color: $mud-brown;
+		@media screen and (max-width: 27.6875rem) {
+			font-size: 1.0625rem;
+		}
+	}
+
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	   	font-family: AcuminPro, Sans-serif;
+		font-size: 1.375rem;
+		font-weight: normal;
+		line-height: 1.32;
+		color: $mud-brown;
+		@media screen and (max-width: 27.6875rem) {
+			font-size: 1.0625rem;
+		}
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	   	font-family: AcuminPro, Sans-serif;
+		font-size: 1.375rem;
+		font-weight: normal;
+		line-height: 1.32;
+		color: $mud-brown;
+		@media screen and (max-width: 27.6875rem) {
+			font-size: 1.0625rem;
+		}
+	}
 
   	h1 {
   		width: 25.625rem;
@@ -223,8 +281,10 @@
 
   	p {
   		margin-top: 2%;
-  		font-family: AcuminPro;
-		font-size: 1.5rem;
+  		width: 31.25rem;
+  		margin: 0 auto;
+  		font-family: AcuminPro, Sans-serif;
+		font-size: 22.1px;
 		font-weight: normal;
 		line-height: 1.58;
 		text-align: center;
@@ -232,7 +292,9 @@
 		img {
 			padding-right: 0.3125rem;
 		}
-  	
+  		@media screen and (max-width: 32.3125rem) {
+			width: 90%;
+  		}
   	}
 	
 	#log {
@@ -246,36 +308,36 @@
 	}
   		
 	#tel {
-  		font-family: AcuminPro;
-		font-size: 3rem;
+  		font-family: AcuminPro, Sans-serif;
+		font-size: 2.6875rem;
 		font-weight: bold;
 		text-align: center;
 		color: $desert;
 		@media screen and (max-width: 54.875rem) {
-			font-size: 2.74375rem;
+			font-size: 2.55625rem;
 		}
   	}
 
 	#mail {
-		font-family: AcuminPro;
-		font-size: 1.5rem;
+		font-family: AcuminPro, Sans-serif;
+		font-size: 1.25rem;
 		font-weight: normal;
 		text-align: center;
 	    font-weight: bold;
 		color: #4d2b24;
 		@media screen and (max-width: 54.875rem) {
-			font-size: 1.14375rem;
+			font-size: 1.125rem;
 		}
 	}
 
 	#address {
-		font-family: AcuminPro;
-		font-size: 1.25rem;
+		font-family: AcuminPro, Sans-serif;
+		font-size: 1.15625rem;
 		font-weight: normal;
 		text-align: center;
 		color: $camo-green;
 		@media screen and (max-width: 54.875rem) {
-			font-size: 1.14375rem;
+			font-size: 1.08125rem;
 		}
 	}
 
