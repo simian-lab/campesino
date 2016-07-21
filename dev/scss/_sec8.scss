@@ -289,7 +289,7 @@
 
   	p {
   		margin-top: 2%;
-  		width: 31.25rem;
+  		width: 43.75rem;
   		margin: 0 auto;
   		font-family: AcuminPro, Sans-serif;
 		font-size: 22.1px;
@@ -300,6 +300,9 @@
 		img {
 			padding-right: 0.3125rem;
 		}
+  		@media screen and (max-width: 43.75) {
+			width: 32.3125rem;
+  		}
   		@media screen and (max-width: 32.3125rem) {
 			width: 90%;
   		}

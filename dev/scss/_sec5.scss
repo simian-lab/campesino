@@ -137,6 +137,20 @@
   		bottom: 38%;
   		right: 10%;
   		width: 22.8%;
+      @media screen and (min-width: 100rem) {
+        right: 20%;  
+        width: 20.5195rem;
+      }
+
+      @media screen and (min-width: 112.5rem) {
+        bottom: 34%;  
+      }
+      @media screen and (min-width: 118.75rem) {
+        right: 26%;
+      }
+      @media screen and (min-width: 131.25rem) {
+        bottom: 32%;
+      }
       @media screen and (max-width: $change-sec4) {
         bottom: 30%;
       }
@@ -161,6 +175,13 @@
     		height: 18.75rem;
     		right: 2%;
     		bottom: -4%;
+        @media screen and (min-width: 100rem) {
+          right: 10%;
+          bottom: -2%;
+        }
+        @media screen and (min-width: 118.75rem) {
+          right: 16%;
+        }
     		#big {
   			  float: left;
   			#bottle-1800{
