@@ -44,6 +44,9 @@
 		right: 0;
 		top: 12.5rem;
 		min-width: 20.3562rem;
+		@media screen and (min-width: 90rem) {
+			width: 42.8399rem;
+		}
   		@media screen and (max-width: 69.4375rem) {
 			top: 12.5rem;
   		}
@@ -69,6 +72,16 @@
 	    text-align: center;
 	    color: $dark-green-blue;
 		
+		@media screen and (min-width: 106.125rem) {//Resolución 1700px
+			margin-top: -15.625rem;
+		}
+
+		@media screen and (min-width: 118.75rem) {//Resolución 1900px
+			margin-top: -25rem;
+		}
+		@media screen and (min-width: 137.5rem) {//Resolución 2200px
+			margin-top: -31.25rem;
+  		}
 		@media screen and (max-width: 69.4375rem) {
 			-webkit-transition: width 1s, height 1s, margin-top 1s; // For Safari 3.1 to 
 			width: 288px;
@@ -165,6 +178,13 @@
 		width: 6.38%;
 		min-width: 4.35625rem;
   		min-height: 13.8688rem;
+  		@media screen and (min-width: 1698px) { //Resolución 1700px
+			width: 7.251rem;
+			bottom: 9%;
+  		}
+  		@media screen and (min-width: 118.75rem) {//Resolución 1900px
+			bottom: 13%;
+  		}
 		@media screen and (max-width: 69.4375rem) {
 			bottom: 10.625rem;
 			left: 27%;
@@ -188,6 +208,13 @@
 		width: 6.83%;
 		min-width: 5.31875rem;
   		min-height: 16.9875rem;
+  		@media screen and (min-width: 106.125rem) { //Resolución 1700px
+			width: 7.25194rem;
+			bottom: 9%;
+  		}
+  		@media screen and (min-width: 118.75rem) {//Resolución 1900px
+			bottom: 13%;
+  		}
 		@media screen and (max-width: 69.4375rem) {
 			bottom: 10.625rem;
 			left: 15%;

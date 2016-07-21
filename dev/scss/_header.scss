@@ -188,7 +188,25 @@
 		z-index: 2;
 		width: 50%;
 		height: 38.6575rem;
-		margin: 0 auto;
+		margin: 0;
+		margin-left: 28%;
+		margin-right: 30%;
+		@media screen and (max-width: 57.0625rem) {
+			margin: 0 auto;
+		}
+		@media screen and (min-width: 90rem) {
+			margin: 0;
+			margin-left: 32%;
+			margin-right: 18%;
+		}
+		@media screen and (min-width: 112.5rem) {
+			margin-left: 35%;
+			margin-right: 15%;
+		}
+		@media screen and (min-width: 137.5rem) {
+			margin-left: 38%;
+			margin-right: 12%;
+		}
 		.figura {
 			float: left;
 			margin-top: 2.5rem;
@@ -261,6 +279,7 @@
 		right: 0rem;
 		width: 9%;
 		min-width: 6.4375rem;
+
 	 }
 	
 	#topsecflow {
@@ -269,6 +288,7 @@
 		top: 7.5rem;
 		width: 14.7%;
 		min-width: 5.3125rem;
+		z-index: 1;
 		@media screen and (max-width: $change) {
 			top: 4rem;
 		}

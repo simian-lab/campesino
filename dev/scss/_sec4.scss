@@ -113,6 +113,9 @@
 		font-weight: normal;
         text-align: center;
 		color: $faded-orange;
+        @media screen and (min-width: 106.25rem) {
+             top: 12.5rem;
+        }
         @media screen and (max-width: $change-sec4) {
             position: relative;
             left: 0;
@@ -138,6 +141,9 @@
 		font-weight: normal;
 		line-height: 1.32;
 		color: $mud-brown;
+        @media screen and (min-width: 106.25rem) {
+             top: 20rem;
+        }
         @media screen and (max-width: $change-sec4) {
             position: relative;
             left: 0;
@@ -163,7 +169,12 @@
 		  font-weight: bold;
 		  line-height: 1.16;
 		  color: $mud-brown;
-
+          @media screen and (min-width: 90rem) {
+             left: 48.5%;
+          }
+          @media screen and (min-width: 106.25rem) {
+             top: 29.375rem;
+          }
           @media screen and (max-width: $change-sec4) {
             position: relative;
             left: 0;
@@ -188,6 +199,16 @@
         position: absolute;
         left: 32%;
         top: 39.375rem;
+        @media screen and (min-width: 90rem) {
+            left: 36%;
+        }
+        @media screen and (min-width: 106.25rem) {
+            top: 31.25rem;
+        }
+        @media screen and (min-width: 131.25rem) {
+             left: 38.5%;
+        }
+
         @media screen and (max-width: $change-sec4) {
             position: relative;
             margin: 0 auto;

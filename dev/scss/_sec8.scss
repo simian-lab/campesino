@@ -8,8 +8,13 @@
 	background-image: url(/images/background/fondo-veige-contacto.png);
   	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	
-	@media screen and (max-width: 68.3125rem) {
+	@media screen and (min-width: 103.125rem) {
+        height: 125rem;
+    }
+    @media screen and (min-width: 134.375rem) {
+        height: 128.125rem;
+    }
+    @media screen and (max-width: 68.3125rem) {
 		height: 121.875rem;
 	}
 	@media screen and (max-width: 54.875rem) {
@@ -201,8 +206,8 @@
 				position: relative;
 				color: #553408;
 				float: right;
-				width: 9.375rem;
-			    height: 1.8125rem;
+				width: 150px;
+			    height: 41px;
 			    font-family: AcuminPro, Sans-serif;
 				font-size: 19.5px;
 				font-weight: normal;
@@ -211,6 +216,8 @@
 				background-color: $beige-three;
 				margin-right: 1.25rem;
 				margin-top: 2.5rem;
+				border: solid 0.0625rem $camo-green;
+
 				img {
 					position: absolute;
 					top: -80%;
@@ -374,6 +381,10 @@
 		background-size: 100%;
 		//background-size: 1300px 252px;
 		background-repeat: no-repeat;
+		@media screen and (min-width: 90rem) {
+            width: 1440px;
+            margin: 0 auto;
+        }
 		@media screen and (max-width: 37.5rem) {
 			background-size: 140% 100%;
 			background-position: top;
