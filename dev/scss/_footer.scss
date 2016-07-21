@@ -10,20 +10,16 @@ footer {
 		margin-top: 18.75rem;
     }
 	@media screen and (max-width: 54.875rem) {
-		margin-top: 15rem;
+		margin-top: 12.5rem;
 	}
 	@media screen and (max-width: $change) {
 		margin-top: 13.75rem;
    	}
-   	
-	@media screen and (max-width: 22.375rem) {
-		margin-top: 13.75rem;
-	}
-	@media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 37.5rem) {
 		margin-top: 15rem;
 	}
-   		
-	#foot {
+    
+    #foot {
 		position: absolute;
 		width: 7.75rem;
   		height: 4.375rem;

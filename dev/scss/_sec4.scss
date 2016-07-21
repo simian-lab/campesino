@@ -114,12 +114,12 @@
         text-align: center;
 		color: $faded-orange;
         @media screen and (max-width: $change-sec4) {
-            position: initial;
-            //display: block;
+            position: relative;
             left: 0;
+            top: 0;
             font-size: 4.25rem;
             margin: 0 auto;
-            padding-top: 170px;
+            padding-top: 10.625rem;
         }
         @media screen and (max-width: 37.5rem) {
             width: 16.4688rem;
