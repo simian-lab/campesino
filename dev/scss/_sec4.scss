@@ -11,7 +11,7 @@
 	margin-bottom: -15.625rem;
     
     @media screen and (max-width: $change-sec4) {  
-        height: 87.5rem;
+        height: 1470px;
         margin-bottom: -30%;
     }
     
@@ -22,7 +22,7 @@
     }
     @media screen and (max-width: 37.5rem) {
         
-        height: 118.75rem;
+        height: 121.875rem;
     }
 
     @media screen and (max-width: 45.125rem) {
@@ -149,6 +149,7 @@
             left: 0;
             top: 0;
             margin: 0 auto;
+
             margin-top: 30px;
             font-size: 1.375rem;
         }
@@ -181,11 +182,15 @@
             top: 0;
             bottom: 0;
             margin: 0 auto;
-            margin-top: 1.875rem;
+            padding-right: 3.75rem;
+            //margin-left: 26.8%;
+            //margin-right: 37.463566%;
+            margin-top: 70px;
             font-size: 1.375rem;
         }
         @media screen and (max-width: 37.5rem) {
-            margin-top: 3.125rem;
+            margin-top: 70px;
+            padding-right: 0;
             width: 15.625rem;
             height: 3.625rem;
         }
