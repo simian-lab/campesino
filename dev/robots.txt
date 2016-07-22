@@ -55,4 +55,4 @@ Disallow: /
 User-agent: Download Ninja
 Disallow: /
 
-Sitemap: http://lacteos.campesino.com/sitemap.xml
+Sitemap: http://lacteoscampesino.com/sitemap.xml
