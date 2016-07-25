@@ -25,12 +25,13 @@
   @media screen and (max-width: 69.4375rem) {
     margin-bottom: -40%;
   }
-  @media screen and (max-width: 55.0625rem) {
-    margin-bottom: 25%;
-  }
+  
   @media screen and (max-width: $change) {
     height: 106.25rem;
     margin-bottom: -30%;
+  }
+  @media screen and (max-width: 55.0625rem) {
+    margin-bottom: 25%;
   }
   @media screen and (max-width: 41.25rem) {
     height: 68.75rem;
@@ -95,6 +96,9 @@
       @media screen and (max-width: 66.5625rem) {
         bottom: 31.25rem;
       } 
+      @media screen and (max-width: $change) {
+        bottom: 380px;
+      }
       @media screen and (max-width: 41.25rem) {
           position: relative;
           display: block;
@@ -103,13 +107,13 @@
           width: 20.9375rem;
           height: auto;
           margin: 0 auto;
-          padding-top: 12.5rem;
+          padding-top: 5rem;
           margin-top: 25rem;
 
       }
       @media screen and (max-width: 22.9375rem) {
           width: 18.75rem;
-          padding-top: 12.5rem;
+          padding-top: 6.25rem;
       }
     }
 	

@@ -187,7 +187,9 @@
 				background: transparent;
 			    border: none;
 			}
-
+			input:focus { 
+    			border: none;
+			}
 			input {
 				height: 1.25rem; 
 			    width: 84.1%; 
@@ -199,6 +201,9 @@
 					width: 50%; 
 			    }
 
+			}
+			textarea:focus {
+				border: none;
 			}
 			textarea {
 				margin-left: 0.4375rem;
