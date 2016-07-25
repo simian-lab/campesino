@@ -17,7 +17,7 @@
 	@media screen and (min-width: 103.125rem) { //1650px
         height: 118.75rem;
     }
-    @media screen and (min-width: 1850px) { //1850px
+    @media screen and (min-width: 115.625rem) { //1850px
         height: 121.875rem;
     }
     @media screen and (min-width: 134.375rem) { //2150 px
@@ -54,7 +54,7 @@
 		height: 115.625rem;
 	}
 	@media screen and (max-width: 22.3125rem) {
-		height: 1900px;
+		height: 118.75rem;
 	}
 	#contact {
 		width: 100%;
@@ -110,11 +110,6 @@
 			font-weight: normal;
 			text-align: center;
 			color: $camo-green;
-			/*@media screen and (max-width: $change) {
-				width: 291px;
-	  			height: 134px;
-	  			margin: 0 auto;
-			}*/
 		}
 
 		p {
@@ -125,12 +120,6 @@
 			line-height: 1.32;
 			text-align: center;
 			color: $mud-brown;
-			/*
-  				@media screen and (max-width: $change) {
-				width: 291px;
-  				height: 174px;
-				margin: 0 auto;
-  			}*/
 		}
   		}
 	  		
@@ -228,10 +217,10 @@
 				position: relative;
 				color: #553408;
 				float: right;
-				width: 150px;
-			    height: 41px;
+				width: 9.375rem;
+			    height: 2.5625rem;
 			    font-family: AcuminPro, Sans-serif;
-				font-size: 19.5px;
+				font-size: 1.21875rem;
 				font-weight: normal;
 				line-height: 1.32;
 				text-align: center;
@@ -311,16 +300,16 @@
 
   	#text1 {
   		padding-top: 1.25rem;
-  		width: 700px;
+  		width: 43.75rem;
   		margin: 0 auto;
   		font-family: AcuminPro, Sans-serif;
-		font-size: 22.1px;
+		font-size: 1.38125rem;
 		text-align: center;
 		font-weight: normal;
 		line-height: 1;
 		color: $mud-brown;
 		img {
-			padding-right: 5px;
+			padding-right: 0.3125rem;
 			vertical-align: middle;
 		}
   		@media screen and (max-width: 44.6875rem) {
@@ -333,10 +322,10 @@
 
   	#text2 {
   		padding-top: 1.25rem;
-		width: 700px;
+		width: 43.75rem;
   		margin: 0 auto;
   		font-family: AcuminPro, Sans-serif;
-		font-size: 22.1px;
+		font-size: 1.38125rem;
 		text-align: center;
 		font-weight: normal;
 		line-height: 1.58;
@@ -363,7 +352,7 @@
 	}
   		
 	#tel {
-		padding-top: 20px;
+		padding-top: 1.25rem;
   		font-family: AcuminPro, Sans-serif;
 		font-size: 2.6875rem;
 		font-weight: bold;
@@ -429,10 +418,9 @@
 		height: 15.75rem;
 		background-image: url(/images/assets/tierra-footer@3x.png); 
 		background-size: 100%;
-		//background-size: 1300px 252px;
 		background-repeat: no-repeat;
 		@media screen and (min-width: 90rem) {
-            width: 1440px;
+            width: 90rem;
             margin: 0 auto;
         }
 		@media screen and (max-width: 37.5rem) {

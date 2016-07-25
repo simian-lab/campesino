@@ -81,18 +81,18 @@
 	  	bottom: 2.6875rem;
 	  	right: -3.6875rem;
 	  	@media screen and (max-width: 67.4375rem) {
-			right: 0px;
+			right: 0;
 			bottom: 3.125rem;
 			width: 2.875rem;
 	  	}
 	  	@media screen and (max-width: $change) {
 			right: -9.375rem;
 	  	}
-	  	@media screen and (max-width: 486px) {
+	  	@media screen and (max-width: 30.375rem) {
 			right: -1.875rem;
 			bottom: 5.9375rem;
 	  	}
-	  	@media screen and (max-width: 338px) {
+	  	@media screen and (max-width: 21.125rem) {
 			right: -1.875rem;
 	  	}
 	 }
@@ -110,7 +110,6 @@
 	#logo{
 		position: relative;
 		display: block;
-		//width: 199px;;
 		width: 14%;
 		margin: 0 auto;
 		padding-top: 1.375rem;
@@ -231,7 +230,6 @@
 				margin-left: -2.5rem;
 			}
 			@media screen and (max-width: 37.6875rem) {
-				//margin-left: -120px;
 				margin-left: -4.375rem;
 			}
 			@media screen and (max-width: 32.125rem) {
@@ -254,7 +252,7 @@
 				left: 10%;
 			}
 			@media screen and (max-width: 37.6875rem) {
-				left: -60px;
+				left: -3.75rem;
 			}
 			#first {
 				  width: 17.6875rem;
@@ -286,10 +284,10 @@
 				  }
 				  @media screen and (max-width: 30.375rem) {
 					width: auto;
-					font-size: 53.9px;
+					font-size: 3.36875rem;
 				  }
 				  @media screen and (max-width: 21.125rem) {
-					font-size: 50px;
+					font-size: 3.125rem;
 				  }
 			}
 			#last {
@@ -301,7 +299,7 @@
 				  color: $camo-green;
 				  @media screen and (max-width: 67.4375rem) {
 					font-size: 1.39375rem;
-					width: 346px;
+					width: 21.625rem;
 				  }
 				  @media screen and (max-width: 30.375rem) {
 					width: 18.125rem;
@@ -321,7 +319,7 @@
 		width: 9%;
 		min-width: 6.4375rem;
 		@media screen and (min-width: 80rem) {//Resolución 1280px
-            width: 11.0625rem;
+            width: 9.375rem;
         }
 	 }
 	
@@ -333,8 +331,8 @@
 		min-width: 5.3125rem;
 		z-index: 1;
 		@media screen and (min-width: 80rem) {//Resolución 1280px
-            top: 12.5rem;
-            width: 15.0938rem;
+            top: 9.375rem;
+            width: 10rem;
         }
 		@media screen and (max-width: $change) {
 			top: 4rem;

@@ -16,9 +16,9 @@
 		height: 80rem;
 	}
 	@media screen and (max-width: 69.4375rem) {
-		background-image: url(/images/background/fondo-veige-prodcutos-naturales-movil.png);
-		height: 71.875rem;
+		background-image: url(/images/background/fondo-leche-movil.png);
 		margin-bottom: -12.5rem;
+		background-size: 100% 100%;
 	}
 	@media screen and (max-width: 50.9375rem) {
 		height: 75rem;
@@ -37,8 +37,8 @@
 		width: 26.5%;
   		height: auto;
 		margin-top: -18.75rem;
-		@media screen and (min-width: 2000px) {//Resolución 1280px
-            width: 386px;
+		@media screen and (min-width: 125rem) {//Resolución 1280px
+            width: 24.125rem;
         }
 		@media screen and (max-width: 69.4375rem) {
 		-webkit-transition: width 1s, height 1s, margin-top 1s; // For Safari 3.1 to 
@@ -173,11 +173,11 @@
   			margin-left: 17%;
 		}
 		@media screen and (max-width: 50.9375rem) {
-			top: 240px;
+			top: 15rem;
 			margin-left: 7%;
 		}
 		@media screen and (max-width: 45.8125rem) {
-			width: 288px;
+			width: 18rem;
 			
 		}
 		@media screen and (max-width: 38.4375rem) {
@@ -186,7 +186,7 @@
 				position: absolute;
 			}
 			margin: 0 auto;
-			margin-top: 320px;
+			margin-top: 20rem;
 		}	
 	}
 	

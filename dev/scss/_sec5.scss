@@ -40,12 +40,11 @@
   	#yogures {
       z-index: 1;
   		width: 77.2%;
-      //height: 1169px;
-  		position: absolute;
+      position: absolute;
       display: block;
   		left: 0;
       bottom: -23%;
-  		margin-left: -60px;
+  		margin-left: -3.75rem;
       @media screen and (min-width: 80rem) {
         width: 61.0838rem;
         bottom: -23%;
@@ -56,7 +55,6 @@
       @media screen and (max-width: 66.375rem) {
         bottom: -18%;
       }
-      //min-height: 506px;
       @media screen and (max-width: $change-sec5) {
         bottom: -20%;
         margin-right: 11.4%;
@@ -83,12 +81,12 @@
         bottom: -19%;
         margin-right: 0;
       }
-      @media screen and (max-width: 403px) {
+      @media screen and (max-width: 25.1875rem) {
          width: 22.5rem;
          bottom: -16%;
          margin-left: -1.25rem;
       }
-      @media screen and (max-width: 360px) {
+      @media screen and (max-width: 22.5rem) {
         width: 21.25rem;
       }
      
@@ -99,16 +97,15 @@
       padding-top: 12.5rem;
   		min-width: 34%;
       margin: 0 auto;
-	    //height: 119px;
 	    font-family: Pacifico;
   		font-size: 4rem;
   		font-weight: normal;
   		text-align: center;
   		color: $beige-three;
-      @media screen and (max-width: 1142px) {
+      @media screen and (max-width: 71.375rem) {
         padding-top: 18.75rem;
       }
-      @media screen and (max-width: 784px) {
+      @media screen and (max-width: 49rem) {
         padding-top: 12.5rem; 
       }
       @media screen and (max-width: 45.125rem) {
