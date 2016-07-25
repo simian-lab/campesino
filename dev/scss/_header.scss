@@ -5,6 +5,9 @@
 	margin-bottom: -31.25rem;
 	position: relative;
 	width: 100%;
+	@media screen and (min-width: 143.75rem) {//Resolución 2300px
+		height: 60.625rem;
+  	}
 	@media screen and (max-width: $change) {
 		margin-bottom: -31.25rem;
 		margin-top: -7.25rem;
@@ -85,12 +88,12 @@
 	  	@media screen and (max-width: $change) {
 			right: -9.375rem;
 	  	}
-	  	@media screen and (max-width: 30.375rem) {
-			right: -4.5rem;
-			bottom: 2.5rem;
+	  	@media screen and (max-width: 486px) {
+			right: -1.875rem;
+			bottom: 5.9375rem;
 	  	}
-	  	@media screen and (max-width: 21.125rem) {
-			right: -3.125rem;
+	  	@media screen and (max-width: 338px) {
+			right: -1.875rem;
 	  	}
 	 }
 
@@ -227,7 +230,11 @@
 				position: relative;
 				margin-left: -2.5rem;
 			}
-			@media screen and (max-width: 603px) {
+			@media screen and (max-width: 37.6875rem) {
+				//margin-left: -120px;
+				margin-left: -4.375rem;
+			}
+			@media screen and (max-width: 32.125rem) {
 				margin-left: -7.5rem;
 			}
 		}
@@ -237,6 +244,9 @@
 			margin-top: 15rem;
 			right: 7%;
 			left: 17.2125rem;
+			@media screen and (min-width: 150rem) {//Resolución 2400px
+				left: 18.75rem;
+  			}
 			@media screen and (max-width: $change) {
 				width: 16.375rem;
 				margin-top: 0;
@@ -245,9 +255,6 @@
 			}
 			@media screen and (max-width: 37.6875rem) {
 				left: -60px;
-			}
-			@media screen and (max-width: 30.375rem) {
-				left: -80px;
 			}
 			#first {
 				  width: 17.6875rem;
@@ -313,7 +320,9 @@
 		right: 0rem;
 		width: 9%;
 		min-width: 6.4375rem;
-
+		@media screen and (min-width: 80rem) {//Resolución 1280px
+            width: 11.0625rem;
+        }
 	 }
 	
 	#topsecflow {
@@ -323,6 +332,10 @@
 		width: 14.7%;
 		min-width: 5.3125rem;
 		z-index: 1;
+		@media screen and (min-width: 80rem) {//Resolución 1280px
+            top: 12.5rem;
+            width: 15.0938rem;
+        }
 		@media screen and (max-width: $change) {
 			top: 4rem;
 		}

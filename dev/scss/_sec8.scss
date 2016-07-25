@@ -2,48 +2,63 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 117.5rem;
+	height: 115.625rem;
 	margin-bottom: -10rem;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-veige-contacto.png);
   	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	@media screen and (min-width: 103.125rem) {
+	@media screen and (min-width: 81.25rem) { // Resolución 1300px
+		height: 117.5rem;		
+    }
+    @media screen and (min-width: 87.5rem) { // Resolución 1400px
+		height: 118.75rem;
+    }
+	@media screen and (min-width: 103.125rem) { //1650px
+        height: 118.75rem;
+    }
+    @media screen and (min-width: 1850px) { //1850px
+        height: 121.875rem;
+    }
+    @media screen and (min-width: 134.375rem) { //2150 px
         height: 125rem;
     }
-    @media screen and (min-width: 134.375rem) {
+    @media screen and (min-width: 153.125rem) { //2450 px
         height: 128.125rem;
     }
-    @media screen and (max-width: 68.3125rem) {
-		height: 120rem;
+    @media screen and (max-width: 68.3125rem) {//1093px
+		height: 118.125rem;
 	}
-	
 	@media screen and (max-width: $change) {
 		background-image: url(/images/background/fondo-veige-contacto-movil.png);
-		height: 122.5rem;
+		height: 120.625rem;
 		background-size: 100% 90%; 
 		background-position: 100% 100%;
 	}
 	@media screen and (max-width: 54.875rem) {
-		height: 117.5rem;
-	}
-	@media screen and (max-width: 49.3125rem) {
 		height: 115.625rem;
 	}
+	@media screen and (max-width: 49.3125rem) {
+		height: 114.375rem;
+	}
 	@media screen and (max-width: 37.5rem) {
+		height: 111.875rem;
+	}
+	@media screen and (max-width: 33.75rem) {
 		height: 113.75rem;
 	}
 	@media screen and (max-width: 30.625rem) {
-		height: 116.25rem;
+		height: 112.5rem;
 	}
 	@media screen and (max-width: 28.125rem) {
-		height: 118.75rem;
+		height: 115.625rem;
 	}
-	
+	@media screen and (max-width: 22.3125rem) {
+		height: 1900px;
+	}
 	#contact {
 		width: 100%;
 		background-image: url(/images/background/mancha-contacto.png);
-		//background-position: 0% 100%;
 		background-size: 100% 100%;
 		@media screen and (max-width: $change) {
 			background-size: auto 70%;
@@ -294,15 +309,37 @@
 		}
   	}
 
-  	p {
-  		margin-top: 2%;
-  		width: 43.75rem;
+  	#text1 {
+  		padding-top: 1.25rem;
+  		width: 700px;
   		margin: 0 auto;
   		font-family: AcuminPro, Sans-serif;
 		font-size: 22.1px;
+		text-align: center;
+		font-weight: normal;
+		line-height: 1;
+		color: $mud-brown;
+		img {
+			padding-right: 5px;
+			vertical-align: middle;
+		}
+  		@media screen and (max-width: 44.6875rem) {
+			width: 32.3125rem;
+  		}
+  		@media screen and (max-width: 33.75rem) {
+			width: 90%;
+  		}
+  	}
+
+  	#text2 {
+  		padding-top: 1.25rem;
+		width: 700px;
+  		margin: 0 auto;
+  		font-family: AcuminPro, Sans-serif;
+		font-size: 22.1px;
+		text-align: center;
 		font-weight: normal;
 		line-height: 1.58;
-		text-align: center;
 		color: $mud-brown;
 		img {
 			padding-right: 0.3125rem;
@@ -310,7 +347,7 @@
   		@media screen and (max-width: 44.6875rem) {
 			width: 32.3125rem;
   		}
-  		@media screen and (max-width: 32.3125rem) {
+  		@media screen and (max-width: 33.75rem) {
 			width: 90%;
   		}
   	}
@@ -326,6 +363,7 @@
 	}
   		
 	#tel {
+		padding-top: 20px;
   		font-family: AcuminPro, Sans-serif;
 		font-size: 2.6875rem;
 		font-weight: bold;
@@ -337,6 +375,7 @@
   	}
 
 	#mail {
+		padding-top: 1.25rem;
 		font-family: AcuminPro, Sans-serif;
 		font-size: 1.25rem;
 		font-weight: normal;
@@ -349,6 +388,7 @@
 	}
 
 	#address {
+		margin-top: 0.625rem;
 		font-family: AcuminPro, Sans-serif;
 		font-size: 1.15625rem;
 		font-weight: normal;
@@ -404,24 +444,7 @@
 			height: 18.75rem;
 		}
 	}
-	/*
-	#land {
-	  	/*position: absolute;
-	  	bottom: -7.5rem;
-	  	left: 0;
-	  	z-index: 2;
-	  	display: block;
-	  	width: 100%
-	  	z-index: 2;;
-	  	@media screen and (max-width: 55.0625rem) {
-			bottom: -4.375rem;
-  		}
-		@media screen and (max-width: 33.125rem) {
-			//content: url(/images/background/f-o-o-t-e-r@3x.png);
-		}
-	}*/
-		
-
+	
 	#fill-15 {
   		position: absolute;
   		left: 10%;
@@ -451,8 +474,8 @@
   		position: absolute;
   		width: 1.70625rem;
   		height: 2.5875rem;
-		right: 18.75rem;
-		bottom: 37.5rem;
+		right: 21.875rem;
+		bottom: 46.875rem;
 		@media screen and (max-width: 55rem) {
 			display: none;
   		}

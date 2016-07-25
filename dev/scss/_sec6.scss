@@ -18,11 +18,18 @@
   }
   @media screen and (min-width: 143.75rem) {
     height: 106.25rem;
+    margin-bottom: -24%;
   }
   @media screen and (max-width: 76.6875rem) {
     height: 1800px;
     margin-bottom: -22%;
   }
+  @media screen and (max-width: 75rem) {
+    margin-bottom: -24%;
+  }
+  @media screen and (max-width: 68.75rem) {
+    margin-bottom: -26%;
+  } 
   @media screen and (max-width: $change-sec5) {
     background-image: url(/images/background/fondo-yogurt-maracuy-movil.png);
     height: 181.25rem;
