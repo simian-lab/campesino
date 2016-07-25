@@ -18,13 +18,15 @@ footer {
     @media screen and (max-width: 37.5rem) {
 		margin-top: 15rem;
 	}
-    
+    @media screen and (max-width: 22.3125rem) {
+		margin-top: 12.5rem;
+	}
     #foot {
 		position: absolute;
 		width: 7.75rem;
   		height: 4.375rem;
   		right: 0;
-  		bottom: 0px;
+  		bottom: 0;
   		@media screen and (max-width: 54.875rem) {
 			position: relative;
 			margin: 0 auto;
