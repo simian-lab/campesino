@@ -2,7 +2,7 @@
 	position: relative;
 	z-index: 1;
 	width: 100%;
-	height: 115.625rem;
+	height: 1850px;
 	margin-bottom: -10rem;
 	object-fit: contain;
 	background-image: url(/images/background/fondo-veige-contacto.png);
@@ -36,25 +36,22 @@
 		background-position: 100% 100%;
 	}
 	@media screen and (max-width: 54.875rem) {
-		height: 115.625rem;
+		height: 117.5rem;
 	}
 	@media screen and (max-width: 49.3125rem) {
-		height: 114.375rem;
-	}
-	@media screen and (max-width: 37.5rem) {
-		height: 111.875rem;
-	}
-	@media screen and (max-width: 33.75rem) {
-		height: 113.75rem;
-	}
-	@media screen and (max-width: 30.625rem) {
-		height: 112.5rem;
-	}
-	@media screen and (max-width: 28.125rem) {
 		height: 115.625rem;
 	}
-	@media screen and (max-width: 22.3125rem) {
+	@media screen and (max-width: 37.5rem) {
+		height: 115.625rem;
+	}
+	@media screen and (max-width: 30.625rem) {
+		height: 115rem;
+	}
+	@media screen and (max-width: 28.125rem) {
 		height: 118.75rem;
+	}
+	@media screen and (max-width: 22.3125rem) {
+		height: 120rem;
 	}
 	#contact {
 		width: 100%;
@@ -155,6 +152,7 @@
   		width:  50%;
   		height: auto;
   		margin: 0 auto;
+  		margin-top: 1.875rem;
 		form {
 			li {
 				padding: 0.625rem;
@@ -183,14 +181,52 @@
 			    }
 			}
 			
-			.input-info {
-				background: transparent;
-			    border: none;
+			#{$all-text-inputs} {
+				@include placeholder {
+				    font-family: AcuminPro, Sans-serif;
+					font-size: 1.1875rem;
+					font-weight: normal;
+					line-height: 1.32;
+					color: $mud-brown;
+					@media screen and (max-width: 27.6875rem) {
+						font-size: 1.0625rem;
+					}
+				}
+			}			
+			
+			#{$all-text-inputs-focus},
+			#{$all-text-inputs-hover} {
+			  	border: none;
+    			border-color: transparent;
 			}
-			input:focus { 
-    			border: none;
+			
+			input[type=number]::-webkit-inner-spin-button, 
+			input[type=number]::-webkit-outer-spin-button { 
+				-webkit-appearance: none; 
+				margin: 0; 
+			}
+
+			input[type=number] {
+			    -moz-appearance:textfield;
+			}
+			input[type=number]:placeholder {
+				font-family: AcuminPro, Sans-serif;
+				font-size: 1.1875rem;
+				font-weight: normal;
+				line-height: 1.32;
+				color: $mud-brown;
+				@media screen and (max-width: 27.6875rem) {
+					font-size: 1.0625rem;
+				}
 			}
 			input {
+				font-family: AcuminPro, Sans-serif;
+				font-size: 1.1875rem;
+				font-weight: normal;
+				line-height: 1.32;
+				color: $mud-brown;
+				background: transparent;
+			    border: none;
 				height: 1.25rem; 
 			    width: 84.1%; 
 			    padding: 0.3125rem 0.5rem;
@@ -200,24 +236,35 @@
 			    @media screen and (max-width: 29.375rem) {
 					width: 50%; 
 			    }
+				@media screen and (max-width: 27.6875rem) {
+					font-size: 1.0625rem;
+				}
+			}
 
-			}
-			textarea:focus {
-				border: none;
-			}
 			textarea {
 				margin-left: 0.4375rem;
 				width: 84.1%; 
 				height: 12.5rem;
 				overflow: auto;
+				background: transparent;
+			    border: none;
+			    font-family: AcuminPro, Sans-serif;
+				font-size: 1.1875rem;
+				font-weight: normal;
+				line-height: 1.32;
+				color: $mud-brown;
 				@media screen and (max-width: 52.125rem) {
 					width: 70%; 
 			    }
 			    @media screen and (max-width: 29.375rem) {
 					width: 50%; 
 			    }
-			}
+			    @media screen and (max-width: 27.6875rem) {
+					font-size: 1.0625rem;
+				}
 
+			}
+			
 			#btn {
 				position: relative;
 				color: #553408;
@@ -244,9 +291,10 @@
 		}
 		
   	}
-	::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	
+	/*::-webkit-input-placeholder { // WebKit, Blink, Edge 
         font-family: AcuminPro, Sans-serif;
-		font-size: 1.375rem;
+		font-size: 22px;
 		font-weight: normal;
 		line-height: 1.32;
 		color: $mud-brown;
@@ -255,7 +303,18 @@
 		}
 	}
 
-	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	:-moz-input-placeholder { // Mozilla Firefox 4 to 18 
+	   	font-family: AcuminPro, Sans-serif;
+		font-size: 19px;
+		font-weight: normal;
+		line-height: 1.32;
+		color: $mud-brown;
+		@media screen and (max-width: 27.6875rem) {
+			font-size: 1.0625rem;
+		}
+	}
+
+	::-moz-input-placeholder { // Mozilla Firefox 19+ 
 	   	font-family: AcuminPro, Sans-serif;
 		font-size: 1.375rem;
 		font-weight: normal;
@@ -266,7 +325,7 @@
 		}
 	}
 
-	::-moz-placeholder { /* Mozilla Firefox 19+ */
+	:-ms-input-placeholder { // Internet Explorer 10-11 
 	   	font-family: AcuminPro, Sans-serif;
 		font-size: 1.375rem;
 		font-weight: normal;
@@ -276,18 +335,7 @@
 			font-size: 1.0625rem;
 		}
 	}
-
-	:-ms-input-placeholder { /* Internet Explorer 10-11 */
-	   	font-family: AcuminPro, Sans-serif;
-		font-size: 1.375rem;
-		font-weight: normal;
-		line-height: 1.32;
-		color: $mud-brown;
-		@media screen and (max-width: 27.6875rem) {
-			font-size: 1.0625rem;
-		}
-	}
-
+	*/
   	h1 {
   		width: 25.625rem;
   		margin: 0 auto;
