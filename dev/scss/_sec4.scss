@@ -46,6 +46,7 @@
 		top: 13%;
 		width: 98%;
 		//width: 50%;
+        @include animation-duration(2s);
   		height: 52.375rem;
 		background-image: url(/images/background/huecos-queso.png);
 		background-repeat: no-repeat;
@@ -103,6 +104,7 @@
     	right: 0;
     	bottom: 25%;
         min-width: 5rem;
+        @include animation-duration(4s);
         @media screen and (max-width: 48.9375rem) {
             bottom: 9.375rem;
         }
@@ -113,6 +115,7 @@
     	right: 0;
     	bottom: 16%;
         min-width: 2.5rem;
+        @include animation-duration(2s);
         @media screen and (max-width: 48.9375rem) {
             bottom: 6.25rem;
         }

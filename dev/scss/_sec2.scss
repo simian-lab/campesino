@@ -80,6 +80,7 @@
 		right: 0;
 		width: 25%;
 		min-width: 7.375rem;
+		@include animation-duration(4s);
 		@media screen and (min-width: 80rem) {//Resolución 1280px
             width: 22.0625rem;
         }
@@ -96,6 +97,7 @@
 		top: 13.125rem;
 		width: 19%;
 		min-width: 5.6875rem;
+		@include animation-duration(2.5s);
 		@media screen and (min-width: 80rem) {//Resolución 1280px
             width: 17.875rem;
         }
@@ -110,6 +112,7 @@
 		position: absolute;
 		top: 25%;
 		right: 21%;
+		@include animation-duration(2s);
 		@media screen and (max-width: $change) {
 			display: none;
 		}
@@ -119,6 +122,7 @@
 		position: absolute;
 		bottom: 30%;
 		right: 15%;
+		@include animation-duration(2.5s);
 		@media screen and (max-width: $change) {
 			right: 0.75rem;
 			top: 21.875rem;
@@ -129,6 +133,7 @@
 		position: absolute;
 		bottom: 31%;
 		left: 21%;
+		@include animation-duration(3s);
 		@media screen and (max-width: $change) {
 			display: none;
 		}

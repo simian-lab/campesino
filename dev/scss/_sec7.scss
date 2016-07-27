@@ -50,6 +50,7 @@
       margin-top: 25rem;
   		margin-left: 5.0625rem;
   		margin-bottom: -20%;
+      @include animation-duration(2s);
       @media screen and (min-width: 103.125rem) {
         margin-left: 8.75rem;
       }
@@ -83,6 +84,7 @@
   		margin-right: 9%;
   		bottom: 30%;
       min-width: 18.25rem;
+      @include animation-duration(2s);
       @media screen and (min-width: 103.125rem) {
         margin-right: 19%;
         bottom: 33%;
@@ -129,6 +131,7 @@
       width: 32.3%;
 		  left: 0;
 		  margin-top: -10%;
+      @include animation-duration(4s);
       @media screen and (min-width: 80rem) {
         width: 27.5rem;
       }
@@ -141,6 +144,7 @@
       width: 23%;
   		right: 0;
   		top: -15%;
+      @include animation-duration(3s);
       @media screen and (min-width: 80rem) {
         width: 20rem;
       }
@@ -150,6 +154,7 @@
   		width: 18.5%;
       right: 0;
   		bottom: 35%;
+      @include animation-duration(2s);
       @media screen and (min-width: 80rem) {
         width: 16.375rem;
       }

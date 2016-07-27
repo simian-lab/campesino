@@ -38,8 +38,14 @@
     height: 175rem;
   }
   @media screen and (max-width: 41.25rem) {
-      height: 152.5rem;
-      margin-bottom: -30%;
+    height: 152.5rem;
+    margin-bottom: -30%;
+  }
+  @media screen and (max-width: 34.25rem) {
+    height: 159.375rem;
+  }
+  @media screen and (max-width: 22.9375rem) {
+    height: 152.5rem;
   }
   p {
         //margin-top: 20%;
@@ -71,7 +77,6 @@
     }
     
     #bottles {
-        //position: relative;
         display: none;
         width: 25rem;
         height: 20.25rem;
@@ -102,12 +107,15 @@
             margin-left: 1.875rem;
           }
         }
+
         @media screen and (max-width: $change-sec5) {
           display: block;
         }
         @media screen and (max-width: 34.25rem) {
+          position: relative;
           width: 14.1875rem;
           height: 30.1875rem;
+          margin-top: 120px;
         }
     }
 
@@ -135,6 +143,7 @@
       margin-right: 10%;
   		float: right;
   		width: 33.8125rem;
+      @include animation-duration(2s);
       @media screen and (min-width: 103.125rem) {
         margin-top: 5%;
         margin-right: 15%;
@@ -164,6 +173,7 @@
   		margin-left: 4%;
   		width: 34.375rem;
       margin-bottom: -5%;
+      @include animation-duration(2s);
       @media screen and (min-width: 103.125rem) {
         padding-top: 20%;
       }
@@ -196,6 +206,7 @@
   		width: 35.0625rem;
       margin-left: 35%;
   		margin-right: 19.4%;
+      @include animation-duration(2s);
       @media screen and (max-width: 76.6875rem) {
           margin: 0 auto;
           float: right;

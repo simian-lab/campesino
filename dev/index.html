@@ -11,6 +11,7 @@
 		<script src="https://use.typekit.net/kgf2ylu.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}
 		</script>
+
 		<!-- Favicon & Touch icons -->
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
@@ -37,11 +38,16 @@
 		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/styles/reset.css">
 		<link rel="stylesheet" href="/styles/style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1">`
+		<link rel="stylesheet" href="/styles/animate.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!--Libraries for trigger Animation with Scroll -->
+		<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
 
 	</head>
 	<body>
-	
+
+	<!-- Head -->
 	<div id="head">
 		
 		
@@ -84,12 +90,13 @@
 	    </ul>
 		<img class="change-first" id="topflow" src="/images/background/hojas-superiores-derechas.png"/>
 		<img class="change-first" id="topsecflow" src="/images/background/hoja-sola.png"/>
-		<img id="fill-1" src="/images/background/fill-1.png"/>
-		<img id="fill-2" src="/images/background/fill-2.png"/>
-		<img id="fill-3" src="/images/background/fill-3.png"/>
-		<img id="fill-4" src="/images/background/fill-4.png"/>
-		<img id="fill-5" src="/images/background/fill-5.png"/>
-		<img id="fill-7" src="/images/background/fill-1.png"/>
+
+		<img id="fill-1" class="flow animated zoomIn" src="/images/background/fill-1.png"/>
+		<img id="fill-2" class="flow animated zoomIn" src="/images/background/fill-2.png"/>
+		<img id="fill-3" class="flow animated zoomIn" src="/images/background/fill-3.png"/>
+		<img id="fill-4" class="flow animated zoomIn" src="/images/background/fill-4.png"/>
+		<img id="fill-5" class="flow animated zoomIn" src="/images/background/fill-5.png"/>
+		<img id="fill-7" class="flow animated zoomIn" src="/images/background/fill-1.png"/>
 		<div id="title">
 			<img class="figura" src="images/assets/montaje-yogurt-maracuy.png" alt="yogurt-maracuya"/>
 
@@ -100,16 +107,16 @@
 			</div>
 		</div>	
 	</div>
+
 	<!--Second section-->
-	
 	<div id="sec2">
 		
-			<img id="fill-7" src="/images/background/fill-7.png"/>
-			<img id="fill-8" src="/images/background/fill-8.png">
-			<img id="fill-9" src="/images/background/fill-9.png">
-			<img id="topflow" src="/images/background/hojas-inferiores.png"/>
+			<img id="fill-7" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-7.png"/>
+			<img id="fill-8" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-8.png">
+			<img id="fill-9" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-9.png">
+			<img id="topflow" class="revealOnScroll" data-animation="fadeInLeft" src="/images/background/hojas-inferiores.png"/>
 		
-		<img id="land" src="/images/background/tierra-derecha.png"/>
+		<img id="land" class="revealOnScroll" data-animation="fadeIn" src="/images/background/tierra-derecha.png"/>
 	  	<h1>Productos naturales</h1>
 	  	<br/>
 		<p id="firsttitle">NATURAL, ARTESANAL Y CAMPESINO</p>
@@ -127,13 +134,15 @@
 		<img id="industry" src="/images/background/industria-colombiana-.svg"/>
 				
 	</div>
+
+
 	<!--Third section-->
 	<div id="milksection">
-		<img id="lef-land" src="/images/background/tierra-izquierda.png">
-		<img id="left-milk" src="/images/background/mancha-leche-izquierda.png">
-		<img id="fill-10" src="/images/background/fill-10.png">
-		<img id="fill-11" src="/images/background/fill-11.png">
-		<img id="fill-12" src="/images/background/fill-12.png">
+		<img id="lef-land" src="/images/background/tierra-izquierda.png" class="revealOnScroll" data-animation="fadeIn">
+		<img id="left-milk" class="revealOnScroll" data-animation="rotateInDownLeft" src="/images/background/mancha-leche-izquierda.png">
+		<img id="fill-10" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-10.png">
+		<img id="fill-11" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-11.png">
+		<img id="fill-12" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-12.png">
 
 		<h1>Leche natural</h1>
 		<img id="milk" src="/images/background/leches.png">
@@ -143,13 +152,18 @@
 			Nuestra leche proviene de pequeños productores colombianos que alimentan y cuidan sus vacas de la manera más natural posible, para que su leche resulte pura y saludable.
 			 </p>
 		</div>
-		<img class="bottle" id="bottle-1000" src="/images/background/trazos-botella-seccin-leche-1000.png">
-		<img class="bottle" id="bottle-2000" src="/images/background/trazos-botella-seccin-leche-2000.png">
+		
+		<div id="bottles-milk">
+			<img class="bottle" id="bottle-2000" src="/images/background/trazos-botella-seccin-leche-2000.png">
+			<img class="bottle" id="bottle-1000" src="/images/background/trazos-botella-seccin-leche-1000.png">
+		</div>
 		<img id="deslac" src="/images/background/icono-deslacotsada.png">
 	</div>
 	
+
+	<!--Fourth section -->
 	<div id="sec4">
-		<div id="holes"></div>
+		<div id="holes" class="revealOnScroll" data-animation="zoomIn" ></div>
 		<h1>Nuestros quesos</h1>
 		<div id="cheese-div">
 			<img id="campesino-cheese" src="/images/background/queso-campesino-grande.png">
@@ -159,8 +173,8 @@
 		<br/><br/>
 		 Nuestros quesos están hechos solo con leche y sal, para que disfrutes de sabores naturales y saludables. </p>
 		<p id="desc2">Disfruta de nuestras 4 presentaciones</p>
-		<img id="trozo-queso" src="/images/background/trozo-queso.png">
-		<img id="trozo-queso2" src="/images/background/bloque-2-queso.png">
+		<img id="trozo-queso" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/trozo-queso.png">
+		<img id="trozo-queso2" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/bloque-2-queso.png">
 		<ul id="nav">
 			<li id="ref">
 				<figure>
@@ -189,17 +203,18 @@
 	    </ul>
 	</div>
 	
+	<!--Fifth section -->
 	<div id="sec5">
-		<img id="fill-13" src="/images/background/fill-13.png">
-		<img id="fill-14" src="/images/background/fill-14.png">
+		<img id="fill-13" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-13.png">
+		<img id="fill-14" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-14.png">
 		<img id="yogures" src="/images/background/Montaje-Yogures-SinRecortar.png">
 		<img id="vector-desc" src="/images/background/vector-deslactosado.png">
-		<img id="fill-15" src="/images/background/fill-15.png">
+		<img id="fill-15" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-15.png">
 		<h1>Nuestros Yogurts</h1>
 		<p>Nuestros yogurts están preparados con trozos de fruta o pulpa natural. Pruébalos y reconoce su riqueza orgánica en su sabor y cremosidad.
 		<br/><br/>
 Disfruta de sabores innovadores que combinados con la leche dan como resultado mezclas naturales y cremosas, características fundamentales de nuestros yogurts. Además, el yogurt Campesino es endulzado con Stevia.</p>
-		<div id="bottles">
+		<div id="bottles" class="revealOnScroll" data-animation="fadeInLeft">
 			<div id="big">
 				<img id="bottle-1800" src="/images/background/trazos-botella-1800.png">
 				<img id="bottle-1000" src="/images/background/trazos-botella-seccin-leche-1000.png">
@@ -211,6 +226,7 @@ Disfruta de sabores innovadores que combinados con la leche dan como resultado m
 		</div>
 	</div>
 	
+	<!--Sixth section -->
 	<div id="sec6">
 		<p>Nuestros yogurts están preparados con trozos de fruta o pulpa natural. Pruébalos y reconoce su riqueza orgánica en su sabor y cremosidad.
 		<br/><br/>
@@ -227,20 +243,22 @@ Disfruta de sabores innovadores que combinados con la leche dan como resultado m
 		</div>
 		<img id="vector-desc" src="/images/background/vector-deslactosado.png">
 		
-		<img id="yogurt-gulupa" src="/images/background/yogurt-gulupa.png">
-		<img id="yogurt-mora" src="/images/background/yogurt-mora.png">
-		<img id="yogurt-maracuy" src="/images/background/yogurt-maracuy.png">
+		<img id="yogurt-gulupa" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/yogurt-gulupa.png">
+		<img id="yogurt-mora" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/yogurt-mora.png">
+		<img id="yogurt-maracuy" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/yogurt-maracuy.png">
 	
 	</div>
 	
+	<!--Seventh section -->
 	<div id="sec7">
-		<img id="yogurt-melocoton" src="/images/background/yogurt-melocoton.png">
-		<img id="yogurt-feijoa" src="/images/background/yogurt-feijoa.png">
-		<img class="mancha" id="mancha-lateral" src="/images/background/mancha-lateral.png">
-		<img class="mancha" id="mancha-lateral2" src="/images/background/mancha-lateral-2.png">
-		<img class="mancha" id="mancha-lateral3" src="/images/background/mancha-lateral-3.png">
+		<img id="yogurt-melocoton" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/yogurt-melocoton.png">
+		<img id="yogurt-feijoa" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/yogurt-feijoa.png">
+		<img class="mancha revealOnScroll" id="mancha-lateral" data-animation="fadeInLeft" src="/images/background/mancha-lateral.png">
+		<img class="mancha revealOnScroll" id="mancha-lateral2" data-animation="fadeInUp" src="/images/background/mancha-lateral-2.png">
+		<img class="mancha revealOnScroll" id="mancha-lateral3" data-animation="fadeInUp" src="/images/background/mancha-lateral-3.png">
 	</div>
 	
+	<!--Eighth section -->
 	<div id="sec8">
 		<div id="contact">
 			<div id="img-somb">
@@ -254,11 +272,11 @@ Disfruta de sabores innovadores que combinados con la leche dan como resultado m
 			</div>
 		</div>
 				
-		<img id="right-flow" src="/images/background/hojas-contacto-derecha.png">
-		<img id="left-flow" src="/images/assets/hojas-contacto-izquierda.png">
-		<img id="left-flow-1" src="/images/assets/hoja-sola-1.png">
+		<img id="right-flow" class="revealOnScroll" data-animation="fadeInUp" src="/images/background/hojas-contacto-derecha.png">
+		<img id="left-flow" class="revealOnScroll" data-animation="fadeInLeft" src="/images/assets/hojas-contacto-izquierda.png">
+		<img id="left-flow-1" class="revealOnScroll" data-animation="fadeInLeft" src="/images/assets/hoja-sola-1.png">
 
-		<img id="fill-15" src="/images/background/fill-2.png">
+		<img id="fill-15" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-2.png">
 		
 		
 		<div id="contact-form">
@@ -329,10 +347,12 @@ Disfruta de sabores innovadores que combinados con la leche dan como resultado m
 		<div id="land-div">
 			
 		</div>
-		<img id="fill-17" src="/images/background/fill-4.png">
-		<img id="fill-18" src="/images/background/fill-18.png">
-		<img id="fill-19" src="/images/background/fill-19.png">
+		<img id="fill-17" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-4.png">
+		<img id="fill-18" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-18.png">
+		<img id="fill-19" class="revealOnScroll" data-animation="zoomIn" src="/images/background/fill-19.png">
 	</div>
+
+
 	<!-- Google Analytics code -->
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -344,6 +364,56 @@ Disfruta de sabores innovadores que combinados con la leche dan como resultado m
 	  ga('send', 'pageview');
 
 	</script>	
+	
+
+	<!-- Trigger animations OnScroll-->
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.0.js"></script>
+	
+	<script>
+		$(function() {
+
+			  var $window           = $(window),
+			      win_height_padded = $window.height() * 1.1,
+			      isTouch           = Modernizr.touch;
+
+			  if (isTouch) { 
+			  	$('.revealOnScroll').addClass('animated'); 
+			  }
+
+			  $window.on('scroll', revealOnScroll);
+
+			  function revealOnScroll() {
+			    var scrolled = $window.scrollTop(),
+			        win_height_padded = $window.height() * 1.1;
+
+			    // Showed...
+			    $(".revealOnScroll:not(.animated)").each(function () {
+			      var $this     = $(this),
+			          offsetTop = $this.offset().top;
+
+			      if (scrolled + win_height_padded > offsetTop) {
+			        if ($this.data('timeout')) {
+			          window.setTimeout(function(){
+			            $this.addClass('animated ' + $this.data('animation'));
+			          }, parseInt($this.data('timeout'),10));
+			        } else {
+			          $this.addClass('animated ' + $this.data('animation'));
+			        }
+			      }
+			    });
+			    // Hidden...
+			   $(".revealOnScroll.animated").each(function (index) {
+			      var $this     = $(this),
+			          offsetTop = $this.offset().top;
+			      if (scrolled + win_height_padded < offsetTop) {
+			        $(this).removeClass('animated')
+			      }
+			    });
+			  }
+			  revealOnScroll();
+			});
+
+	</script>
 
 	</body>
 

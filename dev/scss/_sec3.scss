@@ -13,10 +13,11 @@
 		height: 68.75rem;
 	}
 	@media screen and (min-width: 118.75rem) {//Resolución 1900px
-		height: 80rem;
+		height: 1200px;
 	}
 	@media screen and (max-width: 69.4375rem) {
 		background-image: url(/images/background/fondo-veige-prodcutos-naturales-movil.png);
+		height: 71.875rem;
 		margin-bottom: -12.5rem;
 		background-size: 100% 100%;
 	}
@@ -37,6 +38,7 @@
 		width: 26.5%;
   		height: auto;
 		margin-top: -18.75rem;
+		@include animation-duration(3s);
 		@media screen and (min-width: 125rem) {//Resolución 1280px
             width: 24.125rem;
         }
@@ -178,7 +180,7 @@
 		}
 		@media screen and (max-width: 45.8125rem) {
 			width: 18rem;
-			
+			height: 27.625rem;			
 		}
 		@media screen and (max-width: 38.4375rem) {
 			position: relative;
@@ -197,6 +199,7 @@
 		width: 13.7%;
 		bottom: 0rem;
 		min-width: 7.24375rem;
+		@include animation-duration(1s);
   		@media screen and (min-width: 80rem) {
 			width: 10.96rem;
   		}
@@ -215,9 +218,7 @@
 		min-width: 13.0875rem;
 		z-index: 2;
 
-		@media screen and (min-width: 64rem) {
-			width: 17rem;
-		}
+		
 		@media screen and (min-width: 124.375rem) {
 			right: 36%;
 		}
@@ -233,7 +234,9 @@
 			bottom: 15.625rem;
 			left: 45%;
 		}
-
+		@media screen and (min-width: 64rem) {
+			width: 17rem;
+		}
 		@media screen and (max-width: 38.4375rem) {
 			z-index: 2;
 			bottom: 12.5rem;
@@ -243,6 +246,50 @@
 		}
 	}
 
+	#bottles-milk{
+		position: absolute;
+		right: 67%;
+		bottom: 13%;
+		width: 12.625rem;
+		@media screen and (min-width: 124.375rem) {
+			right: 60%;
+		}
+		@media screen and (min-width: 137.5rem) {//Resolución 2200px
+			right: 58%;
+			bottom: 22%;
+		}
+		#bottle-1000 {
+		   width: 5.75rem;
+		   margin-left: 1.25rem;
+		   @media screen and (max-width: 45.8125rem) {
+			  width: 4.35625rem;
+		   }
+		}
+		#bottle-2000 {
+			width: 5.375rem;
+			@media screen and (max-width: 45.8125rem) {
+			  width: 5.31875rem;
+		   	}
+		}
+		@media screen and (max-width: $change) {
+			bottom: 12.5rem;
+			right: 60%;
+		}
+		@media screen and (max-width: 45.8125rem) {
+			bottom: 9.375rem;
+			right: 55%;
+		}
+		@media screen and (max-width: 38.4375rem) {
+			position: relative;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: 0 auto;
+			padding-top: 18.125rem;
+		}
+		
+	}
+	/*
 	#bottle-1000 {
 		position: absolute;
 		bottom: 8%;
@@ -341,10 +388,12 @@
 			margin-right: 55%; 
 		}
 	}
+	*/
 	#fill-10 {
 		position: absolute;
 		bottom: 38%;
 		right: 50%;
+		@include animation-duration(2.5s);
 		@media screen and (max-width: 41.25rem) {
 			display: none;
 		}
@@ -353,7 +402,7 @@
 		position: absolute;
 		left: 5%;
 		bottom: 45%;
-
+		@include animation-duration(2s);
 		@media screen and (max-width: 50.9375rem) {
 			display: none;
 		}		
@@ -362,7 +411,8 @@
 		position: absolute;
 		right: 0;
 		top: 25%;
-		@media screen and (max-width: 41.25rem) {
+		@include animation-duration(3s);
+		@media screen and (max-width: 69.4375rem) {
 			display: none;
 		}
 	}
