@@ -196,6 +196,7 @@
 			
 			#{$all-text-inputs-focus},
 			#{$all-text-inputs-hover} {
+				outline: none;
 			  	border: none;
     			border-color: transparent;
 			}
