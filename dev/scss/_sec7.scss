@@ -50,7 +50,7 @@
       margin-top: 25rem;
   		margin-left: 5.0625rem;
   		margin-bottom: -20%;
-      @include animation-duration(3s);
+      @include animation-duration(2s);
       @media screen and (min-width: 103.125rem) {
         margin-left: 8.75rem;
       }
@@ -84,7 +84,7 @@
   		margin-right: 9%;
   		bottom: 30%;
       min-width: 18.25rem;
-      @include animation-duration(3s);
+      @include animation-duration(2s);
       @media screen and (min-width: 103.125rem) {
         margin-right: 19%;
         bottom: 33%;
