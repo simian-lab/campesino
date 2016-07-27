@@ -24,6 +24,7 @@
     #fill-13 {
 		float: right;
 		margin-top: 16%;
+    @include animation-duration(3.5s);
     @media screen and (max-width: $change-sec5) {
       display: none;
     }
@@ -32,6 +33,7 @@
   	#fill-14 {
 		float: left;
 		margin-top: 11%;
+    @include animation-duration(3s);
     @media screen and (max-width: $change-sec5) {
       display: none;
     }
@@ -164,17 +166,20 @@
   		bottom: 32%;
   		right: 28%;
   		width: 3.7%;
+      @include animation-duration(2.5s);
       @media screen and (max-width: $change-sec5) {
       display: none;
       }
   	}
   	#bottles {
+
     		position: absolute;
         z-index: 1;
     		width: 11.9375rem + 7.75rem;
     		height: 18.75rem;
     		right: 2%;
     		bottom: -4%;
+        @include animation-duration(3s);
         @media screen and (min-width: 100rem) {
           right: 10%;
           bottom: -2%;

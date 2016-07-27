@@ -37,6 +37,7 @@
 		width: 26.5%;
   		height: auto;
 		margin-top: -18.75rem;
+		@include animation-duration(3s);
 		@media screen and (min-width: 125rem) {//Resolución 1280px
             width: 24.125rem;
         }
@@ -197,6 +198,7 @@
 		width: 13.7%;
 		bottom: 0rem;
 		min-width: 7.24375rem;
+		@include animation-duration(4s);
   		@media screen and (min-width: 80rem) {
 			width: 10.96rem;
   		}
@@ -345,6 +347,7 @@
 		position: absolute;
 		bottom: 38%;
 		right: 50%;
+		@include animation-duration(2.5s);
 		@media screen and (max-width: 41.25rem) {
 			display: none;
 		}
@@ -353,7 +356,7 @@
 		position: absolute;
 		left: 5%;
 		bottom: 45%;
-
+		@include animation-duration(2s);
 		@media screen and (max-width: 50.9375rem) {
 			display: none;
 		}		
@@ -362,6 +365,7 @@
 		position: absolute;
 		right: 0;
 		top: 25%;
+		@include animation-duration(3s);
 		@media screen and (max-width: 41.25rem) {
 			display: none;
 		}

@@ -126,6 +126,7 @@
   		position: absolute;
   		right: 0;
   		top: 22%;
+  		@include animation-duration(3s);
   		@media screen and (max-width: 39.375rem) {
 			display: none;
   		}
@@ -134,6 +135,7 @@
 	#left-flow {
 		position: absolute;
 		margin-top: 24%;
+		@include animation-duration(4s);
 		@media screen and (max-width: 39.375rem) {
 			display: none;
   		}
@@ -142,6 +144,7 @@
 	#left-flow-1 {
 		position: absolute;
 		margin-top: 5%;
+		@include animation-duration(4s);
 		@media screen and (max-width: 39.375rem) {
 			display: none;
   		}
@@ -196,6 +199,7 @@
 			
 			#{$all-text-inputs-focus},
 			#{$all-text-inputs-hover} {
+				outline: none;
 			  	border: none;
     			border-color: transparent;
 			}
@@ -219,6 +223,7 @@
 					font-size: 1.0625rem;
 				}
 			}
+
 			input {
 				font-family: AcuminPro, Sans-serif;
 				font-size: 1.1875rem;
@@ -492,6 +497,7 @@
   	    bottom: 26%;
   		width: 3.5375rem;
   		height: 6.3875rem;
+  		@include animation-duration(3s);
   		@media screen and (max-width: 55rem) {
 			display: none;
   		}
@@ -517,6 +523,7 @@
   		height: 2.5875rem;
 		right: 21.875rem;
 		bottom: 42.5rem;
+		@include animation-duration(2s);
 		@media screen and (max-width: 55rem) {
 			display: none;
   		}
@@ -526,6 +533,7 @@
   		position: absolute;
   		right: 8.75rem;
   		bottom: 21.875rem;
+  		@include animation-duration(4s);
   		@media screen and (max-width: 55rem) {
 			display: none;
   		}
@@ -535,6 +543,7 @@
 		position: absolute;
   		left: 18.75rem;
   		bottom: 43.75rem;
+  		@include animation-duration(3.5s);
 		@media screen and (max-width: 55rem) {
 			display: none;
   		}
