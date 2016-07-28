@@ -32,11 +32,14 @@ footer {
 			margin: 0 auto;
 			padding-left: 1.875rem;
 		}
+		img {
+			width: 100%;
+		}
   	}
 	p {
 		font-family: AcuminPro;
 		font-size: 1.125rem;
-		font-weight: normal;
+		font-weight: 400;
 		line-height: 1.61;
 		text-align: center;
 		color: #4d2b24;

@@ -38,25 +38,24 @@
     height: 175rem;
   }
   @media screen and (max-width: 41.25rem) {
-    height: 152.5rem;
+    height: 156.25rem;
     margin-bottom: -30%;
   }
   @media screen and (max-width: 34.25rem) {
-    height: 159.375rem;
+    height: 165.625rem;
   }
   @media screen and (max-width: 22.9375rem) {
-    height: 152.5rem;
+    height: 158.125rem;
   }
   p {
-        //margin-top: 20%;
-        //margin-left:  35%;
+        
         display: none;
         position: relative;
         margin: 0 auto;
         padding-top: 15.625rem;
         width: 35rem;
         height: 14.5rem;
-        font-family: AcuminPro;
+        font-family: AcuminPro, Sans-serif;
         font-size: 1.375rem;
         font-weight: normal;
         line-height: 1.32;
@@ -72,7 +71,7 @@
         
         @media screen and (max-width: 41.25rem) {
           width: 17.9375rem;
-          height: 25rem;
+          height: 29.375rem;
         }     
     }
     
@@ -107,7 +106,7 @@
             margin-left: 1.875rem;
           }
         }
-
+        
         @media screen and (max-width: $change-sec5) {
           display: block;
         }
