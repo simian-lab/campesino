@@ -1,4 +1,4 @@
-#milksection {
+#leche {
 	
 	border: 0;
 	margin: 0;
@@ -237,6 +237,9 @@
 		@media screen and (min-width: 64rem) {
 			width: 17rem;
 		}
+		@media screen and (max-width: 45.8125rem) {
+			left: 55%;
+		}
 		@media screen and (max-width: 38.4375rem) {
 			z-index: 2;
 			bottom: 12.5rem;
@@ -250,7 +253,7 @@
 		position: absolute;
 		right: 67%;
 		bottom: 13%;
-		width: 12.625rem;
+		width: 13.75rem;
 		@media screen and (min-width: 124.375rem) {
 			right: 60%;
 		}
@@ -259,10 +262,10 @@
 			bottom: 22%;
 		}
 		#bottle-1000 {
-		   width: 5.75rem;
+		   width: 5rem;
 		   margin-left: 1.25rem;
 		   @media screen and (max-width: 45.8125rem) {
-			  width: 4.35625rem;
+			  width: 4.75rem;
 		   }
 		}
 		#bottle-2000 {
@@ -277,7 +280,7 @@
 		}
 		@media screen and (max-width: 45.8125rem) {
 			bottom: 9.375rem;
-			right: 55%;
+			right: 48%;
 		}
 		@media screen and (max-width: 38.4375rem) {
 			position: relative;

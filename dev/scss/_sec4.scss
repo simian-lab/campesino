@@ -1,4 +1,4 @@
-#sec4{
+#quesos{
     z-index: 1;
 	border: 0;
 	margin: 0;
@@ -20,7 +20,8 @@
     }
     @media screen and (max-width: 48.9375rem) {
         background-image: url(/images/background/fondo-quesos-movil.png);
-        height: 106.25rem;
+        //height: 1700px;
+        height: 93.75rem;
         margin-bottom: -10%;   
     }
     @media screen and (max-width: 45.125rem) {
@@ -238,9 +239,9 @@
             left: 0;
         }
         
-        @media screen and (max-width: 48.9375rem) {
+        /*@media screen and (max-width: 48.9375rem) {
             width: 10.625rem;
-            
+            //width: px;
         }
 
         li {
@@ -289,6 +290,72 @@
             padding-top: 3.8125rem;
 
             @media screen and (max-width: 48.9375rem) {
+                padding: 0;
+            }
+        }*/
+        @media screen and (max-width: 48.9375rem) {
+            width: 22.5rem;
+        }
+        @media screen and (max-width: 37.5rem) {
+            width: 10.625rem;
+        }
+        li {
+            width: 10rem;
+            margin-left: 3%;
+            float: left;
+            text-align: center;
+            figure {
+                
+                figcaption{
+                    font-family: AcuminPro, Sans-serif;
+                    font-size: 1.125rem;
+                    font-weight: normal;
+                    color: #553408;
+                }
+            }
+
+            @media screen and (max-width: $change-sec4) {
+                margin-left: 0.5%;
+            }
+
+            @media screen and (max-width: 48.9375rem) {
+                padding: 0;
+                margin-top: 1.25rem;
+            }
+            @media screen and (max-width: 37.5rem) {
+                clear: left;
+            }
+            
+        }
+
+        #double {
+            padding-top: 1.125rem;
+            @media screen and (max-width: 48.9375rem) {
+                margin-left: 1.875rem;
+            }
+            @media screen and (max-width: 37.5rem) {
+                margin-left: 0;
+                padding: 0;
+            }
+        }
+
+        #double-taj {
+            padding-top: 2.0625rem;
+
+            @media screen and (max-width: 37.5rem) {
+                padding: 0;
+            }
+        }
+
+        #per {
+            padding-top: 3.8125rem;
+
+            @media screen and (max-width: 48.9375rem) {
+                //padding: 0;
+                margin-left: 1.875rem;
+            }
+            @media screen and (max-width: 37.5rem) {
+                margin-left: 0;
                 padding: 0;
             }
         }

@@ -1,4 +1,4 @@
-#sec8 {
+#contacto {
 	position: relative;
 	z-index: 1;
 	width: 100%;
@@ -427,7 +427,7 @@
 		font-size: 1.25rem;
 		font-weight: normal;
 		text-align: center;
-	    font-weight: bold;
+	    //font-weight: bold;
 		color: #4d2b24;
 		@media screen and (max-width: 54.875rem) {
 			font-size: 1.125rem;
@@ -443,6 +443,9 @@
 		color: $camo-green;
 		@media screen and (max-width: 54.875rem) {
 			font-size: 1.08125rem;
+		}
+		img {
+			padding-right: 0.375rem;
 		}
 	}
 
